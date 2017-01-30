@@ -1,0 +1,90 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	deleted:    page1.html
+#
+# Changes not staged for commit:
+#	deleted:    ABOUT/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/css/material.css
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/fonts/LICENSE.txt
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/fonts/Material-Design-Icons.eot
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/fonts/Material-Design-Icons.svg
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/fonts/Material-Design-Icons.ttf
+#	deleted:    ABOUT/assets/bootstrap-material-design-font/fonts/Material-Design-Icons.woff
+#	deleted:    ABOUT/assets/bootstrap/css/bootstrap.min.css
+#	deleted:    ABOUT/assets/bootstrap/js/bootstrap.min.js
+#	deleted:    ABOUT/assets/dropdown/css/style.css
+#	deleted:    ABOUT/assets/dropdown/js/script.min.js
+#	deleted:    ABOUT/assets/et-line-font-plugin/fonts/et-line.eot
+#	deleted:    ABOUT/assets/et-line-font-plugin/fonts/et-line.svg
+#	deleted:    ABOUT/assets/et-line-font-plugin/fonts/et-line.ttf
+#	deleted:    ABOUT/assets/et-line-font-plugin/fonts/et-line.woff
+#	deleted:    ABOUT/assets/et-line-font-plugin/style.css
+#	deleted:    ABOUT/assets/images/2-600x416-79-600x416.jpg
+#	deleted:    ABOUT/assets/images/bridge.jpg
+#	deleted:    ABOUT/assets/images/chairman-1400x1357-5.jpg
+#	deleted:    ABOUT/assets/images/coworkers.jpg
+#	deleted:    ABOUT/assets/images/download-256x128-33-256x128.png
+#	deleted:    ABOUT/assets/images/download-256x128-33.png
+#	deleted:    ABOUT/assets/images/download-256x128-45.png
+#	deleted:    ABOUT/assets/images/dscn1175-2000x1500-34-2000x1500-800x600.jpg
+#	deleted:    ABOUT/assets/images/dscn1175-2000x1500-34-2000x1500.jpg
+#	deleted:    ABOUT/assets/images/dscn1178-2000x1500-83-800x600-56-2000x1500-800x600.jpg
+#	deleted:    ABOUT/assets/images/dscn1178-2000x1500-83-800x600-56-2000x1500.jpg
+#	deleted:    ABOUT/assets/images/face1.jpg
+#	deleted:    ABOUT/assets/images/face2.jpg
+#	deleted:    ABOUT/assets/images/face3.jpg
+#	deleted:    ABOUT/assets/images/full-unsplash-5-unsplash-kitsune-3-jpg-192x128-53.jpg
+#	deleted:    ABOUT/assets/images/full-unsplash-photo-1429276681162-02f78914158a-2000x1333-32.jpg
+#	deleted:    ABOUT/assets/images/full-unsplash-photo-1445282650865-52d8ea4e110b-2000x1204-8.jpg
+#	deleted:    ABOUT/assets/images/full-unsplash-photo-1480435368253-39f2bad8843f-2000x1333-24.jpg
+#	deleted:    ABOUT/assets/images/full-unsplash-uploads-14117450256890cec7683-4575979c-2000x1333-3.jpg
+#	deleted:    ABOUT/assets/images/img-1504-2000x1500-15-800x600-93-2000x1500-1-800x600.jpg
+#	deleted:    ABOUT/assets/images/img-1504-2000x1500-15-800x600-93-2000x1500-1.jpg
+#	deleted:    ABOUT/assets/images/img-1506-2000x1500-52-800x600-40-2000x1500-800x600.jpg
+#	deleted:    ABOUT/assets/images/img-1506-2000x1500-52-800x600-40-2000x1500.jpg
+#	deleted:    ABOUT/assets/images/img-1527-2000x1500-42-800x600-80-2000x1500-800x600.jpg
+#	deleted:    ABOUT/assets/images/img-1527-2000x1500-42-800x600-80-2000x1500.jpg
+#	deleted:    ABOUT/assets/images/landscape.jpg
+#	deleted:    ABOUT/assets/images/lg-g3-smoke-colors-wide-2000x1250-1.jpg
+#	deleted:    ABOUT/assets/images/logo.png
+#	deleted:    ABOUT/assets/images/man-back.jpg
+#	deleted:    ABOUT/assets/images/personalinhouse-600x579-53-600x579.png
+#	deleted:    ABOUT/assets/images/rmk1-2000x1499-31.png
+#	deleted:    ABOUT/assets/images/sparklers.jpg
+#	deleted:    ABOUT/assets/images/underconstruction.gif
+#	deleted:    ABOUT/assets/imagesloaded/imagesloaded.pkgd.min.js
+#	deleted:    ABOUT/assets/jarallax/jarallax.js
+#	deleted:    ABOUT/assets/masonry/masonry.pkgd.min.js
+#	deleted:    ABOUT/assets/mobirise-gallery/player.min.js
+#	deleted:    ABOUT/assets/mobirise-gallery/script.js
+#	deleted:    ABOUT/assets/mobirise-gallery/style.css
+#	deleted:    ABOUT/assets/mobirise/css/mbr-additional.css
+#	deleted:    ABOUT/assets/smooth-scroll/SmoothScroll.js
+#	deleted:    ABOUT/assets/tether/tether.min.css
+#	deleted:    ABOUT/assets/tether/tether.min.js
+#	deleted:    ABOUT/assets/theme/css/style.css
+#	deleted:    ABOUT/assets/theme/js/script.js
+#	deleted:    ABOUT/assets/touchSwipe/jquery.touchSwipe.min.js
+#	deleted:    ABOUT/assets/web/assets/jquery/jquery.min.js
+#	deleted:    ABOUT/debug.log
+#	deleted:    ABOUT/index.html
+#	deleted:    ABOUT/project.mobirise
+#	modified:   about.html
+#	modified:   debug.log
+#	modified:   index.html
+#	modified:   login.html
+#	modified:   project.mobirise
+#
+# Untracked files:
+#	assets/et-line-font-plugin/
+#	assets/imagesloaded/
+#	assets/masonry/
+#	assets/mobirise-gallery/
+#	history/
+#
+
