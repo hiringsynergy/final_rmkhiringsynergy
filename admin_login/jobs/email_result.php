@@ -695,203 +695,240 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                        include "../connect.php";
+                                        if (isset($_GET['jid']) && isset($_SESSION['user_role'])=='admin' ) {
 
-                    $to=$_POST['recipient'];
-                    /*
-                    $to=$_POST['recipient'];
+                                                                $jid = $_GET['jid'];
 
-                    $subject= $_POST['subject'];
+                                                                include "../connect.php";
+                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
 
-                    $message='<h3>'.$_POST['message'].'<h3>';
+                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                    $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
-                    $headers.="Reply-To: karthickakash17@gmail.com\r\n";
-                    $headers.="Content-type: text/html\r\n";
+                                                                $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
+                                                                $result_mail = mysqli_query($connect, $query_mail);
 
-                    mail($to,$subject,$message,$headers);
-                    */
+                                                                while ($row_mail = mysqli_fetch_assoc($result_mail)) {
+                                                                    $to=$row_mail['st_email'];
 
-                    $send_file=array();
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                                                                    // $subject= "Eligible for ".$company_name_string;
 
+                                                                    // $message='<h4> You are Eligiblie for '.$company_name_string.' Please check RMKhiringSynergy to apply for the job   </h4>';
 
+                                                                    // $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
+                                                                    // $headers.="Reply-To: karthickakash17@gmail.com\r\n";
+                                                                    // $headers.="Content-type: text/html\r\n";
 
+                                                                    // mail($to,$subject,$message,$headers);
 
 
 
-                        $count= count($_FILES['attachment']['name']);
 
+                                                            
 
-                        for ($i=0;$i<$count;$i++) {
 
-                            $file_name = $_FILES['attachment']['name'][$i];
-                            $file_size = $_FILES['attachment']['size'][$i];
-                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
-                            $file_type = $_FILES['attachment']['type'][$i];
 
 
+                                                                    //$to=$_POST['recipient'];
+                                                                    /*
+                                                                    $to=$_POST['recipient'];
 
-                            $value = explode('.',$file_name);
+                                                                    $subject= $_POST['subject'];
 
+                                                                    $message='<h3>'.$_POST['message'].'<h3>';
 
+                                                                    $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
+                                                                    $headers.="Reply-To: karthickakash17@gmail.com\r\n";
+                                                                    $headers.="Content-type: text/html\r\n";
 
+                                                                    mail($to,$subject,$message,$headers);
+                                                                    */
 
-                            $file_ext=strtolower(end($value));
+                                                                    $send_file=array();
+                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
-                            $newfilename = $file_name.'_'.time() . '.' . $file_ext;
 
 
-                            move_uploaded_file($file_tmp,"files/".$newfilename);
 
-                            $send_file[]=$newfilename;
 
 
+                                                                        $count= count($_FILES['attachment']['name']);
 
 
+                                                                        for ($i=0;$i<$count;$i++) {
 
+                                                                            $file_name = $_FILES['attachment']['name'][$i];
+                                                                            $file_size = $_FILES['attachment']['size'][$i];
+                                                                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
+                                                                            $file_type = $_FILES['attachment']['type'][$i];
 
 
 
+                                                                            $value = explode('.',$file_name);
 
-                        }
 
 
 
+                                                                            $file_ext=strtolower(end($value));
 
+                                                                            $newfilename = $file_name.'_'.time() . '.' . $file_ext;
 
 
+                                                                            move_uploaded_file($file_tmp,"files/".$newfilename);
 
+                                                                            $send_file[]=$newfilename;
 
 
 
 
 
-                    }
 
 
 
 
+                                                                        }
 
 
 
-                    require "PHPMailer/PHPMailerAutoload.php";
 
-                    $mail=new PHPMailer();
 
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                    $mail->Password = 'akash170397';                           // SMTP password
-                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 465;
 
 
-                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                    $mail->addAddress($to, $to);     // Add a recipient
 
-                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
 
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
-                        foreach ($send_file as $file_to_send){
 
 
-                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
+                                                                         }
 
-                        }
 
 
 
 
-                    }
 
 
-                    $mail->isHTML(true);
+                                                                                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
-                    $mail->Subject = $_POST['subject'];
-                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
+                                                                                    $mail=new PHPMailer();
 
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
 
 
-                    if(!$mail->send()) {
+                                                                                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                    $mail->addAddress($to, $to);     // Add a recipient
 
+                                                                                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
-                        ?>
 
-                        <div class="alert alert-block alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
+                                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
-                            <i class="ace-icon fa fa-times red"></i>
+                                                                                        foreach ($send_file as $file_to_send){
 
-                            Your mail to
-                            <strong class="red">
-                                <?php echo $to ?>
 
-                            </strong>,
+                                                                                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
 
-                            has been failed to send, check the Recipient mail address.....
-                        </div>
+                                                                                        }
 
 
-                        <?php
 
-                    } else {
 
-                        ?>
+                                                                                    }
 
 
+                                                                                    $mail->isHTML(true);
 
-                        <div class="alert alert-block alert-success">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
+                                                                                    $mail->Subject = $_POST['subject'];
+                                                                                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
 
-                            <i class="ace-icon fa fa-check green"></i>
 
-                            Your mail to
-                            <strong class="green">
-                                <?php echo $to ?>
 
-                            </strong>,
+                                                                                    if(!$mail->send()) {
 
-                            has been sent Successfully
-                        </div>
 
+                                                                                        ?>
 
+                                                                                        <div class="alert alert-block alert-danger">
+                                                                                            <button type="button" class="close" data-dismiss="alert">
+                                                                                                <i class="ace-icon fa fa-times"></i>
+                                                                                            </button>
 
-                        <?php
+                                                                                            <i class="ace-icon fa fa-times red"></i>
 
-                    }
+                                                                                            Your mail to
+                                                                                            <strong class="red">
+                                                                                                <?php echo $to ?>
 
+                                                                                            </strong>,
 
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                                                                                            has been failed to send, check the Recipient mail address.....
+                                                                                        </div>
 
-                        foreach ($send_file as $file_sent){
 
-                            unlink("files/$file_sent");
+                                                                                        <?php
 
+                                                                                    } else {
 
+                                                                                        ?>
 
-                        }
 
 
+                                                                                        <div class="alert alert-block alert-success">
+                                                                                            <button type="button" class="close" data-dismiss="alert">
+                                                                                                <i class="ace-icon fa fa-times"></i>
+                                                                                            </button>
 
-                    }
+                                                                                            <i class="ace-icon fa fa-check green"></i>
 
+                                                                                            Your mail to
+                                                                                            <strong class="green">
+                                                                                                <?php echo $to ?>
 
+                                                                                            </strong>,
 
+                                                                                            has been sent Successfully
+                                                                                        </div>
 
 
 
+                                                                                        <?php
 
-                }
+                                                                                    }
 
 
+                                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
+                                                                                        foreach ($send_file as $file_sent){
+
+                                                                                            unlink("files/$file_sent");
+
+
+
+                                                                                        }
+
+
+
+                                                                                    }
+
+
+
+
+
+
+
+                                                                                }
+
+
+                                                                            }
+                                                                        }
 
 
 
@@ -934,9 +971,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email.php" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+                <form id="id-message-form" action="email_result.php" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
-                        <div class="form-group ">
+<!--                         <div class="form-group ">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
 
                             <div class="col-sm-9">
@@ -947,7 +984,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             </div>
                         </div>
 
-                        <div class="hr hr-18 dotted"></div>
+                        <div class="hr hr-18 dotted"></div> -->
 
 
                         <div class="form-group">

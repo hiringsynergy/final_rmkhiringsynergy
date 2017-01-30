@@ -38,7 +38,7 @@ foreach($check as $select)
 
 
 
-header("Location: email_result.php?jid=$id");
+header("Location: email_result.php?jid=$jid");
 
 
 
