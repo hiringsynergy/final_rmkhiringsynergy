@@ -15,6 +15,36 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+if(isset($_GET['email'])) {
+
+    include "../connect.php";
+    $jid = $_GET['jid'];
+    $students_table_name=$_GET['year'];
+$check=$_GET['check'];
+foreach($check as $select)
+{
+    $query_for_update="UPDATE students_".$students_table_name." SET _".$jid."='eligible' WHERE st_roll='$select'";
+        $result_for_update=mysqli_query($connect, $query_for_update);
+    if(!$result_for_update){
+
+
+        die("".mysqli_error($connect));
+
+
+    }
+
+}
+
+
+
+
+header("Location: email_result.php?jid=$id");
+
+
+
+}
+
+
 ?>
 
 
@@ -779,6 +809,12 @@ die(" " . mysqli_error($connect));
                                 <div class="clearfix">
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
+                                <form action="filter_result.php" method="get" >
+
+                            <button name="email" id="bootbox-confirm" type="submit" class="btn btn-lg btn-success">
+                                <i class="ace-icon fa fa-check"></i>
+                                Email
+                            </button>
                                 <div class="table-header">
                                         Eligible Student list
                                 </div>
@@ -788,6 +824,7 @@ die(" " . mysqli_error($connect));
                                 <!-- div.dataTables_borderWrap -->
                                 <div>
                                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                        
                                         <thead>
                                         <tr>
                                             <th class="center">
@@ -827,7 +864,7 @@ die(" " . mysqli_error($connect));
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' OR _" . $jid . "='accepted'";
+                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable' ";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
@@ -849,7 +886,7 @@ die(" " . mysqli_error($connect));
                                         <tr>
                                             <td class="center">
                                                 <label class="pos-rel">
-                                                    <input type="checkbox" class="ace" />
+                                                    <input type="checkbox" name="check[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
                                                     <span class="lbl"></span>
                                                 </label>
                                             </td>
@@ -875,8 +912,20 @@ die(" " . mysqli_error($connect));
 
 
                                         </tbody>
+                                      
+
+
+
+                                       
                                     </table>
                                 </div>
+                               
+                                    <input type="hidden" name="jid" value="<?php echo $jid ?>">
+                                    <input type="hidden" name="year" value="<?php echo $year_of_gradudation ?>">
+
+
+                                             </form>
+
                             </div>
                         </div>
 

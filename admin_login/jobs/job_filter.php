@@ -240,7 +240,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-        $query_for_update="UPDATE $students_table_name SET _".$id."='eligible' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears";
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
