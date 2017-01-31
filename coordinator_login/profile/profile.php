@@ -529,7 +529,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
                     <form action="profile.php" method="get">
-                        <label class="red bolder"> Search Profile  -</label>
+                        <label class="red bolder"> Search Register Number  -</label>
 
 
                         <?php
