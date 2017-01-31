@@ -634,7 +634,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <b class="arrow"></b>
                     </li>
                     <li class="active">
-                        <a href="email.php">
+                        <a href="../email/email.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -868,7 +868,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     }
 
 
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                    if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
 
                         foreach ($send_file as $file_sent){
 

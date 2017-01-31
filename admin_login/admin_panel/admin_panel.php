@@ -986,10 +986,12 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>College Name</th>
                                             <th>University</th>
                                             <th>10th %</th>
+                                            <th>10th Institution</th>
                                             <th>Board of Study</th>
                                             <th>Medium (Tamil/English/Telugu/Others)</th>
                                             <th>10th - Year of Passing</th>
                                             <th>12th %</th>
+                                            <th>12th Institution</th>
                                             <th>Board of Study</th>
                                             <th>Medium (Tamil/English/Telugu/Others)</th>
                                             <th>12th - Year of Passing</th>
@@ -1016,6 +1018,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>4th Sem</th>
                                             <th>PG Degree % or CGPA (upto last semester for which results announced)</th>
                                             <th>PG - Year of Passing</th>
+                                            <th>UG College Name</th>
                                             <th>Day Scholar/ Hosteler</th>
                                             <th>No History of Arreas</th>
                                             <th>Current Degree. No of Standing Arrears</th>
@@ -1075,10 +1078,12 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $college_name=$row['st_collegename'];
                                             $university=$row['st_university'];
                                             $_10percentage=$row['st_10thpercentage'];
+                                            $_10institution=$row['st_10thinstitution'];
                                             $_10boardofstudy=$row['st_10thboardofstudy'];
                                             $_10medium=$row['st_10thmedium'];
                                             $_10yearofpassing=$row['st_10thyearofpassing'];
                                             $_12percentage=$row['st_12thpercentage'];
+                                            $_12institution=$row['st_12thinstitution'];
                                             $_12boardofstudy=$row['st_12thboardofstudy'];
                                             $_12medium=$row['st_12thmedium'];
                                             $_12yearofpassing=$row['st_12thyearofpassing'];
@@ -1105,6 +1110,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $pg4sem=$row['st_pg4thsem'];
                                             $pgcgpa=$row['st_pgcgpa'];
                                             $pgyearofpassing=$row['st_pgyearofpassing'];
+                                            $ugcollegename=$row['st_ugcollegename'];
                                             $dayhostel=$row['st_dayorhostel'];
                                             $historyofarrears=$row['st_historyofarrears'];
                                             $standingarrears=$row['st_standingarrears'];
@@ -1168,10 +1174,12 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo $college_name ?></td>
                                                 <td><?php echo $university ?></td>
                                                 <td><?php echo $_10percentage ?></td>
+                                                <td><?php echo $_10institution ?></td>
                                                 <td><?php echo $_10boardofstudy ?></td>
                                                 <td><?php echo $_10medium ?></td>
                                                 <td><?php echo $_10yearofpassing ?></td>
                                                 <td><?php echo $_12percentage ?></td>
+                                                <td><?php echo $_12institution ?></td>
                                                 <td><?php echo $_12boardofstudy ?></td>
                                                 <td><?php echo $_12medium ?></td>
                                                 <td><?php echo $_12yearofpassing ?></td>
@@ -1222,6 +1230,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo $pg4sem ?></td>
                                                 <td><?php echo $pgcgpa ?></td>
                                                 <td><?php echo $pgyearofpassing ?></td>
+                                                <td><?php echo $ugcollegename ?></td>
                                                 <td><?php echo $dayhostel ?></td>
                                                 <td><?php echo $historyofarrears ?></td>
                                                 <td><?php echo $standingarrears ?></td>
@@ -1509,7 +1518,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
-                        null,null,
+                        null, null, null, null, null,
 
 
                         { "bSortable": false }

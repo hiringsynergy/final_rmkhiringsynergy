@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 session_start();
 ob_start();
@@ -689,64 +689,51 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <?php
 
+                
 
 
                 if(isset($_POST['send']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
-                                        include "../connect.php";
-                                        if (isset($_GET['jid']) && isset($_SESSION['user_role'])=='admin' ) {
-
-                                                                $jid = $_GET['jid'];
-
-                                                                include "../connect.php";
-                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
-                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
-                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
-
-                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
-
-                                                                $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
-                                                                $result_mail = mysqli_query($connect, $query_mail);
-
-                                                                while ($row_mail = mysqli_fetch_assoc($result_mail)) {
-                                                                    $to=$row_mail['st_email'];
-
-                                                                    // $subject= "Eligible for ".$company_name_string;
-
-                                                                    // $message='<h4> You are Eligiblie for '.$company_name_string.' Please check RMKhiringSynergy to apply for the job   </h4>';
-
-                                                                    // $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
-                                                                    // $headers.="Reply-To: karthickakash17@gmail.com\r\n";
-                                                                    // $headers.="Content-type: text/html\r\n";
-
-                                                                    // mail($to,$subject,$message,$headers);
 
 
 
+                     $jid= $_POST['jid'];
 
-                                                            
+
+
+                                       
+                                       
+
+                                                                                    require "../email/PHPMailer/PHPMailerAutoload.php";
+
+                                                                                    $mail=new PHPMailer();
+
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
+                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+                                                                                    $mail->isHTML(true);
+
+                                                                                    $mail->Subject = $_POST['subject'];
+                                                                                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
 
 
 
 
-                                                                    //$to=$_POST['recipient'];
-                                                                    /*
-                                                                    $to=$_POST['recipient'];
 
-                                                                    $subject= $_POST['subject'];
 
-                                                                    $message='<h3>'.$_POST['message'].'<h3>';
 
-                                                                    $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
-                                                                    $headers.="Reply-To: karthickakash17@gmail.com\r\n";
-                                                                    $headers.="Content-type: text/html\r\n";
 
-                                                                    mail($to,$subject,$message,$headers);
-                                                                    */
 
-                                                                    $send_file=array();
+                                                                                      $send_file=array();
                                                                     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
@@ -773,7 +760,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                             $file_ext=strtolower(end($value));
 
-                                                                            $newfilename = $file_name.'_'.time() . '.' . $file_ext;
+                                                                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
                                                                             move_uploaded_file($file_tmp,"files/".$newfilename);
@@ -809,27 +796,47 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                                               
 
-                                                                                    require "../email/PHPMailer/PHPMailerAutoload.php";
+                                                                include "../connect.php";
+                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
 
-                                                                                    $mail=new PHPMailer();
+                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                                    $mail->isSMTP();
-                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                                                                                    $mail->Password = 'akash170397';                           // SMTP password
-                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                                                                                    $mail->Port = 465;
+                                                                $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
+                                                                $result_mail = mysqli_query($connect, $query_mail);
+                                                                $num_rows=mysqli_num_rows($result_mail);
+                                                                $counter=0;
+                                                                
 
-
-                                                                                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                                                                                    $mail->addAddress($to, $to);     // Add a recipient
-
-                                                                                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+                                                                while($row_mail = mysqli_fetch_assoc($result_mail)) {
 
 
-                                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+                                                                                    $to=null;
+
+
+
+                                                                                    $to=$row_mail['st_email'];
+
+
+                                                                  
+
+
+
+
+                                                                                   
+                                                                                    $mail->addAddress($to, 'joe');     
+
+
+                                                                                    // Add a recipient
+
+                                                                                  
+
+
+                                                                                    if(isset($_FILES['attachment']) && $file_ext!=''  && isset($_SESSION['user_role'])=='admin' ){
 
                                                                                         foreach ($send_file as $file_to_send){
 
@@ -844,67 +851,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                                                     }
 
 
-                                                                                    $mail->isHTML(true);
-
-                                                                                    $mail->Subject = $_POST['subject'];
-                                                                                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
 
 
-
-                                                                                    if(!$mail->send()) {
-
-
-                                                                                        ?>
-
-                                                                                        <div class="alert alert-block alert-danger">
-                                                                                            <button type="button" class="close" data-dismiss="alert">
-                                                                                                <i class="ace-icon fa fa-times"></i>
-                                                                                            </button>
-
-                                                                                            <i class="ace-icon fa fa-times red"></i>
-
-                                                                                            Your mail to
-                                                                                            <strong class="red">
-                                                                                                <?php echo $to ?>
-
-                                                                                            </strong>,
-
-                                                                                            has been failed to send, check the Recipient mail address.....
-                                                                                        </div>
-
-
-                                                                                        <?php
-
-                                                                                    } else {
-
-                                                                                        ?>
+                                                                                    if($mail->send()){
 
 
 
-                                                                                        <div class="alert alert-block alert-success">
-                                                                                            <button type="button" class="close" data-dismiss="alert">
-                                                                                                <i class="ace-icon fa fa-times"></i>
-                                                                                            </button>
+                                                                                   
 
-                                                                                            <i class="ace-icon fa fa-check green"></i>
-
-                                                                                            Your mail to
-                                                                                            <strong class="green">
-                                                                                                <?php echo $to ?>
-
-                                                                                            </strong>,
-
-                                                                                            has been sent Successfully
-                                                                                        </div>
-
-
-
-                                                                                        <?php
+                                                                                        $counter=$counter+1;
 
                                                                                     }
 
 
-                                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                                                                                    // Clear all addresses and attachments for next loop
+                                                                                    $mail->clearAddresses();
+                                                                                    $mail->clearAttachments();
+
+                                                                                    
+
+
+                                                                                    if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
 
                                                                                         foreach ($send_file as $file_sent){
 
@@ -921,14 +888,84 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                                                }
+
+
+                                                                if($num_rows!=$counter) {
+
+
+                        ?>
+
+                        <div class="alert alert-block alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+
+                            <i class="ace-icon fa fa-times red"></i>
+
+                            Your mail to
+                            <strong class="red">
+                                <?php echo $num_rows-$count ?>
+
+                            </strong>Students ,
+
+                            has been failed to send, check the Recipient mail address.....
+                        </div>
+
+
+                        <?php
+
+                    } else {
+
+                        ?>
 
 
 
-                                                                                }
+                        <div class="alert alert-block alert-success">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+
+                            <i class="ace-icon fa fa-check green"></i>
+
+                            Your mail to
+                            <strong class="green">
+                                <?php echo $num_rows ?>
+
+                            </strong>Students ,
+
+                            has been sent Successfully
+                        </div>
 
 
-                                                                            }
-                                                                        }
+
+                        <?php
+
+                    }
+                                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+
+
+                    
+
+
+
+
+                                                                        
 
 
 
@@ -986,6 +1023,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="hr hr-18 dotted"></div> -->
 
+                    <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-subject">Subject:</label>
