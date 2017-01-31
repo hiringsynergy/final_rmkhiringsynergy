@@ -35,8 +35,8 @@
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="index.html" class="navbar-logo"><img src="assets/images/download-256x128-33-256x128.png" alt="RMK Group"></a>
-                        <a class="navbar-caption" href="index.html">RMK HIRING SYNERGY</a>
+                        <a href="index" class="navbar-logo"><img src="assets/images/download-256x128-33-256x128.png" alt="RMK Group"></a>
+                        <a class="navbar-caption" href="index">RMK HIRING SYNERGY</a>
                     </div>
 
                 </div>
@@ -46,7 +46,7 @@
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li><li class="nav-item dropdown"><a class="nav-link link" href="login.php" aria-expanded="false"><p>Login&nbsp;</p></a></li><li class="nav-item"><a class="nav-link link" href="about.html" aria-expanded="false"><p>About</p></a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index">Home</a></li><li class="nav-item dropdown"><a class="nav-link link" href="login" aria-expanded="false"><p>Login&nbsp;</p></a></li><li class="nav-item"><a class="nav-link link" href="about" aria-expanded="false"><p>About</p></a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
