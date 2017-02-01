@@ -7,7 +7,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../login.php");
+    header("Location: ../login");
 
 
 }
@@ -61,7 +61,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports.php";
+            location.href = "reports";
 
         }
 
@@ -86,15 +86,15 @@ function updateSlider(){
     }
 }
         function myfuncadmin() {
-            location.href = "admin_panel/admin_panel.php";
+            location.href = "admin_panel/admin_panel";
 
         }
         function myfuncjobs() {
-            location.href = "jobs/jobs_panel.php";
+            location.href = "jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "settings.php";
+            location.href = "settings";
 
         }
 
@@ -253,7 +253,7 @@ function updateSlider(){
                                                             ?>
 
                                                             <li>
-                                                                <a href="approve.php?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -336,7 +336,7 @@ function updateSlider(){
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="approve.php">
+                            <a href="approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -366,7 +366,7 @@ function updateSlider(){
                         </li>
 
                         <li>
-                            <a href="profile/profile.php">
+                            <a href="profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -449,7 +449,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="profile/profile.php" >
+                <a href="profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -464,7 +464,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="settings.php" >
+                <a href="settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -477,7 +477,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="admin_panel/admin_panel.php" >
+                <a href="admin_panel/admin_panel" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -490,7 +490,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="approve.php">
+                <a href="approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -512,7 +512,7 @@ function updateSlider(){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="jobs/view_jobs.php">
+                        <a href="jobs/view_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -521,7 +521,7 @@ function updateSlider(){
                     </li>
 
                     <li class="active">
-                        <a href="jobs/post_jobs.php">
+                        <a href="jobs/post_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -530,7 +530,7 @@ function updateSlider(){
                     </li>
 
                     <li class="">
-                        <a href="jobs/jobs_panel.php">
+                        <a href="jobs/jobs_panel">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -543,7 +543,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="reports/reports.php">
+                <a href="reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -554,7 +554,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="company/companies.php">
+                <a href="company/companies">
                     <i class="menu-icon fa fa-picture-o"></i>
                     <span class="menu-text"> Companies </span>
                 </a>
@@ -575,7 +575,7 @@ function updateSlider(){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="search/advanced_search.php">
+                        <a href="search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -584,7 +584,7 @@ function updateSlider(){
                     </li>
 
                     <li class="">
-                        <a href="Status.php">
+                        <a href="Status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -593,7 +593,7 @@ function updateSlider(){
                     </li>
 
                     <li class="">
-                        <a href="Approve.php">
+                        <a href="Approve">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Approve
                         </a>
@@ -1510,7 +1510,7 @@ function updateSlider(){
                     /**
                      //or fetch data from database, fetch those that match "query"
                      source: function(query, process) {
-						  $.ajax({url: 'remote_source.php?q='+encodeURIComponent(query)})
+						  $.ajax({url: 'remote_source?q='+encodeURIComponent(query)})
 						  .done(function(result_items){
 							process(result_items);
 						  });

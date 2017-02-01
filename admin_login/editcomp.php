@@ -7,7 +7,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../login.php");
+    header("Location: ../login");
 
 
 }
@@ -43,19 +43,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports.php";
+            location.href = "reports";
 
         }
         function myfuncadmin() {
-            location.href = "admin_panel/admin_panel.php";
+            location.href = "admin_panel/admin_panel";
 
         }
         function myfuncjobs() {
-            location.href = "jobs/jobs_panel.php";
+            location.href = "jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "settings.php";
+            location.href = "settings";
 
         }
 
@@ -213,7 +213,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                             ?>
 
                                                             <li>
-                                                                <a href="approve.php?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -296,7 +296,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="approve.php">
+                            <a href="approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -409,7 +409,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="profile/profile.php" >
+                <a href="profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -424,7 +424,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="settings.php" >
+                <a href="settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -437,7 +437,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="admin_panel/admin_panel.php" >
+                <a href="admin_panel/admin_panel" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -450,7 +450,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="approve.php">
+                <a href="approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -472,7 +472,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="jobs/view_jobs.php">
+                        <a href="jobs/view_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -481,7 +481,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="jobs/post_jobs.php">
+                        <a href="jobs/post_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -490,7 +490,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="jobs/jobs_panel.php">
+                        <a href="jobs/jobs_panel">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -503,7 +503,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="reports/reports.php">
+                <a href="reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -514,7 +514,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
             <li class="">
-                <a href="company/companies.php">
+                <a href="company/companies">
                     <i class="menu-icon fa fa-picture-o"></i>
                     <span class="menu-text"> Companies </span>
                 </a>
@@ -535,7 +535,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="search/advanced_search.php">
+                        <a href="search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -544,7 +544,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="Status.php">
+                        <a href="Status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -553,7 +553,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="Approve.php">
+                        <a href="Approve">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Approve
                         </a>

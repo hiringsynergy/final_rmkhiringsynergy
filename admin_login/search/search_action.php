@@ -8,7 +8,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 
@@ -48,23 +48,23 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
         function myfuncadmin() {
-            location.href = "../admin_panel/admin_panel_woexport.php";
+            location.href = "../admin_panel/admin_panel_woexport";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/jobs_panel.php";
+            location.href = "../jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }function btnclick(){
 
-            location.href = "../admin_panel/admin_panel.php";
+            location.href = "../admin_panel/admin_panel";
 
         }
         function showStudent(str) {
@@ -84,7 +84,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../admin_panel/getstudent_export.php?id="+str,true);
+                xmlhttp.open("GET","../admin_panel/getstudent_export?id="+str,true);
                 xmlhttp.send();
             }
         }
@@ -273,7 +273,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
     //sending mails
 
-    require "../email/PHPMailer/PHPMailerAutoload.php";
+    require "../email/PHPMailer/PHPMailerAutoload";
 
     $mail=new PHPMailer();
 
@@ -381,7 +381,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
     }
 
-    header("Location: advanced_search.php");
+    header("Location: advanced_search");
 
 }
 
@@ -436,7 +436,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
     //sending mails
 
-    require "../email/PHPMailer/PHPMailerAutoload.php";
+    require "../email/PHPMailer/PHPMailerAutoload";
 
     $mail=new PHPMailer();
 
@@ -576,7 +576,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
     }
-    header("Location: advanced_search.php");
+    header("Location: advanced_search");
 
 
 
@@ -607,7 +607,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="search_action.php" class="navbar-brand">
+            <a href="search_action" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -721,7 +721,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                                             ?>
 
                                                             <li>
-                                                                <a href="../approve.php?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -804,7 +804,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                             </ul>
                                         </li>
                                         <li class="dropdown-footer">
-                                            <a href="../approve.php">
+                                            <a href="../approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -850,14 +850,14 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -866,7 +866,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -932,7 +932,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard </span>
                 </a>
@@ -941,7 +941,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -956,7 +956,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -969,7 +969,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel.php" >
+                <a href="../admin_panel/admin_panel" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -982,7 +982,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../approve.php">
+                <a href="../approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -1007,7 +1007,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../jobs/view_jobs.php">
+                        <a href="../jobs/view_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -1016,7 +1016,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     </li>
 
                     <li class="">
-                        <a href="../jobs/post_jobs.php">
+                        <a href="../jobs/post_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -1025,7 +1025,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     </li>
 
                     <li class="">
-                        <a href="../jobs/jobs_panel.php">
+                        <a href="../jobs/jobs_panel">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -1039,7 +1039,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -1064,7 +1064,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../company/create_company.php">
+                        <a href="../company/create_company">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -1073,7 +1073,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     </li>
 
                     <li class="">
-                        <a href="../company/view_companies.php">
+                        <a href="../company/view_companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -1081,7 +1081,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../company/companies.php">
+                        <a href="../company/companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -1105,7 +1105,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                 <ul class="submenu">
                     <li class="active">
-                        <a href="advanced_search.php">
+                        <a href="advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -1113,7 +1113,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../email/email.php">
+                        <a href="../email/email">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -1122,7 +1122,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     </li>
 
                     <li class="">
-                        <a href="../Status.php">
+                        <a href="../Status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -1767,7 +1767,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 <div id="modal-form" class="modal" tabindex="-1">
 									<div class="modal-dialog">
 										<div class="modal-content">
-                                            <form action="search_action.php" method="post" enctype="multipart/form-data">
+                                            <form action="search_action" method="post" enctype="multipart/form-data">
 
 										<div class="modal-body">
 
@@ -2002,7 +2002,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
+                    //"sAjaxSource": "http://127.0.0.1/table"	,
 
                     //,
                     //"sScrollY": "200px",
@@ -2224,7 +2224,7 @@ $('[data-rel=tooltip]').tooltip({container:'body'});
 
         $('#chk1').click(function(){
             $("button").toggle(200, function(){
-                location.href="../admin_panel/admin_panel_woexport.php"
+                location.href="../admin_panel/admin_panel_woexport"
             });
         });
 
