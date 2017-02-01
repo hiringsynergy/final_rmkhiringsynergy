@@ -6,7 +6,7 @@ $_SESSION['roll']=null;
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -41,15 +41,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/view_jobs.php";
+            location.href = "../jobs/view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
 
@@ -233,9 +233,9 @@ if(isset($_FILES['image']) && isset($_SESSION['user_role'])=='coordinator'){
 //        echo ($errors);
 //    }
 
-    header("Refresh: 800;url='profile.php'");
+    header("Refresh: 800;url='profile'");
 
-    header("Location: profile.php");
+    header("Location: profile");
 
 
 
@@ -276,7 +276,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="profile.php" class="navbar-brand">
+            <a href="profile" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -353,14 +353,14 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="profile.php">
+                            <a href="profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -369,7 +369,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -429,7 +429,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -438,7 +438,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
             </li>
 
             <li class="active">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -449,7 +449,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -458,7 +458,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
             </li>
 
             <li>
-                <a href="../jobs/view_jobs.php" >
+                <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -470,7 +470,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -484,7 +484,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
             <li class="">
-                <a href="../company/view_companies.php" >
+                <a href="../company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -496,7 +496,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
             <li class="">
-                <a href="../../coordinator_login/search/advanced_search.php">
+                <a href="../../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>
@@ -528,7 +528,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                 <div class=" col-xs-12 center" >
 
 
-                    <form action="profile.php" method="get">
+                    <form action="profile" method="get">
                         <label class="red bolder"> Search Register Number  -</label>
 
 
@@ -645,7 +645,6 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                                     <div class="hr hr16 dotted"></div>
                                 </div>
-
 
                                 <?php
 
@@ -2334,7 +2333,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 <!---->
 <!--                        <div id="modal-form" class="modal" tabindex="-1">-->
 <!--                            <div class="modal-dialog">-->
-<!--                                <form class="modal-content" action="profile.php" method="post" enctype = "multipart/form-data">-->
+<!--                                <form class="modal-content" action="profile" method="post" enctype = "multipart/form-data">-->
 <!--                                    <div class="modal-header">-->
 <!--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
 <!--                                        <h4 class="blue bigger">Click here to Upload Photo</h4>-->

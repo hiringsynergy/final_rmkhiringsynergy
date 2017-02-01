@@ -353,7 +353,7 @@ else if(isset($_POST['proceed'])){
                     $mail->isHTML(true);
 
                     $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/new_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
 
 
 
