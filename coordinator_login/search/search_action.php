@@ -8,7 +8,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 
@@ -48,23 +48,23 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
         function myfuncadmin() {
-            location.href = "../admin_panel/admin_panel_woexport.php";
+            location.href = "../admin_panel/admin_panel_woexport";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/jobs_panel.php";
+            location.href = "../jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }function btnclick(){
 
-            location.href = "../admin_panel/admin_panel.php";
+            location.href = "../admin_panel/admin_panel";
 
         }
         function showStudent(str) {
@@ -84,7 +84,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../admin_panel/getstudent_export.php?id="+str,true);
+                xmlhttp.open("GET","../admin_panel/getstudent_export?id="+str,true);
                 xmlhttp.send();
             }
         }
@@ -381,7 +381,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter'])  && isset($_SESSION['us
 
     }
 
-    header("Location: advanced_search.php");
+    header("Location: advanced_search");
 
 }
 
@@ -576,7 +576,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
     }
-    header("Location: advanced_search.php");
+    header("Location: advanced_search");
 
 
 
@@ -607,7 +607,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="search_action.php" class="navbar-brand">
+            <a href="search_action" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -680,14 +680,14 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -696,7 +696,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -762,7 +762,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -771,7 +771,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -782,7 +782,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -791,7 +791,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             </li>
 
             <li>
-                <a href="../jobs/view_jobs.php" >
+                <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -803,7 +803,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -817,7 +817,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
             <li class="">
-                <a href="../company/view_companies.php" >
+                <a href="../company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -829,7 +829,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
             <li class="active">
-                <a href="../../coordinator_login/search/advanced_search.php">
+                <a href="../../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>
@@ -1465,7 +1465,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                             <div id="modal-form" class="modal" tabindex="-1">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <form action="search_action.php" method="post" enctype="multipart/form-data">
+                                        <form action="search_action" method="post" enctype="multipart/form-data">
 
                                             <div class="modal-body">
 
@@ -1700,7 +1700,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                             //"bProcessing": true,
                             //"bServerSide": true,
-                            //"sAjaxSource": "http://127.0.0.1/table.php"	,
+                            //"sAjaxSource": "http://127.0.0.1/table"	,
 
                             //,
                             //"sScrollY": "200px",
@@ -1922,7 +1922,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                 $('#chk1').click(function(){
                     $("button").toggle(200, function(){
-                        location.href="../admin_panel/admin_panel_woexport.php"
+                        location.href="../admin_panel/admin_panel_woexport"
                     });
                 });
 

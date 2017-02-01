@@ -6,7 +6,7 @@ $_SESSION['roll']=null;
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -163,7 +163,7 @@ while( $row= mysqli_fetch_assoc($result)) {
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="blue bigger">Please fill the following form fields</h4>
                 </div>
-                <form action="jobs_panel.php" method="post">
+                <form action="jobs_panel" method="post">
 
                 <div class="modal-body">
                     <div class="row">

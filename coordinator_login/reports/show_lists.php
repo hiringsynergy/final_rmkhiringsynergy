@@ -4,7 +4,7 @@ ob_start();
 
 if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['user_role'])!='coordinator') {
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -46,35 +46,35 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports.php";
+            location.href = "reports";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/view_jobs.php";
+            location.href = "../jobs/view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
         function check1(str) {
 
 
 
-            location.href = "show_lists.php?jid="+str+"&flag=0";
+            location.href = "show_lists?jid="+str+"&flag=0";
 
         }
         function check2(str) {
 
 
 
-            location.href = "show_lists.php?jid="+str+"&flag=1";
+            location.href = "show_lists?jid="+str+"&flag=1";
         }
         function check3(str) {
 
 
 
-            location.href = "show_lists.php?jid="+str+"&flag=2";
+            location.href = "show_lists?jid="+str+"&flag=2";
         }
 
 
@@ -151,7 +151,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="show_lists.php" class="navbar-brand">
+            <a href="show_lists" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -232,14 +232,14 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -248,7 +248,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -309,7 +309,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -318,7 +318,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -329,7 +329,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -338,7 +338,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
             </li>
 
             <li>
-                <a href="../jobs/view_jobs.php" >
+                <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -350,7 +350,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
             <li class="active">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -364,7 +364,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
             <li class="">
-                <a href="../company/view_companies.php" >
+                <a href="../company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -376,7 +376,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
             <li class="">
-                <a href="../../coordinator_login/search/advanced_search.php">
+                <a href="../../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>
@@ -1016,7 +1016,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
+                    //"sAjaxSource": "http://127.0.0.1/table"	,
 
                     //,
                     //"sScrollY": "200px",

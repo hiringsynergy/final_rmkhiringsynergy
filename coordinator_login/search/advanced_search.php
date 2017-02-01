@@ -5,7 +5,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -43,7 +43,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
 
@@ -68,11 +68,11 @@ function updateSlider(){
     }
 }
         function myfuncjobs() {
-            location.href = "../jobs/view_jobs.php";
+            location.href = "../jobs/view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
 
@@ -150,7 +150,7 @@ function updateSlider(){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="advanced_search.php" class="navbar-brand">
+            <a href="advanced_search" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -224,14 +224,14 @@ function updateSlider(){
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -240,7 +240,7 @@ function updateSlider(){
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -295,7 +295,7 @@ function updateSlider(){
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -304,7 +304,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -315,7 +315,7 @@ function updateSlider(){
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -324,7 +324,7 @@ function updateSlider(){
             </li>
 
             <li>
-                <a href="../jobs/view_jobs.php" >
+                <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -336,7 +336,7 @@ function updateSlider(){
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -350,7 +350,7 @@ function updateSlider(){
 
 
             <li class="">
-                <a href="../company/view_companies.php" >
+                <a href="../company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -362,7 +362,7 @@ function updateSlider(){
 
 
             <li class="active">
-                <a href="../../coordinator_login/search/advanced_search.php">
+                <a href="../../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>
@@ -404,7 +404,7 @@ function updateSlider(){
                         <!-- PAGE CONTENT BEGINS -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-12">
-                                <form action="search_action.php" method="get">
+                                <form action="search_action" method="get">
                                     <div class="tabbable">
                                         <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
                                             <li class="active">
@@ -870,7 +870,7 @@ function updateSlider(){
 
                                                         <div class="step-content pos-rel">
 
-                                                            <form class="form-horizontal" action="search_action.php" method="get" id="sample-form">
+                                                            <form class="form-horizontal" action="search_action" method="get" id="sample-form">
                                                                 <div class="row">
                                                                     <div class="col-xs-8 col-sm-5">
 
@@ -1462,7 +1462,7 @@ function updateSlider(){
                     /**
                      //or fetch data from database, fetch those that match "query"
                      source: function(query, process) {
-						  $.ajax({url: 'remote_source.php?q='+encodeURIComponent(query)})
+						  $.ajax({url: 'remote_source?q='+encodeURIComponent(query)})
 						  .done(function(result_items){
 							process(result_items);
 						  });

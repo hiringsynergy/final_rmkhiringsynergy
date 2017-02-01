@@ -8,7 +8,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -46,15 +46,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/view_jobs.php";
+            location.href = "../jobs/view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
 
@@ -119,7 +119,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../company/getcompany.php?id="+str,true);
+                xmlhttp.open("GET","../company/getcompany?id="+str,true);
                 xmlhttp.send();
             }
         }
@@ -179,7 +179,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="company_details.php" class="navbar-brand">
+            <a href="company_details" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -253,14 +253,14 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -269,7 +269,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -323,7 +323,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -332,7 +332,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -343,7 +343,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -352,7 +352,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
             </li>
 
             <li class="">
-                <a href="../jobs/view_jobs.php" >
+                <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -364,7 +364,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -378,7 +378,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
 
 
             <li class="active">
-                <a href="../company/view_companies.php" >
+                <a href="../company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -390,7 +390,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
 
 
             <li class="">
-                <a href="../../coordinator_login/search/advanced_search.php">
+                <a href="../../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>

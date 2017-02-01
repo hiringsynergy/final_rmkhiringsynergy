@@ -8,7 +8,7 @@
 
     if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
 
-        header("Location: ../login.php");
+        header("Location: ../login");
 
 
     }
@@ -37,7 +37,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
     $row=mysqli_fetch_assoc($result);
     $pass=$row['password'];
 
-    header("Location: ../coordinator_login/settings.php");
+    header("Location: ../coordinator_login/settings");
 
 
 }
@@ -73,15 +73,15 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports/reports.php";
+            location.href = "reports/reports";
 
         }
         function myfuncjobs() {
-            location.href = "jobs/view_jobs.php";
+            location.href = "jobs/view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "settings.php";
+            location.href = "settings";
 
 
         }
@@ -162,7 +162,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="settings.php" class="navbar-brand">
+            <a href="settings" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -236,14 +236,14 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="settings.php">
+                            <a href="settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="profile/profile.php">
+                            <a href="profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -252,7 +252,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../login_out/logout.php">
+                            <a href="../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -307,7 +307,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="index.php">
+                <a href="index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -316,7 +316,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
             </li>
 
             <li class="">
-                <a href="profile/profile.php" >
+                <a href="profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Profile
@@ -327,7 +327,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
             </li>
 
             <li class="active">
-                <a href="settings.php" >
+                <a href="settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
                 </a>
@@ -336,7 +336,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
             </li>
 
             <li>
-                <a href="jobs/view_jobs.php" >
+                <a href="jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>
 
@@ -348,7 +348,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
 
             <li class="">
-                <a href="reports/reports.php">
+                <a href="reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -362,7 +362,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
 
             <li class="">
-                <a href="company/view_companies.php" >
+                <a href="company/view_companies" >
 
                     <i class="menu-icon fa fa-laptop"></i>
                     <span class="menu-text"> Companies </span>
@@ -374,7 +374,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
 
             <li class="">
-                <a href="../coordinator_login/search/advanced_search.php">
+                <a href="../coordinator_login/search/advanced_search">
                     <i class="menu-icon fa fa-search"></i>
                     Advanced Search
                 </a>
@@ -864,7 +864,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
                     var value2 = $('#form2').val();
 
-                   window.location.href="settings.php?id=<?php echo $username ?>&value="+value2+"";
+                   window.location.href="settings?id=<?php echo $username ?>&value="+value2+"";
 //
 //                        $('#modal-wizard-container')
 //                            .ace_wizard({
@@ -927,7 +927,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
                         $.ajax({
 
-                            url: 'process.php',
+                            url: 'process',
                             type: 'GET',
                             data: {pass: input},
                             async: false,
@@ -1031,7 +1031,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
                         }
 
                     } );
-                    window.location.href = "settings.php";
+                    window.location.href = "settings";
 
 
                 }).on('stepclick.fu.wizard', function(e){
