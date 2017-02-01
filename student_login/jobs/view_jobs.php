@@ -4,7 +4,7 @@ ob_start();
 
 if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['user_role'])!='student') {
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 }
 if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
@@ -22,7 +22,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
     }
 
 
-    header("Location: view_jobs.php");
+    header("Location: view_jobs");
 
 
 }
@@ -62,22 +62,22 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncprofile() {
-            location.href = "../profile/profile.php";
+            location.href = "../profile/profile";
 
         }
         function myfuncjobs() {
-            location.href = "view_jobs.php";
+            location.href = "view_jobs";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
 
         function apply(id) {
 
 
-            location.href = "view_jobs.php?apply=" + id;
+            location.href = "view_jobs?apply=" + id;
 
 
         }
@@ -132,7 +132,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="view_jobs.php" class="navbar-brand">
+            <a href="view_jobs" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -213,7 +213,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
 
                                     <li>
-                                        <a href="../jobs/view_jobs.php?job_id=<?php echo $row_notification['job_id'] ;?>">
+                                        <a href="../jobs/view_jobs?job_id=<?php echo $row_notification['job_id'] ;?>">
                                             <div class="clearfix">
                                                     <span class="pull-left" style="font-weight: 600; font-size: 12px;">
                                                         <i class="btn btn-xs no-hover btn-pink fa fa-comment "></i>
@@ -240,7 +240,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                         </li>
 
                         <li class="dropdown-footer">
-                            <a href="../jobs/view_jobs.php">
+                            <a href="../jobs/view_jobs">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -287,14 +287,14 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -303,7 +303,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -361,7 +361,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text">Dashboard</span>
                 </a>
@@ -370,7 +370,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
             </li>
 
             <li class="">
-                <a href="../profile/profile.php">
+                <a href="../profile/profile">
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -385,7 +385,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
             </li>
 
             <li class="">
-                <a href="../settings.php">
+                <a href="../settings">
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -397,7 +397,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
             </li>
             <li class="active">
-                <a href="../jobs/view_jobs.php">
+                <a href="../jobs/view_jobs">
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs</span>
 
@@ -410,7 +410,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
             </li>
 
             <li class="">
-                <a href="../company/companies.php">
+                <a href="../company/companies">
 
                     <i class="menu-icon fa fa-laptop"></i>
 
@@ -590,7 +590,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                         <td height="80" width="370" class="">
 
                                                             <b>
-                                                                <a href="zoho.php" class="job "
+                                                                <a href="zoho" class="job "
                                                                    style="text-decoration:none; font-size: 23px"
                                                                    data-action="reload">
 
@@ -992,7 +992,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                                 </div>
 
                                                                                 <div class="profile-info-value col-xs-6">
-                                                                                    <a href="download.php?file=<?php echo $row['company_id'] ?>"
+                                                                                    <a href="download?file=<?php echo $row['company_id'] ?>"
                                                                                        name="presentation"
                                                                                        class="btn btn-yellow bold">Download
                                                                                         Presentation</a>
@@ -1161,7 +1161,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                         <td height="80" width="370" class="">
 
                                                             <b>
-                                                                <a href="zoho.php" class="job "
+                                                                <a href="zoho" class="job "
                                                                    style="text-decoration:none; font-size: 23px"
                                                                    data-action="reload">
 
@@ -1563,7 +1563,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                                 </div>
 
                                                                                 <div class="profile-info-value col-xs-6">
-                                                                                    <a href="download.php?file=<?php echo $row['company_id'] ?>"
+                                                                                    <a href="download?file=<?php echo $row['company_id'] ?>"
                                                                                        name="presentation"
                                                                                        class="btn btn-yellow bold">Download
                                                                                         Presentation</a>
