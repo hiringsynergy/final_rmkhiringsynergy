@@ -5,7 +5,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -84,7 +84,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 //    $ttt = $_GET['submit_title'];
 //    $iii = $_GET['idfromget'];
 //
-//    include "../connect.php";
+//    include "../connect";
 //    $query = "UPDATE jobs SET job_title='{$ttt}' where job_id={$iii}";
 //
 //    $result = mysqli_query($connect, $query);
@@ -138,7 +138,7 @@ while( $row= mysqli_fetch_assoc($result)) {
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="blue bigger">Please fill the following form fields</h4>
                 </div>
-                <form action="jobs_panel.php" method="post">
+                <form action="jobs_panel" method="post">
 
                 <div class="modal-body">
                     <div class="row">

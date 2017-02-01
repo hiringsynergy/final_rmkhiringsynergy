@@ -8,7 +8,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../../login.php");
+    header("Location: ../../login");
 
 
 }
@@ -46,19 +46,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports.php";
+            location.href = "../reports/reports";
 
         }
         function myfuncadmin() {
-            location.href = "../admin_panel/admin_panel.php";
+            location.href = "../admin_panel/admin_panel";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/jobs_panel.php";
+            location.href = "../jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "../settings.php";
+            location.href = "../settings";
 
         }
 
@@ -122,7 +122,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../company/getcompany.php?id="+str,true);
+                xmlhttp.open("GET","../company/getcompany?id="+str,true);
                 xmlhttp.send();
             }
         }
@@ -182,7 +182,7 @@ die(" " . mysqli_error($connect));
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="companies.php" class="navbar-brand">
+            <a href="companies" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -298,7 +298,7 @@ die(" " . mysqli_error($connect));
                                                             ?>
 
                                                             <li>
-                                                                <a href="../approve.php?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -381,7 +381,7 @@ die(" " . mysqli_error($connect));
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="../approve.php">
+                            <a href="../approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -428,14 +428,14 @@ die(" " . mysqli_error($connect));
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings.php">
+                            <a href="../settings">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -444,7 +444,7 @@ die(" " . mysqli_error($connect));
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -507,7 +507,7 @@ die(" " . mysqli_error($connect));
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text">Dashboard </span>
                 </a>
@@ -516,7 +516,7 @@ die(" " . mysqli_error($connect));
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -531,7 +531,7 @@ die(" " . mysqli_error($connect));
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -544,7 +544,7 @@ die(" " . mysqli_error($connect));
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel.php" >
+                <a href="../admin_panel/admin_panel" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -557,7 +557,7 @@ die(" " . mysqli_error($connect));
             </li>
 
             <li class="">
-                <a href="../approve.php">
+                <a href="../approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -582,7 +582,7 @@ die(" " . mysqli_error($connect));
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../jobs/view_jobs.php">
+                        <a href="../jobs/view_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -591,7 +591,7 @@ die(" " . mysqli_error($connect));
                     </li>
 
                     <li class="">
-                        <a href="../jobs/post_jobs.php">
+                        <a href="../jobs/post_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -600,7 +600,7 @@ die(" " . mysqli_error($connect));
                     </li>
 
                     <li class="">
-                        <a href="../jobs/jobs_panel.php">
+                        <a href="../jobs/jobs_panel">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -614,7 +614,7 @@ die(" " . mysqli_error($connect));
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -639,7 +639,7 @@ die(" " . mysqli_error($connect));
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../company/create_company.php">
+                        <a href="../company/create_company">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -648,7 +648,7 @@ die(" " . mysqli_error($connect));
                     </li>
 
                     <li class="">
-                        <a href="../company/view_companies.php">
+                        <a href="../company/view_companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -656,7 +656,7 @@ die(" " . mysqli_error($connect));
                         <b class="arrow"></b>
                     </li>
                     <li class="active">
-                        <a href="../company/companies.php">
+                        <a href="../company/companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -680,7 +680,7 @@ die(" " . mysqli_error($connect));
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../search/advanced_search.php">
+                        <a href="../search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -688,7 +688,7 @@ die(" " . mysqli_error($connect));
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../email/email.php">
+                        <a href="../email/email">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -697,7 +697,7 @@ die(" " . mysqli_error($connect));
                     </li>
 
                     <li class="">
-                        <a href="../status.php">
+                        <a href="../status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -864,7 +864,7 @@ die(" " . mysqli_error($connect));
                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                     </a>
 
-                                                    <a class="red" href="../company/companies.php?delete=<?php echo $row['company_id'] ?>">
+                                                    <a class="red" href="../company/companies?delete=<?php echo $row['company_id'] ?>">
                                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                     </a>
                                                 </div>
@@ -1034,7 +1034,7 @@ die(" " . mysqli_error($connect));
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
+                    //"sAjaxSource": "http://127.0.0.1/table"	,
 
                     //,
                     //"sScrollY": "200px",
@@ -1108,7 +1108,7 @@ die(" " . mysqli_error($connect));
 
         $('#chk1').click(function(){
             $("button").toggle(200, function(){
-                location.href="../admin_panel/admin_panel.php"
+                location.href="../admin_panel/admin_panel"
             });
         });
 
