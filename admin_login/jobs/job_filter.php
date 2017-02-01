@@ -3,7 +3,7 @@ ob_start();
 
 if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['user_role'])!='admin' ) {
 
-    header("Location: ../../login");
+    header("Location: ../../login.php");
 
 
 }
@@ -42,7 +42,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports";
+            location.href = "../reports.php";
 
         }
 
@@ -67,15 +67,15 @@ function updateSlider(){
     }
 }
         function myfuncadmin() {
-            location.href = "../admin_panel/admin_panel";
+            location.href = "../admin_panel/admin_panel.php";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/jobs_panel";
+            location.href = "../jobs/jobs_panel.php";
 
         }
         function myfuncsettings() {
-            location.href = "../settings";
+            location.href = "../settings.php";
 
         }
 
@@ -305,7 +305,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-        header("Location: filter_result?jid=$id");
+        header("Location: filter_result.php?jid=$id");
 
 
 
@@ -329,7 +329,7 @@ if(isset($_GET['filter_job'])){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="../index" class="navbar-brand">
+            <a href="../index.php" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <img src="../../logos/rmklogo.JPG" style="height: 25px;">
@@ -418,7 +418,7 @@ if(isset($_GET['filter_job'])){
                                                             ?>
 
                                                             <li>
-                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="../approve.php?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -501,7 +501,7 @@ if(isset($_GET['filter_job'])){
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="../approve">
+                            <a href="../approve.php">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -556,7 +556,7 @@ if(isset($_GET['filter_job'])){
                         </li>
 
                         <li>
-                            <a href="../profile/profile">
+                            <a href="../profile/profile.php">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -565,7 +565,7 @@ if(isset($_GET['filter_job'])){
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout">
+                            <a href="../../login_out/logout.php">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -627,7 +627,7 @@ if(isset($_GET['filter_job'])){
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index">
+                <a href="../index.php">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard </span>
                 </a>
@@ -636,7 +636,7 @@ if(isset($_GET['filter_job'])){
             </li>
 
             <li class="">
-                <a href="../profile/profile" >
+                <a href="../profile/profile.php" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -651,7 +651,7 @@ if(isset($_GET['filter_job'])){
             </li>
 
             <li class="">
-                <a href="../settings" >
+                <a href="../settings.php" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -664,7 +664,7 @@ if(isset($_GET['filter_job'])){
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel" >
+                <a href="../admin_panel/admin_panel.php" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -677,7 +677,7 @@ if(isset($_GET['filter_job'])){
             </li>
 
             <li class="">
-                <a href="../approve">
+                <a href="../approve.php">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -702,7 +702,7 @@ if(isset($_GET['filter_job'])){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../jobs/view_jobs">
+                        <a href="../jobs/view_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -711,7 +711,7 @@ if(isset($_GET['filter_job'])){
                     </li>
 
                     <li class="active">
-                        <a href="../jobs/post_jobs">
+                        <a href="../jobs/post_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -720,7 +720,7 @@ if(isset($_GET['filter_job'])){
                     </li>
 
                     <li class="">
-                        <a href="../jobs/jobs_panel">
+                        <a href="../jobs/jobs_panel.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -734,7 +734,7 @@ if(isset($_GET['filter_job'])){
 
 
             <li class="">
-                <a href="../reports/reports">
+                <a href="../reports/reports.php">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -759,7 +759,7 @@ if(isset($_GET['filter_job'])){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../company/create_company">
+                        <a href="../company/create_company.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -768,7 +768,7 @@ if(isset($_GET['filter_job'])){
                     </li>
 
                     <li class="">
-                        <a href="../company/companies">
+                        <a href="../company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -776,7 +776,7 @@ if(isset($_GET['filter_job'])){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../company/companies">
+                        <a href="../company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -800,7 +800,7 @@ if(isset($_GET['filter_job'])){
 
                 <ul class="submenu ">
                     <li class="">
-                        <a href="job_filter">
+                        <a href="job_filter.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -808,7 +808,7 @@ if(isset($_GET['filter_job'])){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../email/email">
+                        <a href="../email/email.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -817,7 +817,7 @@ if(isset($_GET['filter_job'])){
                     </li>
 
                     <li class="">
-                        <a href="../Status">
+                        <a href="../Status.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -869,7 +869,7 @@ if(isset($_GET['filter_job'])){
                 <form class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <form action="job_filter" method="get" >
+                        <form action="job_filter.php" method="get" >
 
                             <?php
 
@@ -1647,7 +1647,7 @@ if(isset($_GET['filter_job'])){
                     /**
                      //or fetch data from database, fetch those that match "query"
                      source: function(query, process) {
-						  $.ajax({url: 'remote_source?q='+encodeURIComponent(query)})
+						  $.ajax({url: 'remote_source.php?q='+encodeURIComponent(query)})
 						  .done(function(result_items){
 							process(result_items);
 						  });

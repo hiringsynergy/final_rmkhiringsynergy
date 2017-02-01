@@ -128,7 +128,7 @@ $result=mysqli_query($connect,$query);
 
 
 
-    header("Location: index");
+    header("Location: index.php");
 
 }
 
@@ -154,7 +154,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 
 
-    header("Location: index");
+    header("Location: index.php");
 
 
 }
@@ -193,24 +193,23 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 		<script type="text/javascript">
 
             function myfuncreport() {
-                location.href = "reports/reports";
+                location.href = "reports/reports.php";
             }
 
             function myfuncadmin() {
-                location.href = "admin_panel/admin_panel";
+                location.href = "admin_panel/admin_panel.php";
 
             }
             function myfuncjobs() {
-                location.href = "jobs/jobs_panel";
+                location.href = "jobs/jobs_panel.php";
 
             }
             function myfuncsettings() {
-                location.href = "settings";
+                location.href = "settings.php";
 
             }
 
 
-}
 
 		</script>
 
@@ -280,7 +279,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
     {
 
-        header("Location: ../login");
+        header("Location: ../login.php");
 
 
     }
@@ -302,7 +301,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index" class="navbar-brand">
+					<a href="index.php" class="navbar-brand">
                         <small>
                             <i class=""></i>
                             <?php
@@ -418,7 +417,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                                     ?>
 
                                                                     <li>
-                                                                        <a href="approve?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                        <a href="approve.php?roll=<?php  echo $row1['st_roll']; ?>">
                                                                             <div class="clearfix">
 
 		             <span class="pull-left">
@@ -501,7 +500,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                     </ul>
                                                 </li>
                         <li class="dropdown-footer">
-                            <a href="approve">
+                            <a href="approve.php">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -552,14 +551,14 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="settings">
+									<a href="settings.php">
 										<i class="ace-icon fa fa-cog"></i>
 										Settings
 									</a>
 								</li>
 
 								<li>
-									<a href="profile/profile">
+									<a href="profile/profile.php">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
@@ -568,7 +567,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 								<li class="divider"></li>
 
 								<li>
-									<a href="../login_out/logout">
+									<a href="../login_out/logout.php">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>
@@ -628,7 +627,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index">
+						<a href="index.php">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard</span>
 						</a>
@@ -637,7 +636,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 					</li>
 
 					<li class="">
-						<a href="profile/profile" >
+						<a href="profile/profile.php" >
 							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text">
 							Your Profile
@@ -652,7 +651,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 					</li>
 
 					<li class="">
-						<a href="settings" >
+						<a href="settings.php" >
 							<i class="menu-icon fa fa-list"></i>
 							<span class="menu-text"> Settings </span>
 
@@ -665,7 +664,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 					</li>
 
 					<li class="">
-						<a href="admin_panel/admin_panel" >
+						<a href="admin_panel/admin_panel.php" >
 							<i class="menu-icon fa fa-pencil-square-o"></i>
 							<span class="menu-text"> Admin Panel </span>
 
@@ -678,7 +677,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 					</li>
 
 					<li class="">
-						<a href="approve">
+						<a href="approve.php">
 							<i class="menu-icon fa fa-list-alt"></i>
 							<span class="menu-text"> Approve </span>
 						</a>
@@ -703,7 +702,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 						<ul class="submenu">
 							<li class="">
-								<a href="jobs/view_jobs">
+								<a href="jobs/view_jobs.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									View all Jobs
 								</a>
@@ -712,7 +711,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 							</li>
 
 							<li class="">
-								<a href="jobs/post_jobs">
+								<a href="jobs/post_jobs.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Post Job
 								</a>
@@ -721,7 +720,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 							</li>
 
 							<li class="">
-								<a href="jobs/jobs_panel">
+								<a href="jobs/jobs_panel.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Jobs Panel
 								</a>
@@ -735,7 +734,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 
 					<li class="">
-						<a href="reports/reports">
+						<a href="reports/reports.php">
 
 							<i class="menu-icon fa fa-bar-chart"></i>
 
@@ -760,7 +759,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 						<ul class="submenu">
 							<li class="">
-								<a href="company/create_company">
+								<a href="company/create_company.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Create Company
 								</a>
@@ -769,7 +768,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 							</li>
 
 							<li class="">
-								<a href="company/companies">
+								<a href="company/companies.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									View Companies
 								</a>
@@ -777,7 +776,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 								<b class="arrow"></b>
 							</li>
                             <li class="">
-								<a href="company/companies">
+								<a href="company/companies.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Company Panel
 								</a>
@@ -801,7 +800,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 						<ul class="submenu">
 							<li class="">
-								<a href="../admin_login/search/advanced_search">
+								<a href="../admin_login/search/advanced_search.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Advanced Search
 								</a>
@@ -809,7 +808,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 								<b class="arrow"></b>
 							</li>
                             <li class="">
-								<a href="email/email">
+								<a href="email/email.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Email
 								</a>
@@ -818,7 +817,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 							</li>
 
 							<li class="">
-								<a href="Status">
+								<a href="Status.php">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Status
 								</a>
@@ -891,7 +890,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 
                                     <div class="col-xs-5 pricing-box">
-                                        <form action="index" method="get">
+                                        <form action="index.php" method="get">
 
 
                                             <div class="widget-box widget-color-orange" id="shadow">
@@ -933,7 +932,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                     <div class="col-xs-1"></div>
 
                                     <div class="col-xs-5 pricing-box">
-                                        <form action="crud/action_update">
+                                        <form action="crud/action_update.php">
 
 
                                         <div class="widget-box widget-color-blue" id="shadow">
@@ -998,7 +997,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 				                <div class="row">
 
                                     <div class="col-xs-5 pricing-box">
-                                        <form action="crud/action_insert" method="get">
+                                        <form action="crud/action_insert.php" method="get">
                                         <div class="widget-box widget-color-green" id="shadow">
                                             <div class="widget-header">
                                                 <h5 class="widget-title bigger white">Insert Into Student Table</h5>
@@ -1057,7 +1056,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                             <div class="widget-header">
                                                 <h5 class="widget-title bigger white">Delete Student Table</h5>
                                             </div>
-                                            <form action="index" method="get"  >
+                                            <form action="index.php" method="get"  >
 
                                             <div class="widget-body">
 
@@ -1100,7 +1099,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                 <div class="space-16"> </div>
                                                 <div class="space-16"></div>
                                                 <div>
-                                                    <button type="submit" href="index" id="bootbox-delete" name="delete" class="btn btn-block btn-danger">
+                                                    <button type="submit" href="index.php" id="bootbox-delete" name="delete" class="btn btn-block btn-danger">
                                                         <span>Delete</span>
                                                     </button>
                                                 </div>
@@ -1301,8 +1300,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
                 include "connect.php";
                 $query1_insert="SELECT * FROM table_map";
-                $result1_insert=mysqli_query($connect
-, $query1_insert);
+                $result1_insert=mysqli_query($connect, $query1_insert);
                 while ($row=mysqli_fetch_assoc($result1_insert)){
 
 

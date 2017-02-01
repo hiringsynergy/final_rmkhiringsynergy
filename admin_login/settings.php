@@ -12,7 +12,7 @@ session_start();
 
     if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-        header("Location: ../login");
+        header("Location: ../login.php");
 
 
     }
@@ -43,7 +43,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
     $row=mysqli_fetch_assoc($result);
     $pass=$row['password'];
 
-    header("Location: ../admin_login/settings");
+    header("Location: ../admin_login/settings.php");
 
 
 }
@@ -79,19 +79,19 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports/reports";
+            location.href = "reports/reports.php";
 
         }
         function myfuncadmin() {
-            location.href = "admin_panel/admin_panel";
+            location.href = "admin_panel/admin_panel.php";
 
         }
         function myfuncjobs() {
-            location.href = "jobs/jobs_panel";
+            location.href = "jobs/jobs_panel.php";
 
         }
         function myfuncsettings() {
-            location.href = "settings";
+            location.href = "settings.php";
 
 
         }
@@ -173,7 +173,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="index" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -291,7 +291,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                             ?>
 
                                                             <li>
-                                                                <a href="approve?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="approve.php?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -374,7 +374,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="approve">
+                            <a href="approve.php">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -429,7 +429,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                         </li>
 
                         <li>
-                            <a href="profile/profile">
+                            <a href="profile/profile.php">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -438,7 +438,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../login_out/logout">
+                            <a href="../login_out/logout.php">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -500,7 +500,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="index">
+                <a href="index.php">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text">Dashboard</span>
                 </a>
@@ -509,7 +509,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
             </li>
 
             <li class="">
-                <a href="profile/profile" >
+                <a href="profile/profile.php" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -524,7 +524,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
             </li>
 
             <li class="active">
-                <a href="settings" >
+                <a href="settings.php" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -537,7 +537,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
             </li>
 
             <li class="">
-                <a href="admin_panel/admin_panel" >
+                <a href="admin_panel/admin_panel.php" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -550,7 +550,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
             </li>
 
             <li class="">
-                <a href="approve">
+                <a href="approve.php">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -575,7 +575,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="jobs/view_jobs">
+                        <a href="jobs/view_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -584,7 +584,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                     </li>
 
                     <li class="">
-                        <a href="jobs/post_jobs">
+                        <a href="jobs/post_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -593,7 +593,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                     </li>
 
                     <li class="">
-                        <a href="jobs/jobs_panel">
+                        <a href="jobs/jobs_panel.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -607,7 +607,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
             <li class="">
-                <a href="reports/reports">
+                <a href="reports/reports.php">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -632,7 +632,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="company/create_company">
+                        <a href="company/create_company.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -641,7 +641,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                     </li>
 
                     <li class="">
-                        <a href="company/companies">
+                        <a href="company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -649,7 +649,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="company/companies">
+                        <a href="company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -673,7 +673,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="search/advanced_search">
+                        <a href="search/advanced_search.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -681,7 +681,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="email/email">
+                        <a href="email/email.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -690,7 +690,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                     </li>
 
                     <li class="">
-                        <a href="Status">
+                        <a href="Status.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -1189,7 +1189,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
                     var value2 = $('#form2').val();
 
-                   window.location.href="settings?id=<?php echo $username ?>&value="+value2+"";
+                   window.location.href="settings.php?id=<?php echo $username ?>&value="+value2+"";
 //
 //                        $('#modal-wizard-container')
 //                            .ace_wizard({
@@ -1252,7 +1252,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
                         $.ajax({
 
-                            url: 'process',
+                            url: 'process.php',
                             type: 'GET',
                             data: {pass: input},
                             async: false,
@@ -1359,7 +1359,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                         }
 
                     } );
-                    window.location.href = "settings";
+                    window.location.href = "settings.php";
 
 
                 }).on('stepclick.fu.wizard', function(e){

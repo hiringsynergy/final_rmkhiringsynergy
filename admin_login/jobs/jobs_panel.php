@@ -8,7 +8,7 @@ ob_start();
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
-    header("Location: ../../login");
+    header("Location: ../../login.php");
 
 
 }
@@ -46,19 +46,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "../reports/reports";
+            location.href = "../reports/reports.php";
 
         }
         function myfuncadmin() {
-            location.href = "../admin_panel/admin_panel";
+            location.href = "../admin_panel/admin_panel.php";
 
         }
         function myfuncjobs() {
-            location.href = "../jobs/jobs_panel";
+            location.href = "../jobs/jobs_panel.php";
 
         }
         function myfuncsettings() {
-            location.href = "../settings";
+            location.href = "../settings.php";
 
         }
         function showUser(str) {
@@ -78,7 +78,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../jobs/getuser?id="+str,true);
+                xmlhttp.open("GET","../jobs/getuser.php?id="+str,true);
                 xmlhttp.send();
             }
         }
@@ -252,7 +252,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="jobs_panel" class="navbar-brand">
+            <a href="jobs_panel.php" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <?php
@@ -368,7 +368,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                             ?>
 
                                                             <li>
-                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="../approve.php?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -451,7 +451,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="../approve">
+                            <a href="../approve.php">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -500,14 +500,14 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
-                            <a href="../settings">
+                            <a href="../settings.php">
                                 <i class="ace-icon fa fa-cog"></i>
                                 Settings
                             </a>
                         </li>
 
                         <li>
-                            <a href="../profile/profile">
+                            <a href="../profile/profile.php">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -516,7 +516,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout">
+                            <a href="../../login_out/logout.php">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -582,7 +582,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="../index">
+                <a href="../index.php">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text">Dashboard </span>
                 </a>
@@ -591,7 +591,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             </li>
 
             <li class="">
-                <a href="../profile/profile" >
+                <a href="../profile/profile.php" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -606,7 +606,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             </li>
 
             <li class="">
-                <a href="../settings" >
+                <a href="../settings.php" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -619,7 +619,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel" >
+                <a href="../admin_panel/admin_panel.php" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -632,7 +632,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             </li>
 
             <li class="">
-                <a href="../approve">
+                <a href="../approve.php">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -657,7 +657,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../jobs/view_jobs">
+                        <a href="../jobs/view_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -666,7 +666,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     </li>
 
                     <li class="">
-                        <a href="../jobs/post_jobs">
+                        <a href="../jobs/post_jobs.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -675,7 +675,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     </li>
 
                     <li class="active">
-                        <a href="../jobs/jobs_panel">
+                        <a href="../jobs/jobs_panel.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -689,7 +689,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
             <li class="">
-                <a href="../reports/reports">
+                <a href="../reports/reports.php">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -714,7 +714,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../company/create_company">
+                        <a href="../company/create_company.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -723,7 +723,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     </li>
 
                     <li class="">
-                        <a href="../company/companies">
+                        <a href="../company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -731,7 +731,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../company/companies">
+                        <a href="../company/companies.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -755,7 +755,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../search/advanced_search">
+                        <a href="../search/advanced_search.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -763,7 +763,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../email/email">
+                        <a href="../email/email.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -772,7 +772,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     </li>
 
                     <li class="">
-                        <a href="../status">
+                        <a href="../Status.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -988,7 +988,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                             <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                         </a>
 
-                                                        <a class="red" href="../jobs/jobs_panel?job_id=<?php echo urlencode($row['job_id']) ?>">
+                                                        <a class="red" href="../jobs/jobs_panel.php?job_id=<?php echo urlencode($row['job_id']) ?>">
                                                             <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                         </a>
                                                     </div>
@@ -1014,7 +1014,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="../jobs/jobs_panel?job_id=<?php echo urlencode($row['job_id']) ?>" class="tooltip-error" data-rel="tooltip"
+                                                                    <a href="../jobs/jobs_panel.php?job_id=<?php echo urlencode($row['job_id']) ?>" class="tooltip-error" data-rel="tooltip"
                                                                        title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
@@ -1139,7 +1139,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 <!---->
 <!--                                    <div class="modal-footer">-->
 <!---->
-<!--                                        <form action="../jobs/jobs_panel" method="post">-->
+<!--                                        <form action="../jobs/jobs_panel.php" method="post">-->
 <!--                                            <button class="btn btn-sm" type="submit">-->
 <!--                                                <i class="ace-icon fa fa-times"></i>-->
 <!--                                                Cancel-->
@@ -1287,7 +1287,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table"	,
+                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
 
                     //,
                     //"sScrollY": "200px",
@@ -1355,7 +1355,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
         $('#chk1').click(function(){
             $("button").toggle(200, function(){
-                location.href="../admin_panel/admin_panel"
+                location.href="../admin_panel/admin_panel.php"
             });
         });
 
