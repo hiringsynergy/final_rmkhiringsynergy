@@ -55,11 +55,7 @@ ob_start();
                         <div class="hamburger-icon"></div>
                     </button>
 
-<<<<<<< Updated upstream
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index">Home</a></li><li class="nav-item"><a class="nav-link link" href="login">Login</a></li><li class="nav-item"><a class="nav-link link" href="about">About</a></li></ul>
-=======
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link link" href="login.php">Login</a></li><li class="nav-item"><a class="nav-link link" href="about.html"></a></li></ul>
->>>>>>> Stashed changes
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
