@@ -51,19 +51,19 @@ if(isset($_POST['action_update'])){
     <!--button-navigation-->
     <script type="text/javascript">
         function myfuncreport() {
-            location.href = "reports.php";
+            location.href = "reports";
 
         }
         function myfuncadmin() {
-            location.href = "admin_panel/admin_pane_woexport.php";
+            location.href = "admin_panel/admin_pane_woexport";
 
         }
         function myfuncjobs() {
-            location.href = "jobs/jobs_panel.php";
+            location.href = "jobs/jobs_panel";
 
         }
         function myfuncsettings() {
-            location.href = "settings.php";
+            location.href = "settings";
 
         }
         function showreports(){
@@ -71,7 +71,7 @@ if(isset($_POST['action_update'])){
             var e = document.getElementById("form-field-select-3");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "adminpanel.php?year="+strUser;
+            location.href = "adminpanel?year="+strUser;
 
         }
 
@@ -134,7 +134,7 @@ if(isset($_POST['action_update'])){
 
 if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
-    header("Location: ../login.php");
+    header("Location: ../login");
 
 
 }
@@ -155,7 +155,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="../index.php" class="navbar-brand">
+            <a href="../index" class="navbar-brand">
                 <small>
                     <i class=""></i>
                     <img src="../../logos/rmklogo.JPG" style="height: 25px;">
@@ -244,7 +244,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                                             ?>
 
                                                             <li>
-                                                                <a href="../approve.php?roll=<?php  echo $row1['st_roll']; ?>">
+                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                                     <div class="clearfix">
 
 		             <span class="pull-left">
@@ -327,7 +327,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                             </ul>
                                         </li>
                         <li class="dropdown-footer">
-                            <a href="../approve.php">
+                            <a href="../approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -383,7 +383,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         </li>
 
                         <li>
-                            <a href="../profile/profile.php">
+                            <a href="../profile/profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
@@ -392,7 +392,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <li class="divider"></li>
 
                         <li>
-                            <a href="../../login_out/logout.php">
+                            <a href="../../login_out/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 Logout
                             </a>
@@ -454,7 +454,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
         <ul class="nav nav-list">
             <li class="active">
-                <a href="../index.php">
+                <a href="../index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Dashboard</span>
                 </a>
@@ -463,7 +463,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
             </li>
 
             <li class="">
-                <a href="../profile/profile.php" >
+                <a href="../profile/profile" >
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -478,7 +478,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
             </li>
 
             <li class="">
-                <a href="../settings.php" >
+                <a href="../settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -491,7 +491,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel.php" >
+                <a href="../admin_panel/admin_panel" >
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -504,7 +504,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
             </li>
 
             <li class="">
-                <a href="../approve.php">
+                <a href="../approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
                 </a>
@@ -529,7 +529,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../jobs/view_jobs.php">
+                        <a href="../jobs/view_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View all Jobs
                         </a>
@@ -538,7 +538,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     </li>
 
                     <li class="">
-                        <a href="../jobs/post_jobs.php">
+                        <a href="../jobs/post_jobs">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Post Job
                         </a>
@@ -547,7 +547,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     </li>
 
                     <li class="">
-                        <a href="../jobs/jobs_panel.php">
+                        <a href="../jobs/jobs_panel">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Jobs Panel
                         </a>
@@ -561,7 +561,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
             <li class="">
-                <a href="../reports/reports.php">
+                <a href="../reports/reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
 
@@ -586,7 +586,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../company/create_company.php">
+                        <a href="../company/create_company">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Create Company
                         </a>
@@ -595,7 +595,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     </li>
 
                     <li class="">
-                        <a href="../company/companies.php">
+                        <a href="../company/companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>
@@ -603,7 +603,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../company/companies.php">
+                        <a href="../company/companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Company Panel
                         </a>
@@ -627,7 +627,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="../../admin_login/search/advanced_search.php">
+                        <a href="../../admin_login/search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -635,7 +635,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../email/email.php">
+                        <a href="../email/email">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Email
                         </a>
@@ -644,7 +644,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     </li>
 
                     <li class="">
-                        <a href="../Status.php">
+                        <a href="../Status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -1012,7 +1012,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                             </div>
                             <div class="col-xs-6 bigger-120 ">
 
-                                <a href="../index.php" class="btn btn-primary">
+                                <a href="../index" class="btn btn-primary">
                                     Go Back
 
                                 </a>
@@ -1057,7 +1057,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                 <br>
 
 
-                                <form action="action_update.php" method="post" enctype="multipart/form-data">
+                                <form action="action_update" method="post" enctype="multipart/form-data">
 
 
                                     <input type="hidden" value="<?php echo $_GET['year'] ?>" name="hidden_field" >
