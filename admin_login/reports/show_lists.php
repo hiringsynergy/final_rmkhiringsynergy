@@ -725,6 +725,23 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                                 <div class="row">
                                     <div class="col-xs-12">
+                                        <div class="btn-group">
+                                                <button data-toggle="dropdown" class="btn btn-success btn-lg dropdown-toggle">
+                                                    Action
+                                                    <i class="ace-icon fa fa-caret-right fa-angle-down icon-on-right"></i>
+                                                </button>
+
+                                                <ul class="dropdown-menu dropdown-success dropdown-menu-right">
+                                                    <li>
+                                                        <a href="#">Placed</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#">Mail</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
                                         <div class="tabbable">
                                             <?php
 
