@@ -8,6 +8,18 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
 }
+if(isset($_GET['tab'])){
+
+
+$flag=$_GET['flag'];
+$jid=$_GET['jid'];
+
+
+header("Location: show_lists?jid=$jid&flag=$flag");
+
+
+
+}
 
 
 
@@ -79,6 +91,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
             location.href = "show_lists?jid="+str+"&flag=2";
+        }
+
+        function check4(str) {
+
+
+
+            location.href = "show_lists?jid="+str+"&flag=3";
         }
 
 
@@ -719,13 +738,12 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                         <!-- PAGE CONTENT BEGINS -->
 
 
+
                         <div class="row">
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Reports</h3>
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="btn-group">
+                                <form action="show_lists.php" method="get" id="form-id">
+                                    <div class="btn-group pull-right">
                                                 <button data-toggle="dropdown" class="btn btn-success btn-lg dropdown-toggle">
                                                     Action
                                                     <i class="ace-icon fa fa-caret-right fa-angle-down icon-on-right"></i>
@@ -733,19 +751,26 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                                                 <ul class="dropdown-menu dropdown-success dropdown-menu-right">
                                                     <li>
-                                                        <a href="#">Placed</a>
+                                                        <a type="submit"  onclick="document.getElementById('form-id').submit();">Placed</a>
                                                     </li>
 
                                                     <li>
-                                                        <a href="#">Mail</a>
+                                                        <a type="submit"  onclick="document.getElementById('form-id').submit();">Mail</a>
                                                     </li>
 
                                                 </ul>
                                             </div>
+                                
+                                
+
+                                             
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                       
                                         <div class="tabbable">
                                             <?php
 
-                                            if($_GET['flag']==0){
+                                            if($_GET['flag']==0) {
                                                 ?>
 
                                                 <ul class="nav nav-tabs" id="myTab">
@@ -817,6 +842,39 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
                                                     echo $eligible;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="" onclick="check4(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="green ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                Placed
+                                                        <span class="badge badge-success">
+
+                                                    <?php
+                                                    $jid=$_GET['jid'];
+
+                                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='placed'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $placed = mysqli_num_rows($result_count);
+
+
+                                                    echo $placed;
 
 
 
@@ -920,6 +978,39 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                                 </span>
                                                         </a>
                                                     </li>
+                                                    <li class="" onclick="check4(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="green ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                Placed
+                                                        <span class="badge badge-success">
+
+                                                    <?php
+                                                    $jid=$_GET['jid'];
+
+                                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='placed'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $placed = mysqli_num_rows($result_count);
+
+
+                                                    echo $placed;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
 
 
                                                 </ul>
@@ -1012,11 +1103,169 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                                 </span>
                                                         </a>
                                                     </li>
+                                                    <li class="" onclick="check4(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="green ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                Placed
+                                                        <span class="badge badge-success">
+
+                                                    <?php
+                                                    $jid=$_GET['jid'];
+
+                                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='placed'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $placed = mysqli_num_rows($result_count);
+
+
+                                                    echo $placed;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
 
 
                                                 </ul>
 
                                                 <?php
+
+                                            }
+
+                                            else if($_GET['flag']==3) {
+                                                ?>
+
+                                                <ul class="nav nav-tabs" id="myTab">
+                                                <li class="" onclick="check1(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="green ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                Eligible
+                                                        <span class="badge badge-success">
+
+                                                    <?php
+                                                    $jid=$_GET['jid'];
+
+                                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $eligible = mysqli_num_rows($result_count);
+
+
+                                                    echo $eligible;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
+
+                                                <li class="" onclick="check2(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="blue ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                    Accepted
+                                                        <span class="badge badge-primary">
+                                                            <?php
+
+
+                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted'";
+                                                            $result_count_accepted = mysqli_query($connect, $query_count_accepted);
+                                                            $accepted = mysqli_num_rows($result_count_accepted);
+
+
+                                                            echo $accepted;
+
+                                                            ?>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li onclick="check3(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="red ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                    Not Accepted
+                                                <span class="badge badge-danger">
+
+                                                    <?php
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $eligible = mysqli_num_rows($result_count);
+
+
+                                                    echo $eligible;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
+                                                <li class="active" onclick="check4(<?php  echo $_GET['jid'] ?>)">
+                                                    <a data-toggle="tab" href="#home">
+                                                        <i class="green ace-icon fa fa-user bigger-120 hidden-480"></i>
+                                                Placed
+                                                        <span class="badge badge-success">
+
+                                                    <?php
+                                                    $jid=$_GET['jid'];
+
+                                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='placed'";
+                                                    $result_count = mysqli_query($connect, $query_count);
+                                                    $placed = mysqli_num_rows($result_count);
+
+
+                                                    echo $placed;
+
+
+
+
+                                                    ?>
+
+
+
+
+                                                </span>
+                                                    </a>
+                                                </li>
+
+
+
+                                            </ul>
+                                            <?php
 
                                             }
 
@@ -1123,7 +1372,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                                             ?>
 
 
-                                                            <!--                                                            Accepted-->
+                                                            <!--Accepted-->
 
 
                                                             <?php
@@ -1142,6 +1391,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                                                                 $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='accepted'";
                                                                 $result_job = mysqli_query($connect, $query_job);
+                                                                ?>
+
+                                                                    
+                                                                <?php 
+
+
+                                                              
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
 
@@ -1151,7 +1407,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                                                     <tr>
                                                                         <td class="center">
                                                                             <label class="pos-rel">
-                                                                                <input type="checkbox" class="ace" />
+                                                                                <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
                                                                                 <span class="lbl"></span>
                                                                             </label>
                                                                         </td>
@@ -1171,8 +1427,15 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                                                         </td>
 
 
+
+                                                                      <input type="hidden" name="flag" value="1"  />
+                                                                      <input type="hidden" name="tab" value=""  />
+                                                                      <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
+
+
                                                                     </tr>
 
+                                                                          
 
                                                                     <?php
 
@@ -1258,6 +1521,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                                 <!-- div.dataTables_borderWrap -->
 
+                            </form>
                             </div>
                         </div>
 
