@@ -8,14 +8,41 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 
 }
-if(isset($_GET['tab'])){
+
+if(isset($_GET['placed'])){
 
 
 $flag=$_GET['flag'];
 $jid=$_GET['jid'];
+$checkbox=$_GET['checkbox'];
 
+include "../connect.php";
+
+
+
+$query_get_year="SELECT * FROM jobs WHERE job_id='$jid'";
+$result_get_year=mysqli_query($connect, $query_get_year);
+$row_get_year=mysqli_fetch_assoc($result_get_year);
+
+$year_of_graduation=$row_get_year['year_of_graduation'];
+
+
+
+
+
+foreach($checkbox as $list){
+    
+    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' WHERE st_roll='$list'";
+    $result_placed=mysqli_query($connect, $query_placed);
+    
+
+
+
+
+}
 
 header("Location: show_lists?jid=$jid&flag=$flag");
+
 
 
 
@@ -99,7 +126,35 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
             location.href = "show_lists?jid="+str+"&flag=3";
         }
+        function placed(){
 
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "hidden");
+            x.setAttribute("name", "placed");
+            x.setAttribute("value", "placed");
+            document.getElementById('form-id').appendChild(x);
+
+            document.getElementById('form-id').submit();
+        }
+
+        function mail(){
+
+
+
+
+                var x = document.createElement("INPUT");
+                x.setAttribute("type", "hidden");
+                x.setAttribute("name", "mail");
+                x.setAttribute("value", "mail");
+                document.getElementById('form-id').appendChild(x);
+
+                document.getElementById('form-id').submit();
+
+
+
+
+        }
 
     </script>
 
@@ -719,7 +774,7 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="../../index.html">Home</a>
+                        <a href="../../index">Home</a>
                     </li>
                     <li class="active">Reports</li>
                 </ul><!-- /.breadcrumb -->
@@ -742,7 +797,7 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                         <div class="row">
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Reports</h3>
-                                <form action="show_lists.php" method="get" id="form-id">
+
                                     <div class="btn-group pull-right">
                                                 <button data-toggle="dropdown" class="btn btn-success btn-lg dropdown-toggle">
                                                     Action
@@ -750,12 +805,21 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                 </button>
 
                                                 <ul class="dropdown-menu dropdown-success dropdown-menu-right">
+
+                                                    <?php
+
+                                                    if(isset($_GET['flag']) && $_GET['flag']==1){
+
+
+
+                                                    ?>
                                                     <li>
-                                                        <a type="submit"  onclick="document.getElementById('form-id').submit();">Placed</a>
+                                                        <a type="submit"  onclick="placed()">Placed</a>
                                                     </li>
 
+                                                    <?php } ?>
                                                     <li>
-                                                        <a type="submit"  onclick="document.getElementById('form-id').submit();">Mail</a>
+                                                        <a type="submit"  onclick="mail()"> Mail</a>
                                                     </li>
 
                                                 </ul>
@@ -1270,6 +1334,7 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                             }
 
                                             ?>
+                                            <form action="show_lists.php" method="get" id="form-id">
 
                                             <div class="tab-content">
                                                 <div id="home" class="tab-pane fade in active">
@@ -1333,82 +1398,13 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                                 $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' OR _" . $jid . "='accepted'";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
-                                                                while ($row_job = mysqli_fetch_assoc($result_job)) {
-
-                                                                    ?>
-
-
-                                                                    <tr>
-                                                                        <td class="center">
-                                                                            <label class="pos-rel">
-                                                                                <input type="checkbox" class="ace" />
-                                                                                <span class="lbl"></span>
-                                                                            </label>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php echo $row_job['st_roll'] ?>
-                                                                        </td>
-
-                                                                        <td>
-                                                                            <?php echo $row_job['st_name'] ?>
-                                                                        </td>
-
-                                                                        <td class="  "> <?php echo $row_job['st_email'] ?></td>
-                                                                        <td> <?php echo $row_job['st_phone'] ?></td>
-
-                                                                        <td class="  ">
-                                                                            <span class="label label-sm label-warning"> <?php echo $row_job['st_cgpa'] ?></span>
-                                                                        </td>
-
-
-
-                                                                    </tr>
-
-
-                                                                    <?php
-
-                                                                }
                                                                 ?>
-                                                                <input type="hidden" name="flag" value="0"  />
 
-
-                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
-
+                                                                <input type="text" name="flag" value="0" hidden>
+                                                                <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
 
                                                                 <?php
 
-                                                            }
-
-
-                                                            ?>
-
-
-                                                            <!--Accepted-->
-
-
-                                                            <?php
-
-
-                                                            if (isset($_GET['jid']) && $_GET['flag']==1 && isset($_SESSION['user_role'])=='admin' ) {
-
-                                                                $jid = $_GET['jid'];
-
-                                                                include "../connect.php";
-                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
-                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
-                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
-
-                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
-
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='accepted'";
-                                                                $result_job = mysqli_query($connect, $query_job);
-                                                                ?>
-
-                                                                    
-                                                                <?php 
-
-
-                                                              
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
 
@@ -1439,33 +1435,28 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
-
                                                                     </tr>
 
-                                                                          
 
                                                                     <?php
 
                                                                 }
-                                                                ?>
-                                                                <input type="hidden" name="flag" value="1"  />
-
-
-                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
-
-
-                                                                <?php
 
                                                             }
 
 
                                                             ?>
-                                                            <!-- not accepted -->
+
+
+                                                            <!--Accepted-->
+
 
                                                             <?php
 
 
-                                                            if (isset($_GET['jid']) && $_GET['flag']==2 && isset($_SESSION['user_role'])=='admin' ) {
+                                                            if (isset($_GET['jid']) && $_GET['flag']==1 && isset($_SESSION['user_role'])=='admin' ) {
+
+
 
                                                                 $jid = $_GET['jid'];
 
@@ -1476,29 +1467,37 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='eligible'";
+                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='accepted'";
                                                                 $result_job = mysqli_query($connect, $query_job);
+
+
                                                                 ?>
-                                                                
-                                                                <input type="hidden" name="flag" value="2"  />
 
-
-                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
-
+                                                                <input type="text" name="flag" value="1" hidden>
+                                                                <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
 
                                                                 <?php
+
+                                                              
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
 
                                                                     ?>
 
 
+
+
+
+
+
                                                                     <tr>
                                                                         <td class="center">
                                                                             <label class="pos-rel">
-                                                                                <input type="checkbox" class="ace" />
+                                                                                <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
+
                                                                                 <span class="lbl"></span>
                                                                             </label>
+
                                                                         </td>
                                                                         <td>
                                                                             <?php echo $row_job['st_roll'] ?>
@@ -1517,6 +1516,123 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
+
+                                                                    </tr>
+
+                                                                          
+
+                                                                    <?php
+
+                                                                }
+
+
+                                                            }
+
+
+                                                            ?>
+                                                            <!--not accepted-->
+
+                                                            <?php
+
+
+                                                            if (isset($_GET['jid']) && $_GET['flag']==2 && isset($_SESSION['user_role'])=='admin' ) {
+
+                                                                $jid = $_GET['jid'];
+
+                                                                include "../connect.php";
+                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='eligible'";
+                                                                $result_job = mysqli_query($connect, $query_job);
+                                                                ?>
+
+                                                                <input type="text" name="flag" value="2" hidden>
+                                                                <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
+
+                                                                <?php
+
+                                                                while ($row_job = mysqli_fetch_assoc($result_job)) {
+
+                                                                    ?>
+                                                                    <tr>
+                                                                        <td class="center">
+                                                                            <label class="pos-rel">
+                                                                                <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
+                                                                                <span class="lbl"></span>
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>
+                                                                            <?php echo $row_job['st_roll'] ?>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <?php echo $row_job['st_name'] ?>
+                                                                        </td>
+
+                                                                        <td class="  "> <?php echo $row_job['st_email'] ?></td>
+                                                                        <td> <?php echo $row_job['st_phone'] ?></td>
+
+                                                                        <td class="  ">
+                                                                            <span class="label label-sm label-warning"> <?php echo $row_job['st_cgpa'] ?></span>
+                                                                        </td>
+                                                                    </tr>
+
+
+                                                                    <?php
+
+                                                                }
+
+
+                                                            }
+
+                                                            if (isset($_GET['jid']) && $_GET['flag']==3 && isset($_SESSION['user_role'])=='admin' ) {
+
+                                                                $jid = $_GET['jid'];
+
+                                                                include "../connect.php";
+                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='placed'";
+                                                                $result_job = mysqli_query($connect, $query_job);
+                                                                ?>
+
+                                                                <input type="text" name="flag" value="2" hidden>
+                                                                <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
+
+                                                                <?php
+
+                                                                while ($row_job = mysqli_fetch_assoc($result_job)) {
+
+                                                                    ?>
+                                                                    <tr>
+                                                                        <td class="center">
+                                                                            <label class="pos-rel">
+                                                                                <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
+                                                                                <span class="lbl"></span>
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>
+                                                                            <?php echo $row_job['st_roll'] ?>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <?php echo $row_job['st_name'] ?>
+                                                                        </td>
+
+                                                                        <td class="  "> <?php echo $row_job['st_email'] ?></td>
+                                                                        <td> <?php echo $row_job['st_phone'] ?></td>
+
+                                                                        <td class="  ">
+                                                                            <span class="label label-sm label-warning"> <?php echo $row_job['st_cgpa'] ?></span>
+                                                                        </td>
                                                                     </tr>
 
 
@@ -1528,6 +1644,8 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                             }
 
 
+
+
                                                             ?>
 
                                                             </tbody>
@@ -1537,6 +1655,7 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
                                             </div>
+                                            </form>
                                         </div>
                                     </div><!-- /.col -->
 
@@ -1547,7 +1666,7 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
                                 <!-- div.dataTables_borderWrap -->
 
-                            </form>
+
                             </div>
                         </div>
 
