@@ -1313,7 +1313,9 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
                                                             <tbody>
 
-                                                            <!--                                                            eligible-->
+
+
+                                                            <!--eligible-->
                                                             <?php
 
 
@@ -1359,12 +1361,21 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                                         </td>
 
 
+
                                                                     </tr>
 
 
                                                                     <?php
 
                                                                 }
+                                                                ?>
+                                                                <input type="hidden" name="flag" value="0"  />
+
+
+                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
+
+
+                                                                <?php
 
                                                             }
 
@@ -1428,10 +1439,6 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
-                                                                      <input type="hidden" name="flag" value="1"  />
-                                                                      <input type="hidden" name="tab" value=""  />
-                                                                      <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
-
 
                                                                     </tr>
 
@@ -1440,6 +1447,14 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                                     <?php
 
                                                                 }
+                                                                ?>
+                                                                <input type="hidden" name="flag" value="1"  />
+
+
+                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
+
+
+                                                                <?php
 
                                                             }
 
@@ -1463,6 +1478,15 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
                                                                 $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='eligible'";
                                                                 $result_job = mysqli_query($connect, $query_job);
+                                                                ?>
+                                                                
+                                                                <input type="hidden" name="flag" value="2"  />
+
+
+                                                                <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>"  />
+
+
+                                                                <?php
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
 
@@ -1492,12 +1516,14 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                                                         </td>
 
 
+
                                                                     </tr>
 
 
                                                                     <?php
 
                                                                 }
+
 
                                                             }
 

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65f06474-28f3-4a54-a301-5779436ed919" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_login/jobs/job_filter.php" afterPath="$PROJECT_DIR$/admin_login/jobs/job_filter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student_login/jobs/view_jobs.php" afterPath="$PROJECT_DIR$/student_login/jobs/view_jobs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin_login/reports/show_lists.php" afterPath="$PROJECT_DIR$/admin_login/reports/show_lists.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_jobs.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view_jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/student_login/jobs/view_jobs.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
@@ -57,6 +56,52 @@
                 <marker date="1487582083000" expanded="true" signature="52116:52173" ph="SELECT * FRO... company_list" />
                 <marker date="1487582083000" expanded="true" signature="59708:59835" ph="SELECT * FRO... jobs" />
                 <marker date="1487582083000" expanded="true" signature="94440:94497" ph="SELECT * FRO... company_list" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_lists.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_login/reports/show_lists.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="1481" column="64" lean-forward="false" selection-start-line="1481" selection-start-column="64" selection-end-line="1481" selection-end-column="64" />
+              <folding>
+                <marker date="1487584259000" expanded="true" signature="6068:6091" ph="SELECT * FRO... table_map" />
+                <marker date="1487584259000" expanded="true" signature="6392:6465" ph="SELECT * fro... ${$tname}" />
+                <marker date="1487584259000" expanded="true" signature="7569:7592" ph="SELECT * FRO... table_map" />
+                <marker date="1487584259000" expanded="true" signature="7881:7895" ph="SELECT * fro... ${$tname}" />
+                <marker date="1487584259000" expanded="true" signature="10964:11014" ph="select * fro... login_admin" />
+                <marker date="1487584259000" expanded="true" signature="24002:24040" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="24469:24572" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="25698:25784" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="26930:27006" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="28179:28217" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="28646:28720" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="30277:30315" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="30744:30847" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="32011:32097" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="33283:33359" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="34544:34582" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="35011:35085" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="36652:36690" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="37119:37222" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="38380:38466" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="39668:39744" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="40929:40967" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="41396:41470" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="43009:43047" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="43476:43579" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="44705:44791" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="45937:46013" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="47192:47230" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="47659:47733" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="51559:51597" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="52071:52182" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="55546:55584" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="56058:56142" ph="SELECT * FRO... students_" />
+                <marker date="1487584259000" expanded="true" signature="59918:59956" ph="SELECT * FRO... jobs" />
+                <marker date="1487584259000" expanded="true" signature="60430:60514" ph="SELECT * FRO... students_" />
               </folding>
             </state>
           </provider>
@@ -181,6 +226,7 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/admin_login/jobs/job_filter.php" />
         <option value="$PROJECT_DIR$/student_login/jobs/view_jobs.php" />
+        <option value="$PROJECT_DIR$/admin_login/reports/show_lists.php" />
       </list>
     </option>
   </component>
@@ -289,6 +335,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin_login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -370,12 +434,12 @@
       <updated>1485790505046</updated>
       <workItem from="1485790506638" duration="776000" />
       <workItem from="1485872118453" duration="771000" />
-      <workItem from="1487571369440" duration="3999000" />
+      <workItem from="1487571369440" duration="6055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5546000" />
+    <option name="totallyTimeSpent" value="7602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="34" y="23" width="1920" height="977" extended-state="0" />
@@ -600,6 +664,50 @@
             <marker date="1487582083000" expanded="true" signature="52116:52173" ph="SELECT * FRO... company_list" />
             <marker date="1487582083000" expanded="true" signature="59708:59835" ph="SELECT * FRO... jobs" />
             <marker date="1487582083000" expanded="true" signature="94440:94497" ph="SELECT * FRO... company_list" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/reports/show_lists.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="1481" column="64" lean-forward="false" selection-start-line="1481" selection-start-column="64" selection-end-line="1481" selection-end-column="64" />
+          <folding>
+            <marker date="1487584259000" expanded="true" signature="6068:6091" ph="SELECT * FRO... table_map" />
+            <marker date="1487584259000" expanded="true" signature="6392:6465" ph="SELECT * fro... ${$tname}" />
+            <marker date="1487584259000" expanded="true" signature="7569:7592" ph="SELECT * FRO... table_map" />
+            <marker date="1487584259000" expanded="true" signature="7881:7895" ph="SELECT * fro... ${$tname}" />
+            <marker date="1487584259000" expanded="true" signature="10964:11014" ph="select * fro... login_admin" />
+            <marker date="1487584259000" expanded="true" signature="24002:24040" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="24469:24572" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="25698:25784" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="26930:27006" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="28179:28217" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="28646:28720" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="30277:30315" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="30744:30847" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="32011:32097" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="33283:33359" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="34544:34582" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="35011:35085" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="36652:36690" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="37119:37222" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="38380:38466" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="39668:39744" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="40929:40967" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="41396:41470" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="43009:43047" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="43476:43579" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="44705:44791" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="45937:46013" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="47192:47230" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="47659:47733" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="51559:51597" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="52071:52182" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="55546:55584" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="56058:56142" ph="SELECT * FRO... students_" />
+            <marker date="1487584259000" expanded="true" signature="59918:59956" ph="SELECT * FRO... jobs" />
+            <marker date="1487584259000" expanded="true" signature="60430:60514" ph="SELECT * FRO... students_" />
           </folding>
         </state>
       </provider>
