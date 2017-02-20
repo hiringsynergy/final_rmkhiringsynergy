@@ -60,17 +60,6 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
             location.href = "../settings";
 
         }
-        <<<<<<<
-        HEAD
-        function myfuncsettings() {
-            location.href = "../Create_company";
-
-        }
-        ======
-        =
-        >>>>>>>
-        67
-        b2af4d37943808066768c801cdecde6444e39a
 
 
     </script>

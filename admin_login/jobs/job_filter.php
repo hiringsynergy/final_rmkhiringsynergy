@@ -202,7 +202,7 @@ if(isset($_GET['filter_job'])){
         $company_name_string=$company_name['company_name'];
 
 
-        $query="INSERT INTO jobs VALUES ($id,'$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', $sort , '$temp_branch_insert' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','')";
+        $query="INSERT INTO jobs VALUES ($id,'$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', $sort , '$temp_branch_insert' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','1')";
 
 
 
