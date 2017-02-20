@@ -1,224 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>RMK Hiring Synergy</title>
+  <title>Parallax Images Scroll</title>
+  <script src="Parallax-img-scroll-master/demo/js/jquery.js" type="text/javascript"></script>
+  <script src="Parallax-img-scroll-master/demo/js/jquery.nicescroll.min.js" type="text/javascript"></script>
+  <script src="Parallax-img-scroll-master/demo/js/parallaxImg.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="Parallax-img-scroll-master/demo/css/demotheme.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <script type="text/javascript">
+    $(document).on("ready", function() {
+      var parallaxSettings = {
+        initialOpacity: 1, //from 0 to 1, e.g. 0.34 is a valid value. 0 = transparent, 1 = Opaque
+        opacitySpeed: 0.1, //values from 0.01 to 1 -> 0.01: slowly appears on screen; 1: appears as soon as the user scrolls 1px
+        pageLoader: true
+      };
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v3.10.4, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/download-256x128-45.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-  <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-    <style>
-
-        .fullscreen-bg {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: -100;
-        }
-
-        .fullscreen-bg__video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        @media (min-aspect-ratio: 16/9) {
-            .fullscreen-bg__video {
-                height: 300%;
-                top: -100%;
-            }
-        }
-
-        @media (max-aspect-ratio: 16/9) {
-            .fullscreen-bg__video {
-                width: 300%;
-                left: -100%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .fullscreen-bg {
-                background: url('poster.jpg') center center / cover no-repeat;
-            }
-
-            .fullscreen-bg__video {
-                display: none;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*.fullscreen-bg {*/
-            /*position: fixed;*/
-            /*top: 0;*/
-            /*right: 0;*/
-            /*bottom: 0;*/
-            /*left: 0;*/
-            /*overflow: hidden;*/
-            /*z-index: -100;*/
-        /*}*/
-
-      /*  .fullscreen-bg__video {
-            position: fixed;
-            top: 50%; left: 50%;
-            z-index: 1;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100;
-            transform: translateX(-50%) translateY(-50%);
-            background: url('images/poster.jpg') no-repeat;
-            background-size: cover;
-            transition: 1s opacity;
-        }*/
-       /* video#videobg {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100;
-            transform: translateX(-50%) translateY(-50%);
-            background: url('poster.jpg') no-repeat;
-            background-size: cover;
-            transition: 1s opacity;
-        }
-*/
-    </style>
-  
+      parallaxImgScroll(parallaxSettings);
+    });
+  </script>
 </head>
-<body>
-<section id="menu-0">
-
-    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
-        <div class="container">
-
-            <div class="mbr-table">
-                <div class="mbr-table-cell">
-
-                    <div class="navbar-brand">
-                        <a href="index" class="navbar-logo"><img src="assets/images/download-256x128-45.png" alt="RMK group"></a>
-                        <a class="navbar-caption text-white" href="index">RMK HIRING SYNERGY</a>
-                    </div>
-
-                </div>
-                <div class="mbr-table-cell">
-
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
-
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index">Home</a></li><li class="nav-item"><a class="nav-link link" href="login">Login</a></li><li class="nav-item"><a class="nav-link link" href="about">About</a></li></ul>
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
-
-                </div>
-            </div>
-
-        </div>
+<body style="background-color: rgb(50, 50, 50)">
+  <!-- <header>
+    <nav>
+      <a href="http://cyntss.github.io/Parallax-img-scroll/">Home</a><a href="http://cynt.co.nf/">Cyntss Page</a><a href="">Documentation</a>
     </nav>
+  </header> -->
+  <section>
+    <article class="parallax-img-container">
+      <h1 style="color: black;font-weight:600px; ">RMK Hiring Synergy</h1>
+      <h3 style="color: purple;">Get the job done right!</h3>
+      <a style="color: black;font-weight:bold; " class="btn-download-init" href="login">Login</a>
+      <!-- images for parallax -->
+      <img src="Parallax-img-scroll-master/demo/img/assassins/smoke-01.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="1" data-ps-vertical-position="1580" data-ps-horizontal-position="1360" />
+      <img src="Parallax-img-scroll-master/demo/img/assassins/smoke-02.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.5" data-ps-vertical-position="700" data-ps-horizontal-position="220" />
+      <!-- <img src="img/assassins/smoke-03.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="1" data-ps-vertical-position="1680" data-ps-horizontal-position="1160" /> -->
+      <!-- <img src="img/assassins/smoke-04.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.5" data-ps-vertical-position="1080" data-ps-horizontal-position="220" /> -->
+      <img src="Parallax-img-scroll-master/demo/img/assassins/smoke-05.gif" class="parallax-move" data-ps-z-index="1" data-ps-speed="1" data-ps-vertical-position="1120" data-ps-horizontal-position="100" />
+      <img src="Parallax-img-scroll-master/demo/img/assassins/smoke-06.gif" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.4" data-ps-vertical-position="1250" data-ps-horizontal-position="250" />
+      <!-- <img src="img/assassins/smoke-07.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.3" data-ps-vertical-position="300" data-ps-horizontal-position="320" /> -->
+      <!-- <img src="img/assassins/smoke-06.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.2" data-ps-vertical-position="-900" data-ps-horizontal-position="220" /> -->
+      <!-- <img src="img/assassins/smoke-05.png" class="parallax-move" data-ps-z-index="1" data-ps-speed="0.3" data-ps-vertical-position="-600" data-ps-horizontal-position="150" /> -->
+      <img src="Parallax-img-scroll-master/demo/img/assassins/stick.png" class="parallax-move" data-ps-z-index="2" data-ps-speed="1" data-ps-vertical-position="1600" data-ps-horizontal-position="520" />
+      <!-- <img src="img/assassins/003.png" class="parallax-move" data-ps-z-index="2" data-ps-speed="0.4" data-ps-vertical-position="-200" data-ps-horizontal-position="0" /> -->
+      <!-- <img src="img/assassins/002.png" class="parallax-move" data-ps-z-index="3" data-ps-speed="0.5" data-ps-vertical-position="-400" data-ps-horizontal-position="0" /> -->
+      <img src="Parallax-img-scroll-master/demo/img/assassins/birds.png" class="parallax-move" data-ps-z-index="4" data-ps-speed="1" data-ps-vertical-position="-300" data-ps-horizontal-position="600" />
+<!--       <img src="img/assassins/black-cloud.png" class="parallax-move" data-ps-z-index="5" data-ps-speed="0.35" data-ps-vertical-position="-400" data-ps-horizontal-position="0">
+ -->    </article>
+  </section>
+  <section>
+    <article class="parallax-img-container">
+      <h2 style="color: black;">Company sponsored laboratories</h2>
+     <!--  <p>All the content inside the article will not be affected by parallaximg.js</p>
+      <h3>I made this inspired by PlayStation and Assassins Unity</h3> -->
+      <img id="parallax-img-2" class="parallax-move" src="Parallax-img-scroll-master/demo/img/triangle.png" />
+      <img id="parallax-img-3" class="parallax-move" src="Parallax-img-scroll-master/demo/img/square.png" />
+      <img id="parallax-img-4" class="parallax-move" src="Parallax-img-scroll-master/demo/img/circle.png" />
+      <img id="parallax-img-5" class="parallax-move" src="Parallax-img-scroll-master/demo/img/ex.png" />
+      <img id="parallax-img-6" class="parallax-move" src="Parallax-img-scroll-master/demo/img/triangle.png" />
+      <img id="parallax-img-7" class="parallax-move" src="Parallax-img-scroll-master/demo/img/square.png" />
+      <img id="parallax-img-7" class="parallax-move" src="Parallax-img-scroll-master/demo/img/circle.png" />
+      <img id="parallax-img-5" class="parallax-move" src="Parallax-img-scroll-master/demo/img/ex.png" />
+      <img id="parallax-img-1" class="parallax-move" src="Parallax-img-scroll-master/demo/img/triangle.png" />
+      <img id="parallax-img-4" class="parallax-move" src="Parallax-img-scroll-master/demo/img/square.png" />
+      <img id="parallax-img-3" class="parallax-move" data-ps-vertical-position="200" data-ps-horizontal-position="500" src="Parallax-img-scroll-master/demo/img/circle.png" />
+    </article>
 
-</section>
-
-<section class="engine"><a rel="external" href="https://mobirise.com">html web page builder</a></section> <section class="mbr-section mbr-section-hero mbr-section-full mbr-after-navbar  " id="header4-10" data-bg-video="kk.mp4">
-
-    <div class="fullscreen-bg">
-        <video loop muted autoplay poster="poster.jpg" class="fullscreen-bg__video">
-
-            <source src="RMK.mp4" type="video/mp4">
-
-        </video>
-    </div>
-
-    <!--<video autoplay  poster="poster.jpg" id="videobg" loop>-->
-
-        <!--<source src="RMK.mp4" type="video/mp4">-->
-        <!--Your browser does not support the video tag. I suggest you upgrade your browser.-->
-    <!--</video>-->
-
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-
-
-</section>
-
-<section class="mbr-section mbr-section-md-padding mbr-footer footer2" id="contacts2-z" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
+  </section>
+  <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-2" style="background-color: rgb(50, 50, 50); padding-top: 4px; padding-bottom: 0px;">
     
     <div class="container">
-        <div class="row">
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><strong>Address</strong><br>RSM Nagar, Gummidipoondi Taluk, Tiruvallur District, Kavaraipettai, Tamil Nadu 601206<br><br><br>
-<strong>Contacts</strong><br>Phone: +91-44-33303330<br>Phone: +91-44-33303030<br>Phone: +91-44-33303555<br></p>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3"><p><strong>Links</strong></p><ul><li><a class="text-white" href="https://www.rmkec.ac.in" target="_blank">www.rmkec.ac.in</a></li><li><a class="text-white" href="https://www.rmd.ac.in">www.rmd.ac.in</a></li><li><a class="text-white" href="https://www.rmkcet.ac.in">www.rmkcet.ac.in</a></li></ul><p></p></div>
-            <div class="col-xs-12 col-md-6">
-                <div class="mbr-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJ4fcssGKATToRDsOS1Rj1S-4" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-2" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
-    
-    <div class="container">
-        <p class="text-xs-center">Copyright (c) 2017 RMK Hiring Synergy.</p>
+        <p class="text-xs-center" style="color: white;">Copyright (c) 2017 RMK Hiring Synergy.</p>
     </div>
 </footer>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smooth-scroll/SmoothScroll.js"></script>
-  <script src="assets/viewportChecker/jquery.viewportchecker.js"></script>
-  <script src="assets/dropdown/js/script.min.js"></script>
-  <script src="assets/touchSwipe/jquery.touchSwipe.min.js"></script>
-  <script src="assets/jquery-mb-ytplayer/jquery.mb.YTPlayer.min.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  
-  
-  <input name="animation" type="hidden">
-  </body>
+</body>
 </html>
