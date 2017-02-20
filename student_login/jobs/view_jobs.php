@@ -26,6 +26,25 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
 
 }
+if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
+
+
+    $student_table = $_SESSION['table_name'];
+    $st_roll = $_SESSION['user'];
+    $id = $_GET['decline'];
+    include "../connect.php";
+    $query_update = "UPDATE $student_table SET _" . $id . "='declined' Where st_roll={$st_roll} ";
+    $result_update = mysqli_query($connect, $query_update);
+    if (!$result_update) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+    header("Location: view_jobs");
+
+
+}
 
 ?>
 
@@ -78,6 +97,13 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
 
             location.href = "view_jobs?apply=" + id;
+
+
+        }
+          function decline(id) {
+
+
+            location.href = "view_jobs?decline=" + id;
 
 
         }
@@ -479,14 +505,14 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
 
                         $year_of_graduation = $_SESSION['year_of_graduation'];
-                        //
+                     
 
 
 
 
 
 
-                        if(isset($_GET['job_id']) && isset($_SESSION['user_role'])=='student'){
+                        if(isset($_GET['job_id']) && isset($_SESSION['user_role'])=='student')  {
 
 
 
@@ -513,7 +539,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                 die("" . mysqli_error($connect));
                             }
 
-                            while ($row = mysqli_fetch_assoc($result_get)) {
+                            while ($row = mysqli_fetch_assoc($result)) {
 
                                 $widget_color = array(' widget-color-blue', 'widget-color-green', 'widget-color-orange', 'widget-color-red', 'widget-color-pink', 'widget-color-green', 'widget-color-purple', 'widget-color-blue2', 'widget-color-red3', 'widget-color-blue3');
 
@@ -579,6 +605,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                             </font>
                                                         </th>
                                                         <th class=" "><font size="3">Status</font></th>
+                                                        <th></th>
                                                         <th></th>
                                                     </tr>
                                                     </thead>
@@ -726,6 +753,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
                                                                 <?php
 
 
@@ -742,6 +778,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                         <button class="btn btn-primary btn-sm  "
                                                                                 onclick="apply('<?php echo $row['job_id'] ?>')">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -764,6 +809,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm  disabled">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -789,8 +843,17 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                 <td>
 
                                                                     <div>
-                                                                        <button class="btn btn-primary btn-sm disabled">
+                                                                        <button class="btn btn-primary btn-sm disabled" >
                                                                             Applied
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -812,6 +875,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                             Applied
                                                                         </button>
                                                                     </div>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
 
                                                                 </td>
 
@@ -836,11 +908,118 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
 
 
                                                                 <?php
                                                             }
-                                                        } //uneligible
+                                                        }
+                                                        //not accepted
+                                                        else if ($check_row["_" . $row['job_id']] == 'declined') {
+
+                                                            if ($calc_date > 0) {
+
+
+                                                                ?>
+
+
+                                                                <td class=" ">
+                                                                <span class="label label-success"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Open</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm disabled" onclick="apply('<?php echo $row['job_id'] ?>')">
+
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <?php
+
+
+                                                            } else if ($calc_date == 0 && $calc_time >= 0) {
+                                                                ?>
+
+                                                                <td class=" ">
+                                                                <span class="label label-success"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Open</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm" onclick="apply('<?php echo $row['job_id'] ?>')">
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+
+                                                                </td>
+
+
+                                                                <?php
+
+
+                                                            } else {
+
+                                                                ?>
+
+                                                                <td class=" ">
+                                                                <span class="label label-danger"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Closed</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm  disabled">
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+
+
+                                                                <?php
+                                                            }
+                                                        }
+
+                                                        //uneligible
                                                         else if ($check_row["_" . $row['job_id']] == 'uneligible') {
 
 
@@ -863,6 +1042,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
                                                                 <?php
 
 
@@ -878,6 +1066,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm disabled ">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -900,6 +1097,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm  disabled">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -1037,34 +1243,6 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         }
 
 
@@ -1150,6 +1328,7 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                             </font>
                                                         </th>
                                                         <th class=" "><font size="3">Status</font></th>
+                                                        <th></th>
                                                         <th></th>
                                                     </tr>
                                                     </thead>
@@ -1297,6 +1476,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
                                                                 <?php
 
 
@@ -1313,6 +1501,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                         <button class="btn btn-primary btn-sm  "
                                                                                 onclick="apply('<?php echo $row['job_id'] ?>')">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -1335,6 +1532,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm  disabled">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -1360,8 +1566,17 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                 <td>
 
                                                                     <div>
-                                                                        <button class="btn btn-primary btn-sm disabled">
+                                                                        <button class="btn btn-primary btn-sm disabled" >
                                                                             Applied
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -1383,6 +1598,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                             Applied
                                                                         </button>
                                                                     </div>
+                                                                    <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
 
                                                                 </td>
 
@@ -1407,11 +1631,118 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
 
 
                                                                 <?php
                                                             }
-                                                        } //uneligible
+                                                        }
+                                                        //not accepted 
+                                                       else if ($check_row["_" . $row['job_id']] == 'declined') {
+
+                                                            if ($calc_date > 0) {
+
+
+                                                                ?>
+
+
+                                                                <td class=" ">
+                                                                <span class="label label-success"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Open</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm disabled" onclick="apply('<?php echo $row['job_id'] ?>')">
+                                                                        
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <?php
+
+
+                                                            } else if ($calc_date == 0 && $calc_time >= 0) {
+                                                                ?>
+
+                                                                <td class=" ">
+                                                                <span class="label label-success"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Open</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm" onclick="apply('<?php echo $row['job_id'] ?>')">
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+                                                                    <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+
+                                                                </td>
+
+
+                                                                <?php
+
+
+                                                            } else {
+
+                                                                ?>
+
+                                                                <td class=" ">
+                                                                <span class="label label-danger"
+                                                                      style="height: 30px; width: 80px; font-size: 18px;">Closed</span>
+                                                                </td>
+                                                                <td>
+
+                                                                    <div>
+                                                                        <button class="btn btn-primary btn-sm  disabled">
+                                                                            Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled"
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Declined
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+
+
+                                                                <?php
+                                                            }
+                                                        } 
+
+                                                        //uneligible
                                                         else if ($check_row["_" . $row['job_id']] == 'uneligible') {
 
 
@@ -1434,6 +1765,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     </div>
 
                                                                 </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
                                                                 <?php
 
 
@@ -1449,6 +1789,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm disabled ">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
@@ -1471,6 +1820,15 @@ if (isset($_GET['apply']) && isset($_SESSION['user_role'])=='student') {
                                                                     <div>
                                                                         <button class="btn btn-primary btn-sm  disabled">
                                                                             Apply
+                                                                        </button>
+                                                                    </div>
+
+                                                                </td>
+                                                                <td>
+                                                                    <div>
+                                                                        <button class="btn btn-danger btn-sm  disabled "
+                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                            Decline
                                                                         </button>
                                                                     </div>
 
