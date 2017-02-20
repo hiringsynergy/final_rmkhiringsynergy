@@ -539,7 +539,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                 die("" . mysqli_error($connect));
                             }
 
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            while ($row = mysqli_fetch_assoc($result_get)) {
 
                                 $widget_color = array(' widget-color-blue', 'widget-color-green', 'widget-color-orange', 'widget-color-red', 'widget-color-pink', 'widget-color-green', 'widget-color-purple', 'widget-color-blue2', 'widget-color-red3', 'widget-color-blue3');
 
@@ -1254,7 +1254,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
 
 
 
-                            $query = "SELECT * FROM jobs WHERE job_branch LIKE '%" . $branch . "%' and year_of_graduation='$year_of_graduation' ORDER BY sort  DESC";
+                            $query = "SELECT * FROM jobs WHERE job_branch LIKE '%" . $branch . "%' and year_of_graduation='$year_of_graduation' ORDER BY job_id  DESC";
                             $result = mysqli_query($connect, $query);
                             $i = 0;
 
@@ -1425,8 +1425,10 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
 
                                                         $dt = new DateTime("now", new DateTimeZone('Asia/Kolkata'));
                                                         $date1 = $dt->format('d-m-Y H:i A');
-                                                        $date2 = $row['apply_before'];
 
+                                                        $date2 = $row['apply_before'];
+                                                        $correct2 = date('d-m-Y H:i',strtotime($date2));
+                                                        $date2=$correct2;
 
                                                         $temp_current = explode(" ", $date1);
                                                         $temp_before = explode(" ", $date2);
@@ -1434,14 +1436,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                         $calc_date = strtotime($temp_before[0]) - strtotime($temp_current[0]) . "<br>";
 
 
-                                                        if ($temp_before[2] == "PM") {
 
-                                                            $tmp = $temp_before[1];
-                                                            $tmp_value = explode(":", $tmp);
-
-                                                            $temp_before[1] = $tmp_value[0] + 12 . ":" . $tmp_value[1];
-
-                                                        }
 
 
                                                         $calc_time = strtotime($temp_before[1]) - strtotime($temp_current[1]) . "<br>";
