@@ -37,6 +37,7 @@ nav a:hover {
   color: #1FE0D4
 }
 section:nth-of-type(1) {
+  
   background: url("../img/assassins/bg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
