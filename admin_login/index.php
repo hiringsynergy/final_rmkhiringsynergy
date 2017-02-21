@@ -15,6 +15,9 @@ $tablename=$_GET['tablename'];
 
 
     $query="CREATE TABLE students_".$tablename."  (
+
+     st_sno varchar(12) NOT NULL,
+
     st_roll varchar(12) NOT NULL,
   st_firstname varchar(255)  ,
   st_middlename varchar(255)  ,
@@ -23,8 +26,15 @@ $tablename=$_GET['tablename'];
   st_gender varchar(255)  ,
   st_fathername varchar(255)  ,
   st_fatheroccupation varchar(255)  ,
+
+   st_fathernumber varchar(255)  ,
+
   st_mothername varchar(255)  ,
   st_motheroccupation varchar(255)  ,
+
+   st_mothernumber varchar(255)  ,
+   st_clgemail varchar(255),
+
   st_email varchar(255) NOT NULL,
   st_phone char(15) NOT NULL,
   st_dob date  ,
@@ -43,6 +53,13 @@ $tablename=$_GET['tablename'];
   st_12thmedium varchar(255)  ,
   st_12thyearofpassing year(4)  ,
   st_dippercentage varchar(255)  ,
+
+
+
+  st_dipspecialization varchar(255)  ,
+  st_dipinstitution varchar(255)  ,
+
+
   st_dipyearofpassing year(4)  ,
   st_currentlypursuing varchar(255)  ,
   st_ugdegree varchar(255)  ,
@@ -66,6 +83,9 @@ $tablename=$_GET['tablename'];
   st_pgcgpa varchar(255)  ,
   st_pgyearofpassing year(4)  ,
   st_ugcollegename varchar(255),
+
+  st_ughistoryofarrears varchar(255),
+
   st_dayorhostel varchar(255)  ,
   st_historyofarrears varchar(255)  ,
   st_standingarrears varchar(255)  ,
@@ -90,6 +110,12 @@ $tablename=$_GET['tablename'];
   st_candidateid varchar(255)  ,
   st_signature varchar(255)  ,
   st_placementstatus varchar(255)  ,
+
+  st_aadharno varchar(255),
+  st_passportno varchar(255),
+  st_panno varchar(255),
+
+  
   st_pass varchar(255)  ,
   st_pic varchar(255),
   st_changemail varchar(255),

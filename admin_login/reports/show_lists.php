@@ -66,10 +66,10 @@ $checkbox=$_POST['checkbox'];
     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
-      echo  $file_name = $_FILES['attachment']['name'];
-      echo  $file_size = $_FILES['attachment']['size'];
-       echo $file_tmp = $_FILES['attachment']['tmp_name'];
-       echo $file_type = $_FILES['attachment']['type'];
+      echo "file name: ". $file_name = $_FILES['attachment']['name'];
+      $file_size = $_FILES['attachment']['size'];
+       $file_tmp = $_FILES['attachment']['tmp_name'];
+       $file_type = $_FILES['attachment']['type'];
 
 
 
@@ -80,10 +80,14 @@ $checkbox=$_POST['checkbox'];
 
         $file_ext=strtolower(end($value));
 
+print_r($value);
+reset($value);
+echo "value : ".current($value);
+
         $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-        move_uploaded_file($file_tmp,"files/$newfilename");
+        move_uploaded_file($file_tmp,"files/".$newfilename);
 
 
 
@@ -175,11 +179,11 @@ foreach($checkbox as $list){
 
 
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+        if(isset($_FILES['attachment'])){
 
 
 
-            $mail->addAttachment('files/$newfilename', $newfilename);
+            $mail->addAttachment('files/'.$newfilename, $newfilename);
 
 
 
@@ -221,7 +225,7 @@ foreach($checkbox as $list){
 
 
 
-          //  unlink("files/$newfilename");
+           unlink("files/$newfilename");
 
 
 
@@ -240,7 +244,7 @@ foreach($checkbox as $list){
 
 
     }
-    // header("Location: show_lists?jid=$jid&flag=$flag");
+    header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
@@ -547,8 +551,8 @@ foreach($checkbox as $list){
                                                 <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
                                                     <div class="clearfix">
 
-		             <span class="pull-left">
-			               <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+                     <span class="pull-left">
+                           <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
                          <?php  $content= $row1['st_roll'] ;
                          $content.= "," ;
                          $content.= $row1['st_name'];
@@ -599,7 +603,7 @@ foreach($checkbox as $list){
 
 
                          </p>
-				</span>
+                </span>
 
 
                                                     </div>
@@ -666,9 +670,9 @@ foreach($checkbox as $list){
                             <img class="nav-user-photo" src="../images/<?php echo $row['admin_pic']; ?>" alt="Photo" />
                         <?php } ?>
                         <span class="user-info">
-									<small>Welcome,</small>
-									Admin
-								</span>
+                                    <small>Welcome,</small>
+                                    Admin
+                                </span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
@@ -771,8 +775,8 @@ foreach($checkbox as $list){
                 <a href="../profile/profile">
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
-							Your Profile
-							</span>
+                            Your Profile
+                            </span>
 
 
                 </a>
@@ -1955,10 +1959,10 @@ foreach($checkbox as $list){
     <div class="footer">
         <div class="footer-inner">
             <div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">RMK</span>
-							Group of Institutions
-						</span>
+                        <span class="bigger-120">
+                            <span class="blue bolder">RMK</span>
+                            Group of Institutions
+                        </span>
 
                 &nbsp; &nbsp;
 
@@ -2033,7 +2037,7 @@ foreach($checkbox as $list){
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table"	,
+                    //"sAjaxSource": "http://127.0.0.1/table"   ,
 
                     //,
                     //"sScrollY": "200px",
