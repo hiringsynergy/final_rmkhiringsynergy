@@ -1384,6 +1384,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Father Mobile Number</b> </div>
+
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_fathernumber']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Mother Name</b> </div>
 
                                                             <div class="profile-info-value testorange">
@@ -1397,8 +1404,20 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <span class="editable" id="fn"><?php  echo $row['st_motheroccupation']  ?></span>
                                                             </div>
                                                         </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Mother Mobile Number</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_mothernumber']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>College Mail ID</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <div class=" " id="dob"><?php  echo $row['st_clgemail']  ?></div>
+                                                            </div>
+                                                        </div>
 
                                                         <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>Date of Birth</b> </div>
@@ -1475,6 +1494,27 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
                                                             <div class="profile-info-value testorange">
                                                                 <span class="editable" id="fn"><?php  echo $row['st_landline']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Aadhar Number</b> </div>
+
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_aadharno']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Passport Number</b> </div>
+
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_passportno']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>PAN Number</b> </div>
+
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_panno']  ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1845,6 +1885,22 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
                                                             <div class="profile-info-value testgreen">
                                                                 <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_historyofarrears'];  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG College Name</b></div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ugcollegename'];  ?></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG History of arrears</b></div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ughistoryofarrears'];  ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
