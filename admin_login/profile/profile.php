@@ -1198,10 +1198,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                 <div class="col-xs-12 col-sm-9">
 
 
-                                    <div class="space-10"></div>
+                                    <div class="space-17"></div>
 
 
-                                    <div class="col-xs-12 col-sm-9 widget-container-col" id="widget-container-col-1">
+                                    <div class="space-16"></div>
+
+
+                                    <div class="col-xs-12 col-sm-9  widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-blue" id="shadow">
                                             <div class="widget-header">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 20px;" >Profile</h5>
@@ -1304,6 +1307,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
 
 
+
+
                                     <div class="space-16"></div>
 
 
@@ -1312,7 +1317,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
                                     <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-orange" id="shadow">
-                                            <div class="widget-header ">
+                                            <div class="widget-header">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 20px;" >Personal Details</h5>
                                                 <div class="widget-toolbar">
 
@@ -2110,7 +2115,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-red" id="shadow">
                                             <div class="widget-header ">
-                                                <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;"><?php  echo $row['st_placementstatus']  ?></h5>
+                                                <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">Placement Details</h5>
 
 
                                             </div>
@@ -2126,7 +2131,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Placed in companies</b></div>
 
                                                             <div class="profile-info-value testred">
-                                                                <span class="editable" id="ur">ZOHO</span>
+                                                                <span class="editable" id="ur"><?php  echo $row['st_placementstatus']  ?></span>
                                                             </div>
                                                         </div>
 
@@ -2480,12 +2485,12 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label  for="form-field-b1">Branch</label>
                                                                     <select name="pgbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_pgspecialization']?>">
-                                                                        <option value="Computer Science Engineering">Computer Science Engineering</option>
-                                                                        <option value="Information Technology">Information Technology</option>
-                                                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                                                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
-                                                                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
-                                                                        <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+                                                                        <option value="cse">Computer Science Engineering</option>
+                                                                        <option value="it">Information Technology</option>
+                                                                        <option value="mech">Mechanical Engineering</option>
+                                                                        <option value="ece">Electronics and Communication Engineering</option>
+                                                                        <option value="eee">Electrical and Electronics Engineering</option>
+                                                                        <option value="eie">Electronics and Instrumentation Engineering</option>
                                                                     </select>
                                                                 </div>
                                                             </div>

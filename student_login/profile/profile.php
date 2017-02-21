@@ -789,7 +789,7 @@ if($phoneno!=$old_phoneno)
                                     <div class="space-10"></div>
 
 
-                                    <div class="col-xs-12 col-sm-12 widget-container-col" id="widget-container-col-1">
+                                    <div class="col-xs-12 col-sm-9 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-blue" id="shadow">
                                             <div class="widget-header">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 20px;" >Profile</h5>
@@ -858,7 +858,7 @@ if($phoneno!=$old_phoneno)
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row">
-                                                            <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>Collge Name</b> </div>
+                                                            <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>College Name</b> </div>
 
                                                             <div class="profile-info-value testblue1">
                                                                 <div class=" " id="gen"><?php  echo $row['st_collegename']  ?></div>
@@ -887,8 +887,10 @@ if($phoneno!=$old_phoneno)
 
 
 
-                           </div>
+                                </div>
                                 <div class="col-xs-12 col-sm-9 test3">
+
+
 
 
 
@@ -898,12 +900,15 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                    <div class="col-xs-12 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
+                                    <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-orange" id="shadow">
-                                            <div class="widget-header ">
+                                            <div class="widget-header">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 20px;" >Personal Details</h5>
                                                 <div class="widget-toolbar">
-                                                <a href="#modal-form2" data-toggle="modal">
+
+
+
+                                                    <a href="#modal-form2" data-toggle="modal">
 
                                                         <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
@@ -969,6 +974,13 @@ if($phoneno!=$old_phoneno)
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Father Mobile Number</b> </div>
+
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_fathernumber']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Mother Name</b> </div>
 
                                                             <div class="profile-info-value testorange">
@@ -982,8 +994,20 @@ if($phoneno!=$old_phoneno)
                                                                 <span class="editable" id="fn"><?php  echo $row['st_motheroccupation']  ?></span>
                                                             </div>
                                                         </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Mother Mobile Number</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_mothernumber']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>College Mail ID</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <div class=" " id="dob"><?php  echo $row['st_clgemail']  ?></div>
+                                                            </div>
+                                                        </div>
 
                                                         <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>Date of Birth</b> </div>
@@ -1062,19 +1086,39 @@ if($phoneno!=$old_phoneno)
                                                                 <span class="editable" id="fn"><?php  echo $row['st_landline']  ?></span>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Aadhar Number</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_aadharno']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>Passport Number</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_passportno']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;"> <b>PAN Number</b> </div>
 
+                                                            <div class="profile-info-value testorange">
+                                                                <span class="editable" id="fn"><?php  echo $row['st_panno']  ?></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
 
 
                                                 </div>
+
+
+
                                             </div>
                                         </div>
                                     </div>
-
+                                </div>
 
                                 <div class="space-16"></div>
                                 <div class="col-xs-12 col-sm-9 test3">
@@ -1088,19 +1132,22 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                    <div class="col-xs-12 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
+                                    <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-green2" id="shadow">
                                             <div class="widget-header ">
-                                                <h5 class="widget-title " style="color: white; font-weight: bold; font-size: 18px;" >Academic Qualification</h5>
+                                                <h5 class="widget-title " style="color: white; font-weight: bold; font-size: 18px;" >Acadamic Qualification</h5>
+
                                                 <div class="widget-toolbar">
-                                                <a href="#modal-form3" data-toggle="modal">
+
+
+
+                                                    <a href="#modal-form3" data-toggle="modal">
 
                                                         <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
                                                     </a>
 
                                                 </div>
-
                                             </div>
 
                                             <div class="widget-body">
@@ -1120,7 +1167,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst3"><?php echo $row['st_10thinstitution'] ?></span>
+                                                                <span class="editable " id="inst3"><?php  echo $row['st_10thinstitution']  ?></span>
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row ">
@@ -1163,7 +1210,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst2"><?php echo $row['st_12thinstitution'] ?></span>
+                                                                <span class="editable " id="inst2"><?php  echo $row['st_12thinstitution']  ?></span>
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row ">
@@ -1178,7 +1225,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="yop1"><?php echo $row['st_12thyearofpassing'] ?></span>
+                                                                <span class="editable" id="yop1"><?php  echo $row['st_12thyearofpassing']  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1199,7 +1246,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Qualification</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="quailf1">B.E</span>
+                                                                <span class="editable" id="quailf1"><?php  echo $row['st_ugdegree']  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1215,7 +1262,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst1"><?php  echo $row['st_collegename']  ?></span>
+                                                                <span class="editable " id="inst1"><?php  echo $row['st_ugcollegename']  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1326,7 +1373,7 @@ if($phoneno!=$old_phoneno)
                                                             </div>
                                                         </div>
                                                     </div>
-                                                         <div class="space-4"></div>
+                                                    <div class="space-4"></div>
                                                     <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
 
                                                     <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
@@ -1335,7 +1382,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Qualification</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="quailf1">M.E</span>
+                                                                <span class="editable" id="quailf1"><?php  echo $row['st_pgdegree']  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1343,7 +1390,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Branch</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="branch">Computer Science Engineering</span>
+                                                                <span class="editable " id="branch"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgspecialization'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1351,7 +1398,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst1">RMD Engineering College</span>
+                                                                <span class="editable " id="inst1"><?php  if($row['st_pgdegree']!=0) echo $row['st_collegename'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1359,7 +1406,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="yop1">2018</span>
+                                                                <span class="editable" id="yop1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgyearofpassing'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1367,7 +1414,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Percentage/CGPA</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="cgpa1">9.0</span>
+                                                                <span class="editable" id="cgpa1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgcgpa'];  ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1382,7 +1429,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>First Semester</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="firstsem">8.0</span>
+                                                                <span class="editable" id="firstsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg1stsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1390,7 +1437,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Second Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="secondsem">8.0</span>
+                                                                <span class="editable " id="secondsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg2ndsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1398,7 +1445,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Third Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="thirdsem">8.0</span>
+                                                                <span class="editable " id="thirdsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg3rdsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1406,7 +1453,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Fourth Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="fourthsem">8.0</span>
+                                                                <span class="editable" id="fourthsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg4thsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1418,7 +1465,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Standing Arrear</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="sarr">0</span>
+                                                                <span class="editable" id="sarr"><?php  if($row['st_pgdegree']!=0) echo $row['st_standingarrears'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1426,20 +1473,36 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>History of Arrear</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr">0</span>
+                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_historyofarrears'];  ?></span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG College Name</b></div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ugcollegename'];  ?></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG History of arrears</b></div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ughistoryofarrears'];  ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
 
 
-                                                    </div>
-
-
-
                                                 </div>
+
+
+
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
                                 <div class="col-xs-12 col-sm-9 test3">
 
@@ -1452,7 +1515,7 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                    <div class="col-xs-12 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
+                                    <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-blue2" id="shadow">
                                             <div class="widget-header ">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">Skill Set</h5>
@@ -1461,11 +1524,11 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                                    <a href="#modal-form4" data-toggle="modal">
+                                                    <!-- <a href="#modal-form4" data-toggle="modal">
 
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
+                                                         <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
-                                                    </a>
+                                                     </a>-->
 
                                                 </div>
                                             </div>
@@ -1514,12 +1577,12 @@ if($phoneno!=$old_phoneno)
 
 
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                </div>
+                                    </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-9 test3">
 
@@ -1532,12 +1595,22 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                    <div class="col-xs-12 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
+                                    <div class="col-xs-12  col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
                                         <div class="widget-box widget-color-purple" id="shadow">
                                             <div class="widget-header ">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">AMCAT Score</h5>
-                                                
 
+                                                <div class="widget-toolbar">
+
+
+
+                                                    <a href="#modal-form5" data-toggle="modal">
+
+                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
+
+                                                    </a>
+
+                                                </div>
                                             </div>
 
                                             <div class="widget-body">
@@ -1558,8 +1631,6 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#DCC6E0; color:#663399" > <b>Quantitative Percentage</b> </div>
 
                                                             <div class="profile-info-value testpurple">
-
-
                                                                 <span class="editable " id="city"><?php  echo $row['st_quantitative']  ?></span>
                                                             </div>
                                                         </div>
@@ -1605,62 +1676,62 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                </div>
-
-
-                            <div class="col-xs-12 col-sm-9 test3">
-
-
-
-                                <div class="space-17"></div>
-
-
-                                <div class="space-16"></div>
-
-
-
-                                <div class="col-xs-12 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
-                                    <div class="widget-box widget-color-red" id="shadow">
-                                        <div class="widget-header ">
-                                            <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;"><?php  echo $row['st_placementstatus']  ?></h5>
-
-
-                                        </div>
-
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-
-
-
-                                                <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
-
-                                                    <div class="profile-info-row  ">
-                                                        <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Placed in companies</b></div>
-
-                                                        <div class="profile-info-value testred">
-                                                            <span class="editable" id="ur">ZOHO</span>
-                                                        </div>
                                                     </div>
-
-
-
                                                 </div>
-                                                <div class="space-10"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-9 test3">
+
+
+
+                                    <div class="space-17"></div>
+
+
+                                    <div class="space-16"></div>
+
+
+
+                                    <div class="col-xs-12 col-sm-9 col-lg-offset-4 widget-container-col" id="widget-container-col-1">
+                                        <div class="widget-box widget-color-red" id="shadow">
+                                            <div class="widget-header ">
+                                                <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">Placement Details</h5>
+
 
                                             </div>
 
+                                            <div class="widget-body">
+                                                <div class="widget-main">
 
 
+
+                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Placed in companies</b></div>
+
+                                                            <div class="profile-info-value testred">
+                                                                <span class="editable" id="ur"><?php  echo $row['st_placementstatus']  ?></span>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="space-10"></div>
+
+                                                </div>
+
+
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
 
 
