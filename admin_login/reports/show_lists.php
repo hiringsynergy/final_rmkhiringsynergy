@@ -9,12 +9,12 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 }
 
-if(isset($_GET['placed'])){
+if(isset($_POST['placed'])){
 
 
-$flag=$_GET['flag'];
-$jid=$_GET['jid'];
-$checkbox=$_GET['checkbox'];
+$flag=$_POST['flag'];
+$jid=$_POST['jid'];
+$checkbox=$_POST['checkbox'];
 
 include "../connect.php";
 
@@ -47,6 +47,205 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 }
+
+
+if(isset($_POST['mail']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+$flag=$_POST['flag'];
+$jid=$_POST['jid'];
+$checkbox=$_POST['checkbox'];
+
+    $message=$_POST['message'];
+    $subject=$_POST['subject'];
+
+   
+
+
+    //uploading file if exists
+    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+      echo  $file_name = $_FILES['attachment']['name'];
+      echo  $file_size = $_FILES['attachment']['size'];
+       echo $file_tmp = $_FILES['attachment']['tmp_name'];
+       echo $file_type = $_FILES['attachment']['type'];
+
+
+
+        $value = explode('.',$file_name);
+
+
+
+
+        $file_ext=strtolower(end($value));
+
+        $newfilename = current($value).'_'.time() . '.' . $file_ext;
+
+
+        move_uploaded_file($file_tmp,"files/$newfilename");
+
+
+
+    }
+
+
+
+
+
+
+    //sending mails
+
+    require "../email/PHPMailer/PHPMailerAutoload.php";
+
+    $mail=new PHPMailer();
+
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+    $mail->Password = 'akash170397';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;
+
+
+
+
+
+
+
+
+
+
+
+
+    include "../connect.php";
+
+$query_get_year="SELECT * FROM jobs WHERE job_id='$jid'";
+$result_get_year=mysqli_query($connect, $query_get_year);
+$row_get_year=mysqli_fetch_assoc($result_get_year);
+
+$year_of_graduation=$row_get_year['year_of_graduation'];
+
+
+
+
+
+foreach($checkbox as $list){
+    
+    $query_mail="SELECT * FROM students_".$year_of_graduation." WHERE st_roll='$list'";
+    $result_mail=mysqli_query($connect, $query_mail);
+    $row_roll_mail=mysqli_fetch_assoc($result_mail);
+
+
+
+
+
+
+
+
+
+
+
+
+        $to=$row_roll_mail['st_email'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+        $mail->addAddress($to, $to);     // Add a recipient
+
+        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+
+
+
+
+        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+            $mail->addAttachment('files/$newfilename', $newfilename);
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        $mail->isHTML(true);
+
+        $mail->Subject = $subject;
+        $mail->Body    = '<h3> '.$message.' </h3>';
+
+
+
+        if(!$mail->send()) {
+
+
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+
+        } else {
+
+            echo 'Message has been sent';
+
+        }
+
+
+        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+          //  unlink("files/$newfilename");
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    // header("Location: show_lists?jid=$jid&flag=$flag");
+
+
+
+}
+
 
 
 
@@ -819,12 +1018,12 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
                                                     <?php } ?>
                                                     <li>
-                                                        <a type="submit"  onclick="mail()"> Mail</a>
+                                                     <a href="#modal-form" data-toggle="modal" type="submit"  > Mail</a>
                                                     </li>
 
                                                 </ul>
                                             </div>
-                                
+                            
                                 
 
                                              
@@ -1334,7 +1533,78 @@ header("Location: show_lists?jid=$jid&flag=$flag");
                                             }
 
                                             ?>
-                                            <form action="show_lists.php" method="get" id="form-id">
+                                            <form action="show_lists.php" method="post" enctype="multipart/form-data" id="form-id">
+
+
+                                                                <div id="modal-form" class="modal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            
+
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+
+                                                        <div class="space-4"></div>
+
+
+                                                        
+
+                                                        <div class="form-group">
+                                                            <label for="form-field-username">Subject</label>
+
+                                                            <div>
+                                                                <input type="text" name="subject" id="form-field-username" class="col-xs-8" placeholder="Enter Subject" value="" />
+                                                            </div>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="space-16"></div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="form-field-first">Message</label>
+
+                                                            <div>
+                                                    <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                </div>
+
+                                                <div class="space-16"></div>
+
+
+                                                <div class="col-xs-8 col-sm-12 ">
+
+                                                    <div class="space-16"></div>
+                                                    <label for="id-input-file-2">Attachment</label>
+
+
+
+                                                    <input type="file" id="id-input-file-2" name="attachment" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                                <div class="space-16"></div>
+                                            <div class="modal-footer center">
+                                                <button class="btn btn-sm" data-dismiss="modal">
+                                                    <i class="ace-icon fa fa-times"></i>
+                                                    Cancel
+                                                </button>
+                                                <button  type="submit" class="btn btn-sm btn-primary" onclick="mail()">
+                                                    <i class="ace-icon fa fa-send"></i>
+                                                    SEND
+                                                </button>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+
+                        <!-- PAGE CONTENT ENDS -->
+                    </div>
+                            
 
                                             <div class="tab-content">
                                                 <div id="home" class="tab-pane fade in active">
@@ -1914,7 +2184,18 @@ header("Location: show_lists?jid=$jid&flag=$flag");
         var active_class = 'active';
 
 
-
+ $(' #id-input-file-2').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false //| true | large
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
+        });
 
 
 

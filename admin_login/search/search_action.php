@@ -273,7 +273,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
     //sending mails
 
-    require "../email/PHPMailer/PHPMailerAutoload";
+    require "../email/PHPMailer/PHPMailerAutoload.php";
 
     $mail=new PHPMailer();
 
@@ -420,7 +420,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
         $file_ext=strtolower(end($value));
 
-        $newfilename = $file_name.'_'.time() . '.' . $file_ext;
+        $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
         move_uploaded_file($file_tmp,"files/".$newfilename);
@@ -436,7 +436,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
     //sending mails
 
-    require "../email/PHPMailer/PHPMailerAutoload";
+    require "../email/PHPMailer/PHPMailerAutoload.php";
 
     $mail=new PHPMailer();
 
