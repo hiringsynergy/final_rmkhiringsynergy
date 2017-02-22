@@ -241,6 +241,9 @@ if(isset($_FILES['image']) && isset($_SESSION['user_role'])=='student'){
 }
 
 
+
+
+
 ?>
 
 
@@ -574,7 +577,6 @@ if(isset($_GET['changemailphone']) && isset($_SESSION['user_role'])=='student'){
 
     include "../connect.php";
 
-
     $name=$_SESSION['user'];
     $student_table=$_SESSION['table_name'];
 
@@ -643,6 +645,12 @@ if($phoneno!=$old_phoneno)
 
         die("".mysqli_error($connect));
     }
+
+
+
+
+
+
 ?>
 <div class="alert alert-block alert-success">
                                 <button type="button" class="close" data-dismiss="alert">
@@ -663,6 +671,245 @@ if($phoneno!=$old_phoneno)
 
 }
 
+
+}
+
+
+
+
+
+if (isset($_GET['profile'])&& isset($_SESSION['user_role'])=='student') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+    $univregno = $_GET['univregno'];
+    $fullname = $_GET['fullname'];
+    $phoneno = $_GET['phoneno'];
+    $emailid = $_GET['emailid'];
+    $cgpa = $_GET['cgpa'];
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}'  WHERE st_roll='{$rollno}'";
+    $result_change_profile = mysqli_query($connect, $query_change_profile);
+
+    if (!$result_change_profile) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+
+
+    header("Location: profile?roll=$rollno");
+
+}
+
+
+if (isset($_GET['personaldetails']) && isset($_SESSION['user_role'])=='student') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+
+    $firstname = $_GET['firstname'];
+    $middlename = $_GET['middlename'];
+    $lastname = $_GET['lastname'];
+    $gender = $_GET['gender'];
+    $fathername = $_GET['fathername'];
+    $fatheroccupation = $_GET['fatheroccupation'];
+    $mothername = $_GET['mothername'];
+    $motheroccupation = $_GET['motheroccupation'];
+    $dob = $_GET['dob'];
+    $nationality = $_GET['nationality'];
+    $caste = $_GET['caste'];
+    $hometown = $_GET['hometown'];
+    $premanaddress1 = $_GET['premanaddress1'];
+    $premanaddress2 = $_GET['premanaddress2'];
+    $city = $_GET['city'];
+    $state = $_GET['state'];
+    $pincode  = $_GET['pincode'];
+    $landline = $_GET['landline'];
+
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+
+    $query_change_personaldetails = "UPDATE $tname SET  st_firstname='{$firstname}',st_middlename='{$middlename}',st_lastname='{$lastname}',st_gender='{$gender}',st_fathername='{$fathername}',
+st_fatheroccupation='{$fatheroccupation}',st_mothername='{$mothername}',st_motheroccupation='{$motheroccupation}',st_dob='{$dob}',st_nationality='{$nationality}',
+st_caste='{$caste}',st_hometown='{$hometown}',st_address1='{$premanaddress1}',st_address2='{$premanaddress2}',st_city='{$city}',
+st_state='{$state}',st_posatlcode='{$pincode}',st_landline='{$landline}' WHERE st_roll='{$rollno}'";
+    $result_change_personaldetails = mysqli_query($connect, $query_change_personaldetails);
+
+    if (!$result_change_personaldetails) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+
+
+    header("Location: profile?roll=$rollno");
+
+
+
+}
+
+
+
+
+if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+
+
+    $s10thschoolname = $_GET['s10thschoolname'];
+    $s10thmedium = $_GET['s10thmedium'];
+    $s10thyearofpass = $_GET['s10thyearofpass'];
+    $s10thpercent = $_GET['s10thpercent'];
+    $s12thschoolname = $_GET['s12thschoolname'];
+    $s12thmedium = $_GET['s12thmedium'];
+    $s12thyearofpass = $_GET['s12thyearofpass'];
+    $s12thpercent = $_GET['s12thpercent'];
+    $ugqualification = $_GET['ugqualification'];
+    $ugbranch = $_GET['ugbranch'];
+    $ugclgname = $_GET['ugclgname'];
+    $ugyearofpass = $_GET['ugyearofpass'];
+    $ugcgpa = $_GET['ugcgpa'];
+    $s1sem = $_GET['s1sem'];
+    $s2sem = $_GET['s2sem'];
+    $s3sem = $_GET['s3sem'];
+    $s4sem = $_GET['s4sem'];
+    $s5sem = $_GET['s5sem'];
+    $s6sem = $_GET['s6sem'];
+    $s7sem = $_GET['s7sem'];
+    $s8sem = $_GET['s8sem'];
+    $standarrears = $_GET['standarrears'];
+    $historyofarrears = $_GET['historyofarrears'];
+    $pgqualification  = $_GET['pgqualification'];
+    $pgbranch = $_GET['pgbranch'];
+    $pgyearofpass = $_GET['pgyearofpass'];
+    $pgpercent = $_GET['pgpercent'];
+    $pgsem1 = $_GET['pgsem1'];
+    $pgsem2 = $_GET['pgsem2'];
+    $pgsem3 = $_GET['pgsem3'];
+    $pgsem4 = $_GET['pgsem4'];
+    $pgstandarrears  = $_GET['pgstandarrears'];
+    $pghistoryofarrears = $_GET['pghistoryofarrears'];
+
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+
+    $query_change_academicdetails = "UPDATE $tname SET  st_10thinstitution='{$s10thschoolname}',st_10thmedium='{$s10thmedium}',st_10thyearofpassing='{$s10thyearofpass}',st_10thpercentage='{$s10thpercent}',st_12thinstitution='{$s12thschoolname}',
+st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
+st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_standingarrears='{$standarrears}',
+st_historyofarrears='{$historyofarrears}',st_pgspecialization='{$pgbranch}',st_pgdegree='{$pgqualification}',st_pgyearofpassing='{$pgyearofpass}',st_pgcgpa='{$pgpercent}',st_pg1stsem='{$pgsem1}',st_pg2ndsem='{$pgsem2}',st_pg3rdsem='{$pgsem3}',
+st_pg4thsem='{$pgsem4}',st_standingarrears='{$pgstandarrears}',st_historyofarrears='{$pghistoryofarrears}' WHERE st_roll='{$rollno}'";
+    $result_change_academicdetails = mysqli_query($connect, $query_change_academicdetails);
+
+    if (!$result_change_academicdetails) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+
+
+    header("Location: profile?roll=$rollno");
+
+
+
+}
+
+
+
+
+if (isset($_GET['amcatscore'])&& isset($_SESSION['user_role'])=='student') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+
+
+    $engpercent = $_GET['engpercent'];
+    $quantpercent = $_GET['quantpercent'];
+    $logicalpercent = $_GET['logicalpercent'];
+    $overallpercent = $_GET['overallpercent'];
+    $percent = $_GET['percent'];
+    $candidateid = $_GET['candidateid'];
+    $signature = $_GET['signature'];
+
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+
+    $query_change_amcatscore = "UPDATE $tname SET  st_english='{$engpercent}',st_quantitative='{$quantpercent}',st_logical='{$logicalpercent}',st_overall='{$overallpercent}',st_percentage='{$percent}',
+st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rollno}'";
+    $result_change_amcatscore = mysqli_query($connect, $query_change_amcatscore);
+
+    if (!$result_change_amcatscore) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+
+
+    header("Location: profile?roll=$rollno");
+
+
+
+}
+
+
+if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+    $skillset = $_GET['skillset'];
+    $duration = $_GET['duration'];
+    $vendor = $_GET['vendor'];
+    $coecert = $_GET['coecert'];
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
+    $result_change_skill = mysqli_query($connect, $query_change_skill);
+
+    if (!$result_change_skill) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+
+
+    header("Location: profile?roll=$rollno");
 
 }
 
@@ -1257,6 +1504,7 @@ if($phoneno!=$old_phoneno)
                                                                 <span class="editable " id="branch"><?php  echo $row['st_ugspecialization']  ?></span>
                                                             </div>
                                                         </div>
+                                                        <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){?>
 
                                                         <div class="profile-info-row ">
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
@@ -1265,6 +1513,7 @@ if($phoneno!=$old_phoneno)
                                                                 <span class="editable " id="inst1"><?php  echo $row['st_ugcollegename']  ?></span>
                                                             </div>
                                                         </div>
+                                                        <?php }?>
 
                                                         <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
@@ -1356,6 +1605,8 @@ if($phoneno!=$old_phoneno)
 
                                                     </div>
                                                     <div class="space-4"></div>
+                                                    <?php if((strcasecmp($row['st_currentlypursuing'],"pg"))){
+                                                        ?>
                                                     <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
                                                         <div class="profile-info-row  ">
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Standing Arrear</b></div>
@@ -1364,6 +1615,7 @@ if($phoneno!=$old_phoneno)
                                                                 <span class="editable" id="sarr"><?php  echo $row['st_standingarrears']  ?></span>
                                                             </div>
                                                         </div>
+                                                        
 
                                                         <div class="profile-info-row  ">
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>History of Arrear</b></div>
@@ -1373,9 +1625,10 @@ if($phoneno!=$old_phoneno)
                                                             </div>
                                                         </div>
                                                     </div>
+                                                        <?php }?>
+                                                    <div class="space-4"></div>
                                                     <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
                                                         ?>
-                                                    <div class="space-4"></div>
                                                     <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
 
                                                     <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
@@ -1392,7 +1645,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Branch</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="branch"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgspecialization'];  ?></span>
+                                                                <span class="editable " id="branch"><?php   echo $row['st_pgspecialization'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1400,7 +1653,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst1"><?php  if($row['st_pgdegree']!=0) echo $row['st_collegename'];  ?></span>
+                                                                <span class="editable " id="inst1"><?php   echo $row['st_collegename'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1408,7 +1661,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="yop1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgyearofpassing'];  ?></span>
+                                                                <span class="editable" id="yop1"><?php   echo $row['st_pgyearofpassing'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1416,7 +1669,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Percentage/CGPA</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="cgpa1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgcgpa'];  ?></span>
+                                                                <span class="editable" id="cgpa1"><?php   echo $row['st_pgcgpa'];  ?></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1431,7 +1684,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>First Semester</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="firstsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg1stsem'];  ?></span>
+                                                                <span class="editable" id="firstsem"><?php   echo $row['st_pg1stsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1439,7 +1692,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Second Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="secondsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg2ndsem'];  ?></span>
+                                                                <span class="editable " id="secondsem"><?php   echo $row['st_pg2ndsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1447,7 +1700,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Third Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="thirdsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg3rdsem'];  ?></span>
+                                                                <span class="editable " id="thirdsem"><?php   echo $row['st_pg3rdsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1455,7 +1708,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Fourth Semester</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="fourthsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg4thsem'];  ?></span>
+                                                                <span class="editable" id="fourthsem"><?php   echo $row['st_pg4thsem'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1467,7 +1720,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Standing Arrear</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="sarr"><?php  if($row['st_pgdegree']!=0) echo $row['st_standingarrears'];  ?></span>
+                                                                <span class="editable" id="sarr"><?php  echo $row['st_standingarrears'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1475,7 +1728,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>History of Arrear</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_historyofarrears'];  ?></span>
+                                                                <span class="editable" id="harr"><?php   echo $row['st_historyofarrears'];  ?></span>
                                                             </div>
                                                         </div>
                                                         
@@ -1483,17 +1736,10 @@ if($phoneno!=$old_phoneno)
                                                             <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG College Name</b></div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ugcollegename'];  ?></span>
+                                                                <span class="editable" id="harr"><?php   echo $row['st_ugcollegename'];  ?></span>
                                                             </div>
                                                         </div>
 
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG History of arrears</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ughistoryofarrears'];  ?></span>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <?php }?>
 
@@ -1527,11 +1773,11 @@ if($phoneno!=$old_phoneno)
 
 
 
-                                                    <!-- <a href="#modal-form4" data-toggle="modal">
+                                                     <a href="#modal-form4" data-toggle="modal">
 
                                                          <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
-                                                     </a>-->
+                                                     </a>
 
                                                 </div>
                                             </div>
@@ -1753,28 +1999,28 @@ if($phoneno!=$old_phoneno)
                                                         <div class="form-group">
                                                             <label for="control-label bolder blue">If any skill certification obtained</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder blue" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
+                                                                <input type="text" name="skillset" id="control-label bolder blue" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder blu">Duration of Course</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder blu" placeholder="" value="<?php echo $row['st_duration']?>" />
+                                                                <input type="text" name="duration" id="control-label bolder blu" placeholder="" value="<?php echo $row['st_duration']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder bl">Certification Vendor/Authority/Agency Name</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder bl" placeholder="" value="<?php echo $row['st_vendor']?>" />
+                                                                <input type="text" name="vendor" id="control-label bolder bl" placeholder="" value="<?php echo $row['st_vendor']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder b">COE Certification</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder b" placeholder="" value="<?php echo $row['st_coecertification']?>" />
+                                                                <input type="text" name="coecename="skill" rt" id="control-label bolder b" placeholder="" value="<?php echo $row['st_coecertification']?>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1787,7 +2033,7 @@ if($phoneno!=$old_phoneno)
                                                     Cancel
                                                 </button>
 
-                                                <button class="btn btn-sm btn-primary">
+                                                <button name="skill" class="btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
@@ -1811,18 +2057,41 @@ if($phoneno!=$old_phoneno)
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-7">
                                                         <div class="form-group">
-                                                            <label for="control-label bolder bl">Mobile Number</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder bl" name="phoneno" placeholder="" value="<?php echo $row['st_phone'] ?>" />
+                                                                <label for="control-label bolder blue">University Register Number</label>
+                                                                <div>
+                                                                    <input type="text" disabled id="control-label bolder blue" placeholder="" name="univregno" value="<?php echo $row['st_roll'] ?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label for="control-label bolder b">Email-Id</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder b" name="emailid" placeholder="" value="<?php echo $row['st_email'] ?>" />
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder blu">Full Name</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder blu" name="fullname" placeholder="" value="<?php echo $row['st_name'] ?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
+
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder bl">Mobile Number</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder bl" name="phoneno" placeholder="" value="<?php echo $row['st_phone'] ?>" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder b">Email-Id</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder b" name="emailid" placeholder="" value="<?php echo $row['st_email'] ?>" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder blu">Current Cgpa</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder blu" name="cgpa" placeholder="" value="<?php echo $row['st_cgpa'] ?>" />
+                                                                </div>
+                                                            </div>
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1833,7 +2102,7 @@ if($phoneno!=$old_phoneno)
                                                     Cancel
                                                 </button>
 
-                                                <button name="changemailphone" class="btn btn-sm btn-primary">
+                                                <button name="profile" class="btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
@@ -1978,6 +2247,7 @@ if($phoneno!=$old_phoneno)
                                                             </div>
 
                                                             <div class="space-4"></div>
+                                                        <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){?>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -1990,6 +2260,7 @@ if($phoneno!=$old_phoneno)
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <?php }?>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2000,14 +2271,14 @@ if($phoneno!=$old_phoneno)
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-p1">Percentage/CGPA</label>
                                                                     <div>
                                                                         <input type="text" id="form-field-p1" placeholder="" name="ugcgpa" value="<?php echo $row['st_cgpa']?>" />
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2080,6 +2351,8 @@ if($phoneno!=$old_phoneno)
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <?php if((strcasecmp($row['st_currentlypursuing'],"pg"))){
+                                                        ?>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2089,6 +2362,7 @@ if($phoneno!=$old_phoneno)
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2098,6 +2372,9 @@ if($phoneno!=$old_phoneno)
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <?php }?>
+                                                            <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
+                                                        ?>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2209,6 +2486,7 @@ if($phoneno!=$old_phoneno)
                                                             <div class="space-4"></div>
 
                                                             <div class="space-4"></div>
+                                                            <?php }?>
 
                                                         </div>
                                                     </div>
@@ -2216,7 +2494,7 @@ if($phoneno!=$old_phoneno)
 
                                                 <div class="modal-footer">
                                                     <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
-                                                    <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
+                                                    <input type="hidden" name="tname" value="<?php echo $_SESSION['table_name']; ?>"/>
                                                     <button class="btn btn-sm" data-dismiss="modal">
                                                         <i class="ace-icon fa fa-times"></i>
                                                         Cancel
@@ -2411,7 +2689,7 @@ if($phoneno!=$old_phoneno)
 
                                                 <div class="modal-footer">
                                                     <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
-                                                    <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
+                                                    <input type="hidden" name="tname" value="<?php echo $_SESSION['table_name']; ?>"/>
                                                     <button class="btn btn-sm" data-dismiss="modal">
                                                         <i class="ace-icon fa fa-times"></i>
                                                         Cancel
@@ -2421,7 +2699,8 @@ if($phoneno!=$old_phoneno)
                                                         <i class="ace-icon fa fa-check"></i>
                                                         Save
                                                     </button>
-                                                </div></form>
+                                                </div>
+                                                </form>
                                         </div>
                                     </div>
                                 </div>
@@ -2494,7 +2773,7 @@ if($phoneno!=$old_phoneno)
 
                                                 <div class="modal-footer">
                                                     <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
-                                                    <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
+                                                    <input type="hidden" name="tname" value="<?php echo $_SESSION['table_name']; ?>"/>
                                                     <button class="btn btn-sm" data-dismiss="modal">
                                                         <i class="ace-icon fa fa-times"></i>
                                                         Cancel
