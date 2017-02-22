@@ -14,20 +14,6 @@ ob_start();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -761,81 +747,90 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                      $position = mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(2, $row)->getValue());*/
 
 
-                                    $roll= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
-                                    $first_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(1, $row)->getValue());
-                                    $middle_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(2, $row)->getValue());
-                                    $last_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(3, $row)->getValue());
-                                    $name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(4, $row)->getValue());
-                                    $gender= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(5, $row)->getValue());
-                                    $father_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(6, $row)->getValue());
-                                    $father_occupation= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(7, $row)->getValue());
-                                    $mother_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(8, $row)->getValue());
-                                    $mother_occupation= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(9, $row)->getValue());
-                                    $email= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(10, $row)->getValue());
-                                    $phone= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(11, $row)->getValue());
-                                    $dob= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(12, $row)->getValue());
-                                    $nationality= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(13, $row)->getValue());
-                                    $caste= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(14, $row)->getValue());
-                                    $college_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(15, $row)->getValue());
-                                    $university= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(16, $row)->getValue());
-                                    $_10percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(17, $row)->getValue());
-                                    $_10institution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(18, $row)->getValue());
-                                    $_10boardofstudy= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(19, $row)->getValue());
-                                    $_10medium= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(20, $row)->getValue());
-                                    $_10yearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(21, $row)->getValue());
-                                    $_12percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(22, $row)->getValue());
-                                    $_12institution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(23, $row)->getValue());
-                                    $_12boardofstudy= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(24, $row)->getValue());
-                                    $_12medium= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(25, $row)->getValue());
-                                    $_12yearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(26, $row)->getValue());
-                                    $dippercentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(27, $row)->getValue());
-                                    $dipyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(28, $row)->getValue());
-                                    $current= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(29, $row)->getValue());
-                                    $ugdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(30, $row)->getValue());
-                                    $ugspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(31, $row)->getValue());
-                                    $ug1sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(32, $row)->getValue());
-                                    $ug2sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(33, $row)->getValue());
-                                    $ug3sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(34, $row)->getValue());
-                                    $ug4sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(35, $row)->getValue());
-                                    $ug5sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(36, $row)->getValue());
-                                    $ug6sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(37, $row)->getValue());
-                                    $ug7sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(38, $row)->getValue());
-                                    $ug8sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(39, $row)->getValue());
-                                    $cgpa= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(40, $row)->getValue());
-                                    $ugyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(41, $row)->getValue());
-                                    $pgdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(42, $row)->getValue());
-                                    $pgspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(43, $row)->getValue());
-                                    $pg1sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(44, $row)->getValue());
-                                    $pg2sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(45, $row)->getValue());
-                                    $pg3sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue());
-                                    $pg4sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(47, $row)->getValue());
-                                    $pgcgpa= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(48, $row)->getValue());
-                                    $pgyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(49, $row)->getValue());
-                                    $ugcollegename= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(50, $row)->getValue());
-                                    $dayhostel= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(51, $row)->getValue());
-                                    $historyofarrears= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(52, $row)->getValue());
-                                    $standingarrears= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(53, $row)->getValue());
-                                    $hometown= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(54, $row)->getValue());
-                                    $address1= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(55, $row)->getValue());
-                                    $address2= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(56, $row)->getValue());
-                                    $city= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(57, $row)->getValue());
-                                    $state= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(58, $row)->getValue());
-                                    $postal_code= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(59, $row)->getValue());
-                                    $landline= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(60, $row)->getValue());
-                                    $skill= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(61, $row)->getValue());
-                                    $duration= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(62, $row)->getValue());
-                                    $vendor= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(63, $row)->getValue());
-                                    $coecertification= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(64, $row)->getValue());
-                                    $gap= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(65, $row)->getValue());
-                                    $reason= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(66, $row)->getValue());
-                                    $english= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(67, $row)->getValue());
-                                    $quantitative= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(68, $row)->getValue());
-                                    $logical= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(69, $row)->getValue());
-                                    $overall= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(70, $row)->getValue());
-                                    $percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(71, $row)->getValue());
-                                    $candidate= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(72, $row)->getValue());
-                                    $signature= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(73, $row)->getValue());
-                                    $placement_status= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(74, $row)->getValue());
+                                    $roll= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(1, $row)->getValue());
+                                    $first_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(2, $row)->getValue());
+                                    $middle_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(3, $row)->getValue());
+                                    $last_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(4, $row)->getValue());
+                                    $name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(5, $row)->getValue());
+                                    $gender= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(6, $row)->getValue());
+                                    $father_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(7, $row)->getValue());
+                                    $father_occupation= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(8, $row)->getValue());
+                                    $father_mobile= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(9, $row)->getValue());
+                                    $mother_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(10, $row)->getValue());
+                                    $mother_occupation= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(11, $row)->getValue());
+                                    $mother_mobile= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(12, $row)->getValue());
+                                    $college_email= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(13, $row)->getValue());
+                                    $email= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(14, $row)->getValue());
+                                    $phone= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(15, $row)->getValue());
+                                    $dob= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(16, $row)->getValue());
+                                    $nationality= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(17, $row)->getValue());
+                                    $caste= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(18, $row)->getValue());
+                                    $college_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(19, $row)->getValue());
+                                    $university= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(20, $row)->getValue());
+                                    $_10percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(21, $row)->getValue());
+                                    $_10institution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(22, $row)->getValue());
+                                    $_10boardofstudy= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(23, $row)->getValue());
+                                    $_10medium= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(24, $row)->getValue());
+                                    $_10yearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(25, $row)->getValue());
+                                    $_12percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(26, $row)->getValue());
+                                    $_12institution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(27, $row)->getValue());
+                                    $_12boardofstudy= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(28, $row)->getValue());
+                                    $_12medium= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(29, $row)->getValue());
+                                    $_12yearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(30, $row)->getValue());
+                                    $dippercentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(31, $row)->getValue());
+                                    $dipspecialization= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(32, $row)->getValue());
+                                    $dipyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(33, $row)->getValue());
+                                    $dipinstitution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(34, $row)->getValue());
+                                    $current= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(35, $row)->getValue());
+                                    $ugdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(36, $row)->getValue());
+                                    $ugspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(37, $row)->getValue());
+                                    $ug1sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(38, $row)->getValue());
+                                    $ug2sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(39, $row)->getValue());
+                                    $ug3sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(40, $row)->getValue());
+                                    $ug4sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(41, $row)->getValue());
+                                    $ug5sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(42, $row)->getValue());
+                                    $ug6sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(43, $row)->getValue());
+                                    $ug7sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(44, $row)->getValue());
+                                    $ug8sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(45, $row)->getValue());
+                                    $cgpa= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue());
+                                    $ugyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(47, $row)->getValue());
+                                    $pgdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(48, $row)->getValue());
+                                    $pgspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(49, $row)->getValue());
+                                    $pg1sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(50, $row)->getValue());
+                                    $pg2sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(51, $row)->getValue());
+                                    $pg3sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(52, $row)->getValue());
+                                    $pg4sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(53, $row)->getValue());
+                                    $pgcgpa= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(54, $row)->getValue());
+                                    $pgyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(55, $row)->getValue());
+                                    $ugcollegename= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(56, $row)->getValue());
+                                    $ughistoryofarrears= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(57, $row)->getValue());
+                                    $dayhostel= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(58, $row)->getValue());
+                                    $historyofarrears= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(59, $row)->getValue());
+                                    $standingarrears= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(60, $row)->getValue());
+                                    $hometown= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(61, $row)->getValue());
+                                    $address1= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(62, $row)->getValue());
+                                    $address2= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(63, $row)->getValue());
+                                    $city= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(64, $row)->getValue());
+                                    $state= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(65, $row)->getValue());
+                                    $postal_code= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(66, $row)->getValue());
+                                    $landline= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(67, $row)->getValue());
+                                    $skill= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(68, $row)->getValue());
+                                    $duration= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(69, $row)->getValue());
+                                    $vendor= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(70, $row)->getValue());
+                                    $coecertification= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(71, $row)->getValue());
+                                    $gap= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(72, $row)->getValue());
+                                    $reason= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(73, $row)->getValue());
+                                    $english= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(74, $row)->getValue());
+                                    $quantitative= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(75, $row)->getValue());
+                                    $logical= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(76, $row)->getValue());
+                                    $overall= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(77, $row)->getValue());
+                                    $percentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(78, $row)->getValue());
+                                    $candidate= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(79, $row)->getValue());
+                                    $signature= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(80, $row)->getValue());
+                                    $placement_status= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(81, $row)->getValue());
+                                    $aadhar= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(82, $row)->getValue());
+                                    $passport= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(83, $row)->getValue());
+                                    $pan= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(84, $row)->getValue());
 
 
 
@@ -845,21 +840,21 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);
 
-                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$mother_name','$mother_occupation','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$pass_secured','rmd.jpg','','','')";
+                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$father_mobile',  '$mother_name','$mother_occupation','$mother_mobile','$college_email','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipspecialization','$dipinstitution','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$ughistoryofarrears','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$aadhar','$passport','$pan','$pass_secured','rmd.jpg','','','')";
                                     }
                                     else if(preg_match('/rmk_database/', $database_name)){
 
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);
 
-                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$mother_name','$mother_occupation','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$pass_secured','rmk.jpg','','','')";
+                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$father_mobile',  '$mother_name','$mother_occupation','$mother_mobile','$college_email','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipspecialization','$dipinstitution','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$ughistoryofarrears','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$aadhar','$passport','$pan','$pass_secured','rmk.jpg','','','')";
                                     }
                                     else if(preg_match('/rmkcet_database/', $database_name)){
 
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);
 
-                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$mother_name','$mother_occupation','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$pass_secured','rmkcet.jpg','','','')";
+                                        $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$father_mobile',  '$mother_name','$mother_occupation','$mother_mobile','$college_email','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipspecialization','$dipinstitution','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$ughistoryofarrears','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$aadhar','$passport','$pan','$pass_secured','rmkcet.jpg','','','')";
                                     }
 
 
