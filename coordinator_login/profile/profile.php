@@ -765,7 +765,64 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                         <button type="submit"  class="btn btn-success ">search</button>
                     </form>
 
+<?php
 
+
+                                        if(isset($_SESSION['roll']) && isset($_SESSION['user_role'])=='coordinator') {
+
+
+                                        include "../connect.php";
+                                        $username = $_SESSION['roll'];
+
+
+                                        $isstudent = $username[4] . $username[5];
+                                        $isstudent += 4;
+
+                                        $query_short = "SELECT * FROM table_map WHERE table_short='{$isstudent}'";
+                                        $result_short = mysqli_query($connect, $query_short);
+                                        $row_short = mysqli_fetch_assoc($result_short);
+
+                                        $student_table = $row_short['table_name'];
+
+                                        $temp_branch=$_SESSION['cood_branch'];
+
+                                        $query1 = "SELECT * FROM $student_table WHERE st_roll='$username'";
+
+                                        $result1 = mysqli_query($connect, $query1);
+                                        $row1 = mysqli_fetch_assoc($result1);
+                                        if($row1['st_ugspecialization']!=$temp_branch){
+
+                                            ?>
+
+                                            <div class="space-10"></div>
+
+
+                                            <div class="row col-xs-12">
+                                            <div class="alert alert-block alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                        <i class="ace-icon fa fa-times"></i>
+                                    </button>
+
+
+                                    Please enter the respective department register number
+                                </div>
+                                           </div> <?php
+                                        }
+
+
+
+
+
+                                        $query = "SELECT * FROM $student_table WHERE st_roll='$username' and st_ugspecialization='$temp_branch'";
+
+                                        $result = mysqli_query($connect, $query);
+                                        if (!$connect) {
+
+                                            die("" . mysqli_error($connect));
+                                        }
+                                    }
+
+?>
                 </div><!-- /.page-header -->
 
                 <div class="row">
@@ -1478,6 +1535,8 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
+                                                        ?>
                                                     <div class="space-4"></div>
                                                     <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
 
@@ -1598,6 +1657,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php }?>
 
 
                                                 </div>

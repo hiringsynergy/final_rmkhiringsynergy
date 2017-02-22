@@ -1789,6 +1789,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
+                                                        ?>
                                                     <div class="space-4"></div>
                                                     <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
 
@@ -1806,7 +1808,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Branch</b> </div>
 
                                                             <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="branch"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgspecialization'];  ?></span>
+                                                                <span class="editable " id="branch"><?php  if($row['st_pgdegree']!="UG") echo $row['st_pgspecialization'];  ?></span>
                                                             </div>
                                                         </div>
 
@@ -1909,6 +1911,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php
+
+                                                    } 
+
+                                                    ?>
 
 
                                                 </div>
