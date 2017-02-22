@@ -16,7 +16,7 @@ $tablename=$_GET['tablename'];
 
     $query="CREATE TABLE students_".$tablename."  (
 
-     st_sno varchar(12) NOT NULL,
+    
 
     st_roll varchar(12) NOT NULL,
   st_firstname varchar(255)  ,
