@@ -359,7 +359,15 @@ else if(isset($_POST['proceed'])){
 
                     if(!$mail->send()) {
 
-                        echo "error in sending mail";
+                        
+
+                                $_SESSION['user_valid']=1;
+                                // echo "send";
+                                        
+                                header("Location: ../reset.php");
+
+
+
                     }
                     else{
 
@@ -410,7 +418,11 @@ else if(isset($_POST['proceed'])){
 
 
     if($is_user_valid==false){
+        
 
+      $_SESSION['user_valid']=1;
+
+// echo "is_valid";
         header("Location: ../reset.php");
 
 

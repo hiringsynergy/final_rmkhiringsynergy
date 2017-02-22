@@ -174,6 +174,7 @@ html, body, .main {
 
                 <?php
 
+                
                 if(isset($_SESSION['reset'])==1){
 
                     ?>

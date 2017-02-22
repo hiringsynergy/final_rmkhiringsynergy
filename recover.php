@@ -166,7 +166,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])){
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link link" href="login.php">Login</a></li><li class="nav-item"><a class="nav-link link" href="about.html">About</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link link" href="login.php">Login</a></li><li class="nav-item"><!-- <a class="nav-link link" href="about.html">About</a> --></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
