@@ -965,6 +965,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 <!--                                                </label>-->
 <!--                                            </th>-->
 
+                                            <th>Serial No.</th>
 
                                             <th>Roll No</th>
                                             <th>First Name</th>
@@ -974,10 +975,16 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>Gender (Male/Female)</th>
                                             <th>Father Name</th>
                                             <th>Father Occupation</th>
+                                            <th>Father Mobile No.</th>
+
                                             <th>Mother Name</th>
                                             <th>Mother Occupation</th>
+                                            <th>Mother Mobile No.</th>
+                                            <th>College Mail ID</th>
+
+
                                             <th>
-                                                <i class="ace-icon fa fa-clock-o bigger-110  "></i>Email ID
+                                               Personal Email ID
                                             </th>
                                             <th>Mobile Number (10 digits)</th>
                                             <th>Date of Birth (DD-MM-YYYY)</th>
@@ -987,15 +994,17 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>University</th>
                                             <th>10th %</th>
                                             <th>10th Institution</th>
-                                            <th>Board of Study</th>
-                                            <th>Medium (Tamil/English/Telugu/Others)</th>
+                                            <th>10th Board of Study</th>
+                                            <th>10th Medium (Tamil/English/Telugu/Others)</th>
                                             <th>10th - Year of Passing</th>
                                             <th>12th %</th>
                                             <th>12th Institution</th>
-                                            <th>Board of Study</th>
-                                            <th>Medium (Tamil/English/Telugu/Others)</th>
+                                            <th>12th Board of Study</th>
+                                            <th>12th Medium (Tamil/English/Telugu/Others)</th>
                                             <th>12th - Year of Passing</th>
                                             <th>Diploma  %</th>
+                                            <th>Diploma Specialization</th>
+                                            <th>Diploma Institution</th>
                                             <th>Diploma - Year of Passing</th>
                                             <th>Currently Pursuing (UG/PG)</th>
                                             <th>UG Degree</th>
@@ -1018,7 +1027,8 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>4th Sem</th>
                                             <th>PG Degree % or CGPA (upto last semester for which results announced)</th>
                                             <th>PG - Year of Passing</th>
-                                            <th>UG College Name</th>
+                                            <th>UG College Name(for PG)</th>
+                                            <th>UG Hitory of Arrears(for PG)</th>
                                             <th>Day Scholar/ Hosteler</th>
                                             <th>No History of Arreas</th>
                                             <th>Current Degree. No of Standing Arrears</th>
@@ -1043,6 +1053,10 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             <th>Candidate ID</th>
                                             <th>Signature</th>
                                             <th>Placement Status</th>
+                                            <th>Aadhar Card No.</th>
+                                            <th>Passport No.
+                                            </th>
+                                            <th>PAN Card No.</th>
 
 
                                             <th></th>
@@ -1057,9 +1071,14 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                                         $query="select * from ".$table." ";
                                         $result=mysqli_query($connect,$query);
+                                        $count_sno=1;
 
 
-                                        while($row=mysqli_fetch_assoc($result)){
+                                        while($row=mysqli_fetch_assoc($result))  {
+
+
+
+                                            $sno=$count_sno ;
                                             $roll=$row['st_roll'];
                                             $first_name=$row['st_firstname'];
                                             $middle_name=$row['st_middlename'];
@@ -1068,8 +1087,11 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $gender=$row['st_gender'];
                                             $father_name=$row['st_fathername'];
                                             $father_occupation=$row['st_fatheroccupation'];
+                                            $father_mobile=$row['st_fathernumber'];
                                             $mother_name=$row['st_mothername'];
                                             $mother_occupation=$row['st_motheroccupation'];
+                                            $mother_mobile=$row['st_mothernumber'];
+                                            $college_mail=$row['st_clgemail'];
                                             $email=$row['st_email'];
                                             $phone=$row['st_phone'];
                                             $dob=$row['st_dob'];
@@ -1088,6 +1110,8 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $_12medium=$row['st_12thmedium'];
                                             $_12yearofpassing=$row['st_12thyearofpassing'];
                                             $dippercentage=$row['st_dippercentage'];
+                                            $dipspecialization=$row['st_dipspecialization'];
+                                            $dipinstitution=$row['st_dipinstitution'];
                                             $dipyearofpassing=$row['st_dipyearofpassing'];
                                             $current=$row['st_currentlypursuing'];
                                             $ugdeg=$row['st_ugdegree'];
@@ -1111,6 +1135,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $pgcgpa=$row['st_pgcgpa'];
                                             $pgyearofpassing=$row['st_pgyearofpassing'];
                                             $ugcollegename=$row['st_ugcollegename'];
+                                            $ughistoryofarrears=$row['st_ughistoryofarrears'];
                                             $dayhostel=$row['st_dayorhostel'];
                                             $historyofarrears=$row['st_historyofarrears'];
                                             $standingarrears=$row['st_standingarrears'];
@@ -1135,6 +1160,9 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $candidate=$row['st_candidateid'];
                                             $signature=$row['st_signature'];
                                             $placement_status=$row['st_placementstatus'];
+                                            $aadhar=$row['st_aadharno'];
+                                            $passport=$row['st_passportno'];
+                                            $pan=$row['st_panno'];
 
 
 
@@ -1148,6 +1176,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 <!--                                                        <span class="lbl"></span>-->
 <!--                                                    </label>-->
 <!--                                                </td>-->
+                                                <td><?php echo $sno ?></td>
 
                                                 <td>
 
@@ -1164,8 +1193,11 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo  $gender ?></td>
                                                 <td><?php echo $father_name ?></td>
                                                 <td><?php echo $father_occupation ?></td>
+                                                <td><?php echo $father_mobile ?></td>
                                                 <td><?php echo $mother_name ?></td>
                                                 <td><?php echo $mother_occupation ?></td>
+                                                <td><?php echo $mother_mobile ?></td>
+                                                <td><?php echo $college_mail ?></td>
                                                 <td><?php echo $email ?></td>
                                                 <td><?php echo $phone ?></td>
                                                 <td><?php echo $dob ?></td>
@@ -1184,6 +1216,8 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo $_12medium ?></td>
                                                 <td><?php echo $_12yearofpassing ?></td>
                                                 <td><?php echo $dippercentage ?></td>
+                                                <td><?php echo $dipspecialization ?></td>
+                                                 <td><?php echo $dipinstitution ?></td>
                                                 <td><?php echo $dipyearofpassing ?></td>
                                                 <td><?php echo $current ?></td>
                                                 <td><?php echo $ugdeg ?></td>
@@ -1231,6 +1265,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo $pgcgpa ?></td>
                                                 <td><?php echo $pgyearofpassing ?></td>
                                                 <td><?php echo $ugcollegename ?></td>
+                                                <td><?php echo $ughistoryofarrears ?></td>
                                                 <td><?php echo $dayhostel ?></td>
                                                 <td><?php echo $historyofarrears ?></td>
                                                 <td><?php echo $standingarrears ?></td>
@@ -1255,6 +1290,9 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 <td><?php echo $candidate ?></td>
                                                 <td><?php echo $signature ?></td>
                                                 <td><?php echo $placement_status ?></td>
+                                                <td><?php echo $aadhar ?></td>
+                                                <td><?php echo $passport ?></td>
+                                                <td><?php echo $pan ?></td>
 
 
 
@@ -1315,6 +1353,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
                                             <?php
+                                            ++$count_sno;
 
 
 
@@ -1519,6 +1558,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
                         null, null, null, null, null,
+                         null, null, null, null, null, null, null, null, null,null,
 
 
                         { "bSortable": false }
