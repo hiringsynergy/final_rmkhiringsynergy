@@ -30,7 +30,103 @@ ob_start();
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="admin_login/assets/font-awesome/4.5.0/css/font-awesome.min">
 
+<style type="text/css">
+@import "bourbon";
+
+$button-height: 50px;
+$button-width: 160px;
+$button-spacing: 15px;
+$button-transition-speed: 0.25s;
+
+.button-row {
+  @include display(inline-flex);
+  
+  > div {
+    position: relative;
+    width: $button-width;
+    height: $button-height;
+    margin: 0 $button-spacing;
+    @include perspective(1000px);
+
+    > a {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @include transform-style(preserve-3d);
+      @include transform(
+        translateZ(-($button-height / 2))
+      );
+      @include transition(
+        transform $button-transition-speed
+      );
+
+      &::before, &::after {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: $button-width;
+        height: $button-height;
+        position: absolute;
+        border: 5px solid black;
+        box-sizing: border-box;
+        content: attr(title);
+        @include display(flex);
+      }
+
+      &::before {
+        background-color: #000;
+        color: #fff;
+        @include transform(
+          rotateY(0deg)
+          translateZ($button-height / 2)
+        );
+      }
+
+      &::after {
+        background-color: #fff;
+        border-color: #000;
+        color: #000;
+        @include transform(
+          rotateX(90deg)
+          translateZ($button-height / 2)
+        );
+      }
+
+      &:hover {
+        @include transform(
+          translateZ(-($button-height / 2)) 
+          rotateX(-90deg)
+        )
+      }
+    }
+  }
+}
+
+/* this is just icing */
+body {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.main, h1 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include display(flex);
+}
+
+html, body, .main {
+  height: 100%;
+}
+
+</style>
 
 
 </head>
@@ -49,13 +145,14 @@ ob_start();
                     </div>
 
                 </div>
+  
                 <div class="mbr-table-cell">
 
                     <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index">Home</a></li><li class="nav-item"><a class="nav-link link" href="login">Login</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item fa fa-home"><a class="nav-link link fa fa-home" href="index.html"><i  class="fa fa-home"  aria-hidden="true"></i>Home</a></li><li class="nav-item"><!-- <a class="nav-link link" href="login">Login</a> --></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
