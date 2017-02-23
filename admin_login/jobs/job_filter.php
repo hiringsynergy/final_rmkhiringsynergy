@@ -154,6 +154,10 @@ if(isset($_GET['filter_job'])){
     include "../connect.php";
 
 
+     //initialize
+    $check_1="initialize";
+    $check_2="initialize";
+    $check_3="initialize";
 
     $id=time();
     $job_title=$_GET['job_title'];
@@ -175,6 +179,49 @@ if(isset($_GET['filter_job'])){
     $standingarrears=$_GET['standingarrears'];
     $historyofarrears=$_GET['historyofarrears'];
     $get_branch= $_GET['ugbranch'];
+    $has_job=$_GET['hasjob'];
+
+
+
+    if(isset($_GET['dontselect1'])){
+
+        $check_1=$_GET['dontselect1'];
+    }
+    if(isset($_GET['dontselect2'])){
+
+        $check_2=$_GET['dontselect2'];
+    }
+    if(isset($_GET['dontselect3'])){
+
+        $check_3=$_GET['dontselect3'];
+    }
+
+
+    
+  
+
+    if($check_1=='on'){
+        $check_1='Core';
+
+    }
+
+    if($check_2=='on'){
+        $check_2='Product';
+    
+    }
+
+    if($check_3=='on'){
+        $check_3='Service';
+    
+    }
+
+
+
+
+
+
+
+
 
     if(current($get_branch)=="all"){
         $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
@@ -236,11 +283,32 @@ if(isset($_GET['filter_job'])){
         $result_for_alter=mysqli_query($connect, $query_for_alter);
 
 
+//count no.jobs placed
+
+    // $query_count="select * from ".$students_table_name."  ";
+    // $ne_count=mysqli_query($connect,$query_count);
+    // echo $new_count=$ne_count['st_jobtype'];
+
+    
+
+    // $count_comma=explode(",",$new_count);
+    // $count_array=array_count_values($count_comma);
+    // $count_final=$count_array[','];
+
+    // echo $count_final;
+
+
+
+
+
+
         //update table
 
 
 
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears";
+
+
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
@@ -966,15 +1034,15 @@ if(isset($_GET['filter_job'])){
                                                             </div>
                                                             <div class="col-xs-6 col-xs-push-1">
 
-                                                        <h5 class="orange bolder smaller">     Don't Select Placed Students From</h5>
+                                                        <h5 class="orange bolder smaller"> Don't Select Placed Students From</h5>
                                                         <div class="space-10"></div>
                                                                      <fieldset data-role="controlgroup" class="col-xs-push-3">
-                                                                    <input type="checkbox" name="dontselect-1a" class="c0l=sm-3" id="checkbox-1a">
+                                                                    <input type="checkbox" name="dontselect1" class="c0l=sm-3"  id="checkbox-1a">
                                                                     <label for="checkbox-1a">Core</label>
 
-                                                                    <input type="checkbox" name="dontselect-2a" id="checkbox-2a">
+                                                                    <input type="checkbox" name="dontselect2"  id="checkbox-2a">
                                                                     <label for="checkbox-2a">Dream</label>
-                                                                    <input type="checkbox" name="dontselect-3a" id="checkbox-3a">
+                                                                    <input type="checkbox" name="dontselect3"  id="checkbox-3a">
                                                                     <label for="checkbox-3a">Soft</label>
                                                                   </fieldset>
                                                     </div>
