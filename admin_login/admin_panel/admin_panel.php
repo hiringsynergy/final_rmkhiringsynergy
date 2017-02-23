@@ -967,7 +967,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                                             <th>Serial No.</th>
 
-                                            <th>Roll No</th>
+                                            <th>Register No</th>
                                             <th>First Name</th>
                                             <th>Middle Name</th>
                                             <th>Last Name (Mandatory)</th>

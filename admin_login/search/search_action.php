@@ -1191,8 +1191,9 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                                         <thead>
                                         <tr>
+                                            <th>Serial No.</th>
 
-                                            <th>Roll No</th>
+                                            <th>Register No</th>
                                             <th>First Name</th>
                                             <th>Middle Name</th>
                                             <th>Last Name (Mandatory)</th>
@@ -1289,6 +1290,8 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                             $tags= $_GET['tags'];
 
                                             $values= explode(', ', $tags);
+
+                                            $sno=1;
 
 
 
@@ -1392,6 +1395,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                                                 <tr>
 
+                                                    <td><?php echo $sno ?></td>
                                                     <td>
 
                                                         <?php echo $roll ?>
@@ -1512,6 +1516,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                                 <?php
+                                                ++$sno;
                                             }
 
 
@@ -1538,6 +1543,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                                 die("" . mysqli_error($connect));
                                             }
 
+                                            $sno=1;
 
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 $roll = $row['st_roll'];
@@ -1618,6 +1624,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                                 <tr>
+                                                    <td><?php echo $sno ?></td>
 
                                                     <td>
 
@@ -1726,6 +1733,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                                 <?php
+                                                ++$sno;
                                             }
 
 
@@ -1990,7 +1998,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
-                        null,null
+                        null,null,null
 
 
 
