@@ -773,6 +773,7 @@ if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') 
 
     $rollno = $_SESSION['user'];
     $tname = $_SESSION['table_name'];
+    $cp=$_GET['cp'];
 
 
     $s10thschoolname = $_GET['s10thschoolname'];
@@ -813,14 +814,23 @@ if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') 
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
+if(strcasecmp($cp,"pg")){
 
 
     $query_change_academicdetails = "UPDATE $tname SET  st_10thinstitution='{$s10thschoolname}',st_10thmedium='{$s10thmedium}',st_10thyearofpassing='{$s10thyearofpass}',st_10thpercentage='{$s10thpercent}',st_12thinstitution='{$s12thschoolname}',
 st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
 st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_standingarrears='{$standarrears}',
-st_historyofarrears='{$historyofarrears}',st_pgspecialization='{$pgbranch}',st_pgdegree='{$pgqualification}',st_pgyearofpassing='{$pgyearofpass}',st_pgcgpa='{$pgpercent}',st_pg1stsem='{$pgsem1}',st_pg2ndsem='{$pgsem2}',st_pg3rdsem='{$pgsem3}',
+st_historyofarrears='{$historyofarrears}' WHERE st_roll='{$rollno}'";
+    $result_change_academicdetails = mysqli_query($connect, $query_change_academicdetails);
+}
+else{
+
+    $query_change_academicdetails = "UPDATE $tname SET  st_10thinstitution='{$s10thschoolname}',st_10thmedium='{$s10thmedium}',st_10thyearofpassing='{$s10thyearofpass}',st_10thpercentage='{$s10thpercent}',st_12thinstitution='{$s12thschoolname}',
+st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
+st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_pgspecialization='{$pgbranch}',st_pgdegree='{$pgqualification}',st_pgyearofpassing='{$pgyearofpass}',st_pgcgpa='{$pgpercent}',st_pg1stsem='{$pgsem1}',st_pg2ndsem='{$pgsem2}',st_pg3rdsem='{$pgsem3}',
 st_pg4thsem='{$pgsem4}',st_standingarrears='{$pgstandarrears}',st_historyofarrears='{$pghistoryofarrears}' WHERE st_roll='{$rollno}'";
     $result_change_academicdetails = mysqli_query($connect, $query_change_academicdetails);
+}
 
     if (!$result_change_academicdetails) {
 
@@ -1987,6 +1997,8 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
 
                                 <div id="modal-form4" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
+
+                                <form class="modal-content" action="profile" method="get" enctype = "multipart/form-data">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -2020,7 +2032,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                         <div class="form-group">
                                                             <label for="control-label bolder b">COE Certification</label>
                                                             <div>
-                                                                <input type="text" name="coecename="skill" rt" id="control-label bolder b" placeholder="" value="<?php echo $row['st_coecertification']?>" />
+                                                                <input type="text" name="coecert" rt" id="control-label bolder b" placeholder="" value="<?php echo $row['st_coecertification']?>" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2039,6 +2051,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                 </button>
                                             </div>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
 
@@ -2495,6 +2508,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                 <div class="modal-footer">
                                                     <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
                                                     <input type="hidden" name="tname" value="<?php echo $_SESSION['table_name']; ?>"/>
+                                                    <input type="hidden" name="cp" value="<?php echo $row['st_currentlypursuing']; ?>"/>
                                                     <button class="btn btn-sm" data-dismiss="modal">
                                                         <i class="ace-icon fa fa-times"></i>
                                                         Cancel

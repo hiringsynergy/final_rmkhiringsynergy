@@ -730,6 +730,9 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                         $check_row = mysqli_fetch_assoc($check_result);
 
 
+
+
+
                                                         //eligible
                                                         if ($check_row["_" . $row['job_id']] == 'eligible') {
 
@@ -928,6 +931,8 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                             if ($calc_date > 0) {
 
 
+
+
                                                                 ?>
 
 
@@ -938,7 +943,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                                 <td>
 
                                                                     <div>
-                                                                        <button class="btn btn-primary btn-sm disabled" onclick="apply('<?php echo $row['job_id'] ?>')">
+                                                                        <button class="btn btn-primary btn-sm" onclick="apply('<?php echo $row['job_id'] ?>')">
 
                                                                             Apply
                                                                         </button>
@@ -958,7 +963,11 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
 
 
                                                             } else if ($calc_date == 0 && $calc_time >= 0) {
+
+
                                                                 ?>
+
+
 
                                                                 <td class=" ">
                                                                 <span class="label label-success"
@@ -1020,7 +1029,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                         }
 
                                                         //uneligible
-                                                        else if ($check_row["_" . $row['job_id']] == 'uneligible') {
+                                                        else if ($check_row["_" . $row['job_id']] == 'not eligible' || $check_row["_" . $row['job_id']] == 'appliable' ) {
 
 
                                                             if ($calc_date > 0) {
@@ -1264,6 +1273,8 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
 
                             while ($row = mysqli_fetch_assoc($result)) {
 
+
+
                                 $widget_color = array(' widget-color-blue', 'widget-color-green', 'widget-color-orange', 'widget-color-red', 'widget-color-pink', 'widget-color-green', 'widget-color-purple', 'widget-color-blue2', 'widget-color-red3', 'widget-color-blue3');
 
                                 $i = $i % sizeof($widget_color);
@@ -1446,6 +1457,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                         $check_query = "SELECT  _" . $row['job_id'] . "  FROM $student_table where st_roll={$roll}";
                                                         $check_result = mysqli_query($connect, $check_query);
                                                         $check_row = mysqli_fetch_assoc($check_result);
+                                                        // echo "result : ".$check_row["_" . $row['job_id']];
 
 
                                                         //eligible
@@ -1656,7 +1668,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                                 <td>
 
                                                                     <div>
-                                                                        <button class="btn btn-primary btn-sm disabled" onclick="apply('<?php echo $row['job_id'] ?>')">
+                                                                        <button class="btn btn-primary btn-sm" onclick="apply('<?php echo $row['job_id'] ?>')">
                                                                         
                                                                             Apply
                                                                         </button>
@@ -1738,7 +1750,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                         } 
 
                                                         //uneligible
-                                                        else if ($check_row["_" . $row['job_id']] == 'uneligible') {
+                                                        else if ($check_row["_" . $row['job_id']] == 'not eligible' || $check_row["_" . $row['job_id']] == 'appliable' ) {
 
 
                                                             if ($calc_date > 0) {
