@@ -688,13 +688,12 @@ if (isset($_GET['profile'])&& isset($_SESSION['user_role'])=='student') {
     $fullname = $_GET['fullname'];
     $phoneno = $_GET['phoneno'];
     $emailid = $_GET['emailid'];
-    $cgpa = $_GET['cgpa'];
     $select = "SELECT * from $tname where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}'  WHERE st_roll='{$rollno}'";
+    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}'  WHERE st_roll='{$rollno}'";
     $result_change_profile = mysqli_query($connect, $query_change_profile);
 
     if (!$result_change_profile) {
@@ -784,10 +783,10 @@ if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') 
     $s12thmedium = $_GET['s12thmedium'];
     $s12thyearofpass = $_GET['s12thyearofpass'];
     $s12thpercent = $_GET['s12thpercent'];
-    $ugqualification = $_GET['ugqualification'];
-    $ugbranch = $_GET['ugbranch'];
-    $ugclgname = $_GET['ugclgname'];
-    $ugyearofpass = $_GET['ugyearofpass'];
+    // $ugqualification = $_GET['ugqualification'];
+    // $ugbranch = $_GET['ugbranch'];
+    // $ugclgname = $_GET['ugclgname'];
+    // $ugyearofpass = $_GET['ugyearofpass'];
     $ugcgpa = $_GET['ugcgpa'];
     $s1sem = $_GET['s1sem'];
     $s2sem = $_GET['s2sem'];
@@ -802,7 +801,7 @@ if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') 
     $pgqualification  = $_GET['pgqualification'];
     $pgbranch = $_GET['pgbranch'];
     $pgyearofpass = $_GET['pgyearofpass'];
-    $pgpercent = $_GET['pgpercent'];
+    $pgpercent = $_GET['pgcgpa'];
     $pgsem1 = $_GET['pgsem1'];
     $pgsem2 = $_GET['pgsem2'];
     $pgsem3 = $_GET['pgsem3'];
@@ -818,16 +817,16 @@ if(strcasecmp($cp,"pg")){
 
 
     $query_change_academicdetails = "UPDATE $tname SET  st_10thinstitution='{$s10thschoolname}',st_10thmedium='{$s10thmedium}',st_10thyearofpassing='{$s10thyearofpass}',st_10thpercentage='{$s10thpercent}',st_12thinstitution='{$s12thschoolname}',
-st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
-st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_standingarrears='{$standarrears}',
+st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',/*st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
+st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',*/st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_standingarrears='{$standarrears}',
 st_historyofarrears='{$historyofarrears}' WHERE st_roll='{$rollno}'";
     $result_change_academicdetails = mysqli_query($connect, $query_change_academicdetails);
 }
 else{
 
     $query_change_academicdetails = "UPDATE $tname SET  st_10thinstitution='{$s10thschoolname}',st_10thmedium='{$s10thmedium}',st_10thyearofpassing='{$s10thyearofpass}',st_10thpercentage='{$s10thpercent}',st_12thinstitution='{$s12thschoolname}',
-st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
-st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',st_pgspecialization='{$pgbranch}',st_pgdegree='{$pgqualification}',st_pgyearofpassing='{$pgyearofpass}',st_pgcgpa='{$pgpercent}',st_pg1stsem='{$pgsem1}',st_pg2ndsem='{$pgsem2}',st_pg3rdsem='{$pgsem3}',
+st_12thmedium='{$s12thmedium}',st_12thyearofpassing='{$s12thyearofpass}',st_12thpercentage='{$s12thpercent}',/*st_ugdegree='{$ugqualification}',st_ugspecialization='{$ugbranch}',
+st_ugcollegename='{$ugclgname}',st_ugyearofpassing='{$ugyearofpass}',*/st_cgpa='{$ugcgpa}',st_1stsem='{$s1sem}',st_2ndsem='{$s2sem}',st_3rdsem='{$s3sem}',st_4thsem='{$s4sem}',st_5thsem='{$s5sem}',st_6thsem='{$s6sem}',st_7thsem='{$s7sem}',st_8thsem='{$s8sem}',/*st_pgspecialization='{$pgbranch}',st_pgdegree='{$pgqualification}',st_pgyearofpassing='{$pgyearofpass}',*/st_pgcgpa='{$pgpercent}',st_pg1stsem='{$pgsem1}',st_pg2ndsem='{$pgsem2}',st_pg3rdsem='{$pgsem3}',
 st_pg4thsem='{$pgsem4}',st_standingarrears='{$pgstandarrears}',st_historyofarrears='{$pghistoryofarrears}' WHERE st_roll='{$rollno}'";
     $result_change_academicdetails = mysqli_query($connect, $query_change_academicdetails);
 }
@@ -1107,13 +1106,13 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                             </div>
                                                         </div>
 
-                                                        <div class="profile-info-row">
+                                                        <!-- <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>Current Cgpa</b> </div>
 
                                                             <div class="profile-info-value testblue1">
-                                                                <div class=" " id="gen"><?php  echo $row['st_cgpa']  ?></div>
+                                                                <div class=" " id="gen"><?php if(strcasecmp($row['st_currentlypursuing'], "pg")) echo $row['st_cgpa']; else echo $row['st_pgcgpa'];  ?></div>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="profile-info-row">
                                                             <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>College Name</b> </div>
 
@@ -2097,12 +2096,12 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <label for="control-label bolder blu">Current Cgpa</label>
                                                                 <div>
                                                                     <input type="text" id="control-label bolder blu" name="cgpa" placeholder="" value="<?php echo $row['st_cgpa'] ?>" />
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
 
                                                     </div>
@@ -2233,7 +2232,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-q1">Qualification</label>
                                                                     <select name="ugqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_ugdegree']?>">
@@ -2282,16 +2281,16 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                                         <input type="text" id="form-field-yop1" placeholder="" name="ugyearofpass" value="<?php echo $row['st_ugyearofpassing']?>" />
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
-                                                            <!-- <div class="form-group">
+                                                            <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-p1">Percentage/CGPA</label>
                                                                     <div>
                                                                         <input type="text" id="form-field-p1" placeholder="" name="ugcgpa" value="<?php echo $row['st_cgpa']?>" />
                                                                     </div>
                                                                 </div>
-                                                            </div> -->
+                                                            </div>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2395,7 +2394,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-q1">Qualification</label>
                                                                     <select name="pgqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_pgqualification']?>">
@@ -2431,13 +2430,13 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='student') {
                                                                         <input name="pgyearofpass" type="text" id="form-field-yop1" placeholder="" value="<?php echo $row['st_pgyearofpassing']?>" />
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-p1">Percentage/CGPA</label>
                                                                     <div>
-                                                                        <input name="pgpercent" type="text" id="form-field-p1" placeholder="" value="<?php echo $row['st_pgcgpa']?>" />
+                                                                        <input name="pgcgpa" type="text" id="form-field-p1" placeholder="" value="<?php echo $row['st_pgcgpa']?>" />
                                                                     </div>
                                                                 </div>
                                                             </div>
