@@ -122,23 +122,7 @@ $tablename=$_GET['tablename'];
   st_changemail varchar(255),
   st_changephone varchar(255),
   st_forgotpassword varchar(255),
-  st_changeugcgpa varchar(255),
-st_change1stsem varchar(255),
-st_change2ndsem varchar(255),
-st_change3rdsem varchar(255),
-st_change4thsem varchar(255),
-st_change5thsem varchar(255),
-st_change6thsem varchar(255),
-st_change7thsem varchar(255),
-st_change8thsem varchar(255),
-st_changestandingarrears varchar(255),
-st_changehistoryofarrears varchar(255),
-st_changepgcgpa varchar(255),
-st_changepg1stsem varchar(255),
-st_changepg2ndsem varchar(255),
-st_changepg3rdsem varchar(255),
-st_changepg4thsem varchar(255)
- 
+  
  
 )ENGINE=MyISAM DEFAULT CHARSET=latin1";
 
