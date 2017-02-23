@@ -929,7 +929,15 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
                                 </div>
                             </div>
-                  
+                            <div class="row">
+                                <div class=" col-xs-10 col-sm-6 hello form-group" style="padding-left: 30px;">
+                                    <h5><label class="control-label bolder orange" for="form-field-1">Attach
+                                            Files</label></h5>
+                                    <br/>
+                                    <input type="file" name="file" class="" id="id-input-file-2"/>
+
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="">
                                     <div class="form-actions center">
