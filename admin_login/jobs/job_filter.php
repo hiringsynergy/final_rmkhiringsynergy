@@ -154,6 +154,10 @@ if(isset($_GET['filter_job'])){
     include "../connect.php";
 
 
+     //initialize
+    $check_1="initialize";
+    $check_2="initialize";
+    $check_3="initialize";
 
     $id=time();
     $job_title=$_GET['job_title'];
@@ -175,6 +179,49 @@ if(isset($_GET['filter_job'])){
     $standingarrears=$_GET['standingarrears'];
     $historyofarrears=$_GET['historyofarrears'];
     $get_branch= $_GET['ugbranch'];
+    $has_job=$_GET['hasjob'];
+
+
+
+    if(isset($_GET['dontselect1'])){
+
+        $check_1=$_GET['dontselect1'];
+    }
+    if(isset($_GET['dontselect2'])){
+
+        $check_2=$_GET['dontselect2'];
+    }
+    if(isset($_GET['dontselect3'])){
+
+        $check_3=$_GET['dontselect3'];
+    }
+
+
+    
+  
+
+    if($check_1=='on'){
+        $check_1='Core';
+
+    }
+
+    if($check_2=='on'){
+        $check_2='Product';
+    
+    }
+
+    if($check_3=='on'){
+        $check_3='Service';
+    
+    }
+
+
+
+
+
+
+
+
 
     if(current($get_branch)=="all"){
         $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
@@ -236,11 +283,32 @@ if(isset($_GET['filter_job'])){
         $result_for_alter=mysqli_query($connect, $query_for_alter);
 
 
+//count no.jobs placed
+
+    // $query_count="select * from ".$students_table_name."  ";
+    // $ne_count=mysqli_query($connect,$query_count);
+    // echo $new_count=$ne_count['st_jobtype'];
+
+    
+
+    // $count_comma=explode(",",$new_count);
+    // $count_array=array_count_values($count_comma);
+    // $count_final=$count_array[','];
+
+    // echo $count_final;
+
+
+
+
+
+
         //update table
 
 
 
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears";
+
+
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
@@ -800,7 +868,7 @@ if(isset($_GET['filter_job'])){
 
                 <ul class="submenu ">
                     <li class="">
-                        <a href="job_filter">
+                        <a href="../search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -942,7 +1010,7 @@ if(isset($_GET['filter_job'])){
 
                                                         <div class="row">
 
-                                                            <div class="col-xs-8 col-sm-5">
+                                                            <div class="col-xs-8 col-sm-5 ">
 
                                                                 <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
 
@@ -964,16 +1032,31 @@ if(isset($_GET['filter_job'])){
 
 
                                                             </div>
+                                                            <div class="col-xs-6 col-xs-push-1">
+
+                                                        <h5 class="orange bolder smaller"> Don't Select Placed Students From</h5>
+                                                        <div class="space-10"></div>
+                                                                     <fieldset data-role="controlgroup" class="col-xs-push-3">
+                                                                    <input type="checkbox" name="dontselect1" class="c0l=sm-3"  id="checkbox-1a">
+                                                                    <label for="checkbox-1a">Core</label>
+
+                                                                    <input type="checkbox" name="dontselect2"  id="checkbox-2a">
+                                                                    <label for="checkbox-2a">Dream</label>
+                                                                    <input type="checkbox" name="dontselect3"  id="checkbox-3a">
+                                                                    <label for="checkbox-3a">Soft</label>
+                                                                  </fieldset>
+                                                    </div>
+
 
                                                         </div>
+                                                                
 
 
-
-                                                        <div class="space-16"></div>
+                                                        
 
                                                         <div class="row">
 
-                                                            <div class="col-xs-12 col-sm-6">
+                                                            <div class="col-xs-8 col-sm-6">
 
 
 
@@ -983,6 +1066,21 @@ if(isset($_GET['filter_job'])){
                                                                     <span class="ui-slider-orange">0</span>
                                                                 </div>
                                                             </div>
+
+                                                            <div class="col-xs-8 col-sm-3 ">
+                                                        <h5><label class="control-label bolder orange" for="form-field-select-3">Number of companies placed </label></h5>
+                                                         
+
+                                                        <select class="chosen-select"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                        
                                                         </div>
 
                                                     </div>
