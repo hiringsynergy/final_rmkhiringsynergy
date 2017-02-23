@@ -778,6 +778,7 @@ if (isset($_GET['academicdetails'])&& isset($_SESSION['user_role'])=='student') 
     $select="SELECT * from $student_table where st_roll='{$rollno}'";
     $select_result=mysqli_query($connect, $select);
     $row=mysqli_fetch_assoc($select_result);
+    $count=mysqli_num_rows($select_result);
 
 $id=time();
 
@@ -834,20 +835,26 @@ $id=time();
 
 
 
+if($count==0 ){
 
+    $query="INSERT INTO st_change(st_regno,st_year,st_changeugcgpa,st_dept,st_time)";
 
 if($ougcgpa!=$ugcgpa){
 
-    $name=$_SESSION['user'];
-    $student_table=$_SESSION['table_name'];
-    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+   //  $name=$_SESSION['user'];
+   //  $student_table=$_SESSION['table_name'];
+   //  if(strcasecmp($row['st_currentlypursuing'], "pg")){
 
 
-   $dept=$row['st_ugspecialization'];
-   $year=$row['st_ugyearofpassing'];
+   // $dept=$row['st_ugspecialization'];
+   // $year=$row['st_ugyearofpassing'];
 
 
-    $query1="INSERT INTO st_change(st_regno,st_year,st_changeugcgpa,st_dept,st_time) VALUES( '$name' , '$year', '$ugcgpa','$dept','$id') ";
+    // $query1="INSERT INTO st_change(st_regno,st_year,st_changeugcgpa,st_dept,st_time) VALUES( '$name' , '$year', '$ugcgpa','$dept','$id') ";
+
+
+
+    $query.=""
 }else{
 
 
@@ -1649,7 +1656,831 @@ if($opgsem1!=$pgsem1){
 
    }
 
+}
 
+else if($count==1)
+{
+
+
+if($ougcgpa!=$ugcgpa){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG CGPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+
+if($os1sem!=$s1sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+   $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 1st sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+if($os2sem!=$s2sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+     $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+   $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 2nd sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($os3sem!=$s3sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+ $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+ $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 3rd sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($os4sem!=$s4sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+     $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+     $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 4th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+
+if($os5sem!=$s5sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+     $query1="UPDATE  st_change SET st_regno='{$name}' , st_year='{$year}', st_changeugcgpa='{$ugcgpa}',st_dept='{$dept}',st_time='{$id}' WHERE st_roll='{$name}' ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change5thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s5sem','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 5th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($os6sem!=$s6sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change6thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s6sem','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change6thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s6sem','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 6th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($os7sem!=$s7sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change7thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s7sem','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change7thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s7sem','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 7th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($os8sem!=$s8sem){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change8thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s8sem','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_change8thsem,st_dept,st_time) VALUES( '$name' , '$year', '$s8sem','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of UG 8th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($ostandarrears!=$standarrears){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changestandingarrears,st_dept,st_time) VALUES( '$name' , '$year', '$standarrears','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changestandingarrears,st_dept,st_time) VALUES( '$name' , '$year', '$standarrears','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of standing arrears will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+if($ohistoryofarrears!=$historyofarrears){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changehistoryofarrears,st_dept,st_time) VALUES( '$name' , '$year', '$historyofarrears','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changehistoryofarrears,st_dept,st_time) VALUES( '$name' , '$year', '$historyofarrears','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of history of arrears will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+if($opgpercent!=$pgpercent){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepgcgpa,st_dept,st_time) VALUES( '$name' , '$year', '$pgpercent','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepgcgpa,st_dept,st_time) VALUES( '$name' , '$year', '$pgpercent','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of PG CGPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+if($opgsem1!=$pgsem1){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg1stsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem1','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg1stsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem1','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of PG 1st sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+
+   if($opgsem2!=$pgsem2){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg2ndsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem2','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg2ndsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem2','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of PG 2nd sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+   if($opgsem3!=$pgsem3){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg3rdsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem3','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg3rdsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem3','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of PG 3rd sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+   if($opgsem4!=$pgsem4){
+
+    $name=$_SESSION['user'];
+    $student_table=$_SESSION['table_name'];
+    if(strcasecmp($row['st_currentlypursuing'], "pg")){
+
+
+   $dept=$row['st_ugspecialization'];
+   $year=$row['st_ugyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg4thsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem4','$dept','$id') ";
+}else{
+
+
+   $dept=$row['st_pgspecialization'];
+   $year=$row['st_pgyearofpassing'];
+
+
+    $query1="INSERT INTO st_change(st_regno,st_year,st_changepg4thsem,st_dept,st_time) VALUES( '$name' , '$year', '$pgsem4','$dept','$id') ";
+}
+
+    $result1=mysqli_query($connect, $query1);
+    ?>
+    <div class="alert alert-block alert-success">
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </button>
+
+                                <i class="ace-icon fa fa-check green"></i>
+
+
+                                <strong class="green">
+                                    Your request for change of PG 4th sem GPA will be processed.
+
+                                </strong>
+
+
+                            </div>
+    <?php
+    if(!$connect){
+
+        die("".mysqli_error($connect));
+    }
+
+
+
+   }
+
+
+
+
+
+
+}
 
 
 
