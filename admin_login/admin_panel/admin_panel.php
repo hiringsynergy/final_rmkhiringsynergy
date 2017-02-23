@@ -1558,7 +1558,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         null, null,null, null, null, null, null, null, null, null,
                         null, null,null, null, null, null, null, null, null, null,
                         null, null, null, null, null,
-                         null, null, null, null, null, null, null, null, null,null,
+                         null, null, null, null, null, null, null, null, null,null,null,
 
 
                         { "bSortable": false }

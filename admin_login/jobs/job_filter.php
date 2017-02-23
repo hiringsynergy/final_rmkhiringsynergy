@@ -800,7 +800,7 @@ if(isset($_GET['filter_job'])){
 
                 <ul class="submenu ">
                     <li class="">
-                        <a href="job_filter">
+                        <a href="../search/advanced_search">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Advanced Search
                         </a>
@@ -942,7 +942,7 @@ if(isset($_GET['filter_job'])){
 
                                                         <div class="row">
 
-                                                            <div class="col-xs-8 col-sm-5">
+                                                            <div class="col-xs-8 col-sm-5 ">
 
                                                                 <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
 
@@ -964,16 +964,31 @@ if(isset($_GET['filter_job'])){
 
 
                                                             </div>
+                                                            <div class="col-xs-6 col-xs-push-1">
+
+                                                        <h5 class="orange bolder smaller">     Don't Select Placed Students From</h5>
+                                                        <div class="space-10"></div>
+                                                                     <fieldset data-role="controlgroup" class="col-xs-push-3">
+                                                                    <input type="checkbox" name="dontselect-1a" class="c0l=sm-3" id="checkbox-1a">
+                                                                    <label for="checkbox-1a">Core</label>
+
+                                                                    <input type="checkbox" name="dontselect-2a" id="checkbox-2a">
+                                                                    <label for="checkbox-2a">Dream</label>
+                                                                    <input type="checkbox" name="dontselect-3a" id="checkbox-3a">
+                                                                    <label for="checkbox-3a">Soft</label>
+                                                                  </fieldset>
+                                                    </div>
+
 
                                                         </div>
+                                                                
 
 
-
-                                                        <div class="space-16"></div>
+                                                        
 
                                                         <div class="row">
 
-                                                            <div class="col-xs-12 col-sm-6">
+                                                            <div class="col-xs-8 col-sm-6">
 
 
 
@@ -983,6 +998,21 @@ if(isset($_GET['filter_job'])){
                                                                     <span class="ui-slider-orange">0</span>
                                                                 </div>
                                                             </div>
+
+                                                            <div class="col-xs-8 col-sm-3 ">
+                                                        <h5><label class="control-label bolder orange" for="form-field-select-3">Number of companies placed </label></h5>
+                                                         
+
+                                                        <select class="chosen-select"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
+                                                        </div>
+                                                        
                                                         </div>
 
                                                     </div>

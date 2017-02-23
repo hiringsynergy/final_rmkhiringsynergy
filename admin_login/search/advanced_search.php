@@ -998,11 +998,15 @@ function updateSlider(){
 													</div>
 													<div class="row">
                     												<div class="col-xs-8 col-sm-5">
-														<h5><label class="control-label bolder blue" for="form-field-select-3">Has Job</label></h5>
+														<h5><label class="control-label bolder blue" for="form-field-select-3">Number of companies placed </label></h5>
 
 														<select class="chosen-select form-control"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
-																<option value="yes">Yes</option>
-																<option value="no">No</option>
+																<option value="0">0</option>
+																<option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
 															</select>
 														</div>
 														<div class="col-xs-8 col-sm-5">
