@@ -1026,7 +1026,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='student'){
 
                         else {
                             bootbox.dialog({
-                                message: "Wrong Password. Please check your password",
+                                message: " Wrong Password. Please check your password. <br> <b>  Warning: </b> Please do not use Save password. It is Disabled for Security purposes",
                                 buttons: {
                                     "success": {
                                         "label": "OK",
