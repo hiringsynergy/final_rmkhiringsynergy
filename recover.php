@@ -33,9 +33,29 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
             $connect = mysqli_connect("localhost", "root", "", "$admin_database");
 
+            if(substr_count($proceed_username,'placements')==1){
 
-            $query_student = "SELECT * FROM login_admin where username='$proceed_username' and admin_forgotpassword='$hash'";
-            $result_student = mysqli_query($connect, $query_student);
+
+                $query_student = "SELECT * FROM login_admin where username='$proceed_username' and admin_forgotpassword='$hash'";
+                $result_student = mysqli_query($connect, $query_student);
+
+
+
+            }
+            else{
+
+                $query_student = "SELECT * FROM login_coordinator where username='$proceed_username' and cood_forgotpassword='$hash'";
+                $result_student = mysqli_query($connect, $query_student);
+
+
+
+
+            }
+
+
+
+
+
 
             if (!$result_student == null) {
 

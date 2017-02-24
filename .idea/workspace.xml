@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login_out/login_validation.php" afterPath="$PROJECT_DIR$/login_out/login_validation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recover.php" afterPath="$PROJECT_DIR$/recover.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reports.php" afterPath="$PROJECT_DIR$/reports.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reset.php" afterPath="$PROJECT_DIR$/reset.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,7 +76,7 @@
       <file leaf-file-name="search_action.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_login/search/search_action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7037">
+            <state relative-caret-position="36225">
               <caret line="2415" column="0" lean-forward="false" selection-start-line="1974" selection-start-column="31" selection-end-line="2415" selection-end-column="0" />
               <folding />
             </state>
@@ -86,14 +86,17 @@
       <file leaf-file-name="recover.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recover.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="563" column="29" lean-forward="true" selection-start-line="563" selection-start-column="29" selection-end-line="563" selection-end-column="29" />
+            <state relative-caret-position="525">
+              <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
               <folding>
-                <marker date="1487915992000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
-                <marker date="1487915992000" expanded="true" signature="841:934" ph="SELECT * FRO... login_admin" />
-                <marker date="1487915992000" expanded="true" signature="14127:14183" ph="SELECT * FRO... table_map" />
-                <marker date="1487915992000" expanded="true" signature="14464:14556" ph="SELECT * FRO... ${$student_table}" />
-                <marker date="1487915992000" expanded="true" signature="27480:27571" ph="UPDATE ${$ta... " />
+                <marker date="1487922480000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
+                <marker date="1487922480000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
+                <marker date="1487922480000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
+                <marker date="1487922480000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
+                <marker date="1487922480000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
+                <marker date="1487922480000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
+                <marker date="1487922480000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
+                <marker date="1487922480000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
               </folding>
             </state>
           </provider>
@@ -103,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+              <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -194,6 +197,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,8 +263,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,12 +352,13 @@
       <workItem from="1487688284366" duration="3636000" />
       <workItem from="1487781381304" duration="1119000" />
       <workItem from="1487857269757" duration="1366000" />
-      <workItem from="1487915839849" duration="313000" />
+      <workItem from="1487915839849" duration="376000" />
+      <workItem from="1487921697093" duration="853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21854000" />
+    <option name="totallyTimeSpent" value="22770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
@@ -402,7 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -417,7 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4785">
           <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -463,7 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -478,7 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4785">
           <caret line="165" column="52" lean-forward="false" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -532,7 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4785">
           <caret line="165" column="52" lean-forward="true" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2475">
           <caret line="165" column="26" lean-forward="true" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,7 +725,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/search/search_action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7037">
+        <state relative-caret-position="36225">
           <caret line="2415" column="0" lean-forward="false" selection-start-line="1974" selection-start-column="31" selection-end-line="2415" selection-end-column="0" />
           <folding />
         </state>
@@ -738,21 +734,24 @@
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recover.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="563" column="29" lean-forward="true" selection-start-line="563" selection-start-column="29" selection-end-line="563" selection-end-column="29" />
+        <state relative-caret-position="525">
+          <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
           <folding>
-            <marker date="1487915992000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
-            <marker date="1487915992000" expanded="true" signature="841:934" ph="SELECT * FRO... login_admin" />
-            <marker date="1487915992000" expanded="true" signature="14127:14183" ph="SELECT * FRO... table_map" />
-            <marker date="1487915992000" expanded="true" signature="14464:14556" ph="SELECT * FRO... ${$student_table}" />
-            <marker date="1487915992000" expanded="true" signature="27480:27571" ph="UPDATE ${$ta... " />
+            <marker date="1487922480000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
+            <marker date="1487922480000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
+            <marker date="1487922480000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
+            <marker date="1487922480000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
+            <marker date="1487922480000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1487922480000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
+            <marker date="1487922480000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
+            <marker date="1487922480000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
           </folding>
         </state>
       </provider>
