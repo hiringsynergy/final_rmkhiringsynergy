@@ -148,7 +148,7 @@ if(isset($_POST['login'])){
 
 
     //admin validation
-    if($admin_name==$username ){
+    if($admin_name==$username && password_verify($password, $admin_password)){
 
 
 
@@ -251,13 +251,190 @@ else if(isset($_POST['proceed'])){
         $row_selection=mysqli_fetch_assoc($result_selection);
         if(!$row_selection==null) {
 
-            echo "The user is admin or coordinator";
+            
+
             $is_user_valid=true;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             $admin_database = $row_selection['database_name'];
 
+            echo $admin_database;
+
 
             $connect = mysqli_connect("localhost", "root", "", "$admin_database");
+
+
+
+
+
+
+if(substr_count($proceed_username, 'placements')==1){
+
+
+
+
+
+
+
+
+        echo "  admin";
+
+
+            $string='hithisisakash';
+            $hash= password_hash($string, PASSWORD_BCRYPT);
+            $hash=mysqli_real_escape_string($connect_database, $hash);
+
+
+            echo $hash;
+            echo " username: ".$proceed_username;
+            $query_student = "UPDATE login_admin SET admin_forgotpassword='$hash' WHERE username='$proceed_username'";
+            $result_student = mysqli_query($connect, $query_student);
+
+
+            if (!$result_student == null) {
+
+                $query_student_select="SELECT * FROM login_admin WHERE username='{$proceed_username}'";
+
+                
+                $result_student_select=mysqli_query($connect, $query_student_select);
+                if(!$result_student_select==null){
+
+                    $row_student_select=mysqli_fetch_assoc($result_student_select);
+
+
+
+                     $to = $row_student_select['admin_emailid'];
+                     $user_mail=$row_student_select['username'];
+
+
+
+                   require "../admin_login/email/PHPMailer/PHPMailerAutoload.php";
+
+                    $mail=new PHPMailer();
+
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                    $mail->Password = 'akash170397';                           // SMTP password
+                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 465;
+
+
+                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                    $mail->addAddress($to, $to);     // Add a recipient
+
+                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+
+                    
+
+                    $mail->isHTML(true);
+
+                    $mail->Subject = "test mail";
+                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
+
+
+
+                    if(!$mail->send()) {
+
+                        
+
+                                $_SESSION['user_valid']=1;
+                                // echo "send";
+
+                                die("mail not sent");
+                                        
+                                header("Location: ../reset.php");
+
+
+
+                    }
+                    else{
+
+
+
+
+                        $_SESSION['reset']=1;
+                        header("Location: ../login.php ");
+
+                        echo "Successfully sent";
+
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    echo "The user is admin";
+                    $is_user_valid = true;
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+else{
+
+
+
+    echo "coordinator";
+}
+
+
+
+
+
+
+
+
+
+
+
         }
 
     }
