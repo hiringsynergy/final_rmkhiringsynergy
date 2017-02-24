@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65f06474-28f3-4a54-a301-5779436ed919" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login_out/login_validation.php" afterPath="$PROJECT_DIR$/login_out/login_validation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recover.php" afterPath="$PROJECT_DIR$/recover.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reset.php" afterPath="$PROJECT_DIR$/reset.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,17 +83,17 @@
       <file leaf-file-name="recover.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recover.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+            <state relative-caret-position="736">
+              <caret line="758" column="30" lean-forward="false" selection-start-line="758" selection-start-column="30" selection-end-line="758" selection-end-column="30" />
               <folding>
-                <marker date="1487922480000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
-                <marker date="1487922480000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
-                <marker date="1487922480000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
-                <marker date="1487922480000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
-                <marker date="1487922480000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
-                <marker date="1487922480000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
-                <marker date="1487922480000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
-                <marker date="1487922480000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
+                <marker date="1487923162000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
+                <marker date="1487923162000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
+                <marker date="1487923162000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
+                <marker date="1487923162000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
+                <marker date="1487923162000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
+                <marker date="1487923162000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
+                <marker date="1487923162000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
+                <marker date="1487923162000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
               </folding>
             </state>
           </provider>
@@ -353,16 +350,16 @@
       <workItem from="1487781381304" duration="1119000" />
       <workItem from="1487857269757" duration="1366000" />
       <workItem from="1487915839849" duration="376000" />
-      <workItem from="1487921697093" duration="853000" />
+      <workItem from="1487921697093" duration="1324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22770000" />
+    <option name="totallyTimeSpent" value="23241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16197917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -741,17 +738,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recover.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+        <state relative-caret-position="736">
+          <caret line="758" column="30" lean-forward="false" selection-start-line="758" selection-start-column="30" selection-end-line="758" selection-end-column="30" />
           <folding>
-            <marker date="1487922480000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
-            <marker date="1487922480000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
-            <marker date="1487922480000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
-            <marker date="1487922480000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
-            <marker date="1487922480000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
-            <marker date="1487922480000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
-            <marker date="1487922480000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
-            <marker date="1487922480000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
+            <marker date="1487923162000" expanded="true" signature="338:400" ph="SELECT * FRO... admin_login" />
+            <marker date="1487923162000" expanded="true" signature="911:1004" ph="SELECT * FRO... login_admin" />
+            <marker date="1487923162000" expanded="true" signature="1151:1249" ph="SELECT * FRO... login_coordinator" />
+            <marker date="1487923162000" expanded="true" signature="14397:14453" ph="SELECT * FRO... table_map" />
+            <marker date="1487923162000" expanded="true" signature="14734:14826" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1487923162000" expanded="true" signature="27867:27963" ph="UPDATE ${$ta... " />
+            <marker date="1487923162000" expanded="true" signature="28442:28537" ph="UPDATE ${$ta... " />
+            <marker date="1487923162000" expanded="true" signature="29021:29112" ph="UPDATE ${$ta... " />
           </folding>
         </state>
       </provider>

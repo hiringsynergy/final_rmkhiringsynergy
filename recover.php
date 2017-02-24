@@ -742,6 +742,28 @@ echo "hurray";
     }
 }
 
+else if($_POST['first_password']!=$_POST['second_password']){
+
+      ?>
+
+    <script type="application/javascript">
+
+        alert("password mismatch");
+        history.go(-1);
+
+    </script>
+
+<?php
+
+
+
+    // header("Location: recover.php?id=$proceed_username&hash=$hash");
+
+
+
+
+}
+
 
 
 
