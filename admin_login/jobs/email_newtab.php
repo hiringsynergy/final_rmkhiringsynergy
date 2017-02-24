@@ -1,9 +1,9 @@
- <?php
+<?php
 
 session_start();
 ob_start();
 
-if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role']!='admin' ){
+if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='admin' ){
 
     header("Location: ../../login");
 
@@ -689,7 +689,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
                 <?php
 
-                
+
 
 
                 if(isset($_POST['send']) && isset($_SESSION['user_role'])=='admin' ){
@@ -699,31 +699,31 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                     $jid= $_POST['jid'];
+                    $jid= $_POST['jid'];
 
 
 
 
 
 
-                                                                                    require "../email/PHPMailer/PHPMailerAutoload.php";
+                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
-                                                                                    $mail=new PHPMailer();
+                    $mail=new PHPMailer();
 
-                                                                                    $mail->isSMTP();
-                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                                                                                    $mail->Password = 'akash170397';                           // SMTP password
-                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                                                                                    $mail->Port = 465;
-                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                    $mail->Password = 'akash170397';                           // SMTP password
+                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 465;
+                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
-                                                                                    $mail->isHTML(true);
+                    $mail->isHTML(true);
 
-                                                                                    $mail->Subject = $_POST['subject'];
-                                                                                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
+                    $mail->Subject = $_POST['subject'];
+                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
 
 
 
@@ -733,39 +733,39 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                                                                                      $send_file=array();
-                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                    $send_file=array();
+                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
 
 
 
-                                                                        $count= count($_FILES['attachment']['name']);
+                        $count= count($_FILES['attachment']['name']);
 
 
-                                                                        for ($i=0;$i<$count;$i++) {
+                        for ($i=0;$i<$count;$i++) {
 
-                                                                            $file_name = $_FILES['attachment']['name'][$i];
-                                                                            $file_size = $_FILES['attachment']['size'][$i];
-                                                                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
-                                                                            $file_type = $_FILES['attachment']['type'][$i];
+                            $file_name = $_FILES['attachment']['name'][$i];
+                            $file_size = $_FILES['attachment']['size'][$i];
+                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
+                            $file_type = $_FILES['attachment']['type'][$i];
 
 
 
-                                                                            $value = explode('.',$file_name);
+                            $value = explode('.',$file_name);
 
 
 
 
-                                                                            $file_ext=strtolower(end($value));
+                            $file_ext=strtolower(end($value));
 
-                                                                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
+                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-                                                                            move_uploaded_file($file_tmp,"files/".$newfilename);
+                            move_uploaded_file($file_tmp,"files/".$newfilename);
 
-                                                                            $send_file[]=$newfilename;
+                            $send_file[]=$newfilename;
 
 
 
@@ -775,7 +775,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                                                                        }
+                        }
 
 
 
@@ -789,7 +789,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                                                                         }
+                    }
 
 
 
@@ -798,28 +798,28 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                                                                include "../connect.php";
-                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
-                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
-                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+                    include "../connect.php";
+                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
 
-                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
-                                                                $result_mail = mysqli_query($connect, $query_mail);
-                                                                $num_rows=mysqli_num_rows($result_mail);
-                                                                $counter=0;
+                    $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
+                    $result_mail = mysqli_query($connect, $query_mail);
+                    $num_rows=mysqli_num_rows($result_mail);
+                    $counter=0;
 
 
-                                                                while($row_mail = mysqli_fetch_assoc($result_mail)) {
+                    while($row_mail = mysqli_fetch_assoc($result_mail)) {
 
 
 
-                                                                                    $to=null;
+                        $to=null;
 
 
 
-                                                                                    $to=$row_mail['st_email'];
+                        $to=$row_mail['st_email'];
 
 
 
@@ -828,70 +828,70 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
 
-                                                                                    $mail->addAddress($to, 'joe');
+                        $mail->addAddress($to, 'joe');
 
 
-                                                                                    // Add a recipient
+                        // Add a recipient
 
 
 
 
-                                                                                    if(isset($_FILES['attachment']) && $file_ext!=''  && isset($_SESSION['user_role'])=='admin' ){
+                        if(isset($_FILES['attachment']) && $file_ext!=''  && isset($_SESSION['user_role'])=='admin' ){
 
-                                                                                        foreach ($send_file as $file_to_send){
+                            foreach ($send_file as $file_to_send){
 
 
-                                                                                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
+                                $mail->addAttachment('files/'.$file_to_send, $file_to_send);
 
-                                                                                        }
+                            }
 
 
 
 
-                                                                                    }
+                        }
 
 
 
 
-                                                                                    if($mail->send()){
+                        if($mail->send()){
 
 
 
 
 
-                                                                                        $counter=$counter+1;
+                            $counter=$counter+1;
 
-                                                                                    }
+                        }
 
 
-                                                                                    // Clear all addresses and attachments for next loop
-                                                                                    $mail->clearAddresses();
-                                                                                    $mail->clearAttachments();
+                        // Clear all addresses and attachments for next loop
+                        $mail->clearAddresses();
+                        $mail->clearAttachments();
 
 
 
 
-                                                                                    if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
+                        if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
 
-                                                                                        foreach ($send_file as $file_sent){
+                            foreach ($send_file as $file_sent){
 
-                                                                                            unlink("files/$file_sent");
+                                unlink("files/$file_sent");
 
 
 
-                                                                                        }
+                            }
 
 
 
-                                                                                    }
+                        }
 
 
 
 
-                                                                }
+                    }
 
 
-                                                                if($num_rows!=$counter) {
+                    if($num_rows!=$counter) {
 
 
                         ?>
@@ -960,12 +960,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                 }
 
 
-                    
 
 
 
 
-                                                                        
+
+
 
 
 
@@ -1008,22 +1008,22 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email_result" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+                <form target="_blank" id="id-message-form" action="email_result" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
-<!--                         <div class="form-group ">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
+                        <!--                         <div class="form-group ">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
 
-                            <div class="col-sm-9">
-												<span class="input-icon">
-													<input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
-													<i class="ace-icon fa fa-user"></i>
-												</span>
-                            </div>
-                        </div>
+                                                    <div class="col-sm-9">
+                                                                        <span class="input-icon">
+                                                                            <input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
+                                                                            <i class="ace-icon fa fa-user"></i>
+                                                                        </span>
+                                                    </div>
+                                                </div>
 
-                        <div class="hr hr-18 dotted"></div> -->
+                                                <div class="hr hr-18 dotted"></div> -->
 
-                    <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
+                        <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-subject">Subject:</label>
