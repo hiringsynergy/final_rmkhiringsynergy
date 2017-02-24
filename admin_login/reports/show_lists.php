@@ -29,7 +29,6 @@ $year_of_graduation=$row_get_year['year_of_graduation'];
 
 
 
-
 foreach($checkbox as $list){
 
 
@@ -38,18 +37,27 @@ foreach($checkbox as $list){
     $row_job_type=mysqli_fetch_assoc($result_job_type);
     $job_type=$row_job_type['job_type'];
 
-    echo "job_type: ".$job_type;
+    // echo "job_type: ".$job_type;
 
 
-    $ne_jobtype="select * from student_".$year_of_graduation."";
+    $ne_jobtype="select * from students_".$year_of_graduation." WHERE st_roll='$list'";
     $new_jobtype=mysqli_query($connect,$ne_jobtype);
-    $row_old=$new_jobtype['st_jobtype'];
+     $row=mysqli_fetch_assoc($new_jobtype);
+     $row_old=$row['st_jobtype'];
+
+
+
+
+
+
+
+
     $row_old=$row_old.',';
     $row_new=$row_old.$job_type;
 
 
     
-    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$job_type' WHERE st_roll='$list' ";
+    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' WHERE st_roll='$list' ";
     $result_placed=mysqli_query($connect, $query_placed);
     
 

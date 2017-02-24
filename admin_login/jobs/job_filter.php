@@ -283,19 +283,59 @@ if(isset($_GET['filter_job'])){
         $result_for_alter=mysqli_query($connect, $query_for_alter);
 
 
-//count no.jobs placed
 
-    // $query_count="select * from ".$students_table_name."  ";
-    // $ne_count=mysqli_query($connect,$query_count);
-    // echo $new_count=$ne_count['st_jobtype'];
+
+//create new column for count placed
+
+        $query_alter="ALTER TABLE ".$students_table_name." ADD job_count VARCHAR(255)";
+        $result_alter=mysqli_query($connect,$query_alter);
+
+
+
+
+//query for get students roll no
+
+        $query_get_student="Select * from ".$students_table_name."";
+        $result_get_student=mysqli_query($connect,$query_get_student);
+        while($row_get_student=mysqli_fetch_assoc($result_get_student)){
+
+            $roll_no=$row_get_student['st_roll'];
+
+
+            //count no.jobs placed
+
+    $query_count="select * from ".$students_table_name." where st_roll='$roll_no'";
+    $ne_count=mysqli_query($connect,$query_count);
+    $row_job_type=mysqli_fetch_assoc($ne_count);
+    $new_count=$row_job_type['st_jobtype'];
 
     
 
-    // $count_comma=explode(",",$new_count);
-    // $count_array=array_count_values($count_comma);
-    // $count_final=$count_array[','];
 
-    // echo $count_final;
+    $count_comma=substr_count($new_count,',');
+
+
+
+
+
+    //update count value in column
+
+
+    $query_column="UPDATE ".$students_table_name." SET  job_count='$count_comma' WHERE st_roll='$roll_no'";
+    $result_column=mysqli_query($connect,$query_column);
+
+    
+
+
+
+
+
+
+
+
+        }
+
+
 
 
 
@@ -308,8 +348,17 @@ if(isset($_GET['filter_job'])){
 
 
 
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
+
+
+
+        //drop column
+
+         $query_alter="ALTER TABLE ".$students_table_name." DROP job_count";
+        $result_alter=mysqli_query($connect,$query_alter);
+
 
 
 
