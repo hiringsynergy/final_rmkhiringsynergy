@@ -1008,7 +1008,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email_result" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+                <form target="_blank" id="id-message-form" action="email_result" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
 <!--                         <div class="form-group ">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>

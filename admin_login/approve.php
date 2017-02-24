@@ -22,7 +22,7 @@ if (isset($_GET['approve']) && isset($_SESSION['user_role'])=='admin' ) {
     $colname = $_GET['colname'];
     $year = $_GET['year'];
 
-    $select = "SELECT * from students_."$year". where st_roll='{$rollno}'";
+    $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 

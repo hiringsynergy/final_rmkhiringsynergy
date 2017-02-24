@@ -157,7 +157,7 @@ if(isset($_POST['login'])){
 
         $_SESSION['user']=$username;
 
-        header("Location: ../admin_login/index.php");
+        header("Location: ../admin_login/index");
     }
 
 
@@ -177,7 +177,7 @@ if(isset($_POST['login'])){
 
 
 
-        header("Location: ../coordinator_login/index.php");
+        header("Location: ../coordinator_login/index");
     }
 
 
@@ -210,7 +210,7 @@ if(isset($_POST['login'])){
         $_SESSION['year_of_graduation']= end($graduation);
 
 
-        header("Location: ../student_login/index.php");
+        header("Location: ../student_login/index");
 
     }
 
@@ -219,7 +219,7 @@ if(isset($_POST['login'])){
 
     else{
 
-        header("Location: ../login.php");
+        header("Location: ../login");
 
     }
 
@@ -344,7 +344,7 @@ if(substr_count($proceed_username, 'placements')==1){
                     $mail->isHTML(true);
 
                     $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover?id='.$user_mail."&hash=".$hash;
 
 
 
@@ -357,7 +357,7 @@ if(substr_count($proceed_username, 'placements')==1){
 
                                 die("mail not sent");
                                         
-                                header("Location: ../reset.php");
+                                header("Location: ../reset");
 
 
 
@@ -368,7 +368,7 @@ if(substr_count($proceed_username, 'placements')==1){
 
 
                         $_SESSION['reset']=1;
-                        header("Location: ../login.php ");
+                        header("Location: ../login ");
 
                         echo "Successfully sent";
 
@@ -482,7 +482,7 @@ else{
                     $mail->isHTML(true);
 
                     $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover?id='.$user_mail."&hash=".$hash;
 
 
 
@@ -495,7 +495,7 @@ else{
 
                                 die("mail not sent");
                                         
-                                header("Location: ../reset.php");
+                                header("Location: ../reset");
 
 
 
@@ -506,7 +506,7 @@ else{
 
 
                         $_SESSION['reset']=1;
-                        header("Location: ../login.php ");
+                        header("Location: ../login ");
 
                         echo "Successfully sent";
 
@@ -670,7 +670,7 @@ else{
                     $mail->isHTML(true);
 
                     $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover.php?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover?id='.$user_mail."&hash=".$hash;
 
 
 
@@ -681,7 +681,7 @@ else{
                                 $_SESSION['user_valid']=1;
                                 // echo "send";
                                         
-                                header("Location: ../reset.php");
+                                header("Location: ../reset");
 
 
 
@@ -692,7 +692,7 @@ else{
 
 
                         $_SESSION['reset']=1;
-                        header("Location: ../login.php ");
+                        header("Location: ../login");
 
                         echo "Successfully sent";
 
@@ -740,7 +740,7 @@ else{
       $_SESSION['user_valid']=1;
 
 // echo "is_valid";
-        header("Location: ../reset.php");
+        header("Location: ../reset");
 
 
     }
@@ -767,7 +767,7 @@ else{
 else{
 
 
-    header("Location: ../login.php");
+    header("Location: ../login");
 
 
 

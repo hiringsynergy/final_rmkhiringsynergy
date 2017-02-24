@@ -20,5 +20,5 @@ $_SESSION['user_role']=null;
 $_SESSION['cood_branch']=null;
 $_SESSION['$student_year']=null;
 
-header("Location: ../login.php");
+header("Location: ../login");
 ?>

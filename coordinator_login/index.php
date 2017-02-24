@@ -4,12 +4,23 @@
 session_start();
 ob_start();
 
-if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['user_role'])!='coordinator'){
+if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
+
+    ?>
+
+    <script type="application/javascript">
+
+        window.history.go(-1);
+
+    </script>
+
+<?php
     header("Location: ../login");
 
 
 }
+
 
 ?>
 
