@@ -18,14 +18,16 @@ if (isset($_GET['approve']) && isset($_SESSION['user_role'])=='admin' ) {
     include "connect.php";
 
     $rollno = $_GET['rollno'];
-    $tname = $_GET['tname'];
-    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $oldcolname = $_GET['oldcolname'];
+    $colname = $_GET['colname'];
+    $year = $_GET['year'];
+
+    $select = "SELECT * from students_."$year". where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
-    if($row['st_changemail']!=''){
+    
 
-        $new_mail = $row['st_changemail'];
         $query_change_mail = "UPDATE $tname SET  st_email='{$new_mail}',st_changemail='' WHERE st_roll='{$rollno}'";
         $result_change_mail = mysqli_query($connect, $query_change_mail);
 
@@ -33,7 +35,7 @@ if (isset($_GET['approve']) && isset($_SESSION['user_role'])=='admin' ) {
 
             die("" . mysqli_error($connect));
         }
-    }
+    
     if($row['st_changephone']!=''){
 
         $new_phone = $row['st_changephone'];
@@ -286,12 +288,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
                         include "connect.php";
-                        $query_table = "SELECT * FROM table_map";
-                        $result_table = mysqli_query($connect, $query_table);
-
-                        while ($row = mysqli_fetch_assoc($result_table)) {
-                        $tname = $row['table_name'];
-                        $query_year = "SELECT * from $tname";
+                        $query_year = "SELECT * from st_change";
                         $result_year = mysqli_query($connect, $query_year);
 
                         $no_notification=mysqli_num_rows($result_year);
@@ -378,7 +375,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                 }
 
 
-                            }
+                            
 
 
                             ?>
@@ -765,33 +762,59 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
-                            if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='admin' ){
+                            // if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
 
-                                $roll=$_GET['roll'];
+                                // $roll=$_GET['roll'];
 
 
 
                                 include "connect.php";
-                                $query_table = "SELECT * FROM table_map";
-                                $result_table = mysqli_query($connect, $query_table);
+                                //for getting change requests from change table
+                                    $query_change = "SELECT * from st_change";
+                                    $result_change = mysqli_query($connect, $query_change);
+                                    $finfo = $result_change->fetch_fields();
 
-                                while ($row = mysqli_fetch_assoc($result_table)) {
-                                    $tname = $row['table_name'];
-                                    $query_year = "SELECT * from $tname WHERE st_roll='$roll'";
-                                    $result_year = mysqli_query($connect, $query_year);
-                                    while ($row1 = mysqli_fetch_assoc($result_year)) {
+                                     while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                                        if ($row1['st_changemail'] != NULL || $row1['st_changephone']!= NULL) {
+                                foreach ($finfo as $val) {
+
+
+                                        if ($rowr[$val->name] != NULL && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                            $colname=$val->name;
+
+
+                                    //for mapping column names
+                                    $query_changemap = "SELECT * from st_changetable where st_columnname='$colname'";
+                                    $result_changemap = mysqli_query($connect, $query_changemap);
+                                    $rowchangemap = mysqli_fetch_assoc($result_changemap);
+
+                                    $changemapname=$rowchangemap['st_columnnamemap'];
+
+                                    $oldcolumnname=$rowchangemap['st_oldname'];
+
+                                    //for getting old values from student table
+
+                                   $reg_no=$rowr['st_regno'];
+                                    $query_student = "SELECT * from students_".$rowr['st_year']." WHERE st_roll='$reg_no' ";
+                                    $result_student = mysqli_query($connect, $query_student);
+                                    $rowstudent = mysqli_fetch_assoc($result_student);
+                                    $oldcolumnvalue=$rowstudent[$oldcolumnname];
+
+                                    if(!$result_student){
+
+                                        die(mysqli_error($connect));
+                                    }
+
 
 
                                             ?>
 
-                                            <div class="">
-                                                <div class="col-xs-12 ">
+                                        <div class="">
+                                            <div class="col-xs-12 ">
 
                                                     <div class="widget-box widget-color-orange " id="widget-box-3">
                                                         <div class="widget-header widget-header-small">
@@ -806,8 +829,6 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                     <i class="ace-icon fa fa-minus" data-icon-show="fa-plus"
                                                                        data-icon-hide="fa-minus"></i>
                                                                 </a>
-
-
                                                             </div>
                                                         </div>
 
@@ -816,67 +837,55 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                   enctype="multipart/form-data">
                                                                 <div class="widget-main">
                                                                     <p>
-                                                                        <label style="font-size: large" class="green"><?php echo $row1['st_roll'] ?>
-                                                                            , <?php echo $row1['st_name'] ?> </label>
+                                                                        <label style="font-size: large" class="green"><?php echo $rowr['st_regno'] ?> 
+                                                                        </label>
+                                                                        
                                                                         <label style="font-size: large">has
                                                                             requested for the change of
                                                                         </label>
-                                                                        <label class="orange">
+                                                                        
+                                                                        <label style="font-size: large" class="orange">
 
 
-                                                                            <?php if ($row1['st_changemail'] != NULL) {
-                                                                            echo "<label style='font-size: large;'>Email id : ";
-                                                                            echo $row1['st_email'];
-                                                                            ?></label>
-                                                                        to <label style="font-size: large" class="orange">
-                                                                            <?php echo $row1['st_changemail'];
-
-
-
-                                                                            }
+                                                                            <?php if ($rowr[$val->name] != NULL) {
+                                                                            
+                                                                                echo $changemapname."  ";
+                                                                            ?>
+                                                                                
+                                                                            </label><label style="font-size: large">
+                                                                            <?php
+                                                                                echo " from ";
 
                                                                             ?>
+                                                                                </label>
+                                                                            <label style="font-size: large" class="orange">
+                                                                            
+                                                                            <?php echo $oldcolumnvalue; ?>
+                                                                                
+                                                                            </label><label style="font-size: large">
+                                                                            <?php
+                                                                                echo " to ";
+                                                                            ?> </label>
+                                                                            <label style="font-size: large" class="orange">
+                                                                            
+                                                                            <?php echo "  ".$rowr[$val->name]; 
 
-
-
-
-
+                                                                            ?></label>
                                                                             <?php
 
 
 
-                                                                            if($row1['st_changephone'] != NULL && $row1['st_changemail'] != NULL ){
-
-
-                                                                                echo " <label style='font-size: large; color: black;'> and  </label>";
-
                                                                             }
 
-
-
-
-
-
-                                                                            if($row1['st_changephone'] != NULL) {
-
-
-
-                                                                            echo "<label style='font-size: large;'> Phone No : ";
-                                                                            echo $row1['st_phone'];
-                                                                            ?></label>
-                                                                        <label style="font-size: large; color: black;">to</label>
-                                                                        <label style="font-size: large"  class="orange">
-                                                                            <?php echo $row1['st_changephone'] ?></label>
-
-
-                                                                        <?php } ?>
-
-
-                                                                        </label></p>
+                                                                           ?> </p>
                                                                     <input type="hidden" name="rollno"
-                                                                           value="<?php echo $row1['st_roll'] ?>"/>
-                                                                    <input type="hidden" name="tname"
-                                                                           value="<?php echo $row['table_name'] ?>"/>
+                                                                           value="<?php echo $rowr['st_regno'] ?>"/>
+                                                                    <input type="hidden" name="oldcolname"
+                                                                           value="<?php echo $oldcolumnname ?>"/>
+                                                                    <input type="hidden" name="colname"
+                                                                           value="<?php echo $rowchangemap['st_columnnamemap'] ?>"/>
+                                                                    <input type="hidden" name="year"
+                                                                           value="<?php echo $rowr['st_year'] ?>"/>
                                                                     <button class=" btn btn-success col-xs-push-9"
                                                                             type="submit" name="approve">
                                                                         Approve
@@ -894,18 +903,18 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                                         </div>
                                                     </div>
 
-                                                </div>
-
+                                            </div>
                                             </div>
 
                                             <?php
-                                        }
+                                        
 
+ } } }
+                                    
 
-                                    }
 
 
-                                }
+?>
 
 
 
@@ -914,152 +923,6 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
-
-
-
-
-
-
-                            }
-
-                            else {
-
-
-
-
-
-
-
-
-
-                            include "connect.php";
-                            $query_table = "SELECT * FROM table_map";
-                            $result_table = mysqli_query($connect, $query_table);
-
-                            while ($row = mysqli_fetch_assoc($result_table)) {
-                                $tname = $row['table_name'];
-                                $query_year = "SELECT * from $tname";
-                                $result_year = mysqli_query($connect, $query_year);
-                                while ($row1 = mysqli_fetch_assoc($result_year)) {
-
-
-                                    if ($row1['st_changemail'] != NULL || $row1['st_changephone'] != NULL) {
-
-
-                                        ?>
-
-                                        <div class="">
-                                            <div class="col-xs-12 ">
-
-                                                <div class="widget-box widget-color-orange " id="widget-box-3">
-                                                    <div class="widget-header widget-header-small">
-                                                        <h6 class="widget-title">
-                                                            <i class="ace-icon fa fa-sort"></i>
-                                                            Change request
-                                                        </h6>
-
-                                                        <div class="widget-toolbar">
-
-                                                            <a href="#" data-action="collapse">
-                                                                <i class="ace-icon fa fa-minus" data-icon-show="fa-plus"
-                                                                   data-icon-hide="fa-minus"></i>
-                                                            </a>
-
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="widget-body">
-                                                        <form class="modal-content" action="approve" method="get"
-                                                              enctype="multipart/form-data">
-                                                            <div class="widget-main">
-                                                                <p>
-                                                                    <label style="font-size: large"
-                                                                           class="green"><?php echo $row1['st_roll'] ?>
-                                                                        , <?php echo $row1['st_name'] ?> </label>
-                                                                    <label style="font-size: large">has
-                                                                        requested for the change of
-                                                                    </label>
-                                                                    <label class="orange">
-
-
-                                                                        <?php if ($row1['st_changemail'] != NULL) {
-                                                                        echo "<label style='font-size: large;'>Email id : ";
-                                                                        echo $row1['st_email'];
-                                                                        ?></label>
-                                                                    to <label style="font-size: large" class="orange">
-                                                                        <?php echo $row1['st_changemail'];
-
-
-                                                                        }
-
-                                                                        ?>
-
-
-                                                                        <?php
-
-
-                                                                        if ($row1['st_changephone'] != NULL && $row1['st_changemail'] != NULL) {
-
-
-                                                                            echo " <label style='font-size: large; color: black;'> and  </label>";
-
-                                                                        }
-
-
-                                                                        if ($row1['st_changephone'] != NULL) {
-
-
-                                                                        echo "<label style='font-size: large;'> Phone No : ";
-                                                                        echo $row1['st_phone'];
-                                                                        ?></label>
-                                                                    <label style="font-size: large; color: black;">to</label>
-                                                                    <label style="font-size: large" class="orange">
-                                                                        <?php echo $row1['st_changephone'] ?></label>
-
-
-                                                                    <?php } ?>
-
-
-                                                                    </label></p>
-                                                                <input type="hidden" name="rollno"
-                                                                       value="<?php echo $row1['st_roll'] ?>"/>
-                                                                <input type="hidden" name="tname"
-                                                                       value="<?php echo $row['table_name'] ?>"/>
-                                                                <button class=" btn btn-success col-xs-push-9"
-                                                                        type="submit" name="approve">
-                                                                    Approve
-                                                                </button>
-
-
-                                                                <button class=" btn btn-danger col-xs-push-9"
-                                                                        type="submit" name="decline">
-                                                                    Decline
-                                                                </button>
-
-
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-
-                                        <?php
-                                    }
-
-
-                                }
-                            }
-
-
-                            }
-
-
-                            ?>
-                        </div>
 
                         <!--                            <div class="space-14"></div>-->
 
