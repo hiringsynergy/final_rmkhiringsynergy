@@ -415,6 +415,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <b class="arrow"></b>
             </li>
 
+            <li class="">
+                <a href="../approve">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> Approve </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
             <li>
                 <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>

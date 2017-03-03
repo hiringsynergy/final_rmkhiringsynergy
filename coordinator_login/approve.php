@@ -15,6 +15,7 @@
 
 
 
+
 ?>
 
 <?php
@@ -41,6 +42,210 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
 
 
 }
+
+
+
+if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
+
+    include "connect.php";
+    $id=time();
+
+    $rollno = $_GET['rollno'];
+    $oldcolname = $_GET['oldcolname'];
+    $colname = $_GET['colname'];
+    $col_name_map = $_GET['colnamemap'];
+    $year = $_GET['year'];
+    $tname='students_'.$year;
+
+    $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+    $select1 = "SELECT * from st_change where st_regno='{$rollno}'";
+    $select_result1 = mysqli_query($connect, $select1);
+    $row1 = mysqli_fetch_assoc($select_result1);
+
+    
+
+    
+    if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
+
+
+        $new_val = $row1[$colname];
+        $query_change = "UPDATE $tname SET  $oldcolname={$new_val} WHERE st_roll='{$rollno}' ";
+        $result_change = mysqli_query($connect, $query_change);
+
+        if ( !$result_change) {
+
+            die("" . mysqli_error($connect));
+        }
+        $change_val='c_accept_'.$id;
+
+        $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
+        $result_change1 = mysqli_query($connect, $query_change1);
+
+        if ( !$result_change1) {
+
+            die("" . mysqli_error($connect));
+        }
+    }
+
+
+
+                                                                                    require "../admin_login/email/PHPMailer/PHPMailerAutoload.php";
+
+                                                                                    $mail=new PHPMailer();
+
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
+                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+                                                                                    $mail->isHTML(true);
+
+                                                                                    $mail->Subject = "Profile Update";
+                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been APPROVED </h3>';
+ 
+
+
+                                                                                    $to=$row['st_email'];
+
+
+
+                                                                                    $mail->addAddress($to, 'joe');
+
+
+                                                                                    // Add a recipient
+
+
+                                                                                    if($mail->send()){
+
+
+
+                                                                                            echo "success";
+
+                                                                                      //  $counter=$counter+1;
+
+                                                                                    }
+
+
+                                                                                    // Clear all addresses and attachments for next loop
+                                                                                    $mail->clearAddresses();
+
+
+
+
+
+    header("Location: approve");
+
+}
+if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
+
+  include "connect.php";
+    $id=time();
+
+    $rollno = $_GET['rollno'];
+    $oldcolname = $_GET['oldcolname'];
+    $colname = $_GET['colname'];
+    $year = $_GET['year'];
+    $col_name_map = $_GET['colnamemap'];
+    $tname='students_'.$year;
+
+    $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+    $select1 = "SELECT * from st_change where st_regno='{$rollno}'";
+    $select_result1 = mysqli_query($connect, $select1);
+    $row1 = mysqli_fetch_assoc($select_result1);
+
+    
+
+        // $query_change_mail = "UPDATE $tname SET  st_email='{$new_mail}',st_changemail='' WHERE st_roll='{$rollno}'";
+        // $result_change_mail = mysqli_query($connect, $query_change_mail);
+
+        // if (!$result_change_mail) {
+
+        //     die("" . mysqli_error($connect));
+        // }
+    
+    if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
+
+
+        $change_val='c_decline_'.$id;
+
+        $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
+        $result_change1 = mysqli_query($connect, $query_change1);
+
+        if ( !$result_change1) {
+
+            die("" . mysqli_error($connect));
+        }
+    }
+
+
+
+
+                                                                                    require "../admin_login/email/PHPMailer/PHPMailerAutoload.php";
+
+                                                                                    $mail=new PHPMailer();
+
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
+                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+                                                                                    $mail->isHTML(true);
+
+                                                                                    $mail->Subject = "Profile Update";
+                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been DECLINED </h3>';
+ 
+
+
+                                                                                    $to=$row['st_email'];
+
+
+
+                                                                                    $mail->addAddress($to, 'joe');
+
+
+                                                                                    // Add a recipient
+
+
+                                                                                    if($mail->send()){
+
+
+
+                                                                                            echo "success";
+
+                                                                                      //  $counter=$counter+1;
+
+                                                                                    }
+
+
+                                                                                    // Clear all addresses and attachments for next loop
+                                                                                    $mail->clearAddresses();
+
+
+
+
+
+
+    header("Location: approve");
+
+}
+
+
 
 
 ?>
@@ -326,7 +531,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
                 <b class="arrow"></b>
             </li>
 
-            <li class="active">
+            <li class="">
                 <a href="settings" >
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
@@ -335,7 +540,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
                 <b class="arrow"></b>
             </li>
 
-            <li class="">
+            <li class="active">
                 <a href="approve">
                     <i class="menu-icon fa fa-list-alt"></i>
                     <span class="menu-text"> Approve </span>
@@ -424,236 +629,179 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='coordinator'){
                         <!-- PAGE CONTENT BEGINS -->
 
 
-
-
-
-                        <input id="process" type="hidden" name="process" value="default" >
-                        <input id="copy" type="hidden" name="copy" value="" >
+                            <?php
 
 
 
 
-                        <div class="col-xs-12 col-sm-12 col-sm-offset-2">
 
-
-                    <div class="space-10"></div>
-
-
-                    <div class="visible" id="main-widget-container">
-                        <div class="row center">
+                            // if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
-                            <div class="col-xs-10 col-sm-8 widget-container-col blue centertest " id="widget-container-col-1">
-                                <div class="widget-box widget-color-blue" id="shadow">
-                                    <div class="widget-header">
-                                        <h5 class="widget-title " style="text-align: center;">Password Reset Wizard</h5>
 
-                                        <div class="widget-toolbar">
-                                            <div class="widget-menu">
-                                                <i class="ace-icon fa fa-lock bigger-170"></i>
+                                // $roll=$_GET['roll'];
 
 
-                                            </div>
 
-                                        </div>
+                                include "connect.php";
+                                //for getting change requests from change table
+                                    $query_change = "SELECT * from st_change";
+                                    $result_change = mysqli_query($connect, $query_change);
+                                    $finfo = $result_change->fetch_fields();
 
-                                    </div>
-
-                                    <div class="widget-body">
-                                        <div class="widget-main">
-                                            <div class="space-20"></div>
+                                     while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                                            </div>
+                                foreach ($finfo as $val) {
 
-                                                <div>
-                                                    <label for="form_proceed" class="col-lg-6" style="font-size: large; font-weight: bold;">
-                                                        Enter Your Current Password
-                                                        <small class="text-error">(******)</small>
-                                                    </label>
 
-                                                    <div class="input-group col-sm-5 col-lg-offset-3">
-                                                        <span class="input-group-addon">
-																	<i class="ace-icon fa fa-lock blue"></i>
-																</span>
-                                                        <input class="form-control input-mask-product" type="password" id="form_proceed" />
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                            $colname=$val->name;
 
+
+                                    //for mapping column names
+                                    $query_changemap = "SELECT * from st_changetable where st_columnname='$colname'";
+                                    $result_changemap = mysqli_query($connect, $query_changemap);
+                                    $rowchangemap = mysqli_fetch_assoc($result_changemap);
+
+                                    $changemapname=$rowchangemap['st_columnnamemap'];
+
+                                    $oldcolumnname=$rowchangemap['st_oldname'];
+
+                                    //for getting old values from student table
+
+                                   $reg_no=$rowr['st_regno'];
+                                    $query_student = "SELECT * from students_".$rowr['st_year']." WHERE st_roll='$reg_no' ";
+                                    $result_student = mysqli_query($connect, $query_student);
+                                    $rowstudent = mysqli_fetch_assoc($result_student);
+                                    $oldcolumnvalue=$rowstudent[$oldcolumnname];
+
+                                    if(!$result_student){
+
+                                        die(mysqli_error($connect));
+                                    }
+
+
+
+                                            ?>
+
+                                        <div class="">
+                                            <div class="col-xs-12 ">
+
+                                                    <div class="widget-box widget-color-orange " id="widget-box-3">
+                                                        <div class="widget-header widget-header-small">
+                                                            <h6 class="widget-title">
+                                                                <i class="ace-icon fa fa-sort"></i>
+                                                                Change request
+                                                            </h6>
+
+                                                            <div class="widget-toolbar">
+
+                                                                <a href="#" data-action="collapse">
+                                                                    <i class="ace-icon fa fa-minus" data-icon-show="fa-plus"
+                                                                       data-icon-hide="fa-minus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="widget-body">
+                                                            <form class="modal-content" action="approve" method="get"
+                                                                  enctype="multipart/form-data">
+                                                                <div class="widget-main">
+                                                                    <p>
+                                                                        <label style="font-size: large" class="green"><?php echo $rowr['st_regno'] ?> 
+                                                                        </label>
+                                                                        
+                                                                        <label style="font-size: large">has
+                                                                            requested for the change of
+                                                                        </label>
+                                                                        
+                                                                        <label style="font-size: large" class="orange">
+
+
+                                                                            <?php if ($rowr[$val->name] != NULL) {
+                                                                            
+                                                                                echo $changemapname."  ";
+                                                                            ?>
+                                                                                
+                                                                            </label><label style="font-size: large">
+                                                                            <?php
+                                                                                echo " from ";
+
+                                                                            ?>
+                                                                                </label>
+                                                                            <label style="font-size: large" class="orange">
+                                                                            
+                                                                            <?php echo $oldcolumnvalue; ?>
+                                                                                
+                                                                            </label><label style="font-size: large">
+                                                                            <?php
+                                                                                echo " to ";
+                                                                            ?> </label>
+                                                                            <label style="font-size: large" class="orange">
+                                                                            
+                                                                            <?php echo "  ".$rowr[$val->name]; 
+
+                                                                            ?></label>
+                                                                            <?php
+
+
+
+                                                                            }
+
+                                                                           ?> </p>
+                                                                    <input type="hidden" name="rollno"
+                                                                           value="<?php echo $rowr['st_regno'] ?>"/>
+                                                                    <input type="hidden" name="oldcolname"
+                                                                           value="<?php echo $oldcolumnname ?>"/>
+                                                                    <input type="hidden" name="colname"
+                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
+                                                                    <input type="hidden" name="year"
+                                                                           value="<?php echo $rowr['st_year'] ?>"/>
+                                                                            <input type="hidden" name="colnamemap"
+                                                                           value="<?php echo $changemapname ?>"/>
+                                                                    <button class=" btn btn-success col-xs-push-9"
+                                                                            type="submit" name="approve1">
+                                                                        Approve
+                                                                    </button>
+
+
+                                                                    <button class=" btn btn-danger col-xs-push-9"
+                                                                            type="submit" name="decline1">
+                                                                        Decline
+                                                                    </button>
+
+
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                    <div class="space-22"></div>
-                                                </div>
-                                                     <div class="col-lg-offset-5">
-
-                                                         <a  href="#modal-wizard" data-toggle="modal" id="proceed" class="pink btn btn-default btn-primary"> Proceed </a>
-
-
-
-                                                     </div>
-
 
                                             </div>
-
-
-
-                                        <p class="alert alert-info invisible">
-                                            Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
-                                        </p>
-
-
-
-
-
-
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                        </div>
-                    <?php
-
-                    include "connect.php";
-                    $username=$_SESSION['user'];
-
-
-
-
-
-                    ?>
-
-                    <div id="modal-wizard" class="modal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div id="modal-wizard-container">
-                                    <div class="modal-header">
-                                        <ul class="steps">
-                                            <li data-step="1" class="active">
-                                                <span class="step">1</span>
-                                                <span class="title">New Password</span>
-                                            </li>
-
-                                            <li data-step="2">
-                                                <span class="step">2</span>
-                                                <span class="title">Confirm Password</span>
-                                            </li>
-
-                                            <li data-step="3">
-                                                <span class="step">3</span>
-                                                <span class="title">Success</span>
-                                            </li>
-
-
-                                        </ul>
-                                    </div>
-
-                                    <div class="modal-body step-content">
-                                        <div class="step-pane active" data-step="1">
-                                            <div class="center">
-                                                <h4 class="blue">Step 1</h4>
-                                                <label for="form-field-mask-3" class="col-lg-6" style="font-size: large; font-weight: bold;">
-                                                    Enter Your New Password
-                                                    <small class="text-error">(******)</small>
-                                                </label>
-
-                                                <div class="input-group col-sm-5 col-lg-offset-3">
-                                                        <span class="input-group-addon">
-																	<i class="ace-icon fa fa-lock blue"></i>
-																</span>
-                                                    <input class="form-control input-mask-product" type="password" name="check1" id="form1" />
-
-                                                </div>
-                                                <div class="space-8"></div>
-
                                             </div>
 
-                                            <button class="btn btn-danger btn-sm  " data-dismiss="modal">
-                                                <i class="ace-icon fa fa-times"></i>
-                                                Cancel
-                                            </button>
+                                            <?php
+                                        
 
-
-                                            <button class="btn btn-sm btn-warning" id="prevValue1">
-                                                    <i class="ace-icon fa fa-arrow-left"></i>
-                                                    Prev
-                                                </button>
-
-
-                                                <button class="btn btn-sm  btn-primary  " data-last="Finish" id="nextValue1"  >
-                                                    Next
-                                                    <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                                </button>
-
-
-                                        </div>
-
-                                        <div class="step-pane" data-step="2">
-                                            <div class="center">
-                                                <h4 class="blue">Step 2</h4>
-                                                <label for="form-field-mask-3" class="col-lg-6" style="font-size: large; font-weight: bold;">
-                                                    Confirm Your New Password
-                                                    <small class="text-error">(******)</small>
-                                                </label>
-
-                                                <div class="input-group col-sm-5 col-lg-offset-3">
-                                                        <span class="input-group-addon">
-																	<i class="ace-icon fa fa-lock blue"></i>
-																</span>
-                                                    <input class="form-control input-mask-product" type="password" name="check2" id="form2" />
-
-                                                </div>
-                                            </div>
-                                            <div class="space-8"></div>
-
-                                            <button class="btn btn-danger btn-sm  " data-dismiss="modal">
-                                                <i class="ace-icon fa fa-times"></i>
-                                                Cancel
-                                            </button>
-
-
-                                            <button class="btn btn-sm btn-warning" id="prevValue2">
-                                                <i class="ace-icon fa fa-arrow-left"></i>
-                                                Prev
-                                            </button>
-
-
-                                            <button class="btn btn-sm  btn-primary  " data-last="Finish" id="nextValue2"  >
-                                                Next
-                                                <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                            </button>
+ } } }
+                                    
 
 
 
-                                        </div>
-
-                                        <div class="step-pane" data-step="3">
-                                            <div class="center">
-                                                <h4 class="blue">Step 3</h4>
-                                                <label for="form-field-mask-3" class="col-lg-offset-0" style="font-size: large; font-weight: bold;">
-                                                     Click Finish to save your password
-
-                                                </label>
-                                            </div>
-                                            <div class="space-12"></div>
-                                            <button class="btn btn-sm  btn-primary pull-right" data-last="Finish" id="finish"  >
-                                               Finish
-                                                <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-                                            </button>
-                                            <br>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
+?>
 
 
 
-                </div>
+
+
+
+
+
+
+                        <!--                            <div class="space-14"></div>-->
+
+
 
 
 

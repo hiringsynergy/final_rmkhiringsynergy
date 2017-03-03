@@ -790,6 +790,15 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                 <b class="arrow"></b>
             </li>
 
+            <li class="">
+                <a href="../approve">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> Approve </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
             <li>
                 <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>

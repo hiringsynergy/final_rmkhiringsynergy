@@ -352,6 +352,15 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
             </li>
 
             <li class="">
+                <a href="../approve">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> Approve </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
                 <a href="../jobs/view_jobs" >
                     <i class="menu-icon fa fa-briefcase"></i>
                     <span class="menu-text"> Jobs </span>

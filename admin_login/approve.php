@@ -13,41 +13,97 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 }
 
-if (isset($_GET['approve']) && isset($_SESSION['user_role'])=='admin' ) {
+if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
     include "connect.php";
+    $id=time();
 
     $rollno = $_GET['rollno'];
     $oldcolname = $_GET['oldcolname'];
     $colname = $_GET['colname'];
+    $col_name_map = $_GET['colnamemap'];
     $year = $_GET['year'];
+    $tname='students_'.$year;
 
     $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
+    $select1 = "SELECT * from st_change where st_regno='{$rollno}'";
+    $select_result1 = mysqli_query($connect, $select1);
+    $row1 = mysqli_fetch_assoc($select_result1);
+
     
 
-        $query_change_mail = "UPDATE $tname SET  st_email='{$new_mail}',st_changemail='' WHERE st_roll='{$rollno}'";
-        $result_change_mail = mysqli_query($connect, $query_change_mail);
+    
+    if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
 
-        if (!$result_change_mail) {
+
+        $new_val = $row1[$colname];
+        $query_change = "UPDATE $tname SET  $oldcolname={$new_val} WHERE st_roll='{$rollno}' ";
+        $result_change = mysqli_query($connect, $query_change);
+
+        if ( !$result_change) {
 
             die("" . mysqli_error($connect));
         }
-    
-    if($row['st_changephone']!=''){
+        $change_val='a_accept_'.$id;
 
-        $new_phone = $row['st_changephone'];
-        $query_change_phone = "UPDATE $tname SET  st_phone='{$new_phone}',st_changephone='' WHERE st_roll='{$rollno}'";
-        $result_change_phone = mysqli_query($connect, $query_change_phone);
+        $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
+        $result_change1 = mysqli_query($connect, $query_change1);
 
-        if ( !$result_change_phone) {
+        if ( !$result_change1) {
 
             die("" . mysqli_error($connect));
         }
     }
 
+
+
+                                                                                    require "email/PHPMailer/PHPMailerAutoload.php";
+
+                                                                                    $mail=new PHPMailer();
+
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
+                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+                                                                                    $mail->isHTML(true);
+
+                                                                                    $mail->Subject = "Profile Update";
+                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been APPROVED </h3>';
+ 
+
+
+                                                                                    $to=$row['st_email'];
+
+
+
+                                                                                    $mail->addAddress($to, 'joe');
+
+
+                                                                                    // Add a recipient
+
+
+                                                                                    if($mail->send()){
+
+
+
+                                                                                            echo "success";
+
+                                                                                      //  $counter=$counter+1;
+
+                                                                                    }
+
+
+                                                                                    // Clear all addresses and attachments for next loop
+                                                                                    $mail->clearAddresses();
 
 
 
@@ -56,33 +112,104 @@ if (isset($_GET['approve']) && isset($_SESSION['user_role'])=='admin' ) {
     header("Location: approve");
 
 }
-if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
+if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
-    include "connect.php";
+  include "connect.php";
+    $id=time();
 
     $rollno = $_GET['rollno'];
-    $tname = $_GET['tname'];
-    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $oldcolname = $_GET['oldcolname'];
+    $colname = $_GET['colname'];
+    $year = $_GET['year'];
+    $col_name_map = $_GET['colnamemap'];
+    $tname='students_'.$year;
+
+    $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
+    $select1 = "SELECT * from st_change where st_regno='{$rollno}'";
+    $select_result1 = mysqli_query($connect, $select1);
+    $row1 = mysqli_fetch_assoc($select_result1);
+
+    
+
+        // $query_change_mail = "UPDATE $tname SET  st_email='{$new_mail}',st_changemail='' WHERE st_roll='{$rollno}'";
+        // $result_change_mail = mysqli_query($connect, $query_change_mail);
+
+        // if (!$result_change_mail) {
+
+        //     die("" . mysqli_error($connect));
+        // }
+    
+    if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
 
 
-    $query_old_mail_phone = "UPDATE $tname SET  st_changephone='',st_changemail='' WHERE st_roll='{$rollno}'";
-    $result_old_mail_phone = mysqli_query($connect, $query_old_mail_phone);
+        $change_val='a_decline_'.$id;
 
-    if (!$result_old_mail_phone) {
+        $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
+        $result_change1 = mysqli_query($connect, $query_change1);
 
-        die("" . mysqli_error($connect));
+        if ( !$result_change1) {
+
+            die("" . mysqli_error($connect));
+        }
     }
+
+
+
+
+                                                                                    require "email/PHPMailer/PHPMailerAutoload.php";
+
+                                                                                    $mail=new PHPMailer();
+
+                                                                                    $mail->isSMTP();
+                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                                                                                    $mail->Password = 'akash170397';                           // SMTP password
+                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                                                                                    $mail->Port = 465;
+                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+
+                                                                                    $mail->isHTML(true);
+
+                                                                                    $mail->Subject = "Profile Update";
+                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been DECLINED </h3>';
+ 
+
+
+                                                                                    $to=$row['st_email'];
+
+
+
+                                                                                    $mail->addAddress($to, 'joe');
+
+
+                                                                                    // Add a recipient
+
+
+                                                                                    if($mail->send()){
+
+
+
+                                                                                            echo "success";
+
+                                                                                      //  $counter=$counter+1;
+
+                                                                                    }
+
+
+                                                                                    // Clear all addresses and attachments for next loop
+                                                                                    $mail->clearAddresses();
+
 
 
 
 
 
     header("Location: approve");
-
-
 
 }
 
@@ -783,7 +910,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                 foreach ($finfo as $val) {
 
 
-                                        if ($rowr[$val->name] != NULL && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
                                             $colname=$val->name;
 
 
@@ -883,17 +1010,19 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                     <input type="hidden" name="oldcolname"
                                                                            value="<?php echo $oldcolumnname ?>"/>
                                                                     <input type="hidden" name="colname"
-                                                                           value="<?php echo $rowchangemap['st_columnnamemap'] ?>"/>
+                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
                                                                     <input type="hidden" name="year"
                                                                            value="<?php echo $rowr['st_year'] ?>"/>
+                                                                            <input type="hidden" name="colnamemap"
+                                                                           value="<?php echo $changemapname ?>"/>
                                                                     <button class=" btn btn-success col-xs-push-9"
-                                                                            type="submit" name="approve">
+                                                                            type="submit" name="approve1">
                                                                         Approve
                                                                     </button>
 
 
                                                                     <button class=" btn btn-danger col-xs-push-9"
-                                                                            type="submit" name="decline">
+                                                                            type="submit" name="decline1">
                                                                         Decline
                                                                     </button>
 
