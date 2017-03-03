@@ -281,6 +281,17 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
     <!-- page specific plugin styles -->
 
+     <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/colorbox.min.css" />
+
+
     <link rel="stylesheet" href="../assets/css/colorbox.min.css" />
 
     <!-- text fonts -->
@@ -1056,14 +1067,27 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                 <div class=" col-xs-12 center" >
 
 
-                    <form action="profile" method="get">
-                        <label class="red bolder"> Search Register Number  -</label>
+                    <form action="profile.php" method="get">
+                        <label class="red bolder"> Search Profile  -</label>
 
 
+                        <?php
+                        if(isset($_GET['roll'])){
+                            ?>
+
+                            <input type="text" name="roll" id="tag1" value="<?php echo $_GET['roll'] ?>">
 
 
-                        <input type="text" name="roll">
-                        <button type="submit"  class="btn btn-success ">search</button>
+                            <?php
+                        }
+                        else {
+                            ?>
+
+
+                            <input type="text" name="roll" id="tag1">
+
+                        <?php  } ?>
+                        <button type="submit"  id="bootbox-confirm"  class="btn btn-success ">search</button>
                     </form>
 
 
@@ -3463,6 +3487,58 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                 } catch(e) {}
                                 $('[class*=select2]').remove();
                             });
+
+
+
+                             $('#bootbox-confirm').click(function(event) {
+                                var bla = $('#tag1').val();
+                                var hidden_input =
+                                    $('<input type="hidden" name="description" />')
+                                        .appendTo('#validate-form');
+                               // var blc = $('#editor1').val();
+                                // var blc=hidden_input.val( html_content );
+                                if (bla == '') {
+                                    bootbox.dialog({
+                                        message: "Please enter a search value",
+                                        buttons: {
+                                            "success": {
+                                                "label": "OK",
+                                                "className": "btn-sm btn-primary"
+                                            }
+                                        }
+                                    });
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                else if (bla.length!=12) {
+                                    bootbox.dialog({
+                                        message: "Please enter a valid register number",
+                                        buttons: {
+                                            "success": {
+                                                "label": "OK",
+                                                "className": "btn-sm btn-primary"
+                                            }
+                                        }
+                                    });
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                else
+                                {
+                                }
+                            });
+
+
+
+
+
+
+
+
+
+
+
+
                         });
                     </script>
 </body>
