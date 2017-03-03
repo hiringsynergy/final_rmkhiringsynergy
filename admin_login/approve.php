@@ -1020,11 +1020,11 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                         Approve
                                                                     </button>
 
-
+<a href="#modal-form" role="button" data-toggle="modal">
                                                                     <button class=" btn btn-danger col-xs-push-9"
-                                                                            type="submit" name="decline1">
+                                                                            type="submit" name="decline1" >
                                                                         Decline
-                                                                    </button>
+                                                                    </button></a>
 
 
                                                                 </div>
@@ -1034,6 +1034,19 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
                                             </div>
                                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                                             <?php
                                         
@@ -1054,6 +1067,77 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
                         <!--                            <div class="space-14"></div>-->
+
+
+
+
+                                <!--Modal form-->
+                                <div class="row">
+                    <div class="col-xs-12 ">
+                        <div class="form-actions center">
+
+
+<!-- <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">Decline<i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a> -->
+
+
+                                                 </div>
+                                   </div>
+
+<div id="modal-form" class="modal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form action="approve" method="post" enctype="multipart/form-data">
+
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+
+                                                        <div class="space-4"></div>
+
+
+                                                        
+
+
+                                                        <div class="form-group">
+                                                            <label for="form-field-first">Message</label>
+
+                                                            <div>
+                                                    <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                </div>
+
+                                                <div class="space-16"></div>
+
+
+                                                <div class="col-xs-8 col-sm-12 ">
+
+                                                    <div class="space-16"></div>
+                                                    <!-- <label for="id-input-file-2">Attachment</label> -->
+
+
+
+                                                    <!-- <input type="file" id="id-input-file-2" name="attachment" /> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                                <div class="space-16"></div>
+                                            <div class="modal-footer center">
+                                                <button class="btn btn-sm" data-dismiss="modal">
+                                                    <i class="ace-icon fa fa-times"></i>
+                                                    Cancel
+                                                </button>
+                                                <button name="send" type="submit" class="btn btn-sm btn-primary">
+                                                    <i class="ace-icon fa fa-send"></i>
+                                                    Submit
+                                                </button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
 
 
 
