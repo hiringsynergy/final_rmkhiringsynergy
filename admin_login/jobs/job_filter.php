@@ -1063,17 +1063,75 @@ if(isset($_GET['filter_job'])){
 
                                                                 <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
 
-                                                                <div >
-                                                                    <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag1" data-placeholder="Choose a Branch...">
-                                                                        <option value="all">All</option>
-                                                                        <option value="cse">Computer science and Engineering</option>
-                                                                        <option value="eee">Electrical and Electronic Engineering</option>
-                                                                        <option value="eie">Electrical and Intrumentation Engineering</option>
 
-                                                                        <option value="it">Information Technology</option>
-                                                                        <option value="ece">Electrical and Communicaton Engineering</option>
-                                                                    </select>
-                                                                </div>
+                                                                 <div >
+                                                            <?php
+
+                                                                $database = $_SESSION['database_name'];
+
+
+                                                                if (preg_match('/rmd_database/',$database)) {
+                                                              ?>
+
+                                                               <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag1" data-placeholder="Choose a Branch...">
+                                                                    <option value="all">All</option>
+                                                                    <option value="cse">Computer science and Engineering</option>
+                                                                    <option value="eee">Electrical and Electronic Engineering</option>
+                                                                    <option value="eie">Electrical and Intrumentation Engineering</option>
+
+                                                                    <option value="it">Information Technology</option>
+                                                                    <option value="ece">Electrical and Communicaton Engineering</option>
+                                                                </select>
+                                                            
+
+
+                                                                <?php
+                                                                }
+                                                              else  if (preg_match('/rmk_database/',$database)) {
+                                                                ?>
+
+                                                            <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag2" data-placeholder="Choose a Branch...">
+                                                                <option value="all">All</option>
+                                                                <option value="cse">Computer science and Engineering</option>
+                                                                <option value="eee">Electrical and Electronic Engineering</option>
+                                                                <option value="eie">Electrical and Intrumentation Engineering</option>
+
+                                                                <option value="it">Information Technology</option>
+                                                                <option value="ece">Electrical and Communicaton Engineering</option>
+                                                                <option value="mech">Mechanical Engineering</option>
+                                                                <option value="civil">Civil Engineering</option>
+                                                            </select>
+                                                      
+
+
+                                                        <?php
+                                                        }
+                                                        else if (preg_match('/rmkcet_database/',$database)) {
+                                                        ?>
+
+                                                         <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag3" data-placeholder="Choose a Branch...">
+                                                            <option value="all">All</option>
+                                                            <option value="cse">Computer science and Engineering</option>
+                                                            <option value="eee">Electrical and Electronic Engineering</option>
+                                                            <option value="eie">Electrical and Intrumentation Engineering</option>
+
+
+                                                            <option value="ece">Electrical and Communicaton Engineering</option>
+                                                        </select>
+                                                    
+
+
+                                                    <?php
+                                                    }
+                                                        ?>
+                                                        </div>
+
+
+
+
+
+
+
 
 
 
@@ -1191,10 +1249,27 @@ if(isset($_GET['filter_job'])){
                                                             </div>
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
-                                                                <input type="text"  name="historyofarrears" value="0" id="slide-text5" class="col-xs-1">
-                                                                <div id="slider-eq5" class="col-xs-12 col-md-10 col-sm-8">
-                                                                    <span class="ui-slider-blue">0</span>
-                                                                </div>
+                                                               
+                                                                 <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                    <option value="0">Nil</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                </select>
+
+
+
+
+
+
+
+
                                                             </div>
 
                                                         </div>
@@ -1216,6 +1291,140 @@ if(isset($_GET['filter_job'])){
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-xs-12">
+
+                                <div class="widget-box widget-color-green" id="widget-box-2">
+                                                <div class="widget-header widget-header-small">
+                                                    <h6 class="widget-title">
+                                                        PG Candidates
+                                                    </h6>
+                                                </div>
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <div id="fuelux-wizard-container">
+
+                                                <div class="step-content pos-rel">
+
+
+                                                    <div class="row">
+
+                                                        <div class="col-xs-8 col-sm-5">
+
+                                                            <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
+
+                                                 
+
+
+
+
+                                                            <div >
+                                                            <?php
+
+                                                                $database = $_SESSION['database_name'];
+
+
+                                                                if (preg_match('/rmd_database/',$database)) {
+                                                              ?>
+
+                                                               <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+
+
+                                                                    <option value="all">All</option>
+                                                                   
+                                                                </select>
+                                                            
+
+
+                                                                <?php
+                                                                }
+                                                              else  if (preg_match('/rmk_database/',$database)) {
+                                                                ?>
+
+                                                           <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                                <option value="all">All</option>
+                                                                <option value="cse">Computer science and Engineering</option>
+                                                                <option value="ae">Applied Electronics</option>
+                                                                <option value="ped">Power Electronics and Drives</option>
+
+                                                                <option value="vlsi">VLSI Design</option>
+                                                               
+                                                            </select>
+                                                      
+
+
+                                                        <?php
+                                                        }
+                                                        else if (preg_match('/rmkcet_database/',$database)) {
+                                                        ?>
+
+                                                         <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                            <option value="all">All</option>
+                                                            <option value="cse">Computer science and Engineering</option>
+                                                            <option value="eee">Electrical and Electronic Engineering</option>
+                                                            <option value="eie">Electrical and Intrumentation Engineering</option>
+
+
+                                                            <option value="ece">Electrical and Communicaton Engineering</option>
+                                                        </select>
+                                                    
+
+
+                                                    <?php
+                                                    }
+                                                        ?>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="space-16"></div>
+                                                <div class="row">
+                                                <div class="col-xs-12 col-sm-5">
+
+                                                        <h5 class="green bolder smaller">CGPA</h5>
+                                                                                    <input type="text" name="pgcgpa" value="0" id="slide-text6" class="col-xs-1">
+                                                                                    <div id="slider-eq6" class="col-xs-12 col-md-10 col-sm-8">
+                                                                                            <span class="ui-slider-green">0</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                             <div class="space-16"></div>
                             <div class="center ">
                                 <button name="filter_job" id="bootbox-confirm" type="submit" class="btn btn-lg btn-success">

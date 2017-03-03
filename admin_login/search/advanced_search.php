@@ -838,7 +838,7 @@ function updateSlider(){
                                                                     <option value="it">Information Technology</option>
                                                                     <option value="ece">Electrical and Communicaton Engineering</option>
                                                                 </select>
-                                                            </div>
+                                                            
 
 
                                                                 <?php
@@ -857,7 +857,7 @@ function updateSlider(){
                                                                 <option value="mech">Mechanical Engineering</option>
                                                                 <option value="civil">Civil Engineering</option>
                                                             </select>
-                                                        </div>
+                                                      
 
 
                                                         <?php
@@ -874,12 +874,13 @@ function updateSlider(){
 
                                                             <option value="ece">Electrical and Communicaton Engineering</option>
                                                         </select>
-                                                    </div>
+                                                    
 
 
                                                     <?php
                                                     }
                                                         ?>
+                                                        </div>
 
 
 
