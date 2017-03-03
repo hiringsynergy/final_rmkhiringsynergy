@@ -763,484 +763,220 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                     date_default_timezone_set('Asia/Kolkata');
 
                                     $previous=null;
-                                    $student_branch=$_SESSION['student_branch'];
-                                    $year_of_graduation=$_SESSION['year_of_graduation'];
 
                                     // echo "branch".$student_branch;
 
-                                    $query="SELECT * FROM jobs WHERE job_branch LIKE '%".$student_branch."%'  and year_of_graduation='$year_of_graduation' ORDER BY job_id DESC ";
+                                    $query="SELECT * FROM st_change";
                                     $result=mysqli_query($connect, $query);
-                                    while($row=mysqli_fetch_assoc($result)){
+
+                                    $finfo = $result_change->fetch_fields();
+                                    while($rowr = mysqli_fetch_assoc($result)){
+
+
+                                        foreach ($finfo as $val) {
+
+
+                                                if ($rowr[$val->name] != NULL && (substr($rowr[$val->name], 0,1) == 'c' || substr($rowr[$val->name], 0,1) == 'a') && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                                    $colname=$val->name;
+
+
+                                            //for mapping column names
+                                            // $query_changemap = "SELECT * from st_changetable where st_columnname='$colname'";
+                                            // $result_changemap = mysqli_query($connect, $query_changemap);
+                                            // $rowchangemap = mysqli_fetch_assoc($result_changemap);
+
+                                            // $changemapname=$rowchangemap['st_columnnamemap'];
+
+                                            // $oldcolumnname=$rowchangemap['st_oldname'];
+
+                                            //for getting old values from student table
+
+                                           $reg_no=$rowr['st_regno'];
+                                           $year=$rowr['st_year'];
+                                           $dept=$rowr['st_dept'];
+                                            // $query_student = "SELECT * from students_".$rowr['st_year']." WHERE st_roll='$reg_no' ";
+                                            // $result_student = mysqli_query($connect, $query_student);
+                                            // $rowstudent = mysqli_fetch_assoc($result_student);
+                                            // $oldcolumnvalue=$rowstudent[$oldcolumnname];
+
+                                            // if(!$result_student){
+
+                                            //     die(mysqli_error($connect));
+                                            // }
 
 
 
-                                        $time=$row['job_id'];
 
-                                        $time_now=time();
+                                                $time=substr($rowr[$val->name], 6,10);
 
-
-                                        $date=date("M d, Y",$time);
+                                                $time_now=time();
 
 
-                                        //calculating no. of days
-
-                                         $date_now=date("Y-m-d",$time_now);
-                                         $date_job_posted=date("Y-m-d",$time);
-
-                                        $dateTime1=date_create($date_now);
-                                        $dateTime2=date_create($date_job_posted);
-
-                                        $date_diffe_job_posted=date_diff($dateTime1,$dateTime2);
-
-                                        $no_of_days=$date_diffe_job_posted->format('%a');
+                                                $date=date("M d, Y",$time);
 
 
+                                                //calculating no. of days
 
-                                       $get_time=date("G:i",$time);
+                                                 $date_now=date("Y-m-d",$time_now);
+                                                 $date_job_posted=date("Y-m-d",$time);
 
-                                         $diff=$time_now-$time;
+                                                $dateTime1=date_create($date_now);
+                                                $dateTime2=date_create($date_job_posted);
+
+                                                $date_diffe_job_posted=date_diff($dateTime1,$dateTime2);
+
+                                                $no_of_days=$date_diffe_job_posted->format('%a');
 
 
 
-                                      if($no_of_days==0){
+                                               $get_time=date("G:i",$time);
 
-                                          //today
-
-
+                                                 $diff=$time_now-$time;
 
 
 
-                                          ?>
+                                              if($no_of_days==0){
 
-                                          <div class="timeline-container">
-
-                                              <?php  if($previous!= 'today')   {    ?>
-                                              <div class="timeline-label">
-                                                    <span class="label label-primary arrowed-in-right label-lg">
-                                                        <b>Today</b>
-                                                    </span>
-                                              </div>
-
-
-                                              <?php }     ?>
-                                              <div class="timeline-items">
-                                                  <div class="timeline-item clearfix">
-                                                      <div class="timeline-info">
-
-
-                                                          <?php
-
-                                                          $database=$_SESSION['database_name'];
-
-                                                          if(preg_match('/rmd_database/', $database)) {
-
-                                                              ?>
-
-
-                                                              <img src="images/rmd.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmk_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmk.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmkcet_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmkcet.jpg" >
-
-                                                              <?php
-
-                                                          }
+                                                  //today
 
 
 
-                                                          ?>
 
 
+                                                  ?>
 
-                                                          <span class="label label-info label-sm"><?php echo $get_time ?></span>
+                                                  <div class="timeline-container">
+
+                                                      <?php  if($previous!= 'today')   {    ?>
+                                                      <div class="timeline-label">
+                                                            <span class="label label-primary arrowed-in-right label-lg">
+                                                                <b>Today</b>
+                                                            </span>
                                                       </div>
-                                                      <div class="widget-box transparent">
-                                                          <div class="widget-header widget-header-small">
-                                                              <h5 class="widget-title smaller">
-                                                                  <a href="#" class="blue">
-                                                                      <?php
 
 
-                                                                      $database=$_SESSION['database_name'];
-                                                                      if(preg_match('/rmd_database/', $database)){
-                                                                          ?>
+                                                      <?php }     ?>
+                                                      <div class="timeline-items">
+                                                          <div class="timeline-item clearfix">
+                                                              <div class="timeline-info">
 
-                                                                          <label style="font-size: large;">RMD Engineering College  </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmk_database/', $database)){
-                                                                          ?>
 
-                                                                          <label style="font-size: large;">RMK Engineering College </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmkcet_database/', $database)){
-                                                                          ?>
+                                                                  <?php
 
-                                                                          <label style="font-size: large;">RMK College of Engineering and Technology </label>
-                                                                          <?php
-                                                                      }
+                                                                  $database=$_SESSION['database_name'];
+
+                                                                  if(preg_match('/rmd_database/', $database)) {
+
                                                                       ?>
 
 
+                                                                      <img src="images/rmd.jpg" >
+
+                                                                      <?php
+
+                                                                  }
+                                                                  if(preg_match('/rmk_database/', $database)){
+
+                                                                      ?>
+
+
+                                                                      <img src="images/rmk.jpg" >
+
+                                                                      <?php
+
+                                                                  }
+                                                                  if(preg_match('/rmkcet_database/', $database)){
+
+                                                                      ?>
+
+
+                                                                      <img src="images/rmkcet.jpg" >
+
+                                                                      <?php
+
+                                                                  }
 
 
 
-                                                                  </a>
-                                                                  <span class="grey">Posted a New Job</span>
-                                                              </h5>
-                                                              <span class="widget-toolbar no-border">
-                                                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                                    <?php echo $get_time ?>
-                                                                </span>
-                                                              <span class="widget-toolbar">
-
-                                                                    <a href="#" data-action="collapse">
-                                                                        <i class="ace-icon fa fa-chevron-up"></i>
-                                                                    </a>
-                                                                </span>
-                                                          </div>
-                                                          <div class="widget-main">
-                                                              Hi, <?php echo $_SESSION['student_name']; ?>,
-                                                              a new job
-                                                              <span class="red" style="font-size: 17px;"> <?php echo $row['job_title']  ?> </span> from company
-                                                              <span class="green" style="font-size: 17px;"><?php echo $row['company']    ?> </span>
-                                                              has been posted, Hurry up to checkout the status &hellip;
-                                                              <div class="space-6"></div>
-                                                              <div class="widget-toolbox clearfix">
+                                                                  ?>
 
 
+
+                                                                  <span class="label label-info label-sm"><?php echo $get_time ?></span>
                                                               </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-
-
-
-                                              </div>
-                                          </div>
-
-
-
-
-
-
-
-
-
-                                    <?php
-
-                                          $previous='today';
-
-
-                                      }
-                                      else if($no_of_days==1){
-
-
-
-                                          //yesterday
-
-                                          ?>
-
-
-                                          <div class="timeline-container">
-
-
-
-                                              <?php   if($previous !='yesterday') {     ?>
-
-                                              <div class="timeline-label">
-                                                    <span class="label label-success arrowed-in-right label-lg">
-                                                        <b>Yesterday</b>
-                                                    </span>
-                                              </div>
-
-                                              <?php  } ?>
-                                              <div class="timeline-items">
-                                                  <div class="timeline-item clearfix">
-                                                      <div class="timeline-info">
-
-
-                                                          <?php
-
-                                                          $database=$_SESSION['database_name'];
-
-                                                          if(preg_match('/rmd_database/', $database)) {
-
-                                                              ?>
-
-
-                                                              <img src="images/rmd.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmk_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmk.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmkcet_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmkcet.jpg" >
-
-                                                              <?php
-
-                                                          }
-
-
-
-                                                          ?>
-
-
-
-                                                          <span class="label label-info label-sm"><?php echo $get_time ?></span>
-                                                      </div>
-                                                      <div class="widget-box transparent">
-                                                          <div class="widget-header widget-header-small">
-                                                              <h5 class="widget-title smaller">
-                                                                  <a href="#" class="blue">
-                                                                      <?php
-
-
-                                                                      $database=$_SESSION['database_name'];
-                                                                      if(preg_match('/rmd_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMD Engineering College  </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmk_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMK Engineering College </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmkcet_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMK College of Engineering and Technology </label>
-                                                                          <?php
-                                                                      }
-                                                                      ?>
-
-
-
-
-
-                                                                  </a>
-                                                                  <span class="grey">Posted a Job</span>
-                                                              </h5>
-                                                              <span class="widget-toolbar no-border">
-                                                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                                  <?php echo $get_time ?>
-                                                                </span>
-                                                              <span class="widget-toolbar">
-
-                                                                    <a href="#" data-action="collapse">
-                                                                        <i class="ace-icon fa fa-chevron-up"></i>
-                                                                    </a>
-                                                                </span>
-                                                          </div>
-                                                          <div class="widget-main">
-                                                              Hi, <?php echo $_SESSION['student_name']; ?>,
-                                                              a new job
-                                                              <span class="red" style="font-size: 17px;"> <?php echo $row['job_title']  ?> </span> from company
-                                                              <span class="green" style="font-size: 17px;"><?php echo $row['company']    ?> </span>
-                                                              has been posted, Hurry up to checkout the status &hellip;
-                                                              <div class="space-6"></div>
-                                                              <div class="widget-toolbox clearfix">
-
-
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-
-
-
-                                              </div>
-                                          </div>
-
-
-
-
-                                    <?php
-
-
-
-
-                                          $previous='yesterday';
-
-                                      }
-                                      else{
-
-                                          //other day
-
-
-                                          ?>
-
-
-
-
-                                          <div class="timeline-container">
-
-                                              <?php   if($previous!= $date) {   ?>
-                                              <div class="timeline-label">
-                                                    <span class="label label-warning arrowed-in-right label-lg">
-                                                        <b><?php echo $date ?></b>
-                                                    </span>
-                                              </div>
-
-                                              <?php } ?>
-                                              <div class="timeline-items">
-                                                  <div class="timeline-item clearfix">
-                                                      <div class="timeline-info">
-
-
-                                                          <?php
-
-                                                          $database=$_SESSION['database_name'];
-
-                                                          if(preg_match('/rmd_database/', $database)) {
-
-                                                              ?>
-
-
-                                                              <img src="images/rmd.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmk_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmk.jpg" >
-
-                                                              <?php
-
-                                                          }
-                                                          if(preg_match('/rmkcet_database/', $database)){
-
-                                                              ?>
-
-
-                                                              <img src="images/rmkcet.jpg" >
-
-                                                              <?php
-
-                                                          }
-
-
-
-                                                          ?>
-
-
-
-                                                          <span class="label label-info label-sm"><?php echo $get_time ?></span>
-                                                      </div>
-                                                      <div class="widget-box transparent">
-                                                          <div class="widget-header widget-header-small">
-                                                              <h5 class="widget-title smaller">
-                                                                  <a href="#" class="blue">
-                                                                      <?php
-
-
-                                                                      $database=$_SESSION['database_name'];
-                                                                      if(preg_match('/rmd_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMD Engineering College  </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmk_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMK Engineering College </label>
-                                                                          <?php
-                                                                      }
-                                                                      if(preg_match('/rmkcet_database/', $database)){
-                                                                          ?>
-
-                                                                          <label style="font-size: large;">RMK College of Engineering and Technology </label>
-                                                                          <?php
-                                                                      }
-                                                                      ?>
-
-
-
-
-
-                                                                  </a>
-                                                                  <span class="grey">Posted a Job</span>
-                                                              </h5>
-                                                              <span class="widget-toolbar no-border">
-                                                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
-                                                                  <?php echo $get_time ?>
-                                                                </span>
-                                                              <span class="widget-toolbar">
-
-                                                                    <a href="#" data-action="collapse">
-                                                                        <i class="ace-icon fa fa-chevron-up"></i>
-                                                                    </a>
-                                                                </span>
-                                                          </div>
-                                                          <div class="widget-body">
-                                                              <div class="widget-main">
-                                                                  Hi, <?php echo $_SESSION['student_name']; ?>,
-                                                                  a new job
-                                                                  <span class="red" style="font-size: 17px;"> <?php echo $row['job_title']  ?> </span> from company
-                                                                  <span class="green" style="font-size: 17px;"><?php echo $row['company']    ?> </span>
-                                                                  has been posted, Hurry up to checkout the status &hellip;
-                                                                  <div class="space-6"></div>
-                                                                  <div class="widget-toolbox clearfix">
-
-
+                                                              <div class="widget-box transparent">
+                                                                  <div class="widget-header widget-header-small">
+                                                                      <h5 class="widget-title smaller">
+                                                                          <a href="#" class="blue">
+                                                                              <?php
+
+
+                                                                              $database=$_SESSION['database_name'];
+                                                                              if(preg_match('/rmd_database/', $database)){
+                                                                                  ?>
+
+                                                                                  <label style="font-size: large;">RMD Engineering College  </label>
+                                                                                  <?php
+                                                                              }
+                                                                              if(preg_match('/rmk_database/', $database)){
+                                                                                  ?>
+
+                                                                                  <label style="font-size: large;">RMK Engineering College </label>
+                                                                                  <?php
+                                                                              }
+                                                                              if(preg_match('/rmkcet_database/', $database)){
+                                                                                  ?>
+
+                                                                                  <label style="font-size: large;">RMK College of Engineering and Technology </label>
+                                                                                  <?php
+                                                                              }
+                                                                              ?>
+
+
+
+
+
+                                                                          </a>
+                                                                          <span class="grey">Posted a New Job</span>
+                                                                      </h5>
+                                                                      <span class="widget-toolbar no-border">
+                                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                                                            <?php echo $get_time ?>
+                                                                        </span>
+                                                                      <span class="widget-toolbar">
+
+                                                                            <a href="#" data-action="collapse">
+                                                                                <i class="ace-icon fa fa-chevron-up"></i>
+                                                                            </a>
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="widget-main">
+                                                                      The request given by <?php echo $reg_no; ?>,
+                                                                      was <?php if(substr($rowr[$val->name], 2,3)=='acc') echo "approved by ";
+                                                                      else if(substr($rowr[$val->name], 2,3)=='dec'){
+                                                                                echo "declined by ";
+                                                                        }
+
+                                                                        if(substr($rowr[$val->name], 0,1)=='a') echo "admin";
+                                                                      else if(substr($rowr[$val->name], 0,1)=='c'){
+                                                                                echo "coordinator";
+                                                                        ?>
+                                                                      <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title']  ?> </span> from company
+                                                                      <span class="green" style="font-size: 17px;"><?php echo $row['company']    ?> </span>
+                                                                      has been posted, Hurry up to checkout the status &hellip; -->
+                                                                      <div class="space-6"></div>
+                                                                      <div class="widget-toolbox clearfix">
+
+
+                                                                      </div>
                                                                   </div>
                                                               </div>
                                                           </div>
+
+
+
                                                       </div>
                                                   </div>
-                                              </div>
-                                          </div>
-
-
-
-
-                                    <?php
-
-
-
-
-                                          $previous=$date;
-                                      }
 
 
 
@@ -1248,6 +984,310 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
+
+
+                                            <?php
+
+                                                  $previous='today';
+
+
+                                              }
+                                              else if($no_of_days==1) {
+
+
+                                                  //yesterday
+
+                                                  ?>
+
+
+                                                  <div class="timeline-container">
+
+
+
+                                                  <?php if ($previous != 'yesterday') { ?>
+
+                                                      <div class="timeline-label">
+                                                            <span class="label label-success arrowed-in-right label-lg">
+                                                                <b>Yesterday</b>
+                                                            </span>
+                                                      </div>
+
+                                                  <?php } ?>
+                                                  <div class="timeline-items">
+                                                  <div class="timeline-item clearfix">
+                                                  <div class="timeline-info">
+
+
+                                                      <?php
+
+                                                      $database = $_SESSION['database_name'];
+
+                                                      if (preg_match('/rmd_database/', $database)) {
+
+                                                          ?>
+
+
+                                                          <img src="images/rmd.jpg">
+
+                                                          <?php
+
+                                                      }
+                                                      if (preg_match('/rmk_database/', $database)) {
+
+                                                          ?>
+
+
+                                                          <img src="images/rmk.jpg">
+
+                                                          <?php
+
+                                                      }
+                                                      if (preg_match('/rmkcet_database/', $database)) {
+
+                                                          ?>
+
+
+                                                          <img src="images/rmkcet.jpg">
+
+                                                          <?php
+
+                                                      }
+
+
+                                                      ?>
+
+
+                                                      <span class="label label-info label-sm"><?php echo $get_time ?></span>
+                                                  </div>
+                                                  <div class="widget-box transparent">
+                                                  <div class="widget-header widget-header-small">
+                                                      <h5 class="widget-title smaller">
+                                                          <a href="#" class="blue">
+                                                              <?php
+
+
+                                                              $database = $_SESSION['database_name'];
+                                                              if (preg_match('/rmd_database/', $database)) {
+                                                                  ?>
+
+                                                                  <label style="font-size: large;">RMD Engineering
+                                                                      College </label>
+                                                                  <?php
+                                                              }
+                                                              if (preg_match('/rmk_database/', $database)) {
+                                                                  ?>
+
+                                                                  <label style="font-size: large;">RMK Engineering
+                                                                      College </label>
+                                                                  <?php
+                                                              }
+                                                              if (preg_match('/rmkcet_database/', $database)) {
+                                                                  ?>
+
+                                                                  <label style="font-size: large;">RMK College of
+                                                                      Engineering and Technology </label>
+                                                                  <?php
+                                                              }
+                                                              ?>
+
+
+                                                          </a>
+                                                          <span class="grey">Posted a Job</span>
+                                                      </h5>
+                                                      <span class="widget-toolbar no-border">
+                                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                                          <?php echo $get_time ?>
+                                                                        </span>
+                                                      <span class="widget-toolbar">
+
+                                                                            <a href="#" data-action="collapse">
+                                                                                <i class="ace-icon fa fa-chevron-up"></i>
+                                                                            </a>
+                                                                        </span>
+                                                  </div>
+                                                  <div class="widget-main">
+                                                  The request given by <?php echo $reg_no; ?>,
+                                                  was <?php if (substr($rowr[$val->name], 2, 3) == 'acc') echo "approved by ";
+                                                  else if (substr($rowr[$val->name], 2, 3) == 'dec') {
+                                                      echo "declined by ";
+                                                  }
+
+                                                  if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin";
+                                                  else if (substr($rowr[$val->name], 0, 1) == 'c') {
+                                                      echo "coordinator";
+                                                      ?>
+                                                      <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
+                                                                      <span class="green" style="font-size: 17px;"><?php echo $row['company'] ?> </span>
+                                                                      has been posted, Hurry up to checkout the status &hellip; -->
+                                                      <div class="space-6"></div>
+                                                      <div class="widget-toolbox clearfix">
+
+
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+
+
+                                                      </div>
+                                                      </div>
+
+
+                                                      <?php
+
+
+                                                      $previous = 'yesterday';
+
+                                                  } else {
+
+                                                      //other day
+
+
+                                                      ?>
+
+
+
+
+                                                      <div class="timeline-container">
+
+                                                      <?php if ($previous != $date) { ?>
+                                                          <div class="timeline-label">
+                                                            <span class="label label-warning arrowed-in-right label-lg">
+                                                                <b><?php echo $date ?></b>
+                                                            </span>
+                                                          </div>
+
+                                                      <?php } ?>
+                                                      <div class="timeline-items">
+                                                      <div class="timeline-item clearfix">
+                                                      <div class="timeline-info">
+
+
+                                                          <?php
+
+                                                          $database = $_SESSION['database_name'];
+
+                                                          if (preg_match('/rmd_database/', $database)) {
+
+                                                              ?>
+
+
+                                                              <img src="images/rmd.jpg">
+
+                                                              <?php
+
+                                                          }
+                                                          if (preg_match('/rmk_database/', $database)) {
+
+                                                              ?>
+
+
+                                                              <img src="images/rmk.jpg">
+
+                                                              <?php
+
+                                                          }
+                                                          if (preg_match('/rmkcet_database/', $database)) {
+
+                                                              ?>
+
+
+                                                              <img src="images/rmkcet.jpg">
+
+                                                              <?php
+
+                                                          }
+
+
+                                                          ?>
+
+
+                                                          <span class="label label-info label-sm"><?php echo $get_time ?></span>
+                                                      </div>
+                                                      <div class="widget-box transparent">
+                                                      <div class="widget-header widget-header-small">
+                                                          <h5 class="widget-title smaller">
+                                                              <a href="#" class="blue">
+                                                                  <?php
+
+
+                                                                  $database = $_SESSION['database_name'];
+                                                                  if (preg_match('/rmd_database/', $database)) {
+                                                                      ?>
+
+                                                                      <label style="font-size: large;">RMD Engineering
+                                                                          College </label>
+                                                                      <?php
+                                                                  }
+                                                                  if (preg_match('/rmk_database/', $database)) {
+                                                                      ?>
+
+                                                                      <label style="font-size: large;">RMK Engineering
+                                                                          College </label>
+                                                                      <?php
+                                                                  }
+                                                                  if (preg_match('/rmkcet_database/', $database)) {
+                                                                      ?>
+
+                                                                      <label style="font-size: large;">RMK College of
+                                                                          Engineering and Technology </label>
+                                                                      <?php
+                                                                  }
+                                                                  ?>
+
+
+                                                              </a>
+                                                              <span class="grey">Posted a Job</span>
+                                                          </h5>
+                                                          <span class="widget-toolbar no-border">
+                                                                            <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                                              <?php echo $get_time ?>
+                                                                        </span>
+                                                          <span class="widget-toolbar">
+
+                                                                            <a href="#" data-action="collapse">
+                                                                                <i class="ace-icon fa fa-chevron-up"></i>
+                                                                            </a>
+                                                                        </span>
+                                                      </div>
+                                                      <div class="widget-body">
+                                                      <div class="widget-main">
+                                                      The request given by <?php echo $reg_no; ?>,
+                                                      was <?php if (substr($rowr[$val->name], 2, 3) == 'acc') echo "approved by ";
+                                                      else if (substr($rowr[$val->name], 2, 3) == 'dec') {
+                                                          echo "declined by ";
+                                                      }
+
+                                                      if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin";
+                                                      else if (substr($rowr[$val->name], 0, 1) == 'c') {
+                                                          echo "coordinator";
+                                                          ?>
+                                                          <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
+                                                                      <span class="green" style="font-size: 17px;"><?php echo $row['company'] ?> </span>
+                                                                      has been posted, Hurry up to checkout the status &hellip; -->
+                                                          <div class="space-6"></div>
+                                                          <div class="widget-toolbox clearfix">
+
+
+                                                          </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+                                                          </div>
+
+
+                                                          <?php
+
+
+                                                          $previous = $date;
+                                                      }
+
+
+                                                  }
+                                              }
+                                        }
                                     }
 
 
@@ -1265,7 +1305,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
-                                    ?>
+                                            ?>
 
 
 

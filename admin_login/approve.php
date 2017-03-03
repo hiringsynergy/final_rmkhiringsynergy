@@ -47,7 +47,7 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
             die("" . mysqli_error($connect));
         }
-        $change_val='a_accept_'.$id;
+        $change_val='a_acc_'.$id;
 
         $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
         $result_change1 = mysqli_query($connect, $query_change1);
@@ -145,7 +145,7 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
     if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
 
 
-        $change_val='a_decline_'.$id;
+        $change_val='a_dec_'.$id;
 
         $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
         $result_change1 = mysqli_query($connect, $query_change1);
