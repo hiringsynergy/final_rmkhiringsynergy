@@ -180,6 +180,7 @@ if(isset($_GET['filter_job'])){
     $historyofarrears=$_GET['historyofarrears'];
     $get_branch= $_GET['ugbranch'];
     $has_job=$_GET['hasjob'];
+    $pg_branch=$_GET['pgbranch'];
 
 
 
@@ -222,10 +223,35 @@ if(isset($_GET['filter_job'])){
 
 
 
+    //ug branch
 
     if(current($get_branch)=="all"){
-        $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
-        $temp_branch_update="cse','it','eee','ece','eie";
+
+
+             if(preg_match('/rmd_database/', $database)){
+
+
+              $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
+               $temp_branch_update="cse','it','eee','ece','eie";
+              }
+
+            if(preg_match('/rmk_database/', $database)){
+
+
+               $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie'',''mech'',''civil";
+                $temp_branch_update="cse','it','eee','ece','eie','mech','civil";
+
+           }
+
+        if(preg_match('/rmkcet_database/', $database)) {
+
+
+               $temp_branch_insert="cse'',''eee'',''ece'',''eie";
+                 $temp_branch_update="cse','eee','ece','eie";
+
+               }
+
+
     }
 
     else {
@@ -234,6 +260,41 @@ if(isset($_GET['filter_job'])){
     }
 
 
+    //pg branch
+    if(current($pg_branch)=="all"){
+
+
+        if(preg_match('/rmd_database/', $database)){
+
+
+            $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
+            $temp_branch_update="cse','it','eee','ece','eie";
+        }
+
+        if(preg_match('/rmk_database/', $database)){
+
+
+            $temp_branch_insert="cse'',''ae'',''pde'',''vlsi";
+            $temp_branch_update="cse','ae','pde','vlsi";
+
+        }
+
+        if(preg_match('/rmkcet_database/', $database)) {
+
+
+            $temp_branch_insert="cse'',''eee'',''ece'',''eie";
+            $temp_branch_update="cse','eee','ece','eie";
+
+        }
+
+
+    }
+
+    else {
+
+        $temp_branch_insert=implode("'',''",$pg_branch);
+        $temp_branch_update=implode("','",$pg_branch);
+    }
 
 
 
@@ -243,7 +304,12 @@ if(isset($_GET['filter_job'])){
 
 
 
-        $query2="SELECT * FROM company_list where company_id='$company_id'";
+
+
+
+
+
+    $query2="SELECT * FROM company_list where company_id='$company_id'";
         $get_company_name=mysqli_query($connect, $query2);
         $company_name=mysqli_fetch_assoc($get_company_name);
         $company_name_string=$company_name['company_name'];
@@ -1073,7 +1139,7 @@ if(isset($_GET['filter_job'])){
                                                                 if (preg_match('/rmd_database/',$database)) {
                                                               ?>
 
-                                                               <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag1" data-placeholder="Choose a Branch...">
+                                                               <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag1" data-placeholder="Choose a Branch...">
                                                                     <option value="all">All</option>
                                                                     <option value="cse">Computer science and Engineering</option>
                                                                     <option value="eee">Electrical and Electronic Engineering</option>
@@ -1090,7 +1156,7 @@ if(isset($_GET['filter_job'])){
                                                               else  if (preg_match('/rmk_database/',$database)) {
                                                                 ?>
 
-                                                            <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag2" data-placeholder="Choose a Branch...">
+                                                            <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag2" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
                                                                 <option value="cse">Computer science and Engineering</option>
                                                                 <option value="eee">Electrical and Electronic Engineering</option>
@@ -1109,7 +1175,7 @@ if(isset($_GET['filter_job'])){
                                                         else if (preg_match('/rmkcet_database/',$database)) {
                                                         ?>
 
-                                                         <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag3" data-placeholder="Choose a Branch...">
+                                                         <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag3" data-placeholder="Choose a Branch...">
                                                             <option value="all">All</option>
                                                             <option value="cse">Computer science and Engineering</option>
                                                             <option value="eee">Electrical and Electronic Engineering</option>
@@ -1328,10 +1394,10 @@ if(isset($_GET['filter_job'])){
                                                                 if (preg_match('/rmd_database/',$database)) {
                                                               ?>
 
-                                                               <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                               <select multiple="" name="pgbranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
 
 
-                                                                    <option value="all">All</option>
+                                                                    <option value="all">MBA</option>
                                                                    
                                                                 </select>
                                                             
@@ -1342,7 +1408,7 @@ if(isset($_GET['filter_job'])){
                                                               else  if (preg_match('/rmk_database/',$database)) {
                                                                 ?>
 
-                                                           <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                           <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
                                                                 <option value="cse">Computer science and Engineering</option>
                                                                 <option value="ae">Applied Electronics</option>
@@ -1359,7 +1425,7 @@ if(isset($_GET['filter_job'])){
                                                         else if (preg_match('/rmkcet_database/',$database)) {
                                                         ?>
 
-                                                         <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                         <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
                                                             <option value="all">All</option>
                                                             <option value="cse">Computer science and Engineering</option>
                                                             <option value="eee">Electrical and Electronic Engineering</option>
@@ -2066,7 +2132,8 @@ if(isset($_GET['filter_job'])){
         });
 
         $('#bootbox-confirm').click(function(event){
-            var bla = $('#tag1').val();
+            var bla = $('.dept').val();
+            var bla1 = $('.pgdept').val();
 //            var blb = $('#tag2').val();
 //            var hidden_input =
 //                $('<input type="hidden" name="description" />')
@@ -2074,7 +2141,10 @@ if(isset($_GET['filter_job'])){
 //
 //            var blc = $('#editor1').val();
 //            // var blc=hidden_input.val( html_content );
-            if(bla==null)
+
+
+
+            if(bla==null && bla1==null)
             {
 
                 bootbox.dialog({
