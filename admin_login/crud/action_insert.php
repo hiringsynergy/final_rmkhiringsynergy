@@ -736,9 +736,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                             foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
                             {
 
+                                $serial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
+
                                 $highestRow = $worksheet->getHighestRow();
-                                for ($row=2; $row<=$highestRow; $row++)
+                                $row=2;
+                                while ($serial!=NULL)
                                 {
+
 
 
 
@@ -901,6 +905,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
                                         <?php
                                     }
+                                    $row++;
+                                    $serial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
                                 }
                             }
 

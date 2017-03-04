@@ -18,7 +18,7 @@ $tablename=$_GET['tablename'];
 
     
 
-    st_roll varchar(12) NOT NULL,
+    st_roll varchar(12) PRIMARY KEY,
   st_firstname varchar(255)  ,
   st_middlename varchar(255)  ,
   st_lastname varchar(255)  ,

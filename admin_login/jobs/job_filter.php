@@ -151,6 +151,9 @@ if(isset($_GET['filter_job'])){
 
 
 
+        $pg_branch='';
+        $pgcgpa='';
+
     include "../connect.php";
 
 
@@ -178,10 +181,18 @@ if(isset($_GET['filter_job'])){
     $_12percentage=$_GET['12percentage'];
     $standingarrears=$_GET['standingarrears'];
     $historyofarrears=$_GET['historyofarrears'];
-    $get_branch= $_GET['ugbranch'];
-    $has_job=$_GET['hasjob'];
-    $pg_branch=$_GET['pgbranch'];
 
+
+    $get_branch= $_GET['ugbranch'];
+
+    $has_job=$_GET['hasjob'];
+
+    if(isset($_GET['pgbranch']) && isset($_GET['pgcgpa']))
+    {   
+    $pg_branch=$_GET['pgbranch'];
+    $pgcgpa=$_GET['pgcgpa'];
+
+    }
 
 
     if(isset($_GET['dontselect1'])){
@@ -267,23 +278,23 @@ if(isset($_GET['filter_job'])){
         if(preg_match('/rmd_database/', $database)){
 
 
-            $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
-            $temp_branch_update="cse','it','eee','ece','eie";
+            $temp_pg_branch_insert="csc'',''it'',''eee'',''ece'',''eie";
+            $temp_pg_branch_update="csc','it','eee','ece','eie";
         }
 
         if(preg_match('/rmk_database/', $database)){
 
 
-            $temp_branch_insert="cse'',''ae'',''pde'',''vlsi";
-            $temp_branch_update="cse','ae','pde','vlsi";
+            $temp_pg_branch_insert="csc'',''ae'',''pde'',''vlsi";
+            $temp_pg_branch_update="csc','ae','pde','vlsi";
 
         }
 
         if(preg_match('/rmkcet_database/', $database)) {
 
 
-            $temp_branch_insert="cse'',''eee'',''ece'',''eie";
-            $temp_branch_update="cse','eee','ece','eie";
+            $temp_pg_branch_insert="cse'',''eee'',''ece'',''eie";
+            $temp_pg_branch_update="cse','eee','ece','eie";
 
         }
 
@@ -292,8 +303,8 @@ if(isset($_GET['filter_job'])){
 
     else {
 
-        $temp_branch_insert=implode("'',''",$pg_branch);
-        $temp_branch_update=implode("','",$pg_branch);
+        $temp_pg_branch_insert=implode("'',''",$pg_branch);
+        $temp_pg_branch_update=implode("','",$pg_branch);
     }
 
 
@@ -315,7 +326,7 @@ if(isset($_GET['filter_job'])){
         $company_name_string=$company_name['company_name'];
 
 
-        $query="INSERT INTO jobs VALUES ($id,'$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', '$sort' , '$temp_branch_insert' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','1')";
+        $query="INSERT INTO jobs VALUES ($id,'$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', '$sort' , '$temp_branch_insert','$temp_pg_branch_insert','$pgcgpa' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','1')";
 
 
 
@@ -1410,7 +1421,7 @@ if(isset($_GET['filter_job'])){
 
                                                            <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
-                                                                <option value="cse">Computer science and Engineering</option>
+                                                                <option value="csc">Computer science and Engineering</option>
                                                                 <option value="ae">Applied Electronics</option>
                                                                 <option value="ped">Power Electronics and Drives</option>
 
