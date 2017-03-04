@@ -82,6 +82,7 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
                                                                                     $to=$row['st_email'];
+                                                                                    echo $to;
 
 
 
@@ -99,6 +100,8 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
                                                                                       //  $counter=$counter+1;
 
+                                                                                    }else{
+                                                                                          echo 'Mailer Error: ' . $mail->ErrorInfo;
                                                                                     }
 
 
@@ -116,13 +119,15 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
   include "connect.php";
     $id=time();
+echo "asffasf";
+ echo   $rollno = $_GET['rollno'];
+   echo $oldcolname = $_GET['oldcolname'];
+ echo   $colname = $_GET['colname'];
+  echo  $year = $_GET['year'];
+   echo $col_name_map = $_GET['colnamemap'];
+  echo  $message = $_GET['message'];
+   echo $tname='students_'.$year;
 
-    $rollno = $_GET['rollno'];
-    $oldcolname = $_GET['oldcolname'];
-    $colname = $_GET['colname'];
-    $year = $_GET['year'];
-    $col_name_map = $_GET['colnamemap'];
-    $tname='students_'.$year;
 
     $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
@@ -145,7 +150,7 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
     if($row1[$colname]!='' && substr($row1[$colname], 0,1)!='c' && substr($row1[$colname], 0,1)!='a'){
 
 
-        $change_val='a_dec_'.$id;
+        $change_val='a_dec_'.$id.'_'.$message;
 
         $query_change1 = "UPDATE st_change SET  $colname='{$change_val}' WHERE st_regno='{$rollno}'";
         $result_change1 = mysqli_query($connect, $query_change1);
@@ -176,11 +181,12 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                                     $mail->isHTML(true);
 
                                                                                     $mail->Subject = "Profile Update";
-                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been DECLINED </h3>';
+                                                                                    $mail->Body    = '<h3>  Your request for the change of '.$col_name_map.' has been DECLINED <br>
+                                                                                    Reason : '.$message.'</h3>';
  
 
 
-                                                                                    $to=$row['st_email'];
+                                                                                   echo  $to=$row['st_email'];
 
 
 
@@ -198,6 +204,9 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
                                                                                       //  $counter=$counter+1;
 
+                                                                                    }
+                                                                                    else{
+                                                                                          echo 'Mailer Error: ' . $mail->ErrorInfo;
                                                                                     }
 
 
@@ -1003,6 +1012,8 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
                                                                             }
+                                                                            $roll=$rowr['st_regno'];
+                                                                           $year= $rowr['st_year'];
 
                                                                            ?> </p>
                                                                     <input type="hidden" name="rollno"
@@ -1012,7 +1023,8 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                     <input type="hidden" name="colname"
                                                                            value="<?php echo $rowchangemap['st_columnname'] ?>"/>
                                                                     <input type="hidden" name="year"
-                                                                           value="<?php echo $rowr['st_year'] ?>"/>
+                                                                           value="<?php echo 
+                                                                           $rowr['st_year'] ?>"/>
                                                                             <input type="hidden" name="colnamemap"
                                                                            value="<?php echo $changemapname ?>"/>
                                                                     <button class=" btn btn-success col-xs-push-9"
@@ -1022,7 +1034,7 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 <a href="#modal-form" role="button" data-toggle="modal">
                                                                     <button class=" btn btn-danger col-xs-push-9"
-                                                                            type="submit" name="decline1" >
+                                                                            type="submit" >
                                                                         Decline
                                                                     </button></a>
 
@@ -1086,7 +1098,7 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 <div id="modal-form" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <form action="approve" method="post" enctype="multipart/form-data">
+                                            <form action="approve" method="get">
 
                                         <div class="modal-body">
 
@@ -1110,17 +1122,6 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
                                                 </div>
 
                                                 <div class="space-16"></div>
-
-
-                                                <div class="col-xs-8 col-sm-12 ">
-
-                                                    <div class="space-16"></div>
-                                                    <!-- <label for="id-input-file-2">Attachment</label> -->
-
-
-
-                                                    <!-- <input type="file" id="id-input-file-2" name="attachment" /> -->
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1130,7 +1131,20 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
                                                     <i class="ace-icon fa fa-times"></i>
                                                     Cancel
                                                 </button>
-                                                <button name="send" type="submit" class="btn btn-sm btn-primary">
+
+                                                                    <input type="hidden" name="rollno"
+                                                                           value="<?php echo $roll ?>"/>
+                                                                    <input type="hidden" name="oldcolname"
+                                                                           value="<?php echo $oldcolumnname ?>"/>
+                                                                    <input type="hidden" name="colname"
+                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
+                                                                    <input type="hidden" name="year"
+                                                                           value="<?php echo $year ?>"/>
+                                                                            <input type="hidden" name="colnamemap"
+                                                                           value="<?php echo $changemapname ?>"/>
+                                                                           <input type="hidden" name="colnamemap"
+                                                                           value=""/>
+                                                <button name="decline1" type="submit" class="btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-send"></i>
                                                     Submit
                                                 </button>
