@@ -96,15 +96,13 @@ function updateSlider(){
 		<link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
 		<link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
 		<link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
-		<link rel="stylesheet" href="assets/js/date-time/moment.min.js" />
-		<link rel="stylesheet" href="assets/js/date-time/bootstrap-datetimepicker.min.js" />
-    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
-    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+        <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+        <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+        <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
 
 
 
@@ -278,15 +276,15 @@ if(isset($_GET['filter_job'])){
         if(preg_match('/rmd_database/', $database)){
 
 
-            $temp_pg_branch_insert="csc'',''it'',''eee'',''ece'',''eie";
-            $temp_pg_branch_update="csc','it','eee','ece','eie";
+            $temp_pg_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
+            $temp_pg_branch_update="cse','it','eee','ece','eie";
         }
 
         if(preg_match('/rmk_database/', $database)){
 
 
-            $temp_pg_branch_insert="csc'',''ae'',''pde'',''vlsi";
-            $temp_pg_branch_update="csc','ae','pde','vlsi";
+            $temp_pg_branch_insert="cse'',''ae'',''pde'',''vlsi";
+            $temp_pg_branch_update="cse','ae','pde','vlsi";
 
         }
 
@@ -325,18 +323,14 @@ if(isset($_GET['filter_job'])){
         $company_name=mysqli_fetch_assoc($get_company_name);
         $company_name_string=$company_name['company_name'];
 
-
-        $query="INSERT INTO jobs VALUES ($id,'$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', '$sort' , '$temp_branch_insert','$temp_pg_branch_insert','$pgcgpa' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','1')";
+ echo "query for insert";
+        $query="INSERT INTO jobs VALUES ('$id','$job_title', '{$company_name['company_name']}','$campus_date','$salary','$venue','$apply_before','$year_of_graduation','$joining_location','$job_description','$job_type','$skill_set', '$sort' , '$temp_branch_insert','$temp_pg_branch_insert','$pgcgpa' , '$_10percentage','$_12percentage','$cgpa','$standingarrears','$historyofarrears','$company_id','1')";
 
 
 
         $result=mysqli_query($connect, $query);
 
 
-        if(!$connect){
-
-            die("".mysqli_error($connect));
-        }
         if(!$result){
 
             die("".mysqli_error($connect));
@@ -344,6 +338,7 @@ if(isset($_GET['filter_job'])){
 
         }
 
+    echo "query for insert passed hurray";
 
         //Alter students table
 
@@ -426,8 +421,16 @@ if(isset($_GET['filter_job'])){
 
 
 
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update') and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+    //job for ug update
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
+
+
+        //job for pg update
+         $query_for_pg_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE  st_pgspecialization IN ('$temp_pg_branch_update') and st_pgcgpa>=$pgcgpa  and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+         $result_for_pg_update=mysqli_query($connect, $query_for_pg_update);
+
+
 
 
 
@@ -1405,10 +1408,10 @@ if(isset($_GET['filter_job'])){
                                                                 if (preg_match('/rmd_database/',$database)) {
                                                               ?>
 
-                                                               <select multiple="" name="pgbranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                               <select multiple="" name="nobranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
 
 
-                                                                    <option value="all">MBA</option>
+                                                                    <option value="0">No PG Branches Available</option>
                                                                    
                                                                 </select>
                                                             
@@ -1421,7 +1424,7 @@ if(isset($_GET['filter_job'])){
 
                                                            <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
-                                                                <option value="csc">Computer science and Engineering</option>
+                                                                <option value="cse">Computer science and Engineering</option>
                                                                 <option value="ae">Applied Electronics</option>
                                                                 <option value="ped">Power Electronics and Drives</option>
 
@@ -1436,15 +1439,9 @@ if(isset($_GET['filter_job'])){
                                                         else if (preg_match('/rmkcet_database/',$database)) {
                                                         ?>
 
-                                                         <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
-                                                            <option value="all">All</option>
-                                                            <option value="cse">Computer science and Engineering</option>
-                                                            <option value="eee">Electrical and Electronic Engineering</option>
-                                                            <option value="eie">Electrical and Intrumentation Engineering</option>
-
-
-                                                            <option value="ece">Electrical and Communicaton Engineering</option>
-                                                        </select>
+                                                         <select multiple="" name="nobranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                            <option value="0">No PG Branches Available</option>
+                                                            </select>
                                                     
 
 

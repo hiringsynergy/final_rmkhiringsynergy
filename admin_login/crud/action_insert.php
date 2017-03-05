@@ -736,7 +736,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                             foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
                             {
 
-                                $serial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
+                                $serial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row+1)->getValue());
 
                                 $highestRow = $worksheet->getHighestRow();
                                 $row=2;
@@ -835,6 +835,48 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                     $aadhar= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(82, $row)->getValue());
                                     $passport= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(83, $row)->getValue());
                                     $pan= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(84, $row)->getValue());
+
+
+
+
+
+                                    $ugspecial=trim($ugspecial," ");
+
+
+                                    //mapping department of UG
+                                    $query_dept_ug="SELECT * FROM dept_map WHERE dept_expand='$ugspecial'";
+                                    $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                    $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                    $ugspecial=$row_dept_ug['dept_short'];
+
+
+
+                                    //mapping department of PG
+                                    $query_dept="SELECT * FROM dept_map WHERE dept_expand='$pgspecial'";
+                                    $result_dept=mysqli_query($connect, $query_dept);
+                                    $row_dept=mysqli_fetch_assoc($result_dept);
+
+                                    $pgspecial=$row_dept['dept_short'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

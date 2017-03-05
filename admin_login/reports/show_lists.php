@@ -1036,7 +1036,7 @@ foreach($checkbox as $list){
 
                                                     <?php
 
-                                                    if(isset($_GET['flag']) && $_GET['flag']==1){
+                                                    if(isset($_GET['flag']) && (  $_GET['flag']==1 || $_GET['flag']==0)){
 
 
 
