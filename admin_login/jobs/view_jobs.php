@@ -13,7 +13,49 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 }
 
+if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
+{
 
+
+
+    include "../connect.php";
+
+    echo $jobid = $_POST['job_id'];
+    $roll = $_POST['tags'];
+    $array_roll=explode(",", $roll);
+    print_r($array_roll);
+
+
+    foreach ($array_roll as $temp){
+
+        $temp=trim($temp," ");
+
+      echo  $get_year=$temp[4].$temp[5];
+        $year=(int)$get_year+4;
+
+        $query_get_tablename="SELECT * FROM table_map where table_short='$year'";
+        $result_get_tablename=mysqli_query($connect, $query_get_tablename);
+        $row_get_talbename=mysqli_fetch_assoc($result_get_tablename);
+
+        $students_table=$row_get_talbename['table_name'];
+
+
+        $query_update_values="UPDATE ".$students_table." SET _".$jobid."='placed' where st_roll='$temp'";
+
+        $result=mysqli_query($connect, $query_update_values);
+
+        echo "updated";
+        if(!$result){
+
+            die("".mysqli_error($connect));
+        }
+    }
+
+
+
+    header("Location: view_jobs");
+
+}
 
 ?>
 
@@ -77,7 +119,24 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
     <!-- page specific plugin styles -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/select2.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+
 
     <!-- text fonts -->
     <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css" />
@@ -1152,28 +1211,38 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                                     <div class="row">
                                                                         <div class="col-xs-12 col-sm-12">
 
-                                                                            <input id="companyid" name="hidden" type="hidden" >
+                                                                            <input id="job_id" name="job_id" value="<?php echo $row['job_id']; ?>" type="hidden" >
 
                                                                             <div class="space"></div>
+                                                                            <div class="row">
+                                                                                <div class="col-xs-8 col-sm-5">
 
-                                                                            <input type="file" name="placement_file" />
+                                                                                    <h5 class="red bolder smaller">Register No:</h5>
+                                                                                    <div class="">
+                                                                                        <input type="text" name="tags" id="form-field-tags"  placeholder="Enter Register No ..." />
+                                                                                    </div>
+                                                                                    <div class="space-16"></div>
+
+                                                                                    <button  type="submit" id="bootbox-search" name="update"  value="filter" class="btn btn-default btn-round btn-danger">
+                                                                                        Update
+                                                                                        <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                                                                    </button>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <!--  <input type="file" name="placement_file" />-->
                                                                         </div>
 
 
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="modal-footer">
-                                                                    <button class="btn btn-sm" data-dismiss="modal">
-                                                                        <i class="ace-icon fa fa-times"></i>
-                                                                        Cancel
-                                                                    </button>
 
-                                                                    <button class="btn btn-sm btn-primary">
-                                                                        <i class="ace-icon fa fa-check"></i>
-                                                                        Save
-                                                                    </button>
-                                                                </div>
+
+
+
+
+
                                                             </div>
                                                         </div>
                                                     </form>
@@ -1261,6 +1330,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 <script src="../assets/js/buttons.print.min.js"></script>
 <script src="../assets/js/buttons.colVis.min.js"></script>
 <script src="../assets/js/dataTables.select.min.js"></script>
+<script src="../assets/js/wizard.min.js"></script>
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery-additional-methods.min.js"></script>
+<script src="../assets/js/bootbox.js"></script>
+<script src="../assets/js/jquery.maskedinput.min.js"></script>
+<script src="../assets/js/select2.min.js"></script>
+<script src="../assets/js/jquery-ui.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<script src="../assets/js/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/bootstrap-timepicker.min.js"></script>
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/daterangepicker.min.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+<script src="../assets/js/jquery.knob.min.js"></script>
+<script src="../assets/js/autosize.min.js"></script>
+<script src="../assets/js/jquery.inputlimiter.min.js"></script>
+<script src="../assets/js/jquery.maskedinput.min.js"></script>
+<script src="../assets/js/bootstrap-tag.min.js"></script>
+
 
 <!-- ace scripts -->
 <script src="../assets/js/ace-elements.min.js"></script>
@@ -1270,6 +1360,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 <script type="text/javascript">
     jQuery(function($) {
         //initiate dataTables plugin
+
 
 
 
@@ -1303,6 +1394,81 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 });
             }
         });
+
+
+        $('#bootbox-search').click(function(event) {
+
+
+
+            var blc = $('#form-field-tags').val();
+
+
+
+
+
+
+
+            if (blc == '') {
+
+
+
+                bootbox.dialog({
+                    message: "Please enter the search value",
+                    buttons: {
+                        "success": {
+                            "label": "OK",
+                            "className": "btn-sm btn-primary"
+                        }
+                    }
+
+                });
+                event.preventDefault();
+                event.stopPropagation();
+
+            }
+            else
+            {
+
+            }
+        });
+
+
+
+
+        $(".knob").knob();
+
+
+        var tag_input = $('#form-field-tags');
+        try{
+            tag_input.tag(
+                {
+                    placeholder:tag_input.attr('placeholder'),
+                    //enable typeahead by specifying the source array
+                    source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
+                    /**
+                     //or fetch data from database, fetch those that match "query"
+                     source: function(query, process) {
+						  $.ajax({url: 'remote_source?q='+encodeURIComponent(query)})
+						  .done(function(result_items){
+							process(result_items);
+						  });
+						}
+                     */
+                }
+            )
+
+            //programmatically add/remove a tag
+            var $tag_obj = $('#form-field-tags').data('tag');
+            <!-- $tag_obj.add('Programmatically Added');-->
+
+            var index = $tag_obj.inValues('some tag');
+            $tag_obj.remove(index);
+        }
+        catch(e) {
+            //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+            tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+            //autosize($('#form-field-tags'));
+        }
 
 
 

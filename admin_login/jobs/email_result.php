@@ -1,9 +1,9 @@
- <?php
+<?php
 
 session_start();
 ob_start();
 
-if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role']!='admin' ){
+if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_role'] != 'admin') {
 
     header("Location: ../../login");
 
@@ -13,30 +13,33 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
     <title>RMK HIRING SYNERGY</title>
 
-    <meta name="description" content="overview &amp; stats" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 
     <!--button-navigation-->
@@ -59,40 +62,32 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
         }
 
 
-
     </script>
-
-
-
-
 
 
     <!-- page specific plugin styles -->
 
-    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
-    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
-    <link rel="stylesheet" href="../assets/css/ace-part2.min.css" />
-
-
-
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css"/>
+    <link rel="stylesheet" href="../assets/css/chosen.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css"/>
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-part2.min.css"/>
 
 
     <!-- text fonts -->
-    <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css" />
+    <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css"/>
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="../assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+    <link rel="stylesheet" href="../assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style"/>
 
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="../assets/css/ace-part2.min.css" class="ace-main-stylesheet"/>
     <![endif]-->
-    <link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
-    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css"/>
 
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
@@ -129,17 +124,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     <i class=""></i>
                     <?php
 
-                    $database=$_SESSION['database_name'];
+                    $database = $_SESSION['database_name'];
 
-                    if(preg_match('/rmd_database/', $database)){
+                    if (preg_match('/rmd_database/', $database)) {
                         ?>
                         <img src="../images/rmd.jpg" style="height: 25px;">
-                        <label style="font-size: large;">RMD Engineering College  </label>
+                        <label style="font-size: large;">RMD Engineering College </label>
 
                         <?php
                     }
 
-                    if(preg_match('/rmk_database/', $database)){
+                    if (preg_match('/rmk_database/', $database)) {
                         ?>
                         <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
@@ -147,7 +142,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                         <?php
                     }
 
-                    if(preg_match('/rmkcet_database/', $database)){
+                    if (preg_match('/rmkcet_database/', $database)) {
                         ?>
                         <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -166,30 +161,26 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
 
-
-             <?php
-
-
-                        
-                         
-                                include "../connect.php";
-                                //for getting change requests from change table
-                                    $query_change = "SELECT * from st_change";
-                                    $result_change = mysqli_query($connect, $query_change);
-                                    $finfo = $result_change->fetch_fields();
-                                        $count=0;
-                                     while($rowr = mysqli_fetch_assoc($result_change)){
+                        <?php
 
 
-                                foreach ($finfo as $val) {
+                        include "../connect.php";
+                        //for getting change requests from change table
+                        $query_change = "SELECT * from st_change";
+                        $result_change = mysqli_query($connect, $query_change);
+                        $finfo = $result_change->fetch_fields();
+                        $count = 0;
+                        while ($rowr = mysqli_fetch_assoc($result_change)) {
 
 
-                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
-                                            $count++;
-                                        }
-                                    }
+                            foreach ($finfo as $val) {
+
+
+                                if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0, 1) != 'c' && substr($rowr[$val->name], 0, 1) != 'a' && $val->name != "st_regno" && $val->name != "st_year" && $val->name != "st_time" && $val->name != "st_dept") {
+                                    $count++;
                                 }
-
+                            }
+                        }
 
 
                         ?>
@@ -222,35 +213,31 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                 </li>
 
 
-
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
                         <?php
                         include "../connect.php";
-                        $name=$_SESSION['user'];
+                        $name = $_SESSION['user'];
 
-                        $query="select * from login_admin where username='{$name}'";
-
-
+                        $query = "select * from login_admin where username='{$name}'";
 
 
-                        $result=mysqli_query($connect,$query);
+                        $result = mysqli_query($connect, $query);
 
-                        if(!$result){
+                        if (!$result) {
 
 
                             mysqli_error($connect);
                         }
 
-                        while($row=mysqli_fetch_assoc($result)){
-
+                        while ($row = mysqli_fetch_assoc($result)) {
 
 
                             ?>
 
 
-                            <img class="nav-user-photo" src="../images/<?php echo $row['admin_pic']; ?>" alt="Photo" />
+                            <img class="nav-user-photo" src="../images/<?php echo $row['admin_pic']; ?>" alt="Photo"/>
                         <?php } ?>
                         <span class="user-info">
 									<small>Welcome,</small>
@@ -292,40 +279,43 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 <div class="main-container ace-save-state" id="main-container">
     <script type="text/javascript">
-        try{ace.settings.loadState('main-container')}catch(e){}
+        try {
+            ace.settings.loadState('main-container')
+        } catch (e) {
+        }
     </script>
 
     <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
         <script type="text/javascript">
-            try{ace.settings.loadState('sidebar')}catch(e){}
+            try {
+                ace.settings.loadState('sidebar')
+            } catch (e) {
+            }
         </script>
 
         <div class="sidebar-shortcuts" id="sidebar-shortcuts">
             <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
 
 
+                <button class="btn btn-success" onclick="myfuncreport()" id="myButton1">
 
-                <button class="btn btn-success"  onclick="myfuncreport()" id="myButton1" >
-
-                    <i class="ace-icon fa fa-signal" ></i>
+                    <i class="ace-icon fa fa-signal"></i>
 
 
                 </button>
 
 
-                <button class="btn btn-info"  onclick="myfuncadmin()" id="myButton2">
+                <button class="btn btn-info" onclick="myfuncadmin()" id="myButton2">
                     <i class="ace-icon fa fa-pencil"></i>
                 </button>
 
-                <button class="btn btn-warning"  onclick="myfuncjobs()" id="myButton3">
+                <button class="btn btn-warning" onclick="myfuncjobs()" id="myButton3">
                     <i class="ace-icon fa fa-users"></i>
                 </button>
 
-                <button class="btn btn-danger"  onclick="myfuncsettings()" id="myButton4">
+                <button class="btn btn-danger" onclick="myfuncsettings()" id="myButton4">
                     <i class="ace-icon fa fa-cogs"></i>
                 </button>
-
-
 
 
             </div>
@@ -352,7 +342,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
             </li>
 
             <li class="">
-                <a href="../profile/profile" >
+                <a href="../profile/profile">
                     <i class="menu-icon fa fa-user"></i>
                     <span class="menu-text">
 							Your Profile
@@ -367,7 +357,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
             </li>
 
             <li class="">
-                <a href="../settings" >
+                <a href="../settings">
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Settings </span>
 
@@ -380,7 +370,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
             </li>
 
             <li class="">
-                <a href="../admin_panel/admin_panel" >
+                <a href="../admin_panel/admin_panel">
                     <i class="menu-icon fa fa-pencil-square-o"></i>
                     <span class="menu-text"> Admin Panel </span>
 
@@ -402,8 +392,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 
             </li>
-
-
 
 
             <li>
@@ -459,8 +447,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
                 <b class="arrow"></b>
             </li>
-
-
 
 
             <li class="">
@@ -542,10 +528,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     </li>
 
 
-
-
-
-
                 </ul>
             </li>
 
@@ -553,7 +535,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
         </ul><!-- /.nav-list -->
 
         <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state"
+               data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
         </div>
     </div>
 
@@ -573,215 +556,142 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
             <div class="page-content">
 
 
-
-
                 <!-- PAGE CONTENT BEGINS -->
 
                 <?php
 
-                
 
+                if (isset($_POST['send']) && isset($_SESSION['user_role']) == 'admin') {
 
-                if(isset($_POST['send']) && isset($_SESSION['user_role'])=='admin' ){
 
+                    $jid = $_POST['jid'];
 
 
+                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
+                    $mail = new PHPMailer();
 
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
+                    $mail->Password = 'akash170397';                           // SMTP password
+                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 465;
+                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
-                     $jid= $_POST['jid'];
+                    $mail->isHTML(true);
 
+                    $mail->Subject = $_POST['subject'];
+                    $mail->Body = '<h3> ' . $_POST['message'] . ' </h3>';
 
 
+                    $send_file = array();
+                    if (isset($_FILES['attachment']) && isset($_SESSION['user_role']) == 'admin') {
 
 
+                        $count = count($_FILES['attachment']['name']);
 
-                                                                                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
-                                                                                    $mail=new PHPMailer();
+                        for ($i = 0; $i < $count; $i++) {
 
-                                                                                    $mail->isSMTP();
-                                                                                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                                                                                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                                                                                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                                                                                    $mail->Password = 'akash170397';                           // SMTP password
-                                                                                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                                                                                    $mail->Port = 465;
-                                                                                     $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                                                                                       $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+                            $file_name = $_FILES['attachment']['name'][$i];
+                            $file_size = $_FILES['attachment']['size'][$i];
+                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
+                            $file_type = $_FILES['attachment']['type'][$i];
 
-                                                                                    $mail->isHTML(true);
 
-                                                                                    $mail->Subject = $_POST['subject'];
-                                                                                    $mail->Body    = '<h3> '.$_POST['message'].' </h3>';
+                            $value = explode('.', $file_name);
 
 
+                            $file_ext = strtolower(end($value));
 
+                            $newfilename = current($value) . '_' . time() . '.' . $file_ext;
 
 
+                            move_uploaded_file($file_tmp, "files/" . $newfilename);
 
+                            $send_file[] = $newfilename;
 
 
+                        }
 
-                                                                                      $send_file=array();
-                                                                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
+                    }
 
 
+                    include "../connect.php";
+                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
 
+                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
+                    $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
+                    $result_mail = mysqli_query($connect, $query_mail);
+                    $num_rows = mysqli_num_rows($result_mail);
+                    $counter = 0;
 
-                                                                        $count= count($_FILES['attachment']['name']);
 
+                    while ($row_mail = mysqli_fetch_assoc($result_mail)) {
 
-                                                                        for ($i=0;$i<$count;$i++) {
 
-                                                                            $file_name = $_FILES['attachment']['name'][$i];
-                                                                            $file_size = $_FILES['attachment']['size'][$i];
-                                                                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
-                                                                            $file_type = $_FILES['attachment']['type'][$i];
+                        $to = null;
 
 
+                        $to = $row_mail['st_email'];
 
-                                                                            $value = explode('.',$file_name);
 
+                        $mail->addAddress($to, 'joe');
 
 
+                        // Add a recipient
 
-                                                                            $file_ext=strtolower(end($value));
 
-                                                                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
+                        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
+                            foreach ($send_file as $file_to_send) {
 
-                                                                            move_uploaded_file($file_tmp,"files/".$newfilename);
 
-                                                                            $send_file[]=$newfilename;
+                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
 
+                            }
 
 
+                        }
 
 
+                        if ($mail->send()) {
 
 
+                            $counter = $counter + 1;
 
+                        }
 
-                                                                        }
 
+                        // Clear all addresses and attachments for next loop
+                        $mail->clearAddresses();
+                        $mail->clearAttachments();
 
 
+                        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
+                            foreach ($send_file as $file_sent) {
 
+                                unlink("files/$file_sent");
 
 
+                            }
 
 
+                        }
 
 
+                    }
 
 
-                                                                         }
-
-
-
-
-
-
-
-
-                                                                include "../connect.php";
-                                                                $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
-                                                                $result_eligible_year = mysqli_query($connect, $query_eligible_year);
-                                                                $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
-
-                                                                $year_of_gradudation = $row_eligible_year['year_of_graduation'];
-
-                                                                $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
-                                                                $result_mail = mysqli_query($connect, $query_mail);
-                                                                $num_rows=mysqli_num_rows($result_mail);
-                                                                $counter=0;
-
-
-                                                                while($row_mail = mysqli_fetch_assoc($result_mail)) {
-
-
-
-                                                                                    $to=null;
-
-
-
-                                                                                    $to=$row_mail['st_email'];
-
-
-
-
-
-
-
-
-                                                                                    $mail->addAddress($to, 'joe');
-
-
-                                                                                    // Add a recipient
-
-
-
-
-                                                                                    if(isset($_FILES['attachment']) && $file_ext!=''  && isset($_SESSION['user_role'])=='admin' ){
-
-                                                                                        foreach ($send_file as $file_to_send){
-
-
-                                                                                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
-
-                                                                                        }
-
-
-
-
-                                                                                    }
-
-
-
-
-                                                                                    if($mail->send()){
-
-
-
-
-
-                                                                                        $counter=$counter+1;
-
-                                                                                    }
-
-
-                                                                                    // Clear all addresses and attachments for next loop
-                                                                                    $mail->clearAddresses();
-                                                                                    $mail->clearAttachments();
-
-
-
-
-                                                                                    if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
-
-                                                                                        foreach ($send_file as $file_sent){
-
-                                                                                            unlink("files/$file_sent");
-
-
-
-                                                                                        }
-
-
-
-                                                                                    }
-
-
-
-
-                                                                }
-
-
-                                                                if($num_rows!=$counter) {
+                    if ($num_rows != $counter) {
 
 
                         ?>
@@ -795,7 +705,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
                             Your mail to
                             <strong class="red">
-                                <?php echo $num_rows-$count ?>
+                                <?php echo $num_rows - $count ?>
 
                             </strong>Students ,
 
@@ -808,7 +718,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     } else {
 
                         ?>
-
 
 
                         <div class="alert alert-block alert-success">
@@ -828,64 +737,31 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                         </div>
 
 
-
                         <?php
 
                     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }
-
-
-                    
-
-
-
-
-                                                                        
-
-
-
 
 
                 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="tabbable">
-                            <ul id="Status-tabs" class="Status-tabs nav nav-tabs padding-16 tab-size-bigger tab-space-1">
+                            <ul id="Status-tabs"
+                                class="Status-tabs nav nav-tabs padding-16 tab-size-bigger tab-space-1">
 
 
 
-														<span class="purple no-border bigger-240 center" style=" border-radius: 5px; background-color: #9B59B6 ;">
-															<i class="ace-icon fa fa-envelope smaller-70 white middle align-center " style="padding-left: 10px; "></i>
-															<span class=" white smaller-60 middle align-center " style="padding-right: 10px; " > Write Mail</span>
+														<span class="purple no-border bigger-240 center"
+                                                              style=" border-radius: 5px; background-color: #9B59B6 ;">
+															<i class="ace-icon fa fa-envelope smaller-70 white middle align-center "
+                                                               style="padding-left: 10px; "></i>
+															<span class=" white smaller-60 middle align-center "
+                                                                  style="padding-right: 10px; "> Write Mail</span>
 														</span>
 
                                 <!-- /.li-new-mail -->
@@ -898,29 +774,32 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email_result" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+                <form id="id-message-form" action="email_result" method="post"
+                      class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
-<!--                         <div class="form-group ">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
+                        <!--                         <div class="form-group ">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
 
-                            <div class="col-sm-9">
-												<span class="input-icon">
-													<input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
-													<i class="ace-icon fa fa-user"></i>
-												</span>
-                            </div>
-                        </div>
+                                                    <div class="col-sm-9">
+                                                                        <span class="input-icon">
+                                                                            <input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
+                                                                            <i class="ace-icon fa fa-user"></i>
+                                                                        </span>
+                                                    </div>
+                                                </div>
 
-                        <div class="hr hr-18 dotted"></div> -->
+                                                <div class="hr hr-18 dotted"></div> -->
 
-                    <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
+                        <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-subject">Subject:</label>
+                            <label class="col-sm-3 control-label no-padding-right"
+                                   for="form-field-subject">Subject:</label>
 
                             <div class="col-sm-6 col-xs-12">
                                 <div class="input-icon block col-xs-12 no-padding">
-                                    <input maxlength="100" type="text" class="col-xs-12" name="subject" id="form-field-subject" placeholder="Subject" />
+                                    <input maxlength="100" type="text" class="col-xs-12" name="subject"
+                                           id="form-field-subject" placeholder="Subject"/>
                                     <i class="ace-icon fa fa-comment-o"></i>
                                 </div>
                             </div>
@@ -947,13 +826,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
                             <div class="col-sm-9">
                                 <div id="form-attachments">
-                                    <input type="file" id="id-input-file-2" name="attachment[]" />
+                                    <input type="file" id="id-input-file-2" name="attachment[]"/>
                                 </div>
                             </div>
                         </div>
 
                         <div class="space"></div>
-
 
 
                         <div class="align-right">
@@ -968,7 +846,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
                         <div class="align-center">
                                             <span class="inline btn-send-message">
-                                                <button type="submit" id="bootbox-search" name="send" class="btn btn-sm btn-primary border btn-bold btn-round">
+                                                <button type="submit" id="bootbox-search" name="send"
+                                                        class="btn btn-sm btn-primary border btn-bold btn-round">
                                                     <span class="bigger-120">Send</span>
                                                         <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                                                 </button>
@@ -1014,7 +893,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 <script src="../assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../assets/js/bootstrap.min.js"></script>
 
@@ -1052,39 +931,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
-    jQuery(function($){
+    jQuery(function ($) {
 
         $('.message-form .wysiwyg-editor').ace_wysiwyg({
-            toolbar:
-                [
-                    'bold',
-                    'italic',
-                    'strikethrough',
-                    'underline',
-                    null,
-                    'justifyleft',
-                    'justifycenter',
-                    'justifyright',
-                    null,
-                    'createLink',
-                    'unlink',
-                    null,
-                    'undo',
-                    'redo'
-                ]
+            toolbar: [
+                'bold',
+                'italic',
+                'strikethrough',
+                'underline',
+                null,
+                'justifyleft',
+                'justifycenter',
+                'justifyright',
+                null,
+                'createLink',
+                'unlink',
+                null,
+                'undo',
+                'redo'
+            ]
         }).prev().addClass('wysiwyg-style1');
 
 
-        $('#id-message-form').on('submit', function() {
+        $('#id-message-form').on('submit', function () {
             var hidden_input =
                 $('<input type="hidden" name="message" />')
                     .appendTo('#id-message-form');
 
             var html_content = $('#editor1').html();
-            hidden_input.val( html_content );
+            hidden_input.val(html_content);
             //put the editor's HTML into hidden_input and it will be sent to server
         });
-
 
 
         //file input
@@ -1096,7 +973,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
         //Add Attachment
         //the button to add a new file input
         $('#id-add-attachment')
-            .on('click', function(){
+            .on('click', function () {
                 var file = $('<input type="file" name="attachment[]" />').appendTo('#form-attachments');
                 file.ace_file_input();
 
@@ -1108,26 +985,21 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
 								<i class="ace-icon fa fa-trash-o red bigger-130 middle"></i>\
 							</a>\
 						</div>')
-                    .find('a[data-action=delete]').on('click', function(e){
+                    .find('a[data-action=delete]').on('click', function (e) {
                     //the button that removes the newly inserted file input
                     e.preventDefault();
-                    $(this).closest('.file-input-container').hide(300, function(){ $(this).remove() });
+                    $(this).closest('.file-input-container').hide(300, function () {
+                        $(this).remove()
+                    });
                 });
             });
-        $('#bootbox-search').click(function(event) {
-
+        $('#bootbox-search').click(function (event) {
 
 
             var blc = $('#tag3').val();
 
 
-
-
-
-
-
             if (blc == '') {
-
 
 
                 bootbox.dialog({
@@ -1144,8 +1016,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && $_SESSION['user_role
                 event.stopPropagation();
 
             }
-            else
-            {
+            else {
 
             }
         });
