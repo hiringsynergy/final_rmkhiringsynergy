@@ -1107,6 +1107,7 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <span class="lbl"></span>
                                                 </label>
                                             </th>
+
                                             <th>Serial No.</th>
                                             <th>Register No</th>
                                             <th>First Name</th>
@@ -1116,9 +1117,12 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             <th>Gender (Male/Female)</th>
                                             <th>Father Name</th>
                                             <th>Father Occupation</th>
+                                            <th>Father Mobile No.</th>
                                             <th>Mother Name</th>
                                             <th>Mother Occupation</th>
-                                            <th>Email ID</th>
+                                            <th>Mother Mobile No.</th>
+                                            <th>College Mail ID</th>
+                                            <th> Personal Email ID</th>
                                             <th>Mobile Number (10 digits)</th>
                                             <th>Date of Birth (DD-MM-YYYY)</th>
                                             <th>Nationality</th>
@@ -1126,14 +1130,18 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             <th>College Name</th>
                                             <th>University</th>
                                             <th>10th %</th>
-                                            <th>Board of Study</th>
-                                            <th>Medium (Tamil/English/Telugu/Others)</th>
+                                            <th>10th Institution</th>
+                                            <th>10th Board of Study</th>
+                                            <th>10th Medium (Tamil/English/Telugu/Others)</th>
                                             <th>10th - Year of Passing</th>
                                             <th>12th %</th>
-                                            <th>Board of Study</th>
-                                            <th>Medium (Tamil/English/Telugu/Others)</th>
+                                            <th>12th Institution</th>
+                                            <th>12th Board of Study</th>
+                                            <th>12th Medium (Tamil/English/Telugu/Others)</th>
                                             <th>12th - Year of Passing</th>
                                             <th>Diploma  %</th>
+                                            <th>Diploma Specialization</th>
+                                            <th>Diploma Institution</th>
                                             <th>Diploma - Year of Passing</th>
                                             <th>Currently Pursuing (UG/PG)</th>
                                             <th>UG Degree</th>
@@ -1156,6 +1164,8 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             <th>4th Sem</th>
                                             <th>PG Degree % or CGPA (upto last semester for which results announced)</th>
                                             <th>PG - Year of Passing</th>
+                                            <th>UG College Name(for PG)</th>
+                                            <th>UG Hitory of Arrears(for PG)</th>
                                             <th>Day Scholar/ Hosteler</th>
                                             <th>No History of Arreas</th>
                                             <th>Current Degree. No of Standing Arrears</th>
@@ -1181,8 +1191,7 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             <th>Signature</th>
                                             <th>Placement Status</th>
                                             <th>Aadhar Card No.</th>
-                                            <th>Passport No.
-                                            </th>
+                                            <th>Passport No.</th>
                                             <th>PAN Card No.</th>
 
 
@@ -1242,8 +1251,11 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $gender=$row['st_gender'];
                                                 $father_name=$row['st_fathername'];
                                                 $father_occupation=$row['st_fatheroccupation'];
+                                                $father_mobile=$row['st_fathernumber'];
                                                 $mother_name=$row['st_mothername'];
                                                 $mother_occupation=$row['st_motheroccupation'];
+                                                $mother_mobile=$row['st_mothernumber'];
+                                                $college_mail=$row['st_clgemail'];
                                                 $email=$row['st_email'];
                                                 $phone=$row['st_phone'];
                                                 $dob=$row['st_dob'];
@@ -1252,14 +1264,18 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $college_name=$row['st_collegename'];
                                                 $university=$row['st_university'];
                                                 $_10percentage=$row['st_10thpercentage'];
+                                                $_10institution=$row['st_10thinstitution'];
                                                 $_10boardofstudy=$row['st_10thboardofstudy'];
                                                 $_10medium=$row['st_10thmedium'];
                                                 $_10yearofpassing=$row['st_10thyearofpassing'];
                                                 $_12percentage=$row['st_12thpercentage'];
+                                                $_12institution=$row['st_12thinstitution'];
                                                 $_12boardofstudy=$row['st_12thboardofstudy'];
                                                 $_12medium=$row['st_12thmedium'];
                                                 $_12yearofpassing=$row['st_12thyearofpassing'];
                                                 $dippercentage=$row['st_dippercentage'];
+                                                $dipspecialization=$row['st_dipspecialization'];
+                                                $dipinstitution=$row['st_dipinstitution'];
                                                 $dipyearofpassing=$row['st_dipyearofpassing'];
                                                 $current=$row['st_currentlypursuing'];
                                                 $ugdeg=$row['st_ugdegree'];
@@ -1282,6 +1298,8 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $pg4sem=$row['st_pg4thsem'];
                                                 $pgcgpa=$row['st_pgcgpa'];
                                                 $pgyearofpassing=$row['st_pgyearofpassing'];
+                                                $ugcollegename=$row['st_ugcollegename'];
+                                                $ughistoryofarrears=$row['st_ughistoryofarrears'];
                                                 $dayhostel=$row['st_dayorhostel'];
                                                 $historyofarrears=$row['st_historyofarrears'];
                                                 $standingarrears=$row['st_standingarrears'];
@@ -1306,9 +1324,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $candidate=$row['st_candidateid'];
                                                 $signature=$row['st_signature'];
                                                 $placement_status=$row['st_placementstatus'];
-                                            $aadhar=$row['st_aadharno'];
-                                            $passport=$row['st_passportno'];
-                                            $pan=$row['st_panno'];
+                                                $aadhar=$row['st_aadharno'];
+                                                $passport=$row['st_passportno'];
+                                                $pan=$row['st_panno'];
+
 
 
 
@@ -1340,8 +1359,11 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo  $gender ?></td>
                                                     <td><?php echo $father_name ?></td>
                                                     <td><?php echo $father_occupation ?></td>
+                                                    <td><?php echo $father_mobile ?></td>
                                                     <td><?php echo $mother_name ?></td>
                                                     <td><?php echo $mother_occupation ?></td>
+                                                    <td><?php echo $mother_mobile ?></td>
+                                                    <td><?php echo $college_mail ?></td>
                                                     <td><?php echo $email ?></td>
                                                     <td><?php echo $phone ?></td>
                                                     <td><?php echo $dob ?></td>
@@ -1350,14 +1372,18 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $college_name ?></td>
                                                     <td><?php echo $university ?></td>
                                                     <td><?php echo $_10percentage ?></td>
+                                                    <td><?php echo $_10institution ?></td>
                                                     <td><?php echo $_10boardofstudy ?></td>
                                                     <td><?php echo $_10medium ?></td>
                                                     <td><?php echo $_10yearofpassing ?></td>
                                                     <td><?php echo $_12percentage ?></td>
+                                                    <td><?php echo $_12institution ?></td>
                                                     <td><?php echo $_12boardofstudy ?></td>
                                                     <td><?php echo $_12medium ?></td>
                                                     <td><?php echo $_12yearofpassing ?></td>
                                                     <td><?php echo $dippercentage ?></td>
+                                                    <td><?php echo $dipspecialization ?></td>
+                                                    <td><?php echo $dipinstitution ?></td>
                                                     <td><?php echo $dipyearofpassing ?></td>
                                                     <td><?php echo $current ?></td>
                                                     <td><?php echo $ugdeg ?></td>
@@ -1404,6 +1430,8 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $pg4sem ?></td>
                                                     <td><?php echo $pgcgpa ?></td>
                                                     <td><?php echo $pgyearofpassing ?></td>
+                                                    <td><?php echo $ugcollegename ?></td>
+                                                    <td><?php echo $ughistoryofarrears ?></td>
                                                     <td><?php echo $dayhostel ?></td>
                                                     <td><?php echo $historyofarrears ?></td>
                                                     <td><?php echo $standingarrears ?></td>
@@ -1428,11 +1456,9 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $candidate ?></td>
                                                     <td><?php echo $signature ?></td>
                                                     <td><?php echo $placement_status ?></td>
-                                                <td><?php echo $aadhar ?></td>
-                                                <td><?php echo $passport ?></td>
-                                                <td><?php echo $pan ?></td>
-
-
+                                                    <td><?php echo $aadhar ?></td>
+                                                    <td><?php echo $passport ?></td>
+                                                    <td><?php echo $pan ?></td>
 
 
 
@@ -1479,82 +1505,91 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             $sno=1;
 
                                             while ($row = mysqli_fetch_assoc($result)) {
-                                                $roll = $row['st_roll'];
-                                                $first_name = $row['st_firstname'];
-                                                $middle_name = $row['st_middlename'];
-                                                $last_name = $row['st_lastname'];
-                                                $name = $row['st_name'];
-                                                $gender = $row['st_gender'];
-                                                $father_name = $row['st_fathername'];
-                                                $father_occupation = $row['st_fatheroccupation'];
-                                                $mother_name = $row['st_mothername'];
-                                                $mother_occupation = $row['st_motheroccupation'];
-                                                $email = $row['st_email'];
-                                                $phone = $row['st_phone'];
-                                                $dob = $row['st_dob'];
-                                                $nationality = $row['st_nationality'];
-                                                $caste = $row['st_caste'];
-                                                $college_name = $row['st_collegename'];
-                                                $university = $row['st_university'];
-                                                $_10percentage = $row['st_10thpercentage'];
-                                                $_10boardofstudy = $row['st_10thboardofstudy'];
-                                                $_10medium = $row['st_10thmedium'];
-                                                $_10yearofpassing = $row['st_10thyearofpassing'];
-                                                $_12percentage = $row['st_12thpercentage'];
-                                                $_12boardofstudy = $row['st_12thboardofstudy'];
-                                                $_12medium = $row['st_12thmedium'];
-                                                $_12yearofpassing = $row['st_12thyearofpassing'];
-                                                $dippercentage = $row['st_dippercentage'];
-                                                $dipyearofpassing = $row['st_dipyearofpassing'];
-                                                $current = $row['st_currentlypursuing'];
-                                                $ugdeg = $row['st_ugdegree'];
-                                                $ugspecial = $row['st_ugspecialization'];
-                                                $ug1sem = $row['st_1stsem'];
-                                                $ug2sem = $row['st_2ndsem'];
-                                                $ug3sem = $row['st_3rdsem'];
-                                                $ug4sem = $row['st_4thsem'];
-                                                $ug5sem = $row['st_5thsem'];
-                                                $ug6sem = $row['st_6thsem'];
-                                                $ug7sem = $row['st_7thsem'];
-                                                $ug8sem = $row['st_8thsem'];
-                                                $cgpa = $row['st_cgpa'];
-                                                $ugyearofpassing = $row['st_ugyearofpassing'];
-                                                $pgdeg = $row['st_pgdegree'];
-                                                $pgspecial = $row['st_pgspecialization'];
-                                                $pg1sem = $row['st_pg1stsem'];
-                                                $pg2sem = $row['st_pg2ndsem'];
-                                                $pg3sem = $row['st_pg3rdsem'];
-                                                $pg4sem = $row['st_pg4thsem'];
-                                                $pgcgpa = $row['st_pgcgpa'];
-                                                $pgyearofpassing = $row['st_pgyearofpassing'];
-                                                $dayhostel = $row['st_dayorhostel'];
-                                                $historyofarrears = $row['st_historyofarrears'];
-                                                $standingarrears = $row['st_standingarrears'];
-                                                $hometown = $row['st_hometown'];
-                                                $address1 = $row['st_address1'];
-                                                $address2 = $row['st_address2'];
-                                                $city = $row['st_city'];
-                                                $state = $row['st_state'];
-                                                $postal_code = $row['st_posatlcode'];
-                                                $landline = $row['st_landline'];
-                                                $skill = $row['st_skillcertification'];
-                                                $duration = $row['st_duration'];
-                                                $vendor = $row['st_vendor'];
-                                                $coecertification = $row['st_coecertification'];
-                                                $gap = $row['st_gapinstudies'];
-                                                $reason = $row['st_reason'];
-                                                $english = $row['st_english'];
-                                                $quantitative = $row['st_quantitative'];
-                                                $logical = $row['st_logical'];
-                                                $overall = $row['st_overall'];
-                                                $percentage = $row['st_percentage'];
-                                                $candidate = $row['st_candidateid'];
-                                                $signature = $row['st_signature'];
-                                                $placement_status = $row['st_placementstatus'];
-                                            $aadhar=$row['st_aadharno'];
-                                            $passport=$row['st_passportno'];
-                                            $pan=$row['st_panno'];
 
+                                                $roll=$row['st_roll'];
+                                                $first_name=$row['st_firstname'];
+                                                $middle_name=$row['st_middlename'];
+                                                $last_name=$row['st_lastname'];
+                                                $name=$row['st_name'];
+                                                $gender=$row['st_gender'];
+                                                $father_name=$row['st_fathername'];
+                                                $father_occupation=$row['st_fatheroccupation'];
+                                                $father_mobile=$row['st_fathernumber'];
+                                                $mother_name=$row['st_mothername'];
+                                                $mother_occupation=$row['st_motheroccupation'];
+                                                $mother_mobile=$row['st_mothernumber'];
+                                                $college_mail=$row['st_clgemail'];
+                                                $email=$row['st_email'];
+                                                $phone=$row['st_phone'];
+                                                $dob=$row['st_dob'];
+                                                $nationality=$row['st_nationality'];
+                                                $caste=$row['st_caste'];
+                                                $college_name=$row['st_collegename'];
+                                                $university=$row['st_university'];
+                                                $_10percentage=$row['st_10thpercentage'];
+                                                $_10institution=$row['st_10thinstitution'];
+                                                $_10boardofstudy=$row['st_10thboardofstudy'];
+                                                $_10medium=$row['st_10thmedium'];
+                                                $_10yearofpassing=$row['st_10thyearofpassing'];
+                                                $_12percentage=$row['st_12thpercentage'];
+                                                $_12institution=$row['st_12thinstitution'];
+                                                $_12boardofstudy=$row['st_12thboardofstudy'];
+                                                $_12medium=$row['st_12thmedium'];
+                                                $_12yearofpassing=$row['st_12thyearofpassing'];
+                                                $dippercentage=$row['st_dippercentage'];
+                                                $dipspecialization=$row['st_dipspecialization'];
+                                                $dipinstitution=$row['st_dipinstitution'];
+                                                $dipyearofpassing=$row['st_dipyearofpassing'];
+                                                $current=$row['st_currentlypursuing'];
+                                                $ugdeg=$row['st_ugdegree'];
+                                                $ugspecial=$row['st_ugspecialization'];
+                                                $ug1sem=$row['st_1stsem'];
+                                                $ug2sem=$row['st_2ndsem'];
+                                                $ug3sem=$row['st_3rdsem'];
+                                                $ug4sem=$row['st_4thsem'];
+                                                $ug5sem=$row['st_5thsem'];
+                                                $ug6sem=$row['st_6thsem'];
+                                                $ug7sem=$row['st_7thsem'];
+                                                $ug8sem=$row['st_8thsem'];
+                                                $cgpa=$row['st_cgpa'];
+                                                $ugyearofpassing=$row['st_ugyearofpassing'];
+                                                $pgdeg=$row['st_pgdegree'];
+                                                $pgspecial=$row['st_pgspecialization'];
+                                                $pg1sem=$row['st_pg1stsem'];
+                                                $pg2sem=$row['st_pg2ndsem'];
+                                                $pg3sem=$row['st_pg3rdsem'];
+                                                $pg4sem=$row['st_pg4thsem'];
+                                                $pgcgpa=$row['st_pgcgpa'];
+                                                $pgyearofpassing=$row['st_pgyearofpassing'];
+                                                $ugcollegename=$row['st_ugcollegename'];
+                                                $ughistoryofarrears=$row['st_ughistoryofarrears'];
+                                                $dayhostel=$row['st_dayorhostel'];
+                                                $historyofarrears=$row['st_historyofarrears'];
+                                                $standingarrears=$row['st_standingarrears'];
+                                                $hometown=$row['st_hometown'];
+                                                $address1=$row['st_address1'];
+                                                $address2=$row['st_address2'];
+                                                $city=$row['st_city'];
+                                                $state=$row['st_state'];
+                                                $postal_code=$row['st_posatlcode'];
+                                                $landline=$row['st_landline'];
+                                                $skill=$row['st_skillcertification'];
+                                                $duration=$row['st_duration'];
+                                                $vendor=$row['st_vendor'];
+                                                $coecertification=$row['st_coecertification'];
+                                                $gap=$row['st_gapinstudies'];
+                                                $reason=$row['st_reason'];
+                                                $english=$row['st_english'];
+                                                $quantitative=$row['st_quantitative'];
+                                                $logical=$row['st_logical'];
+                                                $overall=$row['st_overall'];
+                                                $percentage=$row['st_percentage'];
+                                                $candidate=$row['st_candidateid'];
+                                                $signature=$row['st_signature'];
+                                                $placement_status=$row['st_placementstatus'];
+                                                $aadhar=$row['st_aadharno'];
+                                                $passport=$row['st_passportno'];
+                                                $pan=$row['st_panno'];
 
 
                                                 ?>
@@ -1579,13 +1614,16 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     </td>
                                                     <td class=" "><?php echo $middle_name ?></td>
 
-                                                    <td><?php echo $last_name ?></td>
-                                                    <td><?php echo $name ?></td>
-                                                    <td><?php echo $gender ?></td>
+                                                    <td><?php echo $last_name  ?></td>
+                                                    <td><?php echo $name  ?></td>
+                                                    <td><?php echo  $gender ?></td>
                                                     <td><?php echo $father_name ?></td>
                                                     <td><?php echo $father_occupation ?></td>
+                                                    <td><?php echo $father_mobile ?></td>
                                                     <td><?php echo $mother_name ?></td>
                                                     <td><?php echo $mother_occupation ?></td>
+                                                    <td><?php echo $mother_mobile ?></td>
+                                                    <td><?php echo $college_mail ?></td>
                                                     <td><?php echo $email ?></td>
                                                     <td><?php echo $phone ?></td>
                                                     <td><?php echo $dob ?></td>
@@ -1594,14 +1632,18 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $college_name ?></td>
                                                     <td><?php echo $university ?></td>
                                                     <td><?php echo $_10percentage ?></td>
+                                                    <td><?php echo $_10institution ?></td>
                                                     <td><?php echo $_10boardofstudy ?></td>
                                                     <td><?php echo $_10medium ?></td>
                                                     <td><?php echo $_10yearofpassing ?></td>
                                                     <td><?php echo $_12percentage ?></td>
+                                                    <td><?php echo $_12institution ?></td>
                                                     <td><?php echo $_12boardofstudy ?></td>
                                                     <td><?php echo $_12medium ?></td>
                                                     <td><?php echo $_12yearofpassing ?></td>
                                                     <td><?php echo $dippercentage ?></td>
+                                                    <td><?php echo $dipspecialization ?></td>
+                                                    <td><?php echo $dipinstitution ?></td>
                                                     <td><?php echo $dipyearofpassing ?></td>
                                                     <td><?php echo $current ?></td>
                                                     <td><?php echo $ugdeg ?></td>
@@ -1616,7 +1658,7 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $ug8sem ?></td>
                                                     <?php
 
-                                                    if ($cgpa > 8) {
+                                                    if($cgpa>8){
 
 
                                                         ?>
@@ -1625,7 +1667,9 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                         </td>
                                                         <?php
 
-                                                    } else {
+                                                    }
+
+                                                    else{
 
                                                         ?>
                                                         <td class=" ">
@@ -1646,6 +1690,8 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $pg4sem ?></td>
                                                     <td><?php echo $pgcgpa ?></td>
                                                     <td><?php echo $pgyearofpassing ?></td>
+                                                    <td><?php echo $ugcollegename ?></td>
+                                                    <td><?php echo $ughistoryofarrears ?></td>
                                                     <td><?php echo $dayhostel ?></td>
                                                     <td><?php echo $historyofarrears ?></td>
                                                     <td><?php echo $standingarrears ?></td>
@@ -1670,9 +1716,9 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $candidate ?></td>
                                                     <td><?php echo $signature ?></td>
                                                     <td><?php echo $placement_status ?></td>
-                                                <td><?php echo $aadhar ?></td>
-                                                <td><?php echo $passport ?></td>
-                                                <td><?php echo $pan ?></td>
+                                                    <td><?php echo $aadhar ?></td>
+                                                    <td><?php echo $passport ?></td>
+                                                    <td><?php echo $pan ?></td>
 
 
 
@@ -1920,15 +1966,18 @@ header("Location: export_action?roll=$check&year=$get_year");
                 .DataTable({
                     bAutoWidth: false,
                     "aoColumns": [
-                        { "bSortable": false }, 
+
+
+                        { "bSortable": false },
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null ,null,
                         null, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null
+                        null, null, null, null, null
 
 
 
@@ -1945,7 +1994,7 @@ header("Location: export_action?roll=$check&year=$get_year");
                     //"sScrollY": "200px",
                     //"bPaginate": false,
 
-                    //"sScrollX": "100%"
+                    "sScrollX": "100%"
                     //"sScrollXInner": "120%",
                     //"bScrollCollapse": true,
                     //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
