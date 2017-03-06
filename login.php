@@ -152,7 +152,7 @@ html, body, .main {
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item fa fa-home"><a class="nav-link link fa fa-home" href="index.html"><i  class="fa fa-home"  aria-hidden="true"></i>Home</a></li><li class="nav-item"><!-- <a class="nav-link link" href="login">Login</a> --></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item fa fa-home"><a class="nav-link link fa fa-home" href="index"><i  class="fa fa-home"  aria-hidden="true"></i>Home</a></li><li class="nav-item"><!-- <a class="nav-link link" href="login">Login</a> --></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -267,7 +267,7 @@ html, body, .main {
                             </div>
 
                             <div class="col-xs-12 col-md-6" >
-                                <a href="reset.php" style="color: floralwhite">Forgot password?</a>
+                                <a href="reset" style="color: floralwhite">Forgot password?</a>
                             </div>
                         </form>
                     </div>
