@@ -582,7 +582,20 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 }
 
+if(isset($_GET['export'])) {
 
+    include "../connect.php";
+$check=$_GET['check'];
+    $get_year= $_POST['get_year'];
+
+
+
+
+header("Location: export_action?roll=$check&year=$get_year");
+
+
+
+}
 
 ?>
 
@@ -1172,6 +1185,12 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                 <h3 class="header smaller lighter blue">Advanced Search</h3>
 
 
+                                <form action="export_action" method="post" >
+
+                            <button name="export" id="bootbox-confirm" type="submit" class="btn btn-lg btn-success">
+                                <i class="ace-icon fa fa-check"></i>
+                                Export
+                            </button>
 
 
 
@@ -1396,12 +1415,13 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                                 ?>
+                                                
 
 
                                                 <tr>
                                                     <td class="center">
                                                         <label class="pos-rel">
-                                                            <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
+                                                            <input type="checkbox" name="checkbox[]" value="<?php echo $row['st_roll'] ?>" class="ace" />
                                                             <span class="lbl"></span>
                                                         </label>
                                                     </td>
@@ -1636,7 +1656,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                                                 <tr>
                                                     <td class="center">
                                                         <label class="pos-rel">
-                                                            <input type="checkbox" name="checkbox[]" value="<?php echo $row_job['st_roll'] ?>" class="ace" />
+                                                            <input type="checkbox" name="checkbox[]" value="<?php echo $row['st_roll'] ?>" class="ace" />
                                                             <span class="lbl"></span>
                                                         </label>
                                                     </td>
@@ -1773,6 +1793,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                 </div>
+                                </form>
                             </div>
                         </div>
 
@@ -1844,9 +1865,9 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
                                                     }
 
-                                                    ?>
+                                                    ?> 
 														
-
+<!-- 
 														<div class="form-group">
 															<label for="form-field-username">Subject</label>
 
@@ -1896,7 +1917,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 											</div>
                                             </form>
 										</div>
-									</div>
+									</div> --> --> -->
 
                         <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->
@@ -1971,18 +1992,6 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ace scripts -->
 <script src="../assets/js/ace-elements.min.js"></script>
 <script src="../assets/js/ace.min.js"></script>
@@ -1991,22 +2000,14 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 <script type="text/javascript">
 
 
-    ;
-
-
-
-
-
-
-    jQuery(function($) {
+    jQuery(function ($) {
         //initiate dataTables plugin
         var myTable =
             $('#dynamic-table')
-            .wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-                .DataTable( {
+            //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+                .DataTable({
                     bAutoWidth: false,
                     "aoColumns": [
-
                         { "bSortable": false }, null, null, null, null, null, null, null, null, null,
                         null, null, null, null, null, null, null, null, null ,null,
                         null, null,null, null, null, null, null, null, null, null,
@@ -2023,18 +2024,17 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     "aaSorting": [],
 
 
-
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table"	,
+                    //"sAjaxSource": "http://127.0.0.1/table"   ,
 
                     //,
                     //"sScrollY": "200px",
                     //"bPaginate": false,
 
-                   "sScrollX": "100px"
+                    //"sScrollX": "100%"
                     //"sScrollXInner": "120%",
-                    //"bScrollCollapse": true
+                    //"bScrollCollapse": true,
                     //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
                     //you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
@@ -2044,13 +2044,12 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 //                    select: {
 //                        style: 'multi'
 //                    }
-                } );
-
+                });
 
 
         $.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-        new $.fn.dataTable.Buttons( myTable, {
+        new $.fn.dataTable.Buttons(myTable, {
             buttons: [
                 {
                     "extend": "colvis",
@@ -2081,7 +2080,11 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
                     "className": "btn btn-white btn-primary btn-bold"
                 },
-
+                {
+                    "extend": "pdf",
+                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
                 {
                     "extend": "print",
                     "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
@@ -2090,9 +2093,8 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     message: 'This print was produced using the Print button for DataTables'
                 }
             ]
-        } );
-        myTable.buttons().container().appendTo( $('.tableTools-container') );
-
+        });
+        myTable.buttons().container().appendTo($('.tableTools-container'));
 
 
         //style the message box
@@ -2109,7 +2111,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
             defaultColvisAction(e, dt, button, config);
 
 
-            if($('.dt-button-collection > .dropdown-menu').length == 0) {
+            if ($('.dt-button-collection > .dropdown-menu').length == 0) {
                 $('.dt-button-collection')
                     .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
                     .find('a').attr('href', '#').wrap("<li />")
@@ -2119,174 +2121,15 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
         ////
 
-        setTimeout(function() {
-            $($('.tableTools-container')).find('a.dt-button').each(function() {
+        setTimeout(function () {
+            $($('.tableTools-container')).find('a.dt-button').each(function () {
                 var div = $(this).find(' > div').first();
-                if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+                if (div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
                 else $(this).tooltip({container: 'body', title: $(this).text()});
             });
         }, 500);
 
-
-
-        $(' #id-input-file-2').ace_file_input({
-            no_file:'No File ...',
-            btn_choose:'Choose',
-            btn_change:'Change',
-            droppable:false,
-            onchange:null,
-            thumbnail:false //| true | large
-            //whitelist:'gif|png|jpg|jpeg'
-            //blacklist:'exe|php'
-            //onchange:''
-            //
-        });
-
-
-
-
-
-
-
-
-
-        $("#bootbox-regular").on(ace.click_event, function() {
-					bootbox.prompt("What is your name?", function(result) {
-						if (result === null) {
-
-						} else {
-
-						}
-					});
-				});
-
-$('#modal-form input[type=file]').ace_file_input({
-					style:'well',
-					btn_choose:'Drop files here or click to choose',
-					btn_change:null,
-					no_icon:'ace-icon fa fa-cloud-upload',
-					droppable:true,
-					thumbnail:'large'
-				})
-
-				//chosen plugin inside a modal will have a zero width because the select element is originally hidden
-				//and its width cannot be determined.
-				//so we set the width after modal is show
-				$('#modal-form').on('shown.bs.modal', function () {
-					if(!ace.vars['touch']) {
-						$(this).find('.chosen-container').each(function(){
-							$(this).find('a:first-child').css('width' , '210px');
-							$(this).find('.chosen-drop').css('width' , '210px');
-							$(this).find('.chosen-search input').css('width' , '200px');
-						});
-					}
-				})
-				/**
-				//or you can activate the chosen plugin after modal is shown
-				//this way select element becomes visible with dimensions and chosen works as expected
-				$('#modal-form').on('shown', function () {
-					$(this).find('.modal-chosen').chosen();
-				})
-				*/
-
-$('[data-rel=tooltip]').tooltip({container:'body'});
-				$('[data-rel=popover]').popover({container:'body'});
-
-				autosize($('textarea[class*=autosize]'));
-
-				$('textarea.limited').inputlimiter({
-					remText: '%n character%s remaining...',
-					limitText: 'max allowed : %n.'
-				});
-
-
-        $.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
-
-        new $.fn.dataTable.Buttons( myTable, {
-            buttons: [
-                {
-                    "extend": "colvis",
-                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
-                    "className": "btn btn-white btn-primary btn-bold",
-                    columns: ':not(:first):not(:last)'
-                },
-                {
-                    "extend": "copy",
-                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
-                {
-                    "extend": "csv",
-                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-
-
-                },
-//                {
-//                    extend: 'excelHtml5',
-//                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
-//                   "className": "btn btn-white btn-primary btn-bold"
-//
-//                },
-                {
-                    "extend": "excel",
-                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
-
-                {
-                    "extend": "print",
-                    "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
-                    "className": "btn btn-white btn-primary btn-bold",
-                    autoPrint: false,
-                    message: 'This print was produced using the Print button for DataTables'
-                }
-            ]
-        } );
-        myTable.buttons().container().appendTo( $('.tableTools-container') );
-
-
-        $('#chk1').click(function(){
-            $("button").toggle(200, function(){
-                location.href="../admin_panel/admin_panel_woexport"
-            });
-        });
-
-        //style the message box
-        var defaultCopyAction = myTable.button(1).action();
-        myTable.button(1).action(function (e, dt, button, config) {
-            defaultCopyAction(e, dt, button, config);
-            $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
-        });
-
-
-        var defaultColvisAction = myTable.button(0).action();
-        myTable.button(0).action(function (e, dt, button, config) {
-
-            defaultColvisAction(e, dt, button, config);
-
-
-            if($('.dt-button-collection > .dropdown-menu').length == 0) {
-                $('.dt-button-collection')
-                    .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
-                    .find('a').attr('href', '#').wrap("<li />")
-            }
-            $('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
-        });
-
-        ////
-
-        setTimeout(function() {
-            $($('.tableTools-container')).find('a.dt-button').each(function() {
-                var div = $(this).find(' > div').first();
-                if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
-                else $(this).tooltip({container: 'body', title: $(this).text()});
-            });
-        }, 500);
-
-
-
-
+        
 
         myTable.on( 'select', function ( e, dt, type, index ) {
             if ( type === 'row' ) {
@@ -2299,10 +2142,6 @@ $('[data-rel=tooltip]').tooltip({container:'body'});
             }
         } );
 
-
-
-
-        /////////////////////////////////
         //table checkboxes
         $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
@@ -2335,81 +2174,28 @@ $('[data-rel=tooltip]').tooltip({container:'body'});
             e.preventDefault();
         });
 
+        //And for the first simple table, which doesn't have TableTools or dataTables
+        //select/deselect all rows according to table header checkbox
+        var active_class = 'active';
 
 
-        
-
-
-
-        /********************************/
-        //add tooltip for small view action buttons in dropdown menu
-        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-
-        //tooltip placement on right or left
-        function tooltip_placement(context, source) {
-            var $source = $(source);
-            var $parent = $source.closest('table')
-            var off1 = $parent.offset();
-            var w1 = $parent.width();
-
-            var off2 = $source.offset();
-            //var w2 = $source.width();
-
-            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-            return 'left';
-        }
-
-
-
-
-        /***************/
-        $('.show-details-btn').on('click', function(e) {
-            e.preventDefault();
-            $(this).closest('tr').next().toggleClass('open');
-            $(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
-        });
-        /***************/
-
-
-
-        $('#modal-form input[type=file]').ace_file_input({
-            style:'well',
-            btn_choose:'Drop files here or click to choose',
-            btn_change:null,
-            no_icon:'ace-icon fa fa-cloud-upload',
-            droppable:true,
-            thumbnail:'large'
-        });
-
-        //chosen plugin inside a modal will have a zero width because the select element is originally hidden
-        //and its width cannot be determined.
-        //so we set the width after modal is show
-        $('#modal-form').on('shown.bs.modal', function () {
-            if(!ace.vars['touch']) {
-                $(this).find('.chosen-container').each(function(){
-                    $(this).find('a:first-child').css('width' , '210px');
-                    $(this).find('.chosen-drop').css('width' , '210px');
-                    $(this).find('.chosen-search input').css('width' , '200px');
-                });
-            }
+ $(' #id-input-file-2').ace_file_input({
+            no_file:'No File ...',
+            btn_choose:'Choose',
+            btn_change:'Change',
+            droppable:false,
+            onchange:null,
+            thumbnail:false //| true | large
+            //whitelist:'gif|png|jpg|jpeg'
+            //blacklist:'exe|php'
+            //onchange:''
+            //
         });
 
 
 
-        /**
-         //add horizontal scrollbars to a simple table
-         $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
-         {
-           horizontal: true,
-           styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-           size: 2000,
-           mouseWheelLock: true
-         }
-         ).css('padding-top', '12px');
-         */
 
-
-    })
+    });
 </script>
 
 </body>

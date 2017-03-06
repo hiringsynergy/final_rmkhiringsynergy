@@ -846,7 +846,7 @@ function updateSlider(){
                                                               else  if (preg_match('/rmk_database/',$database)) {
                                                                 ?>
 
-                                                            <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">
+                                                            <select multiple="" name="ugbranch[]" class="chosen-select id="tag2" form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
                                                                 <option value="cse">Computer science and Engineering</option>
                                                                 <option value="eee">Electrical and Electronic Engineering</option>

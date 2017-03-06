@@ -270,6 +270,7 @@ if(isset($_GET['filter_job'])){
 
 
     //pg branch
+
     if(current($pg_branch)=="all"){
 
 
@@ -1408,7 +1409,7 @@ if(isset($_GET['filter_job'])){
                                                                 if (preg_match('/rmd_database/',$database)) {
                                                               ?>
 
-                                                               <select multiple="" name="nobranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                               <select multiple="" name="nobranch[]" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
 
 
                                                                     <option value="0">No PG Branches Available</option>
