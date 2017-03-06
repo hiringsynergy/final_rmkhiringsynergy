@@ -186,7 +186,7 @@ if(isset($_POST['send_mail']) && isset($_SESSION['user_role'])=='admin'  ){
     //get value from form
     include "../connect.php";
     $roll= $_POST['checkbox'];
-
+    print_r($roll);
 
     // $get_year= $_POST['get_year'];
     // $get_cgpa= $_POST['get_cgpa'];
@@ -636,163 +636,54 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
 
-                        <?php
+
+             <?php
 
 
-                        include "../connect.php";
-                        $query_table = "SELECT * FROM table_map";
-                        $result_table = mysqli_query($connect, $query_table);
-
-                        $no_notification=0;
-                        while ($row = mysqli_fetch_assoc($result_table)) {
-                            $tname = $row['table_name'];
-                            $query_year = "SELECT * from $tname WHERE NOT  st_changephone='' OR NOT st_changemail=''";
-                            $result_year = mysqli_query($connect, $query_year);
-
-                            $no_notification  = $no_notification + mysqli_num_rows($result_year);
+                        
+                         
+                                include "../connect.php";
+                                //for getting change requests from change table
+                                    $query_change = "SELECT * from st_change";
+                                    $result_change = mysqli_query($connect, $query_change);
+                                    $finfo = $result_change->fetch_fields();
+                                        $count=0;
+                                     while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                        }
+                                foreach ($finfo as $val) {
+
+
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                            $count++;
+                                        }
+                                    }
+                                }
 
 
 
                         ?>
-
-
-
-
-
-
-
-
-
-
-
                         <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-                        <span class="badge badge-important"><?php echo $no_notification ?></span>
+                        <span class="badge badge-important"><?php echo $count ?></span>
                     </a>
 
-                                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                                        <li class="dropdown-header">
-                                            <i class="ace-icon fa fa-exclamation-triangle"></i>
-                                            <?php echo $no_notification ?> Notifications
-                                        </li>
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            <?php echo $count ?> Notifications
+                        </li>
 
 
-                                        <li class="dropdown-content">
+                        <li class="dropdown-content">
 
 
-                                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
 
-                                                <?php
+                            </ul>
+                        </li>
 
-
-
-                                                include "../connect.php";
-                                                $query_table = "SELECT * FROM table_map";
-                                                $result_table = mysqli_query($connect, $query_table);
-
-                                                while ($row = mysqli_fetch_assoc($result_table)) {
-                                                    $tname = $row['table_name'];
-                                                    $query_year = "SELECT * from $tname";
-                                                    $result_year = mysqli_query($connect, $query_year);
-
-                                                    $no_notification=mysqli_num_rows($result_year);
-
-
-                                                    while ($row1 = mysqli_fetch_assoc($result_year)) {
-
-
-                                                        if ($row1['st_changemail'] != NULL || $row1['st_changephone']!= NULL) {
-
-
-                                                            ?>
-
-                                                            <li>
-                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
-                                                                    <div class="clearfix">
-
-		             <span class="pull-left">
-			               <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-                         <?php  $content= $row1['st_roll'] ;
-                         $content.= "," ;
-                         $content.= $row1['st_name'];
-
-                         $content.= " has  requested for the change of";
-
-                         if ($row1['st_changemail'] != NULL) {
-                             $content.= " Email id : ";
-                             $content.=$row1['st_email'];
-
-                             $content.="to : ";
-                             $content.=$row1['st_changemail'];
-
-
-
-                         }
-
-                         if($row1['st_changephone'] != NULL && $row1['st_changemail'] != NULL ){
-
-
-                             $content.= " and  ";
-
-                         }
-
-
-
-
-
-
-                         if($row1['st_changephone'] != NULL) {
-
-
-
-                             $content.= " Phone No : ";
-                             $content.= $row1['st_phone'];
-
-                             $content.= "to : ";
-                             $content.= $row1['st_changephone'] ;
-                         }
-
-
-
-
-                         echo substr($content, 0,25)."......";
-
-
-                         ?>
-
-
-                         </p>
-				</span>
-
-
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-
-
-
-
-                                                            <?php
-                                                        }
-
-
-                                                    }
-
-
-                                                }
-
-
-                                                ?>
-
-
-
-
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-footer">
-                                            <a href="../approve">
+                        <li class="dropdown-footer">
+                            <a href="../approve">
                                 See all notifications
                                 <i class="ace-icon fa fa-arrow-right"></i>
                             </a>
@@ -1896,7 +1787,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 													<i class="ace-icon fa fa-times"></i>
 													Cancel
 												</button>
-                                               <input type="hidden" value="<?php print_r($roll) ?>" name="checkbox">
+                                               <input type="hidden" value="<?php echo $roll ?>" name="checkbox[]">
 												<button name="send_mail" type="submit" class="btn btn-sm btn-primary">
 													<i class="ace-icon fa fa-send"></i>
 													SEND

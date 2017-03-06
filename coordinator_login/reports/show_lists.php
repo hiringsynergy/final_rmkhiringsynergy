@@ -189,6 +189,64 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
         <div class="navbar-buttons navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
+            <li class="purple dropdown-modal">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+
+
+             <?php
+
+
+                        
+                         
+                                include "../connect.php";
+                                //for getting change requests from change table
+                                    $query_change = "SELECT * from st_change";
+                                    $result_change = mysqli_query($connect, $query_change);
+                                    $finfo = $result_change->fetch_fields();
+                                        $count=0;
+                                     while($rowr = mysqli_fetch_assoc($result_change)){
+
+
+                                foreach ($finfo as $val) {
+
+
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                            $count++;
+                                        }
+                                    }
+                                }
+
+
+
+                        ?>
+                        <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                        <span class="badge badge-important"><?php echo $count ?></span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            <?php echo $count ?> Notifications
+                        </li>
+
+
+                        <li class="dropdown-content">
+
+
+                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="../approve">
+                                See all notifications
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
 
 

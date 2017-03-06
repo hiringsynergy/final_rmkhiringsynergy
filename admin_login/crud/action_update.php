@@ -155,11 +155,38 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="../index" class="navbar-brand">
+            <a href="reports" class="navbar-brand">
                 <small>
                     <i class=""></i>
-                    <img src="../../logos/rmklogo.JPG" style="height: 25px;">
-                    RMK Group of Institutions
+                    <?php
+
+                    $database=$_SESSION['database_name'];
+                    if(preg_match('/rmd_database/', $database)){
+                        ?>
+                        <img src="../images/rmd.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMD Engineering College  </label>
+
+                        <?php
+                    }
+
+                    if(preg_match('/rmk_database/', $database)){
+                        ?>
+                        <img src="../images/rmk.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMK Engineering College </label>
+
+                        <?php
+                    }
+
+                    if(preg_match('/rmkcet_database/', $database)){
+                        ?>
+                        <img src="../images/rmkcet.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMK College of Engineering and Technology </label>
+
+                        <?php
+                    }
+
+
+                    ?>
                 </small>
             </a>
         </div>
@@ -171,161 +198,51 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
 
-                        <?php
+             <?php
 
 
-                        include "../connect.php";
-                        $query_table = "SELECT * FROM table_map";
-                        $result_table = mysqli_query($connect, $query_table);
-
-                        $no_notification=0;
-                        while ($row = mysqli_fetch_assoc($result_table)) {
-                            $tname = $row['table_name'];
-                            $query_year = "SELECT * from $tname WHERE NOT  st_changephone='' OR NOT st_changemail=''";
-                            $result_year = mysqli_query($connect, $query_year);
-
-                            $no_notification  = $no_notification + mysqli_num_rows($result_year);
+                        
+                         
+                                include "../connect.php";
+                                //for getting change requests from change table
+                                    $query_change = "SELECT * from st_change";
+                                    $result_change = mysqli_query($connect, $query_change);
+                                    $finfo = $result_change->fetch_fields();
+                                        $count=0;
+                                     while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                        }
+                                foreach ($finfo as $val) {
+
+
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                            $count++;
+                                        }
+                                    }
+                                }
 
 
 
                         ?>
-
-
-
-
-
-
-
-
-
-
-
                         <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-                        <span class="badge badge-important"><?php echo $no_notification ?></span>
+                        <span class="badge badge-important"><?php echo $count ?></span>
                     </a>
 
-                                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                                        <li class="dropdown-header">
-                                            <i class="ace-icon fa fa-exclamation-triangle"></i>
-                                            <?php echo $no_notification ?> Notifications
-                                        </li>
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            <?php echo $count ?> Notifications
+                        </li>
 
 
-                                        <li class="dropdown-content">
+                        <li class="dropdown-content">
 
 
-                                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
 
-                                                <?php
+                            </ul>
+                        </li>
 
-
-
-                                                include "../connect.php";
-                                                $query_table = "SELECT * FROM table_map";
-                                                $result_table = mysqli_query($connect, $query_table);
-
-                                                while ($row = mysqli_fetch_assoc($result_table)) {
-                                                    $tname = $row['table_name'];
-                                                    $query_year = "SELECT * from $tname";
-                                                    $result_year = mysqli_query($connect, $query_year);
-
-                                                    $no_notification=mysqli_num_rows($result_year);
-
-
-                                                    while ($row1 = mysqli_fetch_assoc($result_year)) {
-
-
-                                                        if ($row1['st_changemail'] != NULL || $row1['st_changephone']!= NULL) {
-
-
-                                                            ?>
-
-                                                            <li>
-                                                                <a href="../approve?roll=<?php  echo $row1['st_roll']; ?>">
-                                                                    <div class="clearfix">
-
-		             <span class="pull-left">
-			               <i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
-                         <?php  $content= $row1['st_roll'] ;
-                         $content.= "," ;
-                         $content.= $row1['st_name'];
-
-                         $content.= " has  requested for the change of";
-
-                         if ($row1['st_changemail'] != NULL) {
-                             $content.= " Email id : ";
-                             $content.=$row1['st_email'];
-
-                             $content.="to : ";
-                             $content.=$row1['st_changemail'];
-
-
-
-                         }
-
-                         if($row1['st_changephone'] != NULL && $row1['st_changemail'] != NULL ){
-
-
-                             $content.= " and  ";
-
-                         }
-
-
-
-
-
-
-                         if($row1['st_changephone'] != NULL) {
-
-
-
-                             $content.= " Phone No : ";
-                             $content.= $row1['st_phone'];
-
-                             $content.= "to : ";
-                             $content.= $row1['st_changephone'] ;
-                         }
-
-
-
-
-                         echo substr($content, 0,25)."......";
-
-
-                         ?>
-
-
-                         </p>
-				</span>
-
-
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-
-
-
-
-                                                            <?php
-                                                        }
-
-
-                                                    }
-
-
-                                                }
-
-
-                                                ?>
-
-
-
-
-                                            </ul>
-                                        </li>
                         <li class="dropdown-footer">
                             <a href="../approve">
                                 See all notifications
@@ -679,14 +596,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     <li class="active">Dashboard</li>
                 </ul><!-- /.breadcrumb -->
 
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-                    </form>
-                </div><!-- /.nav-search -->
+                <!-- /.nav-search -->
             </div>
 
             <div class="page-content">
