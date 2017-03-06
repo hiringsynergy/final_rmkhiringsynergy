@@ -1289,6 +1289,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                             <th>Candidate ID</th>
                                             <th>Signature</th>
                                             <th>Placement Status</th>
+                                            <th>Aadhar Card No.</th>
+                                            <th>Passport No.
+                                            </th>
+                                            <th>PAN Card No.</th>
 
 
 
@@ -1411,6 +1415,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $candidate=$row['st_candidateid'];
                                                 $signature=$row['st_signature'];
                                                 $placement_status=$row['st_placementstatus'];
+                                            $aadhar=$row['st_aadharno'];
+                                            $passport=$row['st_passportno'];
+                                            $pan=$row['st_panno'];
+
 
 
 
@@ -1529,6 +1537,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $candidate ?></td>
                                                     <td><?php echo $signature ?></td>
                                                     <td><?php echo $placement_status ?></td>
+                                                <td><?php echo $aadhar ?></td>
+                                                <td><?php echo $passport ?></td>
+                                                <td><?php echo $pan ?></td>
+
 
 
 
@@ -1648,6 +1660,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                 $candidate = $row['st_candidateid'];
                                                 $signature = $row['st_signature'];
                                                 $placement_status = $row['st_placementstatus'];
+                                            $aadhar=$row['st_aadharno'];
+                                            $passport=$row['st_passportno'];
+                                            $pan=$row['st_panno'];
+
 
 
                                                 ?>
@@ -1763,6 +1779,10 @@ header("Location: export_action?roll=$check&year=$get_year");
                                                     <td><?php echo $candidate ?></td>
                                                     <td><?php echo $signature ?></td>
                                                     <td><?php echo $placement_status ?></td>
+                                                <td><?php echo $aadhar ?></td>
+                                                <td><?php echo $passport ?></td>
+                                                <td><?php echo $pan ?></td>
+
 
 
                                                 </tr>
@@ -1781,7 +1801,6 @@ header("Location: export_action?roll=$check&year=$get_year");
 
 
 
-
                                         ?>
 
                                         </tbody>
@@ -1793,6 +1812,8 @@ header("Location: export_action?roll=$check&year=$get_year");
 
 
                                 </div>
+                                <?php 
+                                        echo "below table";?>
                                 </form>
                             </div>
                         </div>
@@ -2008,14 +2029,15 @@ header("Location: export_action?roll=$check&year=$get_year");
                 .DataTable({
                     bAutoWidth: false,
                     "aoColumns": [
-                        { "bSortable": false }, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null ,null,
-                        null, null,null, null, null, null, null, null, null, null,
-                        null, null,null, null, null, null, null, null, null, null,
-                        null, null,null, null, null, null, null, null, null, null,
-                        null, null,null, null, null, null, null, null, null, null,
-                        null, null,null, null, null, null, null, null, null, null,
-                        null,null,null,null
+                        { "bSortable": false }, 
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null, null,
+                        null, null, null, null, null, null
 
 
 

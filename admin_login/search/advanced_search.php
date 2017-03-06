@@ -619,7 +619,7 @@ function updateSlider(){
                     </li>
 
                     <li class="">
-                        <a href="../company/companies">
+                        <a href="../company/view_companies">
                             <i class="menu-icon fa fa-caret-right"></i>
                             View Companies
                         </a>

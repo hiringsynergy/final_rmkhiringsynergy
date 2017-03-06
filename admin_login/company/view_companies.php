@@ -634,6 +634,14 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <b class="arrow"></b>
                     </li>
+                    <li class="">
+                        <a href="../email/email">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Email
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
 
                     <li class="">
                         <a href="../Status">
