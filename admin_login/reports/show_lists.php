@@ -36,6 +36,8 @@ foreach($checkbox as $list){
     $result_job_type=mysqli_query($connect,$query_job_type);
     $row_job_type=mysqli_fetch_assoc($result_job_type);
     $job_type=$row_job_type['job_type'];
+    $company=$row_job_type['company'];
+    echo $company;
 
     // echo "job_type: ".$job_type;
 
@@ -44,6 +46,7 @@ foreach($checkbox as $list){
     $new_jobtype=mysqli_query($connect,$ne_jobtype);
      $row=mysqli_fetch_assoc($new_jobtype);
      $row_old=$row['st_jobtype'];
+     $company_old=$row['st_placementstatus'];
 
 
 
@@ -54,13 +57,14 @@ foreach($checkbox as $list){
 
     $row_old=$row_old.',';
     $row_new=$row_old.$job_type;
-
+    $company_old=$company_old.',';
+    $company_new=$company_old.$company;
 
     
-    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' WHERE st_roll='$list' ";
+    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
     $result_placed=mysqli_query($connect, $query_placed);
     
-
+echo "end";
 
 
 

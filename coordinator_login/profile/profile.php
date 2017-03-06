@@ -1937,7 +1937,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Placed in companies</b></div>
 
                                                             <div class="profile-info-value testred">
-                                                                <span class="editable" id="ur"><?php  echo $row['st_placementstatus']  ?></span>
+                                                                <span class="editable" id="ur"><?php  echo substr($row['st_placementstatus'],1);  ?></span>
                                                             </div>
                                                         </div>
 
