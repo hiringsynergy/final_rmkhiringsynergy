@@ -21,7 +21,7 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
     $rollno = $_GET['rollno'];
     $oldcolname = $_GET['oldcolname'];
     $colname = $_GET['colname'];
-    $col_name_map = $_GET['colnamemap'];
+    echo $col_name_map = $_GET['colnamemap'];
     $year = $_GET['year'];
     $tname='students_'.$year;
 
@@ -119,14 +119,13 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
 
   include "connect.php";
     $id=time();
-echo "asffasf";
- echo   $rollno = $_GET['rollno'];
-   echo $oldcolname = $_GET['oldcolname'];
- echo   $colname = $_GET['colname'];
-  echo  $year = $_GET['year'];
+    $rollno = $_GET['rollno'];
+    $oldcolname = $_GET['oldcolname'];
+    $colname = $_GET['colname'];
+    echo $year = $_GET['year'];
    echo $col_name_map = $_GET['colnamemap'];
-  echo  $message = $_GET['message'];
-   echo $tname='students_'.$year;
+    $message = $_GET['message'];
+    $tname='students_'.$year;
 
 
     $select = "SELECT * from students_".$year." where st_roll='{$rollno}'";
@@ -985,23 +984,23 @@ echo "asffasf";
 
                                                                             <?php if ($rowr[$val->name] != NULL) {
                                                                             
-                                                                                echo $changemapname."  ";
+                                                                                echo $changemapname
                                                                             ?>
                                                                                 
-                                                                            </label><label style="font-size: large">
-                                                                            <?php
-                                                                                echo " from ";
+                                                                            </label><label style="font-size: large ; padding-left: 3px;"> from
+                                                                            <!-- <?php
+                                                                               // echo " from ";
 
-                                                                            ?>
+                                                                            ?> -->
                                                                                 </label>
                                                                             <label style="font-size: large" class="orange">
                                                                             
                                                                             <?php echo $oldcolumnvalue; ?>
                                                                                 
-                                                                            </label><label style="font-size: large">
-                                                                            <?php
-                                                                                echo " to ";
-                                                                            ?> </label>
+                                                                            </label><label style="font-size: large; padding-left: 3px;"> to
+                                                                            <!-- <?php
+                                                                               // echo " to ";
+                                                                            ?> --> </label>
                                                                             <label style="font-size: large" class="orange">
                                                                             
                                                                             <?php echo "  ".$rowr[$val->name]; 
@@ -1032,14 +1031,72 @@ echo "asffasf";
                                                                         Approve
                                                                     </button>
 
-<a href="#modal-form" role="button" data-toggle="modal">
-                                                                    <button class=" btn btn-danger col-xs-push-9"
-                                                                            type="submit" >
-                                                                        Decline
-                                                                    </button></a>
+                                                        <a href="#modal-form" class=" btn btn-danger col-xs-push-9" role="button" data-toggle="modal">Decline
+                                                        </a>
 
 
                                                                 </div>
+
+
+
+            
+
+<div id="modal-form" class="modal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                        <div class="modal-body">
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12">
+
+                                                        <div class="space-4"></div>
+
+
+                                                        
+
+
+                                                        <div class="form-group">
+                                                            <label for="form-field-first">Message</label>
+
+                                                            <div>
+                                                    <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                </div>
+
+                                                <div class="space-16"></div>
+                                                </div>
+                                            </div>
+
+                                                <div class="space-16"></div>
+                                            <div class="modal-footer center">
+                                                <button class="btn btn-sm" data-dismiss="modal">
+                                                    <i class="ace-icon fa fa-times"></i>
+                                                    Cancel
+                                                </button>
+
+                                                                    <input type="hidden" name="rollno"
+                                                                           value="<?php echo $roll ?>"/>
+                                                                    <input type="hidden" name="oldcolname"
+                                                                           value="<?php echo $oldcolumnname ?>"/>
+                                                                    <input type="hidden" name="colname"
+                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
+                                                                    <input type="hidden" name="year"
+                                                                           value="<?php echo $year ?>"/>
+                                                                            <input type="hidden" name="colnamemap"
+                                                                           value="<?php echo $changemapname ?>"/>
+                                                <button name="decline1" type="submit" class="btn btn-sm btn-primary">
+                                                    <i class="ace-icon fa fa-send"></i>
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
+
                                                             </form>
                                                         </div>
                                                     </div>
@@ -1084,75 +1141,7 @@ echo "asffasf";
 
 
                                 <!--Modal form-->
-                                <div class="row">
-                    <div class="col-xs-12 ">
-                        <div class="form-actions center">
-
-
-<!-- <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">Decline<i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a> -->
-
-
-                                                 </div>
-                                   </div>
-
-<div id="modal-form" class="modal" tabindex="-1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <form action="approve" method="get">
-
-                                        <div class="modal-body">
-
-                                            <div class="row">
-                                                <div class="col-xs-12 col-sm-12">
-
-                                                        <div class="space-4"></div>
-
-
-                                                        
-
-
-                                                        <div class="form-group">
-                                                            <label for="form-field-first">Message</label>
-
-                                                            <div>
-                                                    <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
-                                                            </div>
-                                                        </div>
-
-                                                </div>
-
-                                                <div class="space-16"></div>
-                                                </div>
-                                            </div>
-
-                                                <div class="space-16"></div>
-                                            <div class="modal-footer center">
-                                                <button class="btn btn-sm" data-dismiss="modal">
-                                                    <i class="ace-icon fa fa-times"></i>
-                                                    Cancel
-                                                </button>
-
-                                                                    <input type="hidden" name="rollno"
-                                                                           value="<?php echo $roll ?>"/>
-                                                                    <input type="hidden" name="oldcolname"
-                                                                           value="<?php echo $oldcolumnname ?>"/>
-                                                                    <input type="hidden" name="colname"
-                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
-                                                                    <input type="hidden" name="year"
-                                                                           value="<?php echo $year ?>"/>
-                                                                            <input type="hidden" name="colnamemap"
-                                                                           value="<?php echo $changemapname ?>"/>
-                                                                           <input type="hidden" name="colnamemap"
-                                                                           value=""/>
-                                                <button name="decline1" type="submit" class="btn btn-sm btn-primary">
-                                                    <i class="ace-icon fa fa-send"></i>
-                                                    Submit
-                                                </button>
-                                            </div>
-                                            </form>
-                                        </div>
-                                    </div>
-
+                                
 
 
 

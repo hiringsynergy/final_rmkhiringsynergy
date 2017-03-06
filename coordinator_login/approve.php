@@ -141,7 +141,7 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
-  //  header("Location: approve");
+    // header("Location: approve");
 
 }
 if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
@@ -245,7 +245,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
 
 
 
-    // header("Location: approve");
+     //header("Location: approve");
 
 }
 
@@ -291,6 +291,18 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
         }
         function myfuncsettings() {
             location.href = "settings";
+
+
+        }
+        function modal(str){
+
+
+             alert(str);
+            var text=document.getElementByID("justtest");
+            text.value="str";
+
+
+
 
 
         }
@@ -757,73 +769,47 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                                                            $year= $rowr['st_year'];
 
                                                                            ?> </p>
-                                                                    <input type="hidden" name="rollno"
+                                                                    <input type="text" name="rollno"
                                                                            value="<?php echo $rowr['st_regno'] ?>"/>
-                                                                    <input type="hidden" name="oldcolname"
+                                                                    <input type="text" name="oldcolname"
                                                                            value="<?php echo $oldcolumnname ?>"/>
-                                                                    <input type="hidden" name="colname"
+                                                                    <input type="text" name="colname"
                                                                            value="<?php echo $rowchangemap['st_columnname'] ?>"/>
-                                                                    <input type="hidden" name="year"
+                                                                    <input type="text" name="year"
                                                                            value="<?php echo $rowr['st_year'] ?>"/>
-                                                                            <input type="hidden" name="colnamemap"
+                                                                            <input type="text" name="colnamemap"
                                                                            value="<?php echo $changemapname ?>"/>
-                                                                    <button class=" btn btn-success col-xs-push-9"
+                                                                    <button class=" btn btn-success "
                                                                             type="submit" name="approve1">
                                                                         Approve
                                                                     </button>
 
-<a href="#modal-form" role="button" data-toggle="modal">
-
-
-                                                                    <button class=" btn btn-danger col-xs-push-9"
-                                                                            type="submit" >
-                                                                        Decline
-                                                                    </button></a>
+<a href="#modal-form" class=" btn btn-danger" role="button" onclick="modal('<?php echo $oldcolumnname ?>')" data-toggle="modal">Decline
+                                                        </a>
 
                                                                 </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-
-                                            </div>
-                                            </div>
-
-                                            <?php
-                                        
-
- } } }
-                                    
 
 
-
-?>
-
-
-
-
-
-
-
-                                <div class="row">
-                    <div class="col-xs-12 ">
-                        <div class="form-actions center">
-
-
-<!-- <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">Decline<i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a> -->
-
-
-                                                 </div>
-                                   </div>
-
-<div id="modal-form" class="modal" tabindex="-1">
+                                                                <div id="modal-form" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
-                                            <form action="approve" method="get">
 
                                         <div class="modal-body">
 
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-12">
+
+                                                     <input type="text" name="rollno"
+                                                                           value="<?php echo $rowr['st_regno'] ?>"/>
+                                                                    <input type="text" name="oldcolname"
+                                                                           value="<?php echo $oldcolumnname ?>"/>
+                                                                    <input type="text" name="colname"
+                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
+                                                                    <input type="text" name="year"
+                                                                           value="<?php echo $rowr['st_year'] ?>"/>
+                                                                            <input type="text" name="colnamemap"
+                                                                           value="<?php echo $changemapname ?>"/>
+
 
                                                         <div class="space-4"></div>
 
@@ -851,8 +837,8 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                                     <i class="ace-icon fa fa-times"></i>
                                                     Cancel
                                                 </button>
-
-                                                                    <input type="hidden" name="rollno"
+                                           
+                                                                   <!--  <input type="hidden" name="rollno"
                                                                            value="<?php echo $roll ?>"/>
                                                                     <input type="hidden" name="oldcolname"
                                                                            value="<?php echo $oldcolumnname ?>"/>
@@ -861,17 +847,39 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                                                     <input type="hidden" name="year"
                                                                            value="<?php echo $year ?>"/>
                                                                             <input type="hidden" name="colnamemap"
-                                                                           value="<?php echo $changemapname ?>"/>
-                                                                           <input type="hidden" name="colnamemap"
-                                                                           value=""/>
+                                                                           value="<?php echo $changemapname ?>"/> -->
                                                 <button name="decline1" type="submit" class="btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-send"></i>
                                                     Submit
                                                 </button>
                                             </div>
-                                            </form>
                                         </div>
                                     </div>
+                                    </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                            </div>
+
+                                            <?php
+                                        
+
+ } } }
+                                    
+
+
+
+?>
+
+
+
+
+
+
+
+ 
 
 
 

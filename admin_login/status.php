@@ -928,7 +928,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
                                                             </a>
-                                                            <span class="grey">Posted a New Job</span>
+                                                            <span class="grey">Status Update</span>
                                                         </h5>
                                                         <span class="widget-toolbar no-border">
                                                                             <i class="ace-icon fa fa-clock-o bigger-110"></i>
@@ -943,15 +943,20 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                     </div>
                                                     <div class="widget-main">
                                                     The request given by <?php echo $reg_no; ?>,
-                                                    was <?php if (substr($rowr[$val->name], 2, 3) == 'acc') echo "approved by ";
-                                                    else if (substr($rowr[$val->name], 2, 3) == 'dec') {
-                                                        echo "declined by ";
+                                                    was <?php if (substr($rowr[$val->name], 2, 3) == 'acc'){ echo "approved by ";
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin.";
+                                                        else if (substr($rowr[$val->name], 0, 1) == 'c')
+                                                            echo "coordinator";
                                                     }
+                                                        else if (substr($rowr[$val->name], 2, 3) == 'dec') {
+                                                            echo "declined by ";
 
-                                                    if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin";
-                                                    else if (substr($rowr[$val->name], 0, 1) == 'c')
-                                                        echo "coordinator. Reason :".substr($rowr[$val->name], 18);
-                                                        ?>
+
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        else if (substr($rowr[$val->name], 0, 1) == 'c')
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                        }
+                                                            ?>
                                                         <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
                                                                       <span class="green" style="font-size: 17px;"><?php echo $row['company'] ?> </span>
                                                                       has been posted, Hurry up to checkout the status &hellip; -->
@@ -1076,7 +1081,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
                                                             </a>
-                                                            <span class="grey">Posted a Job</span>
+                                                            <span class="grey">Status Update</span>
                                                         </h5>
                                                         <span class="widget-toolbar no-border">
                                                                             <i class="ace-icon fa fa-clock-o bigger-110"></i>
@@ -1091,15 +1096,20 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                     </div>
                                                     <div class="widget-main">
                                                     The request given by <?php echo $reg_no; ?>,
-                                                    was <?php if (substr($rowr[$val->name], 2, 3) == 'acc') echo "approved by ";
-                                                    else if (substr($rowr[$val->name], 2, 3) == 'dec') {
-                                                        echo "declined by ";
+                                                    was <?php if (substr($rowr[$val->name], 2, 3) == 'acc'){ echo "approved by ";
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin.";
+                                                        else if (substr($rowr[$val->name], 0, 1) == 'c')
+                                                            echo "coordinator";
                                                     }
+                                                        else if (substr($rowr[$val->name], 2, 3) == 'dec') {
+                                                            echo "declined by ";
 
-                                                    if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin";
-                                                    else if (substr($rowr[$val->name], 0, 1) == 'c')
-                                                        echo "coordinator. Reason :".substr($rowr[$val->name] , 18);
-                                                        ?>
+
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        else if (substr($rowr[$val->name], 0, 1) == 'c')
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                        }
+                                                            ?>
                                                         <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
                                                                       <span class="green" style="font-size: 17px;"><?php echo $row['company'] ?> </span>
                                                                       has been posted, Hurry up to checkout the status &hellip; -->
@@ -1221,7 +1231,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
                                                                 </a>
-                                                                <span class="grey">Posted a Job</span>
+                                                                <span class="grey">Status Update</span>
                                                             </h5>
                                                             <span class="widget-toolbar no-border">
                                                                             <i class="ace-icon fa fa-clock-o bigger-110"></i>
@@ -1237,14 +1247,19 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                         <div class="widget-body">
                                                         <div class="widget-main">
                                                         The request given by <?php echo $reg_no; ?>,
-                                                        was <?php if (substr($rowr[$val->name], 2, 3) == 'acc') echo "approved by ";
-                                                        else if (substr($rowr[$val->name], 2, 3) == 'dec') {
-                                                            echo "declined by ";
-                                                        }
-
-                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin";
+                                                        was <?php if (substr($rowr[$val->name], 2, 3) == 'acc'){ echo "approved by ";
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin.";
                                                         else if (substr($rowr[$val->name], 0, 1) == 'c')
                                                             echo "coordinator";
+                                                    }
+                                                        else if (substr($rowr[$val->name], 2, 3) == 'dec') {
+                                                            echo "declined by ";
+
+
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        else if (substr($rowr[$val->name], 0, 1) == 'c')
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                        }
                                                             ?>
                                                             <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
                                                                       <span class="green" style="font-size: 17px;"><?php echo $row['company'] ?> </span>
