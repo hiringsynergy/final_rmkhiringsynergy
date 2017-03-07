@@ -149,11 +149,11 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
   include "connect.php";
     $id=time();
 
- echo   $rollno = $_GET['rollno'];
- echo   $oldcolname = $_GET['oldcolname'];
- echo   $colname = $_GET['colname'];
- echo   $year = $_GET['year'];
- echo   $col_name_map = $_GET['colnamemap'];
+ echo   $rollno = $_GET['rollno1'];
+ echo   $oldcolname = $_GET['oldcolname1'];
+ echo   $colname = $_GET['colname1'];
+ echo   $year = $_GET['year1'];
+ echo   $col_name_map = $_GET['colnamemap1'];
  echo   $tname='students_'.$year;
  echo   $message = $_GET['message'];
 
@@ -438,13 +438,14 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                     $result_change = mysqli_query($connect, $query_change);
                                     $finfo = $result_change->fetch_fields();
                                         $count=0;
+                                        $branch=$_SESSION['cood_branch'];
                                      while($rowr = mysqli_fetch_assoc($result_change)){
 
 
                                 foreach ($finfo as $val) {
 
 
-                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr[$val->name], $branch)==0) {
                                             $count++;
                                         }
                                     }
@@ -684,7 +685,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                         <i class="ace-icon fa fa-home home-icon"></i>
                         <a href="../index.html">Home</a>
                     </li>
-                    <li class="active">Settings</li>
+                    <li class="active">Approve</li>
                 </ul><!-- /.breadcrumb -->
                 <!-- /.nav-search -->
             </div>
@@ -694,7 +695,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
 
                 <div class="page-header">
                     <h1>
-                       Settings
+                       Approve
 
                     </h1>
                 </div><!-- /.page-header -->
@@ -724,6 +725,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                     $query_change = "SELECT * from st_change";
                                     $result_change = mysqli_query($connect, $query_change);
                                     $finfo = $result_change->fetch_fields();
+                                    $branch = $_SESSION['cood_branch'];
 
                                      while($rowr = mysqli_fetch_assoc($result_change)){
 
@@ -731,7 +733,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                 foreach ($finfo as $val) {
 
 
-                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept") {
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr[$val->name], $branch)==0) {
                                             $colname=$val->name;
 
 
@@ -743,7 +745,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                     $changemapname=$rowchangemap['st_columnnamemap'];
 
                                     $oldcolumnname=$rowchangemap['st_oldname'];
-                                    $dept=$rowr['st_dept'];
+                                     $dept=$rowr['st_dept'];
 
 
                                     //for getting old values from student table
@@ -869,17 +871,17 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                                                         <div class="row">
                                                                             <div class="col-xs-12 col-sm-12">
 
-                                                                                <input type="hidden" name="rollno" id="rollno"
+                                                                                <input type="hidden" name="rollno1" id="rollno"
                                                                                        />
-                                                                                <input type="hidden" name="oldcolname" id="oldcolname"
+                                                                                <input type="hidden" name="oldcolname1" id="oldcolname"
                                                                                        />
-                                                                                <input type="hidden" name="colname" id="colname"
+                                                                                <input type="hidden" name="colname1" id="colname"
                                                                                        />
-                                                                                <input type="hidden" name="year" id="year"
+                                                                                <input type="hidden" name="year1" id="year"
                                                                                        />
-                                                                                <input type="hidden" name="colnamemap" id="colnamemap"
+                                                                                <input type="hidden" name="colnamemap1" id="colnamemap"
                                                                                       />
-                                                                                <input type="hidden" name="dept" id="dept"
+                                                                                <input type="hidden" name="dept1" id="dept"
                                                                                       />
 
                                                                                 <div class="space-4"></div>
