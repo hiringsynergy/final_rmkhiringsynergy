@@ -9,17 +9,17 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 }
 
-if (isset($_GET['approve1']) && isset($_SESSION['user_role']) == 'admin') {
+if (isset($_POST['approve1']) && isset($_SESSION['user_role']) == 'admin') {
 
     include "connect.php";
     $id = time();
 
-    $rollno = $_GET['rollno'];
-    $oldcolname = $_GET['oldcolname'];
-    $colname = $_GET['colname'];
-    echo $col_name_map = $_GET['colnamemap'];
-    $year = $_GET['year'];
-    $tname = 'students_' . $year;
+  echo  $rollno = $_POST['rollno'];
+   echo $oldcolname = $_POST['oldcolname'];
+  echo  $colname = $_POST['colname'];
+    echo $col_name_map = $_POST['colnamemap'];
+ echo   $year = $_POST['year'];
+ echo   $tname = 'students_' . $year;
 
     $select = "SELECT * from students_" . $year . " where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
@@ -102,16 +102,16 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role']) == 'admin') {
     header("Location: approve");
 
 }
-if (isset($_GET['decline1']) && isset($_SESSION['user_role']) == 'admin') {
+if (isset($_POST['decline1']) && isset($_SESSION['user_role']) == 'admin') {
 
     include "connect.php";
     $id = time();
-    $rollno = $_GET['rollno'];
-    $oldcolname = $_GET['oldcolname'];
-    $colname = $_GET['colname'];
-    echo $year = $_GET['year'];
-    echo $col_name_map = $_GET['colnamemap'];
-    $message = $_GET['message'];
+    $rollno = $_POST['rollno1'];
+    $oldcolname = $_POST['oldcolname1'];
+    $colname = $_POST['colname1'];
+    echo $year = $_POST['year1'];
+    echo $col_name_map = $_POST['colnamemap1'];
+    $message = $_POST['message'];
     $tname = 'students_' . $year;
 
 
@@ -829,7 +829,7 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role']) == 'admin') {
                                                 </div>
 
                                                 <div class="widget-body">
-                                                    <form class="modal-content" action="approve" method="get"
+                                                    <form class="modal-content" action="approve" method="post"
                                                           enctype="multipart/form-data">
                                                         <div class="widget-main">
                                                             <p>
@@ -913,15 +913,15 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role']) == 'admin') {
                                                                         <div class="row">
                                                                             <div class="col-xs-12 col-sm-12">
 
-                                                                                <input type="hidden" name="rollno" id="rollno"
+                                                                                <input type="hidden" name="rollno1" id="rollno"
                                                                                        />
-                                                                                <input type="hidden" name="oldcolname" id="oldcolname"
+                                                                                <input type="hidden" name="oldcolname1" id="oldcolname"
                                                                                        />
-                                                                                <input type="hidden" name="colname" id="colname"
+                                                                                <input type="hidden" name="colname1" id="colname"
                                                                                        />
-                                                                                <input type="hidden" name="year" id="year"
+                                                                                <input type="hidden" name="year1" id="year"
                                                                                        />
-                                                                                <input type="hidden" name="colnamemap" id="colnamemap"
+                                                                                <input type="hidden" name="colnamemap1" id="colnamemap"
                                                                                       />
 
                                                                                 <div class="space-4"></div>
@@ -950,17 +950,6 @@ if (isset($_GET['decline1']) && isset($_SESSION['user_role']) == 'admin') {
                                                                             <i class="ace-icon fa fa-times"></i>
                                                                             Cancel
                                                                         </button>
-
-<!--                                                                        <input type="hidden" name="rollno"-->
-<!--                                                                               value="--><?php //echo $roll ?><!--"/>-->
-<!--                                                                        <input type="hidden" name="oldcolname"-->
-<!--                                                                               value="--><?php //echo $oldcolumnname ?><!--"/>-->
-<!--                                                                        <input type="hidden" name="colname"-->
-<!--                                                                               value="--><?php //echo $rowchangemap['st_columnname'] ?><!--"/>-->
-<!--                                                                        <input type="hidden" name="year"-->
-<!--                                                                               value="--><?php //echo $year ?><!--"/>-->
-<!--                                                                        <input type="hidden" name="colnamemap"-->
-<!--                                                                               value="--><?php //echo $changemapname ?><!--"/>-->
                                                                         <button name="decline1" type="submit"
                                                                                 class="btn btn-sm btn-primary">
                                                                             <i class="ace-icon fa fa-send"></i>

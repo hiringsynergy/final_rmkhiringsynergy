@@ -141,7 +141,7 @@ if (isset($_GET['approve1']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
-    // header("Location: approve");
+     header("Location: approve");
 
 }
 if (isset($_GET['decline1']) && isset($_SESSION['user_role'])=='admin' ) {
@@ -245,7 +245,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
 
 
 
-     //header("Location: approve");
+     header("Location: approve");
 
 }
 
@@ -294,15 +294,15 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
 
 
         }
-        function modal(str){
+        function modal(str,str1,str2,str3,str4){
 
-
-             alert(str);
-            var text=document.getElementByID("justtest");
-            text.value="str";
-
-
-
+            //alert(str+" asdfa "+str1);
+            document.getElementById("rollno").value=str;
+            document.getElementById("oldcolname").value=str1;
+            document.getElementById("colname").value=str2;
+            document.getElementById("year").value=str3;
+            document.getElementById("colnamemap").value=str4;
+            document.getElementById("dept").value=str5;
 
 
         }
@@ -743,6 +743,8 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                     $changemapname=$rowchangemap['st_columnnamemap'];
 
                                     $oldcolumnname=$rowchangemap['st_oldname'];
+                                    $dept=$rowr['st_dept'];
+
 
                                     //for getting old values from student table
 
@@ -761,166 +763,169 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
 
                                             ?>
 
-                                        <div class="">
-                                            <div class="col-xs-12 ">
+                                    <div class="">
+                                        <div class="col-xs-12 ">
 
-                                                    <div class="widget-box widget-color-orange " id="widget-box-3">
-                                                        <div class="widget-header widget-header-small">
-                                                            <h6 class="widget-title">
-                                                                <i class="ace-icon fa fa-sort"></i>
-                                                                Change request
-                                                            </h6>
+                                            <div class="widget-box widget-color-orange " id="widget-box-3">
+                                                <div class="widget-header widget-header-small">
+                                                    <h6 class="widget-title">
+                                                        <i class="ace-icon fa fa-sort"></i>
+                                                        Change request
+                                                    </h6>
 
-                                                            <div class="widget-toolbar">
+                                                    <div class="widget-toolbar">
 
-                                                                <a href="#" data-action="collapse">
-                                                                    <i class="ace-icon fa fa-minus" data-icon-show="fa-plus"
-                                                                       data-icon-hide="fa-minus"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="widget-body">
-                                                            <form class="modal-content" action="approve" method="get"
-                                                                  enctype="multipart/form-data">
-                                                                <div class="widget-main">
-                                                                    <p>
-                                                                        <label style="font-size: large" class="green"><?php echo $rowr['st_regno'] ?> 
-                                                                        </label>
-                                                                        
-                                                                        <label style="font-size: large">has
-                                                                            requested for the change of
-                                                                        </label>
-                                                                        
-                                                                        <label style="font-size: large" class="orange">
-
-
-                                                                            <?php if ($rowr[$val->name] != NULL) {
-                                                                            
-                                                                                echo $changemapname."  ";
-                                                                            ?>
-                                                                                
-                                                                            </label><label style="font-size: large">
-                                                                            <?php
-                                                                                echo " from ";
-
-                                                                            ?>
-                                                                                </label>
-                                                                            <label style="font-size: large" class="orange">
-                                                                            
-                                                                            <?php echo $oldcolumnvalue; ?>
-                                                                                
-                                                                            </label><label style="font-size: large">
-                                                                            <?php
-                                                                                echo " to ";
-                                                                            ?> </label>
-                                                                            <label style="font-size: large" class="orange">
-                                                                            
-                                                                            <?php echo "  ".$rowr[$val->name]; 
-
-                                                                            ?></label>
-                                                                            <?php
-
-
-
-                                                                            }
-                                                                            $roll=$rowr['st_regno'];
-                                                                           $year= $rowr['st_year'];
-
-                                                                           ?> </p>
-                                                                    <input type="text" name="rollno"
-                                                                           value="<?php echo $rowr['st_regno'] ?>"/>
-                                                                    <input type="text" name="oldcolname"
-                                                                           value="<?php echo $oldcolumnname ?>"/>
-                                                                    <input type="text" name="colname"
-                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
-                                                                    <input type="text" name="year"
-                                                                           value="<?php echo $rowr['st_year'] ?>"/>
-                                                                            <input type="text" name="colnamemap"
-                                                                           value="<?php echo $changemapname ?>"/>
-                                                                    <button class=" btn btn-success "
-                                                                            type="submit" name="approve1">
-                                                                        Approve
-                                                                    </button>
-
-<a href="#modal-form" class=" btn btn-danger" role="button" onclick="modal('<?php echo $oldcolumnname ?>')" data-toggle="modal">Decline
+                                                        <a href="#" data-action="collapse">
+                                                            <i class="ace-icon fa fa-minus" data-icon-show="fa-plus"
+                                                               data-icon-hide="fa-minus"></i>
                                                         </a>
+                                                    </div>
+                                                </div>
 
+                                                <div class="widget-body">
+                                                    <form class="modal-content" action="approve" method="get"
+                                                          enctype="multipart/form-data">
+                                                        <div class="widget-main">
+                                                            <p>
+                                                                <label style="font-size: large"
+                                                                       class="green"><?php echo $rowr['st_regno'] ?>
+                                                                </label>
+
+                                                                <label style="font-size: large">has
+                                                                    requested for the change of
+                                                                </label>
+
+                                                                <label style="font-size: large" class="orange">
+
+
+                                                                    <?php if ($rowr[$val->name] != NULL) {
+
+                                                                    echo $changemapname
+                                                                    ?>
+
+                                                                </label><label
+                                                                        style="font-size: large ; padding-left: 3px;">
+                                                                    from
+                                                                    <!-- <?php
+                                                                    // echo " from ";
+
+                                                                    ?> -->
+                                                                </label>
+                                                                <label style="font-size: large" class="orange">
+
+                                                                    <?php echo $oldcolumnvalue; ?>
+
+                                                                </label><label
+                                                                        style="font-size: large; padding-left: 3px;"> to
+                                                                    <!-- <?php
+                                                                    // echo " to ";
+                                                                    ?> --> </label>
+                                                                <label style="font-size: large" class="orange">
+
+                                                                    <?php echo "  " . $rowr[$val->name];
+
+                                                                    ?></label>
+                                                                <?php
+
+
+                                                                }
+                                                                $roll = $rowr['st_regno'];
+                                                                $year = $rowr['st_year'];
+
+                                                                ?> </p>
+                                                            <input type="hidden" name="rollno"
+                                                                   value="<?php echo $rowr['st_regno'] ?>"/>
+                                                            <input type="hidden" name="oldcolname"
+                                                                   value="<?php echo $oldcolumnname ?>"/>
+                                                            <input type="hidden" name="colname"
+                                                                   value="<?php echo $rowchangemap['st_columnname'] ?>"/>
+                                                            <input type="hidden" name="year"
+                                                                   value="<?php echo
+                                                                   $rowr['st_year'] ?>"/>
+                                                            <input type="hidden" name="colnamemap"
+                                                                   value="<?php echo $changemapname ?>"/>
+                                                            <input type="hidden" name="dept"
+                                                                   value="<?php echo $dept ?>"/>
+                                                            <button class=" btn btn-success right "
+                                                                    type="submit" name="approve1">
+                                                                Approve
+                                                            </button>
+
+                                                            <a href="#modal-form" class=" btn btn-danger"  onclick="modal('<?php echo $rowr['st_regno'] ?>','<?php echo $oldcolumnname ?>','<?php echo $rowchangemap['st_columnname'] ?>','<?php echo
+                                                            $rowr['st_year'] ?>','<?php echo $changemapname ?>','<?php echo $dept ?>')"
+                                                               role="button" data-toggle="modal">Decline
+                                                            </a>
+
+
+                                                        </div>
+
+
+                                                        <div id="modal-form" class="modal" tabindex="-1">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+
+                                                                    <div class="modal-body">
+
+                                                                        <div class="row">
+                                                                            <div class="col-xs-12 col-sm-12">
+
+                                                                                <input type="hidden" name="rollno" id="rollno"
+                                                                                       />
+                                                                                <input type="hidden" name="oldcolname" id="oldcolname"
+                                                                                       />
+                                                                                <input type="hidden" name="colname" id="colname"
+                                                                                       />
+                                                                                <input type="hidden" name="year" id="year"
+                                                                                       />
+                                                                                <input type="hidden" name="colnamemap" id="colnamemap"
+                                                                                      />
+                                                                                <input type="hidden" name="dept" id="dept"
+                                                                                      />
+
+                                                                                <div class="space-4"></div>
+
+
+                                                                                <div class="form-group">
+                                                                                    <label for="form-field-first">Message</label>
+
+                                                                                    <div>
+                                                                                        <textarea id="form-field-11"
+                                                                                                  name="message"
+                                                                                                  rows="6" cols="9"
+                                                                                                  class="autosize-transition form-control"></textarea>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="space-16"></div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="space-16"></div>
+                                                                    <div class="modal-footer center">
+                                                                        <button class="btn btn-sm" data-dismiss="modal">
+                                                                            <i class="ace-icon fa fa-times"></i>
+                                                                            Cancel
+                                                                        </button>
+                                                                        <button name="decline1" type="submit"
+                                                                                class="btn btn-sm btn-primary">
+                                                                            <i class="ace-icon fa fa-send"></i>
+                                                                            Submit
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
-
-
-                                                                <div id="modal-form" class="modal" tabindex="-1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-
-                                        <div class="modal-body">
-
-                                            <div class="row">
-                                                <div class="col-xs-12 col-sm-12">
-
-                                                     <input type="text" name="rollno"
-                                                                           value="<?php echo $rowr['st_regno'] ?>"/>
-                                                                    <input type="text" name="oldcolname"
-                                                                           value="<?php echo $oldcolumnname ?>"/>
-                                                                    <input type="text" name="colname"
-                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
-                                                                    <input type="text" name="year"
-                                                                           value="<?php echo $rowr['st_year'] ?>"/>
-                                                                            <input type="text" name="colnamemap"
-                                                                           value="<?php echo $changemapname ?>"/>
-
-
-                                                        <div class="space-4"></div>
-
-
-                                                        
-
-
-                                                        <div class="form-group">
-                                                            <label for="form-field-first">Message</label>
-
-                                                            <div>
-                                                    <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
                                                             </div>
                                                         </div>
 
-                                                </div>
 
-                                                <div class="space-16"></div>
+                                                    </form>
                                                 </div>
                                             </div>
 
-                                                <div class="space-16"></div>
-                                            <div class="modal-footer center">
-                                                <button class="btn btn-sm" data-dismiss="modal">
-                                                    <i class="ace-icon fa fa-times"></i>
-                                                    Cancel
-                                                </button>
-                                           
-                                                                   <!--  <input type="hidden" name="rollno"
-                                                                           value="<?php echo $roll ?>"/>
-                                                                    <input type="hidden" name="oldcolname"
-                                                                           value="<?php echo $oldcolumnname ?>"/>
-                                                                    <input type="hidden" name="colname"
-                                                                           value="<?php echo $rowchangemap['st_columnname'] ?>"/>
-                                                                    <input type="hidden" name="year"
-                                                                           value="<?php echo $year ?>"/>
-                                                                            <input type="hidden" name="colnamemap"
-                                                                           value="<?php echo $changemapname ?>"/> -->
-                                                <button name="decline1" type="submit" class="btn btn-sm btn-primary">
-                                                    <i class="ace-icon fa fa-send"></i>
-                                                    Submit
-                                                </button>
-                                            </div>
                                         </div>
                                     </div>
-                                    </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
 
-                                            </div>
-                                            </div>
 
                                             <?php
                                         
