@@ -625,8 +625,30 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
                         include "../connect.php";
-                        $query="SELECT * FROM jobs ORDER BY sort DESC";
-                        $result= mysqli_query($connect, $query);
+                        $branch= $_SESSION['cood_branch'];
+                        $deg=$_SESSION['cood_deg'];
+
+                        if($deg=='UG'){
+
+                             $query="SELECT * FROM jobs WHERE job_branch='$branch' ORDER BY sort DESC";
+                             $result= mysqli_query($connect, $query);
+
+
+
+
+                        }
+                        else{
+
+                             $query="SELECT * FROM jobs WHERE job_pgbranch='$branch' ORDER BY sort DESC";
+                             $result= mysqli_query($connect, $query);
+
+
+
+
+
+                        }
+
+                       
                         $i=0;
 
                         while($row=mysqli_fetch_assoc($result))

@@ -93,6 +93,7 @@ if(isset($_POST['login'])){
         $coordinator_name=$row_coordinator['username'];
         $coordinator_password=$row_coordinator['password'];
         $coordinator_branch=$row_coordinator['cood_branch'];
+        $cood_deg=$row_coordinator['cood_deg'];
     }
 
 
@@ -170,6 +171,7 @@ if(isset($_POST['login'])){
 
 
         $_SESSION['database_name']=$admin_database;
+        $_SESSION['cood_deg']=$cood_deg;
 
         $_SESSION['user_role']='coordinator';
         $_SESSION['user']=$username;
