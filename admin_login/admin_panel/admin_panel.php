@@ -295,7 +295,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     <?php
 
                     $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd_database/', $database)){
+                    if(preg_match('/rmd/', $database)){
                         ?>
                         <img src="../images/rmd.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMD Engineering College  </label>
@@ -303,7 +303,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         <?php
                     }
 
-                    if(preg_match('/rmk_database/', $database)){
+                    if(preg_match('/rmk/', $database)){
                         ?>
                         <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
@@ -311,7 +311,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                         <?php
                     }
 
-                    if(preg_match('/rmkcet_database/', $database)){
+                    if(preg_match('/cet/', $database)){
                         ?>
                         <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -1053,6 +1053,40 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                             $aadhar=$row['st_aadharno'];
                                             $passport=$row['st_passportno'];
                                             $pan=$row['st_panno'];
+
+
+
+                                            if($current=='UG'){
+
+                                                //mapping ug Department
+
+                                                $query_dept_ug="SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                                $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                                $ugspecial=$row_dept_ug['dept_expand'];
+
+
+                                            }
+                                            else{
+
+                                                //mapping department of UG
+                                                $query_dept_ug = "SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                $result_dept_ug = mysqli_query($connect, $query_dept_ug);
+                                                $row_dept_ug = mysqli_fetch_assoc($result_dept_ug);
+
+                                                $ugspecial = $row_dept_ug['dept_expand'];
+
+
+                                                //mapping department of PG
+                                                $query_dept = "SELECT * FROM dept_map WHERE dept_short='$pgspecial'";
+                                                $result_dept = mysqli_query($connect, $query_dept);
+                                                $row_dept = mysqli_fetch_assoc($result_dept);
+
+                                                $pgspecial = $row_dept['dept_expand'];
+
+                                            }
+
 
 
 

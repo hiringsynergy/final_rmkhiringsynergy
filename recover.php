@@ -11,7 +11,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
     $hash = $_GET['hash'];
 
 
-    $connect_database = mysqli_connect("localhost", "root", "", "login_database");
+    $connect_database = mysqli_connect("mysql.hostinger.com", "root3","rmkhiringsynergy", "login");
 
 
     //selecting admin database  and coordinator database........
@@ -31,7 +31,19 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
             $admin_database = $row_selection['database_name'];
 
 
-            $connect = mysqli_connect("localhost", "root", "", "$admin_database");
+            if(preg_match('/rmd/', $admin_database)){
+
+                $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$admin_database");
+            }
+            if(preg_match('/rmk/', $admin_database)){
+
+                $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$admin_database");
+            }
+
+            if(preg_match('/cet/', $admin_database)){
+
+                $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$admin_database");
+            }
 
             if(substr_count($proceed_username,'placements')==1){
 
@@ -285,19 +297,19 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
     if ($student_user == '1115') {
 
-        $database_session_set = 'rmd_database';
-        $connect = mysqli_connect("localhost", "root", "", "rmd_database");
+        $database_session_set = 'rmd';
+        $connect = mysqli_connect("mysql.hostinger.com", "root","rmkhiringsynergy", "rmd");
 
 
     } else if ($student_user == '1116') {
 
-        $database_session_set = 'rmkcet_database';
-        $connect = mysqli_connect("localhost", "root", "", "rmkcet_database");
+        $database_session_set = 'cet';
+        $connect = mysqli_connect("mysql.hostinger.com", "root2","rmkhiringsynergy", "cet");
 
     } else if ($student_user == '1117') {
 
-        $database_session_set = 'rmk_database';
-        $connect = mysqli_connect("localhost", "root", "", "rmk_database");
+        $database_session_set = 'rmk';
+        $connect = mysqli_connect("mysql.hostinger.com", "root1","rmkhiringsynergy", "rmk");
 
     }
 
@@ -581,7 +593,19 @@ echo "$table";
 
 
 
- $connect=mysqli_connect("localhost","root","","$database");
+        if(preg_match('/rmd/', $database)){
+
+            $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$database");
+        }
+        if(preg_match('/rmk/', $database)){
+
+            $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$database");
+        }
+
+        if(preg_match('/cet/', $database)){
+
+            $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$database");
+        }
 
 
 $secured_password=password_hash($first_get_password,PASSWORD_BCRYPT, array('cost' => 14));
@@ -630,8 +654,19 @@ echo "not successfully updated";
 
       $table='login_coordinator';
 
- $connect=mysqli_connect("localhost","root","","$database");
+        if(preg_match('/rmd/', $database)){
 
+            $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$database");
+        }
+        if(preg_match('/rmk/', $database)){
+
+            $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$database");
+        }
+
+        if(preg_match('/cet/', $database)){
+
+            $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$database");
+        }
 
 $secured_password=password_hash($first_get_password,PASSWORD_BCRYPT, array('cost' => 14));
 
@@ -693,10 +728,19 @@ else {
 
 
 
+    if(preg_match('/rmd/', $database)){
 
- $connect=mysqli_connect("localhost","root","","$database");
+        $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$database");
+    }
+    if(preg_match('/rmk/', $database)){
 
+        $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$database");
+    }
 
+    if(preg_match('/cet/', $database)){
+
+        $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$database");
+    }
 $secured_password=password_hash($first_get_password,PASSWORD_BCRYPT, array('cost' => 14));
 
 

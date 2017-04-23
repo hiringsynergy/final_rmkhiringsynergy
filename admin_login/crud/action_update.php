@@ -161,7 +161,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     <?php
 
                     $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd_database/', $database)){
+                    if(preg_match('/rmd/', $database)){
                         ?>
                         <img src="../images/rmd.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMD Engineering College  </label>
@@ -169,7 +169,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
                     }
 
-                    if(preg_match('/rmk_database/', $database)){
+                    if(preg_match('/rmk/', $database)){
                         ?>
                         <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
@@ -177,7 +177,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
                     }
 
-                    if(preg_match('/rmkcet_database/', $database)){
+                    if(preg_match('/cet/', $database)){
                         ?>
                         <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>

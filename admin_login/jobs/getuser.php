@@ -102,7 +102,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 //    $database=$_SESSION['database_name'];
-//    $connect=mysqli_connect("localhost","root","","$database");
+//    $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$database");
     include "../connect.php";
 
 

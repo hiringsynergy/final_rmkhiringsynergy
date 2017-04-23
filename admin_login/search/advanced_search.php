@@ -160,7 +160,7 @@ function updateSlider(){
                     <?php
 
                     $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd_database/', $database)){
+                    if(preg_match('/rmd/', $database)){
                         ?>
                         <img src="../images/rmd.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMD Engineering College  </label>
@@ -168,7 +168,7 @@ function updateSlider(){
                         <?php
                     }
 
-                    if(preg_match('/rmk_database/', $database)){
+                    if(preg_match('/rmk/', $database)){
                         ?>
                         <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
@@ -176,7 +176,7 @@ function updateSlider(){
                         <?php
                     }
 
-                    if(preg_match('/rmkcet_database/', $database)){
+                    if(preg_match('/cet/', $database)){
                         ?>
                         <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -717,7 +717,7 @@ function updateSlider(){
                                                                 $database = $_SESSION['database_name'];
 
 
-                                                                if (preg_match('/rmd_database/',$database)) {
+                                                                if (preg_match('/rmd/',$database)) {
                                                               ?>
 
                                                                 <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag2" data-placeholder="Choose a Branch...">
@@ -734,7 +734,7 @@ function updateSlider(){
 
                                                                 <?php
                                                                 }
-                                                              else  if (preg_match('/rmk_database/',$database)) {
+                                                              else  if (preg_match('/rmk/',$database)) {
                                                                 ?>
 
                                                             <select multiple="" name="ugbranch[]" class="chosen-select id="tag2" form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">
@@ -753,7 +753,7 @@ function updateSlider(){
 
                                                         <?php
                                                         }
-                                                        else if (preg_match('/rmkcet_database/',$database)) {
+                                                        else if (preg_match('/cet/',$database)) {
                                                         ?>
 
                                                         <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">

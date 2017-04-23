@@ -149,7 +149,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                             <?php
 
                             $database=$_SESSION['database_name'];
-                            if(preg_match('/rmd_database/', $database)){
+                            if(preg_match('/rmd/', $database)){
                                 ?>
                                 <img src="images/rmd.jpg" style="height: 25px;">
                                 <label style="font-size: large;">RMD Engineering College  </label>
@@ -157,7 +157,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                 <?php
                             }
 
-                            if(preg_match('/rmk_database/', $database)){
+                            if(preg_match('/rmk/', $database)){
                                 ?>
                                 <img src="images/rmd.jpg" style="height: 25px;">
                                 <label style="font-size: large;">RMK Engineering College </label>
@@ -165,7 +165,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                 <?php
                             }
 
-                            if(preg_match('/rmkcet_database/', $database)){
+                            if(preg_match('/cet/', $database)){
                                 ?>
                                 <img src="images/rmd.jpg" style="height: 25px;">
                                 <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -545,7 +545,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
                                                                     $database=$_SESSION['database_name'];
 
-                                                                    if(preg_match('/rmd_database/', $database)) {
+                                                                    if(preg_match('/rmd/', $database)) {
 
                                                                         ?>
 
@@ -555,7 +555,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmk_database/', $database)){
+                                                                    if(preg_match('/rmk/', $database)){
 
                                                                         ?>
 
@@ -565,7 +565,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmkcet_database/', $database)){
+                                                                    if(preg_match('/cet/', $database)){
 
                                                                         ?>
 
@@ -592,19 +592,19 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
 
                                                                                 $database=$_SESSION['database_name'];
-                                                                                if(preg_match('/rmd_database/', $database)){
+                                                                                if(preg_match('/rmd/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMD Engineering College  </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmk_database/', $database)){
+                                                                                if(preg_match('/rmk/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK Engineering College </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmkcet_database/', $database)){
+                                                                                if(preg_match('/cet/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -695,7 +695,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
                                                                     $database=$_SESSION['database_name'];
 
-                                                                    if(preg_match('/rmd_database/', $database)) {
+                                                                    if(preg_match('/rmd/', $database)) {
 
                                                                         ?>
 
@@ -705,7 +705,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmk_database/', $database)){
+                                                                    if(preg_match('/rmk/', $database)){
 
                                                                         ?>
 
@@ -715,7 +715,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmkcet_database/', $database)){
+                                                                    if(preg_match('/cet/', $database)){
 
                                                                         ?>
 
@@ -742,19 +742,19 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
 
                                                                                 $database=$_SESSION['database_name'];
-                                                                                if(preg_match('/rmd_database/', $database)){
+                                                                                if(preg_match('/rmd/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMD Engineering College  </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmk_database/', $database)){
+                                                                                if(preg_match('/rmk/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK Engineering College </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmkcet_database/', $database)){
+                                                                                if(preg_match('/cet/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -840,7 +840,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
                                                                     $database=$_SESSION['database_name'];
 
-                                                                    if(preg_match('/rmd_database/', $database)) {
+                                                                    if(preg_match('/rmd/', $database)) {
 
                                                                         ?>
 
@@ -850,7 +850,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmk_database/', $database)){
+                                                                    if(preg_match('/rmk/', $database)){
 
                                                                         ?>
 
@@ -860,7 +860,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                                                         <?php
 
                                                                     }
-                                                                    if(preg_match('/rmkcet_database/', $database)){
+                                                                    if(preg_match('/cet/', $database)){
 
                                                                         ?>
 
@@ -887,19 +887,19 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 
 
                                                                                 $database=$_SESSION['database_name'];
-                                                                                if(preg_match('/rmd_database/', $database)){
+                                                                                if(preg_match('/rmd/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMD Engineering College  </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmk_database/', $database)){
+                                                                                if(preg_match('/rmk/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK Engineering College </label>
                                                                                     <?php
                                                                                 }
-                                                                                if(preg_match('/rmkcet_database/', $database)){
+                                                                                if(preg_match('/cet/', $database)){
                                                                                     ?>
 
                                                                                     <label style="font-size: large;">RMK College of Engineering and Technology </label>

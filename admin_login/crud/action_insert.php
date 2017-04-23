@@ -141,7 +141,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     <?php
 
                     $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd_database/', $database)){
+                    if(preg_match('/rmd/', $database)){
                         ?>
                         <img src="../images/rmd.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMD Engineering College  </label>
@@ -149,7 +149,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
                     }
 
-                    if(preg_match('/rmk_database/', $database)){
+                    if(preg_match('/rmk/', $database)){
                         ?>
                         <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
@@ -157,7 +157,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
                     }
 
-                    if(preg_match('/rmkcet_database/', $database)){
+                    if(preg_match('/cet/', $database)){
                         ?>
                         <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -751,23 +751,40 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
                                     $ugspecial=trim($ugspecial," ");
+                                    $current=trim($current," ");
 
 
-                                    //mapping department of UG
-                                    $query_dept_ug="SELECT * FROM dept_map WHERE dept_expand='$ugspecial'";
-                                    $result_dept_ug=mysqli_query($connect, $query_dept_ug);
-                                    $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+                                    if($current=='UG'){
 
-                                    $ugspecial=$row_dept_ug['dept_short'];
+                                        //mapping department of UG
+                                        $query_dept_ug="SELECT * FROM dept_map WHERE dept_expand='$ugspecial'";
+                                        $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                        $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                        $ugspecial=$row_dept_ug['dept_short'];
 
 
 
-                                    //mapping department of PG
-                                    $query_dept="SELECT * FROM dept_map WHERE dept_expand='$pgspecial'";
-                                    $result_dept=mysqli_query($connect, $query_dept);
-                                    $row_dept=mysqli_fetch_assoc($result_dept);
+                                    }
+                                    else {
 
-                                    $pgspecial=$row_dept['dept_short'];
+
+                                        //mapping department of UG
+                                        $query_dept_ug = "SELECT * FROM dept_map WHERE dept_expand='$ugspecial'";
+                                        $result_dept_ug = mysqli_query($connect, $query_dept_ug);
+                                        $row_dept_ug = mysqli_fetch_assoc($result_dept_ug);
+
+                                        $ugspecial = $row_dept_ug['dept_short'];
+
+
+                                        //mapping department of PG
+                                        $query_dept = "SELECT * FROM dept_map WHERE dept_expand='$pgspecial'";
+                                        $result_dept = mysqli_query($connect, $query_dept);
+                                        $row_dept = mysqli_fetch_assoc($result_dept);
+
+                                        $pgspecial = $row_dept['dept_short'];
+
+                                    }
 
 
 
@@ -791,21 +808,21 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
                                     $database_name=$_SESSION['database_name'];
-                                    if(preg_match('/rmd_database/', $database_name)){
+                                    if(preg_match('/rmd/', $database_name)){
 
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);
 
                                         $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$father_mobile',  '$mother_name','$mother_occupation','$mother_mobile','$college_email','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipspecialization','$dipinstitution','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$ughistoryofarrears','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$aadhar','$passport','$pan','$pass_secured','rmd.jpg','','','','')";
                                     }
-                                    else if(preg_match('/rmk_database/', $database_name)){
+                                    else if(preg_match('/rmk/', $database_name)){
 
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);
 
                                         $sql = "INSERT INTO students_$year VALUES ('$roll','$first_name','$middle_name','$last_name','$name','$gender','$father_name','$father_occupation','$father_mobile',  '$mother_name','$mother_occupation','$mother_mobile','$college_email','$email','$phone','$dob','$nationality','$caste','$college_name','$university','$_10percentage','$_10institution','$_10boardofstudy','$_10medium','$_10yearofpassing','$_12percentage','$_12institution','$_12boardofstudy','$_12medium','$_12yearofpassing','$dippercentage','$dipspecialization','$dipinstitution','$dipyearofpassing','$current','$ugdeg','$ugspecial','$ug1sem','$ug2sem','$ug3sem','$ug4sem','$ug5sem','$ug6sem','$ug7sem','$ug8sem','$cgpa','$ugyearofpassing','$pgdeg','$pgspecial','$pg1sem','$pg2sem','$pg3sem','$pg4sem','$pgcgpa','$pgyearofpassing','$ugcollegename','$ughistoryofarrears','$dayhostel','$historyofarrears','$standingarrears','$hometown','$address1','$address2','$city','$state','$postal_code','$landline','$skill','$duration','$vendor','$coecertification','$gap','$reason','$english','$quantitative','$logical','$overall','$percentage','$candidate','$signature','$placement_status','$aadhar','$passport','$pan','$pass_secured','rmk.jpg','','','','')";
                                     }
-                                    else if(preg_match('/rmkcet_database/', $database_name)){
+                                    else if(preg_match('/cet/', $database_name)){
 
                                         $pass_secured='$2y$14$DyXV1xzfZVY8xtnY/x8jfeideaB8YjMPyzR5FyxFV7KK/9R7SBFPi';
                                         $pass_secured=mysqli_real_escape_string($connect, $pass_secured);

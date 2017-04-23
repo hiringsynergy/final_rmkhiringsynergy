@@ -305,7 +305,7 @@
 
                         <?php
                         include "connect.php";
-                        //$connect=mysqli_connect("localhost","root","","rmd_database");
+                        //$connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","rmd");
                         $name=$_SESSION['user'];
 
                         $student_table=$_SESSION['table_name'];

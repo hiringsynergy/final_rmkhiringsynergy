@@ -6,7 +6,21 @@ if (session_status() == PHP_SESSION_NONE) {
 if(isset($_SESSION['database_name'])){
 
     $database=$_SESSION['database_name'];
-    $connect=mysqli_connect("localhost","root","","$database");
+
+
+    if(preg_match('/rmd/', $database)){
+
+        $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$database");
+    }
+    if(preg_match('/rmk/', $database)){
+
+        $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$database");
+    }
+
+    if(preg_match('/cet/', $database)){
+
+        $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$database");
+    }
 
 }
 

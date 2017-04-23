@@ -139,7 +139,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
     $get_description= $_POST['company_description'];
 
     include "../connect.php";
-    //$connect = mysqli_connect("localhost", "root", "", "rmd_database");
+    //$connect = mysqli_connect("mysql.hostinger.com", "root","rmkhiringsynergy", "rmd");
 
     $query = "UPDATE company_list SET company_name='{$get_name}', company_website='{$get_website}',company_description='{$get_description}' where company_id={$get_id}";
 
@@ -180,7 +180,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
                 <?php
 
                 $database=$_SESSION['database_name'];
-                if(preg_match('/rmd_database/', $database)){
+                if(preg_match('/rmd/', $database)){
                     ?>
                     <img src="../images/rmd.jpg" style="height: 25px;">
                     <label style="font-size: large;">RMD Engineering College  </label>
@@ -188,7 +188,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
                     <?php
                 }
 
-                if(preg_match('/rmk_database/', $database)){
+                if(preg_match('/rmk/', $database)){
                     ?>
                     <img src="../images/rmk.jpg" style="height: 25px;">
                     <label style="font-size: large;">RMK Engineering College </label>
@@ -196,7 +196,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
                     <?php
                 }
 
-                if(preg_match('/rmkcet_database/', $database)){
+                if(preg_match('/cet/', $database)){
                     ?>
                     <img src="../images/rmkcet.jpg" style="height: 25px;">
                     <label style="font-size: large;">RMK College of Engineering and Technology </label>
@@ -295,7 +295,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
 
                         <?php
                         include "../connect.php";
-                        //$connect=mysqli_connect("localhost","root","","rmd_database");
+                        //$connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","rmd");
                         $name=$_SESSION['user'];
 
                         $student_table=$_SESSION['table_name'];

@@ -237,14 +237,14 @@ if(isset($_GET['filter_job'])){
     if(current($get_branch)=="all"){
 
 
-             if(preg_match('/rmd_database/', $database)){
+             if(preg_match('/rmd/', $database)){
 
 
               $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
                $temp_branch_update="cse','it','eee','ece','eie";
               }
 
-            if(preg_match('/rmk_database/', $database)){
+            if(preg_match('/rmk/', $database)){
 
 
                $temp_branch_insert="cse'',''it'',''eee'',''ece'',''eie'',''mech'',''civil";
@@ -252,7 +252,7 @@ if(isset($_GET['filter_job'])){
 
            }
 
-        if(preg_match('/rmkcet_database/', $database)) {
+        if(preg_match('/cet/', $database)) {
 
 
                $temp_branch_insert="cse'',''eee'',''ece'',''eie";
@@ -274,14 +274,14 @@ if(isset($_GET['filter_job'])){
     if(current($pg_branch)=="all"){
 
 
-        if(preg_match('/rmd_database/', $database)){
+        if(preg_match('/rmd/', $database)){
 
 
             $temp_pg_branch_insert="cse'',''it'',''eee'',''ece'',''eie";
             $temp_pg_branch_update="cse','it','eee','ece','eie";
         }
 
-        if(preg_match('/rmk_database/', $database)){
+        if(preg_match('/rmk/', $database)){
 
 
             $temp_pg_branch_insert="cse'',''ae'',''pde'',''vlsi";
@@ -289,7 +289,7 @@ if(isset($_GET['filter_job'])){
 
         }
 
-        if(preg_match('/rmkcet_database/', $database)) {
+        if(preg_match('/cet/', $database)) {
 
 
             $temp_pg_branch_insert="cse'',''eee'',''ece'',''eie";
@@ -1151,7 +1151,7 @@ if(isset($_GET['filter_job'])){
                                                                 $database = $_SESSION['database_name'];
 
 
-                                                                if (preg_match('/rmd_database/',$database)) {
+                                                                if (preg_match('/rmd/',$database)) {
                                                               ?>
 
                                                                <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag1" data-placeholder="Choose a Branch...">
@@ -1168,7 +1168,7 @@ if(isset($_GET['filter_job'])){
 
                                                                 <?php
                                                                 }
-                                                              else  if (preg_match('/rmk_database/',$database)) {
+                                                              else  if (preg_match('/rmk/',$database)) {
                                                                 ?>
 
                                                             <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag2" data-placeholder="Choose a Branch...">
@@ -1187,7 +1187,7 @@ if(isset($_GET['filter_job'])){
 
                                                         <?php
                                                         }
-                                                        else if (preg_match('/rmkcet_database/',$database)) {
+                                                        else if (preg_match('/cet/',$database)) {
                                                         ?>
 
                                                          <select multiple="" name="ugbranch[]" class="chosen-select  form-control dept" id="tag3" data-placeholder="Choose a Branch...">
@@ -1406,7 +1406,7 @@ if(isset($_GET['filter_job'])){
                                                                 $database = $_SESSION['database_name'];
 
 
-                                                                if (preg_match('/rmd_database/',$database)) {
+                                                                if (preg_match('/rmd/',$database)) {
                                                               ?>
 
                                                                <select multiple="" name="nobranch[]" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
@@ -1420,7 +1420,7 @@ if(isset($_GET['filter_job'])){
 
                                                                 <?php
                                                                 }
-                                                              else  if (preg_match('/rmk_database/',$database)) {
+                                                              else  if (preg_match('/rmk/',$database)) {
                                                                 ?>
 
                                                            <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
@@ -1437,7 +1437,7 @@ if(isset($_GET['filter_job'])){
 
                                                         <?php
                                                         }
-                                                        else if (preg_match('/rmkcet_database/',$database)) {
+                                                        else if (preg_match('/cet/',$database)) {
                                                         ?>
 
                                                          <select multiple="" name="nobranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
