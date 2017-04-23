@@ -302,11 +302,13 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
         $to=$row_mail['st_email'];
 
+        $reg=$row_mail['st_roll'];
 
 
 
 
-        $mail->addAddress($to, $to);     // Add a recipient
+
+        $mail->addAddress($to);     // Add a recipient
 
 
 
@@ -338,7 +340,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
         $mail->isHTML(true);
 
         $mail->Subject = $subject;
-        $mail->Body    = '<h3> '.$message.' </h3>';
+        $mail->Body    = '<h3> '.$message.' '.$reg+.' </h3>';
 
 
 
@@ -351,12 +353,13 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
             echo 'Message has been sent';
 
+
+            // Clear all addresses and attachments for next loop
+            $mail->clearAddresses();
+            $mail->clearAttachments();
         }
 
 
-        // Clear all addresses and attachments for next loop
-        $mail->clearAddresses();
-        $mail->clearAttachments();
 
 
 
@@ -508,7 +511,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
 
-        $mail->addAddress($to, $to);     // Add a recipient
+        $mail->addAddress($to);     // Add a recipient
 
 
 
@@ -540,7 +543,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
         $mail->isHTML(true);
 
         $mail->Subject = $subject;
-        $mail->Body    = '<h3> '.$message.' </h3>';
+        $mail->Body    = '<h3> '.$message.' '.$roll_no.' </h3>';
 
 
 
@@ -553,11 +556,12 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
             echo 'Message has been sent';
 
+            // Clear all addresses and attachments for next loop
+            $mail->clearAddresses();
+            $mail->clearAttachments();
+
         }
 
-        // Clear all addresses and attachments for next loop
-        $mail->clearAddresses();
-        $mail->clearAttachments();
 
 
 
