@@ -26,7 +26,7 @@ if(isset($_POST['login'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
+    $connect_database=mysqli_connect("auth-db112.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
 
 
 
@@ -43,7 +43,7 @@ if(isset($_POST['login'])){
 
             if(preg_match('/rmd/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("auth-db112.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
             }
             if(preg_match('/rmk/', $admin_database)){
 
@@ -170,7 +170,7 @@ if(isset($_POST['login'])){
 
         $_SESSION['user']=$username;
 
-        header("Location: ../admin_login/index");
+       // header("Location: ../admin_login/index");
     }
 
 
@@ -191,7 +191,7 @@ if(isset($_POST['login'])){
 
 
 
-        header("Location: ../coordinator_login/index");
+       // header("Location: ../coordinator_login/index");
     }
 
 
@@ -224,7 +224,7 @@ if(isset($_POST['login'])){
         $_SESSION['year_of_graduation']= end($graduation);
 
 
-        header("Location: ../student_login/index");
+       // header("Location: ../student_login/index");
 
     }
 
@@ -233,7 +233,7 @@ if(isset($_POST['login'])){
 
     else{
 
-        header("Location: ../login");
+       // header("Location: ../login");
 
     }
 
