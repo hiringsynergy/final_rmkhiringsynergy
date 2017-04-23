@@ -667,6 +667,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             $counter = $counter + 1;
 
                         }
+                        else{
+                            $mail->ErrorInfo;
+                        }
 
 
                         // Clear all addresses and attachments for next loop
