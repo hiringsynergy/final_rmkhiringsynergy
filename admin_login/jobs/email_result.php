@@ -644,7 +644,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                       echo $to = $row_mail['st_email']."<br>";
+                       echo $to = $row_mail['st_email'];
 
                         $mail->addAddress($to, $to);     // Add a recipient
 
@@ -708,7 +708,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                             Your mail to
                             <strong class="red">
-                                <?php echo $num_rows - $count ?>
+                                <?php echo $num_rows-$counter ?>
 
                             </strong>Students ,
 
