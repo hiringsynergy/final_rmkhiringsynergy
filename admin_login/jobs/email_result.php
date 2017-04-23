@@ -571,7 +571,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail=new PHPMailer();
 
-                    $mail->isSMTP();
+                    $mail->isSendmail();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
