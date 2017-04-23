@@ -340,7 +340,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
         $mail->isHTML(true);
 
         $mail->Subject = $subject;
-        $mail->Body    = '<h3> '.$message.' '.$reg+.' </h3>';
+        $mail->Body    = '<h3> '.$message.' '.$reg.' </h3>';
 
 
 
