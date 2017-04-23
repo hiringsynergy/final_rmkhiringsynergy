@@ -11,7 +11,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
     $hash = $_GET['hash'];
 
 
-    $connect_database = mysqli_connect("mysql.hostinger.com", "u552198179_root3","rmkhiringsynergy", "login");
+    $connect_database = mysqli_connect("mysql.hostinger.com", "u552198179_root3","rmkhiringsynergy","u552198179_login");
 
 
     //selecting admin database  and coordinator database........
