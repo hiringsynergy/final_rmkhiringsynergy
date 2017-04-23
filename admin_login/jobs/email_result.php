@@ -561,6 +561,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                 <?php
 
 
+
                 if (isset($_POST['send']) && isset($_SESSION['user_role']) == 'admin') {
 
 
@@ -571,7 +572,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail=new PHPMailer();
 
-                    $mail->isSendmail();
+                    $mail->isMail();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
@@ -640,6 +641,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                     while ($row_mail = mysqli_fetch_assoc($result_mail)) {
+
 
 
 
