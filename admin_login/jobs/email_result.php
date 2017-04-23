@@ -628,7 +628,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                    $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' ";
+                    $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible'";
                     $result_mail = mysqli_query($connect, $query_mail);
                     $num_rows = mysqli_num_rows($result_mail);
                     $counter = 0;
@@ -637,10 +637,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     while ($row_mail = mysqli_fetch_assoc($result_mail)) {
 
 
-                        $to = null;
 
 
-                        $to = $row_mail['st_email'];
+                       echo $to = $row_mail['st_email'];
 
 
                         $mail->addAddress($to, 'joe');
@@ -713,7 +712,11 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         </div>
 
 
+
+
                         <?php
+
+
 
                     } else {
 
