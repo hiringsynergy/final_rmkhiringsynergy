@@ -569,17 +569,22 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     require "../email/PHPMailer/PHPMailerAutoload.php";
 
-                    $mail = new PHPMailer();
+                    $mail=new PHPMailer();
 
-                    $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->isMail();
+                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                    $mail->Password = 'akash170397';                           // SMTP password
+                    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Password = 'rmk123';                           // SMTP password
                     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 465;
-                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
+                    $mail->Port = 	587;
+
+
+                    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+
+
+                    $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+
 
                     $mail->isHTML(true);
 
@@ -641,11 +646,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                        echo $to = $row_mail['st_email']."<br>";
 
-
-                        $mail->addAddress($to, 'joe');
-
-
-                        // Add a recipient
+                        $mail->addAddress($to, $to);     // Add a recipient
 
 
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
