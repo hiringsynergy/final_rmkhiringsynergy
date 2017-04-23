@@ -170,7 +170,7 @@ if(isset($_POST['login'])){
 
         $_SESSION['user']=$username;
 
-       // header("Location: ../admin_login/index");
+        header("Location: ../admin_login/index");
     }
 
 
@@ -191,7 +191,7 @@ if(isset($_POST['login'])){
 
 
 
-       // header("Location: ../coordinator_login/index");
+        header("Location: ../coordinator_login/index");
     }
 
 
@@ -224,7 +224,7 @@ if(isset($_POST['login'])){
         $_SESSION['year_of_graduation']= end($graduation);
 
 
-       // header("Location: ../student_login/index");
+        header("Location: ../student_login/index");
 
     }
 
