@@ -639,7 +639,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                       echo $to = $row_mail['st_email'];
+                       echo $to = $row_mail['st_email']."<br>";
 
 
                         $mail->addAddress($to, 'joe');
@@ -668,7 +668,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         }
                         else{
-                            $mail->ErrorInfo;
+                           echo  $mail->ErrorInfo;
                         }
 
 
