@@ -276,20 +276,19 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
     require "../email/PHPMailer/PHPMailerAutoload.php";
 
     $mail=new PHPMailer();
-
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->isMail();
+    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-    $mail->Password = 'akash170397';                           // SMTP password
+    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+    $mail->Password = 'rmk123';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;
+    $mail->Port = 	587;
 
 
+    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+    $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
 
 
-
-    set_time_limit(0);
 
     //sending mail to selected students
 
@@ -307,12 +306,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
 
 
-
-
-        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
         $mail->addAddress($to, $to);     // Add a recipient
-
-        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
 
 
@@ -360,15 +354,11 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
         }
 
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+        // Clear all addresses and attachments for next loop
+        $mail->clearAddresses();
+        $mail->clearAttachments();
 
 
-
-            unlink("files/$newfilename");
-
-
-
-        }
 
 
 
@@ -380,6 +370,18 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
 
     }
+
+
+    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+        unlink("files/$newfilename");
+
+
+
+    }
+
 
     header("Location: advanced_search");
 
@@ -440,13 +442,18 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
     $mail=new PHPMailer();
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+
+    $mail->isMail();
+    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-    $mail->Password = 'akash170397';                           // SMTP password
+    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+    $mail->Password = 'rmk123';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;
+    $mail->Port = 	587;
+
+
+    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+    $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
 
 
 
@@ -501,11 +508,7 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
 
-
-        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
         $mail->addAddress($to, $to);     // Add a recipient
-
-        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
 
 
@@ -552,16 +555,10 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
         }
 
+        // Clear all addresses and attachments for next loop
+        $mail->clearAddresses();
+        $mail->clearAttachments();
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-            unlink("files/$newfilename");
-
-
-
-        }
 
 
 
@@ -576,6 +573,18 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
     }
+
+
+    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+        unlink("files/$newfilename");
+
+
+
+    }
+
     header("Location: advanced_search");
 
 
@@ -1908,7 +1917,7 @@ if(isset($_GET['export'])) {
                                                                                                     </div>
                                                                                                     </form>
                                                                                                 </div>
-                                                                                            </div> 
+                                                                                            </div>
 
                                                         <!-- PAGE CONTENT ENDS -->
                                                     </div><!-- /.col -->
