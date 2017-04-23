@@ -26,7 +26,7 @@ if(isset($_POST['login'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","root3","rmkhiringsynergy","login");
+    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
 
 
 
@@ -43,16 +43,16 @@ if(isset($_POST['login'])){
 
             if(preg_match('/rmd/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
             }
             if(preg_match('/rmk/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$admin_database");
             }
 
             if(preg_match('/cet/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$admin_database");
             }
 
         }
@@ -65,20 +65,20 @@ if(isset($_POST['login'])){
     if($student_user=='1115'){
 
         $database_session_set='rmd';
-        $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","rmd");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
 
 
     }
     else if($student_user=='1116'){
 
         $database_session_set='cet';
-        $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","cet");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","u552198179_cet");
 
     }
     else if($student_user=='1117'){
 
         $database_session_set='rmk';
-        $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","rmk");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","u552198179_rmk");
 
     }
 
@@ -251,7 +251,7 @@ else if(isset($_POST['proceed'])){
     $connect=null;
 
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","root3","rmkhiringsynergy","login");
+    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
 
     //selecting admin database  and coordinator database........
     $query_selection="SELECT * FROM admin_login WHERE username='{$proceed_username}'";
@@ -289,16 +289,16 @@ else if(isset($_POST['proceed'])){
 
             if(preg_match('/rmd/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
             }
             if(preg_match('/rmk/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$admin_database");
             }
 
             if(preg_match('/cet/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$admin_database");
             }
 
 
@@ -612,20 +612,20 @@ else{
     if($student_user=='1115'){
 
         $database_session_set='rmd';
-        $connect=mysqli_connect("mysql.hostinger.com","root","rmkhiringsynergy","rmd");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
 
 
     }
     else if($student_user=='1116'){
 
         $database_session_set='cet';
-        $connect=mysqli_connect("mysql.hostinger.com","root2","rmkhiringsynergy","cet");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","u552198179_cet");
 
     }
     else if($student_user=='1117'){
 
         $database_session_set='rmk';
-        $connect=mysqli_connect("mysql.hostinger.com","root1","rmkhiringsynergy","rmk");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","u552198179_rmk");
 
     }
 
