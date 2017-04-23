@@ -567,6 +567,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $jid = $_POST['jid'];
 
+                    $mail->SMTPDebug = 3;
 
                     require "../email/PHPMailer/PHPMailerAutoload.php";
 
@@ -577,7 +578,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
                     $mail->Password = 'rmk123';                           // SMTP password
-                    $mail->SMTPSecure = true;                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
 
