@@ -709,7 +709,7 @@ function updateSlider(){
 
 														<div class="col-xs-8 col-sm-5">
 
-                                                            <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
+                                                            <h5><label class="control-label bolder orange" for="form-field-select-4">Select Branch</label></h5>
 
                                                             <div >
                                                             <?php
@@ -720,7 +720,7 @@ function updateSlider(){
                                                                 if (preg_match('/rmd/',$database)) {
                                                               ?>
 
-                                                                <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tag2" data-placeholder="Choose a Branch...">
+                                                                <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tagrmd" data-placeholder="Choose a Branch...">
                                                                     <option value="all">All</option>
                                                                     <option value="cse">Computer science and Engineering</option>
                                                                     <option value="eee">Electrical and Electronic Engineering</option>
@@ -737,7 +737,7 @@ function updateSlider(){
                                                               else  if (preg_match('/rmk/',$database)) {
                                                                 ?>
 
-                                                            <select multiple="" name="ugbranch[]" class="chosen-select id="tag2" form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">
+                                                            <select multiple="" name="ugbranch[]" class="chosen-select" id="tagrmk" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
                                                                 <option value="cse">Computer science and Engineering</option>
                                                                 <option value="eee">Electrical and Electronic Engineering</option>
@@ -756,7 +756,7 @@ function updateSlider(){
                                                         else if (preg_match('/cet/',$database)) {
                                                         ?>
 
-                                                        <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="form-field-select-4" data-placeholder="Choose a Branch...">
+                                                        <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tagcet" data-placeholder="Choose a Branch...">
                                                             <option value="all">All</option>
                                                             <option value="cse">Computer science and Engineering</option>
                                                             <option value="eee">Electrical and Electronic Engineering</option>
@@ -1238,14 +1238,16 @@ function updateSlider(){
 
 
             var bla = $('#tag1').val();
-            var blb = $('#tag2').val();
+            var rmd = $('#tagrmd').val();
+            var rmk = $('#tagrmk').val();
+            var cet = $('#tagcet').val();
 
 
-            if (blb == null && bla == '') {
+            if ( bla == '' && rmd == null && rmk==null && cet==null) {
 
 
                 bootbox.dialog({
-                    message: "Please enter the mandatory values",
+                    message: "Select year of Graduation and Department",
                     buttons: {
                         "success": {
                             "label": "OK",
@@ -1258,7 +1260,7 @@ function updateSlider(){
                 event.stopPropagation();
 
             }
-            else if (blb == null) {
+            else if (rmd == null && rmk==null && cet==null) {
 
 
                 bootbox.dialog({
