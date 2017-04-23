@@ -26,7 +26,11 @@ if(isset($_POST['login'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
+
+    echo $username." ".$password;
+
+
+    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
 
 
 
@@ -251,7 +255,7 @@ else if(isset($_POST['proceed'])){
     $connect=null;
 
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","login");
+    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
 
     //selecting admin database  and coordinator database........
     $query_selection="SELECT * FROM admin_login WHERE username='{$proceed_username}'";
