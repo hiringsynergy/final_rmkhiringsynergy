@@ -646,7 +646,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_email'];
 
-                        $mail->addAddress($to, $to);     // Add a recipient
+                        $mail->addAddress($to);     // Add a recipient
 
 
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
