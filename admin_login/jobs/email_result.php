@@ -644,7 +644,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                       echo $to = $row_mail['st_email'];
+                        $to = $row_mail['st_email'];
 
                         $mail->addAddress($to, $to);     // Add a recipient
 
