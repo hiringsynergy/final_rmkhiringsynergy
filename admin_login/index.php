@@ -797,7 +797,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 									</strong>,
 
-									RMK group of Institutions
+									RMK Group of Institutions
 								</div>
                                 <div class="row">
 
