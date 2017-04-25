@@ -186,6 +186,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
     $get_roll= $_POST['checkbox'];
 
+     print_r($get_roll);
+
      $message=$_POST['message'];
      $subject=$_POST['subject'];
 
