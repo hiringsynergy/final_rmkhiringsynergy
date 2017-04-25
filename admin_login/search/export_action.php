@@ -238,12 +238,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      $mail=new PHPMailer();
 
 
-     $mail->isMail();
+     $mail->isSMTP();
      $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
      $mail->SMTPAuth = true;                               // Enable SMTP authentication
      $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
      $mail->Password = 'rmk123';                           // SMTP password
-     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
      $mail->Port = 	587;
 
 
