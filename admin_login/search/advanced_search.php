@@ -943,15 +943,54 @@ function updateSlider(){
                                                             <h5><label class="control-label bolder orange"for="form-field-select-4">Select Branch</label></h5>
 
                                                             <div >
-                                                                <select multiple="" name="pgbranch" class="chosen-select  form-control" id="form-field-select-5" data-placeholder="Choose a Branch...">
-                                                                    <option value="all">All</option>
-                                                                    <option value="cse">Computer science and Engineering</option>
-                                                                    <option value="eee">Electrical and Electronic Engineering</option>
-                                                                    <option value="eie">Electrical and Intrumentation Engineering</option>
+                                                                <?php
 
-                                                                    <option value="it">Information Technology</option>
-                                                                    <option value="ece">Electrical and Communicaton Engineering</option>
-                                                                </select>
+                                                                $database = $_SESSION['database_name'];
+
+
+                                                                if (preg_match('/rmd/',$database)) {
+                                                                    ?>
+
+                                                                    <select multiple="" name="nobranch[]" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+
+
+                                                                        <option value="0">No PG Branches Available</option>
+
+                                                                    </select>
+
+
+
+                                                                    <?php
+                                                                }
+                                                                else  if (preg_match('/rmk/',$database)) {
+                                                                    ?>
+
+                                                                    <select multiple="" name="pgbranch[]" class="chosen-select  form-control pgdept pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                                        <option value="all">All</option>
+                                                                        <option value="cse">Computer science and Engineering</option>
+                                                                        <option value="ae">Applied Electronics</option>
+                                                                        <option value="ped">Power Electronics and Drives</option>
+
+                                                                        <option value="vlsi">VLSI Design</option>
+
+                                                                    </select>
+
+
+
+                                                                    <?php
+                                                                }
+                                                                else if (preg_match('/cet/',$database)) {
+                                                                    ?>
+
+                                                                    <select multiple="" name="nobranch" class="chosen-select  form-control pgdept" id="form-field-select-5" data-placeholder="Choose a Branch...">
+                                                                        <option value="0">No PG Branches Available</option>
+                                                                    </select>
+
+
+
+                                                                    <?php
+                                                                }
+                                                                ?>
                                                             </div>
 
 
