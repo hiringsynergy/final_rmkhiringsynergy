@@ -286,9 +286,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-         echo $to=$row_roll_mail['st_email'];
+          $to=$row_roll_mail['st_email'];
 
-         echo "<br>";
+
 
 
 
@@ -384,7 +384,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      }
-   // header("Location: advanced_search");
+    header("Location: advanced_search");
 
 
 
@@ -908,7 +908,7 @@ if(isset($_GET['export'])) {
                                                     
                                                     
                                                     ?>
-                                                    <input type="text" name="check" value="<?php echo $checkval ?> ">
+                                                    <input type="hidden" name="check" value="<?php echo $checkval ?> ">
 
 
                                                     <div class="modal-body">
