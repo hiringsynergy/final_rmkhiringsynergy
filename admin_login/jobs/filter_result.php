@@ -938,7 +938,7 @@ die(" " . mysqli_error($connect));
                         null, null, null,null,
                         { "bSortable": false }
                     ],
-                    "aaSorting": []
+                    "aaSorting": [],
 
 
 
@@ -948,7 +948,7 @@ die(" " . mysqli_error($connect));
 
                     //,
                     //"sScrollY": "200px",
-                   //"bPaginate": false
+                   "bPaginate": false
 
                     //"sScrollX": "100%",
                     //"sScrollXInner": "120%",

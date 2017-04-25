@@ -1107,7 +1107,7 @@ if(isset($_GET['export'])) {
 
                                                 $roll=$_POST['checkbox'];
 
-                                               
+
 
 
                                                //print_r($roll);
@@ -1465,7 +1465,7 @@ if(isset($_GET['export'])) {
 
                                                 //,
                                                 //"sScrollY": "200px",
-                                                //"bPaginate": false,
+                                                "bPaginate": false,
 
                                                 "sScrollX": "100%"
                                                 //"sScrollXInner": "120%",

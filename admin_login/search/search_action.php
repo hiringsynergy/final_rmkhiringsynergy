@@ -1802,130 +1802,7 @@ if(isset($_GET['export'])) {
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-xs-12 ">
-                                <div class="form-actions center">
-
-
-                                    <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">SEND MAIL <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>
-
-
-                                </div>
-                            </div>
-
-                            <div id="modal-form" class="modal" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <form action="search_action" method="post" enctype="multipart/form-data">
-
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12">
-
-                                                        <div class="space-4"></div>
-
-
-                                                        <?php   if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
-
-                                                            ?>
-
-                                                            <input type="hidden" value="<?php echo $get_year ?>" name="get_year">
-                                                            <input type="hidden" value="<?php echo $get_cgpa ?>" name="get_cgpa">
-                                                            <input type="hidden" value="<?php echo $get_12thpercentage ?>" name="get_12thpercentage">
-                                                            <input type="hidden" value="<?php echo $get_10thpercentage ?>" name="get_10thpercentage">
-                                                            <input type="hidden" value="<?php echo $get_historyofarrears ?>" name="get_historyofarrears">
-                                                            <input type="hidden" value="<?php echo $get_standingarrears ?>" name="get_standingarrears">
-                                                            <input type="hidden" value="<?php echo $temp_branch ?>" name="temp_branch">
-                                                            <input type="hidden" value="filter" name="filter">
-
-
-
-
-
-
-
-                                                            <?php
-
-
-                                                        }
-                                                        else if(isset($_GET['search']) && isset($_SESSION['user_role'])=='admin' ){
-
-                                                            $tags= $_GET['tags'];
-                                                            ?>
-
-                                                            <input type="hidden" value="<?php echo $tags ?>" name="get_roll">
-
-                                                            <input type="hidden" value="search" name="search">
-
-
-
-
-
-
-
-                                                            <?php
-
-
-                                                        }
-
-                                                        ?>
-
-
-                                                                                                                <div class="form-group">
-                                                                                                                    <label for="form-field-username">Subject</label>
-
-                                                                                                                    <div>
-                                                                                                                        <input type="text" name="subject" id="form-field-username" class="col-xs-8" placeholder="Enter Subject" value="" />
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <br/>
-                                                                                                                <div class="space-16"></div>
-
-
-                                                                                                                <div class="form-group">
-                                                                                                                    <label for="form-field-first">Message</label>
-
-                                                                                                                    <div>
-                                                                                                            <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
-                                                                                                                    </div>
-                                                                                                                </div>
-
-                                                                                                        </div>
-
-                                                                                                        <div class="space-16"></div>
-
-
-                                                                                                        <div class="col-xs-8 col-sm-12 ">
-
-                                                                                                            <div class="space-16"></div>
-                                                                                                            <label for="id-input-file-2">Attachment</label>
-
-
-
-                                                                                                            <input type="file" id="id-input-file-2" name="attachment" />
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-
-                                                                                                        <div class="space-16"></div>
-                                                                                                    <div class="modal-footer center">
-                                                                                                        <button class="btn btn-sm" data-dismiss="modal">
-                                                                                                            <i class="ace-icon fa fa-times"></i>
-                                                                                                            Cancel
-                                                                                                        </button>
-                                                                                                        <button name="send_mail" type="submit" class="btn btn-sm btn-primary">
-                                                                                                            <i class="ace-icon fa fa-send"></i>
-                                                                                                            SEND
-                                                                                                        </button>
-                                                                                                    </div>
-                                                                                                    </form>
-                                                                                                </div>
-                                                                                            </div>
-
-                                                        <!-- PAGE CONTENT ENDS -->
-                                                    </div><!-- /.col -->
-                                                </div><!-- /.row -->
+                        <!-- /.row -->
                                             </div><!-- /.page-content -->
                                     </div>
                                 </div><!-- /.main-content -->
@@ -2038,7 +1915,7 @@ if(isset($_GET['export'])) {
 
                                                 //,
                                                 //"sScrollY": "200px",
-                                                //"bPaginate": false,
+                                                "bPaginate": false,
 
                                                 "sScrollX": "100%"
                                                 //"sScrollXInner": "120%",
