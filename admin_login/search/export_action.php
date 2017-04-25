@@ -184,9 +184,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
      echo "entered here";
 
-    $get_roll= $_POST['checkbox'];
+    $get_roll= $_POST['check'];
 
-     print_r($get_roll);
+
 
      $message=$_POST['message'];
      $subject=$_POST['subject'];
@@ -895,7 +895,7 @@ if(isset($_GET['export'])) {
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="export_action" method="get" >
+                                                <form action="export_action" method="post" enctype="multipart/form-data" >
 
                                                     <?php  $rol=$_POST['checkbox'];
                                                     
