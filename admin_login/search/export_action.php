@@ -905,7 +905,7 @@ if(isset($_GET['export'])) {
                                                                 <div class="space-4"></div>
 
 
-                                                                <input type="hidden" name="checkbox[]" value="echo <?php $check ?>">
+                                                                <input type="hidden" name="checkbox[]" value=" <?php echo $check ?>">
 
 
                                                                 <div class="form-group">
