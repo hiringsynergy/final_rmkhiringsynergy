@@ -184,10 +184,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
     $get_roll= $_POST['checkbox'];
 
-    $message=$_POST['message'];
-    $subject=$_POST['subject'];
+     $message=$_POST['message'];
+     $subject=$_POST['subject'];
 
-    $stud_roll= explode(', ', $get_roll);
+     $stud_roll= explode(', ', $get_roll);
 
 
 
@@ -196,54 +196,56 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-    //uploading file if exists
-    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+     //uploading file if exists
+     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
-        $file_name = $_FILES['attachment']['name'];
-        $file_size = $_FILES['attachment']['size'];
-        $file_tmp = $_FILES['attachment']['tmp_name'];
-        $file_type = $_FILES['attachment']['type'];
+         $file_name = $_FILES['attachment']['name'];
+         $file_size = $_FILES['attachment']['size'];
+         $file_tmp = $_FILES['attachment']['tmp_name'];
+         $file_type = $_FILES['attachment']['type'];
 
 
 
-        $value = explode('.',$file_name);
+         $value = explode('.',$file_name);
 
 
 
 
-        $file_ext=strtolower(end($value));
+         $file_ext=strtolower(end($value));
 
-        $newfilename = current($value).'_'.time() . '.' . $file_ext;
+         $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-        move_uploaded_file($file_tmp,"files/".$newfilename);
+         move_uploaded_file($file_tmp,"files/".$newfilename);
 
 
 
-    }
+     }
 
 
 
 
 
 
-    //sending mails
+     //sending mails
 
-    require "../email/PHPMailer/PHPMailerAutoload.php";
+     require "../email/PHPMailer/PHPMailerAutoload.php";
 
-    $mail=new PHPMailer();
+     $mail=new PHPMailer();
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-    $mail->Password = 'akash170397';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;
 
+     $mail->isMail();
+     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+     $mail->SMTPAuth = true;                               // Enable SMTP authentication
+     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+     $mail->Password = 'rmk123';                           // SMTP password
+     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+     $mail->Port = 	587;
 
 
+     $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+     $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
 
 
 
@@ -253,35 +255,35 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-    include "../connect.php";
 
-    foreach ($stud_roll as $roll_no){
 
 
+     include "../connect.php";
 
+     foreach ($stud_roll as $roll_no){
 
 
-        $roll_year=$roll_no[4].$roll_no[5];
-        $year=(int)$roll_year+4;
 
-        $query_get_tablename="SELECT * FROM table_map where table_short='$year'";
-        $result_get_tablename=mysqli_query($connect, $query_get_tablename);
-        $row_get_talbename=mysqli_fetch_assoc($result_get_tablename);
 
-        $students_table=$row_get_talbename['table_name'];
 
+         $roll_year=$roll_no[4].$roll_no[5];
+         $year=(int)$roll_year+4;
 
-        $query_fetch_values="SELECT * FROM ".$students_table." where st_roll='$roll_no'";
-        $result_fetch_values=mysqli_query($connect, $query_fetch_values);
-        $row_roll_mail=mysqli_fetch_assoc($result_fetch_values);
+         $query_get_tablename="SELECT * FROM table_map where table_short='$year'";
+         $result_get_tablename=mysqli_query($connect, $query_get_tablename);
+         $row_get_talbename=mysqli_fetch_assoc($result_get_tablename);
 
+         $students_table=$row_get_talbename['table_name'];
 
 
+         $query_fetch_values="SELECT * FROM ".$students_table." where st_roll='$roll_no'";
+         $result_fetch_values=mysqli_query($connect, $query_fetch_values);
+         $row_roll_mail=mysqli_fetch_assoc($result_fetch_values);
 
-        $to=$row_roll_mail['st_email'];
 
 
 
+         $to=$row_roll_mail['st_email'];
 
 
 
@@ -296,25 +298,23 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-        $mail->addAddress($to, $to);     // Add a recipient
 
-        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
+         $mail->addAddress($to);     // Add a recipient
 
 
 
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
+         if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
-            $mail->addAttachment('files/'.$newfilename, $newfilename);
 
+             $mail->addAttachment('files/'.$newfilename, $newfilename);
 
 
-        }
 
+         }
 
 
 
@@ -328,34 +328,34 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-        $mail->isHTML(true);
 
-        $mail->Subject = $subject;
-        $mail->Body    = '<h3> '.$message.' </h3>';
+         $mail->isHTML(true);
 
+         $mail->Subject = $subject;
+         $mail->Body    = '<h3> '.$message.' '.$roll_no.' </h3>';
 
 
-        if(!$mail->send()) {
 
+         if(!$mail->send()) {
 
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
 
-        } else {
+             echo 'Mailer Error: ' . $mail->ErrorInfo;
 
-            echo 'Message has been sent';
+         } else {
 
-        }
+             echo 'Message has been sent';
 
+             // Clear all addresses and attachments for next loop
+             $mail->clearAddresses();
+             $mail->clearAttachments();
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+         }
 
 
 
-            unlink("files/$newfilename");
 
 
 
-        }
 
 
 
@@ -365,11 +365,18 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+     }
 
 
+     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
-    }
+
+         unlink("files/$newfilename");
+
+
+
+     }
    // header("Location: advanced_search");
 
 
