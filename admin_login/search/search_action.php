@@ -185,21 +185,99 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
     include "../connect.php";
     $get_year= $_GET['year'];
     $get_cgpa= $_GET['ugcgpa'];
+    $get_pgcgpa= $_GET['pgcgpa'];
     $get_12thpercentage= $_GET['12percentage'];
     $get_10thpercentage= $_GET['10percentage'];
     $get_historyofarrears= $_GET['historyofarrears'];
     $get_standingarrears= $_GET['standingarrears'];
 
+    $get_pgbranch= $_GET['pgbranch'];
     $get_branch= $_GET['ugbranch'];
 
     if(current($get_branch)=="all"){
-        $temp_branch="cse','it','eee','ece','eie";
+
+
+
+        include "../connect.php";
+
+        $query_get_branch="SELECT * FROM dept_map ";
+        $result_get_branch=mysqli_query($connect, $query_get_branch);
+
+        $num_rows=mysqli_num_rows($result_get_branch);
+
+        $j=1;
+
+        $temp_branch='';
+
+        while($row_get_branch=mysqli_fetch_assoc($result_get_branch)){
+
+
+
+            $temp_branch.=$row_get_branch['dept_short'];
+
+            if($j<$num_rows){
+
+                $temp_branch.="','";
+            }
+
+
+            ++$j;
+
+
+
+
+        }
+
+
+       // $temp_branch="cse','it','eee','ece','eie";
     }
 
     else {
         $temp_branch=implode("','",$get_branch);
     }
 
+
+    if(current($get_pgbranch)=="all") {
+
+
+
+
+
+            include "../connect.php";
+
+            $query_get_branch = "SELECT * FROM dept_map ";
+            $result_get_branch = mysqli_query($connect, $query_get_branch);
+
+            $num_rows = mysqli_num_rows($result_get_branch);
+
+            $j = 1;
+
+            $temp_pgbranch = '';
+
+            while ($row_get_branch = mysqli_fetch_assoc($result_get_branch)) {
+
+
+                $temp_pgbranch .= $row_get_branch['dept_short'];
+
+                if ($j < $num_rows) {
+
+                    $temp_pgbranch .= "','";
+                }
+
+
+                ++$j;
+
+
+            }
+
+
+            // $temp_pgbranch="cse','it','eee','ece','eie";
+        }
+
+
+    else {
+        $temp_pgbranch=implode("','",$get_pgbranch);
+    }
 
 
     $get_standingarrears= $_GET['historyofarrears'];
@@ -1504,7 +1582,7 @@ if(isset($_GET['export'])) {
 
                                                 //st_ugyearofpassing='$get_year' and
 
-                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG' ";
+                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'  UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa='$get_pgcgpa'";
 
                                                 $result = mysqli_query($connect, $query);
 
