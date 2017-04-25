@@ -1107,7 +1107,7 @@ if(isset($_GET['export'])) {
 
                                                 $roll=$_POST['checkbox'];
 
-                                                print_r($roll);
+                                               
 
 
                                                //print_r($roll);
