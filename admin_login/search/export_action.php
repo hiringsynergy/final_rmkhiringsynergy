@@ -179,216 +179,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
+ if(isset($_POST['send_mail'])  && isset($_SESSION['user_role'])=='admin' ){
 
 
-    include "../connect.php";
-    $get_year= $_GET['year'];
-    $get_cgpa= $_GET['ugcgpa'];
-    $get_12thpercentage= $_GET['12percentage'];
-    $get_10thpercentage= $_GET['10percentage'];
-    $get_historyofarrears= $_GET['historyofarrears'];
-    $get_standingarrears= $_GET['standingarrears'];
-
-    $get_branch= $_GET['ugbranch'];
-
-    if(current($get_branch)=="all"){
-        $temp_branch="cse','it','eee','ece','eie";
-    }
-
-    else {
-        $temp_branch=implode("','",$get_branch);
-    }
-
-
-
-    $get_standingarrears= $_GET['historyofarrears'];
-    $get_historyofarrears= $_GET['standingarrears'];
-
-
-
-}
-
-if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['user_role'])=='admin'  ){
-
-
-    //get value from form
-    include "../connect.php";
-
-
-    $get_year= $_POST['get_year'];
-    $get_cgpa= $_POST['get_cgpa'];
-    $get_12thpercentage= $_POST['get_12thpercentage'];
-    $get_10thpercentage= $_POST['get_10thpercentage'];
-    $get_historyofarrears=$_POST['get_historyofarrears'];
-    $get_standingarrears=$_POST['get_standingarrears'];
-    $temp_branch=$_POST['temp_branch'];
-
-    $subject= $_POST['subject'];
-    $message=$_POST['message'];
-
-
-
-
-
-    //uploading file if exists
-    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-        $file_name = $_FILES['attachment']['name'];
-        $file_size = $_FILES['attachment']['size'];
-        $file_tmp = $_FILES['attachment']['tmp_name'];
-        $file_type = $_FILES['attachment']['type'];
-
-
-
-        $value = explode('.',$file_name);
-
-
-
-
-        $file_ext=strtolower(end($value));
-
-        $newfilename = $file_name.'_'.time() . '.' . $file_ext;
-
-
-        move_uploaded_file($file_tmp,"files/".$newfilename);
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //sending mails
-
-    require "../email/PHPMailer/PHPMailerAutoload.php";
-
-    $mail=new PHPMailer();
-
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-    $mail->Password = 'akash170397';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;
-
-
-
-
-
-    set_time_limit(0);
-
-    //sending mail to selected students
-
-    $query_mail = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears'";
-
-    $result_mail = mysqli_query($connect, $query_mail);
-    while($row_mail=mysqli_fetch_assoc($result_mail)){
-
-
-
-
-        $to=$row_mail['st_email'];
-
-
-
-
-
-
-
-        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-        $mail->addAddress($to, $to);     // Add a recipient
-
-        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
-
-
-
-
-
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-            $mail->addAttachment('files/'.$newfilename, $newfilename);
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $mail->isHTML(true);
-
-        $mail->Subject = $subject;
-        $mail->Body    = '<h3> '.$message.' </h3>';
-
-
-
-        if(!$mail->send()) {
-
-
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-
-        } else {
-
-            echo 'Message has been sent';
-
-        }
-
-
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-            unlink("files/$newfilename");
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-    }
-
-    header("Location: advanced_search");
-
-}
-
-else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-    $get_roll= $_POST['get_roll'];
+    $get_roll= $_POST['checkbox'];
 
     $message=$_POST['message'];
     $subject=$_POST['subject'];
@@ -1076,6 +870,87 @@ if(isset($_GET['export'])) {
                                 <h3 class="header smaller lighter blue">Advanced Search</h3>
 
 
+                                <div class="row">
+                                    <div class="col-xs-12 ">
+                                        <div class="form-actions center">
+
+
+                                            <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">SEND MAIL <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div id="modal-form" class="modal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form action="export_action" method="post" enctype="multipart/form-data">
+
+                                                    <div class="modal-body">
+
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-12">
+
+                                                                <div class="space-4"></div>
+
+
+                                                                <input type="hidden" name="checkbox[]" value="echo <?php $check ?>">
+
+
+                                                                <div class="form-group">
+                                                                    <label for="form-field-username">Subject</label>
+
+                                                                    <div>
+                                                                        <input type="text" name="subject" id="form-field-username" class="col-xs-8" placeholder="Enter Subject" value="" />
+                                                                    </div>
+                                                                </div>
+                                                                <br/>
+                                                                <div class="space-16"></div>
+
+
+                                                                <div class="form-group">
+                                                                    <label for="form-field-first">Message</label>
+
+                                                                    <div>
+                                                                        <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="space-16"></div>
+
+
+                                                            <div class="col-xs-8 col-sm-12 ">
+
+                                                                <div class="space-16"></div>
+                                                                <label for="id-input-file-2">Attachment</label>
+
+
+
+                                                                <input type="file" id="id-input-file-2" name="attachment" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="space-16"></div>
+                                                    <div class="modal-footer center">
+                                                        <button class="btn btn-sm" data-dismiss="modal">
+                                                            <i class="ace-icon fa fa-times"></i>
+                                                            Cancel
+                                                        </button>
+                                                        <button name="send_mail" type="submit" class="btn btn-sm btn-primary">
+                                                            <i class="ace-icon fa fa-send"></i>
+                                                            SEND
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- PAGE CONTENT ENDS -->
+                                    </div><!-- /.col -->
+                                </div>
 
 
 
