@@ -286,7 +286,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-         $to=$row_roll_mail['st_email'];
+         echo $to=$row_roll_mail['st_email'];
+
+         echo "<br>";
 
 
 
@@ -349,12 +351,14 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
              echo 'Message has been sent';
 
              // Clear all addresses and attachments for next loop
-             $mail->clearAddresses();
-             $mail->clearAttachments();
+
 
          }
 
 
+
+         $mail->clearAddresses();
+         $mail->clearAttachments();
 
 
 
