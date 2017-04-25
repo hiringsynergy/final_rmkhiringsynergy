@@ -182,7 +182,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
  if(isset($_POST['send_mail'])  && isset($_SESSION['user_role'])=='admin' ){
 
 
-     echo "entered here";
 
     $get_roll= $_POST['check'];
 
