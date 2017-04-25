@@ -897,7 +897,8 @@ if(isset($_GET['export'])) {
                                             <div class="modal-content">
                                                 <form action="export_action" method="get" >
 
-                                                    <input type="text" name="check[]" value=" <?php echo $_POST['checkbox']; ?>">
+                                                    <?php echo $rol=$_POST['checkbox']; ?>
+                                                    <input type="text" name="check[]" value="<?php echo $rolS ?> ">
 
 
                                                     <div class="modal-body">
