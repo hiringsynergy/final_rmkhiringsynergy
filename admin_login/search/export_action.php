@@ -375,7 +375,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 }
-
+/*
 if(isset($_GET['export'])) {
 
     include "../connect.php";
@@ -390,7 +390,7 @@ if(isset($_GET['export'])) {
 
 
 }
-
+*/
 ?>
 
 
@@ -1346,84 +1346,7 @@ if(isset($_GET['export'])) {
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-xs-12 ">
-                                <div class="form-actions center">
-
-
-                                    <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">SEND MAIL <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>
-
-
-                                </div>
-                            </div>
-
-                            <div id="modal-form" class="modal" tabindex="-1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <form action="search_action" method="post" enctype="multipart/form-data">
-
-                                            <div class="modal-body">
-
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12">
-
-                                                        <div class="space-4"></div>
-
-
-                                                        <?php   if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
-
-                                                            ?>
-
-                                                            <input type="hidden" value="<?php echo $get_year ?>" name="get_year">
-                                                            <input type="hidden" value="<?php echo $get_cgpa ?>" name="get_cgpa">
-                                                            <input type="hidden" value="<?php echo $get_12thpercentage ?>" name="get_12thpercentage">
-                                                            <input type="hidden" value="<?php echo $get_10thpercentage ?>" name="get_10thpercentage">
-                                                            <input type="hidden" value="<?php echo $get_historyofarrears ?>" name="get_historyofarrears">
-                                                            <input type="hidden" value="<?php echo $get_standingarrears ?>" name="get_standingarrears">
-                                                            <input type="hidden" value="<?php echo $temp_branch ?>" name="temp_branch">
-                                                            <input type="hidden" value="filter" name="filter">
-
-
-
-
-
-
-
-                                                            <?php
-
-
-                                                        }
-
-
-                                                        ?>
-
-
-
-                                                        <!-- PAGE CONTENT ENDS -->
-                                                    </div><!-- /.col -->
-                                                </div><!-- /.row -->
-                                            </div><!-- /.page-content -->
-                                    </div>
-                                </div><!-- /.main-content -->
-
-                                <div class="footer">
-                                    <div class="footer-inner">
-                                        <div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">RMK</span>
-							Group of Institutions
-						</span>
-
-                                            &nbsp; &nbsp;
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-                                    <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-                                </a>
-                            </div><!-- /.main-container -->
+                    <!-- /.main-container -->
 
                             <!-- basic scripts -->
 
