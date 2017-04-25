@@ -1095,7 +1095,9 @@ if(isset($_GET['export'])) {
                                             if(isset($_POST['export']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
-                                               echo $roll=$_POST['checkbox'];
+                                                $roll=$_POST['checkbox'];
+
+                                                print_r($roll);
 
 
                                                //print_r($roll);
