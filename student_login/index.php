@@ -229,7 +229,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         if(!$result){
 
 
-                            mysqli_error($connect);
+
+                            die(mysqli_error($connect)." error");
                         }
 
                         while($row=mysqli_fetch_assoc($result)){
