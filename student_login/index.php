@@ -213,43 +213,87 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </ul>
                 </li>
 
-                <li class="light-blue dropdown-modal">
+<!--                <li class="light-blue dropdown-modal">-->
+<!--                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">-->
+<!---->
+<!--                        --><?php
+//                        include "connect.php";
+//                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+//                        $name=$_SESSION['user'];
+//
+//                        $student_table=$_SESSION['table_name'];
+//                        $query_select="select * from $student_table where st_roll='{$name}'";
+//
+//                        $result=mysqli_query($connect,$query_select);
+//
+//                        if(!$result){
+//
+//
+//
+//                            die(mysqli_error($connect));
+//                        }
+//
+//                        while($row=mysqli_fetch_assoc($result)){
+//
+//
+//
+//                            ?>
+<!---->
+<!---->
+<!--                            <img class="nav-user-photo" src="images/--><?php //echo $row['st_pic']; ?><!--" alt="No Photo" />-->
+<!---->
+<!--                        <span class="user-info">-->
+<!--                                    <small>Welcome,</small>-->
+<!--                                   --><?php //echo $row['st_name']; ?>
+<!--                                </span>-->
+<!--                        --><?php //} ?>
+<!---->
+<!--                        <i class="ace-icon fa fa-caret-down"></i>-->
+<!--                    </a>-->
+<!---->
+<!--                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">-->
+<!--                        <li>-->
+<!--                            <a href="settings">-->
+<!--                                <i class="ace-icon fa fa-cog"></i>-->
+<!--                                Settings-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!---->
+<!--                        <li>-->
+<!--                            <a href="profile/profile">-->
+<!--                                <i class="ace-icon fa fa-user"></i>-->
+<!--                                Profile-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!---->
+<!--                        <li class="divider"></li>-->
+<!---->
+<!--                        <li>-->
+<!--                            <a href="../login_out/logout">-->
+<!--                                <i class="ace-icon fa fa-power-off"></i>-->
+<!--                                Logout-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+
+                <li class="light-blue dropdown-modal " >
+
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
-                        <?php
-                        include "connect.php";
-                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
-                        $name=$_SESSION['user'];
-
-                        $student_table=$_SESSION['table_name'];
-                        $query="select * from $student_table where st_roll=$name";
-
-                        $result=mysqli_query($connect,$query);
-
-                        if(!$result){
 
 
 
-                            die(mysqli_error($connect));
-                        }
-
-                        while($row=mysqli_fetch_assoc($result)){
-
-
-
-                            ?>
-
-
-                            <img class="nav-user-photo" src="images/<?php echo $row['st_pic']; ?>" alt="No Photo" />
+                            <img class="nav-user-photo" src="images/rmkcet.jpg" alt="Photo" />
 
                         <span class="user-info">
-                                    <small>Welcome,</small>
-                                   <?php echo $row['st_name']; ?>
-                                </span>
-                        <?php } ?>
+									<small>Welcome,</small>
+									Admin
+								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
+
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                         <li>
