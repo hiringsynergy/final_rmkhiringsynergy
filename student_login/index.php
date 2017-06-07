@@ -219,10 +219,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <?php
                         include "connect.php";
                         //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
-                       echo $name=$_SESSION['user'];
+                        $name=$_SESSION['user'];
 
-                      echo  $student_table=$_SESSION['table_name'];
-                        $query="select * from $student_table where st_roll='{$name}'";
+                        $student_table=$_SESSION['table_name'];
+                        $query="select * from $student_table where st_roll=$name";
 
                         $result=mysqli_query($connect,$query);
 
