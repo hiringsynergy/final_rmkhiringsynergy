@@ -106,19 +106,19 @@
         <entry file="file://$PROJECT_DIR$/student_login/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
-              <caret line="232" column="56" lean-forward="false" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+              <caret line="232" column="39" lean-forward="false" selection-start-line="232" selection-start-column="39" selection-end-line="232" selection-end-column="39" />
               <folding>
                 <element signature="e#4900#4905#0#PHP" expanded="true" />
                 <element signature="e#6188#6193#0#PHP" expanded="true" />
-                <element signature="e#8684#8689#0#PHP" expanded="true" />
-                <element signature="e#8878#8883#0#PHP" expanded="true" />
-                <element signature="e#14375#14380#0#PHP" expanded="true" />
-                <marker date="1496856512470" expanded="true" signature="5138:5261" ph="SELECT * FRO... jobs" />
-                <marker date="1496856512470" expanded="true" signature="8263:8306" ph="select * fro... ${$student_table}" />
-                <marker date="1496856512470" expanded="true" signature="8263:8307" ph="select * fro... ${$student_table}" />
-                <marker date="1496856512470" expanded="true" signature="8263:8313" ph="select * fro... ${$student_table}" />
-                <marker date="1496856512470" expanded="true" signature="8263:8315" ph="select * fro... ${$student_table}" />
-                <marker date="1496856512470" expanded="true" signature="14861:14992" ph="SELECT * FRO... jobs" />
+                <element signature="e#8692#8697#0#PHP" expanded="true" />
+                <element signature="e#8886#8891#0#PHP" expanded="true" />
+                <element signature="e#14383#14388#0#PHP" expanded="true" />
+                <marker date="1496856600650" expanded="true" signature="5138:5261" ph="SELECT * FRO... jobs" />
+                <marker date="1496856600650" expanded="true" signature="8263:8306" ph="select * fro... ${$student_table}" />
+                <marker date="1496856600650" expanded="true" signature="8263:8307" ph="select * fro... ${$student_table}" />
+                <marker date="1496856600650" expanded="true" signature="8263:8313" ph="select * fro... ${$student_table}" />
+                <marker date="1496856600650" expanded="true" signature="8263:8315" ph="select * fro... ${$student_table}" />
+                <marker date="1496856600650" expanded="true" signature="14869:15000" ph="SELECT * FRO... jobs" />
               </folding>
             </state>
           </provider>
@@ -695,7 +695,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58758000" />
+    <option name="totallyTimeSpent" value="58846000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1384,19 +1384,19 @@
     <entry file="file://$PROJECT_DIR$/student_login/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
-          <caret line="232" column="56" lean-forward="false" selection-start-line="232" selection-start-column="56" selection-end-line="232" selection-end-column="56" />
+          <caret line="232" column="39" lean-forward="false" selection-start-line="232" selection-start-column="39" selection-end-line="232" selection-end-column="39" />
           <folding>
             <element signature="e#4900#4905#0#PHP" expanded="true" />
             <element signature="e#6188#6193#0#PHP" expanded="true" />
-            <element signature="e#8684#8689#0#PHP" expanded="true" />
-            <element signature="e#8878#8883#0#PHP" expanded="true" />
-            <element signature="e#14375#14380#0#PHP" expanded="true" />
-            <marker date="1496856512470" expanded="true" signature="5138:5261" ph="SELECT * FRO... jobs" />
-            <marker date="1496856512470" expanded="true" signature="8263:8306" ph="select * fro... ${$student_table}" />
-            <marker date="1496856512470" expanded="true" signature="8263:8307" ph="select * fro... ${$student_table}" />
-            <marker date="1496856512470" expanded="true" signature="8263:8313" ph="select * fro... ${$student_table}" />
-            <marker date="1496856512470" expanded="true" signature="8263:8315" ph="select * fro... ${$student_table}" />
-            <marker date="1496856512470" expanded="true" signature="14861:14992" ph="SELECT * FRO... jobs" />
+            <element signature="e#8692#8697#0#PHP" expanded="true" />
+            <element signature="e#8886#8891#0#PHP" expanded="true" />
+            <element signature="e#14383#14388#0#PHP" expanded="true" />
+            <marker date="1496856600650" expanded="true" signature="5138:5261" ph="SELECT * FRO... jobs" />
+            <marker date="1496856600650" expanded="true" signature="8263:8306" ph="select * fro... ${$student_table}" />
+            <marker date="1496856600650" expanded="true" signature="8263:8307" ph="select * fro... ${$student_table}" />
+            <marker date="1496856600650" expanded="true" signature="8263:8313" ph="select * fro... ${$student_table}" />
+            <marker date="1496856600650" expanded="true" signature="8263:8315" ph="select * fro... ${$student_table}" />
+            <marker date="1496856600650" expanded="true" signature="14869:15000" ph="SELECT * FRO... jobs" />
           </folding>
         </state>
       </provider>
