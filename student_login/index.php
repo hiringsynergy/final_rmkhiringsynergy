@@ -219,9 +219,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <?php
                         include "connect.php";
                         //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
-                        $name=$_SESSION['user'];
+                       echo $name=$_SESSION['user'];
 
-                        $student_table=$_SESSION['table_name'];
+                      echo  $student_table=$_SESSION['table_name'];
                         $query="select * from $student_table where st_roll='{$name}'";
 
                         $result=mysqli_query($connect,$query);
@@ -230,7 +230,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                            die(mysqli_error($connect)." error");
+                            die(mysqli_error($connect));
                         }
 
                         while($row=mysqli_fetch_assoc($result)){
