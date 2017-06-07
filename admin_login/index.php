@@ -812,7 +812,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
                                             <div class="widget-box widget-color-orange" id="shadow">
                                                 <div class="widget-header">
-                                                    <h5 class="widget-title bigger white">Create New Student Table</h5>
+                                                    <h5 class="widget-title bigger white">Create N ew Student Table</h5>
                                                 </div>
 
                                                 <div class="widget-body">

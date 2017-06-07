@@ -237,7 +237,7 @@ if(isset($_POST['login'])){
 
     else{
 
-       // header("Location: ../login");
+        header("Location: ../login");
 
     }
 
