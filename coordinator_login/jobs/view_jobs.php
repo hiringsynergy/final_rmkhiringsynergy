@@ -626,8 +626,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
                         include "../connect.php";
-                        $branch= $_SESSION['cood_branch'];
-                        $deg=$_SESSION['cood_deg'];
+                      echo  $branch= $_SESSION['cood_branch'];
+                       echo $deg=$_SESSION['cood_deg'];
 
                         if($deg=='UG'){
 

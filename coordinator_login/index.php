@@ -631,8 +631,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 																</span>
                                                                     </div>
                                                                     <div class="widget-main">
-                                                                        Hi, <?php echo $_SESSION['student_name']; ?>,
-                                                                        a new job
+                                                                        A new job
                                                                         <span class="red" style="font-size: 17px;"> <?php echo $row['job_title']  ?> </span> from company
                                                                         <span class="green" style="font-size: 17px;"><?php echo $row['company']    ?> </span>
                                                                         has been posted!
