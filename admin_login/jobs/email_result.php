@@ -576,8 +576,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail->isSMTP();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                    $mail->Password = 'rmk123';                           // SMTP password
+                    $mail->Username = 'akashkarthick400@gmail.com';                 // SMTP username
+                    $mail->Password = 'karthick170397';                           // SMTP password
                     $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
