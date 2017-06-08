@@ -725,16 +725,16 @@ function updateSlider(){
                                                                             <h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
 
                                                                             <select class="chosen-select form-control" name="standingarrears" id="form-field-select-3" data-placeholder="Please Select...">
-                                                                                <option value="">Nil</option>
-                                                                                <option value="">1</option>
-                                                                                <option value="">2</option>
-                                                                                <option value="">3</option>
-                                                                                <option value="">4</option>
-                                                                                <option value="">5</option>
-                                                                                <option value="">6</option>
-                                                                                <option value="">7</option>
-                                                                                <option value="">8</option>
-                                                                                <option value="">9</option>
+                                                                                <option value="0">Nil</option>
+                                                                                <option value="1">1</option>
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+                                                                                <option value="6">6</option>
+                                                                                <option value="7">7</option>
+                                                                                <option value="8">8</option>
+                                                                                <option value="9">9</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-xs-8 col-sm-5">

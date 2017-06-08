@@ -202,8 +202,8 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='coordinator'){
 */
 
 
-    $get_standingarrears= $_GET['historyofarrears'];
-    $get_historyofarrears= $_GET['standingarrears'];
+   $get_historyofarrears  = $_GET['historyofarrears'];
+    $get_standingarrears= $_GET['standingarrears'];
 
 
 
@@ -1290,6 +1290,8 @@ else if(isset($_POST['send_mail']) && isset($_POST['search']) && isset($_SESSION
 
 
                                             $get_year=$_GET['year'];
+
+                                            include "../connect.php";
 
                                             //st_ugyearofpassing='$get_year' and
 
