@@ -1579,18 +1579,15 @@ if(isset($_GET['export'])) {
                                             else if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
-                                                include "../connect.php";
+                                                $get_year=$_GET['year'];
 
-                                                echo $get_year=$_GET['year'];
+                                                include "../connect.php";
 
                                                 //st_ugyearofpassing='$get_year' and
 
-                                                $query = "select * from students_".$get_year;
+                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'  UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
 
-
-                                                 /* where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG' UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'*/
-
-                                               $result = mysqli_query($connect, $query);
+                                                $result = mysqli_query($connect, $query);
 
                                                 if (!$result) {
                                                     die("" . mysqli_error($connect));
@@ -1879,8 +1876,7 @@ echo "count".$sno;
 
 
                                     </div>
-                                    <?php
-                                    echo "below table";?>
+                                    
                                 </form>
                             </div>
                         </div>
