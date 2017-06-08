@@ -574,7 +574,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail=new PHPMailer();
 
                     $mail->isSMTP();
-                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.gmail.com';//'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     $mail->Username = 'akashkarthick400@gmail.com';                 // SMTP username
                     $mail->Password = 'karthick170397';                           // SMTP password
