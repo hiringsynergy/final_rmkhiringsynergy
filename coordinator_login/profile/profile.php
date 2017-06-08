@@ -501,7 +501,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                     if(preg_match('/rmk/', $database)){
                         ?>
-                        <img src="../images/rmd.jpg" style="height: 25px;">
+                        <img src="../images/rmk.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK Engineering College </label>
 
                         <?php
@@ -509,7 +509,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                     if(preg_match('/cet/', $database)){
                         ?>
-                        <img src="../images/rmd.jpg" style="height: 25px;">
+                        <img src="../images/rmkcet.jpg" style="height: 25px;">
                         <label style="font-size: large;">RMK College of Engineering and Technology </label>
 
                         <?php
