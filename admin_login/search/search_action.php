@@ -1588,7 +1588,7 @@ if(isset($_GET['export'])) {
 
                                                  /*UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'*/
 
-                                               echo $result = mysqli_query($connect, $query);
+                                               $result = mysqli_query($connect, $query);
 
                                                 if (!$result) {
                                                     die("" . mysqli_error($connect));
