@@ -766,6 +766,14 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $branches=explode("','", $dept_branch);
 
                     print_r($branches);
+
+                    foreach ($branches as $dept){
+
+
+
+
+
+                    }
                     
                     
                     
