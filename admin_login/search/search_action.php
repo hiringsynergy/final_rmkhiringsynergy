@@ -280,8 +280,8 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
     }
 
 
-    $get_standingarrears= $_GET['historyofarrears'];
-    $get_historyofarrears= $_GET['standingarrears'];
+   $get_historyofarrears = $_GET['historyofarrears'];
+   $get_standingarrears = $_GET['standingarrears'];
 
 
 
