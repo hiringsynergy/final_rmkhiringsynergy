@@ -582,10 +582,10 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail->Port = 	587;
 
 
-                    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+                    $mail->setFrom('akashkarthick400@gmail.com', 'RMD Placements');
 
 
-                    $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+                    $mail->addReplyTo('akashkarthick400@gmail.com', 'Reply');
 
 
                     $mail->isHTML(true);
