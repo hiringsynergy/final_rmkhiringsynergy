@@ -709,6 +709,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
+                    $dept_branch=$row_eligible_year['job_branch'];
+
                     $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible'";
                     $result_mail = mysqli_query($connect, $query_mail);
                     $num_rows = mysqli_num_rows($result_mail);
@@ -755,14 +757,24 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         $mail->clearAttachments();
 
 
-                        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-
-                            foreach ($send_file as $file_sent) {
-
-                                unlink("files/$file_sent");
+                        
 
 
-                            }
+                    }
+                    
+                    
+                    $branches=explode("','", $dept_branch);
+
+                    print_r($branches);
+                    
+                    
+                    
+
+                    if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                        foreach ($send_file as $file_sent) {
+
+                            unlink("files/$file_sent");
 
 
                         }
