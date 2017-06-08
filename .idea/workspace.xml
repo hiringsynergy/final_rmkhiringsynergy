@@ -20,47 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coordinator_login/settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="290" column="39" lean-forward="false" selection-start-line="290" selection-start-column="39" selection-end-line="290" selection-end-column="39" />
-              <folding>
-                <element signature="e#8926#8931#0#PHP" expanded="true" />
-                <marker date="1496937254899" expanded="true" signature="515:595" ph="UPDATE login... " />
-                <marker date="1496937254899" expanded="true" signature="5954:5977" ph="SELECT * fro... st_change" />
-                <marker date="1496937254899" expanded="true" signature="8306:8362" ph="select * fro... login_coordinator" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="approve.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/coordinator_login/approve.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="512" column="39" lean-forward="false" selection-start-line="512" selection-start-column="39" selection-end-line="512" selection-end-column="39" />
-              <folding>
-                <element signature="e#18465#18470#0#PHP" expanded="true" />
-                <marker date="1496937268592" expanded="true" signature="516:596" ph="UPDATE login... " />
-                <marker date="1496937268592" expanded="true" signature="1111:1169" ph="SELECT * fro... students_" />
-                <marker date="1496937268592" expanded="true" signature="1290:1340" ph="SELECT * fro... st_change" />
-                <marker date="1496937268592" expanded="true" signature="1626:1693" ph="UPDATE ${$tn... " />
-                <marker date="1496937268592" expanded="true" signature="1912:1985" ph="UPDATE st_ch... " />
-                <marker date="1496937268592" expanded="true" signature="5588:5646" ph="SELECT * fro... students_" />
-                <marker date="1496937268592" expanded="true" signature="5767:5817" ph="SELECT * fro... st_change" />
-                <marker date="1496937268592" expanded="true" signature="6416:6489" ph="UPDATE st_ch... " />
-                <marker date="1496937268592" expanded="true" signature="8576:8761" ph="..." />
-                <marker date="1496937268592" expanded="true" signature="15490:15513" ph="SELECT * fro... st_change" />
-                <marker date="1496937268592" expanded="true" signature="17845:17901" ph="select * fro... login_coordinator" />
-                <marker date="1496937268592" expanded="true" signature="24941:24964" ph="SELECT * fro... st_change" />
-                <marker date="1496937268592" expanded="true" signature="25847:25906" ph="SELECT * fro... st_changetable" />
-                <marker date="1496937268592" expanded="true" signature="26526:26593" ph="SELECT * fro... students_" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="reports.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coordinator_login/reports/reports.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,9 +106,10 @@
       <file leaf-file-name="view_jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coordinator_login/jobs/view_jobs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="256" column="39" lean-forward="false" selection-start-line="256" selection-start-column="39" selection-end-line="256" selection-end-column="39" />
+            <state relative-caret-position="-110">
+              <caret line="130" column="20" lean-forward="false" selection-start-line="128" selection-start-column="23" selection-end-line="159" selection-end-column="16" />
               <folding>
+                <element signature="e#3918#3923#0#PHP" expanded="true" />
                 <element signature="e#6611#6616#0#PHP" expanded="true" />
                 <element signature="e#6951#6956#0#PHP" expanded="true" />
                 <element signature="e#7726#7731#0#PHP" expanded="true" />
@@ -230,7 +190,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_action.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search_action.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coordinator_login/search/search_action.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
@@ -245,6 +205,39 @@
                 <marker date="1496937367243" expanded="true" signature="30527:30576" ph="SELECT * FRO... table_map" />
                 <marker date="1496937367243" expanded="true" signature="31062:31157" ph="SELECT * FRO... ${$students_table}" />
                 <marker date="1496937367243" expanded="true" signature="45456:45749" ph="select * fro... students_" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_jobs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-16820">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1492920575046" expanded="true" signature="6607:6630" ph="SELECT * fro... st_change" />
+                <marker date="1492920575046" expanded="true" signature="8855:8905" ph="select * fro... login_admin" />
+                <marker date="1492920575046" expanded="true" signature="19501:19527" ph="SELECT * FRO... company_list" />
+                <marker date="1492920575046" expanded="true" signature="22820:22843" ph="SELECT * FRO... table_map" />
+                <marker date="1492920575046" expanded="true" signature="40559:40591" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email_result.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1710">
+              <caret line="640" column="80" lean-forward="false" selection-start-line="640" selection-start-column="80" selection-end-line="640" selection-end-column="80" />
+              <folding>
+                <marker date="1496938195590" expanded="true" signature="5841:5864" ph="SELECT * fro... st_change" />
+                <marker date="1496938195590" expanded="true" signature="8005:8055" ph="select * fro... login_admin" />
+                <marker date="1496938195590" expanded="true" signature="21944:21982" ph="SELECT * FRO... jobs" />
+                <marker date="1496938195590" expanded="true" signature="22281:22364" ph="SELECT * FRO... students_" />
+                <marker date="1496938195590" expanded="true" signature="35632:35786" ph="..." />
+                <marker date="1496938195590" expanded="true" signature="35689:35772" ph="..." />
               </folding>
             </state>
           </provider>
@@ -280,8 +273,8 @@
       <find>&lt;small&gt;welcome,&lt;/small&gt;</find>
       <find>&lt;small&gt;welcome,&lt;/small&gt;</find>
       <find>&lt;small&gt;welcome,&lt;/small&gt;</find>
-      <find>&lt;small&gt;welcome,&lt;/small&gt;</find>
       <find>welcome</find>
+      <find>RMD</find>
       <find>welco</find>
       <find>welc</find>
     </findStrings>
@@ -321,7 +314,6 @@
         <option value="$PROJECT_DIR$/admin_login/reports/show_lists.php" />
         <option value="$PROJECT_DIR$/admin_login/jobs/job_filter.php" />
         <option value="$PROJECT_DIR$/admin_login/search/export_action.php" />
-        <option value="$PROJECT_DIR$/admin_login/jobs/email_result.php" />
         <option value="$PROJECT_DIR$/admin_login/jobs/view_jobs.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
@@ -356,6 +348,7 @@
         <option value="$PROJECT_DIR$/coordinator_login/company/company_details.php" />
         <option value="$PROJECT_DIR$/coordinator_login/search/advanced_search.php" />
         <option value="$PROJECT_DIR$/coordinator_login/search/search_action.php" />
+        <option value="$PROJECT_DIR$/admin_login/jobs/email_result.php" />
       </list>
     </option>
   </component>
@@ -439,11 +432,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="coordinator_login" />
+              <option name="myItemId" value="admin_login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
+              <option name="myItemId" value="admin_login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,12 +569,12 @@
       <workItem from="1492139338651" duration="30000" />
       <workItem from="1492867464715" duration="3206000" />
       <workItem from="1492917182437" duration="3991000" />
-      <workItem from="1496933543810" duration="1602000" />
+      <workItem from="1496933543810" duration="2930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60917000" />
+    <option name="totallyTimeSpent" value="62245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -646,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/jobs/job_filter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22968">
@@ -686,13 +686,6 @@
         <state relative-caret-position="25172">
           <caret line="1467" column="48" lean-forward="false" selection-start-line="1467" selection-start-column="48" selection-end-line="1467" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17284">
-          <caret line="596" column="41" lean-forward="false" selection-start-line="596" selection-start-column="41" selection-end-line="596" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1308,11 +1301,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coordinator_login/jobs/view_jobs.php">
+    <entry file="file://$PROJECT_DIR$/coordinator_login/company/view_companies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="256" column="39" lean-forward="false" selection-start-line="256" selection-start-column="39" selection-end-line="256" selection-end-column="39" />
+          <caret line="248" column="39" lean-forward="false" selection-start-line="248" selection-start-column="39" selection-end-line="248" selection-end-column="39" />
           <folding>
+            <element signature="e#0#5#0#PHP" expanded="true" />
+            <element signature="e#8337#8342#0#PHP" expanded="true" />
+            <marker date="1496937331787" expanded="true" signature="5353:5376" ph="SELECT * fro... st_change" />
+            <marker date="1496937331787" expanded="true" signature="7712:7768" ph="select * fro... login_coordinator" />
+            <marker date="1496937331787" expanded="true" signature="14545:14571" ph="SELECT * FRO... company_list" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coordinator_login/search/search_action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="734" column="39" lean-forward="false" selection-start-line="734" selection-start-column="39" selection-end-line="734" selection-end-column="39" />
+          <folding>
+            <element signature="e#17384#17389#0#PHP" expanded="true" />
+            <marker date="1496937367243" expanded="true" signature="7771:8064" ph="select * fro... students_" />
+            <marker date="1496937367243" expanded="true" signature="10714:10763" ph="SELECT * FRO... table_map" />
+            <marker date="1496937367243" expanded="true" signature="11002:11060" ph="SELECT * FRO... ${$students_table}" />
+            <marker date="1496937367243" expanded="true" signature="14403:14426" ph="SELECT * fro... st_change" />
+            <marker date="1496937367243" expanded="true" signature="16761:16817" ph="select * fro... login_coordinator" />
+            <marker date="1496937367243" expanded="true" signature="30527:30576" ph="SELECT * FRO... table_map" />
+            <marker date="1496937367243" expanded="true" signature="31062:31157" ph="SELECT * FRO... ${$students_table}" />
+            <marker date="1496937367243" expanded="true" signature="45456:45749" ph="select * fro... students_" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16820">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1492920575046" expanded="true" signature="6607:6630" ph="SELECT * fro... st_change" />
+            <marker date="1492920575046" expanded="true" signature="8855:8905" ph="select * fro... login_admin" />
+            <marker date="1492920575046" expanded="true" signature="19501:19527" ph="SELECT * FRO... company_list" />
+            <marker date="1492920575046" expanded="true" signature="22820:22843" ph="SELECT * FRO... table_map" />
+            <marker date="1492920575046" expanded="true" signature="40559:40591" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coordinator_login/jobs/view_jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="130" column="20" lean-forward="false" selection-start-line="128" selection-start-column="23" selection-end-line="159" selection-end-column="16" />
+          <folding>
+            <element signature="e#3918#3923#0#PHP" expanded="true" />
             <element signature="e#6611#6616#0#PHP" expanded="true" />
             <element signature="e#6951#6956#0#PHP" expanded="true" />
             <element signature="e#7726#7731#0#PHP" expanded="true" />
@@ -1359,20 +1399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coordinator_login/company/view_companies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="248" column="39" lean-forward="false" selection-start-line="248" selection-start-column="39" selection-end-line="248" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="true" />
-            <element signature="e#8337#8342#0#PHP" expanded="true" />
-            <marker date="1496937331787" expanded="true" signature="5353:5376" ph="SELECT * fro... st_change" />
-            <marker date="1496937331787" expanded="true" signature="7712:7768" ph="select * fro... login_coordinator" />
-            <marker date="1496937331787" expanded="true" signature="14545:14571" ph="SELECT * FRO... company_list" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coordinator_login/company/company_details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1402,20 +1428,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coordinator_login/search/search_action.php">
+    <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="734" column="39" lean-forward="false" selection-start-line="734" selection-start-column="39" selection-end-line="734" selection-end-column="39" />
+        <state relative-caret-position="-1710">
+          <caret line="640" column="80" lean-forward="false" selection-start-line="640" selection-start-column="80" selection-end-line="640" selection-end-column="80" />
           <folding>
-            <element signature="e#17384#17389#0#PHP" expanded="true" />
-            <marker date="1496937367243" expanded="true" signature="7771:8064" ph="select * fro... students_" />
-            <marker date="1496937367243" expanded="true" signature="10714:10763" ph="SELECT * FRO... table_map" />
-            <marker date="1496937367243" expanded="true" signature="11002:11060" ph="SELECT * FRO... ${$students_table}" />
-            <marker date="1496937367243" expanded="true" signature="14403:14426" ph="SELECT * fro... st_change" />
-            <marker date="1496937367243" expanded="true" signature="16761:16817" ph="select * fro... login_coordinator" />
-            <marker date="1496937367243" expanded="true" signature="30527:30576" ph="SELECT * FRO... table_map" />
-            <marker date="1496937367243" expanded="true" signature="31062:31157" ph="SELECT * FRO... ${$students_table}" />
-            <marker date="1496937367243" expanded="true" signature="45456:45749" ph="select * fro... students_" />
+            <marker date="1496938195590" expanded="true" signature="5841:5864" ph="SELECT * fro... st_change" />
+            <marker date="1496938195590" expanded="true" signature="8005:8055" ph="select * fro... login_admin" />
+            <marker date="1496938195590" expanded="true" signature="21944:21982" ph="SELECT * FRO... jobs" />
+            <marker date="1496938195590" expanded="true" signature="22281:22364" ph="SELECT * FRO... students_" />
+            <marker date="1496938195590" expanded="true" signature="35632:35786" ph="..." />
+            <marker date="1496938195590" expanded="true" signature="35689:35772" ph="..." />
           </folding>
         </state>
       </provider>

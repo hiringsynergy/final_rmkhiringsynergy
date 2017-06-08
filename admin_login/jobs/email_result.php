@@ -575,17 +575,91 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail->isSMTP();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                    $mail->Password = 'rmk123';                           // SMTP password
-                    $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 	587;
+                    $mail->SMTPAuth = true;    // Enable SMTP authentication
 
 
-                    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
 
 
-                    $mail->addReplyTo('akashkarthick400@gmail.com', 'Reply');
+
+
+
+
+
+
+
+
+
+                    //selecting emails
+
+                    $database=$_SESSION['database_name'];
+                    if(preg_match('/rmd/', $database)){
+
+
+                        $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                        $mail->Password = 'rmd123';                           // SMTP password
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 	587;
+
+
+                        $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+
+
+                        $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+
+
+                    }
+
+                    if(preg_match('/rmk/', $database)){
+
+
+                        $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                        $mail->Password = 'rmk123';                           // SMTP password
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 	587;
+
+
+                        $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
+
+
+                        $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+
+
+                    }
+
+                    if(preg_match('/cet/', $database)){
+
+
+                        $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                        $mail->Password = 'rmkcet123';                           // SMTP password
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 	587;
+
+
+                        $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
+
+
+                        $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                     $mail->isHTML(true);
