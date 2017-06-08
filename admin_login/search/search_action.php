@@ -1571,7 +1571,6 @@ if(isset($_GET['export'])) {
 
 
 
-echo "count".$sno;
 
 
                                             }
@@ -1854,7 +1853,7 @@ echo "count".$sno;
                                                     <?php
                                                     ++$sno;
                                                 }
-
+echo "count".$sno;
 
                                             }
 
