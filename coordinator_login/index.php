@@ -268,7 +268,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
                                 <?php } ?>
 								<span class="user-info">
 									<small>Welcome,</small>
-									<?php echo $_SESSION['cood_deg'] ?> Coordinator
+									<?php echo strtoupper($_SESSION['cood_branch']); ?> Coordinator
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
