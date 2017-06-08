@@ -1578,7 +1578,7 @@ if(isset($_GET['export'])) {
                                             else if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
-                                                $get_year=$_GET['year'];
+                                                echo $get_year=$_GET['year'];
 
                                                 //st_ugyearofpassing='$get_year' and
 
