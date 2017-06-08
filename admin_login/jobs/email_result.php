@@ -574,15 +574,15 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail=new PHPMailer();
 
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';//'mx1.hostinger.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'akashkarthick400@gmail.com';                 // SMTP username
-                    $mail->Password = 'karthick170397';                           // SMTP password
+                    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Password = 'rmk123';                           // SMTP password
                     $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
 
-                    $mail->setFrom('akashkarthick400@gmail.com', 'RMD Placements');
+                    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
 
 
                     $mail->addReplyTo('akashkarthick400@gmail.com', 'Reply');
