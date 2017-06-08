@@ -304,7 +304,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='coordinator
                         <?php } ?>
                         <span class="user-info">
 									<small>Welcome,</small>
-									Coordinator
+                            <?php echo strtoupper($_SESSION['cood_branch']); ?> Coordinator
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>

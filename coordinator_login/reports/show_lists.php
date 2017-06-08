@@ -283,7 +283,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                         <?php } ?>
                         <span class="user-info">
 									<small>Welcome,</small>
-									Coordinator
+                            <?php echo strtoupper($_SESSION['cood_branch']); ?> Coordinator
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
