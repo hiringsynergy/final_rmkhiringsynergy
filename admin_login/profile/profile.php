@@ -3390,6 +3390,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
                              $('#bootbox-confirm').click(function(event) {
                                 var bla = $('#tag1').val();
+                                bla= $.trim(bla);
                                 var hidden_input =
                                     $('<input type="hidden" name="description" />')
                                         .appendTo('#validate-form');
@@ -3408,7 +3409,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     event.preventDefault();
                                     event.stopPropagation();
                                 }
-                                else if ( $.trim(bla.length)!=12) {
+                                else if ( bla.length!=12) {
                                     bootbox.dialog({
                                         message: "Please enter a valid register number",
                                         buttons: {
