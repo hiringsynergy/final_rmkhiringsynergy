@@ -454,8 +454,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 {
 
 
-    $_SESSION['roll']=$_GET['roll'];
-
+    $_SESSION['roll']=trim($_GET['roll']);
 
 }
 
