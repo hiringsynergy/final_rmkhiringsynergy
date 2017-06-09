@@ -1194,10 +1194,9 @@ if(isset($_GET['filter_job'])){
                                                             <option value="all">All</option>
                                                             <option value="cse">Computer science and Engineering</option>
                                                             <option value="eee">Electrical and Electronic Engineering</option>
-                                                            <option value="eie">Electrical and Intrumentation Engineering</option>
-
-
+                                                            <option value="mech">Mechanical Engineering</option>
                                                             <option value="ece">Electrical and Communicaton Engineering</option>
+						            <option value="it">Information Technology</option>
                                                         </select>
                                                     
 
