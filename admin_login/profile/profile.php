@@ -3408,7 +3408,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     event.preventDefault();
                                     event.stopPropagation();
                                 }
-                                else if (bla.length!=12) {
+                                else if ( $.trim(bla.length)!=12) {
                                     bootbox.dialog({
                                         message: "Please enter a valid register number",
                                         buttons: {
