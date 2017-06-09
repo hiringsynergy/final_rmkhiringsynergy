@@ -841,37 +841,6 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                 <div  class="<?php echo $widget_color[$i] ?>"   id="widget-box-1">
                                     <div class="widget-header"><h5 class="widget-title bigger" style="color: white">Job</h5>
 
-                                        <div class="widget-toolbar no-border">
-
-                                            <a href="#" data-action="fullscreen" class="orange2">
-                                                <i class="ace-icon fa fa-expand"></i>
-                                            </a>
-
-                                            <a href="#" data-action="reload">
-                                                <i class="ace-icon fa fa-refresh"></i>
-                                            </a>
-
-                                            <a href="#" data-action="collapse">
-                                                <i class="ace-icon fa fa-chevron-up"></i>
-                                            </a>
-
-                                            <div class="widget-menu">
-                                                <a href="#" data-action="settings" data-toggle="dropdown">
-                                                    <i class="ace-icon fa fa-bars"></i>
-                                                </a>
-
-                                                <ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
-                                                    <li>
-                                                        <a data-toggle="tab" href="#dropdown1">Closed</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a data-toggle="tab" href="#dropdown2">Available</a>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="widget-body">
