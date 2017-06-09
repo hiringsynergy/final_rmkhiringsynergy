@@ -2253,12 +2253,26 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
-                                                                        <option value="Computer Science Engineering">Computer Science Engineering</option>
+									    
+									    <?php if($row['st_ugspecialization'])!='cse'{ ?>
+                                                                        <option value="Computer Science and Engineering">Computer Science Engineering</option>
+									    
+									    <?php } ?>
+									    <?php if($row['st_ugspecialization'])!='it'{ ?>
                                                                         <option value="Information Technology">Information Technology</option>
+									    <?php } ?>
+									    <?php if($row['st_ugspecialization'])!='mech'{ ?>
                                                                         <option value="Mechanical Engineering">Mechanical Engineering</option>
+									    <?php } ?>
+									    <?php if($row['st_ugspecialization'])!='ece'{ ?>
                                                                         <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+									    <?php } ?>
+									    <?php if($row['st_ugspecialization'])!='eee'{ ?>
                                                                         <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+									    <?php } ?>
+									    <?php if($row['st_ugspecialization'])!='eie'{ ?>
                                                                         <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+									    <?php } ?>
                                                                     </select>
                                                                 </div>
                                                             </div>
