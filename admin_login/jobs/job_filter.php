@@ -255,8 +255,8 @@ if(isset($_GET['filter_job'])){
         if(preg_match('/cet/', $database)) {
 
 
-               $temp_branch_insert="cse'',''eee'',''ece'',''eie";
-                 $temp_branch_update="cse','eee','ece','eie";
+               $temp_branch_insert="cse'',''eee'',''ece'',''eie'',''mech";
+                 $temp_branch_update="cse','eee','ece','eie','mech";
 
                }
 
