@@ -898,8 +898,11 @@ function updateSlider(){
 														<h5><label class="control-label bolder blue" for="form-field-select-3">Gap in Study</label></h5>
 
 														<select class="chosen-select form-control" name="gapinstudy" id="form-field-select-3" data-placeholder="Please Select...">
-																<option value="no">No</option>
-																<option value="yes">Yes</option>
+																<option value="0">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
 
 															</select>
 														</div>
