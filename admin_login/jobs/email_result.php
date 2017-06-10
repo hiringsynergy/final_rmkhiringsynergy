@@ -650,18 +650,6 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                     $mail->isHTML(true);
 
                     $mail->Subject = $_POST['subject'];
