@@ -81,7 +81,7 @@ function updateSlider(){
             var e = document.getElementById("tag1");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href="export_action?get_year="+strUser;
+            location.href="search_action?get_year="+strUser;
 
         }
 
