@@ -76,6 +76,14 @@ function updateSlider(){
             location.href = "../settings";
 
         }
+        function getyear(){
+
+            var e = document.getElementById("tag1");
+            var strUser = e.options[e.selectedIndex].value;
+
+            alert(strUser);
+
+        }
 
 
 
@@ -677,7 +685,7 @@ function updateSlider(){
                                         <div class="space-32"></div>
 
                                         <div class="col-xs-12 col-md-4">
-                                            <button class="btn btn-sm btn-grey" >
+                                            <button class="btn btn-sm btn-grey" onclick="getyear()">
                                                 <i class="ace-icon "></i>
                                                 View Candidate
                                             </button>
