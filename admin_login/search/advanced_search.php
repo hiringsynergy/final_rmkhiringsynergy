@@ -81,6 +81,10 @@ function updateSlider(){
             var e = document.getElementById("tag1");
             var strUser = e.options[e.selectedIndex].value;
 
+            if(strUser==null){
+                alert("Please Select Year of Graduation");
+            }
+
             location.href="search_action?get_year="+strUser;
 
         }
@@ -685,7 +689,7 @@ function updateSlider(){
                                         <div class="space-32"></div>
 
                                         <div class="col-xs-12 col-md-4">
-                                            <a href="#" class="btn btn-sm btn-grey" onclick="getyear()">
+                                            <a href="#" id="candidate" class="btn btn-sm btn-grey" onclick="getyear()">
                                                 <i class="ace-icon "></i>
                                                 View Candidate
                                             </a>
