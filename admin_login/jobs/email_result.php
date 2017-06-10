@@ -667,6 +667,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail->Subject = $_POST['subject'];
                     $mail->Body =  $_POST['message'] ;
                     $mail->Body .="<br>";
+                    $mail->Body .="<br>";
+                    $mail->Body .="<br>";
                     $mail->Body .= '<b>  Training and Placements </b>';
 
 
