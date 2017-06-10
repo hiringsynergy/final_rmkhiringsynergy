@@ -286,7 +286,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-          $to=$row_roll_mail['st_email'];
+          $to=$row_roll_mail['st_clgemail'];
 
 
 

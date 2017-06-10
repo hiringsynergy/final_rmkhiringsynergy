@@ -181,7 +181,7 @@ foreach($checkbox as $list){
 
 
 
-        $to=$row_roll_mail['st_email'];
+        $to=$row_roll_mail['st_clgemail'];
 
 
 

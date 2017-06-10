@@ -665,7 +665,36 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail->isHTML(true);
 
                     $mail->Subject = $_POST['subject'];
-                    $mail->Body = '<h3> ' . $_POST['message'] . ' </h3>';
+                    $mail->Body =  $_POST['message'] ;
+                    $mail->Body .= '<h3> Training and Placements </h3>';
+
+
+
+                    $database = $_SESSION['database_name'];
+
+                    if (preg_match('/rmd/', $database)) {
+
+                        $mail->Body .= '<h3>  R.M.D. Engineering College </h3>';
+
+                    }
+
+                    if (preg_match('/rmk/', $database)) {
+
+                        $mail->Body .= '<h3>  R.M.K. Engineering College </h3>';
+
+                    }
+
+                    if (preg_match('/cet/', $database)) {
+
+                        $mail->Body .= '<h3>  R.M.K. College of Engineering and Technology </h3>';
+
+                    }
+
+
+
+
+
+
 
 
                     $send_file = array();
@@ -723,7 +752,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                        $to = $row_mail['st_email'];
+                        $to = $row_mail['st_clgemail'];
 
                         $mail->addAddress($to);     // Add a recipient
 
@@ -761,17 +790,129 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                     }
-                    
+
+
+
+
+
+
+                    //sending mail to hod and placement coordinators
+
+
                     
                     $branches=explode("','", $dept_branch);
 
                     print_r($branches);
 
                     include "../connect.php";
-                    $query_send_mail= "SELECT * FROM mail_forward";
+
+
+
+
+
+
+
+                        $query_send_mail= "SELECT * FROM mail_forward";
+                        $result_send_mail=mysqli_query($connect,$query_send_mail);
+
+                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
+
+                            $to = $row_send_mail['tnp'];
+
+
+                            $mail->addAddress($to);     // Add a recipient
+
+
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                foreach ($send_file as $file_to_send) {
+
+
+                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                                }
+
+
+                            }
+
+
+                            if ($mail->send()) {
+
+
+
+
+                            }
+                            else{
+
+                                echo  $mail->ErrorInfo;
+                            }
+
+
+                            // Clear all addresses and attachments for next loop
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
+
+
+
+                        }
+
+
+
+
+
+
+
+
+
+
 
 
                     foreach ($branches as $dept){
+
+
+                        $query_send_mail= "SELECT * FROM mail_forward";
+                        $result_send_mail=mysqli_query($connect,$query_send_mail);
+
+                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
+
+                            $to = $row_send_mail[$dept];
+
+
+                            $mail->addAddress($to);     // Add a recipient
+
+
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                foreach ($send_file as $file_to_send) {
+
+
+                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                                }
+
+
+                            }
+
+
+                            if ($mail->send()) {
+
+
+
+
+                            }
+                            else{
+
+                                echo  $mail->ErrorInfo;
+                            }
+
+
+                            // Clear all addresses and attachments for next loop
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
+
+
+
+                        }
 
 
 

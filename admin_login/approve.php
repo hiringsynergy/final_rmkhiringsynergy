@@ -73,7 +73,7 @@ if (isset($_POST['approve1']) && isset($_SESSION['user_role']) == 'admin') {
     $mail->Body = '<h3>  Your request for the change of ' . $col_name_map . ' has been APPROVED </h3>';
 
 
-    $to = $row['st_email'];
+    $to = $row['st_clgemail'];
     echo $to;
 
 
