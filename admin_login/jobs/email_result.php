@@ -812,7 +812,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                        $query_send_mail= "SELECT * FROM mail_forward";
+                        $query_send_mail= "SELECT * FROM mail_forwarder";
                         $result_send_mail=mysqli_query($connect,$query_send_mail);
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
@@ -870,7 +870,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     foreach ($branches as $dept){
 
 
-                        $query_send_mail= "SELECT * FROM mail_forward";
+                        $query_send_mail= "SELECT * FROM mail_forwarder";
                         $result_send_mail=mysqli_query($connect,$query_send_mail);
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
