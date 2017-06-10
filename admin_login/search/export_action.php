@@ -1114,11 +1114,28 @@ if(isset($_GET['export'])) {
 
 
 
+
                                                 $sno=1;
 
                                                 foreach($roll as $reg) {
 
-                                                    $query = "select * from students_2021 WHERE st_roll='$reg'" ;
+                                                    $reg=trim($reg);
+
+                                                    if(strlen($reg)==12){
+
+                                                        $start="20";
+                                                        $start.=$reg[4].$reg[5];
+                                                        $st_year=(int)$start+4;
+                                                    }
+                                                    else{
+
+                                                        $start="20";
+                                                        $start.=$reg[3].$reg[4];
+                                                        $st_year=(int)$start+4;
+
+                                                    }
+
+                                                    $query = "select * from students_".$st_year." WHERE st_roll='$reg'" ;
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
