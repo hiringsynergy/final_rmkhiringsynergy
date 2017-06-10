@@ -53,15 +53,17 @@ foreach($checkbox as $list){
 
 
 
-     if($row_old!=null){
-
-         $row_old=$row_old.',';
-     }
 
 
-
+    $row_old=$row_old.',';
     $row_new=$row_old.$job_type;
-    $company_old=$company_old.',';
+
+    if($company_old!=null){
+
+        $company_old=$company_old.',';
+    }
+
+
     $company_new=$company_old.$company;
 
     
