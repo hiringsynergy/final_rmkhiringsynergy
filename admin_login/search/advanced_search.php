@@ -81,7 +81,7 @@ function updateSlider(){
             var e = document.getElementById("tag1");
             var strUser = e.options[e.selectedIndex].value;
 
-            if(strUser==null){
+            if(strUser.isEqual("")){
                 alert("Please Select Year of Graduation");
             }
 
