@@ -666,7 +666,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail->Subject = $_POST['subject'];
                     $mail->Body =  $_POST['message'] ;
-                    $mail->Body .= '<h1> Training and Placements </h1>';
+                    $mail->Body .= '<h5> Training and Placements </h5>';
 
 
 
@@ -674,19 +674,19 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     if (preg_match('/rmd/', $database)) {
 
-                        $mail->Body .= '<h1>  R.M.D. Engineering College </h1>';
+                        $mail->Body .= '<h5>  R.M.D. Engineering College </h5>';
 
                     }
 
                     if (preg_match('/rmk/', $database)) {
 
-                        $mail->Body .= '<h1>  R.M.K. Engineering College </h1>';
+                        $mail->Body .= '<h5>  R.M.K. Engineering College </h5>';
 
                     }
 
                     if (preg_match('/cet/', $database)) {
 
-                        $mail->Body .= '<h1>  R.M.K. College of Engineering and Technology </h1>';
+                        $mail->Body .= '<h5>  R.M.K. College of Engineering and Technology </h5>';
 
                     }
 
