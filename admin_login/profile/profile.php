@@ -1567,6 +1567,49 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
                                                         </div>
                                                     </div>
+							
+                                                    <div class="space-10"></div>
+                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Qualification</b></div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="quailf2">Diploma</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row ">
+                                                            <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable " id="inst2"><?php  echo $row['st_dipinstitution']  ?></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Specialization</b> </div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="yop1"><?php  echo $row['st_dipspecialization']  ?></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="yop1"><?php  echo $row['st_dipyearofpassing']  ?></span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Percentage/CGPA</b> </div>
+
+                                                            <div class="profile-info-value testgreen">
+                                                                <span class="editable" id="cgpa1"><?php  echo $row['st_dippercentage']  ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="space-4"></div>
                                                     <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >UG</h3>
 
