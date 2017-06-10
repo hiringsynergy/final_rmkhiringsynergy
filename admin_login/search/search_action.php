@@ -1576,6 +1576,288 @@ if(isset($_GET['export'])) {
                                             }
 
 
+                                            else if(isset($_GET['get_year']) && isset($_SESSION['user_role'])=='admin' ) {
+
+
+                                                $get_year=$_GET['get_year'];
+
+                                                include "../connect.php";
+
+                                                //st_ugyearofpassing='$get_year' and
+
+                                                $query = "select * from students_".$get_year;
+
+                                                $result = mysqli_query($connect, $query);
+
+                                                if (!$result) {
+                                                    die("" . mysqli_error($connect));
+                                                }
+                                                if (!$connect) {
+                                                    die("" . mysqli_error($connect));
+                                                }
+
+                                                $sno=1;
+
+                                                while ($row = mysqli_fetch_assoc($result)) {
+
+                                                    $roll=$row['st_roll'];
+                                                    $first_name=$row['st_firstname'];
+                                                    $middle_name=$row['st_middlename'];
+                                                    $last_name=$row['st_lastname'];
+                                                    $name=$row['st_name'];
+                                                    $gender=$row['st_gender'];
+                                                    $father_name=$row['st_fathername'];
+                                                    $father_occupation=$row['st_fatheroccupation'];
+                                                    $father_mobile=$row['st_fathernumber'];
+                                                    $mother_name=$row['st_mothername'];
+                                                    $mother_occupation=$row['st_motheroccupation'];
+                                                    $mother_mobile=$row['st_mothernumber'];
+                                                    $college_mail=$row['st_clgemail'];
+                                                    $email=$row['st_email'];
+                                                    $phone=$row['st_phone'];
+                                                    $dob=$row['st_dob'];
+                                                    $nationality=$row['st_nationality'];
+                                                    $caste=$row['st_caste'];
+                                                    $college_name=$row['st_collegename'];
+                                                    $university=$row['st_university'];
+                                                    $_10percentage=$row['st_10thpercentage'];
+                                                    $_10institution=$row['st_10thinstitution'];
+                                                    $_10boardofstudy=$row['st_10thboardofstudy'];
+                                                    $_10medium=$row['st_10thmedium'];
+                                                    $_10yearofpassing=$row['st_10thyearofpassing'];
+                                                    $_12percentage=$row['st_12thpercentage'];
+                                                    $_12institution=$row['st_12thinstitution'];
+                                                    $_12boardofstudy=$row['st_12thboardofstudy'];
+                                                    $_12medium=$row['st_12thmedium'];
+                                                    $_12yearofpassing=$row['st_12thyearofpassing'];
+                                                    $dippercentage=$row['st_dippercentage'];
+                                                    $dipspecialization=$row['st_dipspecialization'];
+                                                    $dipinstitution=$row['st_dipinstitution'];
+                                                    $dipyearofpassing=$row['st_dipyearofpassing'];
+                                                    $current=$row['st_currentlypursuing'];
+                                                    $ugdeg=$row['st_ugdegree'];
+                                                    $ugspecial=$row['st_ugspecialization'];
+                                                    $ug1sem=$row['st_1stsem'];
+                                                    $ug2sem=$row['st_2ndsem'];
+                                                    $ug3sem=$row['st_3rdsem'];
+                                                    $ug4sem=$row['st_4thsem'];
+                                                    $ug5sem=$row['st_5thsem'];
+                                                    $ug6sem=$row['st_6thsem'];
+                                                    $ug7sem=$row['st_7thsem'];
+                                                    $ug8sem=$row['st_8thsem'];
+                                                    $cgpa=$row['st_cgpa'];
+                                                    $ugyearofpassing=$row['st_ugyearofpassing'];
+                                                    $pgdeg=$row['st_pgdegree'];
+                                                    $pgspecial=$row['st_pgspecialization'];
+                                                    $pg1sem=$row['st_pg1stsem'];
+                                                    $pg2sem=$row['st_pg2ndsem'];
+                                                    $pg3sem=$row['st_pg3rdsem'];
+                                                    $pg4sem=$row['st_pg4thsem'];
+                                                    $pgcgpa=$row['st_pgcgpa'];
+                                                    $pgyearofpassing=$row['st_pgyearofpassing'];
+                                                    $ugcollegename=$row['st_ugcollegename'];
+                                                    $ughistoryofarrears=$row['st_ughistoryofarrears'];
+                                                    $dayhostel=$row['st_dayorhostel'];
+                                                    $historyofarrears=$row['st_historyofarrears'];
+                                                    $standingarrears=$row['st_standingarrears'];
+                                                    $hometown=$row['st_hometown'];
+                                                    $address1=$row['st_address1'];
+                                                    $address2=$row['st_address2'];
+                                                    $city=$row['st_city'];
+                                                    $state=$row['st_state'];
+                                                    $postal_code=$row['st_posatlcode'];
+                                                    $landline=$row['st_landline'];
+                                                    $skill=$row['st_skillcertification'];
+                                                    $duration=$row['st_duration'];
+                                                    $vendor=$row['st_vendor'];
+                                                    $coecertification=$row['st_coecertification'];
+                                                    $gap=$row['st_gapinstudies'];
+                                                    $reason=$row['st_reason'];
+                                                    $english=$row['st_english'];
+                                                    $quantitative=$row['st_quantitative'];
+                                                    $logical=$row['st_logical'];
+                                                    $overall=$row['st_overall'];
+                                                    $percentage=$row['st_percentage'];
+                                                    $candidate=$row['st_candidateid'];
+                                                    $signature=$row['st_signature'];
+                                                    $placement_status=$row['st_placementstatus'];
+                                                    $aadhar=$row['st_aadharno'];
+                                                    $passport=$row['st_passportno'];
+                                                    $pan=$row['st_panno'];
+
+
+                                                    if($current=='UG'){
+
+                                                        //mapping ug Department
+
+                                                        $query_dept_ug="SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                        $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                                        $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                                        $ugspecial=$row_dept_ug['dept_expand'];
+
+
+                                                    }
+                                                    else{
+
+                                                        //mapping department of UG
+                                                        $query_dept_ug = "SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                        $result_dept_ug = mysqli_query($connect, $query_dept_ug);
+                                                        $row_dept_ug = mysqli_fetch_assoc($result_dept_ug);
+
+                                                        $ugspecial = $row_dept_ug['dept_expand'];
+
+
+                                                        //mapping department of PG
+                                                        $query_dept = "SELECT * FROM dept_map WHERE dept_short='$pgspecial'";
+                                                        $result_dept = mysqli_query($connect, $query_dept);
+                                                        $row_dept = mysqli_fetch_assoc($result_dept);
+
+                                                        $pgspecial = $row_dept['dept_expand'];
+
+                                                    }
+
+
+
+                                                    ?>
+
+
+                                                    <tr>
+                                                        <td class="center">
+                                                            <label class="pos-rel">
+                                                                <input type="checkbox" name="checkbox[]" value="<?php echo $row['st_roll'] ?>" class="ace" />
+                                                                <span class="lbl"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td><?php echo $sno ?></td>
+
+                                                        <td>
+
+                                                            <?php echo $roll ?>
+
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $first_name ?>
+                                                        </td>
+                                                        <td class=" "><?php echo $middle_name ?></td>
+
+                                                        <td><?php echo $last_name  ?></td>
+                                                        <td><?php echo $name  ?></td>
+                                                        <td><?php echo  $gender ?></td>
+                                                        <td><?php echo $father_name ?></td>
+                                                        <td><?php echo $father_occupation ?></td>
+                                                        <td><?php echo $father_mobile ?></td>
+                                                        <td><?php echo $mother_name ?></td>
+                                                        <td><?php echo $mother_occupation ?></td>
+                                                        <td><?php echo $mother_mobile ?></td>
+                                                        <td><?php echo $college_mail ?></td>
+                                                        <td><?php echo $email ?></td>
+                                                        <td><?php echo $phone ?></td>
+                                                        <td><?php echo $dob ?></td>
+                                                        <td><?php echo $nationality ?></td>
+                                                        <td><?php echo $caste ?></td>
+                                                        <td><?php echo $college_name ?></td>
+                                                        <td><?php echo $university ?></td>
+                                                        <td><?php echo $_10percentage ?></td>
+                                                        <td><?php echo $_10institution ?></td>
+                                                        <td><?php echo $_10boardofstudy ?></td>
+                                                        <td><?php echo $_10medium ?></td>
+                                                        <td><?php echo $_10yearofpassing ?></td>
+                                                        <td><?php echo $_12percentage ?></td>
+                                                        <td><?php echo $_12institution ?></td>
+                                                        <td><?php echo $_12boardofstudy ?></td>
+                                                        <td><?php echo $_12medium ?></td>
+                                                        <td><?php echo $_12yearofpassing ?></td>
+                                                        <td><?php echo $dippercentage ?></td>
+                                                        <td><?php echo $dipspecialization ?></td>
+                                                        <td><?php echo $dipinstitution ?></td>
+                                                        <td><?php echo $dipyearofpassing ?></td>
+                                                        <td><?php echo $current ?></td>
+                                                        <td><?php echo $ugdeg ?></td>
+                                                        <td><?php echo $ugspecial ?></td>
+                                                        <td><?php echo $ug1sem ?></td>
+                                                        <td><?php echo $ug2sem ?></td>
+                                                        <td><?php echo $ug3sem ?></td>
+                                                        <td><?php echo $ug4sem ?></td>
+                                                        <td><?php echo $ug5sem ?></td>
+                                                        <td><?php echo $ug6sem ?></td>
+                                                        <td><?php echo $ug7sem ?></td>
+                                                        <td><?php echo $ug8sem ?></td>
+                                                        <?php
+
+                                                        if($cgpa>8){
+
+
+                                                            ?>
+                                                            <td class=" ">
+                                                                <span class="label label-sm label-success"><?php echo $cgpa ?></span>
+                                                            </td>
+                                                            <?php
+
+                                                        }
+
+                                                        else{
+
+                                                            ?>
+                                                            <td class=" ">
+                                                                <span class="label label-sm label-important"><?php echo $cgpa ?></span>
+                                                            </td>
+                                                            <?php
+
+                                                        }
+
+                                                        ?>
+
+                                                        <td><?php echo $ugyearofpassing ?></td>
+                                                        <td><?php echo $pgdeg ?></td>
+                                                        <td><?php echo $pgspecial ?></td>
+                                                        <td><?php echo $pg1sem ?></td>
+                                                        <td><?php echo $pg2sem ?></td>
+                                                        <td><?php echo $pg3sem ?></td>
+                                                        <td><?php echo $pg4sem ?></td>
+                                                        <td><?php echo $pgcgpa ?></td>
+                                                        <td><?php echo $pgyearofpassing ?></td>
+                                                        <td><?php echo $ugcollegename ?></td>
+                                                        <td><?php echo $ughistoryofarrears ?></td>
+                                                        <td><?php echo $dayhostel ?></td>
+                                                        <td><?php echo $historyofarrears ?></td>
+                                                        <td><?php echo $standingarrears ?></td>
+                                                        <td><?php echo $hometown ?></td>
+                                                        <td><?php echo $address1 ?></td>
+                                                        <td><?php echo $address2 ?></td>
+                                                        <td><?php echo $city ?></td>
+                                                        <td><?php echo $state ?></td>
+                                                        <td><?php echo $postal_code ?></td>
+                                                        <td><?php echo $landline ?></td>
+                                                        <td><?php echo $skill ?></td>
+                                                        <td><?php echo $duration ?></td>
+                                                        <td><?php echo $vendor ?></td>
+                                                        <td><?php echo $coecertification ?></td>
+                                                        <td><?php echo $gap ?></td>
+                                                        <td><?php echo $reason ?></td>
+                                                        <td><?php echo $english ?></td>
+                                                        <td><?php echo $quantitative ?></td>
+                                                        <td><?php echo $logical ?></td>
+                                                        <td><?php echo $overall ?></td>
+                                                        <td><?php echo $percentage ?></td>
+                                                        <td><?php echo $candidate ?></td>
+                                                        <td><?php echo $signature ?></td>
+                                                        <td><?php echo $placement_status ?></td>
+                                                        <td><?php echo $aadhar ?></td>
+                                                        <td><?php echo $passport ?></td>
+                                                        <td><?php echo $pan ?></td>
+
+
+
+                                                    </tr>
+
+
+                                                    <?php
+                                                    ++$sno;
+                                                }
+
+
+                                            }
                                             else if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
@@ -1858,6 +2140,9 @@ if(isset($_GET['export'])) {
 
 
                                             }
+
+
+
 
 
 
