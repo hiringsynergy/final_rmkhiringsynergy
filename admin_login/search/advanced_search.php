@@ -676,6 +676,13 @@ function updateSlider(){
                                         <div class="space-32"></div>
                                         <div class="space-32"></div>
 
+                                        <div class="col-xs-12 col-md-4">
+                                            <a href="#" class="btn btn-sm btn-grey">
+                                                <i class="ace-icon "></i>
+                                                View Candidate
+                                            </a>
+                                        </div>
+
 
 
                                         			</div>
