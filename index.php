@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>RMK CAMPULSE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -36,7 +36,7 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up" >
 						<div class="inner" style="background-color: rgba(255,255,255,0.5)">
-							<h1 style="color: black ; ">RMK Hiring Synergy</h1>
+							<h1 style="color: black ; ">RMK CAMPULSE</h1>
 							<p style="color: black;">Get the job done right!</p>
 						
 							<ul class="actions" >
@@ -53,7 +53,7 @@
 							<a class="image"><img src="assets/images/chairman-1400x1357-5.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>A pride of three colleges</h2>
+									<h2>A pride of three Colleges</h2>
 									<p> Equipping the students to face the global challenges and train the learners high personal and professional ethical values, technical competence and a spirit of entrepreneurship.</p>
 									<!-- <ul class="actions">
 										<li><a href="#" class="button">Learn more</a></li>
@@ -65,7 +65,7 @@
 							<a  class="image"><img src="assets/images/dscn1175-2000x1500-34-2000x1500.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Exposure to various centres of excellence</h2>
+									<h2>Exposure to various Centres of Excellence</h2>
 									<p>Attaining the centre of excellence in all fields of Engineering, by providing valued education to generate engineering professionals and to mould the students into researchers and innovators to compete internationally, able to produce creative solutions to the society's needs.
 </p>
 									<!-- <ul class="actions">
