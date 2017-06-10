@@ -46,12 +46,12 @@ $tablename=$_GET['tablename'];
   st_10thinstitution varchar(255),
   st_10thboardofstudy varchar(255)  ,
   st_10thmedium varchar(255)  ,
-  st_10thyearofpassing year(4)  ,
+  st_10thyearofpassing varchar(255)  ,
   st_12thpercentage varchar(255)  ,
   st_12thinstitution varchar(255),
   st_12thboardofstudy varchar(255)  ,
   st_12thmedium varchar(255)  ,
-  st_12thyearofpassing year(4)  ,
+  st_12thyearofpassing varchar(255)  ,
   st_dippercentage varchar(255)  ,
 
 
@@ -60,7 +60,7 @@ $tablename=$_GET['tablename'];
   st_dipinstitution varchar(255)  ,
 
 
-  st_dipyearofpassing year(4)  ,
+  st_dipyearofpassing varchar(255)  ,
   st_currentlypursuing varchar(255)  ,
   st_ugdegree varchar(255)  ,
   st_ugspecialization varchar(255)  ,
@@ -73,7 +73,7 @@ $tablename=$_GET['tablename'];
   st_7thsem varchar(255)  ,
   st_8thsem varchar(255)  ,
   st_cgpa varchar(255)  ,
-  st_ugyearofpassing year(4)  ,
+  st_ugyearofpassing varchar(255)  ,
   st_pgdegree varchar(255)  ,
   st_pgspecialization varchar(255)  ,
   st_pg1stsem varchar(255)  ,

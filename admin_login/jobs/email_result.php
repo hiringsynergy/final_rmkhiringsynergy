@@ -767,7 +767,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     print_r($branches);
 
+                    include "../connect.php";
+                    $query_send_mail= "SELECT * FROM mail_forward";
+
+
                     foreach ($branches as $dept){
+
+
 
 
 
