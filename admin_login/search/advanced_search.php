@@ -890,7 +890,7 @@ function updateSlider(){
 														<h5><label class="control-label bolder blue" for="form-field-select-3">Gender</label></h5>
 
 														<select class="chosen-select form-control" name="gender" id="form-field-select-3" data-placeholder="Please Select...">
-																<option value="male or female">All</option>
+																<option value="">All</option>
 																<option value="male">Male</option>
 																<option value="female">Female</option>
 															</select>
