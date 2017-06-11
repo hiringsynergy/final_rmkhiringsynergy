@@ -30,7 +30,7 @@ if(!isset($_SESSION['user_role']) && $_SESSION['user_role']!='coordinator' ){
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-        <title>RMK HIRING SYNERGY </title>
+        <title>RMK Campulse </title>
         <link rel="icon" href="images/logos/rmklogo.JPG"  />
 
 		<meta name="description" content="overview &amp; stats" />

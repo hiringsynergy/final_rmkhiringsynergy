@@ -128,7 +128,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
                                     <div class="navbar-brand">
                                         <a href="index.html" class="navbar-logo"><img
                                                     src="assets/images/download-256x128-33.png" alt="Mobirise"></a>
-                                        <a class="navbar-caption text-white" href="index.html">RMK HIRING SYNERGY</a>
+                                        <a class="navbar-caption text-white" href="index.html">RMK Campulse</a>
                                     </div>
 
                                 </div>
@@ -392,7 +392,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
                                     <div class="navbar-brand">
                                         <a href="index.html" class="navbar-logo"><img
                                                     src="assets/images/download-256x128-33.png" alt="Mobirise"></a>
-                                        <a class="navbar-caption text-white" href="index.html">RMK HIRING SYNERGY</a>
+                                        <a class="navbar-caption text-white" href="index.html">RMK Campulse</a>
                                     </div>
 
                                 </div>

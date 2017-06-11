@@ -140,7 +140,7 @@
 
                     <div class="navbar-brand">
                         <a href="index" class="navbar-logo"><img src="assets/images/download-256x128-45.png" alt="RMK group"></a>
-                        <a class="navbar-caption text-white" href="index">RMK HIRING SYNERGY</a>
+                        <a class="navbar-caption text-white" href="index">RMK Campulse</a>
                     </div>
 
                 </div>

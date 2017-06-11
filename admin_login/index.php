@@ -196,7 +196,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-        <title>RMK HIRING SYNERGY </title>
+        <title>RMK Campulse </title>
         <link rel="icon" href="../logos/rmklogo.JPG"  />
 
 		<meta name="description" content="overview &amp; stats" />
@@ -801,7 +801,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 									Welcome to
 									<strong class="green">
-										RMK HIRING SYNERGY
+										RMK Campulse
 
 									</strong>,
 
