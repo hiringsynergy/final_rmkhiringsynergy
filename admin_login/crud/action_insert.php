@@ -597,6 +597,16 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
 
 
+                        function convert($str, $num)
+                        {
+
+                            $str_int= (int)$str;
+
+                            return round($str_int,$num);
+
+                        }
+
+
                         if(isset($_FILES['file'])){
 
 
@@ -706,7 +716,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                     $ug6sem=round(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(43, $row)->getValue()),2);
                                     $ug7sem=round(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(44, $row)->getValue()),2);
                                     $ug8sem=round(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(45, $row)->getValue()),2);
-                                    $cgpa= round(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue()),2);
+                                    $cgpa= convert(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue()),2);
                                     $ugyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(47, $row)->getValue());
                                     $pgdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(48, $row)->getValue());
                                     $pgspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(49, $row)->getValue());
