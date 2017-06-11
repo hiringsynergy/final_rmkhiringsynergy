@@ -600,9 +600,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         function convert($str, $num)
                         {
 
-                            $str_int= (float)$str;
-
-                            return round($str_int,$num);
+                            return number_format((float)$str, $num, '.', '');
 
                         }
 
