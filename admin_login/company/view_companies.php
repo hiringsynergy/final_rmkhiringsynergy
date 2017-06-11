@@ -534,7 +534,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="../Status">
+                        <a href="../status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
@@ -542,6 +542,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <b class="arrow"></b>
                     </li>
 
+
+                    <li class="">
+                        <a href="../reportgeneration.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Report Generation
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
 
 
 

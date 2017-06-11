@@ -599,6 +599,15 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         <b class="arrow"></b>
                     </li>
 
+                    <li class="">
+                        <a href="../reportgeneration.php">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Report Generation
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
 
 
 

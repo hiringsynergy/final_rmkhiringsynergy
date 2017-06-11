@@ -491,23 +491,9 @@ function updateSlider(){
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="#">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Invoice
-                        </a>
 
-                        <b class="arrow"></b>
-                    </li>
 
-                    <li class="">
-                        <a href="#">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Timeline
-                        </a>
 
-                        <b class="arrow"></b>
-                    </li>
 
                     <li class="">
                         <a href="#">
