@@ -645,6 +645,14 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                             include "../connect.php";
                             include ("PHPExcel/IOFactory.php");
 
+                            function convert($str, $num)
+                            {
+
+                                return number_format((float)$str, $num, '.', '');
+
+                            }
+
+
                             $objPHPExcel = PHPExcel_IOFactory::load("files/$newfilename");
                             foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
                             {
@@ -655,13 +663,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                 $row=2;
                                 while ($serial!=NULL)
                                 {
-
-                                    function convert($str, $num)
-                                    {
-
-                                        return number_format((float)$str, $num, '.', '');
-
-                                    }
 
 
 
