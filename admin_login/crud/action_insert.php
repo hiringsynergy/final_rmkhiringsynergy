@@ -597,12 +597,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                         <?php
 
 
-                        function convert($str, $num)
-                        {
 
-                            return number_format((float)$str, $num, '.', '');
-
-                        }
 
 
                         if(isset($_FILES['file'])){
@@ -660,6 +655,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                 $row=2;
                                 while ($serial!=NULL)
                                 {
+
+                                    function convert($str, $num)
+                                    {
+
+                                        return number_format((float)$str, $num, '.', '');
+
+                                    }
 
 
 
