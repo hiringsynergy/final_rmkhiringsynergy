@@ -693,8 +693,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                     $_12yearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(30, $row)->getValue());
                                     $dippercentage= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(31, $row)->getValue());
                                     $dipspecialization= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(32, $row)->getValue());
-                                    $dipyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(33, $row)->getValue());
-                                    $dipinstitution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(34, $row)->getValue());
+                                    $dipinstitution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(33, $row)->getValue());
+                                    $dipyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(34, $row)->getValue());
                                     $current= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(35, $row)->getValue());
                                     $ugdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(36, $row)->getValue());
                                     $ugspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(37, $row)->getValue());

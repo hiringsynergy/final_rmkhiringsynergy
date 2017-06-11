@@ -81,7 +81,7 @@ $tablename=$_GET['tablename'];
   st_pg3rdsem varchar(255)  ,
   st_pg4thsem varchar(255)  ,
   st_pgcgpa varchar(255)  ,
-  st_pgyearofpassing year(4)  ,
+  st_pgyearofpassing varchar(255)  ,
   st_ugcollegename varchar(255),
 
   st_ughistoryofarrears varchar(255),
