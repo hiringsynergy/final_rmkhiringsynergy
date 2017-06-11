@@ -608,7 +608,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <div class="page-header">
                     <h1>
-                        Status
+                        Report Generation
 
                     </h1>
                 </div><!-- /.page-header -->
