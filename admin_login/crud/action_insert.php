@@ -706,7 +706,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                     $ug6sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(43, $row)->getValue());
                                     $ug7sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(44, $row)->getValue());
                                     $ug8sem= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(45, $row)->getValue());
-                                    $cgpa= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue());
+                                    $cgpa= round(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(46, $row)->getValue()),2);
                                     $ugyearofpassing= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(47, $row)->getValue());
                                     $pgdeg= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(48, $row)->getValue());
                                     $pgspecial= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(49, $row)->getValue());

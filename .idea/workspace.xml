@@ -144,17 +144,17 @@
       <file leaf-file-name="action_insert.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="806" column="0" lean-forward="true" selection-start-line="806" selection-start-column="0" selection-end-line="806" selection-end-column="0" />
+            <state relative-caret-position="499">
+              <caret line="716" column="60" lean-forward="true" selection-start-line="716" selection-start-column="60" selection-end-line="716" selection-end-column="60" />
               <folding>
-                <marker date="1497155607528" expanded="true" signature="5933:5956" ph="SELECT * fro... st_change" />
-                <marker date="1497155607528" expanded="true" signature="8177:8227" ph="select * fro... login_admin" />
-                <marker date="1497155607528" expanded="true" signature="33171:33224" ph="SELECT * FRO... dept_map" />
-                <marker date="1497155607528" expanded="true" signature="33704:33757" ph="SELECT * FRO... dept_map" />
-                <marker date="1497155607528" expanded="true" signature="34156:34209" ph="SELECT * FRO... dept_map" />
-                <marker date="1497155607528" expanded="true" signature="34960:36163" ph="INSERT INTO students_${$year}... " />
-                <marker date="1497155607528" expanded="true" signature="36560:37763" ph="INSERT INTO students_${$year}... " />
-                <marker date="1497155607528" expanded="true" signature="38160:39366" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497163964028" expanded="true" signature="5933:5956" ph="SELECT * fro... st_change" />
+                <marker date="1497163964028" expanded="true" signature="8177:8227" ph="select * fro... login_admin" />
+                <marker date="1497163964028" expanded="true" signature="33180:33233" ph="SELECT * FRO... dept_map" />
+                <marker date="1497163964028" expanded="true" signature="33713:33766" ph="SELECT * FRO... dept_map" />
+                <marker date="1497163964028" expanded="true" signature="34165:34218" ph="SELECT * FRO... dept_map" />
+                <marker date="1497163964028" expanded="true" signature="34969:36172" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497163964028" expanded="true" signature="36569:37772" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497163964028" expanded="true" signature="38169:39375" ph="INSERT INTO students_${$year}... " />
               </folding>
             </state>
           </provider>
@@ -612,12 +612,12 @@
       <workItem from="1496943131011" duration="9000" />
       <workItem from="1497024264712" duration="2305000" />
       <workItem from="1497062091904" duration="13476000" />
-      <workItem from="1497152884796" duration="2309000" />
+      <workItem from="1497152884796" duration="3330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81088000" />
+    <option name="totallyTimeSpent" value="82109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -868,6 +868,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6786">
           <caret line="456" column="42" lean-forward="false" selection-start-line="456" selection-start-column="42" selection-end-line="456" selection-end-column="42" />
+          <folding>
+            <marker date="1497025988739" expanded="true" signature="605:651" ph="SELECT * fro... ${$tname}" />
+            <marker date="1497025988739" expanded="true" signature="786:946" ph="UPDATE ${$tn... " />
+            <marker date="1497025988739" expanded="true" signature="2033:2079" ph="SELECT * fro... ${$tname}" />
+            <marker date="1497025988739" expanded="true" signature="2223:2769" ph="UPDATE ${$tn... " />
+            <marker date="1497025988739" expanded="true" signature="4490:4536" ph="SELECT * fro... ${$tname}" />
+            <marker date="1497025988739" expanded="true" signature="4680:5737" ph="UPDATE ${$tn... " />
+            <marker date="1497025988739" expanded="true" signature="6463:6509" ph="SELECT * fro... ${$tname}" />
+            <marker date="1497025988739" expanded="true" signature="6648:6903" ph="UPDATE ${$tn... " />
+            <marker date="1497025988739" expanded="true" signature="11664:11720" ph="SELECT * fro... login_coordinator" />
+            <marker date="1497025988739" expanded="true" signature="11974:12061" ph="UPDATE login... " />
+            <marker date="1497025988739" expanded="true" signature="14679:14702" ph="SELECT * fro... st_change" />
+            <marker date="1497025988739" expanded="true" signature="17037:17093" ph="select * fro... login_coordinator" />
+            <marker date="1497025988739" expanded="true" signature="24692:24748" ph="SELECT * FRO... table_map" />
+            <marker date="1497025988739" expanded="true" signature="25149:25203" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1497025988739" expanded="true" signature="26244:26337" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1497025988739" expanded="true" signature="27548:27604" ph="SELECT * FRO... table_map" />
+            <marker date="1497025988739" expanded="true" signature="28008:28101" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1497025988739" expanded="true" signature="30212:30268" ph="SELECT * FRO... table_map" />
+            <marker date="1497025988739" expanded="true" signature="30569:30664" ph="SELECT * FRO... ${$student_table}" />
+            <marker date="1497025988739" expanded="true" signature="176566:177938" ph="..." />
+            <marker date="1497025988739" expanded="true" signature="176624:177902" ph="..." />
+            <marker date="1497025988739" expanded="true" signature="176684:177865" ph="..." />
+            <marker date="1497025988739" expanded="true" signature="176744:176968" ph="..." />
+            <marker date="1497025988739" expanded="false" signature="176840:176847" ph="×" />
+            <marker date="1497025988739" expanded="true" signature="177060:177827" ph="..." />
+            <marker date="1497025988739" expanded="true" signature="177119:177348" ph="..." />
+            <marker date="1497025988739" expanded="false" signature="177235:177261" ph="..." />
+            <marker date="1497025988739" expanded="true" signature="177450:177786" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,17 +1231,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="806" column="0" lean-forward="true" selection-start-line="806" selection-start-column="0" selection-end-line="806" selection-end-column="0" />
+        <state relative-caret-position="499">
+          <caret line="716" column="60" lean-forward="true" selection-start-line="716" selection-start-column="60" selection-end-line="716" selection-end-column="60" />
           <folding>
-            <marker date="1497155607528" expanded="true" signature="5933:5956" ph="SELECT * fro... st_change" />
-            <marker date="1497155607528" expanded="true" signature="8177:8227" ph="select * fro... login_admin" />
-            <marker date="1497155607528" expanded="true" signature="33171:33224" ph="SELECT * FRO... dept_map" />
-            <marker date="1497155607528" expanded="true" signature="33704:33757" ph="SELECT * FRO... dept_map" />
-            <marker date="1497155607528" expanded="true" signature="34156:34209" ph="SELECT * FRO... dept_map" />
-            <marker date="1497155607528" expanded="true" signature="34960:36163" ph="INSERT INTO students_${$year}... " />
-            <marker date="1497155607528" expanded="true" signature="36560:37763" ph="INSERT INTO students_${$year}... " />
-            <marker date="1497155607528" expanded="true" signature="38160:39366" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497163964028" expanded="true" signature="5933:5956" ph="SELECT * fro... st_change" />
+            <marker date="1497163964028" expanded="true" signature="8177:8227" ph="select * fro... login_admin" />
+            <marker date="1497163964028" expanded="true" signature="33180:33233" ph="SELECT * FRO... dept_map" />
+            <marker date="1497163964028" expanded="true" signature="33713:33766" ph="SELECT * FRO... dept_map" />
+            <marker date="1497163964028" expanded="true" signature="34165:34218" ph="SELECT * FRO... dept_map" />
+            <marker date="1497163964028" expanded="true" signature="34969:36172" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497163964028" expanded="true" signature="36569:37772" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497163964028" expanded="true" signature="38169:39375" ph="INSERT INTO students_${$year}... " />
           </folding>
         </state>
       </provider>
