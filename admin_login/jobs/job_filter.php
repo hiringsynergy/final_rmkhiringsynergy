@@ -1277,6 +1277,36 @@ if(isset($_GET['filter_job'])){
                                                         </div>
                                                         
                                                         </div>
+                                                        <div class="row">
+
+                                                            <div class="col-xs-8 col-sm-6">
+
+
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input name="form-field-radio" type="radio" class="ace" />
+                                                                        <span class="lbl">Above</span>
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input name="form-field-radio" type="radio" class="ace" />
+                                                                        <span class="lbl">Below</span>
+                                                                    </label>
+                                                                </div>
+
+                                                                <h5 class="orange bolder smaller">Salary</h5>
+                                                                <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-1">
+                                                                <div id="slider-eq7" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-orange">0</span>
+                                                                </div>Lakhs Per Annum
+
+
+                                                            </div>
+
+
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -1836,8 +1866,8 @@ if(isset($_GET['filter_job'])){
                 value: value,
                 range: "min",
                 min:0,
-                max:100,
-                step:1,
+                max:10,
+                step:0.1,
 
                 animate: true,
                 slide: function(event,ui){
