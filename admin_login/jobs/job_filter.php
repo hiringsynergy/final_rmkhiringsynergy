@@ -1294,7 +1294,7 @@ if(isset($_GET['filter_job'])){
                                                                 </div>
 
                                                                 <h5 class="orange bolder smaller">Salary</h5>
-                                                                <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-3">
+                                                                <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-1 col-sm-5">
                                                                 <div id="slider-eq7" class="col-xs-12 col-md-10 col-sm-8">
                                                                     <span class="ui-slider-orange">0</span>
                                                                 </div>Lakhs Per Annum
