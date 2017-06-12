@@ -803,16 +803,21 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                             <div class="row">
                                 <div class="col-xs-10 col-sm-6 hello form-group" style="padding-left: 30px;">
                                     <div>
-                                        <h5><label class="control-label bolder orange" for="form-field-1">Salary(per
-                                                Annum)</label></h5>
+<!--                                        <h5><label class="control-label bolder orange" for="form-field-1">Salary(per-->
+<!--                                                Annum)</label></h5>-->
+<!---->
+<!--                                        <span class="block input-icon input-icon-right  ">-->
+<!---->
+<!--                                       <input type="text" id="form-field-13" name="salary" placeholder="Enter Salary"-->
+<!--                                              class="col-xs-12"/>-->
+<!--										<i class="find" id="salary"></i>-->
+<!--																	</span>-->
 
-                                        <span class="block input-icon input-icon-right  ">
-
-                                       <input type="text" id="form-field-13" name="salary" placeholder="Enter Salary"
-                                              class="col-xs-12"/>
-										<i class="find" id="salary"></i>
-																	</span>
-
+                                        <h5 class="orange bolder smaller">Salary(Lakhs Per Annum)</h5>
+                                        <input type="text"  name="Salary" value="0" id="slide-text1" class="col-xs-1 col-sm-1 col">
+                                        <div id="slider-eq1" class="col-xs-12 col-md-10 col-sm-8">
+                                            <span class="ui-slider-orange">0</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-10 col-sm-6 hello form-group" style="padding-left: 30px;">
@@ -934,6 +939,23 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
             jQuery(function ($) {
 
 
+                $( "#slider-eq1 > span" ).css({width:'90%', 'float':'left', margin:'15px 0px'}).each(function() {
+                    // read initial values from markup and remove that
+                    var value = parseInt( $( this ).text(), 10 );
+                    $( this ).empty().slider({
+                        value: value,
+                        range: "min",
+                        min:0,
+                        max:20,
+                        step:0.1,
+
+                        animate: true,
+                        slide: function(event,ui){
+                            $('#slide-text1').val(ui.value);
+                        }
+
+                    });
+                });
                 $('#id-disable-check').on('click', function () {
                     var inp = $('#form-input-readonly').get(0);
                     if (inp.hasAttribute('disabled')) {
