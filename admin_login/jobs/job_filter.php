@@ -1293,7 +1293,9 @@ if(isset($_GET['filter_job'])){
 
                                                             </div>
                                                             <div class="col-xs-8 col-sm-3 ">
-<!--                                                                <div class="radio">-->
+                                                                <div class="radio">
+                                                                <br/>
+                                                                    <br/>
                                                                     <label>
                                                                         <input name="form-field-radio" type="radio" name="above" class="ace" />
                                                                         <span class="lbl">Above</span>
@@ -1302,8 +1304,7 @@ if(isset($_GET['filter_job'])){
                                                                         <input name="form-field-radio" type="radio" name="below" class="ace" />
                                                                         <span class="lbl">Below</span>
                                                                     </label>
-                                                                    <!--                                                       </div>-->
-
+                                                                </div>
                                                             </div>
 
 
