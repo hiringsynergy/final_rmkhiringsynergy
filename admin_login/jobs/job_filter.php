@@ -1282,16 +1282,16 @@ if(isset($_GET['filter_job'])){
                                                             <div class="col-xs-10 col-sm-8">
 
 
-                                                                <div class="radio">
+<!--                                                                <div class="radio">-->
                                                                     <label>
-                                                                        <input name="form-field-radio" type="radio" class="ace" />
+                                                                        <input name="form-field-radio" type="radio" name="above" class="ace" />
                                                                         <span class="lbl">Above</span>
                                                                     </label>
                                                                     <label>
-                                                                        <input name="form-field-radio" type="radio" class="ace" />
+                                                                        <input name="form-field-radio" type="radio" name="below" class="ace" />
                                                                         <span class="lbl">Below</span>
                                                                     </label>
-                                                                </div>
+<!--                                                                </div>-->
 
                                                                 <h5 class="orange bolder smaller">Salary(Lakhs Per Annum)</h5>
                                                                 <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-1 col-sm-1 col">
