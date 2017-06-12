@@ -1278,20 +1278,6 @@ if(isset($_GET['filter_job'])){
                                                         
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-xs-8 col-sm-3 ">
-                                                                <div class="radio">
-                                                                    <br/>
-                                                                    <br/>
-                                                                    <label>
-                                                                        <input name="form-field-radio" type="radio" name="above" class="ace" />
-                                                                        <span class="lbl">Above</span>
-                                                                    </label>
-                                                                    <label>
-                                                                        <input name="form-field-radio" type="radio" name="below" class="ace" />
-                                                                        <span class="lbl">Below</span>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
 
                                                             <div class="col-xs-8 col-sm-6">
 
@@ -1305,6 +1291,20 @@ if(isset($_GET['filter_job'])){
                                                                 </div>
 
 
+                                                            </div>
+                                                            <div class="col-xs-8 col-sm-3 ">
+                                                                <div class="radio">
+                                                                <br/>
+                                                                    <br/>
+                                                                    <label>
+                                                                        <input name="form-field-radio" type="radio" name="above" class="ace" />
+                                                                        <span class="lbl">Above</span>
+                                                                    </label>
+                                                                    <label>
+                                                                        <input name="form-field-radio" type="radio" name="below" class="ace" />
+                                                                        <span class="lbl">Below</span>
+                                                                    </label>
+                                                                </div>
                                                             </div>
 
 
