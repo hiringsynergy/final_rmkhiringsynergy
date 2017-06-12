@@ -1279,7 +1279,7 @@ if(isset($_GET['filter_job'])){
                                                         </div>
                                                         <div class="row">
 
-                                                            <div class="col-xs-8 col-sm-6">
+                                                            <div class="col-xs-10 col-sm-8">
 
 
                                                                 <div class="radio">
@@ -1293,11 +1293,11 @@ if(isset($_GET['filter_job'])){
                                                                     </label>
                                                                 </div>
 
-                                                                <h5 class="orange bolder smaller">Salary</h5>
-                                                                <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-1 col-sm-1">
+                                                                <h5 class="orange bolder smaller">Salary(Lakhs Per Annum)</h5>
+                                                                <input type="text"  name="Salary" value="0" id="slide-text7" class="col-xs-1 col-sm-1 col">
                                                                 <div id="slider-eq7" class="col-xs-12 col-md-10 col-sm-8">
                                                                     <span class="ui-slider-orange">0</span>
-                                                                </div>Lakhs Per Annum
+                                                                </div>
 
 
                                                             </div>
@@ -1863,7 +1863,7 @@ if(isset($_GET['filter_job'])){
                 value: value,
                 range: "min",
                 min:0,
-                max:10,
+                max:20,
                 step:0.1,
 
                 animate: true,
