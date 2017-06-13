@@ -630,7 +630,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="../../index.html">Home</a>
+                        <a href="../../index">Home</a>
                     </li>
                     <li class="active">view Jobs</li>
                 </ul><!-- /.breadcrumb -->

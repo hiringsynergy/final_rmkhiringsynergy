@@ -165,7 +165,7 @@ function updateSlider(){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="index.html" class="navbar-brand">
+            <a href="index" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
                     Ace Admin
@@ -330,7 +330,7 @@ function updateSlider(){
 
         <ul class="nav nav-list">
             <li class="">
-                <a href="index.html">
+                <a href="index">
                     <i class="menu-icon fa fa-tachometer"></i>
                     <span class="menu-text"> Student Interaction </span>
                 </a>

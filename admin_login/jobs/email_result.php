@@ -554,7 +554,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="../../index.html">Home</a>
+                        <a href="../../index">Home</a>
                     </li>
                     <li class="active">Email</li>
                 </ul><!-- /.breadcrumb -->

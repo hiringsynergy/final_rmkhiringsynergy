@@ -126,9 +126,9 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
                                 <div class="mbr-table-cell">
 
                                     <div class="navbar-brand">
-                                        <a href="index.html" class="navbar-logo"><img
+                                        <a href="index" class="navbar-logo"><img
                                                     src="assets/images/download-256x128-33.png" alt="Mobirise"></a>
-                                        <a class="navbar-caption text-white" href="index.html">RMK Campulse</a>
+                                        <a class="navbar-caption text-white" href="index">RMK Campulse</a>
                                     </div>
 
                                 </div>
@@ -141,7 +141,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
                                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm"
                                         id="exCollapsingNavbar">
-                                        <li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link link" href="index">Home</a></li>
                                         <li class="nav-item"><a class="nav-link link" href="login.php">Login</a></li>
                                         <li class="nav-item">
                                             <!-- <a class="nav-link link" href="about.html">About</a> --></li>
@@ -390,9 +390,9 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
                                 <div class="mbr-table-cell">
 
                                     <div class="navbar-brand">
-                                        <a href="index.html" class="navbar-logo"><img
+                                        <a href="index" class="navbar-logo"><img
                                                     src="assets/images/download-256x128-33.png" alt="Mobirise"></a>
-                                        <a class="navbar-caption text-white" href="index.html">RMK Campulse</a>
+                                        <a class="navbar-caption text-white" href="index">RMK Campulse</a>
                                     </div>
 
                                 </div>
@@ -405,7 +405,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
                                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm"
                                         id="exCollapsingNavbar">
-                                        <li class="nav-item"><a class="nav-link link" href="index.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link link" href="index">Home</a></li>
                                         <li class="nav-item"><a class="nav-link link" href="login.php">Login</a></li>
                                         <li class="nav-item">
                                             <!-- <a class="nav-link link" href="about.html">About</a> --></li>

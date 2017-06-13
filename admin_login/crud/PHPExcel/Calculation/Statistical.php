@@ -474,7 +474,7 @@ class PHPExcel_Calculation_Statistical {
 	private static function _inverse_ncdf($p) {
 		//	Inverse ncdf approximation by Peter J. Acklam, implementation adapted to
 		//	PHP by Michael Nickerson, using Dr. Thomas Ziegler's C implementation as
-		//	a guide. http://home.online.no/~pjacklam/notes/invnorm/index.html
+		//	a guide. http://home.online.no/~pjacklam/notes/invnorm/index
 		//	I have not checked the accuracy of this implementation. Be aware that PHP
 		//	will truncate the coeficcients to 14 digits.
 

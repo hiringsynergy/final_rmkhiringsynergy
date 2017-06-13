@@ -1053,7 +1053,7 @@ if(isset($_GET['filter_job'])){
                 <ul class="breadcrumb">
                     <li>
                         <i class="ace-icon fa fa-home home-icon"></i>
-                        <a href="../../index.html">Home</a>
+                        <a href="../../index">Home</a>
                     </li>
                     <li class="active">Post Job</li>
                 </ul><!-- /.breadcrumb -->
