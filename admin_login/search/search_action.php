@@ -1875,12 +1875,11 @@ if(isset($_GET['export'])) {
 
                                                 include "../connect.php";
 
-                                                //st_ugyearofpassing='$get_year' and  
+                                                //st_ugyearofpassing='$get_year' and ...   and st_gapinstudies <= '$get_gapinstudy'
 						    
-						                        //echo "branch".$temp_branch;
-						                        //echo " year".$get_year;
+						    //echo "branch".$temp_branch;
 
-                                               echo $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'  and st_gapinstudies <= '$get_gapinstudy' ";
+                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_gender in ('$get_gender') and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'   UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
 
                                                 $result = mysqli_query($connect, $query);
 
