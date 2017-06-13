@@ -372,7 +372,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
 
     //sending mail to selected students
 
-    $query_mail = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_gender = '$get_gender' and st_gapinstudies <= '$get_gapinstudy'";
+    $query_mail = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_gapinstudies <= '$get_gapinstudy'";
 
     $result_mail = mysqli_query($connect, $query_mail);
     while($row_mail=mysqli_fetch_assoc($result_mail)){
@@ -1875,9 +1875,9 @@ if(isset($_GET['export'])) {
 
                                                 include "../connect.php";
 
-                                                //st_ugyearofpassing='$get_year' and
+                                                //st_ugyearofpassing='$get_year' and   and st_gender in ('$get_gender')
 
-                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'  and st_gender in ('$get_gender') and st_gapinstudies <= '$get_gapinstudy'  UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
+                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears' and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'  and st_gapinstudies <= '$get_gapinstudy'  UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
 
                                                 $result = mysqli_query($connect, $query);
 
