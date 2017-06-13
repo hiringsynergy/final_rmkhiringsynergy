@@ -742,10 +742,10 @@ function updateSlider(){
                                                                     <option value="all">All</option>
                                                                     <option value="cse">Computer science and Engineering</option>
                                                                     <option value="eee">Electrical and Electronic Engineering</option>
-                                                                    <option value="eie">Electrical and Intrumentation Engineering</option>
+                                                                    <option value="eie">Electronic and Intrumentation Engineering</option>
 
                                                                     <option value="it">Information Technology</option>
-                                                                    <option value="ece">Electrical and Communicaton Engineering</option>
+                                                                    <option value="ece">Electronic and Communicaton Engineering</option>
                                                                 </select>
                                                             
 
