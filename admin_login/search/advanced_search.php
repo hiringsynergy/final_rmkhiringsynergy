@@ -741,11 +741,11 @@ function updateSlider(){
                                                                 <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tagrmd" data-placeholder="Choose a Branch...">
                                                                     <option value="all">All</option>
                                                                     <option value="cse">Computer science and Engineering</option>
-                                                                    <option value="eee">Electrical and Electronic Engineering</option>
-                                                                    <option value="eie">Electronic and Intrumentation Engineering</option>
+                                                                    <option value="eee">Electrical and Electronics Engineering</option>
+                                                                    <option value="eie">Electronics and Intrumentation Engineering</option>
 
                                                                     <option value="it">Information Technology</option>
-                                                                    <option value="ece">Electronic and Communicaton Engineering</option>
+                                                                    <option value="ece">Electronics and Communicaton Engineering</option>
                                                                 </select>
                                                             
 
@@ -758,11 +758,11 @@ function updateSlider(){
                                                             <select multiple="" name="ugbranch[]" class="chosen-select" id="tagrmk" data-placeholder="Choose a Branch...">
                                                                 <option value="all">All</option>
                                                                 <option value="cse">Computer science and Engineering</option>
-                                                                <option value="eee">Electrical and Electronic Engineering</option>
-                                                                <option value="eie">Electrical and Intrumentation Engineering</option>
+                                                                <option value="eee">Electrical and Electronics Engineering</option>
+                                                                <option value="eie">Electronics and Intrumentation Engineering</option>
 
                                                                 <option value="it">Information Technology</option>
-                                                                <option value="ece">Electrical and Communicaton Engineering</option>
+                                                                <option value="ece">Electronics and Communicaton Engineering</option>
                                                                 <option value="mech">Mechanical Engineering</option>
                                                                 <option value="civil">Civil Engineering</option>
                                                             </select>
@@ -777,10 +777,10 @@ function updateSlider(){
                                                         <select multiple="" name="ugbranch[]" class="chosen-select  form-control" id="tagcet" data-placeholder="Choose a Branch...">
                                                             <option value="all">All</option>
                                                             <option value="cse">Computer science and Engineering</option>
-                                                            <option value="eee">Electrical and Electronic Engineering</option>
+                                                            <option value="eee">Electrical and Electronics Engineering</option>
                                                              <option value="it">Information Technology</option>
-                                                            <option value="ece">Electrical and Communicaton Engineering</option>
-								 <option value="mech">Mechanical Engineering</option>
+                                                            <option value="ece">Electronics and Communicaton Engineering</option>
+								                             <option value="mech">Mechanical Engineering</option>
                                                         </select>
                                                     
 
