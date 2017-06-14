@@ -71,21 +71,21 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin_login/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="1397" column="36" lean-forward="true" selection-start-line="1397" selection-start-column="36" selection-end-line="1397" selection-end-column="36" />
+            <state relative-caret-position="469">
+              <caret line="1409" column="44" lean-forward="false" selection-start-line="1409" selection-start-column="44" selection-end-line="1409" selection-end-column="44" />
               <folding>
-                <marker date="1497419848840" expanded="true" signature="187:3205" ph="CREATE TABLE... students_" />
-                <marker date="1497419848840" expanded="true" signature="3227:3332" ph="ALTER TABLE students_${$tablename}... " />
-                <marker date="1497419848840" expanded="true" signature="3613:3685" ph="INSERT INTO table_map" />
-                <marker date="1497419848840" expanded="true" signature="3928:3970" ph="DELETE FROM " />
-                <marker date="1497419848840" expanded="true" signature="4053:4073" ph="DROP TABLE s... " />
-                <marker date="1497419848840" expanded="true" signature="4148:4188" ph="DELETE FROM " />
-                <marker date="1497419848840" expanded="true" signature="10492:10515" ph="SELECT * fro... st_change" />
-                <marker date="1497419848840" expanded="true" signature="12781:12831" ph="select * fro... login_admin" />
-                <marker date="1497419848840" expanded="true" signature="25273:25296" ph="SELECT * FRO... table_map" />
-                <marker date="1497419848840" expanded="true" signature="28344:28367" ph="SELECT * FRO... table_map" />
-                <marker date="1497419848840" expanded="true" signature="31334:31357" ph="SELECT * FRO... table_map" />
-                <marker date="1497419848840" expanded="true" signature="39734:39757" ph="SELECT * FRO... table_map" />
+                <marker date="1497419984173" expanded="true" signature="187:3205" ph="CREATE TABLE... students_" />
+                <marker date="1497419984173" expanded="true" signature="3227:3332" ph="ALTER TABLE students_${$tablename}... " />
+                <marker date="1497419984173" expanded="true" signature="3613:3685" ph="INSERT INTO table_map" />
+                <marker date="1497419984173" expanded="true" signature="3928:3970" ph="DELETE FROM " />
+                <marker date="1497419984173" expanded="true" signature="4053:4073" ph="DROP TABLE s... " />
+                <marker date="1497419984173" expanded="true" signature="4148:4188" ph="DELETE FROM " />
+                <marker date="1497419984173" expanded="true" signature="10492:10515" ph="SELECT * fro... st_change" />
+                <marker date="1497419984173" expanded="true" signature="12781:12831" ph="select * fro... login_admin" />
+                <marker date="1497419984173" expanded="true" signature="25273:25296" ph="SELECT * FRO... table_map" />
+                <marker date="1497419984173" expanded="true" signature="28344:28367" ph="SELECT * FRO... table_map" />
+                <marker date="1497419984173" expanded="true" signature="31334:31357" ph="SELECT * FRO... table_map" />
+                <marker date="1497419984173" expanded="true" signature="39734:39757" ph="SELECT * FRO... table_map" />
               </folding>
             </state>
           </provider>
@@ -526,15 +526,15 @@
       <workItem from="1497062091904" duration="13476000" />
       <workItem from="1497152884796" duration="9024000" />
       <workItem from="1497358672813" duration="1816000" />
-      <workItem from="1497415590927" duration="4262000" />
+      <workItem from="1497415590927" duration="4388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93881000" />
+    <option name="totallyTimeSpent" value="94007000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -993,21 +993,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="1397" column="36" lean-forward="true" selection-start-line="1397" selection-start-column="36" selection-end-line="1397" selection-end-column="36" />
+        <state relative-caret-position="469">
+          <caret line="1409" column="44" lean-forward="false" selection-start-line="1409" selection-start-column="44" selection-end-line="1409" selection-end-column="44" />
           <folding>
-            <marker date="1497419848840" expanded="true" signature="187:3205" ph="CREATE TABLE... students_" />
-            <marker date="1497419848840" expanded="true" signature="3227:3332" ph="ALTER TABLE students_${$tablename}... " />
-            <marker date="1497419848840" expanded="true" signature="3613:3685" ph="INSERT INTO table_map" />
-            <marker date="1497419848840" expanded="true" signature="3928:3970" ph="DELETE FROM " />
-            <marker date="1497419848840" expanded="true" signature="4053:4073" ph="DROP TABLE s... " />
-            <marker date="1497419848840" expanded="true" signature="4148:4188" ph="DELETE FROM " />
-            <marker date="1497419848840" expanded="true" signature="10492:10515" ph="SELECT * fro... st_change" />
-            <marker date="1497419848840" expanded="true" signature="12781:12831" ph="select * fro... login_admin" />
-            <marker date="1497419848840" expanded="true" signature="25273:25296" ph="SELECT * FRO... table_map" />
-            <marker date="1497419848840" expanded="true" signature="28344:28367" ph="SELECT * FRO... table_map" />
-            <marker date="1497419848840" expanded="true" signature="31334:31357" ph="SELECT * FRO... table_map" />
-            <marker date="1497419848840" expanded="true" signature="39734:39757" ph="SELECT * FRO... table_map" />
+            <marker date="1497419984173" expanded="true" signature="187:3205" ph="CREATE TABLE... students_" />
+            <marker date="1497419984173" expanded="true" signature="3227:3332" ph="ALTER TABLE students_${$tablename}... " />
+            <marker date="1497419984173" expanded="true" signature="3613:3685" ph="INSERT INTO table_map" />
+            <marker date="1497419984173" expanded="true" signature="3928:3970" ph="DELETE FROM " />
+            <marker date="1497419984173" expanded="true" signature="4053:4073" ph="DROP TABLE s... " />
+            <marker date="1497419984173" expanded="true" signature="4148:4188" ph="DELETE FROM " />
+            <marker date="1497419984173" expanded="true" signature="10492:10515" ph="SELECT * fro... st_change" />
+            <marker date="1497419984173" expanded="true" signature="12781:12831" ph="select * fro... login_admin" />
+            <marker date="1497419984173" expanded="true" signature="25273:25296" ph="SELECT * FRO... table_map" />
+            <marker date="1497419984173" expanded="true" signature="28344:28367" ph="SELECT * FRO... table_map" />
+            <marker date="1497419984173" expanded="true" signature="31334:31357" ph="SELECT * FRO... table_map" />
+            <marker date="1497419984173" expanded="true" signature="39734:39757" ph="SELECT * FRO... table_map" />
           </folding>
         </state>
       </provider>

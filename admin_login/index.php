@@ -1406,6 +1406,9 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
                     } );
 
+                    event.preventDefault();
+                    event.stopPropagation();
+
 
                 }
             });
