@@ -902,8 +902,8 @@ function updateSlider(){
                                                         							<input type="text"  name="historyofarrears" value="0" id="slide-text5" class="col-xs-1">
                                                         							<div id="slider-eq5" class="col-xs-12 col-md-10 col-sm-8">
                                                             								<span class="ui-slider-blue">0</span>
-														</div> -->
 														</div>
+														</div>-->
 
 													</div>
 													<div class="row">
@@ -947,10 +947,10 @@ function updateSlider(){
 														<select class="chosen-select form-control"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
 																<option value="0">0</option>
 																<option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
-                                                                <option value="5">5</option>
+                                                                								<option value="2">2</option>
+                                                                								<option value="3">3</option>
+                                                                								<option value="4">4</option>
+                                                                								<option value="5">5</option>
 															</select>
 														</div>
 														<div class="col-xs-8 col-sm-5">
