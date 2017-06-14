@@ -1234,13 +1234,16 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                 resizable: false,
                 width: '320',
                 modal: true,
-                title: " Delete the Table",
+
                 title_html: true,
                 buttons: [
                     {
                         html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete the Table",
                         "class" : "btn btn-danger btn-minier",
                         click: function() {
+
+
+                            window.location.href="index?delete=2052";
                             $( this ).dialog( "close" );
                         }
                     }
