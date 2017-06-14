@@ -201,11 +201,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_action.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="action_insert.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="680" column="0" lean-forward="true" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+              <folding>
+                <marker date="1497428676930" expanded="true" signature="5927:5950" ph="SELECT * fro... st_change" />
+                <marker date="1497428676930" expanded="true" signature="8171:8221" ph="select * fro... login_admin" />
+                <marker date="1497428676930" expanded="true" signature="33905:33958" ph="SELECT * FRO... dept_map" />
+                <marker date="1497428676930" expanded="true" signature="34438:34491" ph="SELECT * FRO... dept_map" />
+                <marker date="1497428676930" expanded="true" signature="34890:34943" ph="SELECT * FRO... dept_map" />
+                <marker date="1497428676930" expanded="true" signature="36181:37392" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497428676930" expanded="true" signature="37789:39000" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497428676930" expanded="true" signature="39397:40611" ph="INSERT INTO students_${$year}... " />
+                <marker date="1497428676930" expanded="false" signature="44966:44972" ph=" " />
+                <marker date="1497428676930" expanded="false" signature="44973:44979" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_action.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_login/search/search_action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="1886" column="1236" lean-forward="false" selection-start-line="1886" selection-start-column="1236" selection-end-line="1886" selection-end-column="1236" />
+            <state relative-caret-position="232">
+              <caret line="1893" column="63" lean-forward="true" selection-start-line="1893" selection-start-column="63" selection-end-line="1893" selection-end-column="63" />
               <folding>
                 <marker date="1497427206257" expanded="true" signature="5938:5960" ph="SELECT * FRO... dept_map" />
                 <marker date="1497427206257" expanded="true" signature="6627:6649" ph="SELECT * FRO... dept_map" />
@@ -257,8 +278,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gap</find>
-      <find>gendr</find>
       <find>year</find>
       <find>cgpa</find>
       <find>round</find>
@@ -287,6 +306,8 @@
       <find>tablename</find>
       <find>delete</find>
       <find>later</find>
+      <find>round(</find>
+      <find>,2</find>
     </findStrings>
     <replaceStrings>
       <replace>cse</replace>
@@ -364,9 +385,9 @@
         <option value="$PROJECT_DIR$/admin_login/approve1.php" />
         <option value="$PROJECT_DIR$/admin_login/approve.php" />
         <option value="$PROJECT_DIR$/admin_login/search/advanced_search.php" />
-        <option value="$PROJECT_DIR$/admin_login/crud/action_insert.php" />
         <option value="$PROJECT_DIR$/admin_login/index.php" />
         <option value="$PROJECT_DIR$/admin_login/search/search_action.php" />
+        <option value="$PROJECT_DIR$/admin_login/crud/action_insert.php" />
       </list>
     </option>
   </component>
@@ -608,12 +629,12 @@
       <workItem from="1497062091904" duration="13476000" />
       <workItem from="1497152884796" duration="9024000" />
       <workItem from="1497358672813" duration="1816000" />
-      <workItem from="1497415590927" duration="8965000" />
+      <workItem from="1497415590927" duration="10229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98584000" />
+    <option name="totallyTimeSpent" value="99848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1002,23 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1006">
-          <caret line="870" column="0" lean-forward="true" selection-start-line="870" selection-start-column="0" selection-end-line="870" selection-end-column="0" />
-          <folding>
-            <marker date="1497425843500" expanded="true" signature="5927:5950" ph="SELECT * fro... st_change" />
-            <marker date="1497425843500" expanded="true" signature="8171:8221" ph="select * fro... login_admin" />
-            <marker date="1497425843500" expanded="true" signature="34103:34156" ph="SELECT * FRO... dept_map" />
-            <marker date="1497425843500" expanded="true" signature="34636:34689" ph="SELECT * FRO... dept_map" />
-            <marker date="1497425843500" expanded="true" signature="35088:35141" ph="SELECT * FRO... dept_map" />
-            <marker date="1497425843500" expanded="true" signature="36379:37590" ph="INSERT INTO students_${$year}... " />
-            <marker date="1497425843500" expanded="true" signature="37987:39198" ph="INSERT INTO students_${$year}... " />
-            <marker date="1497425843500" expanded="true" signature="39595:40809" ph="INSERT INTO students_${$year}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="626">
@@ -1233,8 +1237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/search/search_action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="1886" column="1236" lean-forward="false" selection-start-line="1886" selection-start-column="1236" selection-end-line="1886" selection-end-column="1236" />
+        <state relative-caret-position="232">
+          <caret line="1893" column="63" lean-forward="true" selection-start-line="1893" selection-start-column="63" selection-end-line="1893" selection-end-column="63" />
           <folding>
             <marker date="1497427206257" expanded="true" signature="5938:5960" ph="SELECT * FRO... dept_map" />
             <marker date="1497427206257" expanded="true" signature="6627:6649" ph="SELECT * FRO... dept_map" />
@@ -1261,6 +1265,25 @@
             <marker date="1497427206257" expanded="true" signature="86198:86250" ph="SELECT * FRO... dept_map" />
             <marker date="1497427206257" expanded="true" signature="86840:86892" ph="SELECT * FRO... dept_map" />
             <marker date="1497427206257" expanded="true" signature="87372:87424" ph="SELECT * FRO... dept_map" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="680" column="0" lean-forward="true" selection-start-line="680" selection-start-column="0" selection-end-line="680" selection-end-column="0" />
+          <folding>
+            <marker date="1497428676930" expanded="true" signature="5927:5950" ph="SELECT * fro... st_change" />
+            <marker date="1497428676930" expanded="true" signature="8171:8221" ph="select * fro... login_admin" />
+            <marker date="1497428676930" expanded="true" signature="33905:33958" ph="SELECT * FRO... dept_map" />
+            <marker date="1497428676930" expanded="true" signature="34438:34491" ph="SELECT * FRO... dept_map" />
+            <marker date="1497428676930" expanded="true" signature="34890:34943" ph="SELECT * FRO... dept_map" />
+            <marker date="1497428676930" expanded="true" signature="36181:37392" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497428676930" expanded="true" signature="37789:39000" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497428676930" expanded="true" signature="39397:40611" ph="INSERT INTO students_${$year}... " />
+            <marker date="1497428676930" expanded="false" signature="44966:44972" ph=" " />
+            <marker date="1497428676930" expanded="false" signature="44973:44979" ph=" " />
           </folding>
         </state>
       </provider>
