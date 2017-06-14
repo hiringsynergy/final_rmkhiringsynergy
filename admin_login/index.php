@@ -1028,7 +1028,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                 <div>
 
 
-                                                    <a href="#" id="id-btn-dialog2" class="btn btn-info btn-sm">Delete</a>
+                                                    <a href="#" id="id-btn-dialog2" class="btn btn-block btn-danger">Delete</a>
 <!--                                                    <button type="submit" href="index" id="bootbox-delete" name="delete" class="btn btn-block btn-danger">-->
 <!--                                                        <span>Delete</span>-->
                                                     </button>
