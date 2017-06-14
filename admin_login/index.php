@@ -1244,8 +1244,8 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 
 
-                            var table=2052;
-                            window.location.href="index?delete=delete&tablename="+table;
+                            var table=$('#delete-textbox :selected').text();
+                            window.location.href="index?delete="+table;
                             $( this ).dialog( "close" );
                         }
                     }
