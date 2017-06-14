@@ -190,6 +190,7 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
     $get_10thpercentage= $_GET['10percentage'];
     $get_historyofarrears= $_GET['historyofarrears'];
     $get_standingarrears= $_GET['standingarrears'];
+    $get_dippercentage= $_GET['lateral'];
 
     $get_pgbranch= $_GET['pgbranch'];
     $get_branch= $_GET['ugbranch'];
@@ -1879,7 +1880,18 @@ if(isset($_GET['export'])) {
 						    
 						    //echo "branch".$temp_branch;
 
-                                                $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_gender in ('$get_gender') and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG'   UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
+
+
+
+
+                                                    $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_12thpercentage>='$get_12thpercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_gender in ('$get_gender') and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG' WHERE $dorh='h'   UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>='$get_pgcgpa'";
+
+                                                    $query.= "UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_dippercentage>='$get_dippercentage' and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_gender in ('$get_gender') and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG' WHERE $dorh='d'";
+
+                                                    $query.= "UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>='$get_cgpa' and st_dippercentage>='$get_dippercentage' and st_12thpercentage>='$get_12thpercentage'  and st_10thpercentage>='$get_10thpercentage' and st_historyofarrears<='$get_historyofarrears'  and st_gender in ('$get_gender') and st_standingarrears<='$get_standingarrears' and st_currentlypursuing='UG' WHERE $dorh='dh'";
+
+
+
 
                                                 $result = mysqli_query($connect, $query);
 
