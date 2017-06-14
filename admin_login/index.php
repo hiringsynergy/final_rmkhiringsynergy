@@ -1025,8 +1025,11 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                 <div class="space-16"> </div>
                                                 <div class="space-16"></div>
                                                 <div>
-                                                    <button type="submit" href="index" id="bootbox-delete" name="delete" class="btn btn-block btn-danger">
-                                                        <span>Delete</span>
+
+
+                                                    <a href="#" id="id-btn-dialog2" class="btn btn-info btn-sm">Delete</a>
+<!--                                                    <button type="submit" href="index" id="bootbox-delete" name="delete" class="btn btn-block btn-danger">-->
+<!--                                                        <span>Delete</span>-->
                                                     </button>
                                                 </div>
                                             </div>
@@ -1037,6 +1040,19 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
                                 </div>
 
+
+                                <div id="dialog-confirm" class="hide">
+                                    <div class="alert alert-info bigger-110">
+                                        These items will be permanently deleted and cannot be recovered.
+                                    </div>
+
+                                    <div class="space-6"></div>
+
+                                    <p class="bigger-110 bolder center grey">
+                                        <i class="ace-icon fa fa-hand-o-right blue bigger-120"></i>
+                                        Are you sure?
+                                    </p>
+                                </div>
 
 
 
@@ -1207,6 +1223,35 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 					$(this).find('.modal-chosen').chosen();
 				})
          */
+
+        $( "#id-btn-dialog2" ).on('click', function(e) {
+            e.preventDefault();
+
+            $( "#dialog-confirm" ).removeClass('hide').dialog({
+                resizable: false,
+                width: '320',
+                modal: true,
+                title: "<div class='widget-header'><h4 class='smaller'><i class='ace-icon fa fa-exclamation-triangle red'></i> Empty the recycle bin?</h4></div>",
+                title_html: true,
+                buttons: [
+                    {
+                        html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete the Table",
+                        "class" : "btn btn-danger btn-minier",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                    ,
+                    {
+                        html: "<i class='ace-icon fa fa-times bigger-110'></i>&nbsp; Cancel",
+                        "class" : "btn btn-minier",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+        });
 
 
                 $('[data-rel=tooltip]').tooltip({container:'body'});
@@ -1395,19 +1440,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                 else
                 {
 
-                    bootbox.dialog({
-                        message: "Confirm Delete?",
-                        buttons: {
-                            "success" : {
-                                "label" : "Yes",
-                                "className" : "btn-sm btn-primary"
-                            }
-                        }
 
-                    } );
-
-                    event.preventDefault();
-                    event.stopPropagation();
 
 
                 }
