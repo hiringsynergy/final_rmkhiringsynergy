@@ -814,7 +814,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 <!--																	</span>-->
 
                                         <h5 class="orange bolder smaller">Salary(Lakhs Per Annum)</h5>
-                                        <input type="text"  name="Salary" value="0" id="slide-text1" class="col-xs-1 col-sm-1 col">
+                                        <input type="text"  name="salary" value="0" id="slide-text1" class="col-xs-1 col-sm-1 col">
                                         <div id="slider-eq1" class="col-xs-12 col-md-10 col-sm-8">
                                             <span class="ui-slider-orange">0</span>
                                         </div>
