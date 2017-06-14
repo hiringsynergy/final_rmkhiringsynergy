@@ -1350,7 +1350,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>Date of Birth</b> </div>
 
                                                             <div class="profile-info-value testorange">
-                                                                <div class=" " id="dob"><?php echo $mysqltime = date ("d-m-Y", $row['st_dob']); /*echo $row['st_dob'] */ ?></div>
+                                                                <div class=" " id="dob"><?php /*echo $mysqltime = date ("d-m-Y", $row['st_dob']);*/echo $row['st_dob'] ?></div>
                                                             </div>
                                                         </div>
 
