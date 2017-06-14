@@ -1243,7 +1243,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                         click: function() {
 
 
-                            window.location.href="index?delete=2052";
+                            window.location.href="index?delete=delete&tablename=2052";
                             $( this ).dialog( "close" );
                         }
                     }
