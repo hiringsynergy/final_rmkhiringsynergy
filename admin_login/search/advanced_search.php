@@ -868,12 +868,31 @@ function updateSlider(){
                                                             								<span class="ui-slider-blue">0</span>
 														</div>
 														</div>
+														
 														<div class="col-xs-8 col-sm-5">
+														<h5><label class="control-label bolder blue" for="form-field-select-3">History Of Arrears</label></h5>
+
+														<select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
+																<option value="0">Nil</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																<option value="6">6</option>
+																<option value="7">7</option>
+																<option value="8">8</option>
+																<option value="9">9</option>
+																<option value="10">10</option>
+															</select>
+														</div> 
+														
+<!-- 														<div class="col-xs-8 col-sm-5">
 														<h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
                                                         							<input type="text"  name="historyofarrears" value="0" id="slide-text5" class="col-xs-1">
                                                         							<div id="slider-eq5" class="col-xs-12 col-md-10 col-sm-8">
                                                             								<span class="ui-slider-blue">0</span>
-														</div>
+														</div> -->
 														</div>
 
 													</div>
