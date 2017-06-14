@@ -744,7 +744,7 @@ else {
 $secured_password=password_hash($first_get_password,PASSWORD_BCRYPT, array('cost' => 14));
 
 
- $query_validate=" UPDATE $table SET st_pass = '$secured_password' ,st_forgotpassword='' WHERE st_roll='$roll' ";
+echo $query_validate=" UPDATE $table SET st_pass = '$secured_password' ,st_forgotpassword='' WHERE st_roll='$roll' ";
  $result_validate=mysqli_query($connect,$query_validate);
 
 
