@@ -502,30 +502,42 @@ else{
 
                    require "../admin_login/email/PHPMailer/PHPMailerAutoload.php";
 
+
+
+                    $mail->SMTPDebug = 3;
+
+
                     $mail=new PHPMailer();
 
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                    $mail->Password = 'akash170397';                           // SMTP password
-                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 465;
+                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;
 
 
-                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+
+                    $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Password = 'rmk123';                           // SMTP password
+                    $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 	587;
+
+
+                    $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+
+
+                    $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+
+
                     $mail->addAddress($to, $to);     // Add a recipient
 
-                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
 
-                    
+
+
 
                     $mail->isHTML(true);
 
-                    $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover?id='.$user_mail."&hash=".$hash;
-
+                    $mail->Subject = "Password Recovery";
+                    $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
 
 
                     if(!$mail->send()) {
@@ -690,31 +702,42 @@ else{
 
                    require "../admin_login/email/PHPMailer/PHPMailerAutoload.php";
 
+
+
+                    $mail->SMTPDebug = 3;
+
+
                     $mail=new PHPMailer();
 
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                    $mail->Password = 'akash170397';                           // SMTP password
-                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 465;
+                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;
 
 
-                    $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+
+                    $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Password = 'rmk123';                           // SMTP password
+                    $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 	587;
+
+
+                    $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+
+
+                    $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+
+
                     $mail->addAddress($to, $to);     // Add a recipient
 
-                    $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
 
 
-                    
+
+
 
                     $mail->isHTML(true);
 
-                    $mail->Subject = "test mail";
-                    $mail->Body    = 'http://localhost/final_rmkhiringsynergy/recover?id='.$user_mail."&hash=".$hash;
-
-
+                    $mail->Subject = "Password Recovery";
+                    $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
 
                     if(!$mail->send()) {
 
