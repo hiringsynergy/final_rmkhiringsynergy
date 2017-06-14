@@ -799,16 +799,16 @@ else{
 
 
 
-//    if($is_user_valid==false){
-//
-//
-//      $_SESSION['user_valid']=1;
-//
-//// echo "is_valid";
-//        header("Location: ../reset");
-//
-//
-//    }
+    if($is_user_valid==false){
+
+
+      $_SESSION['user_valid']=1;
+
+// echo "is_valid";
+        header("Location: ../reset");
+
+
+    }
 
 
 
