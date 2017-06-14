@@ -993,7 +993,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                             <div class="form-group">
 										<h5><label class="col-xs-12 control-label red bolder" for="form-field-1">Year of Graduation</label></h5>
 											<div class="col-xs-12 col-md-7">
-												<select class="col-xs-7 chosen-select form-control" name="tablename" id="delete-textbox" data-placeholder="Select a Year...">
+												<select class="col-xs-7 chosen-select form-control" name="delete" id="delete-textbox" data-placeholder="Select a Year...">
 												<option value=""></option>
                                                     <?php
 
@@ -1394,6 +1394,17 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                 }
                 else
                 {
+
+                    bootbox.dialog({
+                        message: "Confirm Delete?",
+                        buttons: {
+                            "success" : {
+                                "label" : "Yes",
+                                "className" : "btn-sm btn-primary"
+                            }
+                        }
+
+                    } );
 
 
                 }
