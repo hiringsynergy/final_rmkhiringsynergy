@@ -696,7 +696,7 @@ else{
 
 
 
-                     $to = $row_student_select['st_email'];
+                     $to = $row_student_select['st_clgemail'];
                      $user_mail=$row_student_select['st_roll'];
 
 
