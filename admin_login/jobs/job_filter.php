@@ -208,7 +208,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-    if($campus_date=''){
+    if($campus_date==''){
 
         $campus_date="To be announced later";
 
