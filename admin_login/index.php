@@ -164,7 +164,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 {
 
-    $tab_name=$_GET['tablename'];
+    $tab_name=$_GET['delete'];
 
 
     include "connect.php";
@@ -1243,6 +1243,8 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                         click: function() {
 
 
+
+                            //var table=$(#)
                             window.location.href="index?delete=delete&tablename=2052";
                             $( this ).dialog( "close" );
                         }
