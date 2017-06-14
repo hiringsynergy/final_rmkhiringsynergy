@@ -297,18 +297,18 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
     if ($student_user == '1115') {
 
-        $database_session_set = 'rmd';
+        $database_session_set = 'u552198179_rmd';
         $connect = mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy", "u552198179_rmd");
 
 
     } else if ($student_user == '1116') {
 
-        $database_session_set = 'cet';
+        $database_session_set = 'u552198179_cet';
         $connect = mysqli_connect("mysql.hostinger.com", "u552198179_root2","rmkhiringsynergy", "u552198179_cet");
 
     } else if ($student_user == '1117') {
 
-        $database_session_set = 'rmk';
+        $database_session_set = 'u552198179_rmk';
         $connect = mysqli_connect("mysql.hostinger.com", "u552198179_root1","rmkhiringsynergy", "u552198179_rmk");
 
     }
