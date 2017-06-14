@@ -1234,7 +1234,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                 resizable: false,
                 width: '320',
                 modal: true,
-                title: "<div class='widget-header'><h4 class='smaller'> Delete the Table</h4></div>",
+                title: " Delete the Table",
                 title_html: true,
                 buttons: [
                     {
