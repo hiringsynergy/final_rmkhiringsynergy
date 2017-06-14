@@ -1191,7 +1191,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>Current Cgpa</b> </div>
 
                                                             <div class="profile-info-value testblue1">
-                                                                <div class=" " id="gen"><?php  echo $row['st_cgpa']  ?></div>
+                                                                <div class=" " id="gen"><?php  echo round($row['st_cgpa'],2)  ?></div>
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row">
