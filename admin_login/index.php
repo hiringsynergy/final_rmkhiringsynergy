@@ -258,6 +258,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 
 		<!-- page specific plugin styles -->
 
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
         <link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
         <link rel="stylesheet" href="assets/css/chosen.min.css" />
         <link rel="stylesheet" href="assets/css/bootstrap-datepicker3.min.css" />
@@ -1131,6 +1132,8 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
     <script src="assets/js/jquery.maskedinput.min.js"></script>
     <script src="assets/js/select2.min.js"></script>
 
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 
     <!-- page specific plugin styles -->
 
