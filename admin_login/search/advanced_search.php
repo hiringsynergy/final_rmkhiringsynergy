@@ -870,7 +870,7 @@ function updateSlider(){
 														</div>
 														
 														<div class="col-xs-8 col-sm-5">
-														<h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
+														<h5><label class="control-label bolder blue" for="form-field-select-3">History Of Arrears</label></h5>
 
 														<select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
 																<option value="0">Nil</option>
@@ -883,6 +883,7 @@ function updateSlider(){
 																<option value="7">7</option>
 																<option value="8">8</option>
 																<option value="9">9</option>
+																<option value="10">10</option>
 															</select>
 														</div> 
 														
