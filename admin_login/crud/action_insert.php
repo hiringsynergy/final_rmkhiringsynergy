@@ -700,7 +700,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                     $caste= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(18, $row)->getValue());
                                     $college_name= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(19, $row)->getValue());
                                     $university= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(20, $row)->getValue());
-                                    $_10percentage=convert(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(21, $row)->getValue()),2);
+                                    $_10percentage=round(convert(mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(21, $row)->getValue()),2),2);
                                     $_10institution= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(22, $row)->getValue());
                                     $_10boardofstudy= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(23, $row)->getValue());
                                     $_10medium= mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(24, $row)->getValue());
