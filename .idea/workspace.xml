@@ -201,7 +201,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_insert.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="action_insert.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_login/crud/action_insert.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
@@ -217,6 +217,41 @@
                 <marker date="1497428676930" expanded="true" signature="39397:40611" ph="INSERT INTO students_${$year}... " />
                 <marker date="1497428676930" expanded="false" signature="44966:44972" ph=" " />
                 <marker date="1497428676930" expanded="false" signature="44973:44979" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_jobs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2970">
+              <caret line="559" column="25" lean-forward="false" selection-start-line="559" selection-start-column="25" selection-end-line="559" selection-end-column="25" />
+              <folding>
+                <marker date="1497418982848" expanded="true" signature="6601:6624" ph="SELECT * fro... st_change" />
+                <marker date="1497418982848" expanded="true" signature="8849:8899" ph="select * fro... login_admin" />
+                <marker date="1497418982848" expanded="true" signature="19804:19830" ph="SELECT * FRO... company_list" />
+                <marker date="1497418982848" expanded="true" signature="23123:23146" ph="SELECT * FRO... table_map" />
+                <marker date="1497418982848" expanded="true" signature="42084:42116" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="email_result.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="895" column="2" lean-forward="true" selection-start-line="895" selection-start-column="2" selection-end-line="895" selection-end-column="2" />
+              <folding>
+                <marker date="1497429347131" expanded="true" signature="5835:5858" ph="SELECT * fro... st_change" />
+                <marker date="1497429347131" expanded="true" signature="7999:8049" ph="select * fro... login_admin" />
+                <marker date="1497429347131" expanded="true" signature="23028:23066" ph="SELECT * FRO... jobs" />
+                <marker date="1497429347131" expanded="true" signature="23433:23516" ph="SELECT * FRO... students_" />
+                <marker date="1497429347131" expanded="true" signature="25036:25064" ph="SELECT * FRO... mail_forwarder" />
+                <marker date="1497429347131" expanded="true" signature="26390:26418" ph="SELECT * FRO... mail_forwarder" />
+                <marker date="1497429347131" expanded="true" signature="39774:39928" ph="..." />
+                <marker date="1497429347131" expanded="true" signature="39831:39914" ph="..." />
               </folding>
             </state>
           </provider>
@@ -278,7 +313,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>year</find>
       <find>cgpa</find>
       <find>round</find>
       <find>More pages</find>
@@ -308,6 +342,7 @@
       <find>later</find>
       <find>round(</find>
       <find>,2</find>
+      <find>,,</find>
     </findStrings>
     <replaceStrings>
       <replace>cse</replace>
@@ -329,6 +364,7 @@
       <replace>convert</replace>
       <replace>RMK Campulse</replace>
       <replace>index</replace>
+      <replace>,</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -371,7 +407,6 @@
         <option value="$PROJECT_DIR$/admin_login/jobs/jobs_panel.php" />
         <option value="$PROJECT_DIR$/admin_login/jobs/job_filter.php" />
         <option value="$PROJECT_DIR$/admin_login/jobs/filter_result.php" />
-        <option value="$PROJECT_DIR$/admin_login/jobs/email_result.php" />
         <option value="$PROJECT_DIR$/admin_login/email/email.php" />
         <option value="$PROJECT_DIR$/admin_login/crud/action_update.php" />
         <option value="$PROJECT_DIR$/admin_login/company/companies.php" />
@@ -388,6 +423,7 @@
         <option value="$PROJECT_DIR$/admin_login/index.php" />
         <option value="$PROJECT_DIR$/admin_login/search/search_action.php" />
         <option value="$PROJECT_DIR$/admin_login/crud/action_insert.php" />
+        <option value="$PROJECT_DIR$/admin_login/jobs/email_result.php" />
       </list>
     </option>
   </component>
@@ -475,6 +511,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="final_rmkhiringsynergy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin_login" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -629,12 +683,12 @@
       <workItem from="1497062091904" duration="13476000" />
       <workItem from="1497152884796" duration="9024000" />
       <workItem from="1497358672813" duration="1816000" />
-      <workItem from="1497415590927" duration="10229000" />
+      <workItem from="1497415590927" duration="10876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99848000" />
+    <option name="totallyTimeSpent" value="100495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -784,6 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -851,13 +906,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="608" column="25" lean-forward="false" selection-start-line="608" selection-start-column="25" selection-end-line="608" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="559" column="25" lean-forward="false" selection-start-line="559" selection-start-column="25" selection-end-line="559" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -865,6 +914,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="679" column="25" lean-forward="false" selection-start-line="679" selection-start-column="25" selection-end-line="679" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -872,6 +922,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
           <caret line="1035" column="25" lean-forward="false" selection-start-line="1035" selection-start-column="25" selection-end-line="1035" selection-end-column="25" />
+          <folding>
+            <element signature="e#4788#4793#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -879,13 +932,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="634" column="25" lean-forward="false" selection-start-line="634" selection-start-column="25" selection-end-line="634" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="536" column="25" lean-forward="false" selection-start-line="536" selection-start-column="25" selection-end-line="536" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1284,6 +1331,37 @@
             <marker date="1497428676930" expanded="true" signature="39397:40611" ph="INSERT INTO students_${$year}... " />
             <marker date="1497428676930" expanded="false" signature="44966:44972" ph=" " />
             <marker date="1497428676930" expanded="false" signature="44973:44979" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/jobs/post_jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="559" column="25" lean-forward="false" selection-start-line="559" selection-start-column="25" selection-end-line="559" selection-end-column="25" />
+          <folding>
+            <marker date="1497418982848" expanded="true" signature="6601:6624" ph="SELECT * fro... st_change" />
+            <marker date="1497418982848" expanded="true" signature="8849:8899" ph="select * fro... login_admin" />
+            <marker date="1497418982848" expanded="true" signature="19804:19830" ph="SELECT * FRO... company_list" />
+            <marker date="1497418982848" expanded="true" signature="23123:23146" ph="SELECT * FRO... table_map" />
+            <marker date="1497418982848" expanded="true" signature="42084:42116" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/jobs/email_result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="895" column="2" lean-forward="true" selection-start-line="895" selection-start-column="2" selection-end-line="895" selection-end-column="2" />
+          <folding>
+            <marker date="1497429347131" expanded="true" signature="5835:5858" ph="SELECT * fro... st_change" />
+            <marker date="1497429347131" expanded="true" signature="7999:8049" ph="select * fro... login_admin" />
+            <marker date="1497429347131" expanded="true" signature="23028:23066" ph="SELECT * FRO... jobs" />
+            <marker date="1497429347131" expanded="true" signature="23433:23516" ph="SELECT * FRO... students_" />
+            <marker date="1497429347131" expanded="true" signature="25036:25064" ph="SELECT * FRO... mail_forwarder" />
+            <marker date="1497429347131" expanded="true" signature="26390:26418" ph="SELECT * FRO... mail_forwarder" />
+            <marker date="1497429347131" expanded="true" signature="39774:39928" ph="..." />
+            <marker date="1497429347131" expanded="true" signature="39831:39914" ph="..." />
           </folding>
         </state>
       </provider>
