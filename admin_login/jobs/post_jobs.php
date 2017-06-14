@@ -1459,9 +1459,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                         joining_location: {
                             required: true
                         },
-                        campus_date: {
-                            required: true
-                        },
+//                         campus_date: {
+//                             required: true
+//                         },
                         apply_before: {
                             required: true
                         },
@@ -1498,9 +1498,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                         joining_location: {
                             required: "Please provide a Joining Location."
                         },
-                        campus_date: {
-                            required: "Please provide Campus Date."
-                        },
+//                         campus_date: {
+//                             required: "Please provide Campus Date."
+//                         },
                         apply_before: {
                             required: "Please provide Apply before Date."
                         },
