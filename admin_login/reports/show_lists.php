@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
 
 }
 
-if(isset($_POST['placed'])){
+if(isset($_POST['accepted'])){
 
 
 $flag=$_POST['flag'];
@@ -67,8 +67,8 @@ foreach($checkbox as $list){
     $company_new=$company_old.$company;
 
     
-    $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
-    $result_placed=mysqli_query($connect, $query_placed);
+    $query_unplaced="UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+    $result_unplaced=mysqli_query($connect, $query_unplaced);
     
 echo "end";
 
@@ -82,6 +82,81 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 }
+if(isset($_POST['placed'])){
+
+
+
+    $flag=$_POST['flag'];
+    $jid=$_POST['jid'];
+    $checkbox=$_POST['checkbox'];
+
+    include "../connect.php";
+
+
+
+    $query_get_year="SELECT * FROM jobs WHERE job_id='$jid'";
+    $result_get_year=mysqli_query($connect, $query_get_year);
+    $row_get_year=mysqli_fetch_assoc($result_get_year);
+
+    $year_of_graduation=$row_get_year['year_of_graduation'];
+
+
+
+
+    foreach($checkbox as $list){
+
+
+        $query_job_type="select * FROM jobs WHERE job_id='$jid'";
+        $result_job_type=mysqli_query($connect,$query_job_type);
+        $row_job_type=mysqli_fetch_assoc($result_job_type);
+        $job_type=$row_job_type['job_type'];
+        $company=$row_job_type['company'];
+        echo $company;
+
+        // echo "job_type: ".$job_type;
+
+
+        $ne_jobtype="select * from students_".$year_of_graduation." WHERE st_roll='$list'";
+        $new_jobtype=mysqli_query($connect,$ne_jobtype);
+        $row=mysqli_fetch_assoc($new_jobtype);
+        $row_old=$row['st_jobtype'];
+        $company_old=$row['st_placementstatus'];
+
+
+
+
+
+
+
+
+        $row_old=$row_old.',';
+        $row_new=$row_old.$job_type;
+
+        if($company_old!=null){
+
+            $company_old=$company_old.',';
+        }
+
+
+        $company_new=$company_old.$company;
+
+
+        $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+        $result_placed=mysqli_query($connect, $query_placed);
+
+        echo "end";
+
+
+
+    }
+
+    header("Location: show_lists?jid=$jid&flag=$flag");
+
+
+
+
+}
+
 
 
 if(isset($_POST['mail']) && isset($_SESSION['user_role'])=='admin' ){
@@ -1831,7 +1906,7 @@ foreach($checkbox as $list){
                                                                 $result_job = mysqli_query($connect, $query_job);
                                                                 ?>
 
-                                                                <input type="text" name="flag" value="2" hidden>
+                                                                <input type="text" name="flag" value="3" hidden>
                                                                 <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
 
                                                                 <?php
