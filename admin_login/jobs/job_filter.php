@@ -387,12 +387,21 @@ if(isset($_GET['filter_job'])){
     $row_job_type=mysqli_fetch_assoc($ne_count);
     $new_count=$row_job_type['st_jobtype'];
 
-    
+
+            if($new_count==''){
+
+                $count_comma=0;
+            }
+            else {
+
+                $count_comma = substr_count($new_count, ',');
+
+                $count_comma += 1;
+
+            }
 
 
-    $count_comma=substr_count($new_count,',');
-
-    $count_comma+=1;
+   
 
 
 
