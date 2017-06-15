@@ -989,7 +989,7 @@ foreach($checkbox as $list){
 
                                                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' AND  _" .$jid. "='accepted'";
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
                                                     $result_count = mysqli_query($connect, $query_count);
                                                     $eligible = mysqli_num_rows($result_count);
 
