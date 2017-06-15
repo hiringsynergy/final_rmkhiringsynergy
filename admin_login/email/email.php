@@ -679,17 +679,75 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     $mail->isMail();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                    $mail->Password = 'rmk123';                           // SMTP password
-                    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                    $mail->Port = 	587;
+                    $mail->SMTPAuth = true;// Enable SMTP authentication
+
+                    include "../connect.php";
 
 
-                    $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
-                    $mail->addAddress($to, $to);     // Add a recipient
+                            $query_mail="SELECT * FROM mail_forwarder";
+                            $result_mail=mysqli_query($connect, $query_mail);
 
-                    $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+
+                    if(isset($_SESSION['database_name'])){
+
+                        $database=$_SESSION['database_name'];
+
+
+                        if(preg_match('/rmd/', $database)){
+
+
+
+
+                            // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
+                            $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                            $mail->Password = 'rmd123';                           // SMTP password
+                            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port = 	587;
+
+
+                            $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+                            $mail->addAddress($to, $to);     // Add a recipient
+
+                            $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+
+                        }
+                        if(preg_match('/rmk/', $database)){
+
+
+
+                            //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
+                            $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                            $mail->Password = 'rmk123';                           // SMTP password
+                            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port = 	587;
+
+
+                            $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
+                            $mail->addAddress($to, $to);     // Add a recipient
+
+                            $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+
+                        }
+
+                        if(preg_match('/cet/', $database)){
+
+                            //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
+                            $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                            $mail->Password = 'rmkcet123';                           // SMTP password
+                            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port = 	587;
+
+
+                            $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
+                            $mail->addAddress($to, $to);     // Add a recipient
+
+                            $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
+
+                        }
+
+                    }
+
+
 
 
                     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
@@ -766,6 +824,25 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <?php
 
                     }
+
+
+
+                    while($row_mail=mysqli_fetch_assoc($result_mail)){
+
+
+                        $to=$row_mail['tnp'];
+
+                        $mail->addAddress($to, $to);
+
+                        $mail->send();
+
+
+                    }
+
+
+
+
+
 
 
                     if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
