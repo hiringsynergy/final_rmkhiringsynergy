@@ -953,10 +953,19 @@ foreach($checkbox as $list){
                                                         <a type="submit"  onclick="placed()">Placed</a>
                                                     </li>
 
-                                                    <?php } ?>
+                                                    <?php }
+                                                    if(isset($_GET['flag']) && (  $_GET['flag']==3)) {
+                                                        ?>
+                                                        <li>
+                                                            <a type="submit" onclick="unplaced()">UnPlaced</a>
+                                                        </li>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                     <li>
                                                      <a href="#modal-form" data-toggle="modal" type="submit"  > Mail</a>
                                                     </li>
+
 
                                                 </ul>
                                             </div>
