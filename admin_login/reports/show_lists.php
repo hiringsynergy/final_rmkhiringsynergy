@@ -82,7 +82,8 @@ header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 }
-{
+if(isset($_POST['placed'])){
+
 
 
     $flag=$_POST['flag'];
