@@ -1016,7 +1016,7 @@ foreach($checkbox as $list){
                                                             <?php
 
 
-                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted'";
+                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                             $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                                                             $accepted = mysqli_num_rows($result_count_accepted);
 
