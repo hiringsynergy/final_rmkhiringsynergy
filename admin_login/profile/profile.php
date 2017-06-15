@@ -230,6 +230,7 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>RMK Campulse </title>
+    <link rel="icon" href="../../../final_rmkhiringsynergy/logos/rmklogo.JPG" />
 
     <meta name="description" content="overview &amp; stats" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -1191,7 +1192,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left" style="background: #C5EFF7; color: #1F3A93;  ">  <b>Current Cgpa</b> </div>
 
                                                             <div class="profile-info-value testblue1">
-                                                                <div class=" " id="gen"><?php  echo round($row['st_cgpa'],2)  ?></div>
+                                                                <div class=" " id="gen"><?php  echo $row['st_cgpa']  ?></div>
                                                             </div>
                                                         </div>
                                                         <div class="profile-info-row">
