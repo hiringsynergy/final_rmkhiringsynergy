@@ -77,20 +77,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_update.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="action_update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin_login/crud/action_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="773" column="44" lean-forward="false" selection-start-line="773" selection-start-column="44" selection-end-line="773" selection-end-column="44" />
+            <state relative-caret-position="313">
+              <caret line="775" column="60" lean-forward="false" selection-start-line="775" selection-start-column="60" selection-end-line="775" selection-end-column="60" />
               <folding>
-                <marker date="1497503895078" expanded="true" signature="6430:6453" ph="SELECT * fro... st_change" />
-                <marker date="1497503895078" expanded="true" signature="8680:8736" ph="select * fro... login_admin" />
+                <marker date="1497505050476" expanded="true" signature="6430:6453" ph="SELECT * fro... st_change" />
+                <marker date="1497505050476" expanded="true" signature="8680:8736" ph="select * fro... login_admin" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_panel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_panel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin_login/admin_panel/admin_panel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="134">
@@ -243,8 +243,8 @@
         <option value="$PROJECT_DIR$/admin_login/jobs/email_result.php" />
         <option value="$PROJECT_DIR$/login_out/login_validation.php" />
         <option value="$PROJECT_DIR$/recover.php" />
-        <option value="$PROJECT_DIR$/admin_login/crud/action_update.php" />
         <option value="$PROJECT_DIR$/admin_login/admin_panel/admin_panel.php" />
+        <option value="$PROJECT_DIR$/admin_login/crud/action_update.php" />
       </list>
     </option>
   </component>
@@ -489,12 +489,12 @@
       <workItem from="1497415590927" duration="13860000" />
       <workItem from="1497451051458" duration="529000" />
       <workItem from="1497452934597" duration="1194000" />
-      <workItem from="1497503439381" duration="751000" />
+      <workItem from="1497503439381" duration="1595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105953000" />
+    <option name="totallyTimeSpent" value="106797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1386" height="788" extended-state="0" />
@@ -898,17 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin_login/crud/action_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="773" column="44" lean-forward="false" selection-start-line="773" selection-start-column="44" selection-end-line="773" selection-end-column="44" />
-          <folding>
-            <marker date="1497503895078" expanded="true" signature="6430:6453" ph="SELECT * fro... st_change" />
-            <marker date="1497503895078" expanded="true" signature="8680:8736" ph="select * fro... login_admin" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_login/admin_panel/admin_panel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -923,6 +912,17 @@
             <marker date="1497504194812" expanded="true" signature="39926:39978" ph="SELECT * FRO... dept_map" />
             <marker date="1497504194812" expanded="true" signature="40512:40564" ph="SELECT * FRO... dept_map" />
             <marker date="1497504194812" expanded="true" signature="41004:41056" ph="SELECT * FRO... dept_map" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_login/crud/action_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="775" column="60" lean-forward="false" selection-start-line="775" selection-start-column="60" selection-end-line="775" selection-end-column="60" />
+          <folding>
+            <marker date="1497505050476" expanded="true" signature="6430:6453" ph="SELECT * fro... st_change" />
+            <marker date="1497505050476" expanded="true" signature="8680:8736" ph="select * fro... login_admin" />
           </folding>
         </state>
       </provider>
