@@ -160,7 +160,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 // Set chart options
                 var options = {
-                    'title': 'COMPANY - <?php echo $row['company'] ?>  \n\n JOB ' + '     ' + '- <?php echo $row['job_title'] ?> \n\n ELIGIBLE - <?php echo $total ?>  ' + '- <?php echo $row['job_title'] ?> \n\n ELIGIBLE - <?php echo $total ?>  ',
+                    'title': 'COMPANY - <?php echo $row['company'] ?>  \n\n JOB ' + '     ' + '- <?php echo $row['job_title'] ?> \n\n ELIGIBLE - <?php echo $total ?>  ',
 //                'width':500,
                     is3D: true
 //                'height':500
