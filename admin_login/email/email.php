@@ -684,8 +684,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     include "../connect.php";
 
 
-                            $query_mail="SELECT * FROM mail_forwarder";
-                            $result_mail=mysqli_query($connect, $query_mail);
+                    $query_mail="SELECT * FROM mail_forwarder";
+                    $result_mail=mysqli_query($connect, $query_mail);
 
 
                     if(isset($_SESSION['database_name'])){

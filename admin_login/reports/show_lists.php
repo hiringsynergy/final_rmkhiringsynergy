@@ -214,14 +214,67 @@ echo "value : ".current($value);
 
     $mail=new PHPMailer();
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-    $mail->Password = 'akash170397';                           // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;
+    $mail->isMail();
+    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;// Enable SMTP authentication
+    if(isset($_SESSION['database_name'])){
 
+        $database=$_SESSION['database_name'];
+
+
+        if(preg_match('/rmd/', $database)){
+
+
+
+
+            // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
+            $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
+            $mail->Password = 'rmd123';                           // SMTP password
+            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 	587;
+
+
+            $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+            //$mail->addAddress($to, $to);     // Add a recipient
+
+            $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+
+        }
+        if(preg_match('/rmk/', $database)){
+
+
+
+            //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
+            $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+            $mail->Password = 'rmk123';                           // SMTP password
+            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 	587;
+
+
+            $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
+           // $mail->addAddress($to, $to);     // Add a recipient
+
+            $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+
+        }
+
+        if(preg_match('/cet/', $database)){
+
+            //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
+            $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
+            $mail->Password = 'rmkcet123';                           // SMTP password
+            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 	587;
+
+
+            $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
+           // $mail->addAddress($to, $to);     // Add a recipient
+
+            $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
+
+        }
+
+    }
 
 
 
@@ -277,15 +330,7 @@ foreach($checkbox as $list){
 
 
 
-
-
-
-        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
         $mail->addAddress($to, $to);     // Add a recipient
-
-        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
-
-
 
 
 
@@ -331,15 +376,6 @@ foreach($checkbox as $list){
         }
 
 
-        if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-           unlink("files/$newfilename");
-
-
-
-        }
 
 
 
@@ -350,6 +386,17 @@ foreach($checkbox as $list){
 
 
 
+
+
+
+    }
+
+
+    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+        unlink("files/$newfilename");
 
 
 
