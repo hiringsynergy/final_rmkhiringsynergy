@@ -1212,7 +1212,39 @@ die(" " . mysqli_error($connect));
             }
         });
 
+        $( "#id-btn-dialog2" ).on('click', function(e) {
+            e.preventDefault();
 
+            $( "#dialog-confirm" ).removeClass('hide').dialog({
+                resizable: false,
+                width: '320',
+                modal: true,
+
+                title_html: true,
+                buttons: [
+                    {
+                        html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete",
+                        "class" : "btn btn-danger btn-minier",
+                        click: function() {
+
+
+
+                            var table=$('#delete-textbox :selected').text();
+                            window.location.href="index?delete="+table;
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                    ,
+                    {
+                        html: "<i class='ace-icon fa fa-times bigger-110'></i>&nbsp; Cancel",
+                        "class" : "btn btn-minier",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+        })
 
         /**
          //add horizontal scrollbars to a simple table
