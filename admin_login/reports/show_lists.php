@@ -1906,7 +1906,7 @@ foreach($checkbox as $list){
                                                                 $result_job = mysqli_query($connect, $query_job);
                                                                 ?>
 
-                                                                <input type="text" name="flag" value="2" hidden>
+                                                                <input type="text" name="flag" value="3" hidden>
                                                                 <input type="text" name="jid" value="<?php echo $jid; ?>" hidden>
 
                                                                 <?php
