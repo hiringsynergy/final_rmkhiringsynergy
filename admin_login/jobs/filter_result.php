@@ -1017,7 +1017,7 @@ die(" " . mysqli_error($connect));
                     "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
                     "className": "btn btn-white btn-primary btn-bold",
                     autoPrint: false,
-                    message: 'This print was produced using the Print button for DataTables'
+                    message: ''
                 }
             ]
         } );

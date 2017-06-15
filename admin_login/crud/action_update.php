@@ -771,7 +771,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
 
-                                        $getupdate=$_POST['duallistbox_demo1'];
+                                       echo $getupdate=$_POST['duallistbox_demo1'];
                                         $query_update="UPDATE ".$year." SET ";
                                          $count= count($getupdate);
                                         $i=1;
