@@ -873,6 +873,7 @@ function updateSlider(){
 														<h5><label class="control-label bolder blue" for="form-field-select-3">History Of Arrears</label></h5>
 
 														<select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="na">Please Select</option>
 																<option value="0">0</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
@@ -911,6 +912,7 @@ function updateSlider(){
 														<h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
 
 														<select class="chosen-select form-control" name="standingarrears" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="na">Please Select</option>
 																<option value="0">0</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
@@ -945,18 +947,20 @@ function updateSlider(){
 														<h5><label class="control-label bolder blue" for="form-field-select-3">Number of companies placed </label></h5>
 
 														<select class="chosen-select form-control"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="na">Please Select</option>
 																<option value="0">0</option>
 																<option value="1">1</option>
-                                                                								<option value="2">2</option>
-                                                                								<option value="3">3</option>
-                                                                								<option value="4">4</option>
-                                                                								<option value="5">5</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
 															</select>
 														</div>
 														<div class="col-xs-8 col-sm-5">
 														<h5><label class="control-label bolder blue" for="form-field-select-3">Gap in Study</label></h5>
 
 														<select class="chosen-select form-control" name="gapinstudy" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="na">Please Select</option>
 																<option value="0">0</option>
 																<option value="1">1</option>
 																<option value="2">2</option>
