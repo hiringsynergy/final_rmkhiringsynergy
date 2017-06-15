@@ -815,7 +815,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                                 case 'nationality': {  $query_update.="st_nationality='$nationality'";  break;}
                                                 case 'caste': {  $query_update.="st_caste='$caste'";  break;}
                                                 case 'college_name': {  $query_update.="st_collegename='$college_name'";  break;}
-                                3                 case 'university': {  $query_update.="st_university='$university'";  break;}
+                                                case 'university': {  $query_update.="st_university='$university'";  break;}
                                                 case '10thpercent': {  $query_update.="st_10thpercentage='$_10percentage'";  break;}
                                                 case '10thinstitution': {  $query_update.="st_10thpercentage='$_10institution'";  break;}
                                                 case '10thboard_of_study': {  $query_update.="st_10thboardofstudy='$_10boardofstudy'";  break;}

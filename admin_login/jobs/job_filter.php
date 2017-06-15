@@ -371,7 +371,6 @@ if(isset($_GET['filter_job'])){
 
 
 
-
 //query for get students roll no
 
         $query_get_student="Select * from ".$students_table_name."";
@@ -392,6 +391,8 @@ if(isset($_GET['filter_job'])){
 
 
     $count_comma=substr_count($new_count,',');
+
+    $count_comma+=1;
 
 
 

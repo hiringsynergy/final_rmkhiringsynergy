@@ -191,6 +191,7 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
     $get_historyofarrears= $_GET['historyofarrears'];
     $get_standingarrears= $_GET['standingarrears'];
     $get_dippercentage= $_GET['lateral'];
+    $get_hasjob=$_GET['hasjob'];
 
     $get_pgbranch= $_GET['pgbranch'];
     $get_branch= $_GET['ugbranch'];
@@ -1880,11 +1881,102 @@ if(isset($_GET['export'])) {
 						    
 						    //echo "branch".$temp_branch;
 
+                                                $str='';
+
+                                                if($get_historyofarrears!='na'){
+
+                                                    $str.='and st_historyofarrears<='.$get_historyofarrears;
 
 
 
 
-                            $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_12thpercentage>=$get_12thpercentage and st_10thpercentage>=$get_10thpercentage and st_historyofarrears<=$get_historyofarrears  and st_gender in ('$get_gender') and st_standingarrears<=$get_standingarrears and st_currentlypursuing='UG' and st_dorh='h'   UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_10thpercentage>=$get_10thpercentage and st_historyofarrears<=$get_historyofarrears  and st_gender in ('$get_gender') and st_standingarrears<=$get_standingarrears and st_currentlypursuing='UG' and st_dorh='d' UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_12thpercentage>=$get_12thpercentage  and st_10thpercentage>=$get_10thpercentage and st_historyofarrears<=$get_historyofarrears  and st_gender in ('$get_gender') and st_standingarrears<=$get_standingarrears and st_currentlypursuing='UG' and st_dorh='dh'";
+                                                }
+                                                if($get_standingarrears!='na'){
+
+                                                    $str.='and st_standingarrears<='.$get_standingarrears;
+
+
+                                                }
+                                                if($get_gapinstudy!='na'){
+
+
+                                                    $str.='and st_gapinstudies<='.$get_gapinstudy;
+
+
+
+
+
+
+                                                }
+                                                if($get_hasjob!='na'){
+
+
+
+                                                   //create new column for count placed
+
+                                                    $query_alter="ALTER TABLE students_".$get_year." ADD job_count VARCHAR(255)";
+                                                    $result_alter=mysqli_query($connect,$query_alter);
+
+
+
+                                                      //query for get students roll no
+
+                                                    $query_get_student="Select * from students_".$get_year;
+                                                    $result_get_student=mysqli_query($connect,$query_get_student);
+                                                    while($row_get_student=mysqli_fetch_assoc($result_get_student)){
+
+                                                        $roll_no=$row_get_student['st_roll'];
+
+
+                                                        //count no.jobs placed
+
+                                                        $query_count="select * from students_".$get_year." where st_roll='$roll_no'";
+                                                        $ne_count=mysqli_query($connect,$query_count);
+                                                        $row_job_type=mysqli_fetch_assoc($ne_count);
+                                                        $new_count=$row_job_type['st_jobtype'];
+
+
+
+
+                                                        $count_comma=substr_count($new_count,',');
+
+                                                        $count_comma+=1;
+
+
+
+
+
+                                                        //update count value in column
+
+
+                                                        $query_column="UPDATE students_".$get_year." SET  job_count='$count_comma' WHERE st_roll='$roll_no'";
+                                                        $result_column=mysqli_query($connect,$query_column);
+
+
+
+
+
+
+
+
+
+
+                                                    }
+
+
+
+
+
+                                                    $str.='and job_count<='.$get_hasjob;
+
+
+                                                }
+
+
+
+
+
+                            $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_12thpercentage>=$get_12thpercentage and st_10thpercentage>=$get_10thpercentage and   st_gender in ('$get_gender') and st_currentlypursuing='UG' $str and st_dorh='h'     UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_10thpercentage>=$get_10thpercentage  and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='d'  UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_12thpercentage>=$get_12thpercentage  and st_10thpercentage>=$get_10thpercentage   and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='dh'";
 
 
 
