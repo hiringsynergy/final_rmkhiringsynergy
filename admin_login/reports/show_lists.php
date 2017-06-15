@@ -375,6 +375,17 @@ foreach($checkbox as $list){
 
             document.getElementById('form-id').submit();
         }
+        function unplaced(){
+
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "hidden");
+            x.setAttribute("name", "unplaced");
+            x.setAttribute("value", "unplaced");
+            document.getElementById('form-id').appendChild(x);
+
+            document.getElementById('form-id').submit();
+        }
 
         function mail(){
 
@@ -953,10 +964,19 @@ foreach($checkbox as $list){
                                                         <a type="submit"  onclick="placed()">Placed</a>
                                                     </li>
 
-                                                    <?php } ?>
+                                                    <?php }
+                                                    if(isset($_GET['flag']) && (  $_GET['flag']==3)) {
+                                                        ?>
+                                                        <li>
+                                                            <a type="submit" onclick="unplaced()">Unplaced</a>
+                                                        </li>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                     <li>
                                                      <a href="#modal-form" data-toggle="modal" type="submit"  > Mail</a>
                                                     </li>
+
 
                                                 </ul>
                                             </div>
@@ -989,7 +1009,7 @@ foreach($checkbox as $list){
 
                                                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed' OR _" .$jid. "='unplaced'";
                                                     $result_count = mysqli_query($connect, $query_count);
                                                     $eligible = mysqli_num_rows($result_count);
 
@@ -1113,7 +1133,7 @@ foreach($checkbox as $list){
 
                                                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted'";
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
                                                     $result_count = mysqli_query($connect, $query_count);
                                                     $eligible = mysqli_num_rows($result_count);
 
@@ -1140,7 +1160,7 @@ foreach($checkbox as $list){
                                                             <?php
 
 
-                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted'";
+                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                             $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                                                             $accepted = mysqli_num_rows($result_count_accepted);
 
@@ -1238,7 +1258,7 @@ foreach($checkbox as $list){
 
                                                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted'";
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
                                                     $result_count = mysqli_query($connect, $query_count);
                                                     $eligible = mysqli_num_rows($result_count);
 
@@ -1265,7 +1285,7 @@ foreach($checkbox as $list){
                                                             <?php
 
 
-                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted'";
+                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                             $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                                                             $accepted = mysqli_num_rows($result_count_accepted);
 
@@ -1363,7 +1383,7 @@ foreach($checkbox as $list){
 
                                                     $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted'";
+                                                    $query_count = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
                                                     $result_count = mysqli_query($connect, $query_count);
                                                     $eligible = mysqli_num_rows($result_count);
 
@@ -1390,7 +1410,7 @@ foreach($checkbox as $list){
                                                             <?php
 
 
-                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted'";
+                                                            $query_count_accepted = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                             $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                                                             $accepted = mysqli_num_rows($result_count_accepted);
 
@@ -1602,7 +1622,7 @@ foreach($checkbox as $list){
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible' OR _" . $jid . "='accepted'";
+                                                                $query_job = " SELECT * FROM students_".$year_of_gradudation." WHERE _" .$jid. "='eligible' OR  _" .$jid. "='accepted' OR _" .$jid. "='placed'";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
                                                                 ?>
@@ -1674,7 +1694,7 @@ foreach($checkbox as $list){
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='accepted'";
+                                                                $query_job = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
 
