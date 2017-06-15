@@ -7,6 +7,7 @@
 <html>
 	<head>
 		<title>RMK CAMPULSE</title>
+        <link rel="icon" href="logos/rmklogo.JPG" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -198,7 +199,7 @@ India.</span>
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; RMK Hiring Synergy. All rights reserved.</li>
+						<li>&copy; RMK Campulse. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
