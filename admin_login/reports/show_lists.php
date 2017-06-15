@@ -1674,7 +1674,7 @@ foreach($checkbox as $list){
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE   _" . $jid . "='accepted'";
+                                                                $query_job = " SELECT * FROM students_".$year_of_gradudation." WHERE _" . $_GET['jid'] . "='accepted' OR _" . $_GET['jid'] . "='placed'";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
 
