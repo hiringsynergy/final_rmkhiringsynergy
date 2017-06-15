@@ -37,7 +37,7 @@ $tablename=$_GET['tablename'];
 
   st_email varchar(255) NOT NULL,
   st_phone char(15) NOT NULL,
-  st_dob date NOT NULL  ,
+  st_dob varchar(255) NOT NULL  ,
   st_nationality varchar(255)  ,
   st_caste varchar(255)  ,
   st_collegename varchar(255)  ,
