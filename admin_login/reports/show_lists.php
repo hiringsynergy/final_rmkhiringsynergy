@@ -380,8 +380,8 @@ foreach($checkbox as $list){
 
             var x = document.createElement("INPUT");
             x.setAttribute("type", "hidden");
-            x.setAttribute("name", "unplaced");
-            x.setAttribute("value", "unplaced");
+            x.setAttribute("name", "accepted");
+            x.setAttribute("value", "accepted");
             document.getElementById('form-id').appendChild(x);
 
             document.getElementById('form-id').submit();
