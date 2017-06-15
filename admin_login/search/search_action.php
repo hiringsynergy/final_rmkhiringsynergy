@@ -1937,11 +1937,17 @@ if(isset($_GET['export'])) {
 
 
 
+                                                        if($new_count==''){
 
-                                                        $count_comma=substr_count($new_count,',');
+                                                            $count_comma=0;
+                                                        }
+                                                        else {
 
-                                                        $count_comma+=1;
+                                                            $count_comma = substr_count($new_count, ',');
 
+                                                            $count_comma += 1;
+
+                                                        }
 
 
 
