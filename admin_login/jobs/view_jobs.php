@@ -1079,7 +1079,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                    }
 
                                   ?>
-                                <td>
+                                <td><?php echo $row['job_id'] ?>
                                     <a href="#modal-form" class="btn btn-primary" data-toggle="modal" onclick="getjobid(<?php echo $row['job_id'] ?>)">Update Details</a>
 
 
