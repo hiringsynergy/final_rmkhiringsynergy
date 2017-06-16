@@ -40,7 +40,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
         $students_table=$row_get_talbename['table_name'];
 
 
-        $query_update_values="UPDATE ".$students_table." SET _".$jobid."='eligible' where st_roll='$temp'";
+        $query_update_values="UPDATE ".$students_table." SET _".$jobid."='appliable' where st_roll='$temp'";
 
         $result=mysqli_query($connect, $query_update_values);
 
@@ -766,7 +766,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
 
-                                    $sql = "UPDATE students_".$get_year." SET st_placementstatus='".$placement_status."' , st_placementid='$placement_id', _".$job_id."='eligible'  WHERE st_roll='$roll'";
+                                    $sql = "UPDATE students_".$get_year." SET st_placementstatus='".$placement_status."' , st_placementid='$placement_id', _".$job_id."='appliable'  WHERE st_roll='$roll'";
 
 
 
