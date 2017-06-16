@@ -744,7 +744,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
 								<b class="arrow"></b>
 							</li>
                             <li class="">
-								<a href="reportgeneration">
+								<a href="../admin_login/reports/reportgeneration">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Report Generation
 								</a>
