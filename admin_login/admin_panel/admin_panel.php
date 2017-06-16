@@ -1551,11 +1551,12 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 //                   "className": "btn btn-white btn-primary btn-bold"
 //
 //                },
-                {
-                    "extend": "excel",
-                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
+                'excelHtml5',
+//                {
+//                    "extend": "excel",
+//                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                },
                 {
                     "extend": "pdf",
                     "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
