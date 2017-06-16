@@ -2771,6 +2771,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                         </div>
                                     </div>
                                 </div>
+
                                 <div id="modal-form1" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -2805,7 +2806,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <label for="control-label bolder b">Email-Id</label>
+                                                                <label for="control-label bolder b">Personal Email-Id</label>
                                                                 <div>
                                                                     <input type="text" id="control-label bolder b" name="emailid" placeholder="" value="<?php echo $row['st_email'] ?>" />
                                                                 </div>
@@ -2823,9 +2824,24 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <label for="form-field-c1">College Name</label>
 
                                                                     <select class="form-control" name="collegename" id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
-                                                                        <option value="RMK Engineering College">RMK Engineering College</option>
-                                                                        <option value="RMD Engineering College">RMD Engineering College</option>
-                                                                        <option value="RMK College of Engineering and Technology">RMK College of Engineering and Technology</option>
+                                                                        <?php if($row['st_collegename']=='RMKEC')
+                                                                        { ?>
+                                                                        <option value="RMKEC">RMK Engineering College</option>
+                                                                        <option value="RMDEC">RMD Engineering College</option>
+                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
+
+                                                                        <?php } if($row['st_collegename']=='RMDEC'){?>
+                                                                            <option value="RMDEC">RMD Engineering College</option>
+                                                                        <option value="RMKEC">RMK Engineering College</option>
+
+                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
+
+                                                                        <?php  } if($row['st_collegename']=='RMKCET'){?>
+                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>
+                                                                        <option value="RMKEC">RMK Engineering College</option>
+                                                                        <option value="RMDEC">RMD Engineering College</option>
+
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
