@@ -2694,7 +2694,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 </div>
                                                             </div>
 
-                                                            <br/>
+                                                            <br>
 
                                                             <div class="form-group">
                                                                 <label for="form-field-addr">Permanent Address(Line 2)</label>
@@ -2702,6 +2702,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress2" value="<?php echo $row['st_address2']?>" />
                                                                 </div>
                                                             </div>
+
+                                                            <br>
 
                                                             <div class="form-group">
                                                                 <div>
