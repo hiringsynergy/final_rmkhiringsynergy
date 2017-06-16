@@ -79,11 +79,6 @@ function updateSlider(){
 
         }
 
-        window.history.forward();
-        function noBack()
-        {
-            window.history.forward();
-        }
 
 
 
@@ -145,7 +140,7 @@ function updateSlider(){
     <![endif]-->
 </head>
 
-<body class="no-skin" onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+<body class="no-skin" >
 
 
 <?php
