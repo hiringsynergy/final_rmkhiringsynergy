@@ -438,7 +438,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                     $result_change = mysqli_query($connect, $query_change);
                                     $finfo = $result_change->fetch_fields();
                                         $count=0;
-                                        $branch=$_SESSION['cood_branch'];
+                                       echo $branch=$_SESSION['cood_branch'];
                                      while($rowr = mysqli_fetch_assoc($result_change)){
 
 
