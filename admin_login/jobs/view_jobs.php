@@ -107,7 +107,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
         alert(str);
-            document.getElementById("companyid").value=str;
+            document.getElementById("job_id").value=str;
 
 
         }
