@@ -2617,8 +2617,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-gendre">Gender</label>
                                                                     <select class="form-control" name="gender" id="form-field-gendre" value="<?php echo $row['st_gender']?>">
+                                                                        <?php if($row['st_gender']=='Male'){?>
                                                                         <option value="Male">Male</option>
+                                                                        <option value="Female">Female</option><?php } else if($row['st_gender']=='Female'){?>
                                                                         <option value="Female">Female</option>
+                                                                        <option value="Male">Male</option><?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2671,19 +2674,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="form-field-caste">Caste</label>
                                                                 <div>
-                                                                    <label for="form-field-caste">Caste</label>
-                                                                    <select class="form-control" id="form-field-caste" name="caste" value="<?php echo $row['st_caste']?>">
-                                                                        <option value="BC">BC</option>
-                                                                        <option value="MBC">MBC</option>
-                                                                        <option value="OBC">OBC</option>
-                                                                        <option value="FC">FC</option>
-                                                                        <option value="SC">SC</option>
-                                                                        <option value="ST">ST</option>
-
-                                                                    </select>
+                                                                    <input type="text" id="form-field-caste" placeholder="" name="caste" value="<?php echo $row['st_caste']?>" />
                                                                 </div>
                                                             </div>
+
+
 
                                                             <div class="form-group">
                                                                 <label for="form-field-ht">Home Town</label>
