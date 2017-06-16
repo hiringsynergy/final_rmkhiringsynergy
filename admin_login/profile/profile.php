@@ -2830,13 +2830,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                         <option value="RMDEC">RMD Engineering College</option>
                                                                         <option value="RMKCET">RMK College of Engineering and Technology</option>
 
-                                                                        <?php } if($row['st_collegename']=='RMDEC'){?>
+                                                                        <?php } else if($row['st_collegename']=='RMDEC'){?>
                                                                             <option value="RMDEC">RMD Engineering College</option>
                                                                         <option value="RMKEC">RMK Engineering College</option>
 
                                                                         <option value="RMKCET">RMK College of Engineering and Technology</option>
 
-                                                                        <?php  } if($row['st_collegename']=='RMKCET'){?>
+                                                                        <?php  } else if($row['st_collegename']=='RMKCET'){?>
                                                                             <option value="RMKCET">RMK College of Engineering and Technology</option>
                                                                         <option value="RMKEC">RMK Engineering College</option>
                                                                         <option value="RMDEC">RMD Engineering College</option>
