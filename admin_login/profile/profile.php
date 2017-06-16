@@ -70,7 +70,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $hometown = $_GET['hometown'];
     $premanaddress1 = $_GET['premanaddress1'];
     $premanaddress2 = $_GET['premanaddress2'];
-    $clgmail = $GET['collegemailid'];
+    echo $clgmail = $GET['collegemailid'];
     $city = $_GET['city'];
     $state = $_GET['state'];
     $pincode  = $_GET['pincode'];
