@@ -1885,7 +1885,7 @@ if(isset($_GET['export'])) {
 
                                                 if($get_historyofarrears!='na'){
 
-                                                    $str.='and st_historyofarrears<='.$get_historyofarrears;
+                                                    $str.=' and st_historyofarrears<='.$get_historyofarrears;
 
 
 
@@ -1893,14 +1893,14 @@ if(isset($_GET['export'])) {
                                                 }
                                                 if($get_standingarrears!='na'){
 
-                                                    $str.='and st_standingarrears<='.$get_standingarrears;
+                                                    $str.=' and st_standingarrears<='.$get_standingarrears;
 
 
                                                 }
                                                 if($get_gapinstudy!='na'){
 
 
-                                                    $str.='and st_gapinstudies<='.$get_gapinstudy;
+                                                    $str.=' and st_gapinstudies<='.$get_gapinstudy;
 
 
 
@@ -1973,7 +1973,7 @@ if(isset($_GET['export'])) {
 
 
 
-                                                    $str.='and job_count<='.$get_hasjob;
+                                                    $str.=' and job_count<='.$get_hasjob;
 
 
                                                 }
