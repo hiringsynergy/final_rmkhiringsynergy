@@ -2692,8 +2692,10 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress1" value="<?php echo $row['st_address1']?>" />
                                                                 </div>
-                                                                <br>
+
                                                             </div>
+
+                                                            <div class="space-4"></div>
 
 
 
