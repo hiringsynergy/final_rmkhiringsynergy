@@ -398,7 +398,7 @@ if(isset($_GET['filter_job'])){
 
                 $count_comma = substr_count($new_count, ',');
 
-                $count_comma += 1;
+
 
             }
 

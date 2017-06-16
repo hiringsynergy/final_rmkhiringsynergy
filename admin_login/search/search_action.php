@@ -1945,7 +1945,7 @@ if(isset($_GET['export'])) {
 
                                                             $count_comma = substr_count($new_count, ',');
 
-                                                            $count_comma += 1;
+
 
                                                         }
 
