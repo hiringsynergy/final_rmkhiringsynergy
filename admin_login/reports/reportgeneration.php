@@ -214,7 +214,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' ){
         die(" ".mysqli_error($connect));
     }
 
-    header("Location: admin_panel?year=".$table);
+    header("Location: reportgeneration?year=".$table);
 
 
 }
