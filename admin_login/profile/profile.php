@@ -70,6 +70,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $hometown = $_GET['hometown'];
     $premanaddress1 = $_GET['premanaddress1'];
     $premanaddress2 = $_GET['premanaddress2'];
+    $clgmail = $GET['collegemailid'];
     $city = $_GET['city'];
     $state = $_GET['state'];
     $pincode  = $_GET['pincode'];
@@ -84,7 +85,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $query_change_personaldetails = "UPDATE $tname SET  st_firstname='{$firstname}',st_middlename='{$middlename}',st_lastname='{$lastname}',st_gender='{$gender}',st_fathername='{$fathername}',
 st_fatheroccupation='{$fatheroccupation}',st_mothername='{$mothername}',st_motheroccupation='{$motheroccupation}',st_dob='{$dob}',st_nationality='{$nationality}',
 st_caste='{$caste}',st_hometown='{$hometown}',st_address1='{$premanaddress1}',st_address2='{$premanaddress2}',st_city='{$city}',
-st_state='{$state}',st_posatlcode='{$pincode}',st_landline='{$landline}' WHERE st_roll='{$rollno}'";
+st_state='{$state}',st_posatlcode='{$pincode}',st_landline='{$landline}',st_clgemail='{$clgmail}' WHERE st_roll='{$rollno}'";
     $result_change_personaldetails = mysqli_query($connect, $query_change_personaldetails);
 
     if (!$result_change_personaldetails) {
@@ -2657,12 +2658,17 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <label for="id-date-picker-1">Date of birth</label>
+                                                                <label for="form-field-fan">College Mail-ID</label>
+                                                                <div>
+                                                                    <input type="text" id="form-field-mail" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>
                                                                 <div>
                                                                     <input class="form-group" id="id-date-picker-1" type="text" name="dob" data-date-format="dd-mm-yyyy" value="<?php echo $row['st_dob']?>" />
-                                                                    <span class="form-group">
-                                                    <i class="fa fa-calendar bigger-110"></i>
-                                                </span>
+                                                                    <span class="form-group"></span>
                                                                 </div>
                                                             </div>
 
@@ -2692,16 +2698,24 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group ">
                                                                 <label for="form-field-addr">Permanent Address(Line 1)</label>
                                                                 <div>
-                                                                    <input class="col-xs-6" type="text" id="form-field-addr" placeholder="" name="premanaddress1" value="<?php echo $row['st_address1']?>" />
+                                                                    <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress1" value="<?php echo $row['st_address1']?>" />
                                                                 </div>
+
                                                             </div>
+
+                                                            <div class="space-4"></div>
+
+
 
                                                             <div class="form-group">
                                                                 <label for="form-field-addr">Permanent Address(Line 2)</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-addr" placeholder="" name="premanaddress2" value="<?php echo $row['st_address2']?>" />
+                                                                    <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress2" value="<?php echo $row['st_address2']?>" />
                                                                 </div>
+                                                                <br>
                                                             </div>
+
+                                                            <br>
 
                                                             <div class="form-group">
                                                                 <div>
