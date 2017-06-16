@@ -442,17 +442,10 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                      while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-//                                foreach ($finfo as $val) {
-//
-//
-//                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr[$val->name], $branch)==0) {
-//                                            $count++;
-//                                        }
-//                                    }
                                          foreach ($finfo as $val) {
 
 
-                                             if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0, 1) != 'c' && substr($rowr[$val->name], 0, 1) != 'a' && $val->name != "st_regno" && $val->name != "st_year" && $val->name != "st_time" && $val->name != "st_dept" && strcasecmp($rowr[$val->name], $branch)==0) {
+                                             if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0, 1) != 'c' && substr($rowr[$val->name], 0, 1) != 'a' && $val->name != "st_regno" && $val->name != "st_year" && $val->name != "st_time" && $val->name != "st_dept" && strcasecmp($rowr['st_dept'],$branch)==0) {
                                                  $count++;
                                              }
                                          }
@@ -740,7 +733,7 @@ echo "below mail--ddsgfsdgdsgdsgsdgdsgds";
                                 foreach ($finfo as $val) {
 
 
-                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr[$val->name], $branch)==0) {
+                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr['st_dept'], $branch)==0) {
                                             $colname=$val->name;
 
 
