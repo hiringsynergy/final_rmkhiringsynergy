@@ -40,7 +40,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
         $students_table=$row_get_talbename['table_name'];
 
 
-        $query_update_values="UPDATE ".$students_table." SET _".$jobid."='placed' where st_roll='$temp'";
+        $query_update_values="UPDATE ".$students_table." SET _".$jobid."='eligible' where st_roll='$temp'";
 
         $result=mysqli_query($connect, $query_update_values);
 
