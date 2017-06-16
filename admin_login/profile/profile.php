@@ -2676,11 +2676,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <label for="form-field-caste">Caste</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-fan" placeholder="" name="caste" value="<?php echo $row['st_caste']?>" />
+                                                                    <input type="text" id="form-field-caste" placeholder="" name="caste" value="<?php echo $row['st_caste']?>" />
                                                                 </div>
                                                             </div>
 
-                                                            
+
 
                                                             <div class="form-group">
                                                                 <label for="form-field-ht">Home Town</label>
