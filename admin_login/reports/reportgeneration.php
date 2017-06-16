@@ -706,7 +706,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                     </li>
 
                     <li class="active">
-                        <a href="../reports/reportgeneration.php">
+                        <a href="reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>
