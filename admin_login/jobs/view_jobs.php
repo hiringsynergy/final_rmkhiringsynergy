@@ -106,7 +106,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
         function getjobid(str){
 
 
-        alert(str);
+      //  alert(str);
             document.getElementById("j_id").value=str;
 
 
@@ -1079,7 +1079,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                    }
 
                                   ?>
-                                <td><?php echo $row['job_id'] ?>
+                                <td>
                                     <a href="#modal-form" class="btn btn-primary" data-toggle="modal" onclick="getjobid(<?php echo $row['job_id'] ?>)">Update Details</a>
 
 
@@ -1202,9 +1202,9 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-12">
 
-                                                        
 
-                                                        <input id="j_id" name="job_id"  type="text" >
+
+                                                        <input id="j_id" name="job_id"  type="hidden" >
 
                                                         <div class="space"></div>
                                                         <div class="row">
