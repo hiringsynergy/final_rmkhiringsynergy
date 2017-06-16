@@ -2657,12 +2657,10 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <label for="id-date-picker-1">Date of birth</label>
+                                                                <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>
                                                                 <div>
                                                                     <input class="form-group" id="id-date-picker-1" type="text" name="dob" data-date-format="dd-mm-yyyy" value="<?php echo $row['st_dob']?>" />
-                                                                    <span class="form-group">
-                                                    <i class="fa fa-calendar bigger-110"></i>
-                                                </span>
+                                                                    <span class="form-group"></span>
                                                                 </div>
                                                             </div>
 
