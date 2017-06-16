@@ -1176,57 +1176,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                             </tbody>
                         </table>
 
-                                                <div id="modal-form" class="modal" tabindex="-1">
-                                                    <form action="view_jobs" method="post" enctype="multipart/form-data">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                    <h4 class="blue bigger">Please fill the following form fields</h4>
-                                                                </div>
 
-                                                                <div class="modal-body">
-                                                                    <div class="row">
-                                                                        <div class="col-xs-12 col-sm-12">
-
-                                                                            <?php echo $row['job_id']; ?>
-
-                                                                            <input id="job_id" name="job_id" value="<?php echo $row['job_id']; ?>" type="hidden" >
-
-                                                                            <div class="space"></div>
-                                                                            <div class="row">
-                                                                                <div class="col-xs-8 col-sm-5">
-
-                                                                                    <h5 class="red bolder smaller">Register No:</h5>
-                                                                                    <div class="">
-                                                                                        <input type="text" name="tags" id="form-field-tags"  placeholder="Enter Register No ..." />
-                                                                                    </div>
-                                                                                    <div class="space-16"></div>
-
-                                                                                    <button  type="submit" id="bootbox-search" name="update"  value="filter" class="btn btn-default btn-round btn-danger">
-                                                                                        Update
-                                                                                        <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-                                                                                    </button>
-                                                                                </div>
-
-                                                                            </div>
-                                                                            <!--  <input type="file" name="placement_file" />-->
-                                                                        </div>
-
-
-                                                                    </div>
-                                                                </div>
-
-
-
-
-
-
-
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
 
 
 
@@ -1238,6 +1188,58 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         </div>
                             </div>
                         </div>
+
+                            <div id="modal-form" class="modal" tabindex="-1">
+                                <form action="view_jobs" method="post" enctype="multipart/form-data">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="blue bigger">Please fill the following form fields</h4>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12">
+
+                                                        <?php echo $row['job_id']; ?>
+
+                                                        <input id="job_id" name="job_id" value="<?php echo $row['job_id']; ?>" type="hidden" >
+
+                                                        <div class="space"></div>
+                                                        <div class="row">
+                                                            <div class="col-xs-8 col-sm-5">
+
+                                                                <h5 class="red bolder smaller">Register No:</h5>
+                                                                <div class="">
+                                                                    <input type="text" name="tags" id="form-field-tags"  placeholder="Enter Register No ..." />
+                                                                </div>
+                                                                <div class="space-16"></div>
+
+                                                                <button  type="submit" id="bootbox-search" name="update"  value="filter" class="btn btn-default btn-round btn-danger">
+                                                                    Update
+                                                                    <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                                                </button>
+                                                            </div>
+
+                                                        </div>
+                                                        <!--  <input type="file" name="placement_file" />-->
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
                     <?php
 
