@@ -596,7 +596,7 @@ die(" " . mysqli_error($connect));
                     </li>
 
                     <li class="">
-                        <a href="../reportgeneration.php">
+                        <a href="../reports/reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>

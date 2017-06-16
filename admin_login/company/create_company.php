@@ -641,7 +641,7 @@ if(isset($_POST['create']) && isset($_FILES['logo']) && isset($_SESSION['user_ro
                     </li>
 
                     <li class="">
-                        <a href="../reportgeneration.php">
+                        <a href="../reports/reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>

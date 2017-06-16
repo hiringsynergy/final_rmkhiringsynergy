@@ -715,7 +715,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='admin' ) {
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="reportgeneration.php">
+                        <a href="reports/reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>

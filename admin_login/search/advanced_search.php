@@ -576,7 +576,7 @@ function updateSlider(){
                         <b class="arrow"></b>
                     </li>
                     <li class="">
-                        <a href="../reportgeneration.php">
+                        <a href="../reports/reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>

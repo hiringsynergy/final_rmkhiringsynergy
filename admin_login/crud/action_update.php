@@ -570,7 +570,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                     </li>
 
                     <li class="">
-                        <a href="../reportgeneration.php">
+                        <a href="../reports/reportgeneration.php">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>
