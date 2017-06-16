@@ -2660,17 +2660,17 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <label for="form-field-fan">College Mail-ID</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
+                                                                    <input type="text" id="form-field-mail" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
                                                                 </div>
                                                             </div>
 
-<!--                                                            <div class="form-group">-->
-<!--                                                                <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>-->
-<!--                                                                <div>-->
-<!--                                                                    <input class="form-group" id="id-date-picker-1" type="text" name="dob" data-date-format="dd-mm-yyyy" value="--><?php //echo $row['st_dob']?><!--" />-->
-<!--                                                                    <span class="form-group"></span>-->
-<!--                                                                </div>-->
-<!--                                                            </div>-->
+                                                            <div class="form-group">
+                                                                <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>
+                                                                <div>
+                                                                    <input class="form-group" id="id-date-picker-1" type="text" name="dob" data-date-format="dd-mm-yyyy" value="<?php echo $row['st_dob']?>" />
+                                                                    <span class="form-group"></span>
+                                                                </div>
+                                                            </div>
 
                                                             <div class="form-group">
                                                                 <label for="form-field-na">Nationality</label>
