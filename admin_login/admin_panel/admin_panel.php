@@ -127,6 +127,21 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js">"></script>
+
+
+
+
+
+
+
     <!-- text fonts -->
     <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css" />
 
@@ -1551,12 +1566,12 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 //                   "className": "btn btn-white btn-primary btn-bold"
 //
 //                },
-                'excelHtml5',
-//                {
-//                    "extend": "excel",
-//                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
-//                    "className": "btn btn-white btn-primary btn-bold"
-//                },
+
+                {
+                    "extend": "excel",
+                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
                 {
                     "extend": "pdf",
                     "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
@@ -1579,6 +1594,21 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                 location.href="admin_panel"
             });
         });
+
+        $('#dynamic-table').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: ':contains("Office")'
+                    }
+                },
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        } );
 
         //style the message box
         var defaultCopyAction = myTable.button(1).action();
