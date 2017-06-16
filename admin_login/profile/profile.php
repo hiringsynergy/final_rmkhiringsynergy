@@ -70,6 +70,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $hometown = $_GET['hometown'];
     $premanaddress1 = $_GET['premanaddress1'];
     $premanaddress2 = $_GET['premanaddress2'];
+    $clgmail = $GET['collegemailid'];
     $city = $_GET['city'];
     $state = $_GET['state'];
     $pincode  = $_GET['pincode'];
@@ -84,7 +85,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $query_change_personaldetails = "UPDATE $tname SET  st_firstname='{$firstname}',st_middlename='{$middlename}',st_lastname='{$lastname}',st_gender='{$gender}',st_fathername='{$fathername}',
 st_fatheroccupation='{$fatheroccupation}',st_mothername='{$mothername}',st_motheroccupation='{$motheroccupation}',st_dob='{$dob}',st_nationality='{$nationality}',
 st_caste='{$caste}',st_hometown='{$hometown}',st_address1='{$premanaddress1}',st_address2='{$premanaddress2}',st_city='{$city}',
-st_state='{$state}',st_posatlcode='{$pincode}',st_landline='{$landline}' WHERE st_roll='{$rollno}'";
+st_state='{$state}',st_posatlcode='{$pincode}',st_landline='{$landline}',st_clgemail='{$clgmail}' WHERE st_roll='{$rollno}'";
     $result_change_personaldetails = mysqli_query($connect, $query_change_personaldetails);
 
     if (!$result_change_personaldetails) {
@@ -2653,6 +2654,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <label for="form-field-fan">Mother Occupation</label>
                                                                 <div>
                                                                     <input type="text" id="form-field-fan" placeholder="" name="motheroccupation" value="<?php echo $row['st_motheroccupation']?>" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="form-field-fan">College Mail-ID</label>
+                                                                <div>
+                                                                    <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
                                                                 </div>
                                                             </div>
 
