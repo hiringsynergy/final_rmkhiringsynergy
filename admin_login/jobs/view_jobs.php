@@ -107,7 +107,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
         alert(str);
-            document.getElementById("job_id").value=str;
+            document.getElementById("j_id").value=str;
 
 
         }
@@ -1204,7 +1204,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
                                                         <?php echo $row['job_id']; ?>
 
-                                                        <input id="job_id" name="job_id" value="<?php echo $row['job_id']; ?>" type="hidden" >
+                                                        <input id="j_id" name="job_id"  type="hidden" >
 
                                                         <div class="space"></div>
                                                         <div class="row">
