@@ -106,7 +106,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
         function getjobid(str){
 
 
-
+        alert(str);
             document.getElementById("companyid").value=str;
 
 
