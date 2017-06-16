@@ -2257,6 +2257,13 @@ if(isset($_GET['export'])) {
                                                 }
 
 
+
+
+                                                $query_alter="ALTER TABLE students_".$get_year." DROP job_count";
+                                                $result_alter=mysqli_query($connect,$query_alter);
+
+
+
                                             }
 
 
