@@ -1344,7 +1344,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="profile-info-name align-left" style="background: #FDE3A7; color: #F9690E;" > <b>College Mail ID</b> </div>
 
                                                             <div class="profile-info-value testorange">
-                                                                <div class=" " id="dob"><?php  echo $row['st_clgemail']  ?></div>
+                                                                <div class="editable" id="fn"><?php  echo $row['st_clgemail']  ?></div>
                                                             </div>
                                                         </div>
 
@@ -2660,7 +2660,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <label for="form-field-fan">College Mail-ID</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-mail" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
+                                                                    <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
                                                                 </div>
                                                             </div>
 
