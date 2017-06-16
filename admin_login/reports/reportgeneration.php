@@ -257,7 +257,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
     }
 
-    header("Location: admin_panel?year=".$get_table);
+    header("Location: reportgeneration?year=".$get_table);
 
 
 
