@@ -766,7 +766,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
 
-                                    $sql = "UPDATE students_".$get_year." SET st_placementstatus='".$placement_status."' , st_placementid='$placement_id', _".$job_id."='placed'  WHERE st_roll='$roll'";
+                                    $sql = "UPDATE students_".$get_year." SET st_placementstatus='".$placement_status."' , st_placementid='$placement_id', _".$job_id."='eligible'  WHERE st_roll='$roll'";
 
 
 
