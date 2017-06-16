@@ -1189,6 +1189,8 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                                                     <div class="row">
                                                                         <div class="col-xs-12 col-sm-12">
 
+                                                                            <?php echo $row['job_id']; ?>
+
                                                                             <input id="job_id" name="job_id" value="<?php echo $row['job_id']; ?>" type="hidden" >
 
                                                                             <div class="space"></div>
