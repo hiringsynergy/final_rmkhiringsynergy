@@ -879,7 +879,7 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                     <?php
 
                                                     include "connect.php";
-                                                    $query_insert="SELECT * FROM table_map ORDER BY ASC";
+                                                    $query_insert="SELECT * FROM table_map ORDER BY table_value ASC";
                                                     $result_insert=mysqli_query($connect, $query_insert);
                                                     $min=0;
                                                     while ($row=mysqli_fetch_assoc($result_insert)){
