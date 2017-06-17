@@ -887,7 +887,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td>
                                                         <select name="opted" class="form-control chosen-select " id="form-field-q1" value="" data-placeholder="Please select Company">
 
-                                                            <option value=""></option>
+                                                            <option value="na">Please Select Company</option>
 
                                                             <?php
 
