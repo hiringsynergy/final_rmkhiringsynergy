@@ -86,12 +86,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         }
 
-        function showreports(){
+        function showreports(roll, yr){
 
             var e = document.getElementById("opt");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "admin_panel?year="+strUser;
+            alert(roll+" "+yr);
+            //location.href = "reportreneration_studet?opt="+strUser+"yr";
 
         }
 
@@ -640,7 +641,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 </div>
                 <div class="space-16"></div>
 
-                
+
 
 
 
@@ -710,7 +711,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 <th>Salary</th>
                                                 <th>Confirmation</th>
-                                                
+
                                             </tr>
                                             </thead>
 
@@ -720,7 +721,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                             include "../connect.php";
 
-                                            $query="select * from ".$table." ";
+                                            $query="select * from students_".$table." ";
                                             $result=mysqli_query($connect,$query);
                                             $count_sno=1;
 
@@ -871,7 +872,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                         <?php echo $roll ?>
 
                                                     </td>
-                                                  
+
                                                     <td><?php echo $name  ?></td>
                                                     <td><?php echo  $placement_status ?></td>
                                                     <td><?php echo  $gender ?></td>
@@ -897,7 +898,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports()" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
+                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
 
 
 
@@ -953,12 +954,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                                         </select>
-                                                        
-                                                        
+
+
                                                     </td>
 
-                                                    
-                                                    
+
+
                                                 </tr>
 
 
@@ -995,7 +996,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                     </div>
-                                <?php } ?>
+                                <?php } } ?>
 
                             </div>
                         </div>
@@ -1453,7 +1454,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          */
 
 
-    })
+    });
 </script>
 
 </body>
