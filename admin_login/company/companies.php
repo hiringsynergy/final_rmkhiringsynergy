@@ -650,10 +650,18 @@ die(" " . mysqli_error($connect));
 
                             $company_id=$_GET['delete'];
 
+
                             include "../connect.php";
                             $query="DELETE FROM company_list where company_id={$company_id}";
 
+
                             $result=mysqli_query($connect, $query);
+
+
+                            $query1="DELETE FROM jobs where company_id={$company_id}";
+
+
+                            $result1=mysqli_query($connect, $query1);
                             if(!$connect){
 
 

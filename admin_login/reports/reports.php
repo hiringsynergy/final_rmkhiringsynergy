@@ -118,7 +118,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                     //count eligible
-                $query_count = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='eligible'";
+                $query_count = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='eligible'OR  _" .$row['job_id']. "='accepted' OR _" .$row['job_id']. "='placed'";
                 $result_count = mysqli_query($connect, $query_count);
                 $eligible = mysqli_num_rows($result_count);
 
@@ -131,11 +131,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                 //count accepted
-                $query_count_accepted = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='accepted'";
+                $query_count_accepted = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='accepted' OR _" .$row['job_id']. "='placed'";
                 $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                 $accepted = mysqli_num_rows($result_count_accepted);
 
-                $total = $eligible + $accepted;
+                $total = $eligible;
 
 
 
@@ -155,7 +155,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 data.addRows([
 
                     ['Accepted', <?php echo $accepted ?>],
-                    ['Not Accepted', <?php echo $eligible ?>]
+                    ['Not Accepted', <?php echo $eligible-$accepted ?>]
                 ]);
 
                 // Set chart options

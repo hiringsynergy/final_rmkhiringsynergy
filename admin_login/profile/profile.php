@@ -31,7 +31,7 @@ if (isset($_GET['profile'])&& isset($_SESSION['user_role'])=='admin') {
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}',st_collegename='{$collegename}' WHERE st_roll='{$rollno}'";
+    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}' WHERE st_roll='{$rollno}'";
     $result_change_profile = mysqli_query($connect, $query_change_profile);
 
     if (!$result_change_profile) {
@@ -2617,12 +2617,14 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-gendre">Gender</label>
-                                                                    <select class="form-control" name="gender" id="form-field-gendre" value="<?php echo $row['st_gender']?>">
+                                                                    <select class="form-control" name="gender" id="form-field-gendre " value="<?php echo $row['st_gender']?>">
                                                                         <?php if($row['st_gender']=='Male'){?>
-                                                                        <option value="Male">Male</option>
-                                                                        <option value="Female">Female</option><?php } else if($row['st_gender']=='Female'){?>
-                                                                        <option value="Female">Female</option>
-                                                                        <option value="Male">Male</option><?php }?>
+                                                                            <option value="Male">Male</option>
+                                                                            <option value="Female">Female</option>
+                                                                        <?php } else if($row['st_gender']=='Female'){?>
+                                                                            <option value="Female">Female</option>
+                                                                            <option value="Male">Male</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2729,20 +2731,26 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-state">State</label>
-                                                                    <select class="form-control" name="state" value="<?php echo $row['st_state']?>" id="form-field-state">
-                                                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                                        <option value="Kerala">Kerala</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" id="form-field-state" placeholder="" name="state" value="<?php echo $row['st_state']?>" />
+                                                                    </div>
+<!--                                                                    <select class="form-control" name="state" value="--><?php //echo $row['st_state']?><!--" id="form-field-state">-->
+<!--                                                                        <option value="Tamil Nadu">Tamil Nadu</option>-->
+<!--                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>-->
+<!--                                                                        <option value="Kerala">Kerala</option>-->
+<!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-country">Country</label>
-                                                                    <select disabled class="form-control" id="form-field-country">
-                                                                        <option value="India">India</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" disabled id="form-field-country" placeholder="" name="country" value="<?php echo "India"?>" />
+                                                                    </div>
+<!--                                                                    <select disabled class="form-control" id="form-field-country">-->
+<!--                                                                        <option value="India">India</option>-->
+<!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
@@ -2833,26 +2841,29 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-c1">College Name</label>
+                                                                    <div>
+                                                                        <input type="text" disabled id="control-label bolder blu" placeholder="" value="<?php echo $row['st_collegename'] ?>" />
+                                                                    </div>
 
-                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
-                                                                        <?php if($row['st_collegename']=='RMKEC')
-                                                                        { ?>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-                                                                        <option value="RMDEC">RMD Engineering College</option>
-                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
-
-                                                                        <?php } else if($row['st_collegename']=='RMDEC'){?>
-                                                                            <option value="RMDEC">RMD Engineering College</option>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-
-                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
-
-                                                                        <?php  } else if($row['st_collegename']=='RMKCET'){?>
-                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-                                                                        <option value="RMDEC">RMD Engineering College</option>
-
-                                                                        <?php }?>
+<!--                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
+<!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
+//                                                                        { ?>
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+<!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!---->
+<!--                                                                        --><?php //} else if($row['st_collegename']=='RMDEC'){?>
+<!--                                                                            <option value="RMDEC">RMD Engineering College</option>-->
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!---->
+<!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!---->
+<!--                                                                        --><?php // } else if($row['st_collegename']=='RMKCET'){?>
+<!--                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+<!---->
+<!--                                                                        --><?php //}?>
                                                                     </select>
                                                                 </div>
                                                             </div>
