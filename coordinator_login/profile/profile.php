@@ -2049,8 +2049,13 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 <div>
                                                                     <label for="form-field-yop3">Medium</label>
                                                                     <select name="s10thmedium" class="form-control" id="form-field-q1" value="<?php echo $row['st_10thmedium']?>">
-                                                                        <option value="English">English</option>
-                                                                        <option value="Tamil">Tamil</option>
+                                                                        <?php if($row['st_10thmedium']=='English'){?>
+                                                                            <option value="English">English</option>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                        <?php } else if($row['st_10thmedium']=='Tamil'){?>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                            <option value="English">English</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2093,8 +2098,13 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 <div>
                                                                     <label for="form-field-yop3">Medium</label>
                                                                     <select name="s12thmedium" class="form-control" id="form-field-q1" value="<?php echo $row['st_12thmedium']?>">
-                                                                        <option value="English">English</option>
-                                                                        <option value="Tamil">Tamil</option>
+                                                                        <?php if($row['st_12thmedium']=='English'){?>
+                                                                            <option value="English">English</option>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                        <?php } else if($row['st_12thmedium']=='Tamil'){?>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                            <option value="English">English</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2127,8 +2137,13 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 <div>
                                                                     <label for="form-field-q1">Qualification</label>
                                                                     <select name="ugqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_ugdegree']?>">
-                                                                        <option value="B.E">B.E</option>
-                                                                        <option value="B.Tech">B.Tech</option>
+                                                                        <?php if($row['st_ugdegree']=='B.E'){?>
+                                                                            <option value="B.E">B.E</option>
+                                                                            <option value="B.Tech">B.Tech</option>
+                                                                        <?php } else if($row['st_ugdegree']=='B.Tech'){?>
+                                                                            <option value="B.Tech">B.Tech</option>
+                                                                            <option value="B.E">B.E</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2139,12 +2154,24 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 <div>
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
-                                                                        <option value="Computer Science Engineering">Computer Science Engineering</option>
+
+                                                                        <option value="<?php echo $row['st_ugspecialization']?>"></option>
+
+
+                                                                        <option value="Computer Science and Engineering">Computer Science Engineering</option>
+
                                                                         <option value="Information Technology">Information Technology</option>
+
                                                                         <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+                                                                        <option value="Civil Engineering">Civil Engineering</option>
+
                                                                         <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+
                                                                         <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+
                                                                         <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2156,6 +2183,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                     <label for="form-field-c1">Institution</label>
 
                                                                     <select name="ugclgname" class="form-control" id="form-field-c1" value="<?php echo $row['st_ugcollegename']?>">
+                                                                        <option value="<?php echo $row['st_ugcollegename']?>"></option>
                                                                         <option value="RMK Engineering College">RMK Engineering College</option>
                                                                         <option value="RMD Engineering College">RMD Engineering College</option>
                                                                         <option value="RMK College of Engineering and Technology">RMK College of Engineering and Technology</option>
@@ -2271,112 +2299,135 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <h1>PG</h1>
-                                                                </div>
-                                                            </div>
+                                                            <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
+                                                                ?>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-q1">Qualification</label>
-                                                                    <select name="pgqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_pgqualification']?>">
-                                                                        <option value=""></option>
-                                                                        <option value="M.E">M.E</option>
-                                                                        <option value="MBA">MBA</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label  for="form-field-b1">Branch</label>
-                                                                    <select name="pgbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_pgspecialization']?>">
-                                                                        <option value="Computer Science Engineering">Computer Science Engineering</option>
-                                                                        <option value="Information Technology">Information Technology</option>
-                                                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                                                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
-                                                                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
-                                                                        <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-
-
-
-
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-yop1">Year of Passing</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgyearofpass" type="text" id="form-field-yop1" placeholder="" value="<?php echo $row['st_pgyearofpassing']?>" />
+                                                                        <h1>PG</h1>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p1">Percentage/CGPA</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgpercent" type="text" id="form-field-p1" placeholder="" value="<?php echo $row['st_pgcgpa']?>" />
+                                                                        <label for="form-field-q1">Qualification</label>
+                                                                        <select name="pgqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_pgqualification']?>">
+                                                                            <option value="<?php echo $row['st_pgqualification']?>"></option>
+                                                                            <option value="M.E">M.E</option>
+                                                                            <option value="MBA">MBA</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p2">First Semester</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgsem1" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg1stsem']?>" />
+                                                                        <label  for="form-field-b1">Branch</label>
+                                                                        <select name="pgbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_pgspecialization']?>">
+                                                                            <option value="<?php echo $row['st_pgspecialization']?>"></option>
+
+                                                                            <option value="Applied Electronics">Applied Electronics</option>
+
+                                                                            <option value="Power Electronics and Drives">Power Electronics and Drives</option>
+
+                                                                            <option value="VLSI Design">VLSI Design</option>
+
+                                                                            <option value="Computer Science and Engineering">Computer Science Engineering</option>
+
+                                                                            <option value="Information Technology">Information Technology</option>
+
+                                                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+                                                                            <option value="Civil Engineering">Civil Engineering</option>
+
+                                                                            <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+
+                                                                            <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+
+                                                                            <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+
+
+
+                                                                        </select>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label disabled for="form-field-p2">Second Semester</label>
+
+
+
+
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgsem2" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg2ndsem']?>" />
+                                                                        <label for="form-field-yop1">Year of Passing</label>
+                                                                        <div>
+                                                                            <input name="pgyearofpass" type="text" id="form-field-yop1" placeholder="" value="<?php echo $row['st_pgyearofpassing']?>" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p2">Third Semester</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgsem3" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg3rdsem']?>" />
+                                                                        <label for="form-field-p1">Percentage/CGPA</label>
+                                                                        <div>
+                                                                            <input name="pgpercent" type="text" id="form-field-p1" placeholder="" value="<?php echo $row['st_pgcgpa']?>" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p2">Fourth Semester</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgsem4" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg4thsem']?>" />
+                                                                        <label for="form-field-p2">First Semester</label>
+                                                                        <div>
+                                                                            <input name="pgsem1" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg1stsem']?>" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p2">Standing Arrear</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pgstandarrears" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_standingarrears']?>" />
+                                                                        <label disabled for="form-field-p2">Second Semester</label>
+                                                                        <div>
+                                                                            <input name="pgsem2" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg2ndsem']?>" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-p2">History of Arrear</label>
+                                                                <div class="form-group">
                                                                     <div>
-                                                                        <input name="pghistoryofarrears" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_historyofarrears']?>" />
+                                                                        <label for="form-field-p2">Third Semester</label>
+                                                                        <div>
+                                                                            <input name="pgsem3" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg3rdsem']?>" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+
+                                                                <div class="form-group">
+                                                                    <div>
+                                                                        <label for="form-field-p2">Fourth Semester</label>
+                                                                        <div>
+                                                                            <input name="pgsem4" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_pg4thsem']?>" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div>
+                                                                        <label for="form-field-p2">Standing Arrear</label>
+                                                                        <div>
+                                                                            <input name="pgstandarrears" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_standingarrears']?>" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div>
+                                                                        <label for="form-field-p2">History of Arrear</label>
+                                                                        <div>
+                                                                            <input name="pghistoryofarrears" type="text" id="form-field-p2" placeholder="" value="<?php echo $row['st_historyofarrears']?>" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            <?php } ?>
 
                                                             <div class="space-4"></div>
 
@@ -2442,9 +2493,18 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-gendre">Gender</label>
-                                                                    <select class="form-control" name="gender" id="form-field-gendre" value="<?php echo $row['st_gender']?>">
-                                                                        <option value="Male">Male</option>
-                                                                        <option value="Female">Female</option>
+                                                                    <!--                                                                    <div>-->
+                                                                    <!--                                                                        <input type="text" id="form-field-gendre" placeholder="" name="fathername" value="--><?php //echo $row['st_gender']?><!--" />-->
+                                                                    <!--                                                                    </div>-->
+
+                                                                    <select class="form-control" name="gender" id="form-field-gendre " value="<?php echo $row['st_gender']?>">
+                                                                        <?php if($row['st_gender']=='MALE'){?>
+                                                                            <option value="MALE">Male</option>
+                                                                            <option value="FEMALE">Female</option>
+                                                                        <?php } else if($row['st_gender']=='FEMALE'){?>
+                                                                            <option value="FEMALE">Female</option>
+                                                                            <option value="MALE">Male</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2480,12 +2540,17 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <label for="id-date-picker-1">Date of birth</label>
+                                                                <label for="form-field-fan">College Mail-ID</label>
+                                                                <div>
+                                                                    <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>
                                                                 <div>
                                                                     <input class="form-group" id="id-date-picker-1" type="text" name="dob" data-date-format="dd-mm-yyyy" value="<?php echo $row['st_dob']?>" />
-                                                                    <span class="form-group">
-                                                    <i class="fa fa-calendar bigger-110"></i>
-                                                </span>
+                                                                    <span class="form-group"></span>
                                                                 </div>
                                                             </div>
 
@@ -2497,19 +2562,13 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             </div>
 
                                                             <div class="form-group">
+                                                                <label for="form-field-caste">Caste</label>
                                                                 <div>
-                                                                    <label for="form-field-caste">Caste</label>
-                                                                    <select class="form-control" id="form-field-caste" name="caste" value="<?php echo $row['st_caste']?>">
-                                                                        <option value="BC">BC</option>
-                                                                        <option value="MBC">MBC</option>
-                                                                        <option value="OBC">OBC</option>
-                                                                        <option value="FC">FC</option>
-                                                                        <option value="SC">SC</option>
-                                                                        <option value="ST">ST</option>
-
-                                                                    </select>
+                                                                    <input type="text" id="form-field-caste" placeholder="" name="caste" value="<?php echo $row['st_caste']?>" />
                                                                 </div>
                                                             </div>
+
+
 
                                                             <div class="form-group">
                                                                 <label for="form-field-ht">Home Town</label>
@@ -2518,19 +2577,27 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
+                                                            <div class="form-group ">
                                                                 <label for="form-field-addr">Permanent Address(Line 1)</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-addr" placeholder="" name="premanaddress1" value="<?php echo $row['st_address1']?>" />
+                                                                    <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress1" value="<?php echo $row['st_address1']?>" />
                                                                 </div>
+
                                                             </div>
+
+                                                            <div class="space-4"></div>
+
+
 
                                                             <div class="form-group">
                                                                 <label for="form-field-addr">Permanent Address(Line 2)</label>
                                                                 <div>
-                                                                    <input type="text" id="form-field-addr" placeholder="" name="premanaddress2" value="<?php echo $row['st_address2']?>" />
+                                                                    <input class="col-xs-10" type="text" id="form-field-addr" placeholder="" name="premanaddress2" value="<?php echo $row['st_address2']?>" />
                                                                 </div>
+                                                                <br>
                                                             </div>
+
+                                                            <br>
 
                                                             <div class="form-group">
                                                                 <div>
@@ -2544,20 +2611,26 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-state">State</label>
-                                                                    <select class="form-control" name="state" value="<?php echo $row['st_state']?>" id="form-field-state">
-                                                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                                        <option value="Kerala">Kerala</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" id="form-field-state" placeholder="" name="state" value="<?php echo $row['st_state']?>" />
+                                                                    </div>
+                                                                    <!--                                                                    <select class="form-control" name="state" value="--><?php //echo $row['st_state']?><!--" id="form-field-state">-->
+                                                                    <!--                                                                        <option value="Tamil Nadu">Tamil Nadu</option>-->
+                                                                    <!--                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>-->
+                                                                    <!--                                                                        <option value="Kerala">Kerala</option>-->
+                                                                    <!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-country">Country</label>
-                                                                    <select disabled class="form-control" id="form-field-country">
-                                                                        <option value="India">India</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" disabled id="form-field-country" placeholder="" name="country" value="<?php echo "India"?>" />
+                                                                    </div>
+                                                                    <!--                                                                    <select disabled class="form-control" id="form-field-country">-->
+                                                                    <!--                                                                        <option value="India">India</option>-->
+                                                                    <!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
@@ -2597,6 +2670,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                         </div>
                                     </div>
                                 </div>
+
                                 <div id="modal-form1" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -2631,7 +2705,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             </div>
 
                                                             <div class="form-group">
-                                                                <label for="control-label bolder b">Email-Id</label>
+                                                                <label for="control-label bolder b">Personal Email-Id</label>
                                                                 <div>
                                                                     <input type="text" id="control-label bolder b" name="emailid" placeholder="" value="<?php echo $row['st_email'] ?>" />
                                                                 </div>
@@ -2647,11 +2721,29 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-c1">College Name</label>
+                                                                    <div>
+                                                                        <input type="text" disabled id="control-label bolder blu" placeholder="" value="<?php echo $row['st_collegename'] ?>" />
+                                                                    </div>
 
-                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
-                                                                        <option value="RMK Engineering College">RMK Engineering College</option>
-                                                                        <option value="RMD Engineering College">RMD Engineering College</option>
-                                                                        <option value="RMK College of Engineering and Technology">RMK College of Engineering and Technology</option>
+                                                                    <!--                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
+                                                                    <!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
+                                                                    //                                                                        { ?>
+                                                                    <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+                                                                    <!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+                                                                    <!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+                                                                    <!---->
+                                                                    <!--                                                                        --><?php //} else if($row['st_collegename']=='RMDEC'){?>
+                                                                    <!--                                                                            <option value="RMDEC">RMD Engineering College</option>-->
+                                                                    <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+                                                                    <!---->
+                                                                    <!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+                                                                    <!---->
+                                                                    <!--                                                                        --><?php // } else if($row['st_collegename']=='RMKCET'){?>
+                                                                    <!--                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+                                                                    <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+                                                                    <!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+                                                                    <!---->
+                                                                    <!--                                                                        --><?php //}?>
                                                                     </select>
                                                                 </div>
                                                             </div>
