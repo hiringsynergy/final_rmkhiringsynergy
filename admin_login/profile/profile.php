@@ -1103,7 +1103,25 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     $result_short = mysqli_query($connect, $query_short);
                                     $row_short = mysqli_fetch_assoc($result_short);
 
-                                    if($row1['st_ugspecialization']!=$temp_branch){
+
+
+                    $database=$_SESSION['database_name'];
+                    if(preg_match('/rmd/', $database)){
+                        $temp_clg="RMDEC";
+                    }
+                    else if(preg_match('/rmk/', $database)){
+                        $temp_clg="RMKEC";
+                    }
+                    else if(preg_match('/rmkcet/', $database)){
+                        $temp_clg="RMKCET";
+                    }
+
+
+
+
+
+
+                                    if($row1['st_collegename']!=$temp_clg){
 
                                         ?>
 
@@ -1117,7 +1135,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                 </button>
 
 
-                                                Please enter the respective department register number
+                                                Please enter a valid Register number.
                                             </div>
                                         </div> <?php
                                     }
