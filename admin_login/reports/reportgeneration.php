@@ -66,119 +66,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("form-field-select-3");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "reports?year="+strUser;
+            location.href = "reportgeneration?year="+strUser;
 
         }
-        function viewlist(str){
-
-
-            location.href="show_lists?jid="+str+"&flag=0";
-
-
-        }
-
-
-
-
-
-
-
-        //alert(myselect.options[myselect.selectedIndex].value);
-        // Load the Visualization API and the corechart package.
-        google.charts.load('current', {'packages':['corechart']});
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Callback that creates and populates a data table,
-        // instantiates the pie chart, passes in the data and
-        // draws it.
-        function drawChart() {
-
-            <?php
-            if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
-
-            include "../connect.php";
-            $table = $_GET['year'];
-
-            $query_get_year="SELECT * FROM table_map WHERE table_name='$table'";
-            $result_get_year=mysqli_query($connect, $query_get_year);
-            $row_get_year=mysqli_fetch_assoc($result_get_year);
-            $year_of_graduation=$row_get_year['table_value'];
-
-
-
-
-            include "../connect.php";
-            $query_jobs = "SELECT * FROM jobs where year_of_graduation={$year_of_graduation}";
-            $result_jobs = mysqli_query($connect, $query_jobs);
-
-
-            while ($row = mysqli_fetch_assoc($result_jobs)){
-
-
-            //count eligible
-            $query_count = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='eligible'";
-            $result_count = mysqli_query($connect, $query_count);
-            $eligible = mysqli_num_rows($result_count);
-
-
-
-
-
-
-
-
-
-            //count accepted
-            $query_count_accepted = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='accepted'";
-            $result_count_accepted = mysqli_query($connect, $query_count_accepted);
-            $accepted = mysqli_num_rows($result_count_accepted);
-
-            $total = $eligible + $accepted;
-
-
-
-
-
-
-
-            ?>
-
-
-
-            // Create the data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Students_type');
-            data.addColumn('number', 'Students_nos');
-
-            data.addRows([
-
-                ['Accepted', <?php echo $accepted ?>],
-                ['Not Accepted', <?php echo $eligible ?>]
-            ]);
-
-            // Set chart options
-            var options = {
-                'title': 'COMPANY - <?php echo $row['company'] ?>  \n\n JOB ' + '     ' + '- <?php echo $row['job_title'] ?> \n\n ELIGIBLE - <?php echo $total ?>  ',
-//                'width':500,
-                is3D: true
-//                'height':500
-            };
-
-            // Instantiate and draw our chart, passing in some options.
-            var chart<?php echo $row['job_id'] ?> = new google.visualization.PieChart(document.getElementById('chart_div<?php echo $row['job_id'] ?>'));
-            chart<?php echo $row['job_id'] ?>.draw(data, options);
-
-            <?php }
-
-
-            }
-
-            ?>
-        }
-
-
 
 
 
@@ -705,9 +595,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <div class="space-16"></div>
 
 
+                //student reports.....
+
+
                 <div class="col-xs-6 col-xs-push-2">
 
-                    <label for="student">Student Report</label>
+                    <label for="student" class="bigger-120 orange">Student Reports</label>
+                    <div class="space-4"></div>
 
 
 
@@ -766,6 +660,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                //company reports.....
+
+
+
+
 
 
                 <!-- /.page-header -->
@@ -777,12 +676,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="col-xs-6 col-xs-push-2">
 
-                            <label for="student">Student Report</label>
+                            <label for="company" class="bigger-120 orange">Company Reports</label>
+                            <div class="space-4"></div>
 
 
 
-
-                            <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                            <select class="chosen-select form-control" id="company"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
 
 
@@ -832,13 +731,16 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                        //department reports.......
+
+
                         <div class="row">
 
                             <div class="col-xs-12">
                                 <div class="col-xs-6 col-xs-push-2">
 
 
-                                    <label for="dept" class="bigger-120 orange">Student Report</label>
+                                    <label for="dept" class="bigger-120 orange">Department Reports</label>
                                     <div class="space-4"></div>
 
 
