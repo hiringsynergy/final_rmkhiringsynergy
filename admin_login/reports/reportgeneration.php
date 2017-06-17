@@ -553,7 +553,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </li>
 
                     <li class="">
-                        <a href="../Status">
+                        <a href="../status">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Status
                         </a>
