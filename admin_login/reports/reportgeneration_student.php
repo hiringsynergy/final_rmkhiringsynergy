@@ -996,7 +996,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                     </div>
-                                <?php } ?>
+                                <?php }} ?>
 
                             </div>
                         </div>
