@@ -760,6 +760,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <br/>
 
+                <div class="row">
+
+
 
                 <div class="col-xs-6 col-xs-push-2">
 
@@ -812,6 +815,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </select>
 
                     <div class="space-16"></div>
+                </div>
                 </div>
 
 
