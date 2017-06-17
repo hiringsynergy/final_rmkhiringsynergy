@@ -939,8 +939,57 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     ?>
 
 
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>
+                                                        <?php
+
+                                                        if($opted!=''){
+
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company=".$opted;
+                                                            $result_salary=mysqli_query($connect, $query_salary);
+
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
+
+                                                            echo $row_salary['campus_date'];
+
+                                                        }
+
+
+
+
+                                                        ?>
+
+
+
+
+
+
+                                                    </td>
+                                                    <td>
+
+
+                                                        <?php
+
+                                                        if($opted!=''){
+
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company=".$opted;
+                                                            $result_salary=mysqli_query($connect, $query_salary);
+
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
+
+                                                            echo $row_salary['salary']." per annum";
+
+                                                        }
+
+
+
+
+                                                        ?>
+
+
+
+                                                    </td>
                                                     <td>
                                                         <select name="opted" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" >
 
