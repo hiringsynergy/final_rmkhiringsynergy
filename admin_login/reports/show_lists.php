@@ -96,7 +96,7 @@ echo "end";
 if(!$result_unplaced){
 
 
-    die("eror".mysqli_error());
+    die("eror".mysqli_error($connect));
 }
 
 
