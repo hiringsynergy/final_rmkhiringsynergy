@@ -477,9 +477,12 @@ if(isset($_GET['filter_job'])){
 
 
     //job for ug update
-       echo $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_gender in ('$gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+       echo $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_gender in ('$gender') and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='h'" ;
         $result_for_update=mysqli_query($connect, $query_for_update);
-
+    $query_for_update1="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage $str and st_gender in ('$gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='d'";
+    $result_for_update1=mysqli_query($connect, $query_for_update1);
+    $query_for_update2="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage $str and st_gender in ('$gender') and st_12thpercentage>=$_12percentage and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='dh'";
+    $result_for_update2=mysqli_query($connect, $query_for_update2);
 
         //job for pg update
          $query_for_pg_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE  st_pgspecialization IN ('$temp_pg_branch_update') and st_pgcgpa>=$pgcgpa  and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
@@ -535,20 +538,20 @@ if(isset($_GET['filter_job'])){
 
     if(!$result_for_tablemap){
 
-        die("".mysqli_error($connect));
+        die("1".mysqli_error($connect));
 
 
     }
     if(!$result_for_alter){
 
-        die("".mysqli_error($connect));
+        die("2".mysqli_error($connect));
 
 
     }
     if(!$result_for_update){
 
 
-        die("".mysqli_error($connect));
+        die("3".mysqli_error($connect));
 
 
     }
