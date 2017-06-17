@@ -2188,6 +2188,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                 <div id="modal-form4" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
+                                            <form class="modal-content" action="profile" method="get" enctype="multipart/form-data">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <h4 class="blue bigger">Edit the following form fields</h4>
@@ -2237,7 +2238,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
-                                            </div>
+                                            </div></form>
                                         </div>
                                     </div>
                                 </div>
