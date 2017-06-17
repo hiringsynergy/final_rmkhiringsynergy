@@ -649,7 +649,7 @@ die(" " . mysqli_error($connect));
 
 
                             $company_id=$_GET['delete'];
-                            alert("ok");
+
 
                             include "../connect.php";
                             $query="DELETE FROM company_list where company_id={$company_id}";
