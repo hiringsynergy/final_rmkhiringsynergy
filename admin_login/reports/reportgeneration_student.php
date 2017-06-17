@@ -943,99 +943,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" >
+                                                        <select class="chosen-select form-control" id="opt"  onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" data-placeholder="Select Year of Graduation">
 
 
-
-                                                            <option value="hi">helo</option>
 
                                                             <?php
-
-//                                                            if($opted==''){
 
                                                                 ?>
-<!--                                                                <option value="">Please Select Company</option>-->
 
+                                                                <option value=""> </option>
                                                                 <?php
 
+                                                            }
 
+                                                               $company=explode(',',$placement_status);
 
-
-                                                                $company=explode(',',$placement_status);
-
-
-                                                                foreach ($company as $comp) {
-
-                                                                    if($comp!=$opted){
-
-                                                                        ?>
-                                                                        <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
+                                            foreach ($company as $comp){
 
 
 
 
-                                                                    <?php } }?>
-                                                            <?php
-//                                                            }
-//                                                            else{
-//
-//                                                                ?>
-<!---->
-<!---->
-<!---->
-<!--                                                                <option value="--><?php //echo $opted ?><!--">--><?php //echo $opted ?><!--</option>-->
-<!---->
-<!---->
-<!--                                                                --><?php
-//
-//
-//
-//
-//                                                                $company=explode(',',$placement_status);
-//
-//
-//                                                                foreach ($company as $comp) {
-//
-//                                                                    if($comp!=$opted){
-//
-//                                                                        ?>
-<!--                                                                        <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                                                                    --><?php //} }?>
-<!--                                                                --><?php
-//                                                            }
+                                                                    ?>
+
+                                                                    <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+
+
+                                                                    <?php
+
 
 
                                                             ?>
 
-
-
-
-
-
-
-<!--                                                            --><?php
-//
-//
-//
-//
-//                                                            $company=explode(',',$placement_status);
-//
-//
-//                                                            foreach ($company as $comp) {
-//
-//                                                                if($comp!=$opted){
-//
-//                                                            ?>
-<!--                                                            <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                                                            --><?php //} }?>
 
 
                                                         </select>
