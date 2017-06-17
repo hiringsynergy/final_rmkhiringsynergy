@@ -914,19 +914,15 @@ die(" " . mysqli_error($connect));
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
 <script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
-<!--[if lte IE 8]>
-<script src="assets/js/excanvas.min.js"></script>
-<![endif]-->
-<script src="assets/js/jquery-ui.custom.min.js"></script>
-<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
+<script src="../assets/js/wizard.min.js"></script>
+<script src="../assets/js/jquery.validate.min.js"></script>
+<script src="../assets/js/jquery-additional-methods.min.js"></script>
+<script src="../assets/js/bootbox.js"></script>
+<script src="../assets/js/jquery.maskedinput.min.js"></script>
+<script src="../assets/js/select2.min.js"></script>
 
-<script src="assets/js/chosen.jquery.min.js"></script>
-<script src="assets/js/jquery.sparkline.index.min.js"></script>
-<script src="assets/js/jquery.flot.min.js"></script>
-<script src="assets/js/jquery.flot.pie.min.js"></script>
-<script src="assets/js/jquery.flot.resize.min.js"></script>
-
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
 
 
 
