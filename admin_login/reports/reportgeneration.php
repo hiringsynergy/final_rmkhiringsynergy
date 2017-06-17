@@ -697,7 +697,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                 <div class="bigger-170 blue">
-                    Reports Genration
+                    Reports Generation
 
 
 
@@ -707,10 +707,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                 <div class="col-xs-6 col-xs-push-2">
 
+                    <label for="student">Student Report</label>
 
 
 
-                    <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+
+                    <select class="chosen-select form-control" id="student"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
 
 
@@ -775,6 +777,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="col-xs-6 col-xs-push-2">
 
+                            <label for="student">Student Report</label>
+
 
 
 
@@ -834,9 +838,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 <div class="col-xs-6 col-xs-push-2">
 
 
+                                    <label for="dept" class="bigger-120 orange">Student Report</label>
+                                    <div class="space-4"></div>
 
 
-                            <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                            <select class="chosen-select form-control" id="dept"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
 
 
