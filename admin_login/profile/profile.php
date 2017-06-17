@@ -468,7 +468,7 @@ if(isset($_FILES['image'])&& isset($_SESSION['user_role'])=='admin'){
 
 }
 
-if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
+if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='admin') {
 
     include "../connect.php";
 
