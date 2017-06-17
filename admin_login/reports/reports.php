@@ -155,7 +155,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 data.addRows([
 
                     ['Accepted', <?php echo $accepted ?>],
-                    ['Not Accepted', <?php echo $eligible ?>]
+                    ['Not Accepted', <?php echo $eligible-$accepted ?>]
                 ]);
 
                 // Set chart options
