@@ -2330,6 +2330,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                         <option value="Information Technology">Information Technology</option>
 									    
                                                                         <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+                                                                        <option value="Civil Engineering">Civil Engineering</option>
 									  
                                                                         <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
 								
