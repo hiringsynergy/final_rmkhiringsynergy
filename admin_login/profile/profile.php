@@ -220,6 +220,54 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
 }
 
+if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='admin') {
+
+    include "../connect.php";
+
+    $rollno = $_SESSION['user'];
+    $tname = $_SESSION['table_name'];
+    $skillset = $_POST['skillset'];
+    $duration = $_POST['duration'];
+    $vendor = $_POST['vendor'];
+    $coecert = $_POST['coecert'];
+    $select = "SELECT * from $tname where st_roll='{$rollno}'";
+    $select_result = mysqli_query($connect, $select);
+    $row = mysqli_fetch_assoc($select_result);
+
+
+    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
+    $result_change_skill = mysqli_query($connect, $query_change_skill);
+
+    if (!$result_change_skill) {
+
+        die("" . mysqli_error($connect));
+    }
+
+
+
+    ?>
+    <div class="alert alert-block alert-success">
+        <button type="button" class="close" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </button>
+
+        <i class="ace-icon fa fa-check green"></i>
+
+
+        <strong class="green">
+            Your request for change is processed.
+
+        </strong>
+
+
+    </div>
+    <?php
+
+    header("Location: profile?roll=$rollno");
+
+}
+
+
 
 
 
@@ -468,52 +516,6 @@ if(isset($_FILES['image'])&& isset($_SESSION['user_role'])=='admin'){
 
 }
 
-if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='admin') {
-
-    include "../connect.php";
-
-    $rollno = $_SESSION['user'];
-    $tname = $_SESSION['table_name'];
-    $skillset = $_POST['skillset'];
-    $duration = $_POST['duration'];
-    $vendor = $_POST['vendor'];
-    $coecert = $_POST['coecert'];
-    $select = "SELECT * from $tname where st_roll='{$rollno}'";
-    $select_result = mysqli_query($connect, $select);
-    $row = mysqli_fetch_assoc($select_result);
-
-
-    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
-    $result_change_skill = mysqli_query($connect, $query_change_skill);
-
-    if (!$result_change_skill) {
-
-        die("" . mysqli_error($connect));
-    }
-
-
-
-    ?>
-    <div class="alert alert-block alert-success">
-        <button type="button" class="close" data-dismiss="alert">
-            <i class="ace-icon fa fa-times"></i>
-        </button>
-
-        <i class="ace-icon fa fa-check green"></i>
-
-
-        <strong class="green">
-            Your request for change is processed.
-
-        </strong>
-
-
-    </div>
-    <?php
-
-    //  header("Location: profile?roll=$rollno");
-
-}
 
 
 
@@ -2186,6 +2188,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                 <div id="modal-form4" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
+                                            <form class="modal-content" action="profile" method="get" enctype="multipart/form-data">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <h4 class="blue bigger">Edit the following form fields</h4>
@@ -2235,7 +2238,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
-                                            </div>
+                                            </div></form>
                                         </div>
                                     </div>
                                 </div>
