@@ -2617,12 +2617,14 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-gendre">Gender</label>
-                                                                    <select class="form-control" name="gender" id="form-field-gendre" value="<?php echo $row['st_gender']?>">
+                                                                    <select class="form-control" name="gender" id="form-field-gendre " value="<?php echo $row['st_gender']?>">
                                                                         <?php if($row['st_gender']=='Male'){?>
-                                                                        <option value="Male">Male</option>
-                                                                        <option value="Female">Female</option><?php } else if($row['st_gender']=='Female'){?>
-                                                                        <option value="Female">Female</option>
-                                                                        <option value="Male">Male</option><?php }?>
+                                                                            <option value="Male">Male</option>
+                                                                            <option value="Female">Female</option>
+                                                                        <?php } else if($row['st_gender']=='Female'){?>
+                                                                            <option value="Female">Female</option>
+                                                                            <option value="Male">Male</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2729,20 +2731,26 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-state">State</label>
-                                                                    <select class="form-control" name="state" value="<?php echo $row['st_state']?>" id="form-field-state">
-                                                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                                        <option value="Kerala">Kerala</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" id="form-field-state" placeholder="" name="state" value="<?php echo $row['st_state']?>" />
+                                                                    </div>
+<!--                                                                    <select class="form-control" name="state" value="--><?php //echo $row['st_state']?><!--" id="form-field-state">-->
+<!--                                                                        <option value="Tamil Nadu">Tamil Nadu</option>-->
+<!--                                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>-->
+<!--                                                                        <option value="Kerala">Kerala</option>-->
+<!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-country">Country</label>
-                                                                    <select disabled class="form-control" id="form-field-country">
-                                                                        <option value="India">India</option>
-                                                                    </select>
+                                                                    <div>
+                                                                        <input type="text" disabled id="form-field-country" placeholder="" name="country" value="<?php echo "India"?>" />
+                                                                    </div>
+<!--                                                                    <select disabled class="form-control" id="form-field-country">-->
+<!--                                                                        <option value="India">India</option>-->
+<!--                                                                    </select>-->
                                                                 </div>
                                                             </div>
 
