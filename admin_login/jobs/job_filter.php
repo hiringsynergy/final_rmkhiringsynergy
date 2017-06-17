@@ -535,20 +535,20 @@ if(isset($_GET['filter_job'])){
 
     if(!$result_for_tablemap){
 
-        die("".mysqli_error($connect));
+        die("1".mysqli_error($connect));
 
 
     }
     if(!$result_for_alter){
 
-        die("".mysqli_error($connect));
+        die("2".mysqli_error($connect));
 
 
     }
     if(!$result_for_update){
 
 
-        die("".mysqli_error($connect));
+        die("3".mysqli_error($connect));
 
 
     }
