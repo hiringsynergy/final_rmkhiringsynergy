@@ -645,7 +645,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
                         include "../connect.php";
-                        $query_option="SELECT * FROM table_map";
+                        $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                         $result_option=mysqli_query($connect, $query_option);
                         while($row_option=mysqli_fetch_assoc($result_option)){
 
@@ -720,7 +720,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 }
 
                                 include "../connect.php";
-                                $query_option="SELECT * FROM table_map";
+                                $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                                 $result_option=mysqli_query($connect, $query_option);
                                 while($row_option=mysqli_fetch_assoc($result_option)){
 
@@ -783,7 +783,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 }
 
                                 include "../connect.php";
-                                $query_option="SELECT * FROM table_map";
+                                $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                                 $result_option=mysqli_query($connect, $query_option);
                                 while($row_option=mysqli_fetch_assoc($result_option)){
 
