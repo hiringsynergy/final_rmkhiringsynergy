@@ -2522,7 +2522,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
                                 <div id="modal-form4" class="modal" tabindex="-1">
                                     <div class="modal-dialog">
 
-                                <form class="modal-content" action="profile" method="post" enctype = "multipart/form-data">
+                                <form class="modal-content" action="skill" method="post" enctype = "multipart/form-data">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
