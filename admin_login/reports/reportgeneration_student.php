@@ -943,7 +943,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" onselect="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" >
+                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
 
 
 
@@ -983,6 +983,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                                                 <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
+
 
                                                                 <?php
 
