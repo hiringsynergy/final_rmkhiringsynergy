@@ -70,7 +70,7 @@ if (isset($_GET['personaldetails'])&& isset($_SESSION['user_role'])=='admin') {
     $hometown = $_GET['hometown'];
     $premanaddress1 = $_GET['premanaddress1'];
     $premanaddress2 = $_GET['premanaddress2'];
-    echo $clgmail = $GET['collegemailid'];
+    $clgmail = $GET['collegemailid'];
     $city = $_GET['city'];
     $state = $_GET['state'];
     $pincode  = $_GET['pincode'];
@@ -2617,13 +2617,17 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-gendre">Gender</label>
+<!--                                                                    <div>-->
+<!--                                                                        <input type="text" id="form-field-gendre" placeholder="" name="fathername" value="--><?php //echo $row['st_gender']?><!--" />-->
+<!--                                                                    </div>-->
+
                                                                     <select class="form-control" name="gender" id="form-field-gendre " value="<?php echo $row['st_gender']?>">
-                                                                        <?php if($row['st_gender']=='Male'){?>
-                                                                            <option value="Male">Male</option>
-                                                                            <option value="Female">Female</option>
-                                                                        <?php } else if($row['st_gender']=='Female'){?>
-                                                                            <option value="Female">Female</option>
-                                                                            <option value="Male">Male</option>
+                                                                        <?php if($row['st_gender']=='MALE'){?>
+                                                                            <option value="MALE">Male</option>
+                                                                            <option value="FEMALE">Female</option>
+                                                                        <?php } else if($row['st_gender']=='FEMALE'){?>
+                                                                            <option value="FEMALE">Female</option>
+                                                                            <option value="MALE">Male</option>
                                                                         <?php }?>
                                                                     </select>
                                                                 </div>

@@ -2116,7 +2116,7 @@ foreach($checkbox as $list){
 
                     //,
                     //"sScrollY": "200px",
-                    //"bPaginate": false,
+                    "bPaginate": false,
 
                     //"sScrollX": "100%"
                     //"sScrollXInner": "120%",
