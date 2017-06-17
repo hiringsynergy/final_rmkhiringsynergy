@@ -31,7 +31,7 @@ if (isset($_GET['profile'])&& isset($_SESSION['user_role'])=='admin') {
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}',st_collegename='{$collegename}' WHERE st_roll='{$rollno}'";
+    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}' WHERE st_roll='{$rollno}'";
     $result_change_profile = mysqli_query($connect, $query_change_profile);
 
     if (!$result_change_profile) {
