@@ -93,6 +93,12 @@ foreach($checkbox as $list) {
     
 echo "end";
 
+if(!$result_unplaced){
+
+
+    die("eror".mysqli_error());
+}
+
 
 
 }
