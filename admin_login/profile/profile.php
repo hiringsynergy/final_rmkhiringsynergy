@@ -518,7 +518,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
 
 
 
-?>
+
 
 if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 {
