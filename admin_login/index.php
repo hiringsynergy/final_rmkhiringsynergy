@@ -883,8 +883,6 @@ if(isset($_GET['delete']) && isset($_SESSION['user_role'])=='admin' )
                                                     $result_insert=mysqli_query($connect, $query_insert);
                                                     $min=0;
                                                     while ($row=mysqli_fetch_assoc($result_insert)){
-                                                        if()
-
 
 
 
