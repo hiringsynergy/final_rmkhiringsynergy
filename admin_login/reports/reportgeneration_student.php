@@ -950,7 +950,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                             <?php
 
-                                                            if($opted==''){
+//                                                            if($opted==''){
 
                                                                 ?>
 <!--                                                                <option value="">Please Select Company</option>-->
@@ -975,37 +975,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     <?php } }?>
                                                             <?php
-                                                            }
-                                                            else{
-
-                                                                ?>
-
-
-
-                                                                <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
-
-
-                                                                <?php
-
-
-
-
-                                                                $company=explode(',',$placement_status);
-
-
-                                                                foreach ($company as $comp) {
-
-                                                                    if($comp!=$opted){
-
-                                                                        ?>
-                                                                        <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
-
-
-
-
-                                                                    <?php } }?>
-                                                                <?php
-                                                            }
+//                                                            }
+//                                                            else{
+//
+//                                                                ?>
+<!---->
+<!---->
+<!---->
+<!--                                                                <option value="--><?php //echo $opted ?><!--">--><?php //echo $opted ?><!--</option>-->
+<!---->
+<!---->
+<!--                                                                --><?php
+//
+//
+//
+//
+//                                                                $company=explode(',',$placement_status);
+//
+//
+//                                                                foreach ($company as $comp) {
+//
+//                                                                    if($comp!=$opted){
+//
+//                                                                        ?>
+<!--                                                                        <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                                                                    --><?php //} }?>
+<!--                                                                --><?php
+//                                                            }
 
 
                                                             ?>
