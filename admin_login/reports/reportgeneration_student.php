@@ -651,7 +651,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3 class="header smaller lighter blue">Admin Panel</h3>
+                                <h3 class="header smaller lighter blue">Students Reports</h3>
 
 
 
@@ -806,6 +806,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+
                                                 if($current=='UG'){
 
                                                     //mapping ug Department
@@ -859,9 +861,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     </td>
                                                   
                                                     <td><?php echo $name  ?></td>
+                                                    <td><?php echo  $placement_status ?></td>
                                                     <td><?php echo  $gender ?></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <?php
+
+                                                    if($current=='UG'){
+                                                        ?>
+                                                        <td><?php echo $ugspecial  ?></td>
+                                                        <?
+                                                    }
+                                                    else{
+                                                     ?>
+
+                                                        <td><?php echo $pgspecial  ?></td>
+
+                                                       <?
+                                                    }
+
+
+                                                    ?>
+
+
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
