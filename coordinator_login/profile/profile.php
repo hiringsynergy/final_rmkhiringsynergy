@@ -218,7 +218,7 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
 }
 
-if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
+if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='coordinator') {
 
     include "../connect.php";
 
@@ -244,6 +244,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
 
 
     ?>
+
     <div class="alert alert-block alert-success">
         <button type="button" class="close" data-dismiss="alert">
             <i class="ace-icon fa fa-times"></i>

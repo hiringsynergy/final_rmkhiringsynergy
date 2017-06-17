@@ -60,7 +60,7 @@ foreach($checkbox as $list) {
 //    $company_new = $company_old . $company;
     $company_old = $row['st_placementstatus'];
     $exp = explode(',', $company_old);
-    $company_new = "";
+    $company_new ="";
     $count = count($exp);
     $i=0;
     foreach ($exp as $r) {
