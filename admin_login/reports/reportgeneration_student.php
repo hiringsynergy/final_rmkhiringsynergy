@@ -950,7 +950,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select class="chosen-select form-control" id="opt"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                                                        <select class="chosen-select form-control" id="opt"  onchange="showrep(this.value)" data-placeholder="Select Year of Graduation">
 
 
 
@@ -973,7 +973,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     ?>
 
-                                                                    <option onclick="showrep('<?php echo $company[$i] ?>')" value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
+                                                                    <option value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
 
 
                                                                     <?php
