@@ -75,6 +75,7 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
+    echo "?><br><?";
     echo $company_new;
 
     $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' st_placementstatus=$company_new WHERE st_roll='$list' ";
