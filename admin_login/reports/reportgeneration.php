@@ -838,10 +838,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 <div class="col-xs-6 col-xs-push-2">
 
 
-                                    <label for="student" class="bigger-110 orange">Student Report</label>
+                                    <label for="dept" class="bigger-130 orange">Student Report</label>
 
 
-                            <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                            <select class="chosen-select form-control" id="dept"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
 
 
