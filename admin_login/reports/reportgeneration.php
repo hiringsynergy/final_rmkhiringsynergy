@@ -61,9 +61,25 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             location.href = "../settings";
 
         }
-        function showreports(){
+        function showstudent(){
 
-            var e = document.getElementById("form-field-select-3");
+            var e = document.getElementById("student");
+            var strUser = e.options[e.selectedIndex].value;
+
+            location.href = "reportgeneration?year="+strUser;
+
+        }
+        function showcompany(){
+
+            var e = document.getElementById("company");
+            var strUser = e.options[e.selectedIndex].value;
+
+            location.href = "reportgeneration?year="+strUser;
+
+        }
+        function showdept(){
+
+            var e = document.getElementById("dept");
             var strUser = e.options[e.selectedIndex].value;
 
             location.href = "reportgeneration?year="+strUser;
@@ -595,7 +611,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <div class="space-16"></div>
 
 
-                //student reports.....
+<!--                student reports.....-->
 
 
                 <div class="col-xs-6 col-xs-push-2">
@@ -606,7 +622,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    <select class="chosen-select form-control" id="student"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                    <select class="chosen-select form-control" id="student"  onchange="showstudent()" data-placeholder="Select Year of Graduation">
 
 
 
@@ -660,7 +676,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                //company reports.....
+<!--               company reports.....-->
 
 
 
@@ -681,7 +697,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                            <select class="chosen-select form-control" id="company"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                            <select class="chosen-select form-control" id="company"  onchange="showcompany()" data-placeholder="Select Year of Graduation">
 
 
 
@@ -731,7 +747,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                        //department reports.......
+<!--                       department reports.......-->
 
 
                         <div class="row">
@@ -744,7 +760,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                     <div class="space-4"></div>
 
 
-                            <select class="chosen-select form-control" id="dept"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+                            <select class="chosen-select form-control" id="dept"  onchange="showdept()" data-placeholder="Select Year of Graduation">
 
 
 
