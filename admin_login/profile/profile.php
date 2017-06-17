@@ -3169,46 +3169,31 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                     <!-- page specific plugin scripts -->
 
 
-                    <script src="../assets/js/jquery.dataTables.min.js"></script>
-                    <script src="../assets/js/jquery.dataTables.bootstrap.min.js"></script>
-                    <script src="../assets/js/dataTables.buttons.min.js"></script>
-                    <script src="../assets/js/buttons.flash.min.js"></script>
-                    <script src="../assets/js/buttons.html5.min.js"></script>
-                    <script src="../assets/js/buttons.print.min.js"></script>
-                    <script src="../assets/js/buttons.colVis.min.js"></script>
-                    <script src="../assets/js/dataTables.select.min.js"></script>
-                    <script src="../assets/js/jquery.colorbox.min.js"></script>
+                    <script src="../assets/js/wizard.min.js"></script>
+                    <script src="../assets/js/jquery.validate.min.js"></script>
+                    <script src="../assets/js/jquery-additional-methods.min.js"></script>
+                    <script src="../assets/js/bootbox.js"></script>
+                    <script src="../assets/js/jquery.maskedinput.min.js"></script>
+                    <script src="../assets/js/select2.min.js"></script>
 
+                    <script src="../assets/js/jquery-ui.min.js"></script>
+                    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
 
+                    <!-- page specific plugin styles -->
 
-                    <script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-                    <script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-                    <script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-                    <script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-                    <script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-                    <script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-                    <script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-                    <script src="../../vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
-                    <script src="../../vendors/jszip/dist/jszip.min.js"></script>
-                    <script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
-                    <script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
 
                     <!--[if lte IE 8]>
                     <script src="../assets/js/excanvas.min.js"></script>
                     <![endif]-->
                     <script src="../assets/js/jquery-ui.custom.min.js"></script>
                     <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-                    <script src="../assets/js/jquery.gritter.min.js"></script>
-                    <script src="../assets/js/bootbox.js"></script>
                     <script src="../assets/js/jquery.easypiechart.min.js"></script>
-                    <script src="../assets/js/bootstrap-datepicker.min.js"></script>
-                    <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
-                    <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
-                    <script src="../assets/js/select2.min.js"></script>
-                    <script src="../assets/js/spStatus.min.js"></script>
-                    <script src="../assets/js/bootstrap-editable.min.js"></script>
-                    <script src="../assets/js/ace-editable.min.js"></script>
-                    <script src="../assets/js/jquery.maskedinput.min.js"></script>
+
+                    <script src="../assets/js/chosen.jquery.min.js"></script>
+                    <script src="../assets/js/jquery.sparkline.index.min.js"></script>
+                    <script src="../assets/js/jquery.flot.min.js"></script>
+                    <script src="../assets/js/jquery.flot.pie.min.js"></script>
+                    <script src="../assets/js/jquery.flot.resize.min.js"></script>
 
                     <!-- ace scripts -->
                     <script src="../assets/js/ace-elements.min.js"></script>
