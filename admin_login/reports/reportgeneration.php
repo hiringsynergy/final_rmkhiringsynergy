@@ -829,7 +829,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             <div class="space-16"></div>
                         </div>
 
-                        <div class="row">
+                        <div class="row col-xs-12">
                             <div class="col-xs-6 col-xs-push-2">
 
 
