@@ -884,7 +884,30 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                     <td></td>
                                                     <td></td>
-                                                    <td></td>
+                                                    <td>
+                                                        <select name="opted" class="form-control" id="form-field-q1" value="" data-placeholder="Please select Company">
+
+                                                            <option value=""></option>
+
+                                                            <?php
+
+
+                                                            $company=explode(',',$placement_status);
+
+
+                                                            foreach ($company as $comp) {
+
+                                                            ?>
+                                                            <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
+
+
+                                                            <?php } ?>
+
+
+                                                        </select>
+                                                        
+                                                        
+                                                    </td>
 
                                                     
                                                     
