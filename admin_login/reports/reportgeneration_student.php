@@ -945,7 +945,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                         if($opted!=''){
 
                                                             include "../connect.php";
-                                                            $query_salary="SELECT * FROM jobs WHERE company=".$opted;
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
                                                             $result_salary=mysqli_query($connect, $query_salary);
 
                                                             $row_salary=mysqli_fetch_assoc($result_salary);
@@ -973,7 +973,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                         if($opted!=''){
 
                                                             include "../connect.php";
-                                                            $query_salary="SELECT * FROM jobs WHERE company=".$opted;
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
                                                             $result_salary=mysqli_query($connect, $query_salary);
 
                                                             $row_salary=mysqli_fetch_assoc($result_salary);
