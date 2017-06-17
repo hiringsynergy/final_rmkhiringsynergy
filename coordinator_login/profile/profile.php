@@ -272,7 +272,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
 
 
 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -924,7 +924,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                     </button>
 
 
-                                    Please enter the respective department register number
+                                    This register number does not exists.
                                 </div>
                                            </div> <?php
                                         }
