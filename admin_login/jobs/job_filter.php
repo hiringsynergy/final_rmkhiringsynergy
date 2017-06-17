@@ -434,6 +434,27 @@ if(isset($_GET['filter_job'])){
 
 
         //update table
+    $str='';
+
+    if($historyofarrears!='na'){
+
+        $str.=' and st_historyofarrears<='.$historyofarrears;
+
+
+
+
+    }
+    if($standingarrears!='na'){
+
+        $str.=' and st_standingarrears<='.$standingarrears;
+
+
+    }
+    if($has_job!='na'){
+
+        $str.=' and job_count<='.$has_job;
+
+    }
 
 
 
@@ -441,7 +462,7 @@ if(isset($_GET['filter_job'])){
 
 
     //job for ug update
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage and st_standingarrears<=$standingarrears and st_historyofarrears<=$historyofarrears and job_count<=$has_job and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
@@ -1285,6 +1306,7 @@ if(isset($_GET['filter_job'])){
                                                          
 
                                                         <select class="chosen-select"  name="hasjob"  id="form-field-select-3" data-placeholder="Please Select...">
+                                                                <option value="na">Please Select</option>
                                                                 <option value="0">0</option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -1373,7 +1395,8 @@ if(isset($_GET['filter_job'])){
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
 
                                                                 <select class="chosen-select form-control" name="standingarrears" id="form-field-select-3" data-placeholder="Please Select...">
-                                                                    <option value="0">Nil</option>
+                                                                    <option value="na">Please Select</option>
+                                                                    <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
@@ -1389,7 +1412,8 @@ if(isset($_GET['filter_job'])){
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
                                                                
                                                                  <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
-                                                                    <option value="0">Nil</option>
+                                                                    <option value="na">Please Select</option>
+                                                                     <option value="0">0</option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
                                                                     <option value="3">3</option>
