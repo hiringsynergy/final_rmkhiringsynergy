@@ -555,7 +555,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "547567";
 
         header("Location: filter_result?jid=$id");
 
