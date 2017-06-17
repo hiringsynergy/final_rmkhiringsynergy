@@ -2216,8 +2216,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-yop3">Medium</label>
                                                                     <select name="s10thmedium" class="form-control" id="form-field-q1" value="<?php echo $row['st_10thmedium']?>">
-                                                                        <option value="English">English</option>
-                                                                        <option value="Tamil">Tamil</option>
+                                                                        <?php if($row['st_10thmedium']=='English'){?>
+                                                                            <option value="English">English</option>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                        <?php } else if($row['st_10thmedium']=='Tamil'){?>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                            <option value="English">English</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2260,8 +2265,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-yop3">Medium</label>
                                                                     <select name="s12thmedium" class="form-control" id="form-field-q1" value="<?php echo $row['st_12thmedium']?>">
-                                                                        <option value="English">English</option>
-                                                                        <option value="Tamil">Tamil</option>
+                                                                        <?php if($row['st_12thmedium']=='English'){?>
+                                                                            <option value="English">English</option>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                        <?php } else if($row['st_12thmedium']=='Tamil'){?>
+                                                                            <option value="Tamil">Tamil</option>
+                                                                            <option value="English">English</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2294,8 +2304,13 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-q1">Qualification</label>
                                                                     <select name="ugqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_ugdegree']?>">
-                                                                        <option value="B.E">B.E</option>
-                                                                        <option value="B.Tech">B.Tech</option>
+                                                                        <?php if($row['st_ugdegree']=='B.E'){?>
+                                                                            <option value="B.E">B.E</option>
+                                                                            <option value="B.Tech">B.Tech</option>
+                                                                        <?php } else if($row['st_ugdegree']=='B.Tech'){?>
+                                                                            <option value="B.Tech">B.Tech</option>
+                                                                            <option value="B.E">B.E</option>
+                                                                        <?php }?>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -2306,6 +2321,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
+
+                                                                        <option value="<?php echo $row['st_ugspecialization']?>"></option>
 									    
 									   
                                                                         <option value="Computer Science and Engineering">Computer Science Engineering</option>
