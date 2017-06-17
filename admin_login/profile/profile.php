@@ -2350,6 +2350,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <label for="form-field-c1">Institution</label>
 
                                                                     <select name="ugclgname" class="form-control" id="form-field-c1" value="<?php echo $row['st_ugcollegename']?>">
+                                                                        <option value="<?php echo $row['st_ugcollegename']?>"></option>
                                                                         <option value="RMK Engineering College">RMK Engineering College</option>
                                                                         <option value="RMD Engineering College">RMD Engineering College</option>
                                                                         <option value="RMK College of Engineering and Technology">RMK College of Engineering and Technology</option>
@@ -2475,7 +2476,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label for="form-field-q1">Qualification</label>
                                                                     <select name="pgqualification" class="form-control" id="form-field-q1" value="<?php echo $row['st_pgqualification']?>">
-                                                                        <option value=""></option>
+                                                                        <option value="<?php echo $row['st_pgqualification']?>"></option>
                                                                         <option value="M.E">M.E</option>
                                                                         <option value="MBA">MBA</option>
                                                                     </select>
@@ -2486,12 +2487,30 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 <div>
                                                                     <label  for="form-field-b1">Branch</label>
                                                                     <select name="pgbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_pgspecialization']?>">
-                                                                        <option value="cse">Computer Science Engineering</option>
-                                                                        <option value="it">Information Technology</option>
-                                                                        <option value="mech">Mechanical Engineering</option>
-                                                                        <option value="ece">Electronics and Communication Engineering</option>
-                                                                        <option value="eee">Electrical and Electronics Engineering</option>
-                                                                        <option value="eie">Electronics and Instrumentation Engineering</option>
+                                                                        <option value="<?php echo $row['st_pgspecialization']?>"></option>
+
+                                                                        <option value="Applied Electronics">Applied Electronics</option>
+
+                                                                        <option value="Power Electronics and Drives">Power Electronics and Drives</option>
+
+                                                                        <option value="VLSI Design">VLSI Design</option>
+
+                                                                        <option value="Computer Science and Engineering">Computer Science Engineering</option>
+
+                                                                        <option value="Information Technology">Information Technology</option>
+
+                                                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+
+                                                                        <option value="Civil Engineering">Civil Engineering</option>
+
+                                                                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+
+                                                                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+
+                                                                        <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+
+
+
                                                                     </select>
                                                                 </div>
                                                             </div>
