@@ -69,6 +69,9 @@ foreach($checkbox as $list){
     
     $query_unplaced="UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
     $result_unplaced=mysqli_query($connect, $query_unplaced);
+
+    $query_unplaced="UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+    $result_unplaced=mysqli_query($connect, $query_unplaced);
     
 echo "end";
 
