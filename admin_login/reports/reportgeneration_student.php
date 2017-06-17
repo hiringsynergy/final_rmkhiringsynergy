@@ -958,16 +958,20 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                $company=explode(',',$placement_status);
 
-                                                                foreach ($company as $comp) {
+                                                               $i=0;
+
+
+                                                                while($i<count($company)){
 
 
                                                                     ?>
 
-                                                                    <option value="<?php echo $sno ?>"><?php echo $comp ?>  </option>
+                                                                    <option value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
 
 
                                                                     <?php
 
+                                                                    ++$i;
                                                                 }
 
 
