@@ -2466,6 +2466,9 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 </div>
                                                             </div>
 
+                                                            <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
+                                                            ?>
+
                                                             <div class="form-group">
                                                                 <div>
                                                                     <h1>PG</h1>
@@ -2590,6 +2593,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            <?php }?>
 
                                                             <div class="space-4"></div>
 
