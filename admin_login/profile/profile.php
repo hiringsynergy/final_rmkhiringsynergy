@@ -31,7 +31,7 @@ if (isset($_GET['profile'])&& isset($_SESSION['user_role'])=='admin') {
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}',st_collegename='{$collegename}' WHERE st_roll='{$rollno}'";
+    $query_change_profile = "UPDATE $tname SET  st_name='{$fullname}',st_phone='{$phoneno}',st_email='{$emailid}',st_cgpa='{$cgpa}' WHERE st_roll='{$rollno}'";
     $result_change_profile = mysqli_query($connect, $query_change_profile);
 
     if (!$result_change_profile) {
@@ -2830,11 +2830,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 </div>
                                                             </div>
 
-<!--                                                            <div class="form-group">-->
-<!--                                                                <div>-->
-<!--                                                                    <label for="form-field-c1">College Name</label>-->
-<!---->
-<!--                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
+                                                            <div class="form-group">
+                                                                <div>
+                                                                    <label for="form-field-c1">College Name</label>
+
+                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
 <!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
 //                                                                        { ?>
 <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
@@ -2853,9 +2853,9 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 <!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
 <!---->
 <!--                                                                        --><?php //}?>
-<!--                                                                    </select>-->
-<!--                                                                </div>-->
-<!--                                                            </div>-->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
 
                                                             <div class="form-group">
                                                                 <label for="control-label bolder b">Anna University</label>
