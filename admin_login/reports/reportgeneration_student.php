@@ -86,6 +86,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         }
 
+        function showreports(){
+
+            var e = document.getElementById("opt");
+            var strUser = e.options[e.selectedIndex].value;
+
+            location.href = "admin_panel?year="+strUser;
+
+        }
+
 
 
 
@@ -631,6 +640,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 </div>
                 <div class="space-16"></div>
 
+                
+
 
 
 
@@ -803,6 +814,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 $aadhar=$row['st_aadharno'];
                                                 $passport=$row['st_passportno'];
                                                 $pan=$row['st_panno'];
+                                                $opted=$row['st_opted'];
 
 
 
@@ -885,11 +897,43 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" class="form-control chosen-select " id="form-field-q1" value="" data-placeholder="Please select Company">
+                                                        <select name="opted" onchange="showreports()" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
 
-                                                            <option value="na">Please Select Company</option>
+
+
 
                                                             <?php
+
+                                                            if($opted==''){
+
+                                                                ?>
+                                                                <option value="na">Please Select Company</option>
+
+                                                            <?
+                                                            }
+                                                            else{
+
+                                                                ?>
+
+
+
+                                                                <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
+
+                                                                <?
+                                                            }
+
+
+                                                            ?>
+
+
+
+
+
+
+
+                                                            <?php
+
+
 
 
                                                             $company=explode(',',$placement_status);
@@ -897,9 +941,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                             foreach ($company as $comp) {
 
+                                                                if($comp!=$opted){
+
                                                             ?>
                                                             <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
 
+
+                                                                    }
 
                                                             <?php } ?>
 
@@ -945,11 +993,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
                                     </div>
                                 <?php } ?>
 
                             </div>
                         </div>
+
 
 
 
@@ -973,6 +1023,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </div>
         </div>
     </div>
+
 
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
