@@ -690,6 +690,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                 <div class="space-6"></div>
+                                <br>
+                                <br>
 
 
 
