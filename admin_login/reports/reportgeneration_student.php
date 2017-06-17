@@ -668,7 +668,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                 <?php
-                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
+                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' )
+
+
+                                {
 
 
                                     $table=$_GET['year'];
@@ -881,14 +884,14 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     if($current=='UG'){
                                                         ?>
                                                         <td><?php echo $ugspecial  ?></td>
-                                                        <?
+                                                        <?php
                                                     }
                                                     else{
                                                      ?>
 
                                                         <td><?php echo $pgspecial  ?></td>
 
-                                                       <?
+                                                       <?php
                                                     }
 
 
@@ -910,7 +913,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                                 ?>
                                                                 <option value="na">Please Select Company</option>
 
-                                                            <?
+                                                            <?php
                                                             }
                                                             else{
 
@@ -920,7 +923,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                 <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
 
-                                                                <?
+                                                                <?php
                                                             }
 
 
@@ -996,7 +999,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                     </div>
-                                <?php }} ?>
+                                <?php }  } ?>
 
                             </div>
                         </div>
