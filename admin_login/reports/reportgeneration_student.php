@@ -954,13 +954,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                                 <option value=""> </option>
                                                                 <?php
 
-                                                            }
+                                                            
 
                                                                $company=explode(',',$placement_status);
 
-                                            foreach ($company as $comp){
-
-
+                                                                foreach ($company as $comp) {
 
 
                                                                     ?>
@@ -970,6 +968,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     <?php
 
+                                                                }
 
 
                                                             ?>
