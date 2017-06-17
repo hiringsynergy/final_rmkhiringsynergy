@@ -434,7 +434,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "1232";
 
         //update table
     $str='';
@@ -477,7 +477,7 @@ if(isset($_GET['filter_job'])){
 
 
     //job for ug update
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_gender in ('$get_gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+       echo $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_gender in ('$get_gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
@@ -531,7 +531,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "success";
 
     if(!$result_for_tablemap){
 
@@ -555,7 +555,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "547567";
 
         header("Location: filter_result?jid=$id");
 
