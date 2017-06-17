@@ -90,8 +90,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-            alert(strUser+" "+roll+" "+yr);
-//            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
+//            alert(strUser+" "+roll+" "+yr);
+            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
 
         }
 
