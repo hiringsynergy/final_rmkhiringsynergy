@@ -459,7 +459,7 @@ if(isset($_GET['filter_job'])){
 
     }
 
-    if($get_gapinstudy!='na'){
+    if($gapinstudy!='na'){
 
 
         $str.=' and st_gapinstudies<='.$gapinstudy;
