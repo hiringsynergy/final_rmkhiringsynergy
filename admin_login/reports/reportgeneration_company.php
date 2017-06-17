@@ -105,6 +105,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
 
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+
+
+
+
+
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js">"></script>
+
+
     <!-- text fonts -->
     <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css" />
 
@@ -611,72 +632,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <div class="space-16"></div>
 
 
-                <!--                student reports.....-->
-
-
-                <div class="col-xs-6 col-xs-push-2">
-
-                    <label for="student" class="bigger-120 orange">Student Reports</label>
-                    <div class="space-4"></div>
 
 
 
 
-                    <select class="chosen-select form-control" id="student"  onchange="showstudent()" data-placeholder="Select Year of Graduation">
-
-
-
-                        <?php
-                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-                            ?>
-
-                            <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                            <?php
-
-                        }
-                        else{
-                            ?>
-
-                            <option value=""> </option>
-                            <?php
-
-                        }
-
-                        include "../connect.php";
-                        $query_option="SELECT * FROM table_map";
-                        $result_option=mysqli_query($connect, $query_option);
-                        while($row_option=mysqli_fetch_assoc($result_option)){
-
-                            if($row_option['table_value']!=$year_of_graduation) {
-
-
-                                ?>
-
-                                <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
-
-
-                                <?php
-                            }
-                        }
-
-                        ?>
-
-
-
-                    </select>
-
-                    <div class="space-16"></div>
-                </div>
-
-
-                <br/>
-
-
-
-
-                <!--               company reports.....-->
 
 
 
@@ -690,14 +649,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
 
-                        <div class="col-xs-6 col-xs-push-2">
-
-                            <label for="company" class="bigger-120 orange">Company Reports</label>
-                            <div class="space-4"></div>
-
-
-
-                            <select class="chosen-select form-control" id="company"  onchange="showcompany()" data-placeholder="Select Year of Graduation">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3 class="header smaller lighter blue">Students Reports</h3>
 
 
 
@@ -705,111 +659,263 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
 
+                                    $table=$_GET['year'];
+
+
+
                                     ?>
+                                    <div class="clearfix">
+                                        <div class="pull-right tableTools-container"></div>
+                                    </div>
 
-                                    <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                                    <?php
+                                    <div class="table-header">
+                                        Results for "Students List"
+                                    </div>
 
-                                }
-                                else{
-                                    ?>
+                                    <!-- div.table-responsive -->
 
-                                    <option value=""> </option>
-                                    <?php
+                                    <!-- div.dataTables_borderWrap -->
+                                    <div>
+                                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tr>
+                                                <!--                                            <th class="center">-->
+                                                <!--                                                <label class="pos-rel">-->
+                                                <!--                                                    <input type="checkbox" class="ace" />-->
+                                                <!--                                                    <span class="lbl"></span>-->
+                                                <!--                                                </label>-->
+                                                <!--                                            </th>-->
 
-                                }
+                                                <th>Serial No.</th>
 
-                                include "../connect.php";
-                                $query_option="SELECT * FROM table_map";
-                                $result_option=mysqli_query($connect, $query_option);
-                                while($row_option=mysqli_fetch_assoc($result_option)){
+                                                <th>Company Name</th>
 
-                                    if($row_option['table_value']!=$year_of_graduation) {
+                                                <th>Date</th>
 
-
-                                        ?>
-
-                                        <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
-
-
-                                        <?php
-                                    }
-                                }
-
-                                ?>
-
-
-
-                            </select>
-
-                            <div class="space-16"></div>
-                        </div>
-
-
-
-                        <!--                       department reports.......-->
+                                                <th>IT/Core/Product</th>
+                                                <th>Salary Per Annum </th>
+                                                <th>CSE</th>
+                                                <th>IT</th>
+                                                <th>ECE</th>
+                                                <th>EEE</th>
+                                                <th>EIE</th>
+                                                <th>Mech.</th>
+                                                <th>Civil</th>
+                                                <th>ME</th>
+                                                <th>Total</th>
 
 
-                        <div class="row">
+                                            </tr>
+                                            </thead>
 
-                            <div class="col-xs-12">
-                                <div class="col-xs-6 col-xs-push-2">
+                                            <tbody>
 
-
-                                    <label for="dept" class="bigger-120 orange">Department Reports</label>
-                                    <div class="space-4"></div>
-
-
-                                    <select class="chosen-select form-control" id="dept"  onchange="showdept()" data-placeholder="Select Year of Graduation">
-
-
-
-                                        <?php
-                                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-                                            ?>
-
-                                            <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
                                             <?php
 
-                                        }
-                                        else{
-                                            ?>
+                                            include "../connect.php";
 
-                                            <option value=""> </option>
-                                            <?php
+                                            $query="select * from ".$table." ";
+                                            $result=mysqli_query($connect,$query);
+                                            $count_sno=1;
 
-                                        }
 
-                                        include "../connect.php";
-                                        $query_option="SELECT * FROM table_map";
-                                        $result_option=mysqli_query($connect, $query_option);
-                                        while($row_option=mysqli_fetch_assoc($result_option)){
+                                            while($row=mysqli_fetch_assoc($result))  {
 
-                                            if($row_option['table_value']!=$year_of_graduation) {
+
+
+                                                $sno=$count_sno ;
+                                                $roll=$row['st_roll'];
+                                                $first_name=$row['st_firstname'];
+                                                $middle_name=$row['st_middlename'];
+                                                $last_name=$row['st_lastname'];
+                                                $name=$row['st_name'];
+                                                $gender=$row['st_gender'];
+                                                $father_name=$row['st_fathername'];
+                                                $father_occupation=$row['st_fatheroccupation'];
+                                                $father_mobile=$row['st_fathernumber'];
+                                                $mother_name=$row['st_mothername'];
+                                                $mother_occupation=$row['st_motheroccupation'];
+                                                $mother_mobile=$row['st_mothernumber'];
+                                                $college_mail=$row['st_clgemail'];
+                                                $email=$row['st_email'];
+                                                $phone=$row['st_phone'];
+                                                $dob=$row['st_dob'];
+                                                $nationality=$row['st_nationality'];
+                                                $caste=$row['st_caste'];
+                                                $college_name=$row['st_collegename'];
+                                                $university=$row['st_university'];
+                                                $_10percentage=$row['st_10thpercentage'];
+                                                $_10institution=$row['st_10thinstitution'];
+                                                $_10boardofstudy=$row['st_10thboardofstudy'];
+                                                $_10medium=$row['st_10thmedium'];
+                                                $_10yearofpassing=$row['st_10thyearofpassing'];
+                                                $_12percentage=$row['st_12thpercentage'];
+                                                $_12institution=$row['st_12thinstitution'];
+                                                $_12boardofstudy=$row['st_12thboardofstudy'];
+                                                $_12medium=$row['st_12thmedium'];
+                                                $_12yearofpassing=$row['st_12thyearofpassing'];
+                                                $dippercentage=$row['st_dippercentage'];
+                                                $dipspecialization=$row['st_dipspecialization'];
+                                                $dipinstitution=$row['st_dipinstitution'];
+                                                $dipyearofpassing=$row['st_dipyearofpassing'];
+                                                $current=$row['st_currentlypursuing'];
+                                                $ugdeg=$row['st_ugdegree'];
+                                                $ugspecial=$row['st_ugspecialization'];
+                                                $ug1sem=$row['st_1stsem'];
+                                                $ug2sem=$row['st_2ndsem'];
+                                                $ug3sem=$row['st_3rdsem'];
+                                                $ug4sem=$row['st_4thsem'];
+                                                $ug5sem=$row['st_5thsem'];
+                                                $ug6sem=$row['st_6thsem'];
+                                                $ug7sem=$row['st_7thsem'];
+                                                $ug8sem=$row['st_8thsem'];
+                                                $cgpa=$row['st_cgpa'];
+                                                $ugyearofpassing=$row['st_ugyearofpassing'];
+                                                $pgdeg=$row['st_pgdegree'];
+                                                $pgspecial=$row['st_pgspecialization'];
+                                                $pg1sem=$row['st_pg1stsem'];
+                                                $pg2sem=$row['st_pg2ndsem'];
+                                                $pg3sem=$row['st_pg3rdsem'];
+                                                $pg4sem=$row['st_pg4thsem'];
+                                                $pgcgpa=$row['st_pgcgpa'];
+                                                $pgyearofpassing=$row['st_pgyearofpassing'];
+                                                $ugcollegename=$row['st_ugcollegename'];
+                                                $ughistoryofarrears=$row['st_ughistoryofarrears'];
+                                                $dayhostel=$row['st_dayorhostel'];
+                                                $historyofarrears=$row['st_historyofarrears'];
+                                                $standingarrears=$row['st_standingarrears'];
+                                                $hometown=$row['st_hometown'];
+                                                $address1=$row['st_address1'];
+                                                $address2=$row['st_address2'];
+                                                $city=$row['st_city'];
+                                                $state=$row['st_state'];
+                                                $postal_code=$row['st_posatlcode'];
+                                                $landline=$row['st_landline'];
+                                                $skill=$row['st_skillcertification'];
+                                                $duration=$row['st_duration'];
+                                                $vendor=$row['st_vendor'];
+                                                $coecertification=$row['st_coecertification'];
+                                                $gap=$row['st_gapinstudies'];
+                                                $reason=$row['st_reason'];
+                                                $english=$row['st_english'];
+                                                $quantitative=$row['st_quantitative'];
+                                                $logical=$row['st_logical'];
+                                                $overall=$row['st_overall'];
+                                                $percentage=$row['st_percentage'];
+                                                $candidate=$row['st_candidateid'];
+                                                $signature=$row['st_signature'];
+                                                $placement_status=$row['st_placementstatus'];
+                                                $aadhar=$row['st_aadharno'];
+                                                $passport=$row['st_passportno'];
+                                                $pan=$row['st_panno'];
+
+
+
+
+
+                                                if($current=='UG'){
+
+                                                    //mapping ug Department
+
+                                                    $query_dept_ug="SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                    $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                                    $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                                    $ugspecial=$row_dept_ug['dept_expand'];
+
+
+                                                }
+                                                else{
+
+                                                    //mapping department of UG
+                                                    $query_dept_ug = "SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                    $result_dept_ug = mysqli_query($connect, $query_dept_ug);
+                                                    $row_dept_ug = mysqli_fetch_assoc($result_dept_ug);
+
+                                                    $ugspecial = $row_dept_ug['dept_expand'];
+
+
+                                                    //mapping department of PG
+                                                    $query_dept = "SELECT * FROM dept_map WHERE dept_short='$pgspecial'";
+                                                    $result_dept = mysqli_query($connect, $query_dept);
+                                                    $row_dept = mysqli_fetch_assoc($result_dept);
+
+                                                    $pgspecial = $row_dept['dept_expand'];
+
+                                                }
+
+
 
 
                                                 ?>
 
-                                                <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+
+                                                <tr>
+                                                    <!--                                                <td class="center">-->
+                                                    <!--                                                    <label class="pos-rel">-->
+                                                    <!--                                                        <input type="checkbox" class="ace" />-->
+                                                    <!--                                                        <span class="lbl"></span>-->
+                                                    <!--                                                    </label>-->
+                                                    <!--                                                </td>-->
+                                                    <td><?php echo $sno ?></td>
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+
+
+                                                </tr>
+
+
+
+
+
+
+
+
+
 
 
                                                 <?php
+                                                ++$count_sno;
+
+
+
                                             }
-                                        }
-
-                                        ?>
 
 
 
-                                    </select>
+                                            ?>
 
-                                    <div class="space-16"></div>
-                                </div>
+                                            </tbody>
+
+
+                                        </table>
+
+                                        <div id="modal-form" class="modal" tabindex="-1">
+
+                                        </div>
+
+
+
+                                    </div>
+                                <?php } ?>
 
                             </div>
                         </div>
+
 
 
                         <!-- PAGE CONTENT ENDS -->
@@ -854,6 +960,48 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 <script src="../assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
+<script src="../assets/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="../assets/js/dataTables.buttons.min.js"></script>
+<script src="../assets/js/buttons.flash.min.js"></script>
+<script src="../assets/js/buttons.html5.min.js"></script>
+<script src="../assets/js/buttons.print.min.js"></script>
+<script src="../assets/js/buttons.colVis.min.js"></script>
+<script src="../assets/js/dataTables.select.min.js"></script>
+
+<script src="../assets/js/jquery-ui.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<script src="../assets/js/spStatus.min.js"></script>
+<script src="../assets/js/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/bootstrap-timepicker.min.js"></script>
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/daterangepicker.min.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+<script src="../assets/js/jquery.knob.min.js"></script>
+<script src="../assets/js/autosize.min.js"></script>
+<script src="../assets/js/jquery.inputlimiter.min.js"></script>
+<script src="../assets/js/jquery.maskedinput.min.js"></script>
+<script src="../assets/js/bootstrap-tag.min.js"></script>
+
+
+
+
+<script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+
+
+
 
 <!--[if lte IE 8]>
 <script src="../assets/js/excanvas.min.js"></script>
@@ -892,21 +1040,16 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 <script src="../assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
+
 <script type="text/javascript">
+
+
+
+
+
+
+
     jQuery(function($) {
-        $('#id-disable-check').on('click', function() {
-            var inp = $('#form-input-readonly').get(0);
-            if(inp.hasAttribute('disabled')) {
-                inp.setAttribute('readonly' , 'true');
-                inp.removeAttribute('disabled');
-                inp.value="This text field is readonly!";
-            }
-            else {
-                inp.setAttribute('disabled' , 'disabled');
-                inp.removeAttribute('readonly');
-                inp.value="This text field is disabled!";
-            }
-        });
 
 
         if(!ace.vars['touch']) {
@@ -940,353 +1083,250 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
         }
 
 
-        $('[data-rel=tooltip]').tooltip({container:'body'});
-        $('[data-rel=popover]').popover({container:'body'});
-
-        autosize($('textarea[class*=autosize]'));
-
-        $('textarea.limited').inputlimiter({
-            remText: '%n character%s remaining...',
-            limitText: 'max allowed : %n.'
-        });
-
-        $.mask.definitions['~']='[+-]';
-        $('.input-mask-date').mask('99/99/9999');
-        $('.input-mask-phone').mask('(999) 999-9999');
-        $('.input-mask-eyescript').mask('~9.99 ~9.99 999');
-        $(".input-mask-product").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
 
 
 
-        $( "#input-size-slider" ).css('width','200px').slider({
-            value:1,
-            range: "min",
-            min: 1,
-            max: 8,
-            step: 1,
-            slide: function( event, ui ) {
-                var sizing = ['', 'input-sm', 'input-lg', 'input-mini', 'input-small', 'input-medium', 'input-large', 'input-xlarge', 'input-xxlarge'];
-                var val = parseInt(ui.value);
-                $('#form-field-4').attr('class', sizing[val]).attr('placeholder', '.'+sizing[val]);
-            }
-        });
-
-        $( "#input-span-slider" ).slider({
-            value:1,
-            range: "min",
-            min: 1,
-            max: 12,
-            step: 1,
-            slide: function( event, ui ) {
-                var val = parseInt(ui.value);
-                $('#form-field-5').attr('class', 'col-xs-'+val).val('.col-xs-'+val);
-            }
-        });
+        //initiate dataTables plugin
+        var myTable =
+            $('#dynamic-table')
+            //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+                .DataTable( {
+                    bAutoWidth: false,
+                    "aoColumns": [
 
 
 
-        //"jQuery UI Slider"
-        //range slider tooltip example
-        $( "#slider-range" ).css('height','200px').slider({
-            orientation: "vertical",
-            range: true,
-            min: 0,
-            max: 100,
-            values: [ 17, 67 ],
-            slide: function( event, ui ) {
-                var val = ui.values[$(ui.handle).index()-1] + "";
-
-                if( !ui.handle.firstChild ) {
-                    $("<div class='tooltip right in' style='display:none;left:16px;top:-6px;'><div class='tooltip-arrow'></div><div class='tooltip-inner'></div></div>")
-                        .prependTo(ui.handle);
-                }
-                $(ui.handle.firstChild).show().children().eq(1).text(val);
-            }
-        }).find('span.ui-slider-handle').on('blur', function(){
-            $(this.firstChild).hide();
-        });
+                        null, null, null, null, null, null, null, null, null, null, null, null, null, null
 
 
-        $( "#slider-range-max" ).slider({
-            range: "max",
-            min: 1,
-            max: 10,
-            value: 2
-        });
-
-        $( "#slider-eq > span" ).css({width:'90%', 'float':'left', margin:'15px'}).each(function() {
-            // read initial values from markup and remove that
-            var value = parseInt( $( this ).text(), 10 );
-            $( this ).empty().slider({
-                value: value,
-                range: "min",
-                animate: true
-
-            });
-        });
-
-        $("#slider-eq > span.ui-slider-purple").slider('disable');//disable third item
-
-
-        $('#id-input-file-1 , #id-input-file-2').ace_file_input({
-            no_file:'No File ...',
-            btn_choose:'Choose',
-            btn_change:'Change',
-            droppable:false,
-            onchange:null,
-            thumbnail:false //| true | large
-            //whitelist:'gif|png|jpg|jpeg'
-            //blacklist:'exe|php'
-            //onchange:''
-            //
-        });
-        //pre-show a file name, for example a previously selected file
-        //$('#id-input-file-1').ace_file_input('show_file_list', ['myfile.txt'])
-
-
-        $('#id-input-file-3').ace_file_input({
-            style: 'well',
-            btn_choose: 'Drop files here or click to choose',
-            btn_change: null,
-            no_icon: 'ace-icon fa fa-cloud-upload',
-            droppable: true,
-            thumbnail: 'small'//large | fit
-            //,icon_remove:null//set null, to hide remove/reset button
-            /**,before_change:function(files, dropped) {
-						//Check an example below
-						//or examples/file-upload.html
-						return true;
-					}*/
-            /**,before_remove : function() {
-						return true;
-					}*/
-            ,
-            preview_error : function(filename, error_code) {
-                //name of the file that failed
-                //error_code values
-                //1 = 'FILE_LOAD_FAILED',
-                //2 = 'IMAGE_LOAD_FAILED',
-                //3 = 'THUMBNAIL_FAILED'
-                //alert(error_code);
-            }
-
-        }).on('change', function(){
-            //console.log($(this).data('ace_input_files'));
-            //console.log($(this).data('ace_input_method'));
-        });
-
-
-        //$('#id-input-file-3')
-        //.ace_file_input('show_file_list', [
-        //{type: 'image', name: 'name of image', path: 'http://path/to/image/for/preview'},
-        //{type: 'file', name: 'hello.txt'}
-        //]);
+                    ],
+                    "aaSorting": [],
 
 
 
+                    //"bProcessing": true,
+                    //"bServerSide": true,
+                    //"sAjaxSource": "http://127.0.0.1/table"	,
 
-        //dynamically change allowed formats by changing allowExt && allowMime function
-        $('#id-file-format').removeAttr('checked').on('change', function() {
-            var whitelist_ext, whitelist_mime;
-            var btn_choose
-            var no_icon
-            if(this.checked) {
-                btn_choose = "Drop images here or click to choose";
-                no_icon = "ace-icon fa fa-picture-o";
+                    //,
+                    //"sScrollY": "200px",
+                    //"bPaginate": false,
 
-                whitelist_ext = ["jpeg", "jpg", "png", "gif" , "bmp"];
-                whitelist_mime = ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/bmp"];
-            }
-            else {
-                btn_choose = "Drop files here or click to choose";
-                no_icon = "ace-icon fa fa-cloud-upload";
+                    "sScrollX": "100%"
+                    //"sScrollXInner": "120%",
+                    //"bScrollCollapse": true,
+                    //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
+                    //you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-                whitelist_ext = null;//all extensions are acceptable
-                whitelist_mime = null;//all mimes are acceptable
-            }
-            var file_input = $('#id-input-file-3');
-            file_input
-                .ace_file_input('update_settings',
-                    {
-                        'btn_choose': btn_choose,
-                        'no_icon': no_icon,
-                        'allowExt': whitelist_ext,
-                        'allowMime': whitelist_mime
-                    })
-            file_input.ace_file_input('reset_input');
+                    //"iDisplayLength": 50
 
-            file_input
-                .off('file.error.ace')
-                .on('file.error.ace', function(e, info) {
-                    //console.log(info.file_count);//number of selected files
-                    //console.log(info.invalid_count);//number of invalid files
-                    //console.log(info.error_list);//a list of errors in the following format
-
-                    //info.error_count['ext']
-                    //info.error_count['mime']
-                    //info.error_count['size']
-
-                    //info.error_list['ext']  = [list of file names with invalid extension]
-                    //info.error_list['mime'] = [list of file names with invalid mimetype]
-                    //info.error_list['size'] = [list of file names with invalid size]
-
-
-                    /**
-                     if( !info.dropped ) {
-							//perhapse reset file field if files have been selected, and there are invalid files among them
-							//when files are dropped, only valid files will be added to our file array
-							e.preventDefault();//it will rest input
-						}
-                     */
-
-
-                    //if files have been selected (not dropped), you can choose to reset input
-                    //because browser keeps all selected files anyway and this cannot be changed
-                    //we can only reset file field to become empty again
-                    //on any case you still should check files with your server side script
-                    //because any arbitrary file can be uploaded by user and it's not safe to rely on browser-side measures
-                });
-
-
-            /**
-             file_input
-             .off('file.preview.ace')
-             .on('file.preview.ace', function(e, info) {
-						console.log(info.file.width);
-						console.log(info.file.height);
-						e.preventDefault();//to prevent preview
-					});
-             */
-
-        });
-
-        $('#spinner1').ace_spinner({value:0,min:0,max:200,step:10, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
-            .closest('.ace-spinner')
-            .on('changed.fu.spStatus', function(){
-                //console.log($('#spinner1').val())
-            });
-        $('#spinner2').ace_spinner({value:0,min:0,max:10000,step:100, touch_spinner: true, icon_up:'ace-icon fa fa-caret-up bigger-110', icon_down:'ace-icon fa fa-caret-down bigger-110'});
-        $('#spinner3').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus bigger-110', icon_down:'ace-icon fa fa-minus bigger-110', btn_up_class:'btn-success' , btn_down_class:'btn-danger'});
-        $('#spinner4').ace_spinner({value:0,min:-100,max:100,step:10, on_sides: true, icon_up:'ace-icon fa fa-plus', icon_down:'ace-icon fa fa-minus', btn_up_class:'btn-purple' , btn_down_class:'btn-purple'});
-
-        //$('#spinner1').ace_spinner('disable').ace_spinner('value', 11);
-        //or
-        //$('#spinner1').closest('.ace-spinner').spinner('disable').spinner('enable').spinner('value', 11);//disable, enable or change value
-        //$('#spinner1').closest('.ace-spinner').spinner('value', 0);//reset to 0
-
-
-        //datepicker plugin
-        //link
-        $('.date-picker').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        })
-        //show datepicker when clicking on the icon
-            .next().on(ace.click_event, function(){
-            $(this).prev().focus();
-        });
-
-        //or change it into a date range picker
-        $('.input-daterange').datepicker({autoclose:true});
-
-
-        //to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
-        $('input[name=date-range-picker]').daterangepicker({
-            'applyClass' : 'btn-sm btn-success',
-            'cancelClass' : 'btn-sm btn-default',
-            locale: {
-                applyLabel: 'Apply',
-                cancelLabel: 'Cancel',
-            }
-        })
-            .prev().on(ace.click_event, function(){
-            $(this).next().focus();
-        });
-
-
-        $('#timepicker1').timepicker({
-            minuteStep: 1,
-            showSeconds: true,
-            showMeridian: false,
-            disableFocus: true,
-            icons: {
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down'
-            }
-        }).on('focus', function() {
-            $('#timepicker1').timepicker('showWidget');
-        }).next().on(ace.click_event, function(){
-            $(this).prev().focus();
-        });
+//
+//                    select: {
+//                        style: 'multi'
+//                    }
+                } );
 
 
 
+        $.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-        if(!ace.vars['old_ie']) $('#date-timepicker1').datetimepicker({
-            //format: 'MM/DD/YYYY h:mm:ss A',//use this option to display seconds
-            icons: {
-                time: 'fa fa-clock-o',
-                date: 'fa fa-calendar',
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-arrows ',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            }
-        }).next().on(ace.click_event, function(){
-            $(this).prev().focus();
-        });
-
-
-        $('#colorpicker1').colorpicker();
-        //$('.colorpicker').last().css('z-index', 2000);//if colorpicker is inside a modal, its z-index should be higher than modal'safe
-
-        $('#simple-colorpicker-1').ace_colorpicker();
-        //$('#simple-colorpicker-1').ace_colorpicker('pick', 2);//select 2nd color
-        //$('#simple-colorpicker-1').ace_colorpicker('pick', '#fbe983');//select #fbe983 color
-        //var picker = $('#simple-colorpicker-1').data('ace_colorpicker')
-        //picker.pick('red', true);//insert the color if it doesn't exist
-
-
-        $(".knob").knob();
-
-
-        var tag_input = $('#form-field-tags');
-        try{
-            tag_input.tag(
+        new $.fn.dataTable.Buttons( myTable, {
+            buttons: [
                 {
-                    placeholder:tag_input.attr('placeholder'),
-                    //enable typeahead by specifying the source array
-                    source: ace.vars['US_STATES'],//defined in ace.js >> ace.enable_search_ahead
-                    /**
-                     //or fetch data from database, fetch those that match "query"
-                     source: function(query, process) {
-						  $.ajax({url: 'remote_source?q='+encodeURIComponent(query)})
-						  .done(function(result_items){
-							process(result_items);
-						  });
-						}
-                     */
+                    "extend": "colvis",
+                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+                    "className": "btn btn-white btn-primary btn-bold",
+                    columns: ':not(:first):not(:last)'
+                },
+                {
+                    "extend": "copy",
+                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "csv",
+                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+
+
+                },
+//                {
+//                    extend: 'excelHtml5',
+//                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+//                   "className": "btn btn-white btn-primary btn-bold"
+//
+//                },
+
+                {
+                    "extend": "excel",
+                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "pdf",
+                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+                    "className": "btn btn-white btn-primary btn-bold"
+                },
+                {
+                    "extend": "print",
+                    "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
+                    "className": "btn btn-white btn-primary btn-bold",
+                    autoPrint: false,
+                    message: ''
                 }
-            )
+            ]
+        } );
+        myTable.buttons().container().appendTo( $('.tableTools-container') );
 
-            //programmatically add/remove a tag
-            var $tag_obj = $('#form-field-tags').data('tag');
-            $tag_obj.add('Programmatically Added');
 
-            var index = $tag_obj.inValues('some tag');
-            $tag_obj.remove(index);
+        $('#chk1').click(function(){
+            $("button").toggle(200, function(){
+                location.href="admin_panel"
+            });
+        });
+
+
+
+        //style the message box
+        var defaultCopyAction = myTable.button(1).action();
+        myTable.button(1).action(function (e, dt, button, config) {
+            defaultCopyAction(e, dt, button, config);
+            $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
+        });
+
+
+        var defaultColvisAction = myTable.button(0).action();
+        myTable.button(0).action(function (e, dt, button, config) {
+
+            defaultColvisAction(e, dt, button, config);
+
+
+            if($('.dt-button-collection > .dropdown-menu').length == 0) {
+                $('.dt-button-collection')
+                    .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
+                    .find('a').attr('href', '#').wrap("<li />")
+            }
+            $('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
+        });
+
+        ////
+
+        setTimeout(function() {
+            $($('.tableTools-container')).find('a.dt-button').each(function() {
+                var div = $(this).find(' > div').first();
+                if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+                else $(this).tooltip({container: 'body', title: $(this).text()});
+            });
+        }, 500);
+
+
+
+
+
+
+        myTable.on( 'select', function ( e, dt, type, index ) {
+            if ( type === 'row' ) {
+                $( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
+            }
+        } );
+        myTable.on( 'deselect', function ( e, dt, type, index ) {
+            if ( type === 'row' ) {
+                $( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
+            }
+        } );
+
+
+
+
+        /////////////////////////////////
+        //table checkboxes
+        $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+
+
+        //select/deselect all rows according to table header checkbox
+        $('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $('#dynamic-table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) myTable.row(row).select();
+                else  myTable.row(row).deselect();
+            });
+        });
+
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#dynamic-table').on('click', 'tr input[type=checkbox]' , function(){
+            var $row = $(this).closest('tr');
+            if(this.checked) $row.addClass("selected highlight");
+            else $row.removeClass("selected highlight");
+        });
+
+
+
+        $(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+
+
+
+        //And for the first simple table, which doesn't have TableTools or dataTables
+        //select/deselect all rows according to table header checkbox
+        var active_class = 'active';
+        $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $(this).closest('table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+                else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
+            });
+        });
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+            var $row = $(this).closest('tr');
+            if($row.is('.detail-row ')) return;
+            if(this.checked) $row.addClass(active_class);
+            else $row.removeClass(active_class);
+        });
+
+
+
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
         }
-        catch(e) {
-            //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
-            tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
-            //autosize($('#form-field-tags'));
-        }
 
 
-        /////////
+
+
+        /***************/
+        $('.show-details-btn').on('click', function(e) {
+            e.preventDefault();
+            $(this).closest('tr').next().toggleClass('open');
+            $(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
+        });
+        /***************/
+
+
+
         $('#modal-form input[type=file]').ace_file_input({
             style:'well',
             btn_choose:'Drop files here or click to choose',
@@ -1308,24 +1348,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 });
             }
         });
+
+
+
+
+
+
         /**
-         //or you can activate the chosen plugin after modal is shown
-         //this way select element becomes visible with dimensions and chosen works as expected
-         $('#modal-form').on('shown', function () {
-					$(this).find('.modal-chosen').chosen();
-				})
+         //add horizontal scrollbars to a simple table
+         $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
+         {
+           horizontal: true,
+           styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
+           size: 2000,
+           mouseWheelLock: true
+         }
+         ).css('padding-top', '12px');
          */
 
 
-
-        $(document).one('ajaxloadstart.page', function(e) {
-            autosize.destroy('textarea[class*=autosize]')
-
-            $('.limiterBox,.autosizejs').remove();
-            $('.daterangepicker.dropdown-menu,.colorpicker.dropdown-menu,.bootstrap-datetimepicker-widget.dropdown-menu').remove();
-        });
-
-    });
+    })
 </script>
+
 </body>
 </html>
