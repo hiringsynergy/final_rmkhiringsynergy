@@ -916,7 +916,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                 <td   height="80" width="370" class="">
 
                                     <b>
-                                        <a href="zoho.php" class="job " style="text-decoration:none; font-size: 23px" data-action="reload">
+                                        <a href="#" class="job " style="text-decoration:none; font-size: 18px" data-action="reload">
 
                                             <?php  echo $row['company']  ?>
 
@@ -932,7 +932,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                         <label class="label label-warning center middle" style="size: 40px;"><b> Job:   </b></label>
 
                                         <div>
-                                            <?php  echo $row['job_title']  ?>(Product)
+                                            <?php  echo $row['job_title']  ?>(<?php  echo $row['job_type']  ?>)
 
                                         </div>
 
