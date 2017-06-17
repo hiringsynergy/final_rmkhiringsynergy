@@ -1104,42 +1104,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     $row_short = mysqli_fetch_assoc($result_short);
 
 
-
-                    $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd/', $database)){
-                        $temp_clg="RMDEC";
-                    }
-                    else if(preg_match('/rmk/', $database)){
-                        $temp_clg="RMKEC";
-                    }
-                    else if(preg_match('/rmkcet/', $database)){
-                        $temp_clg="RMKCET";
-                    }
-
-
-
-
-
-
-                                    if($row1['st_collegename']!=$temp_clg){
-
-                                        ?>
-
-                                        <div class="space-10"></div>
-
-
-                                        <div class="row col-xs-12">
-                                            <div class="alert alert-block alert-danger">
-                                                <button type="button" class="close" data-dismiss="alert">
-                                                    <i class="ace-icon fa fa-times"></i>
-                                                </button>
-
-
-                                                Please enter a valid Register number.
-                                            </div>
-                                        </div> <?php
-                                    }
-
+                                    
                                     $student_table = $row_short['table_name'];
                                     $query="SELECT * FROM $student_table WHERE st_roll='{$username}'";
 
