@@ -1914,11 +1914,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
 
 
-                                                    <!-- <a href="#modal-form4" data-toggle="modal">
+                                                    <a href="#modal-form4" data-toggle="modal">
 
                                                          <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
-                                                     </a>-->
+                                                     </a>
 
                                                 </div>
                                             </div>
