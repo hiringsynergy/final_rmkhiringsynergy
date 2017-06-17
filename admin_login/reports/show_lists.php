@@ -45,7 +45,7 @@ foreach($checkbox as $list) {
     $ne_jobtype = "select * from students_".$year_of_graduation." WHERE st_roll='$list'";
     $new_jobtype = mysqli_query($connect, $ne_jobtype);
     $row = mysqli_fetch_assoc($new_jobtype);
-    $row_old = $row['st_jobtype'];
+//    $row_old = $row['st_jobtype'];
 
 
 //    $row_old = $row_old . ',';
@@ -58,6 +58,7 @@ foreach($checkbox as $list) {
 
 
 //    $company_new = $company_old . $company;
+    echo "<br>";
   echo  $company_old = $row['st_placementstatus'];
     $exp = explode(',', $company_old);
     $company_new ="";
