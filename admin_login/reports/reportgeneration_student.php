@@ -91,8 +91,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("opt");
             var strUser = e.options[e.selectedIndex].value;
 
-            alert(roll+" "+yr);
-            location.href = "reportreneration_studet?opt="+strUser+"&yr="+yr+"&roll="+roll;
+           // alert(roll+" "+yr);
+            location.href = "reportreneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
 
         }
 
