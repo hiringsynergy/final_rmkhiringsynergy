@@ -782,7 +782,7 @@ die(" " . mysqli_error($connect));
                                                         <i class="ace-icon fa fa-pencil bigger-130"></i>
                                                     </a>
 
-                                                    <a class="red" href="../company/companies?delete=<?php echo $row['company_id'] ?>">
+                                                    <a class="red" id="trashcan" href="../company/companies?delete=<?php echo $row['company_id'] ?>">
                                                         <i class="ace-icon fa fa-trash-o bigger-130"></i>
                                                     </a>
                                                 </div>
@@ -1074,6 +1074,40 @@ die(" " . mysqli_error($connect));
                 else $(this).tooltip({container: 'body', title: $(this).text()});
             });
         }, 500);
+        $( "#trashcan" ).on('click', function(e) {
+            e.preventDefault();
+
+            $( "#dialog-confirm" ).removeClass('hide').dialog({
+                resizable: false,
+                width: '320',
+                modal: true,
+
+                title_html: true,
+                buttons: [
+                    {
+                        html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete the Table",
+                        "class" : "btn btn-danger btn-minier",
+                        click: function() {
+
+
+
+                            var table=$('#delete-textbox :selected').text();
+                            window.location.href="index?delete="+table;
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                    ,
+                    {
+                        html: "<i class='ace-icon fa fa-times bigger-110'></i>&nbsp; Cancel",
+                        "class" : "btn btn-minier",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+        });
+
 
 
         $('#id-input-file-5').ace_file_input({
