@@ -2830,11 +2830,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 </div>
                                                             </div>
 
-<!--                                                            <div class="form-group">-->
-<!--                                                                <div>-->
-<!--                                                                    <label for="form-field-c1">College Name</label>-->
-<!---->
-<!--                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
+                                                            <div class="form-group">
+                                                                <div>
+                                                                    <label for="form-field-c1">College Name</label>
+
+                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
 <!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
 //                                                                        { ?>
 <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
@@ -2853,9 +2853,9 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 <!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
 <!---->
 <!--                                                                        --><?php //}?>
-<!--                                                                    </select>-->
-<!--                                                                </div>-->
-<!--                                                            </div>-->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
 
                                                             <div class="form-group">
                                                                 <label for="control-label bolder b">Anna University</label>
