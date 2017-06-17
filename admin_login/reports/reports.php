@@ -135,7 +135,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 $result_count_accepted = mysqli_query($connect, $query_count_accepted);
                 $accepted = mysqli_num_rows($result_count_accepted);
 
-                $total = $eligible + $accepted;
+                $total = $eligible;
 
 
 
