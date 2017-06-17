@@ -951,9 +951,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                             <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
 
 
-                                                                    }
 
-                                                            <?php } ?>
+
+                                                            <?php } }?>
 
 
                                                         </select>
@@ -999,7 +999,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                     </div>
-                                <?php }  } ?>
+                                <?php }   ?>
 
                             </div>
                         </div>
