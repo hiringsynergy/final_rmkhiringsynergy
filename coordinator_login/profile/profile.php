@@ -1753,6 +1753,12 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                             <div class="widget-header ">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">Skill Set</h5>
 
+                                                <a href="#modal-form5" data-toggle="modal">
+
+                                                    <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
+
+                                                </a>
+
 
                                             </div>
 
