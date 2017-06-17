@@ -963,7 +963,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     ?>
 
-                                                                    <option value="<?php echo $comp ?>"><?php echo $comp ?>  </option>
+                                                                    <option value="<?php echo $sno ?>"><?php echo $comp ?>  </option>
 
 
                                                                     <?php
