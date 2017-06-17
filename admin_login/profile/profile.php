@@ -2236,7 +2236,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                     Cancel
                                                 </button>
 
-                                                <button class="btn btn-sm btn-primary">
+                                                <button class="btn btn-sm btn-primary" name="skill">
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
