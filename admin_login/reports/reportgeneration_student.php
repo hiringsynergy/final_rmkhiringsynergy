@@ -943,10 +943,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
+                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" >
 
 
 
+                                                            <option value="hi">helo</option>
 
                                                             <?php
 
