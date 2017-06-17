@@ -2229,6 +2229,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                             </div>
 
                                             <div class="modal-footer">
+                                                <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
+                                                <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
                                                 <button class="btn btn-sm" data-dismiss="modal">
                                                     <i class="ace-icon fa fa-times"></i>
                                                     Cancel
