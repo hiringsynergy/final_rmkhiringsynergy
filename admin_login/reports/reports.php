@@ -118,7 +118,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                     //count eligible
-                $query_count = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='eligible'";
+                $query_count = " SELECT * FROM $table WHERE _" . $row['job_id'] . "='eligible'OR  _" .$row['job_id']. "='accepted' OR _" .$row['job_id']. "='placed' OR _" .$row['job_id']. "='unplaced'";
                 $result_count = mysqli_query($connect, $query_count);
                 $eligible = mysqli_num_rows($result_count);
 

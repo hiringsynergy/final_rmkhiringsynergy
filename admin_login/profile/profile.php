@@ -2830,32 +2830,32 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                 </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <div>
-                                                                    <label for="form-field-c1">College Name</label>
-
-                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
-                                                                        <?php if($row['st_collegename']=='RMKEC')
-                                                                        { ?>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-                                                                        <option value="RMDEC">RMD Engineering College</option>
-                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
-
-                                                                        <?php } else if($row['st_collegename']=='RMDEC'){?>
-                                                                            <option value="RMDEC">RMD Engineering College</option>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-
-                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>
-
-                                                                        <?php  } else if($row['st_collegename']=='RMKCET'){?>
-                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>
-                                                                        <option value="RMKEC">RMK Engineering College</option>
-                                                                        <option value="RMDEC">RMD Engineering College</option>
-
-                                                                        <?php }?>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
+<!--                                                            <div class="form-group">-->
+<!--                                                                <div>-->
+<!--                                                                    <label for="form-field-c1">College Name</label>-->
+<!---->
+<!--                                                                    <select class="form-control" name="collegename" id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
+<!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
+//                                                                        { ?>
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+<!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!---->
+<!--                                                                        --><?php //} else if($row['st_collegename']=='RMDEC'){?>
+<!--                                                                            <option value="RMDEC">RMD Engineering College</option>-->
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!---->
+<!--                                                                        <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!---->
+<!--                                                                        --><?php // } else if($row['st_collegename']=='RMKCET'){?>
+<!--                                                                            <option value="RMKCET">RMK College of Engineering and Technology</option>-->
+<!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
+<!--                                                                        <option value="RMDEC">RMD Engineering College</option>-->
+<!---->
+<!--                                                                        --><?php //}?>
+<!--                                                                    </select>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
 
                                                             <div class="form-group">
                                                                 <label for="control-label bolder b">Anna University</label>
