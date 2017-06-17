@@ -973,7 +973,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     ?>
 
-                                                                    <option onselect="showrep('<?php echo $company[$i] ?>')" value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
+                                                                    <option onclick="showrep('<?php echo $company[$i] ?>')" value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
 
 
                                                                     <?php
