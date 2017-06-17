@@ -991,7 +991,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                     </td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" >
+                                                        <select name="opted" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" data-placeholder=" " >
 
 
 
