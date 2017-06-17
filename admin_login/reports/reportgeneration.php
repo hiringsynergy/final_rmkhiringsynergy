@@ -761,6 +761,60 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <br/>
 
 
+                <div class="col-xs-6 col-xs-push-2">
+
+
+
+
+                    <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
+
+
+
+                        <?php
+                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+                            ?>
+
+                            <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
+                            <?php
+
+                        }
+                        else{
+                            ?>
+
+                            <option value=""> </option>
+                            <?php
+
+                        }
+
+                        include "../connect.php";
+                        $query_option="SELECT * FROM table_map";
+                        $result_option=mysqli_query($connect, $query_option);
+                        while($row_option=mysqli_fetch_assoc($result_option)){
+
+                            if($row_option['table_value']!=$year_of_graduation) {
+
+
+                                ?>
+
+                                <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+
+
+                                <?php
+                            }
+                        }
+
+                        ?>
+
+
+
+                    </select>
+
+                    <div class="space-16"></div>
+                </div>
+
+
 
                 <!-- /.page-header -->
 
