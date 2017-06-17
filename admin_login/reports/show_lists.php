@@ -66,7 +66,7 @@ foreach($checkbox as $list) {
     foreach ($exp as $r) {
         if ($r!=$company)
         {
-            if($count==$i-1){
+            if($count!=$i-1){
                 $company_new .=$r.',';
             }
             else {
@@ -75,10 +75,11 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
-    echo "?><br><?";
+    echo "<br>";
     echo $company_new;
+    echo "<br>";
 
-    $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' st_placementstatus=$company_new WHERE st_roll='$list' ";
+    echo $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' st_placementstatus=$company_new WHERE st_roll='$list' ";
     $result_unplaced = mysqli_query($connect, $query_unplaced);
 
 //    $query_unplaced1="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
