@@ -92,7 +92,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var strUser = e.options[e.selectedIndex].value;
 
             alert(roll+" "+yr);
-            //location.href = "reportreneration_studet?opt="+strUser+"yr";
+            location.href = "reportreneration_studet?opt="+strUser+"&yr="+yr+"&roll="+roll;
 
         }
 
@@ -664,6 +664,48 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         <div class="row">
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Students Reports</h3>
+
+
+
+
+
+
+                                <?php
+
+                                if(isset($_GET['opt']) && isset($_SESSION['user_role'])=='admin' ){
+
+                                    $opt=$_GET['opt'];
+                                    $yr=$_GET['yr'];
+                                    $_roll=$_GET['roll'];
+
+                                    include "../connect.php";
+
+                                    $query_opt="UPDATE students_".$yr." SET st_opted='$opt' WHERE st_roll='$_roll'";
+                                    $result_opt=mysqli_query($connect,$query_opt);
+
+                                    header("Location: reportgeneration_student?year=".$yr);
+
+
+
+
+
+                                }
+
+
+
+                                ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
