@@ -697,11 +697,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                 <div class="bigger-170 blue">
-                    Reports
+                    Reports Genration
 
 
 
                 </div>
+                <div class="space-16"></div>
 
 
                 <div class="col-xs-6 col-xs-push-2">
@@ -759,19 +760,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                 <br/>
-                <div class="bigger-170 blue">
-                    Reports
 
 
 
-                </div>
-
-                <div class="row">
-
-
-
-
-                </div>
 
 
 
@@ -838,12 +829,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                         <div class="row">
-                            <div class="bigger-170 blue">
-                                Reports
 
-
-
-                            </div>
                             <div class="col-xs-12">
                                 <div class="col-xs-6 col-xs-push-2">
 
