@@ -122,7 +122,8 @@ $tablename=$_GET['tablename'];
   st_dorh varchar(255),
   st_changemail varchar(255),
   st_changephone varchar(255),
-  st_forgotpassword varchar(255)
+  st_forgotpassword varchar(255),
+  st_opted varchar(255)
  
  
 )ENGINE=MyISAM DEFAULT CHARSET=latin1";
