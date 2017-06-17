@@ -651,7 +651,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3 class="header smaller lighter blue">Admin Panel</h3>
+                                <h3 class="header smaller lighter blue">Students Reports</h3>
 
 
 
@@ -689,98 +689,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 <th>Serial No.</th>
 
                                                 <th>Register No</th>
-                                                <th>First Name</th>
-                                                <th>Middle Name</th>
-                                                <th>Last Name (Mandatory)</th>
-                                                <th>Full Name</th>
-                                                <th>Gender (Male/Female)</th>
-                                                <th>Father Name</th>
-                                                <th>Father Occupation</th>
-                                                <th>Father Mobile No.</th>
 
-                                                <th>Mother Name</th>
-                                                <th>Mother Occupation</th>
-                                                <th>Mother Mobile No.</th>
-                                                <th>College Mail ID</th>
+                                                <th>Name</th>
 
+                                                <th>Company</th>
+                                                <th>Gender </th>
+                                                <th>DEPT.</th>
+                                                <th>Date of Interview</th>
 
-                                                <th>
-                                                    Personal Email ID
-                                                </th>
-                                                <th>Mobile Number (10 digits)</th>
-                                                <th>Date of Birth (DD-MM-YYYY)</th>
-                                                <th>Nationality</th>
-                                                <th>Caste</th>
-                                                <th>College Name</th>
-                                                <th>University</th>
-                                                <th>10th %</th>
-                                                <th>10th Institution</th>
-                                                <th>10th Board of Study</th>
-                                                <th>10th Medium (Tamil/English/Telugu/Others)</th>
-                                                <th>10th - Year of Passing</th>
-                                                <th>12th %</th>
-                                                <th>12th Institution</th>
-                                                <th>12th Board of Study</th>
-                                                <th>12th Medium (Tamil/English/Telugu/Others)</th>
-                                                <th>12th - Year of Passing</th>
-                                                <th>Diploma  %</th>
-                                                <th>Diploma Specialization</th>
-                                                <th>Diploma Institution</th>
-                                                <th>Diploma - Year of Passing</th>
-                                                <th>Currently Pursuing (UG/PG)</th>
-                                                <th>UG Degree</th>
-                                                <th>UG Specialization</th>
-                                                <th>1st Sem</th>
-                                                <th>2nd Sem</th>
-                                                <th>3rd Sem</th>
-                                                <th>4th Sem</th>
-                                                <th>5th Sem</th>
-                                                <th>6th Sem</th>
-                                                <th>7th Sem</th>
-                                                <th>8th Sem</th>
-                                                <th>UG Degree % or CGPA (uptolast semester for which results announced)</th>
-                                                <th>UG - Year of Passing</th>
-                                                <th>PG Degree</th>
-                                                <th>PG Specialization</th>
-                                                <th>1st Sem</th>
-                                                <th>2nd Sem</th>
-                                                <th>3rd Sem</th>
-                                                <th>4th Sem</th>
-                                                <th>PG Degree % or CGPA (upto last semester for which results announced)</th>
-                                                <th>PG - Year of Passing</th>
-                                                <th>UG College Name(for PG)</th>
-                                                <th>UG Hitory of Arrears(for PG)</th>
-                                                <th>Day Scholar/ Hosteler</th>
-                                                <th>No History of Arreas</th>
-                                                <th>Current Degree. No of Standing Arrears</th>
-                                                <th>Home Town</th>
-                                                <th>Permanent Address (Line 1)</th>
-                                                <th>Permanent Address (Line 2)</th>
-                                                <th>Permanent City</th>
-                                                <th>State</th>
-                                                <th>Postal code</th>
-                                                <th>Contact Number ( Landline)</th>
-                                                <th>If any Skill Certifications Obtained Name the Skill</th>
-                                                <th>Duration of the course</th>
-                                                <th>Certification Vendor/Authority/Agency Name</th>
-                                                <th>CoE Certification</th>
-                                                <th>Gap in studies</th>
-                                                <th>Gap in studies Reason</th>
-                                                <th>English Percentage</th>
-                                                <th>Quantitative  Percentage</th>
-                                                <th>Logical Percentage</th>
-                                                <th>Overall Average</th>
-                                                <th>Percentage</th>
-                                                <th>Candidate ID</th>
-                                                <th>Signature</th>
-                                                <th>Placement Status</th>
-                                                <th>Aadhar Card No.</th>
-                                                <th>Passport No.
-                                                </th>
-                                                <th>PAN Card No.</th>
-
-
-                                                <th></th>
+                                                <th>Salary</th>
+                                                <th>Confirmation</th>
+                                                
                                             </tr>
                                             </thead>
 
@@ -887,6 +806,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+
                                                 if($current=='UG'){
 
                                                     //mapping ug Department
@@ -938,163 +859,35 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                         <?php echo $roll ?>
 
                                                     </td>
-                                                    <td>
-                                                        <?php echo $first_name ?>
-                                                    </td>
-                                                    <td class=" "><?php echo $middle_name ?></td>
-
-                                                    <td><?php echo $last_name  ?></td>
+                                                  
                                                     <td><?php echo $name  ?></td>
+                                                    <td><?php echo  $placement_status ?></td>
                                                     <td><?php echo  $gender ?></td>
-                                                    <td><?php echo $father_name ?></td>
-                                                    <td><?php echo $father_occupation ?></td>
-                                                    <td><?php echo $father_mobile ?></td>
-                                                    <td><?php echo $mother_name ?></td>
-                                                    <td><?php echo $mother_occupation ?></td>
-                                                    <td><?php echo $mother_mobile ?></td>
-                                                    <td><?php echo $college_mail ?></td>
-                                                    <td><?php echo $email ?></td>
-                                                    <td><?php echo $phone ?></td>
-                                                    <td><?php echo $dob ?></td>
-                                                    <td><?php echo $nationality ?></td>
-                                                    <td><?php echo $caste ?></td>
-                                                    <td><?php echo $college_name ?></td>
-                                                    <td><?php echo $university ?></td>
-                                                    <td><?php echo $_10percentage ?></td>
-                                                    <td><?php echo $_10institution ?></td>
-                                                    <td><?php echo $_10boardofstudy ?></td>
-                                                    <td><?php echo $_10medium ?></td>
-                                                    <td><?php echo $_10yearofpassing ?></td>
-                                                    <td><?php echo $_12percentage ?></td>
-                                                    <td><?php echo $_12institution ?></td>
-                                                    <td><?php echo $_12boardofstudy ?></td>
-                                                    <td><?php echo $_12medium ?></td>
-                                                    <td><?php echo $_12yearofpassing ?></td>
-                                                    <td><?php echo $dippercentage ?></td>
-                                                    <td><?php echo $dipspecialization ?></td>
-                                                    <td><?php echo $dipinstitution ?></td>
-                                                    <td><?php echo $dipyearofpassing ?></td>
-                                                    <td><?php echo $current ?></td>
-                                                    <td><?php echo $ugdeg ?></td>
-                                                    <td><?php echo $ugspecial ?></td>
-                                                    <td><?php echo $ug1sem ?></td>
-                                                    <td><?php echo $ug2sem ?></td>
-                                                    <td><?php echo $ug3sem ?></td>
-                                                    <td><?php echo $ug4sem ?></td>
-                                                    <td><?php echo $ug5sem ?></td>
-                                                    <td><?php echo $ug6sem ?></td>
-                                                    <td><?php echo $ug7sem ?></td>
-                                                    <td><?php echo $ug8sem ?></td>
                                                     <?php
 
-                                                    if($cgpa>8){
-
-
+                                                    if($current=='UG'){
                                                         ?>
-                                                        <td class=" ">
-                                                            <span class="label label-sm label-success"><?php echo $cgpa ?></span>
-                                                        </td>
-                                                        <?php
-
+                                                        <td><?php echo $ugspecial  ?></td>
+                                                        <?
                                                     }
-
                                                     else{
+                                                     ?>
 
-                                                        ?>
-                                                        <td class=" ">
-                                                            <span class="label label-sm label-important"><?php echo $cgpa ?></span>
-                                                        </td>
-                                                        <?php
+                                                        <td><?php echo $pgspecial  ?></td>
 
+                                                       <?
                                                     }
+
 
                                                     ?>
 
-                                                    <td><?php echo $ugyearofpassing ?></td>
-                                                    <td><?php echo $pgdeg ?></td>
-                                                    <td><?php echo $pgspecial ?></td>
-                                                    <td><?php echo $pg1sem ?></td>
-                                                    <td><?php echo $pg2sem ?></td>
-                                                    <td><?php echo $pg3sem ?></td>
-                                                    <td><?php echo $pg4sem ?></td>
-                                                    <td><?php echo $pgcgpa ?></td>
-                                                    <td><?php echo $pgyearofpassing ?></td>
-                                                    <td><?php echo $ugcollegename ?></td>
-                                                    <td><?php echo $ughistoryofarrears ?></td>
-                                                    <td><?php echo $dayhostel ?></td>
-                                                    <td><?php echo $historyofarrears ?></td>
-                                                    <td><?php echo $standingarrears ?></td>
-                                                    <td><?php echo $hometown ?></td>
-                                                    <td><?php echo $address1 ?></td>
-                                                    <td><?php echo $address2 ?></td>
-                                                    <td><?php echo $city ?></td>
-                                                    <td><?php echo $state ?></td>
-                                                    <td><?php echo $postal_code ?></td>
-                                                    <td><?php echo $landline ?></td>
-                                                    <td><?php echo $skill ?></td>
-                                                    <td><?php echo $duration ?></td>
-                                                    <td><?php echo $vendor ?></td>
-                                                    <td><?php echo $coecertification ?></td>
-                                                    <td><?php echo $gap ?></td>
-                                                    <td><?php echo $reason ?></td>
-                                                    <td><?php echo $english ?></td>
-                                                    <td><?php echo $quantitative ?></td>
-                                                    <td><?php echo $logical ?></td>
-                                                    <td><?php echo $overall ?></td>
-                                                    <td><?php echo $percentage ?></td>
-                                                    <td><?php echo $candidate ?></td>
-                                                    <td><?php echo $signature ?></td>
-                                                    <td><?php echo $placement_status ?></td>
-                                                    <td><?php echo $aadhar ?></td>
-                                                    <td><?php echo $passport ?></td>
-                                                    <td><?php echo $pan ?></td>
 
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
 
-
-                                                    <td>
-                                                        <div class="hidden-sm hidden-xs action-buttons">
-
-
-
-
-                                                            <a class="green" href="#modal-form" role="button"  data-toggle="modal" onclick="showStudent('<?php echo $roll ?>','<?php echo $table ?>')">
-                                                                <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                                            </a>
-                                                            <a class="red" href="../admin_panel/admin_panel?delete=<?php echo $roll ?>&table=<?php echo $table ?>">
-                                                                <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="hidden-md hidden-lg">
-                                                            <div class="inline pos-rel">
-                                                                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                                    <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                                                </button>
-
-                                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-
-
-                                                                    <li>
-                                                                        <a href="#modal-form" class="tooltip-success" data-toggle="modal"
-                                                                           data-rel="tooltip" title="Edit"  onclick="showStudent('<?php echo $roll ?>','<?php echo $table ?>')">
-
-																				<span class="green">
-																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																				</span>
-                                                                        </a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                        <a href="../admin_panel/admin_panel?delete=<?php echo $roll ?>" class="tooltip-error" data-rel="tooltip" title="Delete">
-																				<span class="red">
-																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																				</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </td>
+                                                    
+                                                    
                                                 </tr>
 
 
@@ -1315,18 +1108,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null ,null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null, null, null, null, null, null,
-                        null, null, null, null, null,
+                        null, null, null, null, null, null, null, null, null
 
 
-                        { "bSortable": false }
                     ],
                     "aaSorting": [],
 

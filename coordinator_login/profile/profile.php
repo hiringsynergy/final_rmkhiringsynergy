@@ -1755,14 +1755,15 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                                                 <div class="widget-toolbar">
 
-                                                <a href="#modal-form5" data-toggle="modal">
 
-                                                    <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
 
-                                                </a>
+                                                    <a href="#modal-form4" data-toggle="modal">
+
+                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
+
+                                                    </a>
+
                                                 </div>
-
-
                                             </div>
 
                                             <div class="widget-body">
