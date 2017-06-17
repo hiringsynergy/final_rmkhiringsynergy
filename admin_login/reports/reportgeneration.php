@@ -469,7 +469,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </li>
 
 
-            <li class="active">
+            <li class="">
                 <a href="reports">
 
                     <i class="menu-icon fa fa-bar-chart"></i>
@@ -524,7 +524,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 </ul>
             </li>
 
-            <li class="">
+            <li class="active open">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-tag"></i>
                     <span class="menu-text"> More Pages </span>
@@ -560,8 +560,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <b class="arrow"></b>
                     </li>
-                    <li class="">
-                        <a href="reportgeneration.php">
+                    <li class="active">
+                        <a href="reportgeneration">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Report Generation
                         </a>
