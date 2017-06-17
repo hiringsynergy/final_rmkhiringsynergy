@@ -89,7 +89,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
         function showreports(roll, yr){
 
             var e = document.getElementById("opt");
-            var strUser = e.options[e.selectedIndex].value;
+            var strUser = e.options[e.selectedIndex].text;
 
             alert(strUser);
 //            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
