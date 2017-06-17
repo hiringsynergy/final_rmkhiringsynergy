@@ -2833,8 +2833,11 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                             <div class="form-group">
                                                                 <div>
                                                                     <label for="form-field-c1">College Name</label>
+                                                                    <div>
+                                                                        <input type="text" disabled id="control-label bolder blu" placeholder="" value="<?php echo $row['st_collegename'] ?>" />
+                                                                    </div>
 
-                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="<?php echo $row['st_collegename'] ?>">
+<!--                                                                    <select class="form-control" name="collegename" disabled id="form-field-c1" value="--><?php //echo $row['st_collegename'] ?><!--">-->
 <!--                                                                        --><?php //if($row['st_collegename']=='RMKEC')
 //                                                                        { ?>
 <!--                                                                        <option value="RMKEC">RMK Engineering College</option>-->
