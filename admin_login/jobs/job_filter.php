@@ -181,6 +181,9 @@ if(isset($_GET['filter_job'])){
     $_12percentage=$_GET['12percentage'];
     $standingarrears=$_GET['standingarrears'];
     $historyofarrears=$_GET['historyofarrears'];
+    $lateral=$_GET['lateral'];
+    $gender=$_GET['gender'];
+    $gapinstudy=$_GET['gapinstudy'];
 
 
     $get_branch= $_GET['ugbranch'];
@@ -456,13 +459,25 @@ if(isset($_GET['filter_job'])){
 
     }
 
+    if($get_gapinstudy!='na'){
+
+
+        $str.=' and st_gapinstudies<='.$gapinstudy;
+
+
+
+
+
+
+    }
+
 
 
 
 
 
     //job for ug update
-        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
+        $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and st_12thpercentage>=$_12percentage $str and st_gender in ('$get_gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%' ";
         $result_for_update=mysqli_query($connect, $query_for_update);
 
 
@@ -1432,6 +1447,47 @@ if(isset($_GET['filter_job'])){
 
 
 
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Lateral Entry(Optional)</label></h5>
+                                                                <input type="text" name="lateral"  value="0" id="slide-text4" class="col-xs-1">
+                                                                <div id="slider-eq4" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-blue">0</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Gender</label></h5>
+
+                                                                <select class="chosen-select form-control" name="gender" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                    <option value="male','female">All</option>
+                                                                    <option value="male">Male</option>
+                                                                    <option value="female">Female</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Gap in Study</label></h5>
+
+                                                                <select class="chosen-select form-control" name="gapinstudy" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                    <option value="na">Please Select</option>
+                                                                    <option value="0">0</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="10">10</option>
+
+                                                                </select>
                                                             </div>
 
                                                         </div>
