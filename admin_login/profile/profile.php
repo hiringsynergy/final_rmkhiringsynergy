@@ -2200,28 +2200,28 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                         <div class="form-group">
                                                             <label for="control-label bolder blue">If any skill certification obtained</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder blue" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
+                                                                <input type="text" id="control-label bolder blue" name="skillset" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder blu">Duration of Course</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder blu" placeholder="" value="<?php echo $row['st_duration']?>" />
+                                                                <input type="text" id="control-label bolder blu" name="duration" placeholder="" value="<?php echo $row['st_duration']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder bl">Certification Vendor/Authority/Agency Name</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder bl" placeholder="" value="<?php echo $row['st_vendor']?>" />
+                                                                <input type="text" id="control-label bolder bl" name="vendor" placeholder="" value="<?php echo $row['st_vendor']?>" />
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label for="control-label bolder b">COE Certification</label>
                                                             <div>
-                                                                <input type="text" id="control-label bolder b" placeholder="" value="<?php echo $row['st_coecertification']?>" />
+                                                                <input type="text" id="control-label bolder b" name="coecert" placeholder="" value="<?php echo $row['st_coecertification']?>" />
                                                             </div>
                                                         </div>
                                                     </div>
