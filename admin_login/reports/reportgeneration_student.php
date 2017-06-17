@@ -686,22 +686,32 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Students Reports</h3>
 
-                                <form action="reportgeneration_student.php" method="get">
-
-                                    <button class="btn btn-success btn-lg pull-right col-xs-pull-1 " name="export">Export</button>
-                                    <input type="hidden" name="year" value="<?php echo $_GET['year'] ?>">
+                                <?php
 
 
-                                </form>
+                                if(isset($_GET['year'])) {
+
+                                    ?>
+
+                                    <form action="reportgeneration_student.php" method="get">
+
+                                        <button class="btn btn-success btn-lg pull-right col-xs-pull-1 " name="export">
+                                            Export
+                                        </button>
+                                        <input type="hidden" name="exyear" value="<?php echo $_GET['year'] ?>">
 
 
+                                    </form>
 
 
-                                <div class="space-6"></div>
-                                <br>
-                                <br>
+                                    <div class="space-6"></div>
+                                    <br>
+                                    <br>
 
+                                    <?php
+                                }
 
+                                ?>
 
 
 
@@ -725,7 +735,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 {
 
 
-                                    $table=$_GET['year'];
+                                    $table=$_GET['exyear'];
 
 
 
