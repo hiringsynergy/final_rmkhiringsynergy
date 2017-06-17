@@ -66,7 +66,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("student");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "reportgeneration?year="+strUser;
+            location.href = "reportgeneration_student?year="+strUser;
 
         }
         function showcompany(){
@@ -74,7 +74,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("company");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "reportgeneration?year="+strUser;
+            location.href = "reportgeneration_company?year="+strUser;
 
         }
         function showdept(){
@@ -82,7 +82,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("dept");
             var strUser = e.options[e.selectedIndex].value;
 
-            location.href = "reportgeneration?year="+strUser;
+            location.href = "reportgeneration_dept?year="+strUser;
 
         }
 
