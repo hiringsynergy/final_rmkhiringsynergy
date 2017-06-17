@@ -943,33 +943,33 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control  " id="opt" value="" data-placeholder="Please select Company">
+                                                        <select name="opted" onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" value="" data-placeholder="Please select Company">
 
 
 
 
-                                                            <?php
-
-                                                            if($opted==''){
-
-                                                                ?>
-                                                                <option value="">Please Select Company</option>
-
-                                                            <?php
-                                                            }
-                                                            else{
-
-                                                                ?>
-
-
-
-                                                                <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
-
-                                                                <?php
-                                                            }
-
-
-                                                            ?>
+<!--                                                            --><?php
+//
+//                                                            if($opted==''){
+//
+//                                                                ?>
+<!--                                                                <option value="">Please Select Company</option>-->
+<!---->
+<!--                                                            --><?php
+//                                                            }
+//                                                            else{
+//
+//                                                                ?>
+<!---->
+<!---->
+<!---->
+<!--                                                                <option value="--><?php //echo $opted ?><!--">--><?php //echo $opted ?><!--</option>-->
+<!---->
+<!--                                                                --><?php
+//                                                            }
+//
+//
+//                                                            ?>
 
 
 
