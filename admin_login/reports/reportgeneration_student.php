@@ -91,8 +91,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             var e = document.getElementById("opt");
             var strUser = e.options[e.selectedIndex].value;
 
-            alert(strUser);
+            //alert(strUser);
 //            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
+
+        }
+
+        function showrep(str){
+
+
+            alert("str"+str);
 
         }
 
@@ -966,7 +973,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                                     ?>
 
-                                                                    <option value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
+                                                                    <option onselect="showrep('<?php echo $company[$i] ?>')" value="<?php echo $company[$i] ?>"><?php echo $company[$i] ?>  </option>
 
 
                                                                     <?php
