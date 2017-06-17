@@ -58,7 +58,7 @@ foreach($checkbox as $list) {
 
 
 //    $company_new = $company_old . $company;
-    $company_old = $row['st_placementstatus'];
+  echo  $company_old = $row['st_placementstatus'];
     $exp = explode(',', $company_old);
     $company_new ="";
     $count = count($exp);
@@ -75,7 +75,7 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
-
+    echo $company_new;
 
     $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' st_placementstatus=$company_new WHERE st_roll='$list' ";
     $result_unplaced = mysqli_query($connect, $query_unplaced);
@@ -94,7 +94,7 @@ echo "end";
 
 }
 
-header("Location: show_lists?jid=$jid&flag=$flag");
+//header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
