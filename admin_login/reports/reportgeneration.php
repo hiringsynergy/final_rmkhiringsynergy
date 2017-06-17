@@ -764,58 +764,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                <div class="col-xs-6 col-xs-push-2">
 
-
-
-
-                    <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
-
-
-
-                        <?php
-                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-                            ?>
-
-                            <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                            <?php
-
-                        }
-                        else{
-                            ?>
-
-                            <option value=""> </option>
-                            <?php
-
-                        }
-
-                        include "../connect.php";
-                        $query_option="SELECT * FROM table_map";
-                        $result_option=mysqli_query($connect, $query_option);
-                        while($row_option=mysqli_fetch_assoc($result_option)){
-
-                            if($row_option['table_value']!=$year_of_graduation) {
-
-
-                                ?>
-
-                                <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
-
-
-                                <?php
-                            }
-                        }
-
-                        ?>
-
-
-
-                    </select>
-
-                    <div class="space-16"></div>
-                </div>
                 </div>
 
 
@@ -827,53 +776,58 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
 
-                        <?php
-
-                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
+                        <div class="col-xs-6 col-xs-push-2">
 
 
-                            $table=$_GET['year'];
 
-                            include "../connect.php";
-                            $query_jobs="SELECT * FROM jobs";
-                            $result_jobs=mysqli_query($connect, $query_jobs);
 
-                            while ($row=mysqli_fetch_assoc($result_jobs)) {
+                            <select class="chosen-select form-control" id="form-field-select-3"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
-                                $query_check="SELECT _".$row['job_id']." FROM $table";
-                                $result_check=mysqli_query($connect,$query_check);
 
-                                if($result_check) {
+
+                                <?php
+                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
 
                                     ?>
 
-
-                                    <div class="col-md-6 ">
-                                        <button class=" btn btn-warning col-xs-push-9" onclick="viewlist(<?php echo $row['job_id'] ?>)">View List</button>
-
-                                        <div id="chart_div<?php echo $row['job_id'] ?>"
-                                             style="width: 100%; min-height: 450px;"></div>
-
-
-                                    </div>
-                                    <!--                            <div class="space-14"></div>-->
-
-
+                                    <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
                                     <?php
+
+                                }
+                                else{
+                                    ?>
+
+                                    <option value=""> </option>
+                                    <?php
+
                                 }
 
-                            }
-                        }
+                                include "../connect.php";
+                                $query_option="SELECT * FROM table_map";
+                                $result_option=mysqli_query($connect, $query_option);
+                                while($row_option=mysqli_fetch_assoc($result_option)){
+
+                                    if($row_option['table_value']!=$year_of_graduation) {
+
+
+                                        ?>
+
+                                        <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+
+
+                                        <?php
+                                    }
+                                }
+
+                                ?>
 
 
 
+                            </select>
 
-
-                        ?>
-
-
-
+                            <div class="space-16"></div>
+                        </div>
 
 
 
