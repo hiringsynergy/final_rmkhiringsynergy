@@ -244,6 +244,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='coordinator') {
 
 
     ?>
+
     <div class="alert alert-block alert-success">
         <button type="button" class="close" data-dismiss="alert">
             <i class="ace-icon fa fa-times"></i>
