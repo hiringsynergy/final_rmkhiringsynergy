@@ -434,7 +434,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "1232";
 
         //update table
     $str='';
@@ -531,7 +531,7 @@ if(isset($_GET['filter_job'])){
 
 
 
-
+        echo "success";
 
     if(!$result_for_tablemap){
 
