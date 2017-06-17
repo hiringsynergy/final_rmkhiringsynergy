@@ -74,17 +74,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
     <!-- page specific plugin styles -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
-    <link rel="stylesheet" href="assets/css/chosen.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-datepicker3.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-timepicker.min.css" />
-    <link rel="stylesheet" href="assets/css/daterangepicker.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-colorpicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
 
 
-    <link rel="stylesheet" href="assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
 
 
     <!-- text fonts -->
@@ -923,6 +923,16 @@ die(" " . mysqli_error($connect));
 
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+
+<script src="../assets/js/jquery-ui.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/jquery.easypiechart.min.js"></script>
+
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<script src="../assets/js/jquery.sparkline.index.min.js"></script>
+<script src="../assets/js/jquery.flot.min.js"></script>
+<script src="../assets/js/jquery.flot.pie.min.js"></script>
+<script src="../assets/js/jquery.flot.resize.min.js"></script>
 
 
 
