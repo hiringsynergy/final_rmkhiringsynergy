@@ -721,7 +721,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                             include "../connect.php";
 
-                                            $query="select * from students_".$table." ";
+                                            $query="select * from students_".$table;
                                             $result=mysqli_query($connect,$query);
                                             $count_sno=1;
 
@@ -996,7 +996,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                     </div>
-                                <?php } } ?>
+                                <?php } ?>
 
                             </div>
                         </div>
