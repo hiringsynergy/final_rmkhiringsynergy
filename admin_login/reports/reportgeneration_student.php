@@ -1332,7 +1332,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     //,
                     //"sScrollY": "200px",
-                    //"bPaginate": false,
+                    "bPaginate": false,
 
                     "sScrollX": "100%"
                     //"sScrollXInner": "120%",
