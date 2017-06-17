@@ -1104,7 +1104,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     $row_short = mysqli_fetch_assoc($result_short);
 
 
-                                    
+
                                     $student_table = $row_short['table_name'];
                                     $query="SELECT * FROM $student_table WHERE st_roll='{$username}'";
 
@@ -3551,7 +3551,7 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     event.preventDefault();
                                     event.stopPropagation();
                                 }
-                                else if ( bla.length!=12) {
+                                else if ( bla.length!=12||) {
                                     bootbox.dialog({
                                         message: "Please enter a valid register number",
                                         buttons: {
