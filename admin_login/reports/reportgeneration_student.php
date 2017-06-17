@@ -686,7 +686,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Students Reports</h3>
 
-                                <button class="btn btn-success btn-lg pull-right ">Export</button>
+                                <button class="btn btn-success btn-lg pull-right col-xs-pull-2 ">Export</button>
 
 
 
@@ -1334,7 +1334,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         //initiate dataTables plugin
         var myTable =
-            $('#dynamic-table')
+            $('#dynamic-table1')
             //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
                 .DataTable( {
                     bAutoWidth: false,
