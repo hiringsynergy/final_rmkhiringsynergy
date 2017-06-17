@@ -90,8 +90,30 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        document.getElementById("opt").value = strUser;
+                       // document.getElementById("modal-form").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET","get_studentreport?id="+roll+"&table="+yr+"&company="+strUser,true);
+                xmlhttp.send();
+
+
+
+
+
+
 //            alert(strUser+" "+roll+" "+yr);
-            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
+           // location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
 
         }
 
