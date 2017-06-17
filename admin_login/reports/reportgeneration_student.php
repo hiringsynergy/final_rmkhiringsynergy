@@ -86,10 +86,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         }
 
-        function showreports(roll, yr){
+        function showreports(){
 
             var e = document.getElementById("opt");
-            var strUser = e.options[e.selectedIndex].text;
+            var strUser = e.options[e.selectedIndex].value;
 
             alert(strUser);
 //            location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
@@ -943,7 +943,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td></td>
                                                     <td></td>
                                                     <td>
-                                                        <select class="chosen-select form-control" id="opt"  onchange="showreports('<?php echo $roll ?>','<?php echo $table ?>')" data-placeholder="Select Year of Graduation">
+                                                        <select class="chosen-select form-control" id="opt"  onchange="showreports()" data-placeholder="Select Year of Graduation">
 
 
 
