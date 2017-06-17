@@ -759,6 +759,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                 <br/>
+                <div class="bigger-170 blue">
+                    Reports
+
+
+
+                </div>
 
                 <div class="row">
 
@@ -827,6 +833,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             </select>
 
                             <div class="space-16"></div>
+                        </div>
+
+                        <div class="bigger-170 blue">
+                            Reports
+
+
+
                         </div>
 
                         <div class="row">
