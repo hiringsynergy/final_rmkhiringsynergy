@@ -968,7 +968,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                                     if($comp!=$opted){
 
                                                                         ?>
-<!--                                                                        <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
+                                                                        <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
 
 
 
