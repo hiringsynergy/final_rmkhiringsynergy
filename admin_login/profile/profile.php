@@ -2189,58 +2189,59 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <form class="modal-content" action="profile" method="get" enctype="multipart/form-data">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="blue bigger">Edit the following form fields</h4>
-                                            </div>
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="blue bigger">Edit the following form fields</h4>
+                                                </div>
 
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-7">
-                                                        <div class="form-group">
-                                                            <label for="control-label bolder blue">If any skill certification obtained</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder blue" name="skillset" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-7">
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder blue">If any skill certification obtained</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder blue" name="skillset" placeholder="" value="<?php echo $row['st_skillcertification']?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label for="control-label bolder blu">Duration of Course</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder blu" name="duration" placeholder="" value="<?php echo $row['st_duration']?>" />
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder blu">Duration of Course</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder blu" name="duration" placeholder="" value="<?php echo $row['st_duration']?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label for="control-label bolder bl">Certification Vendor/Authority/Agency Name</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder bl" name="vendor" placeholder="" value="<?php echo $row['st_vendor']?>" />
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder bl">Certification Vendor/Authority/Agency Name</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder bl" name="vendor" placeholder="" value="<?php echo $row['st_vendor']?>" />
+                                                                </div>
                                                             </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label for="control-label bolder b">COE Certification</label>
-                                                            <div>
-                                                                <input type="text" id="control-label bolder b" name="coecert" placeholder="" value="<?php echo $row['st_coecertification']?>" />
+                                                            <div class="form-group">
+                                                                <label for="control-label bolder b">COE Certification</label>
+                                                                <div>
+                                                                    <input type="text" id="control-label bolder b" name="coecert" placeholder="" value="<?php echo $row['st_coecertification']?>" />
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="modal-footer">
-                                                <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
-                                                <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
-                                                <button class="btn btn-sm" data-dismiss="modal">
-                                                    <i class="ace-icon fa fa-times"></i>
-                                                    Cancel
-                                                </button>
+                                                <div class="modal-footer">
+                                                    <input type="hidden" name="rollno" value="<?php echo $row['st_roll'] ?>"/>
+                                                    <input type="hidden" name="tname" value="<?php echo $row_short['table_name']; ?>"/>
+                                                    <button class="btn btn-sm" data-dismiss="modal">
+                                                        <i class="ace-icon fa fa-times"></i>
+                                                        Cancel
+                                                    </button>
 
-                                                <button class="btn btn-sm btn-primary" name="skill">
-                                                    <i class="ace-icon fa fa-check"></i>
-                                                    Save
-                                                </button>
-                                            </div></form>
+                                                    <button class="btn btn-sm btn-primary" name="skill">
+                                                        <i class="ace-icon fa fa-check"></i>
+                                                        Save
+                                                    </button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
