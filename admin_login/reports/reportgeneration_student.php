@@ -105,6 +105,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
     <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
 
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+
+
+
+
+
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+    <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js">"></script>
+
+
     <!-- text fonts -->
     <link rel="stylesheet" href="../assets/css/fonts.googleapis.com.css" />
 
@@ -632,7 +653,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Admin Panel</h3>
 
-                                
+
 
                                 <?php
                                 if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
@@ -1158,6 +1179,48 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 <script src="../assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
+<script src="../assets/js/jquery.dataTables.min.js"></script>
+<script src="../assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="../assets/js/dataTables.buttons.min.js"></script>
+<script src="../assets/js/buttons.flash.min.js"></script>
+<script src="../assets/js/buttons.html5.min.js"></script>
+<script src="../assets/js/buttons.print.min.js"></script>
+<script src="../assets/js/buttons.colVis.min.js"></script>
+<script src="../assets/js/dataTables.select.min.js"></script>
+
+<script src="../assets/js/jquery-ui.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/chosen.jquery.min.js"></script>
+<script src="../assets/js/spStatus.min.js"></script>
+<script src="../assets/js/bootstrap-datepicker.min.js"></script>
+<script src="../assets/js/bootstrap-timepicker.min.js"></script>
+<script src="../assets/js/moment.min.js"></script>
+<script src="../assets/js/daterangepicker.min.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+<script src="../assets/js/jquery.knob.min.js"></script>
+<script src="../assets/js/autosize.min.js"></script>
+<script src="../assets/js/jquery.inputlimiter.min.js"></script>
+<script src="../assets/js/jquery.maskedinput.min.js"></script>
+<script src="../assets/js/bootstrap-tag.min.js"></script>
+
+
+
+
+<script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+
+
+
 
 <!--[if lte IE 8]>
 <script src="../assets/js/excanvas.min.js"></script>
