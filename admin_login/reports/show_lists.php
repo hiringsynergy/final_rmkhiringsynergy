@@ -29,49 +29,64 @@ $year_of_graduation=$row_get_year['year_of_graduation'];
 
 
 
-foreach($checkbox as $list){
+foreach($checkbox as $list) {
 
 
-    $query_job_type="select * FROM jobs WHERE job_id='$jid'";
-    $result_job_type=mysqli_query($connect,$query_job_type);
-    $row_job_type=mysqli_fetch_assoc($result_job_type);
-    $job_type=$row_job_type['job_type'];
-    $company=$row_job_type['company'];
+    $query_job_type = "select * FROM jobs WHERE job_id='$jid'";
+    $result_job_type = mysqli_query($connect, $query_job_type);
+    $row_job_type = mysqli_fetch_assoc($result_job_type);
+    $job_type = $row_job_type['job_type'];
+    $company = $row_job_type['company'];
     echo $company;
 
     // echo "job_type: ".$job_type;
 
 
-    $ne_jobtype="select * from students_".$year_of_graduation." WHERE st_roll='$list'";
-    $new_jobtype=mysqli_query($connect,$ne_jobtype);
-     $row=mysqli_fetch_assoc($new_jobtype);
-     $row_old=$row['st_jobtype'];
-     $company_old=$row['st_placementstatus'];
+    $ne_jobtype = "select * from students_".$year_of_graduation." WHERE st_roll='$list'";
+    $new_jobtype = mysqli_query($connect, $ne_jobtype);
+    $row = mysqli_fetch_assoc($new_jobtype);
+    $row_old = $row['st_jobtype'];
 
 
+//    $row_old = $row_old . ',';
+//    $row_new = $row_old . $job_type;
+//
+//    if ($company_old != null) {
+//
+//        $company_old = $company_old . ',';
+//    }
 
 
-
-
-
-
-    $row_old=$row_old.',';
-    $row_new=$row_old.$job_type;
-
-    if($company_old!=null){
-
-        $company_old=$company_old.',';
+//    $company_new = $company_old . $company;
+    $company_old = $row['st_placementstatus'];
+    $exp = explode(',', $company_old);
+    $company_new = "";
+    $count = count($exp);
+    $i=0;
+    foreach ($exp as $r) {
+        if ($r!=$company)
+        {
+            if($count==$i-1){
+                $company_new .=$r.',';
+            }
+            else {
+                $company_new .= $r;
+            }
+            $i=$i+1;
+        }
     }
 
 
-    $company_new=$company_old.$company;
+    $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' st_placementstatus=$company_new WHERE st_roll='$list' ";
+    $result_unplaced = mysqli_query($connect, $query_unplaced);
 
-    
-    $query_unplaced="UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
-    $result_unplaced=mysqli_query($connect, $query_unplaced);
+//    $query_unplaced1="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
+//    $result_unplaced1=mysqli_query($connect, $query_unplaced1);
+//
+//    while($row=mysqli_fetch_assoc($result_unplaced1))
+//    {
 
-    $query_unplaced="UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
-    $result_unplaced=mysqli_query($connect, $query_unplaced);
+//}
     
 echo "end";
 
