@@ -172,7 +172,8 @@ if(isset($_POST['placed'])){
         $queryplace="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
         $resultplace=mysqli_query($connect, $queryplace);
         $rowplace=mysqli_fetch_assoc($resultplace);
-        if($rowplace['_"."$jid']!='placed') {
+        $jobtype='_'.$jid;
+        if($rowplace['$jobtype']!='placed') {
             $query_placed = "UPDATE students_" . $year_of_graduation . " SET _" . "$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
             $result_placed = mysqli_query($connect, $query_placed);
         }
