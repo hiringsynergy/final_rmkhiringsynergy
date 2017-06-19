@@ -76,8 +76,8 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
-    echo strlen($company_new);
-    echo $company_new=$company_new.substr(0,strlen($company_new)-2);
+    //echo strlen($company_new);
+    //echo $company_new=$company_new.substr(0,strlen($company_new)-2);
     echo "<br>";
     echo $company_new;
     echo "<br>";
@@ -105,7 +105,7 @@ if(!$result_unplaced){
 
 }
 
-//header("Location: show_lists?jid=$jid&flag=$flag");
+header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
