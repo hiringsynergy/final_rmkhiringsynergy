@@ -220,12 +220,12 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
 }
 
-if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='admin') {
+if (isset($_GET['skill']) && isset($_SESSION['user_role'])=='admin') {
 
     include "../connect.php";
 
-    $rollno = $_SESSION['user'];
-    $tname = $_SESSION['table_name'];
+    $rollno = $_GET['rollno'];
+    $tname = $_GET['tname'];
     $skillset = $_GET['skillset'];
     $duration = $_GET['duration'];
     $vendor = $_GET['vendor'];
@@ -235,7 +235,7 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='admin') {
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
+    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}' ,st_duration='{$duration}' ,st_vendor='{$vendor}' ,st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
     $result_change_skill = mysqli_query($connect, $query_change_skill);
 
     if (!$result_change_skill) {
