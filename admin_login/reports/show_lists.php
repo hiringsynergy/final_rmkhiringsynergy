@@ -62,7 +62,7 @@ foreach($checkbox as $list) {
   echo  $company_old = $row['st_placementstatus'];
     $exp = explode(',', $company_old);
     $company_new ="";
-    $count = count($exp);
+    echo $count = count($exp);
     $i=0;
     foreach ($exp as $r) {
         if ($r!=$company)
@@ -76,7 +76,7 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
-    $company_new=$company_new.substr(0,strlen($company_new)-1);
+    echo $company_new=$company_new.substr(0,strlen($company_new)-1);
     echo "<br>";
     echo $company_new;
     echo "<br>";
@@ -104,7 +104,7 @@ if(!$result_unplaced){
 
 }
 
-header("Location: show_lists?jid=$jid&flag=$flag");
+//header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
