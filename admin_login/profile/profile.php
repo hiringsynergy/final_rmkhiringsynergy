@@ -2171,7 +2171,22 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
 
                                                     </div>
+
                                                     <div class="space-10"></div>
+
+                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Opted Company</b></div>
+
+                                                            <div class="profile-info-value testred">
+                                                                <span class="editable" id="ur"><?php  echo$row['st_opted'];  ?></span>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
 
                                                 </div>
 
