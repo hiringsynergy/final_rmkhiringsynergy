@@ -906,7 +906,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
 
 
 
-                                    echo    $sql = $query_update." WHERE st_roll='$roll'";
+                                        $sql = $query_update." WHERE st_roll='$roll'";
 
 
 
