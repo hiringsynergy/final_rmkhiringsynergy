@@ -2385,6 +2385,8 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
 
+
+
                                                                         <option value="<?php echo $row['st_ugspecialization']?>"></option>
 									    
 									   

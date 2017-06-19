@@ -191,7 +191,7 @@ if(isset($_GET['filter_job'])){
     $has_job=$_GET['hasjob'];
 
     if(isset($_GET['pgbranch']) && isset($_GET['pgcgpa']))
-    {   
+    {
     $pg_branch=$_GET['pgbranch'];
     $pgcgpa=$_GET['pgcgpa'];
 
@@ -218,8 +218,8 @@ if(isset($_GET['filter_job'])){
         $campus_date="To be announced later";
 
     }
-    
-  
+
+
 
     if($check_1=='on'){
         $check_1='Core';
@@ -228,12 +228,12 @@ if(isset($_GET['filter_job'])){
 
     if($check_2=='on'){
         $check_2='Product';
-    
+
     }
 
     if($check_3=='on'){
         $check_3='Service';
-    
+
     }
 
 
@@ -406,7 +406,7 @@ if(isset($_GET['filter_job'])){
             }
 
 
-   
+
 
 
 
@@ -418,7 +418,7 @@ if(isset($_GET['filter_job'])){
     $query_column="UPDATE ".$students_table_name." SET  job_count='$count_comma' WHERE st_roll='$roll_no'";
     $result_column=mysqli_query($connect,$query_column);
 
-    
+
 
 
 

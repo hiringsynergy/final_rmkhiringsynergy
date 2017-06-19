@@ -62,20 +62,22 @@ foreach($checkbox as $list) {
   echo  $company_old = $row['st_placementstatus'];
     $exp = explode(',', $company_old);
     $company_new ="";
-    $count = count($exp);
+    echo $count = count($exp);
     $i=0;
     foreach ($exp as $r) {
         if ($r!=$company)
         {
-            if($count!=$i-1){
-                $company_new .=$r.',';
+            $i=$i+1;
+            if($count>$i+1){
+               echo $company_new .=$r.',';
             }
             else {
                 $company_new .= $r;
             }
-            $i=$i+1;
         }
     }
+    //echo strlen($company_new);
+    //echo $company_new=$company_new.substr(0,strlen($company_new)-2);
     echo "<br>";
     echo $company_new;
     echo "<br>";
@@ -167,9 +169,14 @@ if(isset($_POST['placed'])){
 
         $company_new=$company_old.$company;
 
-
-        $query_placed="UPDATE students_".$year_of_graduation." SET _"."$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
-        $result_placed=mysqli_query($connect, $query_placed);
+        $queryplace="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
+        $resultplace=mysqli_query($connect, $queryplace);
+        $rowplace=mysqli_fetch_assoc($resultplace);
+        echo $jobtype='_'.$jid;
+        if($rowplace['$jobtype']!='placed') {
+            $query_placed = "UPDATE students_" . $year_of_graduation . " SET _" . "$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+            $result_placed = mysqli_query($connect, $query_placed);
+        }
 
         echo "end";
 
@@ -177,7 +184,7 @@ if(isset($_POST['placed'])){
 
     }
 
-    header("Location: show_lists?jid=$jid&flag=$flag");
+   // header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
