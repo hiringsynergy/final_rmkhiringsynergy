@@ -809,6 +809,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                                 case 'father_occupation': {  $query_update.="st_fatheroccupation='$father_occupation'";  break;}
                                                 case 'mother_name': {  $query_update.="st_mothername='$mother_name'";  break;}
                                                 case 'mother_occupation': {  $query_update.="st_motheroccupation='$mother_occupation'";  break;}
+                                                case 'clgemail_id': {  $query_update.="st_clgemail='$college_email'";  break;}
                                                 case 'email_id': {  $query_update.="st_email='$email'";  break;}
                                                 case 'mobile_no': {  $query_update.="st_phone='$phone'";  break;}
                                                 case 'dob': {  $query_update.="st_dob='$dob'";  break;}
@@ -1033,6 +1034,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null){
                                                 <option value="father_occupation">Father Occupation</option>
                                                 <option value="mother_name">Mother Name</option>
                                                 <option value="mother_occupation">Mother Occupation</option>
+                                                <option value="clgemail_id">College Email ID</option>
                                                 <option value="email_id">Email ID</option>
                                                 <option value="mobile_no">Mobile Number</option>
                                                 <option value="dob">Date of Birth (DD-MM-YYYY)</option>
