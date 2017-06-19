@@ -185,7 +185,7 @@ if(isset($_POST['placed'])){
 
     }
 
-   // header("Location: show_lists?jid=$jid&flag=$flag");
+    header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
