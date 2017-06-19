@@ -1416,6 +1416,39 @@ if(isset($_GET['filter_job'])){
 
                                                         </div>
                                                         <div class="row">
+
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
+
+                                                                <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                    <option value="na">Please Select</option>
+                                                                    <option value="0">0</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Lateral Entry(Optional)</label></h5>
+                                                                <input type="text" name="lateral"  value="0" id="slide-text4" class="col-xs-1">
+                                                                <div id="slider-eq4" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-blue">0</span>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                        <div class="row">
+
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
 
@@ -1433,41 +1466,7 @@ if(isset($_GET['filter_job'])){
                                                                     <option value="9">9</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
-                                                               
-                                                                 <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
-                                                                    <option value="na">Please Select</option>
-                                                                     <option value="0">0</option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                    <option value="6">6</option>
-                                                                    <option value="7">7</option>
-                                                                    <option value="8">8</option>
-                                                                    <option value="9">9</option>
-                                                                </select>
 
-
-
-
-
-
-
-
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Lateral Entry(Optional)</label></h5>
-                                                                <input type="text" name="lateral"  value="0" id="slide-text4" class="col-xs-1">
-                                                                <div id="slider-eq4" class="col-xs-12 col-md-10 col-sm-8">
-                                                                    <span class="ui-slider-blue">0</span>
-                                                                </div>
-                                                            </div>
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">Gender</label></h5>
 
