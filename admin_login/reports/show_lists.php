@@ -76,7 +76,7 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
-    echo $company_new=$company_new.substr(0,strlen($company_new)-1);
+    echo $company_new=$company_new.substr(0,strlen($company_new)-2);
     echo "<br>";
     echo $company_new;
     echo "<br>";
