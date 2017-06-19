@@ -733,7 +733,7 @@ die(" " . mysqli_error($connect));
                                             </th>
                                             <th>Roll No</th>
                                             <th>Name</th>
-                                            <th class="">Email</th>
+                                            <th class="">College Email</th>
 
 
 
@@ -796,7 +796,7 @@ die(" " . mysqli_error($connect));
                                                 <?php echo $row_job['st_name']  ?>
                                             </td>
 
-                                            <td ><?php echo $row_job['st_email']  ?></td>
+                                            <td ><?php echo $row_job['st_clgemail']  ?></td>
 
                                             <td> <?php echo $row_job['st_phone']  ?></td>
 
