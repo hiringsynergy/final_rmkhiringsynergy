@@ -103,7 +103,7 @@ if(!$result_unplaced){
 
 }
 
-//header("Location: show_lists?jid=$jid&flag=$flag");
+header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
