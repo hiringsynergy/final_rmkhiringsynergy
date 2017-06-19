@@ -67,7 +67,7 @@ foreach($checkbox as $list) {
     foreach ($exp as $r) {
         if ($r!=$company)
         {
-            if($count<$i-2){
+            if($count<$i-1){
                 $company_new .=$r.',';
             }
             else {
