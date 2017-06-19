@@ -1400,7 +1400,7 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 }
 
 
-if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
+if (isset($_POST['skill']) && isset($_SESSION['user_role'])=='student') {
 
     include "../connect.php";
 
@@ -1443,7 +1443,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='student') {
                             </div>
     <?php
 
-  //  header("Location: profile?roll=$rollno");
+  header("Location: profile?roll=$rollno");
 
 }
 

@@ -218,22 +218,23 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
 }
 
-if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='coordinator') {
+
+if (isset($_GET['skill']) && isset($_SESSION['user_role'])=='coordinator') {
 
     include "../connect.php";
 
-    $rollno = $_SESSION['user'];
-    $tname = $_SESSION['table_name'];
-    $skillset = $_POST['skillset'];
-    $duration = $_POST['duration'];
-    $vendor = $_POST['vendor'];
-    $coecert = $_POST['coecert'];
+    $rollno = $_GET['rollno'];
+    $tname = $_GET['tname'];
+    $skillset = $_GET['skillset'];
+    $duration = $_GET['duration'];
+    $vendor = $_GET['vendor'];
+    $coecert = $_GET['coecert'];
     $select = "SELECT * from $tname where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
+    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}' ,st_duration='{$duration}' ,st_vendor='{$vendor}' ,st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
     $result_change_skill = mysqli_query($connect, $query_change_skill);
 
     if (!$result_change_skill) {
@@ -244,7 +245,6 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='coordinator') {
 
 
     ?>
-
     <div class="alert alert-block alert-success">
         <button type="button" class="close" data-dismiss="alert">
             <i class="ace-icon fa fa-times"></i>
@@ -262,7 +262,7 @@ if (isset($_POST['skill'])&& isset($_SESSION['user_role'])=='coordinator') {
     </div>
     <?php
 
-    //  header("Location: profile?roll=$rollno");
+    header("Location: profile?roll=$rollno");
 
 }
 
@@ -2070,7 +2070,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                     Cancel
                                                 </button>
 
-                                                <button class="btn btn-sm btn-primary">
+                                                <button class="btn btn-sm btn-primary" name="skill">
                                                     <i class="ace-icon fa fa-check"></i>
                                                     Save
                                                 </button>
