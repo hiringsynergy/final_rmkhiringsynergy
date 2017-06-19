@@ -1393,19 +1393,26 @@ if(isset($_GET['filter_job'])){
 
                                                         <div class="row">
                                                             <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 12th Percentage</label></h5>
-                                                                <input type="text" name="12percentage"  value="0" id="slide-text2" class="col-xs-1">
-                                                                <div id="slider-eq2" class="col-xs-12 col-md-10 col-sm-8">
-                                                                    <span class="ui-slider-blue">0</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 10th Percentage</label></h5>
                                                                 <input type="text" name="10percentage"  value="0" id="slide-text3" class="col-xs-1">
                                                                 <div id="slider-eq3" class="col-xs-12 col-md-10 col-sm-8">
                                                                     <span class="ui-slider-blue">0</span>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 12th Percentage</label></h5>
+                                                                <input type="text" name="12percentage"  value="0" id="slide-text2" class="col-xs-1">
+                                                                <div id="slider-eq2" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-blue">0</span>
+                                                                </div>
+                                                            </div>
+<!--                                                            <div class="col-xs-8 col-sm-5">-->
+<!--                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 10th Percentage</label></h5>-->
+<!--                                                                <input type="text" name="10percentage"  value="0" id="slide-text3" class="col-xs-1">-->
+<!--                                                                <div id="slider-eq3" class="col-xs-12 col-md-10 col-sm-8">-->
+<!--                                                                    <span class="ui-slider-blue">0</span>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
 
                                                         </div>
                                                         <div class="row">
