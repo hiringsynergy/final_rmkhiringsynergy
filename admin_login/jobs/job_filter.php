@@ -147,7 +147,7 @@ function updateSlider(){
 
 
 
-if(isset($_POST['filter_job'])){
+if(isset($_GET['filter_job'])){
 
 
 
@@ -163,52 +163,52 @@ if(isset($_POST['filter_job'])){
     $check_3="initialize";
 
     $id=time();
-    $job_title=$_POST['job_title'];
+    $job_title=$_GET['job_title'];
 
-    $company_id=$_POST['company_id'];
-    $venue=$_POST['venue'];
-    $salary=$_POST['salary'];
-    $campus_date=$_POST['campus_date'];
-    $apply_before=$_POST['apply_before'];
-    $year_of_graduation=$_POST['year_of_graduation'];
-    $joining_location=$_POST['joining_location'];
-    $job_description=$_POST['job_description'];
-    $job_type=$_POST['job_type'];
-    $skill_set=$_POST['skill_set'];
+    $company_id=$_GET['company_id'];
+    $venue=$_GET['venue'];
+    $salary=$_GET['salary'];
+    $campus_date=$_GET['campus_date'];
+    $apply_before=$_GET['apply_before'];
+    $year_of_graduation=$_GET['year_of_graduation'];
+    $joining_location=$_GET['joining_location'];
+    $job_description=$_GET['job_description'];
+    $job_type=$_GET['job_type'];
+    $skill_set=$_GET['skill_set'];
     $sort=strtotime($apply_before);
-    $cgpa=$_POST['ugcgpa'];
-    $_10percentage=$_POST['10percentage'];
-    $_12percentage=$_POST['12percentage'];
-    $standingarrears=$_POST['standingarrears'];
-    $historyofarrears=$_POST['historyofarrears'];
-    $lateral=$_POST['lateral'];
-    $gender=$_POST['gender'];
-    $gapinstudy=$_POST['gapinstudy'];
+    $cgpa=$_GET['ugcgpa'];
+    $_10percentage=$_GET['10percentage'];
+    $_12percentage=$_GET['12percentage'];
+    $standingarrears=$_GET['standingarrears'];
+    $historyofarrears=$_GET['historyofarrears'];
+    $lateral=$_GET['lateral'];
+    $gender=$_GET['gender'];
+    $gapinstudy=$_GET['gapinstudy'];
 
 
-    $get_branch= $_POST['ugbranch'];
+    $get_branch= $_GET['ugbranch'];
 
-    $has_job=$_POST['hasjob'];
+    $has_job=$_GET['hasjob'];
 
-    if(isset($_POST['pgbranch']) && isset($_POST['pgcgpa']))
-    {   
-    $pg_branch=$_POST['pgbranch'];
-    $pgcgpa=$_POST['pgcgpa'];
+    if(isset($_GET['pgbranch']) && isset($_GET['pgcgpa']))
+    {
+    $pg_branch=$_GET['pgbranch'];
+    $pgcgpa=$_GET['pgcgpa'];
 
     }
 
 
-    if(isset($_POST['dontselect1'])){
+    if(isset($_GET['dontselect1'])){
 
-        $check_1=$_POST['dontselect1'];
+        $check_1=$_GET['dontselect1'];
     }
-    if(isset($_POST['dontselect2'])){
+    if(isset($_GET['dontselect2'])){
 
-        $check_2=$_POST['dontselect2'];
+        $check_2=$_GET['dontselect2'];
     }
-    if(isset($_POST['dontselect3'])){
+    if(isset($_GET['dontselect3'])){
 
-        $check_3=$_POST['dontselect3'];
+        $check_3=$_GET['dontselect3'];
     }
 
 
@@ -218,8 +218,8 @@ if(isset($_POST['filter_job'])){
         $campus_date="To be announced later";
 
     }
-    
-  
+
+
 
     if($check_1=='on'){
         $check_1='Core';
@@ -228,12 +228,12 @@ if(isset($_POST['filter_job'])){
 
     if($check_2=='on'){
         $check_2='Product';
-    
+
     }
 
     if($check_3=='on'){
         $check_3='Service';
-    
+
     }
 
 
@@ -406,7 +406,7 @@ if(isset($_POST['filter_job'])){
             }
 
 
-   
+
 
 
 
@@ -418,7 +418,7 @@ if(isset($_POST['filter_job'])){
     $query_column="UPDATE ".$students_table_name." SET  job_count='$count_comma' WHERE st_roll='$roll_no'";
     $result_column=mysqli_query($connect,$query_column);
 
-    
+
 
 
 
@@ -1132,7 +1132,7 @@ if(isset($_POST['filter_job'])){
                 <form class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <form action="job_filter" method="post" >
+                        <form action="job_filter" method="get" >
 
                             <?php
 
@@ -1142,17 +1142,17 @@ if(isset($_POST['filter_job'])){
 
 
 
-                            $job_title=$_POST['job_title'];
-                            $company_id=$_POST['company_id'];
-                            $venue=$_POST['venue'];
-                            $salary=$_POST['salary'];
-                            $campus_date=$_POST['campus_date'];
-                            $apply_before=$_POST['apply_before'];
-                            $year_of_graduation=$_POST['year_of_graduation'];
-                            $joining_location=$_POST['joining_location'];
-                            $job_description=$_POST['job_description'];
-                            $job_type=$_POST['job_type'];
-                            $skill_set=$_POST['skill_set'];
+                            $job_title=$_GET['job_title'];
+                            $company_id=$_GET['company_id'];
+                            $venue=$_GET['venue'];
+                            $salary=$_GET['salary'];
+                            $campus_date=$_GET['campus_date'];
+                            $apply_before=$_GET['apply_before'];
+                            $year_of_graduation=$_GET['year_of_graduation'];
+                            $joining_location=$_GET['joining_location'];
+                            $job_description=$_GET['job_description'];
+                            $job_type=$_GET['job_type'];
+                            $skill_set=$_GET['skill_set'];
                             $sort=strtotime($apply_before);
 
 
