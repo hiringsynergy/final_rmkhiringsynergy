@@ -2383,17 +2383,17 @@ if (isset($_POST['skill']) && isset($_SESSION['user_role'])=='student') {
                                             <div class="widget-header ">
                                                 <h5 class="widget-title" style="color: white; font-weight: bold; font-size: 18px;">AMCAT Score</h5>
 
-                                                <div class="widget-toolbar">
-
-
-
-                                                    <a href="#modal-form5" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
-
-                                                </div>
+<!--                                                <div class="widget-toolbar">-->
+<!---->
+<!---->
+<!---->
+<!--                                                    <a href="#modal-form5" data-toggle="modal">-->
+<!---->
+<!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+<!---->
+<!--                                                    </a>-->
+<!---->
+<!--                                                </div>-->
                                             </div>
 
                                             <div class="widget-body">
