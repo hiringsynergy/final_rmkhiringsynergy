@@ -67,13 +67,13 @@ foreach($checkbox as $list) {
     foreach ($exp as $r) {
         if ($r!=$company)
         {
-            if($count<$i-1){
-                $company_new .=$r.',';
+            $i=$i+1;
+            if($count>$i+1){
+               echo $company_new .=$r.',';
             }
             else {
                 $company_new .= $r;
             }
-            $i=$i+1;
         }
     }
     //echo strlen($company_new);
@@ -105,7 +105,7 @@ if(!$result_unplaced){
 
 }
 
-header("Location: show_lists?jid=$jid&flag=$flag");
+//header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
