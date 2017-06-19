@@ -226,10 +226,10 @@ if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='admin') {
 
     $rollno = $_SESSION['user'];
     $tname = $_SESSION['table_name'];
-    $skillset = $_POST['skillset'];
-    $duration = $_POST['duration'];
-    $vendor = $_POST['vendor'];
-    $coecert = $_POST['coecert'];
+    $skillset = $_GET['skillset'];
+    $duration = $_GET['duration'];
+    $vendor = $_GET['vendor'];
+    $coecert = $_GET['coecert'];
     $select = "SELECT * from $tname where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
