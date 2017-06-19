@@ -67,7 +67,7 @@ foreach($checkbox as $list) {
     foreach ($exp as $r) {
         if ($r!=$company)
         {
-            if($count!=$i-2){
+            if($count<$i-2){
                 $company_new .=$r.',';
             }
             else {
@@ -76,6 +76,7 @@ foreach($checkbox as $list) {
             $i=$i+1;
         }
     }
+    echo strlen($company_new);
     echo $company_new=$company_new.substr(0,strlen($company_new)-2);
     echo "<br>";
     echo $company_new;
