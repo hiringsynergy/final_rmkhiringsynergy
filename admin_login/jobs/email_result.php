@@ -595,7 +595,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 // Create the Transport
                     $transport = (new Swift_SmtpTransport('mx1.hostinger.com', 587));
                         $transport->setUsername('rmdplacements@rmkhiringsynergy.xyz');
-                        $transport->setPassword('rmkhiringsynergy');
+                        $transport->setPassword('rmd123');
 
 
 // Create the Mailer using your created Transport
@@ -610,7 +610,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 // Send the message
-     $result = $mailer->send($message);
+                        //$result = $mailer->send($message);
 
 
 
