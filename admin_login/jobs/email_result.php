@@ -780,7 +780,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         $to = $row_mail['st_clgemail'];
 
                         //$mail->addAddress($to);     // Add a recipient
-                        $message->setTo([$to, $to => 'A name']);
+                        $message->setTo($to);
 
 
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
