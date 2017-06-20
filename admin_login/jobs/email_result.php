@@ -581,7 +581,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail=new PHPMailer();
 
-                    $mail->isMail();
+                    $mail->isSMTP();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;    // Enable SMTP authentication
 
@@ -590,6 +590,27 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
+                    require_once 'swiftmailer-master/lib/swift_required.php';
+
+// Create the Transport
+                    $transport = (new Swift_SmtpTransport('mx1.hostinger.com', 587));
+                        $transport->setUsername('rmdplacements@rmkhiringsynergy.xyz');
+                        $transport->setPassword('rmd123');
+
+
+// Create the Mailer using your created Transport
+                    $mailer = new Swift_Mailer($transport);
+
+// Create a message
+                    $message = new Swift_Message('Wonderful Subject');
+                         $message->setFrom(['rmdplacements@rmkhiringsynergy.xyz' => 'John Doe']);
+
+                        $message->setBody('Here is the message itself');
+
+
+
+// Send the message
+                        //$result = $mailer->send($message);
 
 
 
@@ -758,8 +779,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_clgemail'];
 
-                        $mail->addAddress($to);     // Add a recipient
-
+                        //$mail->addAddress($to);     // Add a recipient
+                        $message->setTo([$to, $to => 'A name']);
 
 
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
@@ -775,18 +796,18 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         }
 
 
-                        if ($mail->send()) {
+                        if ($mailer->send($message)) {
 
 
                             $counter = $counter + 1;
 
-                            //echo "message sent";
+                            echo "message sent";
 
                         }
                         else{
 
 
-                           //echo  "not sent";//$mail->ErrorInfo;
+                           echo  "not sent";//$mail->ErrorInfo;
                         }
 
 
