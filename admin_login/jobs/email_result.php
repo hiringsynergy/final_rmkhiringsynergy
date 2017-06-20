@@ -801,6 +801,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                             $counter = $counter + 1;
 
+                            echo "message sent";
+
                         }
                         else{
 
