@@ -339,12 +339,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
          $mail->Subject = $subject;
          $mail->Body    = '<h3> '.$message.' '.$roll_no.' </h3>';
-
-         if($count>50 && $count%50==0)
-         {
-             sleep(5);
-         }
-
+         
 
 
          if(!$mail->send()) {
