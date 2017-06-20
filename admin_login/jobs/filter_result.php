@@ -15,12 +15,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-if(isset($_GET['email'])) {
+if(isset($_POST['email'])) {
 
     include "../connect.php";
-    $jid = $_GET['jid'];
-    $students_table_name=$_GET['year'];
-$check=$_GET['check'];
+    $jid = $_POST['jid'];
+    $students_table_name=$_POST['year'];
+$check=$_POST['check'];
 foreach($check as $select)
 {
     $query_for_update="UPDATE students_".$students_table_name." SET _".$jid."='eligible' WHERE st_roll='$select'";
@@ -707,7 +707,7 @@ die(" " . mysqli_error($connect));
                                 <div class="clearfix">
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
-                                <form action="filter_result" method="get" >
+                                <form action="filter_result" method="post" >
 
                             <button name="email" id="bootbox-confirm" type="submit" class="btn btn-lg btn-success">
                                 <i class="ace-icon fa fa-check"></i>
