@@ -675,7 +675,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && isset($_SESSION['u
                                         <?php
 
                                         include "../connect.php";
-                                        $query_insert = "SELECT * FROM table_map";
+                                        $query_insert = "SELECT * FROM table_map ORDER BY table_value ASC";
                                         $result_insert = mysqli_query($connect, $query_insert);
                                         while ($row = mysqli_fetch_assoc($result_insert)) {
 

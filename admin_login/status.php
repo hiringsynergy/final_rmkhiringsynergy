@@ -851,9 +851,9 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                             echo "declined by ";
 
 
-                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 17);
                                                         else if (substr($rowr[$val->name], 0, 1) == 'c')
-                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 17);
                                                         }
                                                             ?>
                                                         <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
@@ -1004,9 +1004,9 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                             echo "declined by ";
 
 
-                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 17);
                                                         else if (substr($rowr[$val->name], 0, 1) == 'c')
-                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 17);
                                                         }
                                                             ?>
                                                         <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
@@ -1155,9 +1155,9 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='admin' ){
                                                             echo "declined by ";
 
 
-                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 18);
+                                                        if (substr($rowr[$val->name], 0, 1) == 'a') echo "admin. Reason :".substr($rowr[$val->name], 17);
                                                         else if (substr($rowr[$val->name], 0, 1) == 'c')
-                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 18);
+                                                            echo "coordinator. Reason :".substr($rowr[$val->name], 17);
                                                         }
                                                             ?>
                                                             <!-- <span class="red" style="font-size: 17px;"> <?php echo $row['job_title'] ?> </span> from company
