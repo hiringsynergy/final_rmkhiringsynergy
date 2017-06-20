@@ -615,7 +615,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                               ?>
 
 
-                                                              <img src="images/TCS-logo.jpg" >
+                                                              <img src="images/rmd.jpg" >
 
                                                               <?php
 
@@ -760,7 +760,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                               ?>
 
 
-                                                              <img src="images/TCS-logo.jpg" >
+                                                              <img src="images/rmd.jpg" >
 
                                                               <?php
 
