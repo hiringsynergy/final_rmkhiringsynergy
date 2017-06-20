@@ -610,7 +610,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 // Send the message
-     $result = $mailer->send($message);
+                        //$result = $mailer->send($message);
 
 
 
