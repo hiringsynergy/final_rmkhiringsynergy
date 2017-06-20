@@ -803,7 +803,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         }
                         else{
-                           echo  $mail->ErrorInfo;
+
+
+                           echo  "not sent";//$mail->ErrorInfo;
                         }
 
 
