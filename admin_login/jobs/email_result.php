@@ -582,8 +582,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $mail=new PHPMailer();
 
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;    // Enable SMTP authentication
+                    $mail->isHTML(true);
 
 
 
@@ -598,18 +599,18 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $database=$_SESSION['database_name'];
                     if(preg_match('/rmd/', $database)){
 
+                        $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                        $mail->Password = 'rmd123';                           // SMTP password
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 	587;
 
-                        $mail->Username = 'dhoni.singh1703@gmail.com';                 // SMTP username
-                        $mail->Password = 'akash170397';                           // SMTP password
-                        $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 465;
+
+
+
                         $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
-                        $mail->addReplyTo('dhoni.singh1703@gmail.com', 'Reply');
-
-                        //$mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
 
 
-                        //$mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+                        $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
 
 
                     }
@@ -781,7 +782,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         else{
 
 
-                          // echo  "not sent";//$mail->ErrorInfo;
+                          echo  "not sent";//$mail->ErrorInfo;
                         }
 
 
