@@ -2405,29 +2405,31 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                         $result1=mysqli_query($connect,$query1);
                                                                         $var;
                                                                         while($row1=mysqli_fetch_assoc($result)) {
-                                                                            if($row1['dept_expand']==$row['st_ugspecialization'])
+                                                                            if($row1['dept_short']==$row['st_ugspecialization'])
                                                                             {
-                                                                                $var=$row1['dept_short'];
+                                                                                $var=$row1['dept_expand'];
                                                                             }
                                                                         }
+//                                                                        $dept = array("Computer Science and Engineering" => "cse", "Information Technology" => "it", "Mechanical Engineering" => "mech"
+//                                                                        , "Civil Engineering" => "civil", "Electronics and Communication Engineering" => "ece", "Electrical and Electronics Engineering" => "eee");
                                                                         ?>
 
                                                                         <option value="<?php echo $var ?>"></option>
 									    
 									   
-                                                                        <option value="Computer Science and Engineering">Computer Science Engineering</option>
+                                                                        <option value="cse">Computer Science Engineering</option>
 								
-                                                                        <option value="Information Technology">Information Technology</option>
+                                                                        <option value="it">Information Technology</option>
 									    
-                                                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                        <option value="mech">Mechanical Engineering</option>
 
-                                                                        <option value="Civil Engineering">Civil Engineering</option>
+                                                                        <option value="civil">Civil Engineering</option>
 									  
-                                                                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                        <option value="ece">Electronics and Communication Engineering</option>
 								
-                                                                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                                                                        <option value="eee">Electrical and Electronics Engineering</option>
 								
-                                                                        <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+                                                                        <option value="eie">Electronics and Instrumentation Engineering</option>
 								
                                                                     </select>
                                                                 </div>
@@ -2582,25 +2584,25 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <select name="pgbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_pgspecialization']?>">
                                                                         <option value="<?php echo $row['st_pgspecialization']?>"></option>
 
-                                                                        <option value="Applied Electronics">Applied Electronics</option>
+                                                                        <option value="ae">Applied Electronics</option>
 
-                                                                        <option value="Power Electronics and Drives">Power Electronics and Drives</option>
+                                                                        <option value="ped">Power Electronics and Drives</option>
 
                                                                         <option value="VLSI Design">VLSI Design</option>
 
-                                                                        <option value="Computer Science and Engineering">Computer Science Engineering</option>
+                                                                        <option value="cse">Computer Science Engineering</option>
 
-                                                                        <option value="Information Technology">Information Technology</option>
+                                                                        <option value="it">Information Technology</option>
 
-                                                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                        <option value="mech">Mechanical Engineering</option>
 
-                                                                        <option value="Civil Engineering">Civil Engineering</option>
+                                                                        <option value="civil">Civil Engineering</option>
 
-                                                                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                                                                        <option value="ece">Electronics and Communication Engineering</option>
 
-                                                                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                                                                        <option value="eee">Electrical and Electronics Engineering</option>
 
-                                                                        <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
+                                                                        <option value="eie">Electronics and Instrumentation Engineering</option>
 
 
 
