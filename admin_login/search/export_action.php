@@ -342,7 +342,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
          if($count>50 && $count%50==0)
          {
-             sleep(30);
+             sleep(5);
          }
 
 
