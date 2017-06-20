@@ -2400,9 +2400,19 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
 
+                                                                        <?php
+                                                                        $query1="SELECT * FROM dept_map";
+                                                                        $result1=mysqli_query($connect,$query1);
+                                                                        $var;
+                                                                        while($row1=mysqli_fetch_assoc($result)) {
+                                                                            if($row1['dept_expand']==$row['st_ugspecialization'])
+                                                                            {
+                                                                                $var=$row1['dept_short'];
+                                                                            }
+                                                                        }
+                                                                        ?>
 
-
-                                                                        <option value="<?php echo $row['st_ugspecialization']?>"></option>
+                                                                        <option value="<?php echo $var ?>"></option>
 									    
 									   
                                                                         <option value="Computer Science and Engineering">Computer Science Engineering</option>
