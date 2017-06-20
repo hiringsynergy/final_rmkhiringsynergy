@@ -575,7 +575,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $jid = $_POST['jid'];
 
-                    $mail->SMTPDebug = 3;
+
 
                     require "../email/PHPMailer/PHPMailerAutoload.php";
 
