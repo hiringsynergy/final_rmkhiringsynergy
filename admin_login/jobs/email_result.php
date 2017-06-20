@@ -604,11 +604,11 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-
-                        $mail->setFrom('dhoni.singh1703@gmail.com', 'RMD Placements');
+                        $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
 
 
                         $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+
 
 
                     }
