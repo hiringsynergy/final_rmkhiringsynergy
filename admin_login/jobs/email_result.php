@@ -590,6 +590,29 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
+                    require_once 'swiftmailer-master/lib/swift_required.php';
+
+// Create the Transport
+                    $transport = (new Swift_SmtpTransport('mx1.hostinger.com', 587));
+                        $transport->setUsername('rmdplacements@rmkhiringsynergy.xyz');
+                        $transport->setPassword('rmkhiringsynergy');
+
+
+// Create the Mailer using your created Transport
+                    $mailer = new Swift_Mailer($transport);
+
+// Create a message
+                    $message = new Swift_Message('Wonderful Subject');
+                         $message->setFrom(['john@doe.com' => 'John Doe']);
+
+                        $message->setBody('Here is the message itself');
+
+
+
+// Send the message
+     $result = $mailer->send($message);
+
+
 
 
 
@@ -756,7 +779,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_clgemail'];
 
-                        $mail->addAddress($to);     // Add a recipient
+                        //$mail->addAddress($to);     // Add a recipient
+                        $message->setTo(['receiver@domain.org', 'other@domain.org' => 'A name']);
 
 
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
@@ -764,7 +788,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             foreach ($send_file as $file_to_send) {
 
 
-                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                              //  $mail->addAttachment('files/' . $file_to_send, $file_to_send);
 
                             }
 
@@ -772,7 +796,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         }
 
 
-                        if ($mail->send()) {
+                        if ($mailer->send($message)) {
 
 
                             $counter = $counter + 1;
