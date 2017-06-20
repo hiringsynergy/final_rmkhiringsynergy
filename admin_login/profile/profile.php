@@ -220,22 +220,22 @@ st_candidateid='{$candidateid}',st_signature='{$signature}' WHERE st_roll='{$rol
 
 }
 
-if (isset($_GET['skill'])&& isset($_SESSION['user_role'])=='admin') {
+if (isset($_GET['skill']) && isset($_SESSION['user_role'])=='admin') {
 
     include "../connect.php";
 
-    $rollno = $_SESSION['user'];
-    $tname = $_SESSION['table_name'];
-    $skillset = $_POST['skillset'];
-    $duration = $_POST['duration'];
-    $vendor = $_POST['vendor'];
-    $coecert = $_POST['coecert'];
+    $rollno = $_GET['rollno'];
+    $tname = $_GET['tname'];
+    $skillset = $_GET['skillset'];
+    $duration = $_GET['duration'];
+    $vendor = $_GET['vendor'];
+    $coecert = $_GET['coecert'];
     $select = "SELECT * from $tname where st_roll='{$rollno}'";
     $select_result = mysqli_query($connect, $select);
     $row = mysqli_fetch_assoc($select_result);
 
 
-    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}',st_duration='{$duration}',st_vendor='{$vendor}',st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
+    $query_change_skill = "UPDATE $tname SET  st_skillcertification='{$skillset}' ,st_duration='{$duration}' ,st_vendor='{$vendor}' ,st_coecertification='{$coecert}'  WHERE st_roll='{$rollno}'";
     $result_change_skill = mysqli_query($connect, $query_change_skill);
 
     if (!$result_change_skill) {
@@ -2171,7 +2171,22 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
 
 
                                                     </div>
+
                                                     <div class="space-10"></div>
+
+                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+
+                                                        <div class="profile-info-row  ">
+                                                            <div class="profile-info-name align-left test " style="background:#F1A9A0; color:#D91E18" > <b>Opted Company</b></div>
+
+                                                            <div class="profile-info-value testred">
+                                                                <span class="editable" id="ur"><?php  echo$row['st_opted'];  ?></span>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
 
                                                 </div>
 
@@ -2385,7 +2400,19 @@ if(isset($_GET['roll'])&& isset($_SESSION['user_role'])=='admin')
                                                                     <label for="form-field-b1">Branch</label>
                                                                     <select name="ugbranch" class="form-control" id="form-field-b1" value="<?php echo $row['st_ugspecialization']?>">
 
-                                                                        <option value="<?php echo $row['st_ugspecialization']?>"></option>
+                                                                        <?php
+                                                                        $query1="SELECT * FROM dept_map";
+                                                                        $result1=mysqli_query($connect,$query1);
+                                                                        $var;
+                                                                        while($row1=mysqli_fetch_assoc($result)) {
+                                                                            if($row1['dept_expand']==$row['st_ugspecialization'])
+                                                                            {
+                                                                                $var=$row1['dept_short'];
+                                                                            }
+                                                                        }
+                                                                        ?>
+
+                                                                        <option value="<?php echo $var ?>"></option>
 									    
 									   
                                                                         <option value="Computer Science and Engineering">Computer Science Engineering</option>

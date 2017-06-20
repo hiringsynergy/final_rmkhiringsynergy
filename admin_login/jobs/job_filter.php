@@ -191,7 +191,7 @@ if(isset($_GET['filter_job'])){
     $has_job=$_GET['hasjob'];
 
     if(isset($_GET['pgbranch']) && isset($_GET['pgcgpa']))
-    {   
+    {
     $pg_branch=$_GET['pgbranch'];
     $pgcgpa=$_GET['pgcgpa'];
 
@@ -218,8 +218,8 @@ if(isset($_GET['filter_job'])){
         $campus_date="To be announced later";
 
     }
-    
-  
+
+
 
     if($check_1=='on'){
         $check_1='Core';
@@ -228,12 +228,12 @@ if(isset($_GET['filter_job'])){
 
     if($check_2=='on'){
         $check_2='Product';
-    
+
     }
 
     if($check_3=='on'){
         $check_3='Service';
-    
+
     }
 
 
@@ -406,7 +406,7 @@ if(isset($_GET['filter_job'])){
             }
 
 
-   
+
 
 
 
@@ -418,7 +418,7 @@ if(isset($_GET['filter_job'])){
     $query_column="UPDATE ".$students_table_name." SET  job_count='$count_comma' WHERE st_roll='$roll_no'";
     $result_column=mysqli_query($connect,$query_column);
 
-    
+
 
 
 
@@ -1393,22 +1393,62 @@ if(isset($_GET['filter_job'])){
 
                                                         <div class="row">
                                                             <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 12th Percentage</label></h5>
-                                                                <input type="text" name="12percentage"  value="0" id="slide-text2" class="col-xs-1">
-                                                                <div id="slider-eq2" class="col-xs-12 col-md-10 col-sm-8">
-                                                                    <span class="ui-slider-blue">0</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 10th Percentage</label></h5>
                                                                 <input type="text" name="10percentage"  value="0" id="slide-text3" class="col-xs-1">
                                                                 <div id="slider-eq3" class="col-xs-12 col-md-10 col-sm-8">
                                                                     <span class="ui-slider-blue">0</span>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 12th Percentage</label></h5>
+                                                                <input type="text" name="12percentage"  value="0" id="slide-text2" class="col-xs-1">
+                                                                <div id="slider-eq2" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-blue">0</span>
+                                                                </div>
+                                                            </div>
+<!--                                                            <div class="col-xs-8 col-sm-5">-->
+<!--                                                                <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Select 10th Percentage</label></h5>-->
+<!--                                                                <input type="text" name="10percentage"  value="0" id="slide-text3" class="col-xs-1">-->
+<!--                                                                <div id="slider-eq3" class="col-xs-12 col-md-10 col-sm-8">-->
+<!--                                                                    <span class="ui-slider-blue">0</span>-->
+<!--                                                                </div>-->
+<!--                                                            </div>-->
 
                                                         </div>
                                                         <div class="row">
+
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
+
+                                                                <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
+                                                                    <option value="na">Please Select</option>
+                                                                    <option value="0">0</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-5">
+                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Lateral Entry(Optional)</label></h5>
+                                                                <input type="text" name="lateral"  value="0" id="slide-text4" class="col-xs-1">
+                                                                <div id="slider-eq4" class="col-xs-12 col-md-10 col-sm-8">
+                                                                    <span class="ui-slider-blue">0</span>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                        <div class="row">
+
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">Standing Arrears</label></h5>
 
@@ -1426,41 +1466,7 @@ if(isset($_GET['filter_job'])){
                                                                     <option value="9">9</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">History of Arrears</label></h5>
-                                                               
-                                                                 <select class="chosen-select form-control" name="historyofarrears" id="form-field-select-3" data-placeholder="Please Select...">
-                                                                    <option value="na">Please Select</option>
-                                                                     <option value="0">0</option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                    <option value="6">6</option>
-                                                                    <option value="7">7</option>
-                                                                    <option value="8">8</option>
-                                                                    <option value="9">9</option>
-                                                                </select>
 
-
-
-
-
-
-
-
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-xs-8 col-sm-5">
-                                                                <h5><label class="control-label bolder blue" for="form-field-select-3">Lateral Entry(Optional)</label></h5>
-                                                                <input type="text" name="lateral"  value="0" id="slide-text4" class="col-xs-1">
-                                                                <div id="slider-eq4" class="col-xs-12 col-md-10 col-sm-8">
-                                                                    <span class="ui-slider-blue">0</span>
-                                                                </div>
-                                                            </div>
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue" for="form-field-select-3">Gender</label></h5>
 

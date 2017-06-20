@@ -86,6 +86,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         }
 
+        function showreports(strUser,roll, yr){
+
+
+
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        document.getElementById("opt").value = strUser;
+                       // document.getElementById("modal-form").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET","get_studentreport?id="+roll+"&table="+yr+"&company="+strUser,true);
+                xmlhttp.send();
+
+
+
+
+
+
+//            alert(strUser+" "+roll+" "+yr);
+           // location.href = "reportgeneration_student?opt="+strUser+"&yr="+yr+"&roll="+roll;
+
+        }
+
 
 
 
@@ -642,6 +673,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+
                 <!-- /.page-header -->
 
                 <div class="row">
@@ -653,13 +686,56 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             <div class="col-xs-12">
                                 <h3 class="header smaller lighter blue">Students Reports</h3>
 
+                                <?php
+
+
+                                if(isset($_GET['year'])) {
+
+                                    ?>
+
+                                    <form action="reportgeneration_student.php" method="get">
+
+                                        <button class="btn btn-success btn-lg pull-right col-xs-pull-1 " name="export">
+                                            Export
+                                        </button>
+                                        <input type="hidden" name="exyear" value="<?php echo $_GET['year'] ?>">
+
+
+                                    </form>
+
+
+                                    <div class="space-6"></div>
+                                    <br>
+                                    <br>
+
+                                    <?php
+                                }
+
+                                ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                                 <?php
-                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
+
+                                if(isset($_GET['export']) && isset($_SESSION['user_role'])=='admin' )
 
 
-                                    $table=$_GET['year'];
+                                {
+
+
+                                    $table=$_GET['exyear'];
 
 
 
@@ -676,7 +752,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                     <!-- div.dataTables_borderWrap -->
                                     <div>
-                                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                        <table id="dynamic-table1" class="table table-striped table-bordered table-hover">
                                             <thead>
                                             <tr>
                                                 <!--                                            <th class="center">-->
@@ -699,7 +775,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 <th>Salary</th>
                                                 <th>Confirmation</th>
-                                                
+
                                             </tr>
                                             </thead>
 
@@ -709,7 +785,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                             include "../connect.php";
 
-                                            $query="select * from ".$table." ";
+                                            $query="select * from students_".$table;
                                             $result=mysqli_query($connect,$query);
                                             $count_sno=1;
 
@@ -803,6 +879,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 $aadhar=$row['st_aadharno'];
                                                 $passport=$row['st_passportno'];
                                                 $pan=$row['st_panno'];
+                                                $opted=$row['st_opted'];
 
 
 
@@ -859,7 +936,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                         <?php echo $roll ?>
 
                                                     </td>
-                                                  
+
                                                     <td><?php echo $name  ?></td>
                                                     <td><?php echo  $placement_status ?></td>
                                                     <td><?php echo  $gender ?></td>
@@ -868,49 +945,79 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     if($current=='UG'){
                                                         ?>
                                                         <td><?php echo $ugspecial  ?></td>
-                                                        <?
+                                                        <?php
                                                     }
                                                     else{
-                                                     ?>
+                                                        ?>
 
                                                         <td><?php echo $pgspecial  ?></td>
 
-                                                       <?
+                                                        <?php
                                                     }
 
 
                                                     ?>
 
 
-                                                    <td></td>
-                                                    <td></td>
                                                     <td>
-                                                        <select name="opted" class="form-control chosen-select " id="form-field-q1" value="" data-placeholder="Please select Company">
+                                                        <?php
 
-                                                            <option value="na">Please Select Company</option>
+                                                        if($opted!=''){
 
-                                                            <?php
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
+                                                            $result_salary=mysqli_query($connect, $query_salary);
 
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
 
-                                                            $company=explode(',',$placement_status);
+                                                            echo $row_salary['campus_date'];
 
-
-                                                            foreach ($company as $comp) {
-
-                                                            ?>
-                                                            <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
-
-
-                                                            <?php } ?>
+                                                        }
 
 
-                                                        </select>
-                                                        
-                                                        
+
+
+                                                        ?>
+
+
+
+
+
+
+                                                    </td>
+                                                    <td>
+
+
+                                                        <?php
+
+                                                        if($opted!=''){
+
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
+                                                            $result_salary=mysqli_query($connect, $query_salary);
+
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
+
+                                                            echo $row_salary['salary']." per annum";
+
+                                                        }
+
+
+
+
+                                                        ?>
+
+
+
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $opted ?>
+
+
                                                     </td>
 
-                                                    
-                                                    
+
+
                                                 </tr>
 
 
@@ -945,11 +1052,465 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
                                     </div>
-                                <?php } ?>
+                                <?php }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' )
+
+
+                                {
+
+
+                                    $table=$_GET['year'];
+
+
+
+                                    ?>
+                                    <div class="clearfix">
+                                        <div class="pull-right tableTools-container"></div>
+                                    </div>
+
+                                    <div class="table-header">
+                                        Results for "Students List"
+                                    </div>
+
+                                    <!-- div.table-responsive -->
+
+                                    <!-- div.dataTables_borderWrap -->
+                                    <div>
+                                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                            <tr>
+                                                <!--                                            <th class="center">-->
+                                                <!--                                                <label class="pos-rel">-->
+                                                <!--                                                    <input type="checkbox" class="ace" />-->
+                                                <!--                                                    <span class="lbl"></span>-->
+                                                <!--                                                </label>-->
+                                                <!--                                            </th>-->
+
+                                                <th>Serial No.</th>
+
+                                                <th>Register No</th>
+
+                                                <th>Name</th>
+
+                                                <th>Company</th>
+                                                <th>Gender </th>
+                                                <th>DEPT.</th>
+                                                <th>Date of Interview</th>
+
+                                                <th>Salary</th>
+                                                <th>Confirmation</th>
+
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                            <?php
+
+                                            include "../connect.php";
+
+                                            $query="select * from students_".$table;
+                                            $result=mysqli_query($connect,$query);
+                                            $count_sno=1;
+
+
+                                            while($row=mysqli_fetch_assoc($result))  {
+
+
+
+                                                $sno=$count_sno ;
+                                                $roll=$row['st_roll'];
+                                                $first_name=$row['st_firstname'];
+                                                $middle_name=$row['st_middlename'];
+                                                $last_name=$row['st_lastname'];
+                                                $name=$row['st_name'];
+                                                $gender=$row['st_gender'];
+                                                $father_name=$row['st_fathername'];
+                                                $father_occupation=$row['st_fatheroccupation'];
+                                                $father_mobile=$row['st_fathernumber'];
+                                                $mother_name=$row['st_mothername'];
+                                                $mother_occupation=$row['st_motheroccupation'];
+                                                $mother_mobile=$row['st_mothernumber'];
+                                                $college_mail=$row['st_clgemail'];
+                                                $email=$row['st_email'];
+                                                $phone=$row['st_phone'];
+                                                $dob=$row['st_dob'];
+                                                $nationality=$row['st_nationality'];
+                                                $caste=$row['st_caste'];
+                                                $college_name=$row['st_collegename'];
+                                                $university=$row['st_university'];
+                                                $_10percentage=$row['st_10thpercentage'];
+                                                $_10institution=$row['st_10thinstitution'];
+                                                $_10boardofstudy=$row['st_10thboardofstudy'];
+                                                $_10medium=$row['st_10thmedium'];
+                                                $_10yearofpassing=$row['st_10thyearofpassing'];
+                                                $_12percentage=$row['st_12thpercentage'];
+                                                $_12institution=$row['st_12thinstitution'];
+                                                $_12boardofstudy=$row['st_12thboardofstudy'];
+                                                $_12medium=$row['st_12thmedium'];
+                                                $_12yearofpassing=$row['st_12thyearofpassing'];
+                                                $dippercentage=$row['st_dippercentage'];
+                                                $dipspecialization=$row['st_dipspecialization'];
+                                                $dipinstitution=$row['st_dipinstitution'];
+                                                $dipyearofpassing=$row['st_dipyearofpassing'];
+                                                $current=$row['st_currentlypursuing'];
+                                                $ugdeg=$row['st_ugdegree'];
+                                                $ugspecial=$row['st_ugspecialization'];
+                                                $ug1sem=$row['st_1stsem'];
+                                                $ug2sem=$row['st_2ndsem'];
+                                                $ug3sem=$row['st_3rdsem'];
+                                                $ug4sem=$row['st_4thsem'];
+                                                $ug5sem=$row['st_5thsem'];
+                                                $ug6sem=$row['st_6thsem'];
+                                                $ug7sem=$row['st_7thsem'];
+                                                $ug8sem=$row['st_8thsem'];
+                                                $cgpa=$row['st_cgpa'];
+                                                $ugyearofpassing=$row['st_ugyearofpassing'];
+                                                $pgdeg=$row['st_pgdegree'];
+                                                $pgspecial=$row['st_pgspecialization'];
+                                                $pg1sem=$row['st_pg1stsem'];
+                                                $pg2sem=$row['st_pg2ndsem'];
+                                                $pg3sem=$row['st_pg3rdsem'];
+                                                $pg4sem=$row['st_pg4thsem'];
+                                                $pgcgpa=$row['st_pgcgpa'];
+                                                $pgyearofpassing=$row['st_pgyearofpassing'];
+                                                $ugcollegename=$row['st_ugcollegename'];
+                                                $ughistoryofarrears=$row['st_ughistoryofarrears'];
+                                                $dayhostel=$row['st_dayorhostel'];
+                                                $historyofarrears=$row['st_historyofarrears'];
+                                                $standingarrears=$row['st_standingarrears'];
+                                                $hometown=$row['st_hometown'];
+                                                $address1=$row['st_address1'];
+                                                $address2=$row['st_address2'];
+                                                $city=$row['st_city'];
+                                                $state=$row['st_state'];
+                                                $postal_code=$row['st_posatlcode'];
+                                                $landline=$row['st_landline'];
+                                                $skill=$row['st_skillcertification'];
+                                                $duration=$row['st_duration'];
+                                                $vendor=$row['st_vendor'];
+                                                $coecertification=$row['st_coecertification'];
+                                                $gap=$row['st_gapinstudies'];
+                                                $reason=$row['st_reason'];
+                                                $english=$row['st_english'];
+                                                $quantitative=$row['st_quantitative'];
+                                                $logical=$row['st_logical'];
+                                                $overall=$row['st_overall'];
+                                                $percentage=$row['st_percentage'];
+                                                $candidate=$row['st_candidateid'];
+                                                $signature=$row['st_signature'];
+                                                $placement_status=$row['st_placementstatus'];
+                                                $aadhar=$row['st_aadharno'];
+                                                $passport=$row['st_passportno'];
+                                                $pan=$row['st_panno'];
+                                                $opted=$row['st_opted'];
+
+
+
+
+
+                                                if($current=='UG'){
+
+                                                    //mapping ug Department
+
+                                                    $query_dept_ug="SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                    $result_dept_ug=mysqli_query($connect, $query_dept_ug);
+                                                    $row_dept_ug=mysqli_fetch_assoc($result_dept_ug);
+
+                                                    $ugspecial=$row_dept_ug['dept_expand'];
+
+
+                                                }
+                                                else{
+
+                                                    //mapping department of UG
+                                                    $query_dept_ug = "SELECT * FROM dept_map WHERE dept_short='$ugspecial'";
+                                                    $result_dept_ug = mysqli_query($connect, $query_dept_ug);
+                                                    $row_dept_ug = mysqli_fetch_assoc($result_dept_ug);
+
+                                                    $ugspecial = $row_dept_ug['dept_expand'];
+
+
+                                                    //mapping department of PG
+                                                    $query_dept = "SELECT * FROM dept_map WHERE dept_short='$pgspecial'";
+                                                    $result_dept = mysqli_query($connect, $query_dept);
+                                                    $row_dept = mysqli_fetch_assoc($result_dept);
+
+                                                    $pgspecial = $row_dept['dept_expand'];
+
+                                                }
+
+
+
+
+                                                ?>
+
+
+                                                <tr>
+                                                    <!--                                                <td class="center">-->
+                                                    <!--                                                    <label class="pos-rel">-->
+                                                    <!--                                                        <input type="checkbox" class="ace" />-->
+                                                    <!--                                                        <span class="lbl"></span>-->
+                                                    <!--                                                    </label>-->
+                                                    <!--                                                </td>-->
+                                                    <td><?php echo $sno ?></td>
+
+                                                    <td>
+
+                                                        <?php echo $roll ?>
+
+                                                    </td>
+
+                                                    <td><?php echo $name  ?></td>
+                                                    <td><?php echo  $placement_status ?></td>
+                                                    <td><?php echo  $gender ?></td>
+                                                    <?php
+
+                                                    if($current=='UG'){
+                                                        ?>
+                                                        <td><?php echo $ugspecial  ?></td>
+                                                        <?php
+                                                    }
+                                                    else{
+                                                     ?>
+
+                                                        <td><?php echo $pgspecial  ?></td>
+
+                                                       <?php
+                                                    }
+
+
+                                                    ?>
+
+
+                                                    <td>
+                                                        <?php
+
+                                                        if($opted!=''){
+
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
+                                                            $result_salary=mysqli_query($connect, $query_salary);
+
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
+
+                                                            echo $row_salary['campus_date'];
+
+                                                        }
+
+
+
+
+                                                        ?>
+
+
+
+
+
+
+                                                    </td>
+                                                    <td>
+
+
+                                                        <?php
+
+                                                        if($opted!=''){
+
+                                                            include "../connect.php";
+                                                            $query_salary="SELECT * FROM jobs WHERE company='$opted'";
+                                                            $result_salary=mysqli_query($connect, $query_salary);
+
+                                                            $row_salary=mysqli_fetch_assoc($result_salary);
+
+                                                            echo $row_salary['salary']." per annum";
+
+                                                        }
+
+
+
+
+                                                        ?>
+
+
+
+                                                    </td>
+                                                    <td>
+                                                        <select name="opted" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" data-placeholder=" " >
+
+
+
+
+
+                                                            <?php
+
+                                                            if($opted=='') {
+
+                                                                ?>
+                                                                <option value=""></option>
+
+
+                                                                <?php
+
+
+                                                                $company = explode(',', $placement_status);
+
+
+                                                                foreach ($company as $comp) {
+
+                                                                    if ($comp != $opted) {
+
+                                                                        ?>
+                                                                        <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
+
+
+                                                                    <?php }
+                                                                }
+                                                                ?>
+
+                                                                <?php
+
+                                                            }
+
+                                                            else{
+
+                                                                ?>
+
+
+
+                                                                <option value="<?php echo $opted ?>"><?php echo $opted ?></option>
+
+
+                                                                <?php
+
+
+
+
+                                                                $company=explode(',',$placement_status);
+
+
+                                                                foreach ($company as $comp) {
+
+                                                                    if($comp!=$opted){
+
+                                                                        ?>
+                                                                        <option value="<?php echo $comp ?>"><?php echo $comp ?></option>
+
+
+
+
+                                                                    <?php } }?>
+                                                                <?php
+                                                            }
+
+
+                                                            ?>
+
+
+
+
+
+
+
+<!--                                                            --><?php
+//
+//
+//
+//
+//                                                            $company=explode(',',$placement_status);
+//
+//
+//                                                            foreach ($company as $comp) {
+//
+//                                                                if($comp!=$opted){
+//
+//                                                            ?>
+<!--                                                            <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                                                            --><?php //} }?>
+
+
+                                                        </select>
+
+
+                                                    </td>
+
+
+
+                                                </tr>
+
+
+
+
+
+
+
+
+
+
+
+                                                <?php
+                                                ++$count_sno;
+
+
+
+                                            }
+
+
+
+                                            ?>
+
+                                            </tbody>
+
+
+                                        </table>
+
+                                        <div id="modal-form" class="modal" tabindex="-1">
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                <?php }   ?>
 
                             </div>
                         </div>
+
 
 
 
@@ -973,6 +1534,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             </div>
         </div>
     </div>
+
 
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
@@ -1123,7 +1685,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         //initiate dataTables plugin
         var myTable =
-            $('#dynamic-table')
+            $('#dynamic-table1')
             //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
                 .DataTable( {
                     bAutoWidth: false,
@@ -1145,7 +1707,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     //,
                     //"sScrollY": "200px",
-                    //"bPaginate": false,
+                    "bPaginate": false,
 
                     "sScrollX": "100%"
                     //"sScrollXInner": "120%",
@@ -1402,7 +1964,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          */
 
 
-    })
+    });
 </script>
 
 </body>

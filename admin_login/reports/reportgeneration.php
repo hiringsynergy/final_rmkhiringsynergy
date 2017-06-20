@@ -625,43 +625,30 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     <select class="chosen-select form-control" id="student"  onchange="showstudent()" data-placeholder="Select Year of Graduation">
 
 
+                        <option value="">Please Select Year</option>
+
+
 
                         <?php
-                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
-
-                            ?>
-
-                            <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                            <?php
-
-                        }
-                        else{
-                            ?>
-
-                            <option value=""> </option>
-                            <?php
-
-                        }
-
-                        include "../connect.php";
                         $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                         $result_option=mysqli_query($connect, $query_option);
                         while($row_option=mysqli_fetch_assoc($result_option)){
 
-                            if($row_option['table_value']!=$year_of_graduation) {
+
+                            ?>
+
+                            <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>  </option>
 
 
-                                ?>
+                            <?php
 
-                                <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
-
-
-                                <?php
-                            }
                         }
 
                         ?>
+
+
+
 
 
 
@@ -701,42 +688,32 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+
+                                <option value="">Please Select Year</option>
+
+
                                 <?php
-                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
-
-                                    ?>
-
-                                    <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                                    <?php
-
-                                }
-                                else{
-                                    ?>
-
-                                    <option value=""> </option>
-                                    <?php
-
-                                }
-
-                                include "../connect.php";
                                 $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                                 $result_option=mysqli_query($connect, $query_option);
                                 while($row_option=mysqli_fetch_assoc($result_option)){
 
-                                    if($row_option['table_value']!=$year_of_graduation) {
+
+                                    ?>
+
+                                    <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>  </option>
 
 
-                                        ?>
+                                    <?php
 
-                                        <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
-
-
-                                        <?php
-                                    }
                                 }
 
                                 ?>
+
+
+
+
 
 
 
@@ -760,43 +737,26 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                     <div class="space-4"></div>
 
 
+
                             <select class="chosen-select form-control" id="dept"  onchange="showdept()" data-placeholder="Select Year of Graduation">
 
 
+                                <option value="">Please Select Year</option>
 
                                 <?php
-                                if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
-
-                                    ?>
-
-                                    <option value="<?php $table ?>"><?php echo $year_of_graduation ?>  </option>
-                                    <?php
-
-                                }
-                                else{
-                                    ?>
-
-                                    <option value=""> </option>
-                                    <?php
-
-                                }
-
-                                include "../connect.php";
                                 $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
                                 $result_option=mysqli_query($connect, $query_option);
                                 while($row_option=mysqli_fetch_assoc($result_option)){
 
-                                    if($row_option['table_value']!=$year_of_graduation) {
-
 
                                         ?>
 
-                                        <option value="<?php echo $row_option['table_name'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+                                        <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>  </option>
 
 
                                         <?php
-                                    }
+
                                 }
 
                                 ?>
