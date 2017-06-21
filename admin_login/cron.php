@@ -158,8 +158,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
-    $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
-    $result_mail=mysqli_query($connect_mail, $query_delete_mail);
+//    $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
+//    $result_mail=mysqli_query($connect_mail, $query_delete_mail);
 
 
 
