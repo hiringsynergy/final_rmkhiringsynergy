@@ -58,7 +58,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         $subject = $row['mail_subject'];
         $message = $row['mail_message'];
         $student_id=$row['student_id'];
-
+        $job_id=$row['job_id'];
         $database = $row['database_name'];
 
         echo "to... " . $to;
@@ -137,7 +137,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 echo "mail send";
 
 
-                $query_for_update = "UPDATE mail_sender SET status='1' WHERE student_id='$student_id'";
+                $query_for_update = "UPDATE mail_sender SET status='1' WHERE student_id='$student_id' and job_id='$job_id'";
                 $result_for_update = mysqli_query($connect_mail, $query_for_update);
 
 
