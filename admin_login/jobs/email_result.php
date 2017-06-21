@@ -581,7 +581,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $mail=new PHPMailer();
 
-                    $mail->isMail();
+                    $mail->isSMTP();
                     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;    // Enable SMTP authentication
 
@@ -599,7 +599,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
                         $mail->Password = 'rmd123';                           // SMTP password
-                        $mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
 
 
@@ -618,7 +618,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
                         $mail->Password = 'rmk123';                           // SMTP password
-                        $mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
 
 
@@ -635,7 +635,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
                         $mail->Password = 'rmkcet123';                           // SMTP password
-                        $mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
 
 
@@ -757,7 +757,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         echo $to;
 
-                        $mail->addAddress($to);     // Add a recipient
+                        $mail->addAddress($to,$to);     // Add a recipient
 
 
 
