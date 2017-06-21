@@ -46,7 +46,7 @@ foreach($check as $select)
 
 
 
-        die("".mysqli_error($connect_mail));
+        echo mysqli_error($connect_mail);
     }
 
 
@@ -65,7 +65,7 @@ foreach($check as $select)
 
 
 
-header("Location: email_result?jid=$jid");
+//header("Location: email_result?jid=$jid");
 
 
 
