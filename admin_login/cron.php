@@ -37,7 +37,18 @@ else{
 
 
     echo "enter loop";
-    while($row = mysqli_fetch_assoc($result_mail)){
+
+
+
+require "email/PHPMailer/PHPMailerAutoload.php";
+$mail=new PHPMailer();
+
+$mail->isSMTP();
+$mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;// Enable SMTP authentication
+
+
+while($row = mysqli_fetch_assoc($result_mail)){
 
 
 
@@ -65,13 +76,8 @@ else{
 
 
 
-        require "email/PHPMailer/PHPMailerAutoload.php";
 
-        $mail=new PHPMailer();
 
-        $mail->isSMTP();
-        $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-        $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
@@ -151,7 +157,7 @@ else{
 
 
             $query_for_update = "UPDATE mail_sender SET status='1' ";
-            $result_for_update = mysqli_query($connect, $query_for_update);
+            $result_for_update = mysqli_query($connect_mail, $query_for_update);
 
 
         }
