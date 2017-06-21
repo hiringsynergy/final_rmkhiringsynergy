@@ -128,6 +128,12 @@ ob_start();
 
 
         }
+        else{
+
+            echo  $mail->ErrorInfo;
+
+
+        }
 
 
 
