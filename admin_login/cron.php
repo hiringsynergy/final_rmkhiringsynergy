@@ -33,7 +33,7 @@ else{
 
 }
 
-    $count=0;
+    $count=1;
 
 
     echo "enter loop";
@@ -48,11 +48,12 @@ $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
-while($row = mysqli_fetch_assoc($result_mail)){
+while($count<=50) {
+
+    while ($row = mysqli_fetch_assoc($result_mail)) {
 
 
-
-        echo "mails  ".$count;
+        echo "mails  " . $count;
 
 
         $to = $row['mail_to'];
@@ -60,120 +61,93 @@ while($row = mysqli_fetch_assoc($result_mail)){
         $subject = $row['mail_subject'];
         $message = $row['mail_message'];
 
-        $database =$row['database_name'];
+        $database = $row['database_name'];
 
-        echo "to... ".$to;
-        echo "subject.. ".$subject;
-        echo "message ..".$message;
-        echo "database ...".$database;
-
-
-    if($row['mail_to']!='' && $row['status']==0) {
+        echo "to... " . $to;
+        echo "subject.. " . $subject;
+        echo "message .." . $message;
+        echo "database ..." . $database;
 
 
+        if ($row['mail_to'] != '' && $row['status'] == 0) {
 
 
+            if (preg_match('/rmd/', $database)) {
 
 
+                // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
+                $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                $mail->Password = 'rmd123';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;
 
 
+                $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+                $mail->addAddress($to, $to);     // Add a recipient
+
+                $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+                $collegename = "RMD Engineering College";
+
+            }
+            if (preg_match('/rmk/', $database)) {
 
 
+                //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
+                $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                $mail->Password = 'rmk123';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;
 
 
-        if(preg_match('/rmd/', $database)){
+                $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
+                $mail->addAddress($to, $to);     // Add a recipient
+
+                $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+                $collegename = "RMk Engineering College";
+
+            }
+
+            if (preg_match('/cet/', $database)) {
+
+                //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
+                $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                $mail->Password = 'rmkcet123';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->Port = 587;
 
 
+                $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
+                $mail->addAddress($to, $to);     // Add a recipient
+
+                $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
+                $collegename = "RMK College of Engineering and Technology";
+
+            }
 
 
-            // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
-            $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
-            $mail->Password = 'rmd123';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 	587;
+            $mail->isHTML(true);
+
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+            $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
 
 
-            $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
-            $mail->addAddress($to, $to);     // Add a recipient
-
-            $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
-            $collegename="RMD Engineering College";
-
-        }
-        if(preg_match('/rmk/', $database)){
+            if ($mail->send()) {
 
 
-
-            //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
-            $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-            $mail->Password = 'rmk123';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 	587;
+                echo "mail send";
 
 
-            $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
-            $mail->addAddress($to, $to);     // Add a recipient
-
-            $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
-            $collegename="RMk Engineering College";
-
-        }
-
-        if(preg_match('/cet/', $database)){
-
-            //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
-            $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
-            $mail->Password = 'rmkcet123';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-            $mail->Port = 	587;
+                $query_for_update = "UPDATE mail_sender SET status='1' ";
+                $result_for_update = mysqli_query($connect_mail, $query_for_update);
 
 
-            $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
-            $mail->addAddress($to, $to);     // Add a recipient
+            } else {
 
-            $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
-            $collegename="RMK College of Engineering and Technology";
-
-        }
+                echo "failure" . $mail->ErrorInfo;
 
 
-
-
-
-
-        $mail->isHTML(true);
-
-        $mail->Subject =$subject;
-        $mail->Body    = $message;
-        $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>'.$collegename.'</b></div>';
-
-
-
-
-        if($mail->send()){
-
-
-            echo "mail send";
-
-
-            $query_for_update = "UPDATE mail_sender SET status='1' ";
-            $result_for_update = mysqli_query($connect_mail, $query_for_update);
-
-
-        }
-        else{
-
-            echo  "failure".$mail->ErrorInfo;
-
-
-        }
-
-
-
-
-
-
-
+            }
 
 
         }
@@ -184,9 +158,9 @@ while($row = mysqli_fetch_assoc($result_mail)){
     }
 
 
-echo "end cron";
+    echo "end cron";
 
-
+}
 
 
 
