@@ -8,9 +8,6 @@
   echo "cron";
 
     include "connect.php";
-    $jid = $_POST['jid'];
-    $students_table_name=$_POST['year'];
-    $check=$_POST['check'];
 
     $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
     $query_for_mail="SELECT * FROM mail_sender";
