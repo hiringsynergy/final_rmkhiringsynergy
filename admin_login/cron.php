@@ -14,7 +14,7 @@ ob_start();
 
 
     $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
-    $query_for_mail="SELECT * FROM mail_sender";
+    $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 50";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 
@@ -32,8 +32,6 @@ else{
         echo "not while die.........";
 
 }
-
-    $count=1;
 
 
     echo "enter loop";
@@ -68,7 +66,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         echo "database ..." . $database;
 
 
-        if ($row['mail_to'] != '' && $row['status'] ==0 && $count<=50) {
+        if ($row['mail_to'] != '' && $row['status'] ==0 )
+        {
 
 
             if (preg_match('/rmd/', $database)) {
@@ -147,9 +146,6 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
             }
-
-            ++$count;
-
 
 
 
