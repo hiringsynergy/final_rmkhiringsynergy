@@ -132,13 +132,15 @@ ob_start();
 
 
 
-        ++$count;
+
 
 
 
 
         }
 
+
+        ++$count;
 
     }
 
