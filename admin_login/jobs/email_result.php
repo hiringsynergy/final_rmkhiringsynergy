@@ -755,6 +755,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_clgemail'];
 
+                        echo $to;
+
                         $mail->addAddress($to);     // Add a recipient
 
 
