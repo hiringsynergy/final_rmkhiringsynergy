@@ -639,7 +639,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             $newfilename = current($value) . '_' . time() . '.' . $file_ext;
 
 
-                            move_uploaded_file($file_tmp, "files/" . $newfilename);
+                            move_uploaded_file($file_tmp, "../files/" . $newfilename);
 
                             $send_file[] = $newfilename;
 
