@@ -42,7 +42,7 @@ $mail=new PHPMailer();
 
 $mail->SMTPDebug=3;
 
-$mail->isMail();
+$mail->isSMTP();
 $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
@@ -80,7 +80,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
                 $mail->Password = 'rmd123';// SMTP password
 
-                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;
 
 
