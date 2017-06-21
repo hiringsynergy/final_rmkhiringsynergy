@@ -789,7 +789,7 @@ die(" " . mysqli_error($connect));
 
                                                                 $year_of_gradudation = $row_eligible_year['year_of_graduation'];
 
-                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable' ";
+                                                                $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable' LIMIT 20 ";
                                                                 $result_job = mysqli_query($connect, $query_job);
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
