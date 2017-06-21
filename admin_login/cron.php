@@ -29,7 +29,7 @@ ob_start();
 }
 else{
 
-        echo "not die.........";
+        echo "not while die.........";
 
 }
 
@@ -37,7 +37,7 @@ else{
 
 
     echo "enter loop";
-    while($row = mysqli_fetch_assoc($result_mail) && $count<=50){
+    while($row = mysqli_fetch_assoc($result_mail)){
 
 
 
