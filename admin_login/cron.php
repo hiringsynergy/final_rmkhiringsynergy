@@ -5,6 +5,10 @@
  * Date: 21/06/17
  * Time: 12:37 PM
  */
+
+session_start();
+ob_start();
+
   echo "cron";
 
     include "connect.php";
