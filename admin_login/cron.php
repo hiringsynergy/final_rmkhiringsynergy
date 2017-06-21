@@ -5,8 +5,7 @@
  * Date: 21/06/17
  * Time: 12:37 PM
  */
-
-if(isset($_POST['email'])) {
+  echo "cron";
 
     include "connect.php";
     $jid = $_POST['jid'];
@@ -117,6 +116,7 @@ if(isset($_POST['email'])) {
 
 
 
+
         if($mail->send()){
 
 
@@ -144,7 +144,6 @@ if(isset($_POST['email'])) {
 
 
 
-}
 
 ?>
 
