@@ -25,7 +25,7 @@ ob_start();
 
 
 
-        echo "mail.....".$count;
+        echo "maila  ".$count;
 
 
 
