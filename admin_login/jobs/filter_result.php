@@ -38,7 +38,7 @@ foreach($check as $select)
     $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
 
 
-    echo $query_for_mail="INSERT INTO mail_sender VALUES ('$jid','$check','','','','','','')";
+    echo $query_for_mail="INSERT INTO mail_sender VALUES ('$jid','$select','','','','','','')";
     $result_mail=mysqli_connect($query_for_mail,$connect_mail);
 
 
@@ -65,7 +65,7 @@ foreach($check as $select)
 
 
 
-//header("Location: email_result?jid=$jid");
+header("Location: email_result?jid=$jid");
 
 
 
