@@ -22,7 +22,14 @@ ob_start();
     if(!$result_mail){
 
 
+        echo "die.....";
+
         die("die...".mysqli_error($connect_mail));
+
+}
+else{
+
+        echo "not die.........";
 
 }
 
