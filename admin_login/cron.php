@@ -51,10 +51,10 @@ else{
 
         $database =$row['database_name'];
 
-        echo "to ".$to;
-        echo "subject ".$subject;
-        echo "message ".$message;
-        echo "database ".$database;
+        echo "to... ".$to;
+        echo "subject.. ".$subject;
+        echo "message ..".$message;
+        echo "database ...".$database;
 
 
     if($row['mail_to']!='' && $row['status']==0) {
