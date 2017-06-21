@@ -41,6 +41,8 @@ else{
 require "email/PHPMailer/PHPMailerAutoload.php";
 $mail=new PHPMailer();
 
+$mail->SMTPDebug=3;
+
 $mail->isSMTP();
 $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
@@ -141,7 +143,9 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $result_for_update = mysqli_query($connect_mail, $query_for_update);
 
 
-            } else {
+            }
+
+            else {
 
                 echo "failure" . $mail->ErrorInfo;
 
