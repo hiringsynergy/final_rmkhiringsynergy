@@ -30,7 +30,7 @@ if(isset($_POST['login'])){
     echo $username." ".$password;
 
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
+    $connect_database=mysqli_connect("mysql.hostinger.com","root","akash","u552198179_login");
 
 
 
@@ -47,16 +47,16 @@ if(isset($_POST['login'])){
 
             if(preg_match('/rmd/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root","akash","$admin_database");
             }
             if(preg_match('/rmk/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root1","akash","$admin_database");
             }
 
             if(preg_match('/cet/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root2","akash","$admin_database");
             }
 
         }
@@ -69,20 +69,20 @@ if(isset($_POST['login'])){
     if($student_user=='1115'){
 
         $database_session_set='u552198179_rmd';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+        $connect=mysqli_connect("mysql.hostinger.com","root","akash","u552198179_rmd");
 
 
     }
     else if($student_user=='1116'){
 
         $database_session_set='u552198179_cet';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","u552198179_cet");
+        $connect=mysqli_connect("mysql.hostinger.com","root2","akash","u552198179_cet");
 
     }
     else if($student_user=='1117'){
 
         $database_session_set='u552198179_rmk';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","u552198179_rmk");
+        $connect=mysqli_connect("mysql.hostinger.com","root1","akash","u552198179_rmk");
 
     }
 
@@ -255,7 +255,7 @@ else if(isset($_POST['proceed'])){
     $connect=null;
 
 
-    $connect_database=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
+    $connect_database=mysqli_connect("mysql.hostinger.com","root","akash","u552198179_login");
 
     //selecting admin database  and coordinator database........
     $query_selection="SELECT * FROM admin_login WHERE username='{$proceed_username}'";
@@ -293,16 +293,16 @@ else if(isset($_POST['proceed'])){
 
             if(preg_match('/rmd/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root","akash","$admin_database");
             }
             if(preg_match('/rmk/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root1","akash","$admin_database");
             }
 
             if(preg_match('/cet/', $admin_database)){
 
-                $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$admin_database");
+                $connect=mysqli_connect("mysql.hostinger.com","root2","akash","$admin_database");
             }
 
 
@@ -364,16 +364,16 @@ if(substr_count($proceed_username, 'placements')==1){
 
 
 
-                    $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Username = 'recovery@akash.xyz';                 // SMTP username
                     $mail->Password = 'rmk123';                           // SMTP password
                     $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
 
-                    $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+                    $mail->setFrom('recovery@akash.xyz', 'RMK Group of Institutions');
 
 
-                    $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+                    $mail->addReplyTo('recovery@akash.xyz', 'Reply');
 
 
                     $mail->addAddress($to, $to);     // Add a recipient
@@ -386,7 +386,7 @@ if(substr_count($proceed_username, 'placements')==1){
                     $mail->isHTML(true);
 
                     $mail->Subject = "Password Recovery";
-                    $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://www.akash.xyz/recover?id='.$user_mail."&hash=".$hash;
 
 
 
@@ -515,16 +515,16 @@ else{
 
 
 
-                    $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Username = 'recovery@akash.xyz';                 // SMTP username
                     $mail->Password = 'rmk123';                           // SMTP password
                     $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
 
-                    $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+                    $mail->setFrom('recovery@akash.xyz', 'RMK Group of Institutions');
 
 
-                    $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+                    $mail->addReplyTo('recovery@akash.xyz', 'Reply');
 
 
                     $mail->addAddress($to, $to);     // Add a recipient
@@ -537,7 +537,7 @@ else{
                     $mail->isHTML(true);
 
                     $mail->Subject = "Password Recovery";
-                    $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://www.akash.xyz/recover?id='.$user_mail."&hash=".$hash;
 
 
                     if(!$mail->send()) {
@@ -641,20 +641,20 @@ else{
     if($student_user=='1115'){
 
         $database_session_set='rmd';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+        $connect=mysqli_connect("mysql.hostinger.com","root","akash","u552198179_rmd");
 
 
     }
     else if($student_user=='1116'){
 
         $database_session_set='cet';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","u552198179_cet");
+        $connect=mysqli_connect("mysql.hostinger.com","root2","akash","u552198179_cet");
 
     }
     else if($student_user=='1117'){
 
         $database_session_set='rmk';
-        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","u552198179_rmk");
+        $connect=mysqli_connect("mysql.hostinger.com","root1","akash","u552198179_rmk");
 
     }
 
@@ -715,16 +715,16 @@ else{
 
 
 
-                    $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
+                    $mail->Username = 'recovery@akash.xyz';                 // SMTP username
                     $mail->Password = 'rmk123';                           // SMTP password
                     $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                     $mail->Port = 	587;
 
 
-                    $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+                    $mail->setFrom('recovery@akash.xyz', 'RMK Group of Institutions');
 
 
-                    $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+                    $mail->addReplyTo('recovery@akash.xyz', 'Reply');
 
 
                     $mail->addAddress($to, $to);     // Add a recipient
@@ -737,7 +737,7 @@ else{
                     $mail->isHTML(true);
 
                     $mail->Subject = "Password Recovery";
-                    $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
+                    $mail->Body    = 'http://www.akash.xyz/recover?id='.$user_mail."&hash=".$hash;
 
                     if(!$mail->send()) {
 

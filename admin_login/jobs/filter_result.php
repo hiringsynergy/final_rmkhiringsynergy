@@ -956,7 +956,7 @@ die(" " . mysqli_error($connect));
 
                     //,
                     //"sScrollY": "200px",
-                   "bPaginate": false
+                  // "bPaginate": false
 
                     //"sScrollX": "100%",
                     //"sScrollXInner": "120%",

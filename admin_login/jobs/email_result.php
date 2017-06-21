@@ -575,7 +575,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     $jid = $_POST['jid'];
 
-                    $mail->SMTPDebug = 3;
+
 
                     require "../email/PHPMailer/PHPMailerAutoload.php";
 
@@ -592,16 +592,10 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-
-
-
-
-
                     //selecting emails
 
                     $database=$_SESSION['database_name'];
                     if(preg_match('/rmd/', $database)){
-
 
                         $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
                         $mail->Password = 'rmd123';                           // SMTP password
@@ -609,10 +603,12 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         $mail->Port = 	587;
 
 
+
                         $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
 
 
                         $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
+
 
 
                     }
@@ -789,12 +785,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         $mail->addAddress($to);     // Add a recipient
 
 
+
                         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
                             foreach ($send_file as $file_to_send) {
 
 
-                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                              //  $mail->addAttachment('files/' . $file_to_send, $file_to_send);
 
                             }
 
@@ -807,9 +804,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                             $counter = $counter + 1;
 
+
+
                         }
                         else{
-                           echo  $mail->ErrorInfo;
+
+
+                          echo  $mail->ErrorInfo;
                         }
 
 

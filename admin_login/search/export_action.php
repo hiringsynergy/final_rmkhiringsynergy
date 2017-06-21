@@ -262,6 +262,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      include "../connect.php";
+     $count=0;
 
      foreach ($stud_roll as $roll_no){
 
@@ -338,7 +339,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
          $mail->Subject = $subject;
          $mail->Body    = '<h3> '.$message.' '.$roll_no.' </h3>';
-
+         
 
 
          if(!$mail->send()) {
@@ -349,6 +350,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          } else {
 
              echo 'Message has been sent';
+             $count++;
 
              // Clear all addresses and attachments for next loop
 
@@ -384,7 +386,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      }
-    header("Location: advanced_search");
+   // header("Location: advanced_search");
 
 
 
