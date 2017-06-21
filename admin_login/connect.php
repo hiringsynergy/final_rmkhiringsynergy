@@ -10,7 +10,7 @@ if(isset($_SESSION['database_name'])){
 
     if(preg_match('/rmd/', $database)){
 
-        $connect=mysqli_connect("mysql.hostinger.com","root","akash","$database");
+        $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
     }
     if(preg_match('/rmk/', $database)){
 
