@@ -576,76 +576,18 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $jid = $_POST['jid'];
 
 
+/*
 
-                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
-                    $mail=new PHPMailer();
 
-                    $mail->isMail();
-                    $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;    // Enable SMTP authentication
+
+*/
 
 
 
 
 
 
-
-
-                    //selecting emails
-
-                    $database=$_SESSION['database_name'];
-                    if(preg_match('/rmd/', $database)){
-
-                        $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                        $mail->Password = 'rmd123';                           // SMTP password
-                        $mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 	587;
-
-
-
-                        $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
-
-
-                        $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
-
-
-
-                    }
-
-                    if(preg_match('/rmk/', $database)){
-
-
-                        $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                        $mail->Password = 'rmk123';                           // SMTP password
-                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 	587;
-
-
-                        $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMK Placements');
-
-
-                        $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
-
-
-                    }
-
-                    if(preg_match('/cet/', $database)){
-
-
-                        $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                        $mail->Password = 'rmkcet123';                           // SMTP password
-                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 	587;
-
-
-                        $mail->setFrom('rmkcetplacements@rmkhiringsynergy.xyz', 'RMKCET Placements');
-
-
-                        $mail->addReplyTo('rmkcetplacements@rmkhiringsynergy.xyz', 'Reply');
-
-
-                    }
 
 
                         
@@ -657,39 +599,12 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                    $mail->isHTML(true);
-
-                    $mail->Subject = $_POST['subject'];
-                    $mail->Body =  $_POST['message'] ;
-                    $mail->Body .="<br>";
-                    $mail->Body .="<br>";
-                    $mail->Body .="<br>";
-                    $mail->Body .= '<b>  With Regards </b>';
-                    $mail->Body .="<br>";
-                    $mail->Body .= '<b>  Training and Placements </b>';
 
 
+                    $subject= $_POST['subject'];
+                    $message =  $_POST['message'] ;
 
-                    $mail->Body .="<br>";
                     $database = $_SESSION['database_name'];
-
-                    if (preg_match('/rmd/', $database)) {
-
-                        $mail->Body .= '<b>  R.M.D. Engineering College </b>';
-
-                    }
-
-                    if (preg_match('/rmk/', $database)) {
-
-                        $mail->Body .= '<b>  R.M.K. Engineering College </b>';
-
-                    }
-
-                    if (preg_match('/cet/', $database)) {
-
-                        $mail->Body .= '<b>  R.M.K. College of Engineering and Technology </b>';
-
-                    }
 
 
 
@@ -699,6 +614,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                     $send_file = array();
+
+
+
                     if (isset($_FILES['attachment']) && isset($_SESSION['user_role']) == 'admin') {
 
 
@@ -755,9 +673,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_clgemail'];
 
-                        echo $to;
 
-                        $mail->addAddress($to,$to);     // Add a recipient
 
 
 
@@ -766,38 +682,26 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             foreach ($send_file as $file_to_send) {
 
 
-                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                               $attach=$file_to_send;
 
                             }
 
 
                         }
 
-
-                        if ($mail->send()) {
-
-
-                            $counter = $counter + 1;
+                        $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","$database");
 
 
+                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database' ";
+                        $result_mail=mysqli_connect($query_for_mail,$connect_mail);
 
-                        }
-                        else{
-
-
-                          echo  $mail->ErrorInfo;
-                        }
-
-
-                        // Clear all addresses and attachments for next loop
-                        $mail->clearAddresses();
-                        $mail->clearAttachments();
 
 
                         
 
 
                     }
+
 
 
 
