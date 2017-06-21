@@ -42,9 +42,10 @@ $mail=new PHPMailer();
 
 $mail->SMTPDebug=3;
 
-$mail->isSMTP();
+$mail->isMail();
 $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
+
 
 
 
