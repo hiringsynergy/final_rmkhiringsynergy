@@ -690,7 +690,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         }
 
                         $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
-                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database' ";
+                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' ";
                         $result_mail=mysqli_connect($query_for_mail,$connect_mail);
 
 
