@@ -55,6 +55,15 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
+
+
+
+
+
+
+
+
+
         $to = $row['mail_to'];
 
         $subject = $row['mail_subject'];
@@ -151,6 +160,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 echo "failure" . $mail->ErrorInfo;
 
 
+                break;
             }
 
 
