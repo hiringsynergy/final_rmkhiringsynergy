@@ -599,7 +599,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
                         $mail->Password = 'rmd123';                           // SMTP password
-                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->SMTPSecure='ssl';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
 
 
