@@ -17,6 +17,15 @@ ob_start();
     $query_for_mail="SELECT * FROM mail_sender";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
+
+
+    if(!$result_mail){
+
+
+        die("die...".mysqli_error($connect_mail));
+
+}
+
     $count=0;
 
 
