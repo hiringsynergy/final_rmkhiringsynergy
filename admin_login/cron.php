@@ -123,6 +123,9 @@ ob_start();
         if($mail->send()){
 
 
+            echo "mail send";
+
+
             $query_for_update = "UPDATE mail_sender SET status='1' ";
             $result_for_update = mysqli_query($connect, $query_for_update);
 
@@ -130,7 +133,7 @@ ob_start();
         }
         else{
 
-            echo  $mail->ErrorInfo;
+            echo  "failure".$mail->ErrorInfo;
 
 
         }
