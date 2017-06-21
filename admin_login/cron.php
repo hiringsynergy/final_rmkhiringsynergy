@@ -25,7 +25,7 @@ ob_start();
 
 
 
-        echo "mail".$count;
+        echo "mail.....".$count;
 
 
 
@@ -45,7 +45,7 @@ ob_start();
 
         $mail=new PHPMailer();
 
-        $mail->isMail();
+        $mail->isSMTP();
         $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;// Enable SMTP authentication
 
@@ -59,7 +59,7 @@ ob_start();
             // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
             $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmd123';                           // SMTP password
-            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 	587;
 
 
@@ -77,7 +77,7 @@ ob_start();
             //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
             $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmk123';                           // SMTP password
-            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 	587;
 
 
@@ -94,7 +94,7 @@ ob_start();
             //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
             $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmkcet123';                           // SMTP password
-            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 	587;
 
 
