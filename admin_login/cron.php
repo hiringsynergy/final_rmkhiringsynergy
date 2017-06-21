@@ -46,17 +46,22 @@ else{
 
         $to = $row['mail_to'];
 
+        $subject = $row['mail_subject'];
+        $message = $row['mail_message'];
+
+        $database =$row['database_name'];
+
         echo "to ".$to;
+        echo "subject ".$subject;
+        echo "message ".$message;
+        echo "database ".$database;
 
 
     if($row['mail_to']!='' && $row['status']==0) {
 
 
 
-            $subject = $row['mail_subject'];
-            $message = $row['mail_message'];
 
-            $database =$row['database_name'];
 
 
 
