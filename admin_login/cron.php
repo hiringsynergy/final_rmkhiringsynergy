@@ -25,12 +25,12 @@ ob_start();
 
 
 
-        echo "maila  ".$count;
+        echo "mails  ".$count;
 
 
 
 
-    if($row['mail_to']!='' && $row['status']==0) {
+    if($row['mail_from']!='' && $row['status']==0) {
 
 
 
