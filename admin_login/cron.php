@@ -9,9 +9,9 @@
 session_start();
 ob_start();
 
-  echo "cron";
+     echo "cron1";
 
-    include "connect.php";
+
 
     $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
     $query_for_mail="SELECT * FROM mail_sender";
@@ -20,7 +20,7 @@ ob_start();
     $count=0;
 
 
-
+    echo "enter loop";
     while($row = mysqli_fetch_assoc($result_mail) && $count<=50){
 
 
@@ -138,9 +138,12 @@ ob_start();
 
 
         }
+
+
     }
 
 
+echo "end cron";
 
 
 
