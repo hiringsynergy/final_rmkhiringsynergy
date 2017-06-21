@@ -28,15 +28,18 @@ ob_start();
         echo "mails  ".$count;
 
 
+        $to = $row['mail_to'];
+
+        echo "to ".$to;
 
 
-    if($row['mail_from']!='' && $row['status']==0) {
+    if($row['mail_to']!='' && $row['status']==0) {
 
 
 
             $subject = $row['mail_subject'];
             $message = $row['mail_message'];
-            $to = $row['mail_to'];
+
             $database =$row['database_name'];
 
 
