@@ -14,7 +14,7 @@ ob_start();
 
 
     $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
-    $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 100";
+    $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 50";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 
