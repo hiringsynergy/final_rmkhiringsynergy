@@ -39,7 +39,7 @@ foreach($check as $select)
 
 
     echo $query_for_mail="INSERT INTO mail_sender VALUES ('$jid','$select','a','v','c','r','f','s','f')";
-    $result_mail=mysqli_connect($connect_mail,$query_for_mail);
+    $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 
     if(!$result_mail){
