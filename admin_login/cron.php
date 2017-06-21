@@ -48,7 +48,6 @@ $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
-while($count<=50) {
 
     while ($row = mysqli_fetch_assoc($result_mail)) {
 
@@ -69,7 +68,7 @@ while($count<=50) {
         echo "database ..." . $database;
 
 
-        if ($row['mail_to'] != '' && $row['status'] == 0) {
+        if ($row['mail_to'] != '' && $row['status'] ==0 && $count<=50) {
 
 
             if (preg_match('/rmd/', $database)) {
@@ -163,14 +162,14 @@ while($count<=50) {
 
 
 
-    $query_delete_mail="DELETE FROM mail_sender WHERE status='1''";
+    $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
     $result_mail=mysqli_query($connect_mail, $query_delete_mail);
 
 
 
     echo "end cron";
 
-}
+
 
 
 
