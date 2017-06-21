@@ -358,7 +358,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
     require "../email/PHPMailer/PHPMailerAutoload.php";
 
     $mail=new PHPMailer();
-    $mail->isSMTP();
+    $mail->isMail();
     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
