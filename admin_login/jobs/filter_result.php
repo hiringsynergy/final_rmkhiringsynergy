@@ -42,6 +42,14 @@ foreach($check as $select)
     $result_mail=mysqli_connect($query_for_mail,$connect_mail);
 
 
+    if(!$result_mail){
+
+
+
+        die("".mysqli_error($connect_mail));
+    }
+
+
 
 
 
