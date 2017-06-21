@@ -6,8 +6,7 @@
  * Time: 12:37 PM
  */
 
-session_start();
-ob_start();
+
 
      echo "cron1";
 
@@ -79,7 +78,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
                 $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
                 $mail->Password = 'rmd123';// SMTP password
-                
+
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;
 
