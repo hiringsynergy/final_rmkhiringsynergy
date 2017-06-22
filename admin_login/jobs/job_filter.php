@@ -820,7 +820,7 @@ if(isset($_GET['filter_job'])){
                             ?>
 
 
-                            <img class="nav-user-photo" src="images/<?php echo $row['admin_pic']; ?>" alt="Photo" />
+                            <img class="nav-user-photo" src="../images/<?php echo $row['admin_pic']; ?>" alt="Photo" />
                         <?php } ?>
                         <span class="user-info">
 									<small>Welcome,</small>
