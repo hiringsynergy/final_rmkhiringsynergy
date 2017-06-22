@@ -797,7 +797,7 @@ if(isset($_GET['filter_job'])){
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
                         <?php
-                        include "connect.php";
+                        include "../connect.php";
                         $name=$_SESSION['user'];
 
                         $query="select * from login_admin where username='{$name}'";
