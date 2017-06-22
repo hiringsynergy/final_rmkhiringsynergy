@@ -797,12 +797,13 @@ if(isset($_GET['filter_job'])){
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
                         <?php
-                        include "../connect.php";
-                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+                        include "connect.php";
                         $name=$_SESSION['user'];
 
-                        $student_table=$_SESSION['table_name'];
-                        $query="select * from $student_table where st_roll='{$name}'";
+                        $query="select * from login_admin where username='{$name}'";
+
+
+
 
                         $result=mysqli_query($connect,$query);
 
@@ -819,13 +820,12 @@ if(isset($_GET['filter_job'])){
                             ?>
 
 
-                            <img class="nav-user-photo" src="../images/<?php echo $row['st_pic']; ?>" alt="No Photo" />
-
-                            <span class="user-info">
-                                    <small>Welcome,</small>
-                                <?php echo $row['st_name']; ?>
-                                </span>
+                            <img class="nav-user-photo" src="images/<?php echo $row['admin_pic']; ?>" alt="Photo" />
                         <?php } ?>
+                        <span class="user-info">
+									<small>Welcome,</small>
+									Admin
+								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
