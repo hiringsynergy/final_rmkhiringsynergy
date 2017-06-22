@@ -135,7 +135,9 @@ if(isset($_GET['job_id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
     include "../connect.php";
-    echo "<td><a onClick=\"javascript: return confirm('Please confirm deletion');\" href='jobs_panel.php?job_id=".$query2['job_id']."'>x</a></td><tr>";
+   // echo "<td><a onClick=\"javascript: return confirm('Please confirm deletion');\" href='jobs_panel.php?job_id=".$query2['job_id']."'>x</a></td><tr>";
+
+
 
     $query="DELETE FROM jobs WHERE job_id='{$job_id}'";
     $result=mysqli_query($connect,$query);
@@ -715,6 +717,23 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
                 <div class="row">
                     <div class="col-xs-12">
+
+
+
+
+
+                        <div id="dialog-confirm" class="hide">
+                            <div class="alert alert-info bigger-110">
+                                These items will be permanently deleted and cannot be recovered.
+                            </div>
+
+                            <div class="space-6"></div>
+
+                            <p class="bigger-110 bolder center grey">
+                                <i class="ace-icon fa fa-hand-o-right blue bigger-120"></i>
+                                Are you sure?
+                            </p>
+                        </div>
                         <!-- PAGE CONTENT BEGINS -->
 
                         <div class="row">
@@ -913,7 +932,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="../jobs/jobs_panel?job_id=<?php echo urlencode($row['job_id']) ?>" class="tooltip-error" data-rel="tooltip"
+                                                                    <a href="../jobs/jobs_panel?job_id=<?php echo urlencode($row['job_id']) ?>" class="tooltip-error" id="id-btn-dialog2" data-rel="tooltip"
                                                                        title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
@@ -1205,6 +1224,42 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 //                        style: 'multi'
 //                    }
                 } );
+
+
+
+        $( "#id-btn-dialog2" ).on('click', function(e) {
+            e.preventDefault();
+
+            $( "#dialog-confirm" ).removeClass('hide').dialog({
+                resizable: false,
+                width: '320',
+                modal: true,
+
+                title_html: true,
+                buttons: [
+                    {
+                        html: "<i class='ace-icon fa fa-trash-o bigger-110'></i>&nbsp; Delete the Table",
+                        "class" : "btn btn-danger btn-minier",
+                        click: function() {
+
+
+
+                            var table=$('#delete-textbox :selected').text();
+                            window.location.href="index?delete="+table;
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                    ,
+                    {
+                        html: "<i class='ace-icon fa fa-times bigger-110'></i>&nbsp; Cancel",
+                        "class" : "btn btn-minier",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+        });
 
 
 
