@@ -78,7 +78,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../company/getuser?id="+str,true);
+                xmlhttp.open("GET","../jbs/getuser?id="+str,true);
                 xmlhttp.send();
             }
         }

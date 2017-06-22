@@ -1348,7 +1348,7 @@ die(" " . mysqli_error($connect));
                         document.getElementById("modal-form").innerHTML = this.responseText;
                     }
                 };
-                xmlhttp.open("GET","../jobs/getuser?id="+str,true);
+                xmlhttp.open("GET","../company/getuser?id="+str,true);
                 xmlhttp.send();
             }
         }
