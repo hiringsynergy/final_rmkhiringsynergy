@@ -932,7 +932,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="../jobs/jobs_panel?job_id=<?php echo urlencode($row['job_id']) ?>" class="tooltip-error" id="id-btn-dialog2" data-rel="tooltip"
+                                                                    <a href="#" class="tooltip-error" id="id-btn-dialog2" data-rel="tooltip"
                                                                        title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
