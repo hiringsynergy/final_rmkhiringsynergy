@@ -478,7 +478,7 @@ if(isset($_GET['filter_job'])){
 
 
     //job for ug update
-       echo $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and (st_overall>=$amcat or st_percentage>=$amcat) and st_12thpercentage>=$_12percentage $str and st_gender in ('$gender') and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='h'" ;
+       echo $query_for_update="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage and (st_overall>=$amcat) and st_12thpercentage>=$_12percentage $str and st_gender in ('$gender') and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='h'" ;
         $result_for_update=mysqli_query($connect, $query_for_update);
     $query_for_update1="UPDATE $students_table_name SET _".$id."='appliable' WHERE st_ugspecialization IN ('$temp_branch_update')  and st_cgpa>=$cgpa and st_10thpercentage>= $_10percentage $str and (st_overall>=$amcat or st_percentage>=$amcat) and st_gender in ('$gender') and st_dippercentage>=$lateral and st_jobtype NOT LIKE '%".$check_1."%' and st_jobtype NOT LIKE '%".$check_2."%' and st_jobtype NOT LIKE '%".$check_3."%'  and st_dorh='d'";
     $result_for_update1=mysqli_query($connect, $query_for_update1);
