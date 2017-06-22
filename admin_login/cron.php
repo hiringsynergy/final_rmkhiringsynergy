@@ -17,7 +17,7 @@
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
     $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
-    $result_mail=mysqli_query($connect_mail, $query_delete_mail);
+    $result_mail_delete=mysqli_query($connect_mail, $query_delete_mail);
 
 
 
