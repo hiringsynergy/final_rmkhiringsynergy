@@ -1501,7 +1501,7 @@ if(isset($_GET['filter_job'])){
                                                             </div>
                                                             <div class="col-xs-8 col-sm-5">
                                                                 <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Amcat Score</label></h5>
-                                                                <input type="text" name="amcat"  value="0" id="slide-text3" class="col-xs-1">
+                                                                <input type="text" name="amcat"  value="0" id="slide-text8" class="col-xs-1">
                                                                 <div id="slider-eq8" class="col-xs-12 col-md-10 col-sm-8">
                                                                     <span class="ui-slider-blue">0</span>
                                                                 </div>
