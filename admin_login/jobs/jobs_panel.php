@@ -135,7 +135,7 @@ if(isset($_GET['job_id']) && isset($_SESSION['user_role'])=='admin' ){
 
 
     include "../connect.php";
-    echo "<td><a onClick=\"javascript: return confirm('Please confirm deletion');\" href='delete.php?id=".$query2['id']."'>x</a></td><tr>";
+    echo "<td><a onClick=\"javascript: return confirm('Please confirm deletion');\" href='jobs_panel.php?job_id=".$query2['job_id']."'>x</a></td><tr>";
 
     $query="DELETE FROM jobs WHERE job_id='{$job_id}'";
     $result=mysqli_query($connect,$query);
