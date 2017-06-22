@@ -197,6 +197,7 @@ if(isset($_GET['filter']) && isset($_SESSION['user_role'])=='admin' ){
     $get_branch= $_GET['ugbranch'];
     $get_gapinstudy=$_GET['gapinstudy'];
     $get_gender=$_GET['gender'];
+    $get_amcat=$_GET['amcat'];
 
     if(current($get_branch)=="all"){
 
@@ -1982,7 +1983,7 @@ if(isset($_GET['export'])) {
 
 
 
-                            $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_12thpercentage>=$get_12thpercentage and st_10thpercentage>=$get_10thpercentage and   st_gender in ('$get_gender') and st_currentlypursuing='UG' $str and st_dorh='h'     UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_10thpercentage>=$get_10thpercentage  and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='d'  UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_12thpercentage>=$get_12thpercentage  and st_10thpercentage>=$get_10thpercentage   and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='dh'";
+                            $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and (st_overall>=$amcat or st_percentage>=$amcat) and st_12thpercentage>=$get_12thpercentage and st_10thpercentage>=$get_10thpercentage and   st_gender in ('$get_gender') and st_currentlypursuing='UG' $str and st_dorh='h'     UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and (st_overall>=$amcat or st_percentage>=$amcat) and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_10thpercentage>=$get_10thpercentage  and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='d'  UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and (st_overall>=$amcat or st_percentage>=$amcat) and st_dippercentage>=$get_dippercentage and st_12thpercentage>=$get_12thpercentage  and st_10thpercentage>=$get_10thpercentage   and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='dh'";
 
 
 

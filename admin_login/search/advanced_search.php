@@ -977,6 +977,16 @@ function updateSlider(){
 														</div>
 
 													</div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8 col-sm-5">
+                                                            <h5><label class="control-label bolder blue"for="form-field-select-2 slider-fill-mini">Amcat Score</label></h5>
+                                                            <input type="text" name="amcat"  value="0" id="slide-text8" class="col-xs-1">
+                                                            <div id="slider-eq8" class="col-xs-12 col-md-10 col-sm-8">
+                                                                <span class="ui-slider-blue">0</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
 
 												</div>
 										</div>
@@ -1650,6 +1660,24 @@ function updateSlider(){
                 animate: true,
                 slide: function(event,ui){
                     $('#slide-text7').val(ui.value);
+                }
+
+            });
+        });
+
+        $( "#slider-eq8 > span" ).css({width:'90%', 'float':'left', margin:'15px 0px'}).each(function() {
+            // read initial values from markup and remove that
+            var value = parseInt( $( this ).text(), 10 );
+            $( this ).empty().slider({
+                value: value,
+                range: "min",
+                min:0,
+                max:100,
+                step:1,
+
+                animate: true,
+                slide: function(event,ui){
+                    $('#slide-text8').val(ui.value);
                 }
 
             });
