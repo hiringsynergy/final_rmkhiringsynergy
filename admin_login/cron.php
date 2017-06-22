@@ -16,9 +16,12 @@
     $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 100";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
+    $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
+    $result_mail=mysqli_query($connect_mail, $query_delete_mail);
 
 
-    if(!$result_mail){
+
+if(!$result_mail){
 
 
         echo "die.....";
@@ -174,8 +177,6 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
-//    $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
-//    $result_mail=mysqli_query($connect_mail, $query_delete_mail);
 
 
 
