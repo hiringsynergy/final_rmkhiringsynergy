@@ -1330,6 +1330,28 @@ die(" " . mysqli_error($connect));
             });
         })
 
+
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("modal-form").innerHTML = "";
+                return;
+            } else {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("modal-form").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET","../jobs/getuser?id="+str,true);
+                xmlhttp.send();
+            }
+        }
         /**
          //add horizontal scrollbars to a simple table
          $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
