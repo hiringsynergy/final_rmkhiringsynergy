@@ -267,7 +267,7 @@ if(isset($_FILES['image']) && isset($_SESSION['user_role'])=='student'){
             <span class="icon-bar"></span>
         </button>
 
-        <div class="navbar-header pull-left" ">
+        <div class="navbar-header pull-left">
             <a href="profile" class="navbar-brand">
                 <small>
                     <i class=""></i>

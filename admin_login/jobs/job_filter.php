@@ -585,11 +585,38 @@ if(isset($_GET['filter_job'])){
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="../index" class="navbar-brand">
+            <a href="../profile" class="navbar-brand">
                 <small>
                     <i class=""></i>
-                    <img src="../../logos/rmklogo.JPG" style="height: 25px;">
-                    RMK Group of Institutions
+                    <?php
+
+                    $database=$_SESSION['database_name'];
+                    if(preg_match('/rmd/', $database)){
+                        ?>
+                        <img src="../images/rmd.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMD Engineering College  </label>
+
+                        <?php
+                    }
+
+                    if(preg_match('/rmk/', $database)){
+                        ?>
+                        <img src="../images/rmk.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMK Engineering College </label>
+
+                        <?php
+                    }
+
+                    if(preg_match('/cet/', $database)){
+                        ?>
+                        <img src="../images/rmkcet.jpg" style="height: 25px;">
+                        <label style="font-size: large;">RMK College of Engineering and Technology </label>
+
+                        <?php
+                    }
+
+
+                    ?>
                 </small>
             </a>
         </div>
@@ -771,12 +798,11 @@ if(isset($_GET['filter_job'])){
 
                         <?php
                         include "../connect.php";
+                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
                         $name=$_SESSION['user'];
 
-                        $query="select * from login_admin where username='{$name}'";
-
-
-
+                        $student_table=$_SESSION['table_name'];
+                        $query="select * from $student_table where st_roll='{$name}'";
 
                         $result=mysqli_query($connect,$query);
 
@@ -793,12 +819,13 @@ if(isset($_GET['filter_job'])){
                             ?>
 
 
-                            <img class="nav-user-photo" src="../images/<?php echo $row['admin_pic']; ?>" alt="Jason's Photo" />
+                            <img class="nav-user-photo" src="../images/<?php echo $row['st_pic']; ?>" alt="No Photo" />
+
+                            <span class="user-info">
+                                    <small>Welcome,</small>
+                                <?php echo $row['st_name']; ?>
+                                </span>
                         <?php } ?>
-                        <span class="user-info">
-									<small>Welcome,</small>
-									Admin
-								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
                     </a>
@@ -1116,14 +1143,7 @@ if(isset($_GET['filter_job'])){
                     <li class="active">Post Job</li>
                 </ul><!-- /.breadcrumb -->
 
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-                    </form>
-                </div><!-- /.nav-search -->
+                <!-- /.nav-search -->
             </div>
 
             <div class="page-content">
