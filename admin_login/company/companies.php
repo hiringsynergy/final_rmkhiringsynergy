@@ -61,6 +61,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             location.href = "../settings";
 
         }
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("modal-form").innerHTML = "";
+                return;
+            } else {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("modal-form").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET","../company/getuser?id="+str,true);
+                xmlhttp.send();
+            }
+        }
 
 
 
@@ -826,17 +847,113 @@ die(" " . mysqli_error($connect));
                                 </div>
                             </div>
                         </div>
-                        <div id="dialog-confirm" class="hide">
-                            <div class="alert alert-info bigger-110">
-                                These items will be permanently deleted and cannot be recovered.
-                            </div>
 
-                            <div class="space-6"></div>
-
-                            <p class="bigger-110 bolder center grey">
-                                <i class="ace-icon fa fa-hand-o-right blue bigger-120"></i>
-                                Are you sure?
-                            </p>
+                        <div id="modal-form"  class="modal" tabindex="-1">
+                            <!--                            <div class="modal-dialog">-->
+                            <!--                                <div class="modal-content">-->
+                            <!--                                    <div class="modal-header">-->
+                            <!--                                        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                            <!--                                        <h4 class="blue bigger">Please fill the following form fields</h4>-->
+                            <!--                                    </div>-->
+                            <!---->
+                            <!--                                    <div class="modal-body">-->
+                            <!--                                        <div class="row">-->
+                            <!--                                            <div class="col-xs-12 col-sm-5">-->
+                            <!--                                                <div class="space"></div>-->
+                            <!---->
+                            <!--                                                <input type="file" />-->
+                            <!--                                            </div>-->
+                            <!---->
+                            <!--                                            <div class="col-xs-12 col-sm-7">-->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="form-field-select-3">Company</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <select class="chosen-select" data-placeholder="Choose a Country...">-->
+                            <!--                                                            <option value="">Choose-company</option>-->
+                            <!--                                                            <option value="AL">Alabama</option>-->
+                            <!--                                                            <option value="AK">Alaska</option>-->
+                            <!--                                                            <option value="AZ">Arizona</option>-->
+                            <!--                                                            <option value="AR">Arkansas</option>-->
+                            <!--                                                            <option value="CA">California</option>-->
+                            <!---->
+                            <!--                                                        </select>-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div>-->
+                            <!---->
+                            <!--                                                <div class="space-4"></div>-->
+                            <!---->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="job-title">Job Title</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <input type="text" id="job-title"  name="title" value="--><?php //echo $row['job_title']  ?><!--" />-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div><div class="space-4"></div>-->
+                            <!--                                                <div>-->
+                            <!--                                                    <input type="hidden" id="job-id"  name="id" value="--><?php //echo $row['job_id']  ?><!--" />-->
+                            <!--                                                </div>-->
+                            <!---->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="campus-date">CampusDate</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <input type="text" id="campus-date"  value="--><?php //echo $row['campus_date']  ?><!--" />-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div><div class="space-4"></div>-->
+                            <!---->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="salary">Salary</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <input type="text" id="salary"  value="--><?php //echo $row['salary']  ?><!--" />-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div>-->
+                            <!---->
+                            <!--                                                <div class="space-4"></div>-->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="venue">Venue</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <input type="text" id="venue" value="--><?php //echo $row['venue']  ?><!--" />-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div>-->
+                            <!---->
+                            <!--                                                <div class="space-4"></div>-->
+                            <!--                                                <div class="form-group">-->
+                            <!--                                                    <label for="apply-before">Apply Before</label>-->
+                            <!---->
+                            <!--                                                    <div>-->
+                            <!--                                                        <input type="text" id="apply-before" placeholder="Username" value="--><?php //echo $row['apply_before']  ?><!--" />-->
+                            <!--                                                    </div>-->
+                            <!--                                                </div>-->
+                            <!---->
+                            <!--                                                <div class="space-4"></div>-->
+                            <!---->
+                            <!---->
+                            <!--                                            </div>-->
+                            <!--                                        </div>-->
+                            <!--                                    </div>-->
+                            <!---->
+                            <!--                                    <div class="modal-footer">-->
+                            <!---->
+                            <!--                                        <form action="../jobs/jobs_panel" method="post">-->
+                            <!--                                            <button class="btn btn-sm" type="submit">-->
+                            <!--                                                <i class="ace-icon fa fa-times"></i>-->
+                            <!--                                                Cancel-->
+                            <!--                                            </button>-->
+                            <!--                                            <button class="btn btn-sm btn-primary" name="submit" type="submit">-->
+                            <!--                                                <i class="ace-icon fa fa-check"></i>-->
+                            <!--                                                Save-->
+                            <!--                                            </button>-->
+                            <!---->
+                            <!---->
+                            <!--                                        </form>-->
+                            <!---->
+                            <!---->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                         </div>
 
 
@@ -1331,27 +1448,6 @@ die(" " . mysqli_error($connect));
         })
 
 
-        function showUser(str) {
-            if (str == "") {
-                document.getElementById("modal-form").innerHTML = "";
-                return;
-            } else {
-                if (window.XMLHttpRequest) {
-                    // code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    // code for IE6, IE5
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("modal-form").innerHTML = this.responseText;
-                    }
-                };
-                xmlhttp.open("GET","../company/getuser?id="+str,true);
-                xmlhttp.send();
-            }
-        }
         /**
          //add horizontal scrollbars to a simple table
          $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
