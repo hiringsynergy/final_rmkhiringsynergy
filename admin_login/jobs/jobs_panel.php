@@ -714,7 +714,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             <div class="page-content">
 <!-- /.ace-settings-container -->
 
-<form action="jobs_panel.php" method ="post">
+<form action="jobs_panel.php" method ="get">
 	
                 <div class="row">
                     <div class="col-xs-12">
