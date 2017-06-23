@@ -714,7 +714,8 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
             <div class="page-content">
 <!-- /.ace-settings-container -->
 
-
+<form action="jobs_panel.php" method ="post">
+	
                 <div class="row">
                     <div class="col-xs-12">
 
@@ -722,18 +723,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
-                        <div id="dialog-confirm" class="hide">
-                            <div class="alert alert-info bigger-110">
-                                These items will be permanently deleted and cannot be recovered.
-                            </div>
-
-                            <div class="space-6"></div>
-
-                            <p class="bigger-110 bolder center grey">
-                                <i class="ace-icon fa fa-hand-o-right blue bigger-120"></i>
-                                Are you sure?
-                            </p>
-                        </div>
+                        
                         <!-- PAGE CONTENT BEGINS -->
 
                         <div class="row">
@@ -1084,7 +1074,19 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
 
 
 
+			    </form>
+			<div id="dialog-confirm" class="hide">
+                            <div class="alert alert-info bigger-110">
+                                These items will be permanently deleted and cannot be recovered.
+                            </div>
 
+                            <div class="space-6"></div>
+
+                            <p class="bigger-110 bolder center grey">
+                                <i class="ace-icon fa fa-hand-o-right blue bigger-120"></i>
+                                Are you sure?
+                            </p>
+                        </div>
 
                         <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->
