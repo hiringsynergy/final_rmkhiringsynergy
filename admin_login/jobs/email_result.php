@@ -852,20 +852,20 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         ?>
 
-                        <div class="alert alert-block alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">
+                        <div class="alert alert-block alert-success">
+                            <button type="button" class="" data-dismiss="alert">
                                 <i class="ace-icon fa fa-times"></i>
                             </button>
 
-                            <i class="ace-icon fa fa-times red"></i>
+                            <i class="ace-icon fa fa-check green"></i>
 
                             Your mail to
-                            <strong class="red">
+                            <strong class="green">
                                 <?php echo $num_rows-$counter ?>
 
                             </strong>Students ,
 
-                            has been failed to send, check the Recipient mail address.....
+                            has been successfully sent.....
                         </div>
 
 
