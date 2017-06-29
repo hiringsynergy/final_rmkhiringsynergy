@@ -868,7 +868,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                         $result1=mysqli_query($connect,$query1);
                                         $c = count($result1);
 
-                                        echo $table;
+                                        echo $c;
 
                                         ?></div>
                                 <div class="table-header">
