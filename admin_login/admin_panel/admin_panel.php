@@ -841,7 +841,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                     <div class="space-16"></div>
                                 </div>
 
-
+                                <div class="center">Center</div>
                                 <div class="space-16"></div>
                                 <div class="space-16"></div>
                                 <div class="space-16"></div>
