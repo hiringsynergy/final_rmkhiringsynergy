@@ -861,10 +861,10 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                 </div>
 
                                     <div class="center">
-                                        Number of students : 
+                                        Number of students :
                                         <?php
 
-                                        $query="select * from ".$table." ";
+                                        $query="select * from students_".$table." ";
                                         $result=mysqli_query($connect,$query);
                                         $c = count($result);
 
