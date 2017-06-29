@@ -946,7 +946,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
                                 </td><?php
-                                $time=$row['salary']->format('d-m-Y H:i A');  ?>
+                                $time=$row['job_id']->format('d-m-Y H:i A');  ?>
 
                                 <td>
 
