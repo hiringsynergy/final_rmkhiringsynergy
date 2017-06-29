@@ -946,7 +946,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
                                 </td><?php
-                                $sec=$row['job_id']/1000;  ?>
+                                $sec=$row['job_id'];  ?>
 
                                 <td>
 
