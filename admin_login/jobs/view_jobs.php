@@ -866,7 +866,12 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                     <font size="3">
 
                                         <i class="ace-icon fa fa-user"></i>
-                                        Job Detail
+                                        Job Title
+                                    </font>
+                                </th>
+                                <th>
+                                    <font size="3">
+                                        Job Posted Time
                                     </font>
                                 </th>
                                 <th  class=" left" >
@@ -939,6 +944,16 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
                                     </div>
 
+
+                                </td><?php
+                                $time=$row['salary']->format('d-m-Y H:i A');  ?>
+
+                                <td>
+
+                                    <font size="3">
+                                        <b>  <?php  echo $time  ?></b>
+
+                                    </font>
 
                                 </td>
 
