@@ -860,7 +860,17 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
 
-                                    <div>Count</div>
+                                    <div class="center">
+                                        Number of students : 
+                                        <?php
+
+                                        $query="select * from ".$table." ";
+                                        $result=mysqli_query($connect,$query);
+                                        $c = count($result);
+
+                                        echo $c;
+
+                                        ?></div>
                                 <div class="table-header">
                                     Results for "Students List"
                                 </div>
