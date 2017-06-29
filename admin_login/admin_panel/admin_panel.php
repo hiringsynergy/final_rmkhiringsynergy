@@ -864,7 +864,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                         Number of students :
                                         <?php
 
-                                        $query1="select * from students_".$table." ";
+                                        $query1="select * from ".$table." ";
                                         $result1=mysqli_query($connect,$query1);
                                         $c = count($result1);
 
