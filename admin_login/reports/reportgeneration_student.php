@@ -695,8 +695,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                     <form action="reportgeneration_student.php" method="get">
 
-                                        <button class="btn btn-success btn-lg pull-right col-xs-pull-1 " name="export">
-                                            Export
+                                        <button class="btn btn-success btn-lg   " name="Edit">
+                                            Edit
                                         </button>
                                         <input type="hidden" name="year" value="<?php echo $_GET['exyear'] ?>">
 
