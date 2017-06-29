@@ -689,7 +689,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 <?php
 
 
-                                if(isset($_GET['year'])) {
+                                if(isset($_GET['exyear'])) {
 
                                     ?>
 
@@ -698,7 +698,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                         <button class="btn btn-success btn-lg pull-right col-xs-pull-1 " name="export">
                                             Export
                                         </button>
-                                        <input type="hidden" name="exyear" value="<?php echo $_GET['year'] ?>">
+                                        <input type="hidden" name="year" value="<?php echo $_GET['exyear'] ?>">
 
 
                                     </form>
@@ -729,7 +729,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                 <?php
 
-                                if(isset($_GET['export']) && isset($_SESSION['user_role'])=='admin' )
+                                if(isset($_GET['exyear']) && isset($_SESSION['user_role'])=='admin' )
 
 
                                 {
