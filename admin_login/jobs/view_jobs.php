@@ -932,7 +932,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
                                     </b>
-                                    <div class="row col-md-12" style="font-size: 17px; font-weight: bold;">
+                                    <div class="row col-md-10" style="font-size: 17px; font-weight: bold;">
 
                                         <label class="label label-warning center middle" style="size: 40px;"><b> Job:   </b></label>
 
