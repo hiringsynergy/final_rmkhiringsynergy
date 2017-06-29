@@ -951,7 +951,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                 <td>
 
                                     <font size="3">
-                                        <b>  <?php  echo date("d-m-Y", $sec);  ?></b>
+                                        <b>  <?php  echo date("d-m-Y H:i:s", $sec);  ?></b>
 
                                     </font>
 
