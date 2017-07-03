@@ -1194,6 +1194,18 @@ if(isset($_GET['export'])) {
                                         <div class="pull-right tableTools-container"></div>
                                     </div>
 
+                                    <div class="bigger-110">
+                                        Number of students :
+                                        <?php
+
+                                        $query1="select * from ".$table." ";
+                                        $result1=mysqli_query($connect,$query1);
+                                        $rows = mysqli_num_rows($result1);
+
+                                        echo $rows;
+
+                                        ?></div>
+
                                     <div class="table-header">
                                         Results for "Students List"
                                     </div>
