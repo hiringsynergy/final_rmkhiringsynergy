@@ -45,7 +45,7 @@ $mail=new PHPMailer();
 
 
 
-$mail->isMail();
+$mail->isSMTP();
 $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
