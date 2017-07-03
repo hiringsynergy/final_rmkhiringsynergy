@@ -46,7 +46,7 @@ $mail=new PHPMailer();
 
 
 $mail->isSMTP();
-$mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
@@ -89,14 +89,14 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
-                $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
-                $mail->Password = 'rmd123';// SMTP password
+                $mail->Username = 'brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org';                 // SMTP username
+                $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;
 
 
-                $mail->setFrom('rmdplacements@rmkhiringsynergy.xyz', 'RMD Placements');
+                $mail->setFrom('brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org', 'RMD Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
                 $mail->addReplyTo('rmdplacements@rmkhiringsynergy.xyz', 'Reply');
