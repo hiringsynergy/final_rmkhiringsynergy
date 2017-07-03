@@ -1198,21 +1198,21 @@ if(isset($_GET['export'])) {
                                     <div class="bigger-110">
                                         Number of students :
                                         <?php
-                                        if(isset($_GET['search']) && isset($_SESSION['user_role'])=='admin' ) {
-
-                                            $tags = $_GET['tags'];
-
-                                            $values = explode(', ', $tags);
-
-                                            $count = 0;
 
 
-                                            foreach ($values as $temp) {
-                                                $count++;
+                                            $tags1 = $_GET['tags'];
+
+                                            $values1 = explode(', ', $tags1);
+
+                                            $count1 = 0;
+
+
+                                            foreach ($values1 as $temp) {
+                                                $count1++;
                                             }
 
-                                            echo $count;
-                                        }
+                                            echo $count1;
+
 
                                         ?>
                                     </div>
