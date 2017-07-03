@@ -8,7 +8,7 @@
 
 
 
-     echo "cron 1000";
+     echo "cron 12000";
 
 
 
@@ -92,7 +92,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Username = 'brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org';                 // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
-                $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 587;
 
 
