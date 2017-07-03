@@ -1199,7 +1199,8 @@ if(isset($_GET['export'])) {
                                         Number of students :
                                         <?php
 
-
+                                        if(isset($_GET['search']) && isset($_SESSION['user_role'])=='admin' )
+                                        {
                                             $tags1 = $_GET['tags'];
 
                                             $values1 = explode(', ', $tags1);
@@ -1212,6 +1213,24 @@ if(isset($_GET['export'])) {
                                             }
 
                                             echo $count1;
+                                        }
+                                        else if(isset($_GET['get_year']) && isset($_SESSION['user_role'])=='admin' ) {
+
+                                            $get_year=$_GET['get_year'];
+
+                                            include "../connect.php";
+
+                                            //st_ugyearofpassing='$get_year' and
+
+                                            $query = "select * from students_".$get_year;
+
+                                            $result = mysqli_query($connect, $query);
+
+                                            $rows = mysqli_num_rows($result);
+
+                                            echo $rows;
+
+                                        }
 
 
                                         ?>
