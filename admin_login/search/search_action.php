@@ -1204,7 +1204,8 @@ if(isset($_GET['export'])) {
 
                                         echo $rows;
 
-                                        ?></div>
+                                        ?>
+                                    </div>
 
                                     <div class="table-header">
                                         Results for "Students List"
