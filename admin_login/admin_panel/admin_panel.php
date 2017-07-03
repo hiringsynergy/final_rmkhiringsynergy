@@ -860,7 +860,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
 
-                                    <div class="center fa-bold">
+                                    <div class="center" >
                                         Number of students :
                                         <?php
 
