@@ -45,7 +45,7 @@ $mail=new PHPMailer();
 
 
 
-$mail->isSMTP();
+$mail->isMail();
 $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
@@ -93,7 +93,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 25;
+                $mail->Port = 587;
 
 
                 $mail->setFrom('brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org', 'RMD Placements');
