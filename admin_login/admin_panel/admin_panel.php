@@ -860,17 +860,17 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='admin' ) {
                                     <div class="pull-right tableTools-container"></div>
                                 </div>
 
-                                    <div class="center">
-                                        Number of students :
-                                        <?php
-
-                                        $query1="select * from ".$table." ";
-                                        $result1=mysqli_query($connect,$query1);
-                                        $c = rowcount($result1);
-
-                                        echo $c;
-
-                                        ?></div>
+<!--                                    <div class="center">-->
+<!--                                        Number of students :-->
+<!--                                        --><?php
+//
+//                                        $query1="select * from ".$table." ";
+//                                        $result1=mysqli_query($connect,$query1);
+//                                        $c = rowcount($result1);
+//
+//                                        echo $c;
+//
+//                                        ?><!--</div>-->
                                 <div class="table-header">
                                     Results for "Students List"
                                 </div>
