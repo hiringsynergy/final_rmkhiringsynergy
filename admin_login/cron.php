@@ -8,7 +8,7 @@
 
 
 
-     echo "cron 12000";
+     echo "cron smtp2go";
 
 
 
@@ -46,7 +46,7 @@ $mail=new PHPMailer();
 
 
 $mail->isSMTP();
-$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
+$mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
@@ -81,6 +81,9 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         echo "database ..." . $database;
 
 
+
+
+
         if ($row['mail_to'] != '' && $row['status'] ==0 )
         {
 
@@ -89,11 +92,11 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
-                $mail->Username = 'brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org';                 // SMTP username
+                $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 587;
+                $mail->Port = 2525;
 
 
                 $mail->setFrom('brad@sandbox0094f7e058324697b4a39b30e2725a8e.mailgun.org', 'RMD Placements');
