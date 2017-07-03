@@ -946,12 +946,12 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
                                 </td><?php
-                                $time=$row['job_id']->format('d-m-Y H:i A');  ?>
+                                $sec=$row['job_id'];  ?>
 
                                 <td>
 
                                     <font size="3">
-                                        <b>  <?php  echo $time;  ?></b>
+                                        <b>  <?php  echo date("d-m-Y g:i a", $sec);  ?></b>
 
                                     </font>
 
