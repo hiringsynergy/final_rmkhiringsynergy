@@ -993,7 +993,7 @@ if(isset($_GET['export'])) {
                                     <div class="clearfix">
                                         <div class="pull-right tableTools-container"></div>
                                     </div>
-                                <div class="bigger-110 ">Number of Students:
+                                <div class="bigger-160 orange ">Number of Students:
                                     <?php
                                     $roll=$_POST['checkbox'];
 
@@ -1411,7 +1411,7 @@ if(isset($_GET['export'])) {
 
 
                                     </div>
-                                   
+
                             </div>
                         </div>
 
