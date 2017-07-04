@@ -3147,12 +3147,12 @@ if (isset($_POST['skill']) && isset($_SESSION['user_role'])=='student') {
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-group">
-                                                        <label for="form-field-fan">College Mail-ID</label>
-                                                        <div>
-                                                            <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="<?php echo $row['st_clgemail']?>" />
-                                                        </div>
-                                                    </div>
+<!--                                                    <div class="form-group">-->
+<!--                                                        <label for="form-field-fan">College Mail-ID</label>-->
+<!--                                                        <div>-->
+<!--                                                            <input type="text" id="form-field-fan" placeholder="" name="collegemailid" value="--><?php //echo $row['st_clgemail']?><!--" />-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
 
                                                     <div class="form-group">
                                                         <label for="id-date-picker-1">Date of birth (dd-mm-yyyy)</label>
