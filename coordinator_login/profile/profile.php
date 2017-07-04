@@ -379,25 +379,25 @@ if (isset($_GET['skill']) && isset($_SESSION['user_role'])=='coordinator') {
 
 
 
-             border-bottom-style: inset;
-             border-bottom-color:#FFBCD8;
+            border-bottom-style: inset;
+            border-bottom-color:#FFBCD8;
 
 
-         }
+        }
         .testblue{
 
 
 
-              border-bottom-style: inset;
-              border-bottom-color:#EDF3F4;
+            border-bottom-style: inset;
+            border-bottom-color:#EDF3F4;
 
-          }
-          .testred{
+        }
+        .testred{
 
-              border-bottom-style: inset;
-              border-bottom-color:#F1A9A0;
+            border-bottom-style: inset;
+            border-bottom-color:#F1A9A0;
 
-          }
+        }
         .test3{
 
             margin-left: 10px;
@@ -575,34 +575,34 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
         <div class="navbar-buttons navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
-            <li class="purple dropdown-modal">
+                <li class="purple dropdown-modal">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
 
 
-             <?php
+                        <?php
 
 
-                        
-                         
-                                include "../connect.php";
-                                //for getting change requests from change table
-                                    $query_change = "SELECT * from st_change";
-                                    $result_change = mysqli_query($connect, $query_change);
-                                    $finfo = $result_change->fetch_fields();
-                                        $count=0;
-                                     $branch=$_SESSION['cood_branch'];
-                                     while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                                foreach ($finfo as $val) {
+                        include "../connect.php";
+                        //for getting change requests from change table
+                        $query_change = "SELECT * from st_change";
+                        $result_change = mysqli_query($connect, $query_change);
+                        $finfo = $result_change->fetch_fields();
+                        $count=0;
+                        $branch=$_SESSION['cood_branch'];
+                        while($rowr = mysqli_fetch_assoc($result_change)){
 
 
-                                        if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr['st_dept'], $branch)==0) {
-                                            $count++;
-                                        }
-                                    }
+                            foreach ($finfo as $val) {
+
+
+                                if ($rowr[$val->name] != NULL && substr($rowr[$val->name], 0,1) != 'c' && substr($rowr[$val->name], 0,1) != 'a' && $val->name!="st_regno" && $val->name!="st_year" && $val->name!="st_time" && $val->name!="st_dept" && strcasecmp($rowr['st_dept'], $branch)==0) {
+                                    $count++;
                                 }
+                            }
+                        }
 
 
 
@@ -834,9 +834,9 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                 <b class="arrow"></b>
             </li><!-- /.nav-list -->
 
-        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-        </div>
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
     </div>
 
     <div class="main-content">
@@ -869,7 +869,7 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                             ?>
 
-                                <input type="text" name="roll" value="<?php echo $_GET['roll'] ?>">
+                            <input type="text" name="roll" value="<?php echo $_GET['roll'] ?>">
 
 
                             <?php
@@ -877,49 +877,49 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                         else {
 
-                        ?>
+                            ?>
 
 
-                        <input type="text" name="roll">
+                            <input type="text" name="roll">
 
                         <?php  } ?>
                         <button type="submit"  class="btn btn-success ">search</button>
                     </form>
 
-<?php
+                    <?php
 
 
-                                        if(isset($_SESSION['roll']) && isset($_SESSION['user_role'])=='coordinator') {
+                    if(isset($_SESSION['roll']) && isset($_SESSION['user_role'])=='coordinator') {
 
 
-                                        include "../connect.php";
-                                        $username = $_SESSION['roll'];
+                        include "../connect.php";
+                        $username = $_SESSION['roll'];
 
 
-                                        $isstudent = $username[4] . $username[5];
-                                        $isstudent += 4;
+                        $isstudent = $username[4] . $username[5];
+                        $isstudent += 4;
 
-                                        $query_short = "SELECT * FROM table_map WHERE table_short='{$isstudent}'";
-                                        $result_short = mysqli_query($connect, $query_short);
-                                        $row_short = mysqli_fetch_assoc($result_short);
+                        $query_short = "SELECT * FROM table_map WHERE table_short='{$isstudent}'";
+                        $result_short = mysqli_query($connect, $query_short);
+                        $row_short = mysqli_fetch_assoc($result_short);
 
-                                        $student_table = $row_short['table_name'];
+                        $student_table = $row_short['table_name'];
 
-                                        $temp_branch=$_SESSION['cood_branch'];
+                        $temp_branch=$_SESSION['cood_branch'];
 
-                                        $query1 = "SELECT * FROM $student_table WHERE st_roll='$username'";
+                        $query1 = "SELECT * FROM $student_table WHERE st_roll='$username'";
 
-                                        $result1 = mysqli_query($connect, $query1);
-                                        $row1 = mysqli_fetch_assoc($result1);
-                                        if($row1['st_ugspecialization']!=$temp_branch){
+                        $result1 = mysqli_query($connect, $query1);
+                        $row1 = mysqli_fetch_assoc($result1);
+                        if($row1['st_ugspecialization']!=$temp_branch){
 
-                                            ?>
+                            ?>
 
-                                            <div class="space-10"></div>
+                            <div class="space-10"></div>
 
 
-                                            <div class="row col-xs-12">
-                                            <div class="alert alert-block alert-danger">
+                            <div class="row col-xs-12">
+                                <div class="alert alert-block alert-danger">
                                     <button type="button" class="close" data-dismiss="alert">
                                         <i class="ace-icon fa fa-times"></i>
                                     </button>
@@ -927,23 +927,23 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
                                     This register number does not exists.
                                 </div>
-                                           </div> <?php
-                                        }
+                            </div> <?php
+                        }
 
 
 
 
 
-                                        $query = "SELECT * FROM $student_table WHERE st_roll='$username' and st_ugspecialization='$temp_branch'";
+                        $query = "SELECT * FROM $student_table WHERE st_roll='$username' and st_ugspecialization='$temp_branch'";
 
-                                        $result = mysqli_query($connect, $query);
-                                        if (!$connect) {
+                        $result = mysqli_query($connect, $query);
+                        if (!$connect) {
 
-                                            die("" . mysqli_error($connect));
-                                        }
-                                    }
+                            die("" . mysqli_error($connect));
+                        }
+                    }
 
-?>
+                    ?>
                 </div><!-- /.page-header -->
 
                 <div class="row">
@@ -959,64 +959,64 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                         if(isset($_SESSION['roll']) && isset($_SESSION['user_role'])=='coordinator') {
 
 
-                                        include "../connect.php";
-                                        $username = $_SESSION['roll'];
+                                            include "../connect.php";
+                                            $username = $_SESSION['roll'];
 
 
-                                        $isstudent = $username[4] . $username[5];
-                                        $isstudent += 4;
+                                            $isstudent = $username[4] . $username[5];
+                                            $isstudent += 4;
 
-                                        $query_short = "SELECT * FROM table_map WHERE table_short='{$isstudent}'";
-                                        $result_short = mysqli_query($connect, $query_short);
-                                        $row_short = mysqli_fetch_assoc($result_short);
+                                            $query_short = "SELECT * FROM table_map WHERE table_short='{$isstudent}'";
+                                            $result_short = mysqli_query($connect, $query_short);
+                                            $row_short = mysqli_fetch_assoc($result_short);
 
-                                        $student_table = $row_short['table_name'];
+                                            $student_table = $row_short['table_name'];
 
-                                        $temp_branch=$_SESSION['cood_branch'];
-
-
-
-
-
-                                        $query = "SELECT * FROM $student_table WHERE st_roll='$username' and st_ugspecialization='$temp_branch'";
-
-                                        $result = mysqli_query($connect, $query);
-                                        if (!$connect) {
-
-                                            die("" . mysqli_error($connect));
-                                        }
-                                        while($row = mysqli_fetch_assoc($result))
-
-                                        {
+                                            $temp_branch=$_SESSION['cood_branch'];
 
 
 
 
-                                            ?>
 
-                                            <div class="space-16"></div>
+                                            $query = "SELECT * FROM $student_table WHERE st_roll='$username' and st_ugspecialization='$temp_branch'";
 
+                                            $result = mysqli_query($connect, $query);
+                                            if (!$connect) {
 
+                                                die("" . mysqli_error($connect));
+                                            }
+                                            while($row = mysqli_fetch_assoc($result))
 
-
-                                            <div class="col-xs-12  center middle align-center align-middle">
-                                                <ul class="ace-thumbnails clearfix">
-
-
-
-                                                    <li>
-                                                        <img style="max-height: 220px; max-width:300px ;"
-                                                             src="../../student_login/images/<?php echo $row['st_pic'] ?>"/>
+                                            {
 
 
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <?php
 
 
-                                        }
+                                                ?>
+
+                                                <div class="space-16"></div>
+
+
+
+
+                                                <div class="col-xs-12  center middle align-center align-middle">
+                                                    <ul class="ace-thumbnails clearfix">
+
+
+
+                                                        <li>
+                                                            <img style="max-height: 220px; max-width:300px ;"
+                                                                 src="../../student_login/images/<?php echo $row['st_pic'] ?>"/>
+
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <?php
+
+
+                                            }
                                         }
                                         ?>
                                     </div>
@@ -1082,11 +1082,11 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
 
-                                                    <a href="#modal-form1" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
+                                                    <!--                                                    <a href="#modal-form1" data-toggle="modal">-->
+                                                    <!---->
+                                                    <!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+                                                    <!---->
+                                                    <!--                                                    </a>-->
 
                                                 </div>
                                             </div>
@@ -1190,11 +1190,11 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
 
-                                                    <a href="#modal-form2" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
+                                                    <!--                                                    <a href="#modal-form2" data-toggle="modal">-->
+                                                    <!---->
+                                                    <!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+                                                    <!---->
+                                                    <!--                                                    </a>-->
 
                                                 </div>
                                             </div>
@@ -1424,11 +1424,11 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
 
-                                                    <a href="#modal-form3" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
+                                                    <!--                                                    <a href="#modal-form3" data-toggle="modal">-->
+                                                    <!---->
+                                                    <!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+                                                    <!---->
+                                                    <!--                                                    </a>-->
 
                                                 </div>
                                             </div>
@@ -1658,126 +1658,126 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                     </div>
                                                     <?php if((strcasecmp($row['st_currentlypursuing'],"ug"))){
                                                         ?>
-                                                    <div class="space-4"></div>
-                                                    <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
+                                                        <div class="space-4"></div>
+                                                        <h3  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 18px;" >PG</h3>
 
-                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+                                                        <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
 
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Qualification</b></div>
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Qualification</b></div>
 
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="quailf1"><?php  echo $row['st_pgdegree']  ?></span>
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="quailf1"><?php  echo $row['st_pgdegree']  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row ">
+                                                                <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Branch</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable " id="branch"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgspecialization'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row ">
+                                                                <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable " id="inst1"><?php  if($row['st_pgdegree']!=0) echo $row['st_collegename'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="yop1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgyearofpassing'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Percentage/CGPA</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="cgpa1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgcgpa'];  ?></span>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <div class="space-5"></div>
 
-                                                        <div class="profile-info-row ">
-                                                            <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Branch</b> </div>
+                                                        <h5  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 15px;" >Semester wise marks</h5>
 
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="branch"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgspecialization'];  ?></span>
+
+
+                                                        <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>First Semester</b></div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="firstsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg1stsem'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row ">
+                                                                <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Second Semester</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable " id="secondsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg2ndsem'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row ">
+                                                                <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Third Semester</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable " id="thirdsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg3rdsem'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row">
+                                                                <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Fourth Semester</b> </div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="fourthsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg4thsem'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="space-4"></div>
+                                                        <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Standing Arrear</b></div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="sarr"><?php  if($row['st_pgdegree']!=0) echo $row['st_standingarrears'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>History of Arrear</b></div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_historyofarrears'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG College Name</b></div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ugcollegename'];  ?></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row  ">
+                                                                <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG History of arrears</b></div>
+
+                                                                <div class="profile-info-value testgreen">
+                                                                    <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ughistoryofarrears'];  ?></span>
+                                                                </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="profile-info-row ">
-                                                            <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Institution</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="inst1"><?php  if($row['st_pgdegree']!=0) echo $row['st_collegename'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row">
-                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Year of passing</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="yop1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgyearofpassing'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row">
-                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Percentage/CGPA</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="cgpa1"><?php  if($row['st_pgdegree']!=0) echo $row['st_pgcgpa'];  ?></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="space-5"></div>
-
-                                                    <h5  style="color: black; font-weight: bold; text-align:inherit ; padding-left: 12px ;font-size: 15px;" >Semester wise marks</h5>
-
-
-
-                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>First Semester</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="firstsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg1stsem'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row ">
-                                                            <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Second Semester</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="secondsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg2ndsem'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row ">
-                                                            <div class="profile-info-name align-left " style="background:#C8F7C5 ;color:#1E824C;"> <b>Third Semester</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable " id="thirdsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg3rdsem'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row">
-                                                            <div class="profile-info-name align-left" style="background:#C8F7C5 ;color:#1E824C;"> <b>Fourth Semester</b> </div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="fourthsem"><?php  if($row['st_pgdegree']!=0) echo $row['st_pg4thsem'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-                                                    <div class="space-4"></div>
-                                                    <div class="profile-user-info profile-user-info-striped bigger-110 bolder">
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>Standing Arrear</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="sarr"><?php  if($row['st_pgdegree']!=0) echo $row['st_standingarrears'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>History of Arrear</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_historyofarrears'];  ?></span>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG College Name</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ugcollegename'];  ?></span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="profile-info-row  ">
-                                                            <div class="profile-info-name align-left test " style="background:#C8F7C5 ;color:#1E824C;"> <b>UG History of arrears</b></div>
-
-                                                            <div class="profile-info-value testgreen">
-                                                                <span class="editable" id="harr"><?php  if($row['st_pgdegree']!=0) echo $row['st_ughistoryofarrears'];  ?></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     <?php }?>
 
 
@@ -1810,11 +1810,11 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
 
-                                                    <a href="#modal-form4" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
+                                                    <!--                                                    <a href="#modal-form4" data-toggle="modal">-->
+                                                    <!---->
+                                                    <!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+                                                    <!---->
+                                                    <!--                                                    </a>-->
 
                                                 </div>
                                             </div>
@@ -1866,9 +1866,9 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
+                                        </div>
 
-                                </div>
+                                    </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-9 test3">
 
@@ -1890,11 +1890,11 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
 
-                                                    <a href="#modal-form5" data-toggle="modal">
-
-                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>
-
-                                                    </a>
+                                                    <!--                                                    <a href="#modal-form5" data-toggle="modal">-->
+                                                    <!---->
+                                                    <!--                                                        <i class=" ace-icon fa fa-pencil-square-o bigger-200 middle white"></i>-->
+                                                    <!---->
+                                                    <!--                                                    </a>-->
 
                                                 </div>
                                             </div>
@@ -2965,40 +2965,40 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
                                     <!-- /.page-content -->
                             </div>
                         </div><!-- /.main-content -->
-            <div class="footer">
-                <div class="footer-inner">
-                    <div class="footer-content">
+                        <div class="footer">
+                            <div class="footer-inner">
+                                <div class="footer-content">
 						<span class="bigger-120">
 							<span class="blue bolder">RMK</span>
 							Group of Institutions
 						</span>
 
-                        &nbsp; &nbsp;
+                                    &nbsp; &nbsp;
 
-                    </div>
-                </div>
-            </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-            </a>
-        </div><!-- /.main-container -->
-            <!-- basic scripts -->
+                        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+                        </a>
+                    </div><!-- /.main-container -->
+                    <!-- basic scripts -->
 
-            <!--[if !IE]> -->
-            <script src="../assets/js/jquery-2.1.4.min.js"></script>
+                    <!--[if !IE]> -->
+                    <script src="../assets/js/jquery-2.1.4.min.js"></script>
 
-            <!-- <![endif]-->
+                    <!-- <![endif]-->
 
-            <!--[if IE]>
-            <script src="../assets/js/jquery-1.11.3.min.js"></script>
-            <![endif]-->
-            <script type="text/javascript">
-                if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-            </script>
-            <script src="../assets/js/bootstrap.min.js"></script>
+                    <!--[if IE]>
+                    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+                    <![endif]-->
+                    <script type="text/javascript">
+                        if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+                    </script>
+                    <script src="../assets/js/bootstrap.min.js"></script>
 
-            <!-- page specific plugin scripts -->
+                    <!-- page specific plugin scripts -->
 
                     <script src="../assets/js/jquery.dataTables.min.js"></script>
                     <script src="../assets/js/jquery.dataTables.bootstrap.min.js"></script>
@@ -3027,105 +3027,105 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 
 
                     <!--[if lte IE 8]>
-            <script src="../assets/js/excanvas.min.js"></script>
-            <![endif]-->
-            <script src="../assets/js/jquery-ui.custom.min.js"></script>
-            <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
-            <script src="../assets/js/jquery.gritter.min.js"></script>
-            <script src="../assets/js/bootbox.js"></script>
-            <script src="../assets/js/jquery.easypiechart.min.js"></script>
-            <script src="../assets/js/bootstrap-datepicker.min.js"></script>
-            <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
-            <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
-            <script src="../assets/js/select2.min.js"></script>
-            <script src="../assets/js/spinbox.min.js"></script>
-            <script src="../assets/js/bootstrap-editable.min.js"></script>
-            <script src="../assets/js/ace-editable.min.js"></script>
-            <script src="../assets/js/jquery.maskedinput.min.js"></script>
+                    <script src="../assets/js/excanvas.min.js"></script>
+                    <![endif]-->
+                    <script src="../assets/js/jquery-ui.custom.min.js"></script>
+                    <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+                    <script src="../assets/js/jquery.gritter.min.js"></script>
+                    <script src="../assets/js/bootbox.js"></script>
+                    <script src="../assets/js/jquery.easypiechart.min.js"></script>
+                    <script src="../assets/js/bootstrap-datepicker.min.js"></script>
+                    <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
+                    <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
+                    <script src="../assets/js/select2.min.js"></script>
+                    <script src="../assets/js/spinbox.min.js"></script>
+                    <script src="../assets/js/bootstrap-editable.min.js"></script>
+                    <script src="../assets/js/ace-editable.min.js"></script>
+                    <script src="../assets/js/jquery.maskedinput.min.js"></script>
 
-            <!-- ace scripts -->
-            <script src="../assets/js/ace-elements.min.js"></script>
-            <script src="../assets/js/ace.min.js"></script>
+                    <!-- ace scripts -->
+                    <script src="../assets/js/ace-elements.min.js"></script>
+                    <script src="../assets/js/ace.min.js"></script>
 
-            <!-- inline scripts related to this page -->
-            <script type="text/javascript">
-                jQuery(function($) {
+                    <!-- inline scripts related to this page -->
+                    <script type="text/javascript">
+                        jQuery(function($) {
 
-                    var $overflow = '';
-                    var colorbox_params = {
-                        rel: 'colorbox',
-                        reposition:true,
-                        scalePhotos:true,
-                        scrolling:false,
-                        previous:'<i class="ace-icon fa fa-arrow-left"></i>',
-                        next:'<i class="ace-icon fa fa-arrow-right"></i>',
-                        close:'&times;',
-                        current:'{current} of {total}',
-                        maxWidth:'100%',
-                        maxHeight:'100%',
-                        onOpen:function(){
-                            $overflow = document.body.style.overflow;
-                            document.body.style.overflow = 'hidden';
-                        },
-                        onClosed:function(){
-                            document.body.style.overflow = $overflow;
-                        },
-                        onComplete:function(){
-                            $.colorbox.resize();
-                        }
-                    };
+                            var $overflow = '';
+                            var colorbox_params = {
+                                rel: 'colorbox',
+                                reposition:true,
+                                scalePhotos:true,
+                                scrolling:false,
+                                previous:'<i class="ace-icon fa fa-arrow-left"></i>',
+                                next:'<i class="ace-icon fa fa-arrow-right"></i>',
+                                close:'&times;',
+                                current:'{current} of {total}',
+                                maxWidth:'100%',
+                                maxHeight:'100%',
+                                onOpen:function(){
+                                    $overflow = document.body.style.overflow;
+                                    document.body.style.overflow = 'hidden';
+                                },
+                                onClosed:function(){
+                                    document.body.style.overflow = $overflow;
+                                },
+                                onComplete:function(){
+                                    $.colorbox.resize();
+                                }
+                            };
 
-                    $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
-                    $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
-
-
-                    $(document).one('ajaxloadstart.page', function(e) {
-                        $('#colorbox, #cboxOverlay').remove();
-                    });
+                            $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+                            $("#cboxLoadingGraphic").html("<i class='ace-icon fa fa-spinner orange fa-spin'></i>");//let's add a custom loading icon
 
 
-
-
-
-
-
-
-
-
-                    $('#avatar').mouseenter(function () {
-
-
-                        $('#avatar').css("opacity",0.5);
-
-                    });
-                    $('#avatar').mouseleave(function(){
-
-                        $('#avatar').css("opacity",1);
-
-                    });
-                    $('#modal-form input[type=file]').ace_file_input({
-                        style:'well',
-                        btn_choose:'Drop files here or click to choose',
-                        btn_change:null,
-                        no_icon:'ace-icon fa fa-cloud-upload',
-                        droppable:true,
-                        thumbnail:'large'
-                    });
-
-                    //chosen plugin inside a modal will have a zero width because the select element is originally hidden
-                    //and its width cannot be determined.
-                    //so we set the width after modal is show
-                    $('#modal-form').on('shown.bs.modal', function () {
-                        if(!ace.vars['touch']) {
-                            $(this).find('.chosen-container').each(function(){
-                                $(this).find('a:first-child').css('width' , '210px');
-                                $(this).find('.chosen-drop').css('width' , '210px');
-                                $(this).find('.chosen-search input').css('width' , '200px');
+                            $(document).one('ajaxloadstart.page', function(e) {
+                                $('#colorbox, #cboxOverlay').remove();
                             });
-                        }
-                    });
 
-                    // *** editable avatar *** //
+
+
+
+
+
+
+
+
+
+                            $('#avatar').mouseenter(function () {
+
+
+                                $('#avatar').css("opacity",0.5);
+
+                            });
+                            $('#avatar').mouseleave(function(){
+
+                                $('#avatar').css("opacity",1);
+
+                            });
+                            $('#modal-form input[type=file]').ace_file_input({
+                                style:'well',
+                                btn_choose:'Drop files here or click to choose',
+                                btn_change:null,
+                                no_icon:'ace-icon fa fa-cloud-upload',
+                                droppable:true,
+                                thumbnail:'large'
+                            });
+
+                            //chosen plugin inside a modal will have a zero width because the select element is originally hidden
+                            //and its width cannot be determined.
+                            //so we set the width after modal is show
+                            $('#modal-form').on('shown.bs.modal', function () {
+                                if(!ace.vars['touch']) {
+                                    $(this).find('.chosen-container').each(function(){
+                                        $(this).find('a:first-child').css('width' , '210px');
+                                        $(this).find('.chosen-drop').css('width' , '210px');
+                                        $(this).find('.chosen-search input').css('width' , '200px');
+                                    });
+                                }
+                            });
+
+                            // *** editable avatar *** //
 //                    try {//ie8 throws some harmless exceptions, so let's catch'em
 //
 //                        //first let's add a fake appendChild method for Image element for browsers that have a problem with this
@@ -3229,10 +3229,10 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 //                        })
 //                    }catch(e) {}
 
-                    /**
-                     //let's display edit mode by default?
-                     var blank_image = true;//somehow you determine if image is initially blank or not, or you just want to display file input at first
-                     if(blank_image) {
+                            /**
+                             //let's display edit mode by default?
+                             var blank_image = true;//somehow you determine if image is initially blank or not, or you just want to display file input at first
+                             if(blank_image) {
 					$('#avatar').editable('show').on('hidden', function(e, reason) {
 						if(reason == 'onblur') {
 							$('#avatar').editable('show');
@@ -3241,183 +3241,183 @@ if(isset($_GET['roll']) && isset($_SESSION['user_role'])=='coordinator')
 						$('#avatar').off('hidden');
 					})
 				}
-                     */
+                             */
 
-                    //another option is using modals
-                    $('#avatar2').on('click', function(){
-                        var modal =
-                            '<div class="modal fade">\
-                              <div class="modal-dialog">\
-                               <div class="modal-content">\
-                                <div class="modal-header">\
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>\
-                                    <h4 class="blue">Change Avatar</h4>\
-                                </div>\
-                                \
-                                <form class="no-margin">\
-                                 <div class="modal-body">\
-                                    <div class="space-4"></div>\
-                                    <div style="width:75%;margin-left:12%;"><input type="file" name="file-input" /></div>\
-                                 </div>\
-                                \
-                                 <div class="modal-footer center">\
-                                    <button type="submit" class="btn btn-sm btn-success"><i class="ace-icon fa fa-check"></i> Submit</button>\
-                                    <button type="button" class="btn btn-sm" data-dismiss="modal"><i class="ace-icon fa fa-times"></i> Cancel</button>\
-                                 </div>\
-                                </form>\
-                              </div>\
-                             </div>\
-                            </div>';
+                            //another option is using modals
+                            $('#avatar2').on('click', function(){
+                                var modal =
+                                    '<div class="modal fade">\
+                                      <div class="modal-dialog">\
+                                       <div class="modal-content">\
+                                        <div class="modal-header">\
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>\
+                                            <h4 class="blue">Change Avatar</h4>\
+                                        </div>\
+                                        \
+                                        <form class="no-margin">\
+                                         <div class="modal-body">\
+                                            <div class="space-4"></div>\
+                                            <div style="width:75%;margin-left:12%;"><input type="file" name="file-input" /></div>\
+                                         </div>\
+                                        \
+                                         <div class="modal-footer center">\
+                                            <button type="submit" class="btn btn-sm btn-success"><i class="ace-icon fa fa-check"></i> Submit</button>\
+                                            <button type="button" class="btn btn-sm" data-dismiss="modal"><i class="ace-icon fa fa-times"></i> Cancel</button>\
+                                         </div>\
+                                        </form>\
+                                      </div>\
+                                     </div>\
+                                    </div>';
 
 
-                        var modal = $(modal);
-                        modal.modal("show").on("hidden", function(){
-                            modal.remove();
-                        });
+                                var modal = $(modal);
+                                modal.modal("show").on("hidden", function(){
+                                    modal.remove();
+                                });
 
-                        var working = false;
+                                var working = false;
 
-                        var form = modal.find('form:eq(0)');
-                        var file = form.find('input[type=file]').eq(0);
-                        file.ace_file_input({
-                            style:'well',
-                            btn_choose:'Click to choose new avatar',
-                            btn_change:null,
-                            no_icon:'ace-icon fa fa-picture-o',
-                            thumbnail:'small',
-                            before_remove: function() {
-                                //don't remove/reset files while being uploaded
-                                return !working;
-                            },
-                            allowExt: ['jpg', 'jpeg', 'png', 'gif'],
-                            allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-                        });
+                                var form = modal.find('form:eq(0)');
+                                var file = form.find('input[type=file]').eq(0);
+                                file.ace_file_input({
+                                    style:'well',
+                                    btn_choose:'Click to choose new avatar',
+                                    btn_change:null,
+                                    no_icon:'ace-icon fa fa-picture-o',
+                                    thumbnail:'small',
+                                    before_remove: function() {
+                                        //don't remove/reset files while being uploaded
+                                        return !working;
+                                    },
+                                    allowExt: ['jpg', 'jpeg', 'png', 'gif'],
+                                    allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+                                });
 
-                        form.on('submit', function(){
-                            if(!file.data('ace_input_files')) return false;
+                                form.on('submit', function(){
+                                    if(!file.data('ace_input_files')) return false;
 
-                            file.ace_file_input('disable');
-                            form.find('button').attr('disabled', 'disabled');
-                            form.find('.modal-body').append("<div class='center'><i class='ace-icon fa fa-spinner fa-spin bigger-150 orange'></i></div>");
+                                    file.ace_file_input('disable');
+                                    form.find('button').attr('disabled', 'disabled');
+                                    form.find('.modal-body').append("<div class='center'><i class='ace-icon fa fa-spinner fa-spin bigger-150 orange'></i></div>");
 
-                            var deferred = new $.Deferred;
-                            working = true;
-                            deferred.done(function() {
-                                form.find('button').removeAttr('disabled');
-                                form.find('input[type=file]').ace_file_input('enable');
-                                form.find('.modal-body > :last-child').remove();
+                                    var deferred = new $.Deferred;
+                                    working = true;
+                                    deferred.done(function() {
+                                        form.find('button').removeAttr('disabled');
+                                        form.find('input[type=file]').ace_file_input('enable');
+                                        form.find('.modal-body > :last-child').remove();
 
-                                modal.modal("hide");
+                                        modal.modal("hide");
 
-                                var thumb = file.next().find('img').data('thumb');
-                                if(thumb) $('#avatar2').get(0).src = thumb;
+                                        var thumb = file.next().find('img').data('thumb');
+                                        if(thumb) $('#avatar2').get(0).src = thumb;
 
-                                working = false;
+                                        working = false;
+                                    });
+
+
+                                    setTimeout(function(){
+                                        deferred.resolve();
+                                    } , parseInt(Math.random() * 800 + 800));
+
+                                    return false;
+                                });
+
                             });
 
 
-                            setTimeout(function(){
-                                deferred.resolve();
-                            } , parseInt(Math.random() * 800 + 800));
 
-                            return false;
+                            //////////////////////////////
+                            $('#profile-feed-1').ace_scroll({
+                                height: '250px',
+                                mouseWheelLock: true,
+                                alwaysVisible : true
+                            });
+
+                            $('a[ data-original-title]').tooltip();
+
+                            $('.easy-pie-chart.percentage').each(function(){
+                                var barColor = $(this).data('color') || '#555';
+                                var trackColor = '#E2E2E2';
+                                var size = parseInt($(this).data('size')) || 72;
+                                $(this).easyPieChart({
+                                    barColor: barColor,
+                                    trackColor: trackColor,
+                                    scaleColor: false,
+                                    lineCap: 'butt',
+                                    lineWidth: parseInt(size/10),
+                                    animate:false,
+                                    size: size
+                                }).css('color', barColor);
+                            });
+
+                            ///////////////////////////////////////////
+
+                            //right & left position
+                            //show the user info on right or left depending on its position
+                            $('#user-profile-2 .memberdiv').on('mouseenter touchstart', function(){
+                                var $this = $(this);
+                                var $parent = $this.closest('.tab-pane');
+
+                                var off1 = $parent.offset();
+                                var w1 = $parent.width();
+
+                                var off2 = $this.offset();
+                                var w2 = $this.width();
+
+                                var place = 'left';
+                                if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) place = 'right';
+
+                                $this.find('.popover').removeClass('right left').addClass(place);
+                            }).on('click', function(e) {
+                                e.preventDefault();
+                            });
+
+
+                            ///////////////////////////////////////////
+                            $('#user-profile-3')
+                                .find('input[type=file]').ace_file_input({
+                                style:'well',
+                                btn_choose:'Change avatar',
+                                btn_change:null,
+                                no_icon:'ace-icon fa fa-picture-o',
+                                thumbnail:'large',
+                                droppable:true,
+
+                                allowExt: ['jpg', 'jpeg', 'png', 'gif'],
+                                allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+                            })
+                                .end().find('button[type=reset]').on(ace.click_event, function(){
+                                $('#user-profile-3 input[type=file]').ace_file_input('reset_input');
+                            })
+                                .end().find('.date-picker').datepicker().next().on(ace.click_event, function(){
+                                $(this).prev().focus();
+                            })
+                            $('.input-mask-phone').mask('(999) 999-9999');
+
+                            $('#user-profile-3').find('input[type=file]').ace_file_input('show_file_list', [{type: 'image', name: $('#avatar').attr('src')}]);
+
+
+                            ////////////////////
+                            //change profile
+                            $('[data-toggle="buttons"] .btn').on('click', function(e){
+                                var target = $(this).find('input[type=radio]');
+                                var which = parseInt(target.val());
+                                $('.user-profile').parent().addClass('hide');
+                                $('#user-profile-'+which).parent().removeClass('hide');
+                            });
+
+
+
+                            /////////////////////////////////////
+                            $(document).one('ajaxloadstart.page', function(e) {
+                                //in ajax mode, remove remaining elements before leaving page
+                                try {
+                                    $('.editable').editable('destroy');
+                                } catch(e) {}
+                                $('[class*=select2]').remove();
+                            });
                         });
-
-                    });
-
-
-
-                    //////////////////////////////
-                    $('#profile-feed-1').ace_scroll({
-                        height: '250px',
-                        mouseWheelLock: true,
-                        alwaysVisible : true
-                    });
-
-                    $('a[ data-original-title]').tooltip();
-
-                    $('.easy-pie-chart.percentage').each(function(){
-                        var barColor = $(this).data('color') || '#555';
-                        var trackColor = '#E2E2E2';
-                        var size = parseInt($(this).data('size')) || 72;
-                        $(this).easyPieChart({
-                            barColor: barColor,
-                            trackColor: trackColor,
-                            scaleColor: false,
-                            lineCap: 'butt',
-                            lineWidth: parseInt(size/10),
-                            animate:false,
-                            size: size
-                        }).css('color', barColor);
-                    });
-
-                    ///////////////////////////////////////////
-
-                    //right & left position
-                    //show the user info on right or left depending on its position
-                    $('#user-profile-2 .memberdiv').on('mouseenter touchstart', function(){
-                        var $this = $(this);
-                        var $parent = $this.closest('.tab-pane');
-
-                        var off1 = $parent.offset();
-                        var w1 = $parent.width();
-
-                        var off2 = $this.offset();
-                        var w2 = $this.width();
-
-                        var place = 'left';
-                        if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) place = 'right';
-
-                        $this.find('.popover').removeClass('right left').addClass(place);
-                    }).on('click', function(e) {
-                        e.preventDefault();
-                    });
-
-
-                    ///////////////////////////////////////////
-                    $('#user-profile-3')
-                        .find('input[type=file]').ace_file_input({
-                        style:'well',
-                        btn_choose:'Change avatar',
-                        btn_change:null,
-                        no_icon:'ace-icon fa fa-picture-o',
-                        thumbnail:'large',
-                        droppable:true,
-
-                        allowExt: ['jpg', 'jpeg', 'png', 'gif'],
-                        allowMime: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-                    })
-                        .end().find('button[type=reset]').on(ace.click_event, function(){
-                        $('#user-profile-3 input[type=file]').ace_file_input('reset_input');
-                    })
-                        .end().find('.date-picker').datepicker().next().on(ace.click_event, function(){
-                        $(this).prev().focus();
-                    })
-                    $('.input-mask-phone').mask('(999) 999-9999');
-
-                    $('#user-profile-3').find('input[type=file]').ace_file_input('show_file_list', [{type: 'image', name: $('#avatar').attr('src')}]);
-
-
-                    ////////////////////
-                    //change profile
-                    $('[data-toggle="buttons"] .btn').on('click', function(e){
-                        var target = $(this).find('input[type=radio]');
-                        var which = parseInt(target.val());
-                        $('.user-profile').parent().addClass('hide');
-                        $('#user-profile-'+which).parent().removeClass('hide');
-                    });
-
-
-
-                    /////////////////////////////////////
-                    $(document).one('ajaxloadstart.page', function(e) {
-                        //in ajax mode, remove remaining elements before leaving page
-                        try {
-                            $('.editable').editable('destroy');
-                        } catch(e) {}
-                        $('[class*=select2]').remove();
-                    });
-                });
-            </script>
+                    </script>
 </body>
 </html>
