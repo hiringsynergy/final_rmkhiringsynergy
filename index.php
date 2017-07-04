@@ -7,7 +7,16 @@
 <?php
 
 if ($_SERVER['HTTPS'] != "on") {
-    $url = "https://www.". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+    if(preg_match('/www/',$_SERVER['REQUEST_URI'])){
+
+        $url = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    }
+
+      else {
+
+          $url = "https://www." . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+      }
     header("Location: $url");
     exit;
 
