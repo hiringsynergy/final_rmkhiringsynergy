@@ -1411,9 +1411,7 @@ if(isset($_GET['export'])) {
 
 
                                     </div>
-                                    <?php
-                                    echo "below table";?>
-
+                                   
                             </div>
                         </div>
 
