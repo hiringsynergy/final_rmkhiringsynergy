@@ -1149,6 +1149,8 @@ if(isset($_GET['export'])) {
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
+                                                     $student_count=mysqli_num_rows($row);
+                                                    echo $student_count;
 
                                                     if (!$result) {
                                                         die("" . mysqli_error($connect));
