@@ -8,7 +8,7 @@
 
 if ($_SERVER['HTTPS'] != "on") {
 
-    if(preg_match('/www/',$_SERVER['REQUEST_URI'])){
+    if(preg_match('/www/',$_SERVER['SERVER_NAME'])){
 
         $url = "https://". $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     }
