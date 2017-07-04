@@ -241,18 +241,64 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      $mail->isSMTP();
      $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
      $mail->SMTPAuth = true;                               // Enable SMTP authentication
-     $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
-     $mail->Password = 'rmk123';                           // SMTP password
-     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-     $mail->Port = 	587;
+     if (preg_match('/rmd/', $database)) {
 
 
-     $mail->setFrom('rmkplacements@rmkhiringsynergy.xyz', 'RMD Placements');
-     $mail->addReplyTo('rmkplacements@rmkhiringsynergy.xyz', 'Reply');
+         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+         $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+         $mail->Password = 'rmkec123';// SMTP password
+
+         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+         $mail->Port = 2525;
 
 
+         $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
+
+         $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
+         $collegename = "RMD Engineering College";
+
+     }
+     if (preg_match('/rmk/', $database)) {
 
 
+         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+         $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+         $mail->Password = 'rmkec123';// SMTP password
+
+         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+         $mail->Port = 2525;
+
+
+         $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+
+         $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
+         $collegename = "RMk Engineering College";
+
+     }
+
+     if (preg_match('/cet/', $database)) {
+
+         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+         $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+         $mail->Password = 'rmkec123';// SMTP password
+
+         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+         $mail->Port = 2525;
+
+
+         $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+
+         $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
+         $collegename = "RMD Engineering College";
+
+     }
+
+
+     $mail->isHTML(true);
+
+     $mail->Subject = $subject;
+     $mail->Body = $message;
+     $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
 
 
 
@@ -306,7 +352,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-         $mail->addAddress($to);     // Add a recipient
+         $mail->addAddress($to,$to);     // Add a recipient
 
 
 
@@ -334,12 +380,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-
-         $mail->isHTML(true);
-
-         $mail->Subject = $subject;
-         $mail->Body    = '<h3> '.$message.' '.$roll_no.' </h3>';
-         
 
 
          if(!$mail->send()) {
