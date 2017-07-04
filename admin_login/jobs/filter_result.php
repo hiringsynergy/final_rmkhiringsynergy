@@ -791,6 +791,7 @@ die(" " . mysqli_error($connect));
 
                                                                 $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable'";
                                                                 $result_job = mysqli_query($connect, $query_job);
+                                                                 $student_count=mysqli_num_rows($result_job);
 
                                                                 while ($row_job = mysqli_fetch_assoc($result_job)) {
 
@@ -833,7 +834,9 @@ die(" " . mysqli_error($connect));
 
                                             
                                         </tr>
-                                        <?php } }?>
+                                        <?php } }
+                                        echo $student_count;
+                                        ?>
 
 
                                         </tbody>
