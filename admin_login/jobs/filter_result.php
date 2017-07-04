@@ -740,6 +740,19 @@ die(" " . mysqli_error($connect));
                                 <i class="ace-icon fa fa-check"></i>
                                 Email
                             </button>
+                                    <?php
+                                    include "../connect.php";
+                                    $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
+                                    $result_eligible_year = mysqli_query($connect, $query_eligible_year);
+                                    $row_eligible_year = mysqli_fetch_assoc($result_eligible_year);
+
+                                    $year_of_gradudation = $row_eligible_year['year_of_graduation'];
+
+                                    $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable'";
+                                    $result_job = mysqli_query($connect, $query_job);
+                                    $student_count=mysqli_num_rows($result_job);
+                                    echo "Number of Student-".$student_count;
+                                    ?>
                                 <div class="table-header">
                                         Eligible Student list
                                 </div>
@@ -835,7 +848,6 @@ die(" " . mysqli_error($connect));
                                             
                                         </tr>
                                         <?php } }
-                                        echo $student_count;
                                         ?>
 
 
