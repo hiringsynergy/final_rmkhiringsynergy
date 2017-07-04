@@ -11,7 +11,7 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
     $hash = $_GET['hash'];
 
 
-    $connect_database = mysqli_connect("mysql.hostinger.com", "u625007899_root3","rmkhiringsynergy","u552198179_login");
+    $connect_database = mysqli_connect("mysql.hostinger.com", "u625007899_root3","rmkhiringsynergy","u625007899_login");
 
 
     //selecting admin database  and coordinator database........
@@ -297,19 +297,19 @@ if(isset($_GET['id']) && isset($_GET['hash'])) {
 
     if ($student_user == '1115') {
 
-        $database_session_set = 'u552198179_rmd';
-        $connect = mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy", "u552198179_rmd");
+        $database_session_set = 'u625007899_rmd';
+        $connect = mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy", "u625007899_rmd");
 
 
     } else if ($student_user == '1116') {
 
-        $database_session_set = 'u552198179_cet';
-        $connect = mysqli_connect("mysql.hostinger.com", "u625007899_root2","rmkhiringsynergy", "u552198179_cet");
+        $database_session_set = 'u625007899_cet';
+        $connect = mysqli_connect("mysql.hostinger.com", "u625007899_root2","rmkhiringsynergy", "u625007899_cet");
 
     } else if ($student_user == '1117') {
 
-        $database_session_set = 'u552198179_rmk';
-        $connect = mysqli_connect("mysql.hostinger.com", "u625007899_root1","rmkhiringsynergy", "u552198179_rmk");
+        $database_session_set = 'u625007899_rmk';
+        $connect = mysqli_connect("mysql.hostinger.com", "u625007899_root1","rmkhiringsynergy", "u625007899_rmk");
 
     }
 

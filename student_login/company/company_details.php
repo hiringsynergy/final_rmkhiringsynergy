@@ -139,7 +139,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
     $get_description= $_POST['company_description'];
 
     include "../connect.php";
-    //$connect = mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy", "u552198179_rmd");
+    //$connect = mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy", "u625007899_rmd");
 
     $query = "UPDATE company_list SET company_name='{$get_name}', company_website='{$get_website}',company_description='{$get_description}' where company_id={$get_id}";
 
@@ -295,7 +295,7 @@ if(isset($_POST['update_submit']) && isset($_SESSION['user_role'])=='student') {
 
                         <?php
                         include "../connect.php";
-                        //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
+                        //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u625007899_rmd");
                         $name=$_SESSION['user'];
 
                         $student_table=$_SESSION['table_name'];

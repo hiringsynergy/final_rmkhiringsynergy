@@ -416,7 +416,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null)  {
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
 
                         <?php
-                        $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
+                        $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u625007899_rmd");
                         $name=$_SESSION['user'];
 
                         $query="select * from login_admin where username='{$name}'";
