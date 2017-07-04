@@ -119,7 +119,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 //    $ttt = $_GET['submit_title'];
 //    $iii = $_GET['idfromget'];
 //
-//    $connect = mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy", "u552198179_rmd");
+//    $connect = mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy", "u552198179_rmd");
 //    $query = "UPDATE jobs SET job_title='{$ttt}' where job_id={$iii}";
 //
 //    $result = mysqli_query($connect, $query);

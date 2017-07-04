@@ -262,7 +262,7 @@ echo "value : ".current($value);
 
 
 
-            // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
+            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
             $mail->Username = 'rmdplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmd123';                           // SMTP password
             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
@@ -279,7 +279,7 @@ echo "value : ".current($value);
 
 
 
-            //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
+            //  $connect=mysqli_connect("mysql.hostinger.com","u625007899_root1","rmkhiringsynergy","$database");
             $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmk123';                           // SMTP password
             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
@@ -295,7 +295,7 @@ echo "value : ".current($value);
 
         if(preg_match('/cet/', $database)){
 
-            //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
+            //   $connect=mysqli_connect("mysql.hostinger.com","u625007899_root2","rmkhiringsynergy","$database");
             $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
             $mail->Password = 'rmkcet123';                           // SMTP password
             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted

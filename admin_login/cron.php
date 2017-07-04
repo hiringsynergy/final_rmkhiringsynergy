@@ -12,7 +12,7 @@
 
 
 
-    $connect_mail=mysqli_connect("mysql.hostinger.com","u552198179_root3","rmkhiringsynergy","u552198179_login");
+    $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u552198179_login");
     $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 100";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
@@ -91,7 +91,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             if (preg_match('/rmd/', $database)) {
 
 
-                // $connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","$database");
+                // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
                 $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
@@ -109,7 +109,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             if (preg_match('/rmk/', $database)) {
 
 
-                //  $connect=mysqli_connect("mysql.hostinger.com","u552198179_root1","rmkhiringsynergy","$database");
+                //  $connect=mysqli_connect("mysql.hostinger.com","u625007899_root1","rmkhiringsynergy","$database");
                 $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
                 $mail->Password = 'rmk123';                           // SMTP password
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
@@ -126,7 +126,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
             if (preg_match('/cet/', $database)) {
 
-                //   $connect=mysqli_connect("mysql.hostinger.com","u552198179_root2","rmkhiringsynergy","$database");
+                //   $connect=mysqli_connect("mysql.hostinger.com","u625007899_root2","rmkhiringsynergy","$database");
                 $mail->Username = 'rmkcetplacements@rmkhiringsynergy.xyz';                 // SMTP username
                 $mail->Password = 'rmkcet123';                           // SMTP password
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
