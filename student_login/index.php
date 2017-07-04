@@ -218,7 +218,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <?php
                         include "connect.php";
-                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+                        //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
                         $name=$_SESSION['user'];
 
                         $student_table=$_SESSION['table_name'];

@@ -17,7 +17,7 @@
 if(isset($_GET['id']) && isset($_SESSION['user_role'])=='student'){
 
     include "connect.php";
-    //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+    //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
     $user=$_GET['id'];
     $pass=$_GET['value'];
 
@@ -280,7 +280,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='student'){
 
                         <?php
                         include "connect.php";
-                        //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+                        //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
                         $name=$_SESSION['user'];
 
                         $student_table=$_SESSION['table_name'];
@@ -573,7 +573,7 @@ if(isset($_GET['id']) && isset($_SESSION['user_role'])=='student'){
                     <?php
 
                     include "connect.php";
-                    //$connect=mysqli_connect("mysql.hostinger.com","u552198179_root","rmkhiringsynergy","u552198179_rmd");
+                    //$connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","u552198179_rmd");
                     $username=$_SESSION['user'];
 
                     $student_table=$_SESSION['table_name'];
