@@ -904,54 +904,6 @@ if(isset($_GET['export'])) {
 
                                         </div>
                                     </div>
-                                    <?php
-
-
-
-                                    include "../connect.php";
-
-
-
-
-                                    $roll=$_POST['checkbox'];
-
-
-
-
-                                    //print_r($roll);
-
-
-
-
-                                    $sno=1;
-
-                                    foreach($roll as $reg) {
-
-                                        $reg = trim($reg);
-
-                                        if (strlen($reg) == 12) {
-
-                                            $start = "20";
-                                            $start .= $reg[4] . $reg[5];
-                                            $st_year = (int)$start + 4;
-                                        } else {
-
-                                            $start = "20";
-                                            $start .= $reg[3] . $reg[4];
-                                            $st_year = (int)$start + 4;
-
-                                        }
-
-                                        $sno++;
-                                    }
-
-                                    $query = "select * from students_".$st_year." WHERE st_roll='$reg'" ;
-
-                                    $result = mysqli_query($connect, $query);
-                                    $row=mysqli_fetch_assoc($result);
-                                    $student_count=mysqli_num_rows($row);
-                                    echo $sno-1;
-                                    ?>
 
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
@@ -1197,8 +1149,6 @@ if(isset($_GET['export'])) {
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
-                                                     //$student_count=mysqli_num_rows($row);
-
 
                                                     if (!$result) {
                                                         die("" . mysqli_error($connect));
