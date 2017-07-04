@@ -740,6 +740,8 @@ die(" " . mysqli_error($connect));
                                 <i class="ace-icon fa fa-check"></i>
                                 Email
                             </button>
+
+                                    <div class="bigger-110">
                                     <?php
 
 
@@ -756,13 +758,14 @@ die(" " . mysqli_error($connect));
                                     $query_job = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='appliable'";
                                     $result_job = mysqli_query($connect, $query_job);
                                     $student_count=mysqli_num_rows($result_job);
-                                    echo "Number of Students-".$student_count;
+                                    echo $student_count;
 
 
 
 
 
                                     ?>
+                                    </div>
 
                                 <div class="table-header">
                                         Eligible Student list
