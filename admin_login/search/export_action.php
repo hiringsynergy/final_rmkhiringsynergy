@@ -904,7 +904,7 @@ if(isset($_GET['export'])) {
 
                                         </div>
                                     </div>
-                                    <div class="bigger-110  col-xs-push-2">Number of Students:
+                                    <div class="bigger-110 pull-left">Number of Students:
                                         <?php
                                         $roll=$_POST['checkbox'];
 
