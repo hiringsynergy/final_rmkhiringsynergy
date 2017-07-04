@@ -904,6 +904,20 @@ if(isset($_GET['export'])) {
 
                                         </div>
                                     </div>
+                                    <div class="bigger-110">Number of Students:
+                                        <?php
+                                        $roll=$_POST['checkbox'];
+
+
+
+                                        $sno=1;
+
+                                        foreach($roll as $reg) {++$sno;}
+
+                                        echo $sno-1;
+
+                                        ?>
+                                    </div>
 
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
@@ -1149,7 +1163,7 @@ if(isset($_GET['export'])) {
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
-                                                    echo "hello".mysqli_num_rows($row);
+
 
                                                     if (!$result) {
                                                         die("" . mysqli_error($connect));
