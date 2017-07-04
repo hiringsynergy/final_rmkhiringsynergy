@@ -1149,7 +1149,7 @@ if(isset($_GET['export'])) {
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
-                                                    echo mysqli_num_rows($row);
+                                                    echo "hello".mysqli_num_rows($row);
 
                                                     if (!$result) {
                                                         die("" . mysqli_error($connect));
