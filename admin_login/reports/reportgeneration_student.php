@@ -709,25 +709,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                     <br>
 
                                     <?php
+                                }else {
+
+                                    ?>
+
+                                    <button class="btn btn-success btn-lg   " name="Edit">
+                                        Confirm
+                                    </button>
+
+                                    <?php
+
                                 }
-
-                                ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                <?php
 
                                 if(isset($_GET['exyear']) && isset($_SESSION['user_role'])=='admin' )
 

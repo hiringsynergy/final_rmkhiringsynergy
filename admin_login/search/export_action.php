@@ -904,20 +904,6 @@ if(isset($_GET['export'])) {
 
                                         </div>
                                     </div>
-                                    <div class="bigger-110  col-xs-push-2">Number of Students:
-                                        <?php
-                                        $roll=$_POST['checkbox'];
-
-
-
-                                        $sno=1;
-
-                                        foreach($roll as $reg) {++$sno;}
-
-                                        echo $sno-1;
-
-                                        ?>
-                                    </div>
 
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
@@ -1007,8 +993,23 @@ if(isset($_GET['export'])) {
                                     <div class="clearfix">
                                         <div class="pull-right tableTools-container"></div>
                                     </div>
+                                <div class="bigger-160 orange ">Number of Students:
+                                    <?php
+                                    $roll=$_POST['checkbox'];
 
-                                    <div class="table-header">
+
+
+                                    $sno=1;
+
+                                    foreach($roll as $reg) {++$sno;}
+
+                                    echo $sno-1;
+
+                                    ?>
+                                </div>
+
+
+                                <div class="table-header">
                                         Results for "Students List"
                                     </div>
 
@@ -1410,8 +1411,6 @@ if(isset($_GET['export'])) {
 
 
                                     </div>
-                                    <?php
-                                    echo "below table";?>
 
                             </div>
                         </div>
