@@ -741,7 +741,7 @@ die(" " . mysqli_error($connect));
                                 Email
                             </button>
 
-                                    <div class="bigger-110">
+                                    <div class="bigger-110">Number of Students:
                                     <?php
 
 
