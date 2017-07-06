@@ -239,7 +239,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      $mail->isSMTP();
-     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+     $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
      $mail->SMTPAuth = true;                               // Enable SMTP authentication
      if (preg_match('/rmd/', $database)) {
 
@@ -269,7 +269,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $mail->Port = 2525;
 
 
-         $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+         $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
 
          $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
          $collegename = "RMk Engineering College";
@@ -286,7 +286,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $mail->Port = 2525;
 
 
-         $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+         $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMK Placements');
 
          $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
          $collegename = "RMD Engineering College";
