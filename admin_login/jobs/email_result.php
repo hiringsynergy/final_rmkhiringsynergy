@@ -710,7 +710,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 //
                     $branches=explode("','", $dept_branch);
 
-                    print_r($branches);
+                   // print_r($branches);
 
                     include "../connect.php";
 
@@ -900,6 +900,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     }
 
+
+                    header("Location: post_jobs");
 
                 }
 
