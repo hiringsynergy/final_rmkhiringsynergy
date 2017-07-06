@@ -117,7 +117,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+                $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
                 $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
@@ -135,11 +135,11 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMD Placements');
+                $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
                 $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
-                $collegename = "RMD Engineering College";
+                $collegename = "RMK College of Engineering and Technology";
 
             }
 
