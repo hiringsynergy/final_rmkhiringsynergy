@@ -92,7 +92,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+                $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
@@ -110,7 +110,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+                $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
@@ -128,7 +128,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             if (preg_match('/cet/', $database)) {
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'karthickakash17@gmail.com';                 // SMTP username
+                $mail->Username = 'tnp@rmkec.ac.in';                  // SMTP username
                 $mail->Password = 'rmkec123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
