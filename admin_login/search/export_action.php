@@ -485,7 +485,7 @@ while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
     $to = $row_send_mail['tnp'];
 
 
-    $mail->addAddress($to);     // Add a recipient
+    $mail->addAddress($to,$to);     // Add a recipient
 
 
     if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
@@ -504,7 +504,7 @@ while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
     if ($mail->send()) {
 
 
-         echo $to."<br>";
+         echo $to."<br>"."hurray";
 
 
     }
@@ -544,7 +544,7 @@ foreach ($branches as $dept) {
         $to = $row_send_mail[$dept];
 
 
-        $mail->addAddress($to);     // Add a recipient
+        $mail->addAddress($to,$to);     // Add a recipient
 
 
         if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
@@ -562,7 +562,7 @@ foreach ($branches as $dept) {
 
         if ($mail->send()) {
 
-            echo $to."<br>";
+            echo $to."<br>"."hurray";
 
 
         }
