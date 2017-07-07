@@ -66,9 +66,11 @@ foreach($check as $select)
     if(isset($_POST['m']) && isset($_POST['s'])){
 
 
-      echo "m and s";
+        echo $_POST['m'];
+        echo "<br>";
+        echo $_POST['s'];
 
-        header("Location: email_result?jid=".$jid."&s=sms");
+        // header("Location: email_result?jid=".$jid."&s=sms");
 
 
     }
@@ -76,18 +78,18 @@ foreach($check as $select)
 if(isset($_POST['m'])){
 
 
-        echo "m";
+    echo $_POST['m'];
 
-      header("Location: email_result?jid=$jid");
+//      header("Location: email_result?jid=$jid");
 
 
 }
 if(isset($_POST['s'])){
 
 
-    echo "s";
+    echo $_POST['s'];
 
-    header("Location: sms_result?jid=$jid");
+//    header("Location: sms_result?jid=$jid");
 
 
 
@@ -775,9 +777,9 @@ die(" " . mysqli_error($connect));
                                 <form action="filter_result" method="post" >
 
                                <div class="center bigger-160">
-                                    <input type="checkbox" name="m" value="mail"/>
+                                    <input type="checkbox" name="m" />
                                     Email
-                                    <input type="checkbox" name="s" value="sms"/>
+                                    <input type="checkbox" name="s"/>
                                     SMS
                                 </div>
 
