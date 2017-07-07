@@ -733,7 +733,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $query_mail = "SELECT * FROM students_" . $year_of_gradudation . " WHERE  _" . $jid . "='eligible'";
                     $result_mail = mysqli_query($connect, $query_mail);
                     $num_rows = mysqli_num_rows($result_mail);
-                    $counter = 0;
+
+                    echo $num_rows;
 
                     $to=null;
 
