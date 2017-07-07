@@ -558,7 +558,7 @@ foreach ($branches as $dept) {
 
 
      }
-    header("Location: advanced_search");
+   // header("Location: advanced_search");
 
 
 
