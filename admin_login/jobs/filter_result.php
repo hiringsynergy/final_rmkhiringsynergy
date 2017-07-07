@@ -698,7 +698,11 @@ die(" " . mysqli_error($connect));
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        
+
+
+
+
+
                         <?php 
                         
                         
@@ -736,9 +740,16 @@ die(" " . mysqli_error($connect));
                                 </div>
                                 <form action="filter_result" method="post" >
 
+<div class="center">
+                                    <input type="checkbox" name="m" value="mail"/>
+                                    Email
+                                    <input type="checkbox" name="s" value="sms"/>
+                                    SMS
+</div>
+
                             <button name="email" id="bootbox-confirm" type="submit" class="btn btn-lg btn-success">
                                 <i class="ace-icon fa fa-check"></i>
-                                Email
+                                Submit
                             </button>
 
                                     <div class="bigger-160 orange">Number of Students:
