@@ -747,6 +747,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $to = $row_mail['st_clgemail'];
 
+                        $roll = $row_mail['st_roll'];
+
                         echo $to."<br>";
 
 
@@ -765,7 +767,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         }
 
                         $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' ";
+                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' WHERE st_roll='$roll'";
                         mysqli_query($connect_mail,$query_for_mail);
 
 
