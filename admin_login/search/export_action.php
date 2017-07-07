@@ -238,7 +238,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      $mail=new PHPMailer();
 
 
-     $mail->isSMTP();
+     $mail->isMail();
      $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
      $mail->SMTPAuth = true;                               // Enable SMTP authentication
      if (preg_match('/rmd/', $database)) {
