@@ -546,9 +546,10 @@ foreach ($branches as $dept) {
     while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
 
 
-        if ($row_send_mail != '') {
+        $to = $row_send_mail[$dept];
+        if ($to != '') {
 
-            $to = $row_send_mail[$dept];
+
 
 
             $mail->addAddress($to, $to);     // Add a recipient
