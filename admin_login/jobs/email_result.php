@@ -573,24 +573,16 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                 if (isset($_POST['send']) && isset($_SESSION['user_role']) == 'admin') {
 
 
-                    $jid = $_POST['jid'];
+                 echo    $jid = $_POST['jid'];
 
-
-/*
-
-
-
-
-*/
+                 echo "<br>";
+                echo $_POST['s'];
 
 
 
 
 
 
-
-
-echo "jid";
 
                         
 
