@@ -581,7 +581,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $apikey = "t2V9czTh0bi39lGGUYLN";
 
 // Replace if you have your own Sender ID, else donot change
-                    $senderid  =  "MYTEXT";
+                    $senderid  =  "757147";
 
 // Replace with the destination mobile Number to which you want to send sms
                     $mobile  =  "7598750997";
