@@ -820,16 +820,16 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             }
 
 
-                            if ($mail->send()) {
-
-                                echo "sent";
-
-
-                            }
-                            else{
-
-                                echo  $mail->ErrorInfo;
-                            }
+//                            if ($mail->send()) {
+//
+//                                echo "sent";
+//
+//
+//                            }
+//                            else{
+//
+//                                echo  $mail->ErrorInfo;
+//                            }
 
 
                             // Clear all addresses and attachments for next loop
@@ -879,13 +879,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             }
 
 
-                            if ($mail->send()) {
-
-
-                            } else {
-
-                                echo $mail->ErrorInfo;
-                            }
+//                            if ($mail->send()) {
+//
+//
+//                            } else {
+//
+//                                echo $mail->ErrorInfo;
+//                            }
 
 
                             // Clear all addresses and attachments for next loop
@@ -925,13 +925,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         echo "sssssssss";
 
-                        //header("Location: sms_result?jid=$jid");
+                       header("Location: sms_result?jid=$jid");
 
 
                     }
 
 
-                   // header("Location: post_jobs?email");
+                    header("Location: post_jobs?email");
 
                 }
 
