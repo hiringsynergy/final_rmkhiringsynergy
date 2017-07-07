@@ -504,7 +504,7 @@ while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
     if ($mail->send()) {
 
 
-         echo $to;
+         echo $to."<br>";
 
 
     }
@@ -562,10 +562,12 @@ foreach ($branches as $dept) {
 
         if ($mail->send()) {
 
-            echo $to;
+            echo $to."<br>";
 
 
-        } else {
+        }
+        else
+            {
 
             echo $mail->ErrorInfo;
         }
