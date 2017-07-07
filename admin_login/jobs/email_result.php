@@ -900,7 +900,14 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     }
 
-                    
+
+                    if(isset($_POST['s'])){
+
+
+                        header("Location: sms_result?jid=$jid");
+
+
+                    }
 
 
                     header("Location: post_jobs");
@@ -954,6 +961,12 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                                                 <div class="hr hr-18 dotted"></div> -->
 
                         <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
+
+                        <?php  if(isset($_GET['s'])) {  ?>
+
+                        <input type="hidden" name="s" value="<?php echo $_GET['s'] ?>">
+
+                        <?php } ?>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right"

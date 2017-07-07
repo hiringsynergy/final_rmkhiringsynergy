@@ -570,7 +570,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                if (isset($_POST['send']) && isset($_SESSION['user_role']) == 'admin') {
+                if (isset($_POST['sendsms']) && isset($_SESSION['user_role']) == 'admin') {
+
 
 
 
@@ -612,18 +613,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                 <form id="id-message-form" action="email_result" method="post"
                       class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
-                        <!--                         <div class="form-group ">
-                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
-
-                                                    <div class="col-sm-9">
-                                                                        <span class="input-icon">
-                                                                            <input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
-                                                                            <i class="ace-icon fa fa-user"></i>
-                                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="hr hr-18 dotted"></div> -->
+                       
 
                         <input type="hidden" name="jid" value="<?php echo $_GET['jid'] ?>">
 
@@ -640,50 +630,18 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             </div>
                         </div>
 
-                        <div class="hr hr-18 dotted"></div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right">
-                                <span class="inline space-24 hidden-480"></span>
-                                Message:
-                            </label>
 
 
-                            <div class="col-sm-9">
-                                <div class="wysiwyg-editor" id="editor1"></div>
-                            </div>
-                        </div>
 
-                        <div class="hr hr-18 dotted"></div>
-
-                        <div class="form-group no-margin-bottom">
-                            <label class="col-sm-3 control-label no-padding-right">Attachments:</label>
-
-                            <div class="col-sm-9">
-                                <div id="form-attachments">
-                                    <input type="file" id="id-input-file-2" name="attachment[]"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space"></div>
-
-
-                        <div class="align-right">
-                            <button id="id-add-attachment" type="button" class="btn btn-sm btn-danger">
-                                <i class="ace-icon fa fa-paperclip bigger-140"></i>
-                                Add Attachment
-                            </button>
-                        </div>
 
                         <div class="space"></div>
                         <div class="space"></div>
 
                         <div class="align-center">
                                             <span class="inline btn-send-message">
-                                                <button type="submit" id="bootbox-search" name="send"
+                                                <button type="submit" id="bootbox-search" name="sendsms"
                                                         class="btn btn-sm btn-primary border btn-bold btn-round">
-                                                    <span class="bigger-120">Send</span>
+                                                    <span class="bigger-120">Send SMS</span>
                                                         <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                                                 </button>
                                             </span>
