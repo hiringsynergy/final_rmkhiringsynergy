@@ -779,31 +779,31 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     foreach ($branches as $dept){
 
-
-                        $query_send_mail= "SELECT * FROM mail_forwarder";
-                        $result_send_mail=mysqli_query($connect,$query_send_mail);
-
-                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
-
-                            $to = $row_send_mail[$dept];
-
-
-                            $mail->addAddress($to);     // Add a recipient
-
-
-                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-
-                                foreach ($send_file as $file_to_send) {
-
-
-                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
-
-                                }
-
-
-                            }
-
-
+//
+//                        $query_send_mail= "SELECT * FROM mail_forwarder";
+//                        $result_send_mail=mysqli_query($connect,$query_send_mail);
+//
+//                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
+//
+//                            $to = $row_send_mail[$dept];
+//
+//
+//                            $mail->addAddress($to);     // Add a recipient
+//
+//
+//                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+//
+//                                foreach ($send_file as $file_to_send) {
+//
+//
+//                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+//
+//                                }
+//
+//
+//                            }
+//
+//
 //                            if ($mail->send()) {
 //
 //
@@ -817,8 +817,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                             // Clear all addresses and attachments for next loop
-                            $mail->clearAddresses();
-                            $mail->clearAttachments();
+//                            $mail->clearAddresses();
+//                            $mail->clearAttachments();
 
 
 
