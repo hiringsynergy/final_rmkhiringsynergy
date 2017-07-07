@@ -63,7 +63,7 @@ foreach($check as $select)
 }
 
 
-    if(isset($_POST['m']) && isset($_POST['s'])){
+    if(($_POST['m']=='on') && ($_POST['s']=='on')){
 
 
         echo "m ".$_POST['m'];
@@ -75,7 +75,7 @@ foreach($check as $select)
 
     }
 
-if(isset($_POST['m'])){
+if(($_POST['m']=='on')){
 
 
     echo "m ".$_POST['m'];
@@ -84,7 +84,7 @@ if(isset($_POST['m'])){
 
 
 }
-if(isset($_POST['s'])){
+if(($_POST['s']=='on')){
 
 
     echo "s ".$_POST['s'];
