@@ -463,8 +463,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      print_r($branches);
+
      echo "<br>";
 
+     echo $branches[0];
+
+     echo "<br>";
    include "../connect.php";
 
 
