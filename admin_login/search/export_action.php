@@ -316,6 +316,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      include "../connect.php";
 //     $count=0;
 
+     $department = array();
+
      foreach ($stud_roll as $roll_no){
 
 
@@ -342,6 +344,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
           $to=$row_roll_mail['st_clgemail'];
+
+          $department[]=$row_roll_mail['st_ugspecialization'];
+
+
 
 
 
@@ -447,17 +453,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+     $branches = array_unique($department);
 
-     /*
+
+
+
 
 //sending mail to hod and placement coordinators
 
-//
-$branches=explode("','", $dept_branch);
 
-// print_r($branches);
+     print_r($branches);
+     echo "<br>";
 
-include "../connect.php";
+   include "../connect.php";
 
 
 
@@ -492,6 +500,7 @@ while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
     if ($mail->send()) {
 
 
+         echo $to;
 
 
     }
@@ -549,6 +558,8 @@ foreach ($branches as $dept) {
 
         if ($mail->send()) {
 
+            echo $to;
+
 
         } else {
 
@@ -564,7 +575,7 @@ foreach ($branches as $dept) {
     }
 
 }
-*/
+
 
 
 
