@@ -68,7 +68,7 @@ foreach($check as $select)
 
       echo "m and s";
 
-        header("Location: email_result?jid=$jid&s=sms");
+        header("Location: email_result?jid=".$jid."&s=sms");
 
 
     }
