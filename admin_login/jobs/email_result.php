@@ -929,9 +929,15 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                     }
+                    else{
+
+                        header("Location: post_jobs?email");
 
 
-                    header("Location: post_jobs?email");
+                    }
+
+
+
 
                 }
 
