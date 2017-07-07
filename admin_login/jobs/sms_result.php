@@ -610,7 +610,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email_result" method="post"
+                <form id="id-message-form" action="sms_result" method="post"
                       class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
                     <div>
 
