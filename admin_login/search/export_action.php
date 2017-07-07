@@ -199,7 +199,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      $database=$_SESSION['database_name'];
 
 
-
+      $newfilename='';
 
 
      //uploading file if exists
@@ -228,6 +228,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      }
+
+
+
 
 
 
@@ -309,9 +312,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-
-      include "../connect.php";
-     $count=0;
+//
+//      include "../connect.php";
+//     $count=0;
 
      foreach ($stud_roll as $roll_no){
 
@@ -342,6 +345,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+         $time=time();
+
+
+
+         $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
+         $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message','$database', '$newfilename','0' ";
+         $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 
 
@@ -357,9 +367,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-
-
-
+          /*
 
 
          $mail->addAddress($to,$to);     // Add a recipient
@@ -417,7 +425,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-
+        */
 
 
 
@@ -425,6 +433,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      }
+
+
+
+
+
+
 
      /*
 
@@ -492,7 +506,7 @@ while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
 
 
-*/
+
 
 
 
@@ -540,8 +554,9 @@ foreach ($branches as $dept) {
 
 
     }
-}
 
+}
+*/
 
 
 
