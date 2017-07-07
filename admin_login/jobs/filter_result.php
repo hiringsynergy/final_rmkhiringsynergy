@@ -95,8 +95,19 @@ if(($_POST['s']=='on')){
 
 }
 
+    if(($_POST['m']!='on') && ($_POST['s']!='on')){
 
-header("Location: post_jobs?filter");
+
+        echo "m ".$_POST['m'];
+        echo "<br>";
+        echo "s ".$_POST['s'];
+
+        header("Location: post_jobs?filter");
+
+
+
+    }
+
 
 
 
