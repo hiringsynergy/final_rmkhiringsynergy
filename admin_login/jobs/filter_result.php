@@ -70,7 +70,7 @@ foreach($check as $select)
         echo "<br>";
         echo "s ".$_POST['s'];
 
-         // header("Location: email_result?jid=$jid");
+          header("Location: email_result?jid=$jid");
 
 
     }
@@ -81,7 +81,7 @@ foreach($check as $select)
 
             echo "m " . $_POST['m'];
 
-            // header("Location: email_result?jid=$jid");
+             header("Location: email_result?jid=$jid");
 
 
         }
@@ -90,14 +90,14 @@ foreach($check as $select)
 
             echo "s " . $_POST['s'];
 
-            // header("Location: sms_result?jid=$jid");
+             header("Location: sms_result?jid=$jid");
 
 
         }
     }
 
 
-    
+
     if(($_POST['m']!='on') && ($_POST['s']!='on')){
 
 
