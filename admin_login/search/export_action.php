@@ -179,7 +179,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
- if(isset($_POST['send_mail'])  && isset($_SESSION['user_role'])=='admin' ){
+ if(isset($_POST['send_mail'])  && isset($_SESSION['user_role'])=='admin' )
+
+ {
 
 
 
@@ -239,7 +241,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      $mail=new PHPMailer();
 
 
-     $mail->isMail();
+     $mail->isSMTP();
      $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
      $mail->SMTPAuth = true;                               // Enable SMTP authentication
      if (preg_match('/rmd/', $database)) {
@@ -308,7 +310,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-     include "../connect.php";
+     /*include "../connect.php";
      $count=0;
 
      foreach ($stud_roll as $roll_no){
@@ -337,6 +339,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
           $to=$row_roll_mail['st_clgemail'];
+
+
+
+
+
 
 
 
@@ -420,7 +427,129 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
      }
 
 
-     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+//sending mail to hod and placement coordinators
+
+//
+$branches=explode("','", $dept_branch);
+
+// print_r($branches);
+
+include "../connect.php";
+
+
+
+
+
+
+
+$query_send_mail= "SELECT * FROM mail_forwarder";
+$result_send_mail=mysqli_query($connect,$query_send_mail);
+
+while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
+
+    $to = $row_send_mail['tnp'];
+
+
+    $mail->addAddress($to);     // Add a recipient
+
+
+    if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+        foreach ($send_file as $file_to_send) {
+
+
+            $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+        }
+
+
+    }
+
+
+    if ($mail->send()) {
+
+
+
+
+    }
+    else{
+
+        echo  $mail->ErrorInfo;
+    }
+
+
+    // Clear all addresses and attachments for next loop
+    $mail->clearAddresses();
+    $mail->clearAttachments();
+
+
+
+}
+
+
+
+
+
+
+*/
+
+
+
+
+
+foreach ($branches as $dept) {
+
+
+    $query_send_mail = "SELECT * FROM mail_forwarder";
+    $result_send_mail = mysqli_query($connect, $query_send_mail);
+
+    while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
+
+        $to = $row_send_mail[$dept];
+
+
+        $mail->addAddress($to);     // Add a recipient
+
+
+        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+            foreach ($send_file as $file_to_send) {
+
+
+                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+            }
+
+
+        }
+
+
+        if ($mail->send()) {
+
+
+        } else {
+
+            echo $mail->ErrorInfo;
+        }
+
+
+        // Clear all addresses and attachments for next loop
+        $mail->clearAddresses();
+        $mail->clearAttachments();
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
 
