@@ -175,6 +175,9 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
         }
 
+        $mail->clearAddresses();
+        $mail->clearAttachments();
+
 
 
 
