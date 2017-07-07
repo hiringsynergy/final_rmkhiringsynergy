@@ -194,6 +194,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+     $database=$_SESSION['database_name'];
 
 
 
@@ -286,10 +287,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $mail->Port = 2525;
 
 
-         $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMK Placements');
+         $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
 
          $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
-         $collegename = "RMD Engineering College";
+         $collegename = "RMK College of Engineering and Technology";
 
      }
 
