@@ -353,6 +353,14 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message','$database', '$newfilename','0' ";
          $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
+         
+
+         if(!$result_mail){
+
+             die("".mysqli_error($connect_mail));
+
+         }
+
 
 
 
