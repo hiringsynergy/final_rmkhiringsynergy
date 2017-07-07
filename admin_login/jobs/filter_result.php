@@ -96,7 +96,7 @@ if(($_POST['s']=='on')){
 }
 
 
-header("Location: post_jobs");
+header("Location: post_jobs?filter");
 
 
 
