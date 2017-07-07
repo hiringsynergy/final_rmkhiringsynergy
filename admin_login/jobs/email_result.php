@@ -726,25 +726,25 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
-                            $to = $row_send_mail['tnp'];
-
-
-                            $mail->addAddress($to);     // Add a recipient
-
-
-                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-
-                                foreach ($send_file as $file_to_send) {
-
-
-                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
-
-                                }
-
-
-                            }
-
-
+//                            $to = $row_send_mail['tnp'];
+//
+//
+//                            $mail->addAddress($to);     // Add a recipient
+//
+//
+//                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+//
+//                                foreach ($send_file as $file_to_send) {
+//
+//
+//                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+//
+//                                }
+//
+//
+//                            }
+//
+//
 //                            if ($mail->send()) {
 //
 //
@@ -758,8 +758,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                             // Clear all addresses and attachments for next loop
-                            $mail->clearAddresses();
-                            $mail->clearAttachments();
+//                            $mail->clearAddresses();
+//                            $mail->clearAttachments();
 
 
 
