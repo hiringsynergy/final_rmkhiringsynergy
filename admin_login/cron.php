@@ -167,6 +167,11 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 echo "failure" . $mail->ErrorInfo;
 
+                $query_for_update = "UPDATE mail_sender SET status='2' WHERE student_id='$student_id' and job_id='$job_id'";
+                $result_for_update = mysqli_query($connect_mail, $query_for_update);
+
+
+
 
                 break;
             }
