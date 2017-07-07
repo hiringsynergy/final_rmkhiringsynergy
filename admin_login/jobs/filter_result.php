@@ -740,7 +740,7 @@ die(" " . mysqli_error($connect));
                                 </div>
                                 <form action="filter_result" method="post" >
 
-<div class="center">
+<div class="center bigger-160">
                                     <input type="checkbox" name="m" value="mail"/>
                                     Email
                                     <input type="checkbox" name="s" value="sms"/>
