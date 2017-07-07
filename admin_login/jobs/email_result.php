@@ -735,6 +735,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $num_rows = mysqli_num_rows($result_mail);
                     $counter = 0;
 
+                    $to=null;
+
 
                     while ($row_mail = mysqli_fetch_assoc($result_mail)) {
 
@@ -765,6 +767,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
+                        $to = null;
                         
 
 
