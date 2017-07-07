@@ -70,7 +70,7 @@ foreach($check as $select)
         echo "<br>";
         echo "s ".$_POST['s'];
 
-         header("Location: email_result?jid=".$jid."&s=sms");
+         header("Location: email_result?jid=$jid");
 
 
     }
