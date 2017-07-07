@@ -429,7 +429,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
      }
-   // header("Location: advanced_search");
+    header("Location: advanced_search");
 
 
 
