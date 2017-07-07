@@ -13,7 +13,7 @@
 
 
     $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-    $query_for_mail="SELECT * FROM mail_sender WHERE status='0' LIMIT 100";
+    $query_for_mail="SELECT * FROM mail_sender WHERE status='0'";
     $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
     $query_delete_mail="DELETE FROM mail_sender WHERE status='1'";
