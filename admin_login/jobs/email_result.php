@@ -645,6 +645,81 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     }
 
 
+
+                    require "../email/PHPMailer/PHPMailerAutoload.php";
+                    $mail=new PHPMailer();
+
+
+
+                    $mail->isSMTP();
+                    $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;// Enable SMTP authentication
+
+
+                    if (preg_match('/rmd/', $database)) {
+
+
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
+
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
+
+
+                        $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
+                        $mail->addAddress($to, $to);     // Add a recipient
+
+                        $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMD Engineering College";
+
+                    }
+                    if (preg_match('/rmk/', $database)) {
+
+
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
+
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
+
+
+                        $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
+                        $mail->addAddress($to, $to);     // Add a recipient
+
+                        $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMk Engineering College";
+
+                    }
+
+                    if (preg_match('/cet/', $database)) {
+
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                  // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
+
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
+
+
+                        $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
+                        $mail->addAddress($to, $to);     // Add a recipient
+
+                        $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMK College of Engineering and Technology";
+
+                    }
+
+
+                    $mail->isHTML(true);
+
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+                    $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
+
+
+
                     echo "here...."."<br>";
                     include "../connect.php";
                     $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
@@ -747,7 +822,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                             if ($mail->send()) {
 
-
+                                echo "sent";
 
 
                             }
