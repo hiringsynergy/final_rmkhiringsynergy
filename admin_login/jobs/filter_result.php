@@ -94,6 +94,10 @@ if(isset($_POST['s'])){
 }
 
 
+header("Location: post_jobs");
+
+
+
 
 
 
