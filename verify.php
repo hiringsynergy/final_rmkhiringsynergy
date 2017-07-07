@@ -11,5 +11,5 @@ session_start();
  */
 
 
-header("Location :https://www.rmkcampulse.com");
+header("Location : https://www.rmkcampulse.com");
 
