@@ -684,10 +684,10 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         }
 
-//                        $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-//                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' ";
-//                        $result_mail=mysqli_query($connect_mail,$query_for_mail);
-//
+                        $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
+                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' ";
+                        $result_mail=mysqli_query($connect_mail,$query_for_mail);
+
 
 
                         
@@ -726,40 +726,40 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
-//                            $to = $row_send_mail['tnp'];
-//
-//
-//                            $mail->addAddress($to);     // Add a recipient
-//
-//
-//                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-//
-//                                foreach ($send_file as $file_to_send) {
-//
-//
-//                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
-//
-//                                }
-//
-//
-//                            }
-//
-//
-//                            if ($mail->send()) {
-//
-//
-//
-//
-//                            }
-//                            else{
-//
-//                                echo  $mail->ErrorInfo;
-//                            }
+                            $to = $row_send_mail['tnp'];
+
+
+                            $mail->addAddress($to);     // Add a recipient
+
+
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                foreach ($send_file as $file_to_send) {
+
+
+                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                                }
+
+
+                            }
+
+
+                            if ($mail->send()) {
+
+
+
+
+                            }
+                            else{
+
+                                echo  $mail->ErrorInfo;
+                            }
 
 
                             // Clear all addresses and attachments for next loop
-//                            $mail->clearAddresses();
-//                            $mail->clearAttachments();
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
 
 
 
@@ -779,53 +779,46 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     foreach ($branches as $dept){
 
-//
-//                        $query_send_mail= "SELECT * FROM mail_forwarder";
-//                        $result_send_mail=mysqli_query($connect,$query_send_mail);
-//
-//                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
-//
-//                            $to = $row_send_mail[$dept];
-//
-//
-//                            $mail->addAddress($to);     // Add a recipient
-//
-//
-//                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-//
-//                                foreach ($send_file as $file_to_send) {
-//
-//
-//                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
-//
-//                                }
-//
-//
-//                            }
-//
-//
-//                            if ($mail->send()) {
-//
-//
-//
-//
-//                            }
-//                            else{
-//
-//                                echo  $mail->ErrorInfo;
-//                            }
+
+                        $query_send_mail= "SELECT * FROM mail_forwarder";
+                        $result_send_mail=mysqli_query($connect,$query_send_mail);
+
+                        while($row_send_mail=mysqli_fetch_assoc($result_send_mail)) {
+
+                            $to = $row_send_mail[$dept];
+
+
+                            $mail->addAddress($to);     // Add a recipient
+
+
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                foreach ($send_file as $file_to_send) {
+
+
+                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                                }
+
+
+                            }
+
+
+                            if ($mail->send()) {
+
+
+                            } else {
+
+                                echo $mail->ErrorInfo;
+                            }
 
 
                             // Clear all addresses and attachments for next loop
-//                            $mail->clearAddresses();
-//                            $mail->clearAttachments();
-
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
 
 
                         }
-
-
-
 
 
 
@@ -855,7 +848,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     if(($_POST['s']=='sms')){
 
 
-                        echo "s";
+                        echo "sssssssss";
 
                         //header("Location: sms_result?jid=$jid");
 
@@ -863,7 +856,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     }
 
 
-                    header("Location: post_jobs?email");
+                   // header("Location: post_jobs?email");
 
                 }
 
