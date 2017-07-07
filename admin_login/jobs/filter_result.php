@@ -38,17 +38,17 @@ foreach($check as $select)
     $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
 
 
-//    echo $query_for_mail="INSERT INTO mail_sender VALUES ('$jid','$select','','','','','','','0')";
-//    $result_mail=mysqli_query($connect_mail,$query_for_mail);
-//
-//
-//    if(!$result_mail){
-//
-//
-//
-//       die("error".mysqli_error($connect_mail));
-//    }
-//
+    echo $query_for_mail="INSERT INTO mail_sender VALUES ('$jid','$select','','','','','','','0')";
+    $result_mail=mysqli_query($connect_mail,$query_for_mail);
+
+
+    if(!$result_mail){
+
+
+
+       die("error".mysqli_error($connect_mail));
+    }
+
 
 
 
