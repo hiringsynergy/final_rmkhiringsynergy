@@ -66,7 +66,9 @@ foreach($check as $select)
     if(isset($_POST['m']) && isset($_POST['s'])){
 
 
-        header("Location: email_result?jid=$jid&s=sms");
+    echo "m and s";
+
+       // header("Location: email_result?jid=$jid&s=sms");
 
 
     }
@@ -74,15 +76,18 @@ foreach($check as $select)
 if(isset($_POST['m'])){
 
 
-    header("Location: email_result?jid=$jid");
+        echo "m";
+
+   //   header("Location: email_result?jid=$jid");
 
 
 }
 if(isset($_POST['s'])){
 
 
+    echo "s";
 
-    header("Location: sms_result?jid=$jid");
+  //  header("Location: sms_result?jid=$jid");
 
 
 
