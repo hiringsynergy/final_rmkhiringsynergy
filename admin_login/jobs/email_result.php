@@ -842,7 +842,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-                    if(isset($_POST['s'])){
+                    if(($_POST['s']=='sms')){
 
 
                         echo "s";
