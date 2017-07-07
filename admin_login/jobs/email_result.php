@@ -583,7 +583,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
-
+         echo "here...."."<br>";
                         
 
 
@@ -608,6 +608,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                     $send_file = array();
+
 
 
 
@@ -644,6 +645,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     }
 
 
+                    echo "here...."."<br>";
                     include "../connect.php";
                     $query_eligible_year = "SELECT * FROM jobs WHERE job_id='$jid'";
                     $result_eligible_year = mysqli_query($connect, $query_eligible_year);
@@ -693,6 +695,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     }
 
+                    echo "here...."."<br>";
+
 
 
 
@@ -716,6 +720,9 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         $query_send_mail= "SELECT * FROM mail_forwarder";
                         $result_send_mail=mysqli_query($connect,$query_send_mail);
+
+
+                    echo "here...."."<br>";
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
@@ -765,6 +772,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
+                    echo "here...."."<br>";
 
 
 
@@ -824,6 +832,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                     }
 
+
+                    echo "here...."."<br>";
 //
 //
 
