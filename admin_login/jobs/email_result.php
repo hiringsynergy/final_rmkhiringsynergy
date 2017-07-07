@@ -590,6 +590,8 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
 
+echo "jid";
+
                         
 
 
@@ -846,71 +848,20 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     }
 
 
-                    if ($num_rows != $counter) {
-
-
-                        ?>
-
-                        <div class="alert alert-block alert-success">
-                            <button type="button" class="" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
-
-                            <i class="ace-icon fa fa-check green"></i>
-
-                            Your mail to
-                            <strong class="green">
-                                <?php echo $num_rows-$counter ?>
-
-                            </strong>Students ,
-
-                            has been successfully sent.....
-                        </div>
-
-
-
-
-                        <?php
-
-
-
-                    } else {
-
-                        ?>
-
-
-                        <div class="alert alert-block alert-success">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
-
-                            <i class="ace-icon fa fa-check green"></i>
-
-                            Your mail to
-                            <strong class="green">
-                                <?php echo $num_rows ?>
-
-                            </strong>Students ,
-
-                            has been sent Successfully
-                        </div>
-
-
-                        <?php
-
-                    }
 
 
                     if(isset($_POST['s'])){
 
 
-                        header("Location: sms_result?jid=$jid");
+                        echo "s";
+
+                        //header("Location: sms_result?jid=$jid");
 
 
                     }
 
 
-                    header("Location: post_jobs?email");
+                   // header("Location: post_jobs?email");
 
                 }
 
