@@ -584,7 +584,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $senderid  =  "MYTEXT";
 
 // Replace with the destination mobile Number to which you want to send sms
-                    $mobile  =  "9566007442";
+                    $mobile  =  "7598750997";
 
 // Replace with your Message content
                     $message   =  "Testing SMS API";
