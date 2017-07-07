@@ -94,7 +94,7 @@ if(isset($_POST['s'])){
 }
 
 
-header("Location: post_jobs");
+//header("Location: post_jobs");
 
 
 
