@@ -70,31 +70,34 @@ foreach($check as $select)
         echo "<br>";
         echo "s ".$_POST['s'];
 
-         header("Location: email_result?jid=$jid");
+         // header("Location: email_result?jid=$jid");
 
 
     }
+    else {
 
-if(($_POST['m']=='on')){
-
-
-    echo "m ".$_POST['m'];
-
-      header("Location: email_result?jid=$jid");
+        if (($_POST['m'] == 'on')) {
 
 
-}
-if(($_POST['s']=='on')){
+            echo "m " . $_POST['m'];
+
+            // header("Location: email_result?jid=$jid");
 
 
-    echo "s ".$_POST['s'];
-
-    header("Location: sms_result?jid=$jid");
-
+        }
+        if (($_POST['s'] == 'on')) {
 
 
-}
+            echo "s " . $_POST['s'];
 
+            // header("Location: sms_result?jid=$jid");
+
+
+        }
+    }
+
+
+    
     if(($_POST['m']!='on') && ($_POST['s']!='on')){
 
 
