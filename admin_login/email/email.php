@@ -773,7 +773,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     $mail->Subject = $_POST['subject'];
                     $mail->Body    = $_POST['message'];
-                    $mail->Body .= '<div class="gmail_default"><b><br><br><br></br></div><div class="gmail_default"><b>------------------------------<wbr>---</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>RMK Engineering College​</b></div>';
+                    $mail->Body .= '<div class="gmail_default"><b><br><br><br></br></div><div class="gmail_default"><b>------------------------------<wbr>---</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>'.$collegename.'</b></div>';
 
 
 
