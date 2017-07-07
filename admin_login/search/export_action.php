@@ -310,7 +310,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-     /*include "../connect.php";
+      include "../connect.php";
      $count=0;
 
      foreach ($stud_roll as $roll_no){
@@ -426,6 +426,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
      }
 
+     /*
 
 //sending mail to hod and placement coordinators
 
