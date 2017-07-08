@@ -119,8 +119,8 @@ ob_start();
 
                             <div class="row">
                                 <div class="col-xs-12 col-md-6">
-                                    <label for="pass" style="font-weight: 600; color:white;">ENTER USERNAME:</label>
-                                    <input type="text" class="form-control" name="username" style="width: 80%;"  required="" placeholder="Enter Username" data-form-field="Email">
+                                    <label for="pass" style="font-weight: 600; color:white;">ENTER REGISTER NUMBER:</label>
+                                    <input type="text" class="form-control" name="username" style="width: 80%;"  required="" placeholder="Enter Register Number" data-form-field="Email">
                                 </div>
 
                                 
