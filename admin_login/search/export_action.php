@@ -1163,24 +1163,20 @@ if(isset($_GET['export'])) {
                                                                 <div class="space-16"></div>
 
 
+                                                                <div class="form-group">
+                                                                    <label for="form-field-first">Message</label>
 
                                                                     <div>
                                                                         <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
                                                                     </div>
+                                                                </div>
 
 
-
-                                                                <div class="form-group">
-                                                                    <label class="col-sm-3 control-label no-padding-right">
-                                                                        <span class="inline space-24 hidden-480"></span>
-                                                                        Message:
-                                                                    </label>
 
 
                                                                     <div class="col-sm-9">
                                                                         <div class="wysiwyg-editor" id="editor1"></div>
                                                                     </div>
-                                                                </div>
 
 
 
@@ -1734,6 +1730,44 @@ if(isset($_GET['export'])) {
 
 
                                 jQuery(function ($) {
+
+
+
+
+                                    $('.message-form .wysiwyg-editor').ace_wysiwyg({
+                                        toolbar:
+                                            [
+                                                'bold',
+                                                'italic',
+                                                'strikethrough',
+                                                'underline',
+                                                null,
+                                                'justifyleft',
+                                                'justifycenter',
+                                                'justifyright',
+                                                null,
+                                                'createLink',
+                                                'unlink',
+                                                null,
+                                                'undo',
+                                                'redo'
+                                            ]
+                                    }).prev().addClass('wysiwyg-style1');
+
+
+                                    $('#id-message-form').on('submit', function() {
+                                        var hidden_input =
+                                            $('<input type="hidden" name="message" />')
+                                                .appendTo('#id-message-form');
+
+                                        var html_content = $('#editor1').html();
+                                        hidden_input.val( html_content );
+                                        //put the editor's HTML into hidden_input and it will be sent to server
+                                    });
+
+
+
+
                                     //initiate dataTables plugin
                                     var myTable =
                                         $('#dynamic-table')
@@ -1865,39 +1899,6 @@ if(isset($_GET['export'])) {
                                         });
                                     }, 500);
 
-                                    $('.message-form .wysiwyg-editor').ace_wysiwyg({
-                                        toolbar:
-                                            [
-                                                'bold',
-                                                'italic',
-                                                'strikethrough',
-                                                'underline',
-                                                null,
-                                                'justifyleft',
-                                                'justifycenter',
-                                                'justifyright',
-                                                null,
-                                                'createLink',
-                                                'unlink',
-                                                null,
-                                                'undo',
-                                                'redo'
-                                            ]
-                                    }).prev().addClass('wysiwyg-style1');
-
-
-                                    $('#id-message-form').on('submit', function() {
-                                        var hidden_input =
-                                            $('<input type="hidden" name="message" />')
-                                                .appendTo('#id-message-form');
-
-                                        var html_content = $('#editor1').html();
-                                        hidden_input.val( html_content );
-                                        //put the editor's HTML into hidden_input and it will be sent to server
-                                    });
-
-
-
 
 
                                     myTable.on( 'select', function ( e, dt, type, index ) {
@@ -1961,6 +1962,9 @@ if(isset($_GET['export'])) {
                                         //onchange:''
                                         //
                                     });
+
+
+
 
 
 
