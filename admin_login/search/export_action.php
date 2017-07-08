@@ -1129,8 +1129,13 @@ if(isset($_GET['export'])) {
                                     <div class="col-xs-12 ">
                                         <div class="form-actions center">
 
+                                            <button class="btn btn-success" >
+                                                Send Mail
 
-                                            <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal"> <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>
+                                                <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i>
+                                            </button>
+
+<!--                                            <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal"> <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>-->
 
 
                                         </div>
