@@ -67,6 +67,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             location.href = "../admin_panel/admin_panel";
 
         }
+        function navigate(){
+
+
+            document.getElementById("navform").submit();
+
+        }
         function showStudent(str) {
             if (str == "") {
                 document.getElementById("modal-form").innerHTML = "";
@@ -234,7 +240,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-         move_uploaded_file($file_tmp,"files/".$newfilename);
+         move_uploaded_file($file_tmp,"../files/".$newfilename);
 
 
 
@@ -1129,7 +1135,7 @@ if(isset($_GET['export'])) {
                                     <div class="col-xs-12 ">
                                         <div class="form-actions center">
 
-                                            <button class="btn btn-success" >
+                                            <button class="btn btn-success" onclick="navigate()">
                                                 Send Mail
 
                                                 <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i>
@@ -1144,7 +1150,7 @@ if(isset($_GET['export'])) {
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="export_action" method="post" enctype="multipart/form-data" >
+                                                <form action="email_search" id="navform" method="post" enctype="multipart/form-data" >
 
                                                     <?php  $rol=$_POST['checkbox'];
                                                     
@@ -1157,74 +1163,14 @@ if(isset($_GET['export'])) {
                                                     <input type="hidden" name="check" value="<?php echo $checkval ?> ">
 
 
-                                                    <div class="modal-body">
-
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12">
-
-                                                                <div class="space-4"></div>
 
 
 
-
-
-                                                                <div class="form-group">
-                                                                    <label for="form-field-username">Subject</label>
-
-                                                                    <div>
-                                                                        <input type="text" name="subject" id="form-field-username" class="col-xs-8" placeholder="Enter Subject" value="" />
-                                                                    </div>
-                                                                </div>
-                                                                <br/>
-                                                                <div class="space-16"></div>
-
-
-                                                                <div class="form-group">
-                                                                    <label for="form-field-first">Message</label>
-
-                                                                    <div>
-                                                                        <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
-                                                                    </div>
-                                                                </div>
-
-
-
-
-                                                                    <div class="col-sm-9">
-                                                                        <div class="wysiwyg-editor" id="editor1"></div>
-                                                                    </div>
-
-
-
-
-                                                            </div>
-
-                                                            <div class="space-16"></div>
-
-
-                                                            <div class="col-xs-8 col-sm-12 ">
-
-                                                                <div class="space-16"></div>
-                                                                <label for="id-input-file-2">Attachment</label>
-
-
-
-                                                                <input type="file" id="id-input-file-2" name="attachment" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="space-16"></div>
-                                                    <div class="modal-footer center">
-                                                        <button class="btn btn-sm" data-dismiss="modal">
-                                                            <i class="ace-icon fa fa-times"></i>
-                                                            Cancel
-                                                        </button>
                                                         <button name="send_mail" type="submit" class="btn btn-sm btn-primary">
                                                             <i class="ace-icon fa fa-send"></i>
                                                             SEND
                                                         </button>
-                                                    </div>
+
                                                 </form>
                                             </div>
                                         </div>
