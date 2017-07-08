@@ -1171,9 +1171,21 @@ if(isset($_GET['export'])) {
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-sm-9">
-                                                                    <div class="wysiwyg-editor" id="editor1"></div>
+
+                                                                <div class="form-group">
+                                                                    <label class="col-sm-3 control-label no-padding-right">
+                                                                        <span class="inline space-24 hidden-480"></span>
+                                                                        Message:
+                                                                    </label>
+
+
+                                                                    <div class="col-sm-9">
+                                                                        <div class="wysiwyg-editor" id="editor1"></div>
+                                                                    </div>
                                                                 </div>
+
+
+
 
                                                             </div>
 
