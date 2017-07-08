@@ -1074,20 +1074,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <form id="id-message-form" action="email_search" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
 
                     <input type="hidden" name="emailCheck" value="<?php echo $_POST['check'] ?>"  />
-                    <div>
-                        <div class="form-group ">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
-
-                            <div class="col-sm-9">
-												<span class="input-icon">
-													<input type="email"  name="recipient" size="35"  id="tag3"  placeholder="user@gmail.com" />
-													<i class="ace-icon fa fa-user"></i>
-												</span>
-                            </div>
-                        </div>
-
-                        <div class="hr hr-18 dotted"></div>
-
+                    
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-subject">Subject:</label>
@@ -1288,41 +1275,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     $(this).closest('.file-input-container').hide(300, function(){ $(this).remove() });
                 });
             });
-        $('#bootbox-search').click(function(event) {
-
-
-
-            var blc = $('#tag3').val();
-
-
-
-
-
-
-
-            if (blc == '') {
-
-
-
-                bootbox.dialog({
-                    message: "Please enter the recipient's address",
-                    buttons: {
-                        "success": {
-                            "label": "OK",
-                            "className": "btn-sm btn-primary"
-                        }
-                    }
-
-                });
-                event.preventDefault();
-                event.stopPropagation();
-
-            }
-            else
-            {
-
-            }
-        });
 
 
     });
