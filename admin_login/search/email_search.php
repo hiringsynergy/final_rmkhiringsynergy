@@ -595,7 +595,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    $get_roll= $_POST['checkMail'];
+                    $get_roll= $_POST['emailCheck'];
 
 
 
