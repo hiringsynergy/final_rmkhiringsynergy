@@ -1074,7 +1074,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                 <form id="id-message-form" action="email_search" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
 
                     <input type="hidden" name="emailCheck" value="<?php echo $_POST['check'] ?>"  />
-                    
+
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-subject">Subject:</label>
