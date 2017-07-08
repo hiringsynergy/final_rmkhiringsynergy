@@ -1171,6 +1171,10 @@ if(isset($_GET['export'])) {
                                                                     </div>
                                                                 </div>
 
+                                                                <div class="col-sm-9">
+                                                                    <div class="wysiwyg-editor" id="editor1"></div>
+                                                                </div>
+
                                                             </div>
 
                                                             <div class="space-16"></div>
@@ -1662,9 +1666,35 @@ if(isset($_GET['export'])) {
                             <script src="../assets/js/buttons.print.min.js"></script>
                             <script src="../assets/js/buttons.colVis.min.js"></script>
                             <script src="../assets/js/dataTables.select.min.js"></script>
+                        <script src="../assets/js/jquery-ui.custom.min.js"></script>
+                        <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+                        <script src="../assets/js/chosen.jquery.min.js"></script>
+                        <script src="../assets/js/spStatus.min.js"></script>
+                        <script src="../assets/js/bootstrap-datepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-timepicker.min.js"></script>
+                        <script src="../assets/js/moment.min.js"></script>
+                        <script src="../assets/js/daterangepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+                        <script src="../assets/js/jquery.knob.min.js"></script>
+                        <script src="../assets/js/autosize.min.js"></script>
+                        <script src="../assets/js/jquery.inputlimiter.min.js"></script>
+                        <script src="../assets/js/jquery.maskedinput.min.js"></script>
+                        <script src="../assets/js/bootstrap-tag.min.js"></script>
+                        <script src="../assets/js/jquery-ui.custom.min.js"></script>
+                        <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+                        <script src="../assets/js/markdown.min.js"></script>
+                        <script src="../assets/js/bootstrap-markdown.min.js"></script>
+                        <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
+                        <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
+                        <script src="../assets/js/bootbox.js"></script>
+                        <script src="../assets/js/bootstrap-tag.min.js"></script>
+                        <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
+                        <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
 
 
-                            <script src="../assets/js/bootbox.js"></script>
+
+                        <script src="../assets/js/bootbox.js"></script>
 
                             <script src="../assets/js/autosize.min.js"></script>
 
@@ -1855,6 +1885,7 @@ if(isset($_GET['export'])) {
                                     });
 
 
+
                                     //select/deselect a row when the checkbox is checked/unchecked
                                     $('#dynamic-table').on('click', 'tr input[type=checkbox]' , function(){
                                         var $row = $(this).closest('tr');
@@ -1887,6 +1918,39 @@ if(isset($_GET['export'])) {
                                         //onchange:''
                                         //
                                     });
+
+
+                                    $('.message-form .wysiwyg-editor').ace_wysiwyg({
+                                        toolbar:
+                                            [
+                                                'bold',
+                                                'italic',
+                                                'strikethrough',
+                                                'underline',
+                                                null,
+                                                'justifyleft',
+                                                'justifycenter',
+                                                'justifyright',
+                                                null,
+                                                'createLink',
+                                                'unlink',
+                                                null,
+                                                'undo',
+                                                'redo'
+                                            ]
+                                    }).prev().addClass('wysiwyg-style1');
+
+
+                                    $('#id-message-form').on('submit', function() {
+                                        var hidden_input =
+                                            $('<input type="hidden" name="message" />')
+                                                .appendTo('#id-message-form');
+
+                                        var html_content = $('#editor1').html();
+                                        hidden_input.val( html_content );
+                                        //put the editor's HTML into hidden_input and it will be sent to server
+                                    });
+
 
 
 
