@@ -515,16 +515,16 @@
                             
                             
                             
-                            $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
-                            $mail->Password = 'rmk123';                           // SMTP password
+                            $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
+                            $mail->Password = 'rmkec123';                           // SMTP password
                             $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                             $mail->Port = 	587;
                             
                             
-                            $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+                            $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                             
                             
-                            $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+                            $mail->addReplyTo('recovery@rmkcampulse.com', 'Reply');
                             
                             
                             $mail->addAddress($to, $to);     // Add a recipient
@@ -537,7 +537,7 @@
                             $mail->isHTML(true);
                             
                             $mail->Subject = "Password Recovery";
-                            $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
+                            $mail->Body    = 'http://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
                             
                             
                             if(!$mail->send()) {
@@ -715,16 +715,16 @@
                         
                         
                         
-                        $mail->Username = 'recovery@rmkhiringsynergy.xyz';                 // SMTP username
-                        $mail->Password = 'rmk123';                           // SMTP password
+                        $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
+                        $mail->Password = 'rmkec123';                           // SMTP password
                         $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
                         
                         
-                        $mail->setFrom('recovery@rmkhiringsynergy.xyz', 'RMK Group of Institutions');
+                        $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                         
                         
-                        $mail->addReplyTo('recovery@rmkhiringsynergy.xyz', 'Reply');
+                        $mail->addReplyTo('recovery@rmkcampulse.com', 'Reply');
                         
                         
                         $mail->addAddress($to, $to);     // Add a recipient
@@ -737,7 +737,7 @@
                         $mail->isHTML(true);
                         
                         $mail->Subject = "Password Recovery";
-                        $mail->Body    = 'http://www.rmkhiringsynergy.xyz/recover?id='.$user_mail."&hash=".$hash;
+                        $mail->Body    = 'http://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
                         
                         if(!$mail->send()) {
                             
