@@ -589,79 +589,51 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                if(isset($_POST['send']) && isset($_SESSION['user_role'])=='admin' ){
+                if(isset($_POST['sendMail'])  && isset($_SESSION['user_role'])=='admin' )
+
+                {
 
 
 
+                    $get_roll= $_POST['checkMail'];
 
-                    $to=$_POST['recipient'];
-                    /*
-                    $to=$_POST['recipient'];
 
-                    $subject= $_POST['subject'];
 
-                    $message='<h3>'.$_POST['message'].'<h3>';
+                    $message=$_POST['message'];
+                    $subject=$_POST['subject'];
 
-                    $headers="From: RMD Placements<karthickakash17@gmail.com>\r\n";
-                    $headers.="Reply-To: karthickakash17@gmail.com\r\n";
-                    $headers.="Content-type: text/html\r\n";
+                    $stud_roll= explode(', ', $get_roll);
 
-                    mail($to,$subject,$message,$headers);
-                    */
 
-                    $send_file=array();
+
+                    $database=$_SESSION['database_name'];
+
+
+                    $newfilename='';
+
+
+                    //uploading file if exists
                     if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
 
 
+                        $file_name = $_FILES['attachment']['name'];
+                        $file_size = $_FILES['attachment']['size'];
+                        $file_tmp = $_FILES['attachment']['tmp_name'];
+                        $file_type = $_FILES['attachment']['type'];
+
+
+
+                        $value = explode('.',$file_name);
 
 
 
 
-                        $count= count($_FILES['attachment']['name']);
+                        $file_ext=strtolower(end($value));
+
+                        $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-                        for ($i=0;$i<$count;$i++) {
-
-                            $file_name = $_FILES['attachment']['name'][$i];
-                            $file_size = $_FILES['attachment']['size'][$i];
-                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
-                            $file_type = $_FILES['attachment']['type'][$i];
-
-
-
-                            $value = explode('.',$file_name);
-
-
-
-
-                            $file_ext=strtolower(end($value));
-                            $file_name_new=current($value);
-
-                            $newfilename = $file_name.'_'.time() . '.' . $file_ext;
-
-
-                            move_uploaded_file($file_tmp,"files/".$newfilename);
-
-                            $send_file[]=$newfilename;
-
-
-
-
-
-
-
-
-
-                        }
-
-
-
-
-
-
-
-
-
+                        move_uploaded_file($file_tmp,"../files/".$newfilename);
 
 
 
@@ -673,179 +645,76 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    require "PHPMailer/PHPMailerAutoload.php";
+
+
+                    //sending mails
+
+                    require "../email/PHPMailer/PHPMailerAutoload.php";
 
                     $mail=new PHPMailer();
 
-                    $mail->isMail();
+
+                    $mail->isSMTP();
                     $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
-                    $mail->SMTPAuth = true;// Enable SMTP authentication
-
-                    include "../connect.php";
-
-
-                    $query_mail="SELECT * FROM mail_forwarder";
-                    $result_mail=mysqli_query($connect, $query_mail);
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    if (preg_match('/rmd/', $database)) {
 
 
-                    if(isset($_SESSION['database_name'])){
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
 
-                        $database=$_SESSION['database_name'];
-
-
-                        if (preg_match('/rmd/', $database)) {
-
-
-                            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
-                            $mail->Password = 'rmkec123';// SMTP password
-
-                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 2525;
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
 
 
-                            $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
-                            $mail->addAddress($to, $to);     // Add a recipient
+                        $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
 
-                            $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
-                            $collegename = "RMD Engineering College";
+                        $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMD Engineering College";
 
-                        }
-                        if (preg_match('/rmk/', $database)) {
-
-
-                            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
-                            $mail->Password = 'rmkec123';// SMTP password
-
-                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 2525;
+                    }
+                    if (preg_match('/rmk/', $database)) {
 
 
-                            $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
-                            $mail->addAddress($to, $to);     // Add a recipient
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                   // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
 
-                            $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
-                            $collegename = "RMk Engineering College";
-
-                        }
-
-                        if (preg_match('/cet/', $database)) {
-
-                            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'tnp@rmkec.ac.in';                  // SMTP username
-                            $mail->Password = 'rmkec123';// SMTP password
-
-                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 2525;
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
 
 
-                            $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
-                            $mail->addAddress($to, $to);     // Add a recipient
+                        $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
 
-                            $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
-                            $collegename = "RMK College of Engineering and Technology";
-
-                        }
-
+                        $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMk Engineering College";
 
                     }
 
+                    if (preg_match('/cet/', $database)) {
+
+                        // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                        $mail->Username = 'tnp@rmkec.ac.in';                   // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
+
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
 
 
+                        $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
 
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-                        foreach ($send_file as $file_to_send){
-
-
-                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
-
-                        }
-
-
-
+                        $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
+                        $collegename = "RMK College of Engineering and Technology";
 
                     }
 
 
                     $mail->isHTML(true);
 
-                    $mail->Subject = $_POST['subject'];
-                    $mail->Body    = $_POST['message'];
-                    $mail->Body .= '<div class="gmail_default"><b><br><br><br></br></div><div class="gmail_default"><b>------------------------------<wbr>---</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>'.$collegename.'</b></div>';
-
-
-
-                    if(!$mail->send()) {
-
-                        echo  $mail->ErrorInfo;
-
-                        ?>
-
-                        <div class="alert alert-block alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
-
-                            <i class="ace-icon fa fa-times red"></i>
-
-                            Your mail to
-                            <strong class="red">
-                                <?php echo $to ?>
-
-                            </strong>,
-
-                            has been failed to send, check the Recipient mail address.....
-                        </div>
-
-
-                        <?php
-
-                    } else {
-
-                        ?>
-
-
-
-                        <div class="alert alert-block alert-success">
-                            <button type="button" class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
-
-                            <i class="ace-icon fa fa-check green"></i>
-
-                            Your mail to
-                            <strong class="green">
-                                <?php echo $to ?>
-
-                            </strong>,
-
-                            has been sent Successfully
-                        </div>
-
-
-
-                        <?php
-
-                    }
-
-
-                    $mail->clearAddresses();
-
-                    while($row_mail=mysqli_fetch_assoc($result_mail)){
-
-
-                        $to=$row_mail['tnp'];
-
-                        $mail->addAddress($to, $to);
-
-                        $mail->send();
-
-                        $mail->clearAddresses();
-
-
-                    }
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+                    $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
 
 
 
@@ -853,18 +722,218 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    if(isset($_FILES['attachment']) && $file_ext!='' && isset($_SESSION['user_role'])=='admin' ){
+//
+                    include "../connect.php";
+//     $count=0;
 
-                        foreach ($send_file as $file_sent){
+                    $department = array();
 
-                            unlink("files/$file_sent");
+                    foreach ($stud_roll as $roll_no){
 
 
+
+
+
+                        $roll_year=$roll_no[4].$roll_no[5];
+                        $year=(int)$roll_year+4;
+
+                        $query_get_tablename="SELECT * FROM table_map where table_short='$year'";
+                        $result_get_tablename=mysqli_query($connect, $query_get_tablename);
+                        $row_get_talbename=mysqli_fetch_assoc($result_get_tablename);
+
+                        $students_table=$row_get_talbename['table_name'];
+
+
+                        $query_fetch_values="SELECT * FROM ".$students_table." where st_roll='$roll_no'";
+                        $result_fetch_values=mysqli_query($connect, $query_fetch_values);
+                        $row_roll_mail=mysqli_fetch_assoc($result_fetch_values);
+
+
+
+
+
+
+                        $to=$row_roll_mail['st_clgemail'];
+
+                        $department[]=$row_roll_mail['st_ugspecialization'];
+
+
+
+
+
+                        $time=time();
+
+
+
+                        $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
+                        $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message', '$newfilename', '0')";
+                        $result_mail=mysqli_query($connect_mail,$query_for_mail);
+
+
+
+                        if(!$result_mail){
+
+                            die("".mysqli_error($connect_mail));
 
                         }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                        /*
+
+
+                       $mail->addAddress($to,$to);     // Add a recipient
+
+
+
+
+
+                       if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+                           $mail->addAttachment('files/'.$newfilename, $newfilename);
+
+
+
+                       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       if(!$mail->send()) {
+
+
+                           echo 'Mailer Error: ' . $mail->ErrorInfo;
+
+                       } else {
+
+                           echo 'Message has been sent';
+                           $count++;
+
+                           // Clear all addresses and attachments for next loop
+
+
+                       }
+
+
+
+                       $mail->clearAddresses();
+                       $mail->clearAttachments();
+
+
+
+
+
+
+                      */
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+                    $branches = array_unique($department);
+
+
+
+
+
+//sending mail to hod and placement coordinators
+
+
+                    print_r($branches);
+
+                    echo "<br>";
+
+                    echo $branches[0];
+
+                    echo "<br>";
+                    include "../connect.php";
+
+
+
+
+
+
+
+                    $query_send_mail= "SELECT * FROM mail_forwarder";
+                    $result_send_mail=mysqli_query($connect,$query_send_mail);
+
+                    while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
+
+                        $to = $row_send_mail['tnp'];
+
+
+                        $mail->addAddress($to,$to);     // Add a recipient
+
+                        echo $subject."<br>";
+                        echo $message."<br>";
+                        echo $collegename."<br>";
+
+
+                        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                            foreach ($send_file as $file_to_send) {
+
+
+                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                            }
+
+
+                        }
+
+
+                        if ($mail->send()) {
+
+
+                            echo $to."<br>"."hurray"."<br>";
+
+
+                        }
+                        else{
+
+                            echo  $mail->ErrorInfo." ".$to;
+                        }
+
+
+                        // Clear all addresses and attachments for next loop
+                        $mail->clearAddresses();
+                        $mail->clearAttachments();
+
+
+
                     }
 
 
@@ -873,8 +942,85 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                }
 
+
+
+
+
+                    foreach ($branches as $dept) {
+
+
+                        $query_send_mail = "SELECT * FROM mail_forwarder";
+                        $result_send_mail = mysqli_query($connect, $query_send_mail);
+
+                        while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
+
+
+                            $to = $row_send_mail[$dept];
+                            if ($to != '') {
+
+
+
+
+                                $mail->addAddress($to, $to);     // Add a recipient
+
+
+                                if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                    foreach ($send_file as $file_to_send) {
+
+
+                                        $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+
+                                    }
+
+
+                                }
+
+
+                                if ($mail->send()) {
+
+                                    echo $to . "<br>" . "hurray"."<br>";
+
+
+                                } else {
+
+                                    echo $mail->ErrorInfo . " " . $to;
+                                }
+
+
+                                // Clear all addresses and attachments for next loop
+                                $mail->clearAddresses();
+                                $mail->clearAttachments();
+
+
+                            }
+                        }
+
+                    }
+
+
+
+
+
+
+
+
+
+                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+
+
+
+                        unlink("files/$newfilename");
+
+
+
+                    }
+                    header("Location: advanced_search");
+
+
+
+                }
 
 
 
@@ -919,7 +1065,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     </div><!-- /.col -->
                 </div><!-- /.row -->
 
-                <form id="id-message-form" action="email" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+                <form id="id-message-form" action="email_search" method="post" class="active form-horizontal message-form col-xs-12" enctype="multipart/form-data">
+
+                    <input type="hidden" name="emailCheck" value="<?php echo $_POST['check'] ?>"  />
                     <div>
                         <div class="form-group ">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-recipient">Recipient:</label>
@@ -988,7 +1136,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="align-center">
                                             <span class="inline btn-send-message">
-                                                <button type="submit" id="bootbox-search" name="send" class="btn btn-sm btn-primary border btn-bold btn-round">
+                                                <button type="submit" id="bootbox-search" name="sendMail" class="btn btn-sm btn-primary border btn-bold btn-round">
                                                     <span class="bigger-120">Send</span>
                                                         <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
                                                 </button>
