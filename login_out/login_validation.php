@@ -537,7 +537,7 @@
                             $mail->isHTML(true);
                             
                             $mail->Subject = "Password Recovery";
-                            $mail->Body    = 'http://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
+                            $mail->Body    = 'https://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
                             
                             
                             if(!$mail->send()) {
@@ -737,7 +737,7 @@
                         $mail->isHTML(true);
                         
                         $mail->Subject = "Password Recovery";
-                        $mail->Body    = 'http://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
+                        $mail->Body    = 'https://www.rmkcampulse.com/recover?id='.$user_mail."&hash=".$hash;
                         
                         if(!$mail->send()) {
                             
