@@ -630,10 +630,16 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         $file_ext=strtolower(end($value));
 
-                        $newfilename = current($value).'_'.time() . '.' . $file_ext;
+                        if($file_ext!=''){
+
+                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-                        move_uploaded_file($file_tmp,"../files/".$newfilename);
+                            move_uploaded_file($file_tmp,"../files/".$newfilename);
+
+
+                        }
+
 
 
 
