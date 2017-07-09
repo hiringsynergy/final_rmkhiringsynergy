@@ -684,7 +684,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     include "../connect.php";
 
 
-
+                    $query_mail="SELECT * FROM mail_forwarder";
+                    $result_mail=mysqli_query($connect, $query_mail);
 
 
                     if(isset($_SESSION['database_name'])){
@@ -703,10 +704,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             $mail->Port = 2525;
 
 
-                            $mail->setFrom('tnp@rmkec.ac.in', 'RMD Placements');
+                            $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
                             $mail->addAddress($to, $to);     // Add a recipient
 
-                            $mail->addReplyTo('tnp@rmkec.ac.in', 'Reply');
+                            $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
                             $collegename = "RMD Engineering College";
 
                         }
@@ -832,24 +833,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     $mail->clearAddresses();
 
+                    while($row_mail=mysqli_fetch_assoc($result_mail)){
 
 
-//                    $query_mail="SELECT * FROM mail_forwarder";
-//                    $result_mail=mysqli_query($connect, $query_mail);
-//
-//                    while($row_mail=mysqli_fetch_assoc($result_mail)){
-//
-//
-//                        $to=$row_mail['tnp'];
-//
-//                        $mail->addAddress($to, $to);
-//
-//                        $mail->send();
-//
-//                        $mail->clearAddresses();
-//
-//
-//                    }
+                        $to=$row_mail['tnp'];
+
+                        $mail->addAddress($to, $to);
+
+                        $mail->send();
+
+                        $mail->clearAddresses();
+
+
+                    }
 
 
 
