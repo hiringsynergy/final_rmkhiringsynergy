@@ -84,7 +84,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
-        if ($row['mail_to'] != '' && $row['status'] ==0 )
+        if ($row['mail_to'] != '' && $row['status'] == 0 )
         {
 
 

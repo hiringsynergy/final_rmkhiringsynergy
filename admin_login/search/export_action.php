@@ -67,6 +67,12 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
             location.href = "../admin_panel/admin_panel";
 
         }
+        function navigate(){
+
+
+            document.getElementById("navform").submit();
+
+        }
         function showStudent(str) {
             if (str == "") {
                 document.getElementById("modal-form").innerHTML = "";
@@ -106,6 +112,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
     <link rel="stylesheet" href="../assets/bootstrap-toggle-master/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="../assets/bootstrap-toggle-master/css/bootstrap2-toggle.css">
     <link rel="stylesheet" href="../assets/bootstrap-toggle-master/css/bootstrap2-toggle.min.css">
+
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="../assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace-part2.min.css" />
+
 
 
 
@@ -223,7 +240,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
          $newfilename = current($value).'_'.time() . '.' . $file_ext;
 
 
-         move_uploaded_file($file_tmp,"files/".$newfilename);
+         move_uploaded_file($file_tmp,"../files/".$newfilename);
 
 
 
@@ -1118,8 +1135,13 @@ if(isset($_GET['export'])) {
                                     <div class="col-xs-12 ">
                                         <div class="form-actions center">
 
+                                            <button class="btn btn-success" onclick="navigate()">
+                                                Send Mail
 
-                                            <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal">SEND MAIL <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>
+                                                <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i>
+                                            </button>
+
+<!--                                            <a href="#modal-form" role="button" class="btn btn-success" data-toggle="modal"> <i class="ace-icon fa fa-envelope icon-on-right bigger-130"></i></a>-->
 
 
                                         </div>
@@ -1128,7 +1150,7 @@ if(isset($_GET['export'])) {
                                     <div id="modal-form" class="modal" tabindex="-1">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="export_action" method="post" enctype="multipart/form-data" >
+                                                <form action="email_search" id="navform" method="post" enctype="multipart/form-data" >
 
                                                     <?php  $rol=$_POST['checkbox'];
                                                     
@@ -1141,64 +1163,14 @@ if(isset($_GET['export'])) {
                                                     <input type="hidden" name="check" value="<?php echo $checkval ?> ">
 
 
-                                                    <div class="modal-body">
-
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-12">
-
-                                                                <div class="space-4"></div>
 
 
 
-
-
-                                                                <div class="form-group">
-                                                                    <label for="form-field-username">Subject</label>
-
-                                                                    <div>
-                                                                        <input type="text" name="subject" id="form-field-username" class="col-xs-8" placeholder="Enter Subject" value="" />
-                                                                    </div>
-                                                                </div>
-                                                                <br/>
-                                                                <div class="space-16"></div>
-
-
-                                                                <div class="form-group">
-                                                                    <label for="form-field-first">Message</label>
-
-                                                                    <div>
-                                                                        <textarea id="form-field-11" name="message" rows="6" cols="9"class="autosize-transition form-control"></textarea>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="space-16"></div>
-
-
-                                                            <div class="col-xs-8 col-sm-12 ">
-
-                                                                <div class="space-16"></div>
-                                                                <label for="id-input-file-2">Attachment</label>
-
-
-
-                                                                <input type="file" id="id-input-file-2" name="attachment" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="space-16"></div>
-                                                    <div class="modal-footer center">
-                                                        <button class="btn btn-sm" data-dismiss="modal">
-                                                            <i class="ace-icon fa fa-times"></i>
-                                                            Cancel
-                                                        </button>
                                                         <button name="send_mail" type="submit" class="btn btn-sm btn-primary">
                                                             <i class="ace-icon fa fa-send"></i>
                                                             SEND
                                                         </button>
-                                                    </div>
+
                                                 </form>
                                             </div>
                                         </div>
@@ -1662,9 +1634,35 @@ if(isset($_GET['export'])) {
                             <script src="../assets/js/buttons.print.min.js"></script>
                             <script src="../assets/js/buttons.colVis.min.js"></script>
                             <script src="../assets/js/dataTables.select.min.js"></script>
+                        <script src="../assets/js/jquery-ui.custom.min.js"></script>
+                        <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+                        <script src="../assets/js/chosen.jquery.min.js"></script>
+                        <script src="../assets/js/spStatus.min.js"></script>
+                        <script src="../assets/js/bootstrap-datepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-timepicker.min.js"></script>
+                        <script src="../assets/js/moment.min.js"></script>
+                        <script src="../assets/js/daterangepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+                        <script src="../assets/js/bootstrap-colorpicker.min.js"></script>
+                        <script src="../assets/js/jquery.knob.min.js"></script>
+                        <script src="../assets/js/autosize.min.js"></script>
+                        <script src="../assets/js/jquery.inputlimiter.min.js"></script>
+                        <script src="../assets/js/jquery.maskedinput.min.js"></script>
+                        <script src="../assets/js/bootstrap-tag.min.js"></script>
+                        <script src="../assets/js/jquery-ui.custom.min.js"></script>
+                        <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+                        <script src="../assets/js/markdown.min.js"></script>
+                        <script src="../assets/js/bootstrap-markdown.min.js"></script>
+                        <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
+                        <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
+                        <script src="../assets/js/bootbox.js"></script>
+                        <script src="../assets/js/bootstrap-tag.min.js"></script>
+                        <script src="../assets/js/jquery.hotkeys.index.min.js"></script>
+                        <script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
 
 
-                            <script src="../assets/js/bootbox.js"></script>
+
+                        <script src="../assets/js/bootbox.js"></script>
 
                             <script src="../assets/js/autosize.min.js"></script>
 
@@ -1694,6 +1692,44 @@ if(isset($_GET['export'])) {
 
 
                                 jQuery(function ($) {
+
+
+
+
+                                    $('.message-form .wysiwyg-editor').ace_wysiwyg({
+                                        toolbar:
+                                            [
+                                                'bold',
+                                                'italic',
+                                                'strikethrough',
+                                                'underline',
+                                                null,
+                                                'justifyleft',
+                                                'justifycenter',
+                                                'justifyright',
+                                                null,
+                                                'createLink',
+                                                'unlink',
+                                                null,
+                                                'undo',
+                                                'redo'
+                                            ]
+                                    }).prev().addClass('wysiwyg-style1');
+
+
+                                    $('#id-message-form').on('submit', function() {
+                                        var hidden_input =
+                                            $('<input type="hidden" name="message" />')
+                                                .appendTo('#id-message-form');
+
+                                        var html_content = $('#editor1').html();
+                                        hidden_input.val( html_content );
+                                        //put the editor's HTML into hidden_input and it will be sent to server
+                                    });
+
+
+
+
                                     //initiate dataTables plugin
                                     var myTable =
                                         $('#dynamic-table')
@@ -1855,6 +1891,7 @@ if(isset($_GET['export'])) {
                                     });
 
 
+
                                     //select/deselect a row when the checkbox is checked/unchecked
                                     $('#dynamic-table').on('click', 'tr input[type=checkbox]' , function(){
                                         var $row = $(this).closest('tr');
@@ -1887,6 +1924,10 @@ if(isset($_GET['export'])) {
                                         //onchange:''
                                         //
                                     });
+
+
+
+
 
 
 
