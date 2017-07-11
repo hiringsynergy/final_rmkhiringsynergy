@@ -158,7 +158,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                     echo "<br>";
                      echo "adding atachment";
-                    $mail->addAttachment('/usr/bin/php /home/u625007899/public_html/admin_login/files/'.$attach, $attach);
+                     echo $attach;
+                    $mail->addAttachment('files/'.$attach, $attach);
 
                 }
 
