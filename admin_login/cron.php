@@ -151,6 +151,9 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                     echo "<br>";
                     echo "adding atachment";
                     echo $attach;
+                    echo "<br>";
+
+                    echo $_SERVER['DOCUMENT_ROOT'];
                     $mail->addAttachment('files/'.$attach, $attach);
 
                 }
