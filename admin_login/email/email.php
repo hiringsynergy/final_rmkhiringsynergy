@@ -834,23 +834,23 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     $mail->clearAddresses();
 
 
-//                    $query_mail="SELECT * FROM mail_forwarder";
-//                    $result_mail=mysqli_query($connect, $query_mail);
-//
-//
-//                    while($row_mail=mysqli_fetch_assoc($result_mail)){
-//
-//
-//                        $to=$row_mail['tnp'];
-//
-//                        $mail->addAddress($to, $to);
-//
-//                        $mail->send();
-//
-//                        $mail->clearAddresses();
-//
-//
-//                    }
+                    $query_mail="SELECT * FROM mail_forwarder";
+                    $result_mail=mysqli_query($connect, $query_mail);
+
+
+                    while($row_mail=mysqli_fetch_assoc($result_mail)){
+
+
+                        $to=$row_mail['tnp'];
+
+                        $mail->addAddress($to, $to);
+
+                        $mail->send();
+
+                        $mail->clearAddresses();
+
+
+                    }
 
 
 

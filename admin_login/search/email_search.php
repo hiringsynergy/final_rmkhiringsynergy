@@ -806,67 +806,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                        /*
-
-
-                       $mail->addAddress($to,$to);     // Add a recipient
-
-
-
-
-
-                       if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-                           $mail->addAttachment('files/'.$newfilename, $newfilename);
-
-
-
-                       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                       if(!$mail->send()) {
-
-
-                           echo 'Mailer Error: ' . $mail->ErrorInfo;
-
-                       } else {
-
-                           echo 'Message has been sent';
-                           $count++;
-
-                           // Clear all addresses and attachments for next loop
-
-
-                       }
-
-
-
-                       $mail->clearAddresses();
-                       $mail->clearAttachments();
-
-
-
-
-
-
-                      */
-
-
 
 
 
@@ -922,7 +861,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             foreach ($send_file as $file_to_send) {
 
 
-                                $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                                $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
 
                             }
 
@@ -930,17 +869,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
 
-//                        if ($mail->send()) {
-//
-//
-//                            echo $to."<br>"."hurray"."<br>";
-//
-//
-//                        }
-//                        else{
-//
-//                            echo  $mail->ErrorInfo." ".$to;
-//                        }
+                        if ($mail->send()) {
+
+
+                            echo $to."<br>"."hurray"."<br>";
+
+
+                        }
+                        else{
+
+                            echo  $mail->ErrorInfo." ".$to;
+                        }
 
 
                         // Clear all addresses and attachments for next loop
@@ -985,7 +924,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                     foreach ($send_file as $file_to_send) {
 
 
-                                        $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                                        $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
 
                                     }
 
@@ -993,15 +932,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 }
 
 
-//                                if ($mail->send()) {
-//
-//                                    echo $to . "<br>" . "hurray"."<br>";
-//
-//
-//                                } else {
-//
-//                                    echo $mail->ErrorInfo . " " . $to;
-//                                }
+                                if ($mail->send()) {
+
+                                    echo $to . "<br>" . "hurray"."<br>";
+
+
+                                } else {
+
+                                    echo $mail->ErrorInfo . " " . $to;
+                                }
 
 
                                 // Clear all addresses and attachments for next loop

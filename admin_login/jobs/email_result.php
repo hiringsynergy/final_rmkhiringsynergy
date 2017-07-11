@@ -822,7 +822,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                                 foreach ($send_file as $file_to_send) {
 
 
-                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
 
                                 }
 
@@ -830,16 +830,16 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             }
 
 
-//                            if ($mail->send()) {
-//
-//                                echo "sent";
-//
-//
-//                            }
-//                            else{
-//
-//                                echo  $mail->ErrorInfo;
-//                            }
+                            if ($mail->send()) {
+
+                                echo "sent";
+
+
+                            }
+                            else{
+
+                                echo  $mail->ErrorInfo;
+                            }
 
 
                             // Clear all addresses and attachments for next loop
@@ -881,7 +881,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                                 foreach ($send_file as $file_to_send) {
 
 
-                                    $mail->addAttachment('files/' . $file_to_send, $file_to_send);
+                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
 
                                 }
 
@@ -889,13 +889,13 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                             }
 
 
-//                            if ($mail->send()) {
-//
-//
-//                            } else {
-//
-//                                echo $mail->ErrorInfo;
-//                            }
+                            if ($mail->send()) {
+
+
+                            } else {
+
+                                echo $mail->ErrorInfo;
+                            }
 
 
                             // Clear all addresses and attachments for next loop
