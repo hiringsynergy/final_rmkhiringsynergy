@@ -159,6 +159,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 foreach($array_attach as $attach){
 
+                     echo "adding atachment";
                     $mail->addAttachment('files/'.$attach, $attach);
 
                 }
