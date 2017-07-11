@@ -76,10 +76,6 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         $database = $row['database_name'];
         $attachment = $row['mail_attachment'];
 
-        echo "to... " . $to;
-        echo "subject.. " . $subject;
-        echo "message .." . $message;
-        echo "database ..." . $database;
 
 
 
@@ -160,6 +156,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 foreach($array_attach as $attach){
 
 
+                    echo "<br>";
                      echo "adding atachment";
                     $mail->addAttachment('admin_login/files/'.$attach, $attach);
 
@@ -175,6 +172,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             if ($mail->send()) {
 
 
+                echo "<br>";
                 echo "mail send";
 
 
@@ -185,6 +183,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             }
 
             else {
+
+                echo "<br>";
 
                 echo "failure" . $mail->ErrorInfo;
 
@@ -213,6 +213,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
 
+
+echo "<br>";
 
     echo "end cron";
 
