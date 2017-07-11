@@ -636,7 +636,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                             $file_ext=strtolower(end($value));
 
-                            $file_name_new=current($value);
+                            $file_name_new=$value[0];
 
                             $newfilename = $file_name.'_'.time() . '.' . $file_ext;
 
