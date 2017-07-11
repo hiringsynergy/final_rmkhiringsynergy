@@ -121,7 +121,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->addAddress($to, $to);     // Add a recipient
 
                 $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
-                $collegename = "RMk Engineering College";
+                $collegename = "RMK Engineering College";
 
             }
 
