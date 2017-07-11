@@ -147,11 +147,13 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 foreach($array_attach as $attach){
 
+                    $filename = 'files/'.$attach;
 
-                    echo "<br>";
-                    echo "adding atachment";
-                    echo $attach;
-                    echo "<br>";
+                    if (file_exists($filename)) {
+                        echo "The file $filename exists";
+                    } else {
+                        echo "The file $filename does not exist";
+                    }
 
                     echo $_SERVER['DOCUMENT_ROOT'];
                     $mail->addAttachment($_SERVER['DOCUMENT_ROOT'].'/usr/bin/php /home/u625007899/public_html/admin_login/files/'.$attach, $attach);
