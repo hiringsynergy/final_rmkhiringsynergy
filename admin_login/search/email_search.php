@@ -611,39 +611,48 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     $newfilename='';
 
+                    $implodefile='';
+
 
                     //uploading file if exists
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+                    if (isset($_FILES['attachment']) && isset($_SESSION['user_role']) == 'admin') {
 
 
-                        $file_name = $_FILES['attachment']['name'];
-                        $file_size = $_FILES['attachment']['size'];
-                        $file_tmp = $_FILES['attachment']['tmp_name'];
-                        $file_type = $_FILES['attachment']['type'];
+                        $count = count($_FILES['attachment']['name']);
 
 
+                        for ($i = 0; $i < $count; $i++) {
 
-                        $value = explode('.',$file_name);
-
-
-
-
-                        $file_ext=strtolower(end($value));
-
-                        if($file_ext!=''){
-
-                            $newfilename = current($value).'_'.time() . '.' . $file_ext;
+                            $file_name = $_FILES['attachment']['name'][$i];
+                            $file_size = $_FILES['attachment']['size'][$i];
+                            $file_tmp = $_FILES['attachment']['tmp_name'][$i];
+                            $file_type = $_FILES['attachment']['type'][$i];
 
 
-                            move_uploaded_file($file_tmp,"../files/".$newfilename);
+                            $value = explode('.', $file_name);
+
+
+                            $file_ext = strtolower(end($value));
+
+                            if($file_ext!='') {
+
+                                $newfilename = current($value) . '_' . time() . '.' . $file_ext;
+
+
+                                move_uploaded_file($file_tmp, "../files/" . $newfilename);
+
+                                $send_file[] = $newfilename;
+                            }
 
 
                         }
 
 
+                        $implodefile = implode(', ',$send_file);
 
 
                     }
+
 
 
 
@@ -772,7 +781,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                         $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-                        $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message', '$newfilename', '0')";
+                        $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message', '$implodefile', '0')";
                         $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 
@@ -921,17 +930,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
 
-                        if ($mail->send()) {
-
-
-                            echo $to."<br>"."hurray"."<br>";
-
-
-                        }
-                        else{
-
-                            echo  $mail->ErrorInfo." ".$to;
-                        }
+//                        if ($mail->send()) {
+//
+//
+//                            echo $to."<br>"."hurray"."<br>";
+//
+//
+//                        }
+//                        else{
+//
+//                            echo  $mail->ErrorInfo." ".$to;
+//                        }
 
 
                         // Clear all addresses and attachments for next loop
@@ -984,15 +993,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 }
 
 
-                                if ($mail->send()) {
-
-                                    echo $to . "<br>" . "hurray"."<br>";
-
-
-                                } else {
-
-                                    echo $mail->ErrorInfo . " " . $to;
-                                }
+//                                if ($mail->send()) {
+//
+//                                    echo $to . "<br>" . "hurray"."<br>";
+//
+//
+//                                } else {
+//
+//                                    echo $mail->ErrorInfo . " " . $to;
+//                                }
 
 
                                 // Clear all addresses and attachments for next loop

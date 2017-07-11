@@ -610,12 +610,16 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     $send_file = array();
 
 
+                    $newfilename='';
+
+                    $implodefile='';
 
 
                     if (isset($_FILES['attachment']) && isset($_SESSION['user_role']) == 'admin') {
 
 
                         $count = count($_FILES['attachment']['name']);
+
 
 
                         for ($i = 0; $i < $count; $i++) {
@@ -631,15 +635,21 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                             $file_ext = strtolower(end($value));
 
-                            $newfilename = current($value) . '_' . time() . '.' . $file_ext;
+                            if($file_ext!='') {
+
+                                $newfilename = current($value) . '_' . time() . '.' . $file_ext;
 
 
-                            move_uploaded_file($file_tmp, "../files/" . $newfilename);
+                                move_uploaded_file($file_tmp, "../files/" . $newfilename);
 
-                            $send_file[] = $newfilename;
+                                $send_file[] = $newfilename;
+
+                            }
 
 
                         }
+
+                        $implodefile = implode(', ',$send_file);
 
 
                     }
@@ -752,22 +762,14 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                         echo $to."<br>";
 
 
-                        $attach='';
-
-
-
-                        if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
 
 
 
-                            $attach = implode(',',$send_file);
 
-
-                        }
 
                         $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$attach' WHERE student_id='$roll'";
+                        $query_for_mail="UPDATE mail_sender SET mail_from='',mail_to='$to',mail_subject='$subject',mail_message='$message', database_name='$database', mail_attachment='$implodefile' WHERE student_id='$roll'";
                         mysqli_query($connect_mail,$query_for_mail);
 
 

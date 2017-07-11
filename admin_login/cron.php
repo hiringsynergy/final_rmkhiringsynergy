@@ -74,6 +74,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         $student_id=$row['student_id'];
         $job_id=$row['job_id'];
         $database = $row['database_name'];
+        $attachment = $row['mail_attachment'];
 
         echo "to... " . $to;
         echo "subject.. " . $subject;
@@ -149,6 +150,24 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             $mail->Subject = $subject;
             $mail->Body = $message;
             $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
+
+
+
+            if($attachment!=''){
+
+                $array_attach = explode(", ", $attachment);
+
+                foreach($array_attach as $attach){
+
+                    $mail->addAttachment('files/'.$attach, $attach);
+
+                }
+
+
+
+
+            }
+
 
 
             if ($mail->send()) {
