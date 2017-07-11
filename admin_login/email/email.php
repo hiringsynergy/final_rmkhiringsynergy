@@ -758,7 +758,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         foreach ($send_file as $file_to_send){
 
 
-                            $mail->addAttachment('files/'.$file_to_send, $file_to_send);
+                            $mail->addAttachment('../files/'.$file_to_send, $file_to_send);
 
                         }
 
