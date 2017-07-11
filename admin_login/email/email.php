@@ -635,12 +635,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                             $file_ext=strtolower(end($value));
+
                             $file_name_new=current($value);
 
                             $newfilename = $file_name.'_'.time() . '.' . $file_ext;
 
 
-                            move_uploaded_file($file_tmp,"files/".$newfilename);
+                            move_uploaded_file($file_tmp,"../files/".$newfilename);
 
                             $send_file[]=$newfilename;
 
@@ -702,10 +703,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                             $mail->Port = 2525;
 
 
-                            $mail->setFrom('tnp@rmkec.ac.in', 'RMD Placements');
+                            $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
                             $mail->addAddress($to, $to);     // Add a recipient
 
-                            $mail->addReplyTo('tnp@rmkec.ac.in', 'Reply');
+                            $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
                             $collegename = "RMD Engineering College";
 
                         }
