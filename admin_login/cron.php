@@ -155,6 +155,9 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                         echo "The file $filename does not exist";
                     }
 
+                    echo "current directory ";
+
+                    echo getcwd()." ";
                     echo $_SERVER['DOCUMENT_ROOT'];
                     $mail->addAttachment($_SERVER['DOCUMENT_ROOT'].'/usr/bin/php /home/u625007899/public_html/admin_login/files/'.$attach, $attach);
 
