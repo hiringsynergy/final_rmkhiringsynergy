@@ -636,7 +636,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                             if($file_ext!='') {
 
-                                $newfilename = current($value) . '_' . time() . '.' . $file_ext;
+                                $newfilename = $value[0] . '_' . time() . '.' . $file_ext;
 
 
                                 move_uploaded_file($file_tmp, "../files/" . $newfilename);
