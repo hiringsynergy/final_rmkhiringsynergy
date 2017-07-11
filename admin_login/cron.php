@@ -141,14 +141,6 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             }
 
 
-            $mail->isHTML(true);
-
-            $mail->Subject = $subject;
-            $mail->Body = $message;
-            $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
-
-
-
             if($attachment!=''){
 
                 $array_attach = explode(", ", $attachment);
@@ -157,8 +149,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                     echo "<br>";
-                     echo "adding atachment";
-                     echo $attach;
+                    echo "adding atachment";
+                    echo $attach;
                     $mail->addAttachment('files/'.$attach, $attach);
 
                 }
@@ -167,6 +159,16 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
             }
+
+
+            $mail->isHTML(true);
+
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+            $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
+
+
+
 
 
 
