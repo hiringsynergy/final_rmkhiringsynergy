@@ -365,7 +365,7 @@
                             
                             
                             $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                            $mail->Password = 'rmkec123';                           // SMTP password
+                            $mail->Password = 'RMKEC123';                           // SMTP password
                             $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                             $mail->Port = 	587;
                             
@@ -516,7 +516,7 @@
                             
                             
                             $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                            $mail->Password = 'rmkec123';                           // SMTP password
+                            $mail->Password = 'RMKEC123';                           // SMTP password
                             $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                             $mail->Port = 	587;
                             
@@ -716,7 +716,7 @@
                         
                         
                         $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                        $mail->Password = 'rmkec123';                           // SMTP password
+                        $mail->Password = 'RMKEC123';                           // SMTP password
                         $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
                         $mail->Port = 	587;
                         

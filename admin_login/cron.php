@@ -90,7 +90,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
                 $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
-                $mail->Password = 'rmkec123';// SMTP password
+                $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
@@ -108,7 +108,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
                 $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
-                $mail->Password = 'rmkec123';// SMTP password
+                $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
@@ -126,7 +126,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
                 $mail->Username = 'tnp@rmkec.ac.in';                  // SMTP username
-                $mail->Password = 'rmkec123';// SMTP password
+                $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
