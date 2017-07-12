@@ -961,15 +961,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
-
-
-
-                        unlink("files/$newfilename");
-
-
-
-                    }
+//                    if(isset($_FILES['attachment']) && isset($_SESSION['user_role'])=='admin' ){
+//
+//
+//
+//                        unlink("files/$newfilename");
+//
+//
+//
+//                    }
                     header("Location: advanced_search");
 
 
