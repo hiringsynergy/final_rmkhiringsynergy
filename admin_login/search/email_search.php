@@ -869,17 +869,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         }
 
 
-//                        if ($mail->send()) {
-//
-//
-//                            echo $to."<br>"."hurray"."<br>";
-//
-//
-//                        }
-//                        else{
-//
-//                            echo  $mail->ErrorInfo." ".$to;
-//                        }
+                        if ($mail->send()) {
+
+
+                            echo $to."<br>"."hurray"."<br>";
+
+
+                        }
+                        else{
+
+                            echo  $mail->ErrorInfo." ".$to;
+                        }
 
 
                         // Clear all addresses and attachments for next loop
@@ -932,15 +932,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 }
 
 
-//                                if ($mail->send()) {
-//
-//                                    echo $to . "<br>" . "hurray"."<br>";
-//
-//
-//                                } else {
-//
-//                                    echo $mail->ErrorInfo . " " . $to;
-//                                }
+                                if ($mail->send()) {
+
+                                    echo $to . "<br>" . "hurray"."<br>";
+
+
+                                } else {
+
+                                    echo $mail->ErrorInfo . " " . $to;
+                                }
 
 
                                 // Clear all addresses and attachments for next loop
