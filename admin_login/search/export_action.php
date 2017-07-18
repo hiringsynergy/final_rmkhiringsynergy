@@ -1352,7 +1352,7 @@ if(isset($_GET['export'])) {
 
                                                     }
 
-                                                    $query = "select * from students_".$st_year." WHERE st_roll='$reg'" ;
+                                                   echo $query = "select * from students_".$st_year." WHERE st_roll='$reg'" ;
 
                                                     $result = mysqli_query($connect, $query);
                                                     $row=mysqli_fetch_assoc($result);
