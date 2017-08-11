@@ -742,7 +742,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                     $ugexecute = mysqli_query($connect, $ugquery);
 
-                                                    $total_count = mysqli_num_rows($ugexecute); 
+                                                    $total_count_all = mysqli_num_rows($ugexecute); 
 
 
                                                 }
@@ -860,18 +860,19 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     </td>
                                                     <td>
                                                         
-                                                        <?php
+                                                         <?php 
 
-                                                        echo 0; 
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_currentlypursuing = 'PG'";
 
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
 
-
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
 
                                                         ?>
 
-
                                                     </td>
-                                                    <td><?php echo $total_count ?></td>
+
+                                                    <td><?php echo $total_count_all ?></td>
 
 
 
