@@ -773,15 +773,104 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>
+                                                        <?php 
 
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'cse'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+                                                    </td>
+                                                    <td> 
+                                                    <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'it'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+                                                            
+                                                     </td>
+                                                    <td>
+                                                         <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'eee'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+
+                                                    </td>
+                                                    <td>
+                                                         <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'ece'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+
+                                                    </td>
+                                                    <td>
+                                                         <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'eie'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+
+                                                    </td>
+
+                                                    <td>
+                                                         <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'mech'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+
+                                                    </td>
+                                                    <td>
+                                                         <?php 
+
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'civil'";
+
+                                                    $ugexecute = mysqli_query($connect, $ugquery);
+
+                                                    echo $total_count = mysqli_num_rows($ugexecute); 
+
+                                                        ?>
+
+
+                                                    </td>
+                                                    <td>
+                                                        
+                                                        <?php
+
+                                                        echo 0; 
+
+
+
+
+                                                        ?>
+
+
+                                                    </td>
                                                     <td><?php echo $total_count ?></td>
 
 
