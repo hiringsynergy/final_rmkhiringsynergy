@@ -15,7 +15,7 @@ ob_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RMK Hiring Synergy</title>
+    <title>RMK Campulse</title>
     <!-- Site made with Mobirise Website Builder v3.10.4, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

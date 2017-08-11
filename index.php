@@ -27,7 +27,7 @@ if ($_SERVER['HTTPS'] != "on") {
 
 <html>
 	<head>
-		<title>RMK CAMPULSE</title>
+		<title>RMK Campulse</title>
         <link rel="icon" href="logos/rmklogo.JPG" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
