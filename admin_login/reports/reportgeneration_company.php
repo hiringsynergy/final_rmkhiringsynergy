@@ -742,7 +742,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                     $ugexecute = mysqli_query($connect, $ugquery);
 
-                                                    $total_count = mysqli_num_rows($ugquery); 
+                                                    $total_count = mysqli_num_rows($ugexecute); 
 
 
                                                 }
