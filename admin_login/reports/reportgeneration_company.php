@@ -653,7 +653,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3 class="header smaller lighter blue">Students Reports</h3>
+                                <h3 class="header smaller lighter blue">Company Reports</h3>
 
 
 
