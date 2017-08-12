@@ -710,7 +710,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                             </thead>
 
                                             <tbody>
+                                            <tr>
 
+                                             <td>1</td>
+                                             <td>CSE</td>
                                              <td></td>
                                              <td></td>
                                              <td></td>
@@ -722,8 +725,208 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td></td>
                                              <td></td>
                                              <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td>2</td>
+                                             <td>IT</td>
                                              <td></td>
                                              <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td>3</td>
+                                             <td>ECE</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td>4</td>
+                                             <td>EEE</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td>5</td>
+                                             <td>EIE</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td>6</td>
+                                             <td>MECH</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+
+                                             <tr>
+
+                                             <td>7</td>
+                                             <td>CIVIL</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+
+                                             <tr>
+
+                                             <td>8</td>
+                                             <td>ME-CSE</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+
+                                             <tr>
+
+                                             <td>9</td>
+                                             <td>ME-PED</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+
+                                             <tr>
+
+                                             <td>10</td>
+                                             <td>ME-VLSI</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+                                             <tr>
+
+                                             <td>11</td>
+                                             <td>ME-APPD</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
+
+                                             <tr>
+
+                                             <td colspan="2">TOTAL</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+
+                                             </tr>
 
                                            
                                             </tbody>
