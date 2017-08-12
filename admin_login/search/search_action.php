@@ -1991,7 +1991,7 @@ if(isset($_GET['export'])) {
 
                                 if($get_pgbranch!=''){
 
-                                    $query .= " UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa and st_currentlypursuing='PG' "
+                                    $query .= " UNION SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa and st_currentlypursuing='PG' ";
                                 }
 
 
