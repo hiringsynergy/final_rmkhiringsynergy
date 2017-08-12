@@ -1143,13 +1143,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     //"sScrollY": "200px",
                     //"bPaginate": false,
 
-                    "sScrollX": "100%"
+                    "sScrollX": "100%",
                     //"sScrollXInner": "120%",
                     //"bScrollCollapse": true,
                     //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
                     //you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-                    //"iDisplayLength": 50
+                    "iDisplayLength": 25
 
 //
 //                    select: {
