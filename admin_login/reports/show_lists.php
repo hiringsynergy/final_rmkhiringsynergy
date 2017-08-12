@@ -149,6 +149,7 @@ if(isset($_POST['placed'])){
         $new_jobtype=mysqli_query($connect,$ne_jobtype);
         $row=mysqli_fetch_assoc($new_jobtype);
         $row_old=$row['st_jobtype'];
+        $row_old_count = $row['st_jobcounts'];
         $company_old=$row['st_placementstatus'];
 
 
@@ -160,6 +161,10 @@ if(isset($_POST['placed'])){
 
         $row_old=$row_old.',';
         $row_new=$row_old.$job_type;
+
+        //job count
+
+        $row_old_count = $row_old_count +1;
 
         if($company_old!=null){
 
@@ -175,7 +180,7 @@ if(isset($_POST['placed'])){
         echo $jobtype='_'.$jid;
         echo $row[$jobtype];
         if($row[$jobtype]!='placed') {
-            $query_placed = "UPDATE students_" . $year_of_graduation . " SET _" . "$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+            $query_placed = "UPDATE students_" . $year_of_graduation . " SET _" . "$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' , st_jobcounts='$row_old_count' WHERE st_roll='$list' ";
             $result_placed = mysqli_query($connect, $query_placed);
         }
 

@@ -661,6 +661,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
 
+                                    include "../connect.php";
+
                                     $table=$_GET['year'];
 
 
@@ -677,6 +679,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                     <!-- div.table-responsive -->
 
                                     <!-- div.dataTables_borderWrap -->
+
                                     <div>
                                         <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                                             <thead>
@@ -714,17 +717,139 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              <td>1</td>
                                              <td>CSE</td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
+                                             <td>
+                                                 <?php
+
+
+                                                 $query_cse = "SELECT * FROM jobs WHERE year_of_graduation = ".$table."AND job_branch LIKE '%cse%' ";
+                                                 $result_cse = mysqli_query($connect,$query_cse); 
+
+                                                 while($row_cse = mysqli_fetch_assoc($result_cse)){
+
+
+                                                    $job_id = $row['job_id'];
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table." WHERE _".$job_id." = 'eligible' OR  _".$job_id." = 'appliable' ";
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                   echo $count_cse = mysqli_num_rows($result_students_cse);
+
+                                                 }
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                                 
+
+                                                 <?php
+
+
+
+                                                 ?>
+                                             </td>
+                                             <td>
+                                             <?php 
+
+                                             $query_single_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
+                                             $result_single_cse = myssqli_query($connect,$query_single_cse);
+
+                                             echo $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+
+
+                                             ?>
+                                                 
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
+                                             $result_double_cse = myssqli_query($connect,$query_double_cse);
+
+                                             echo $count_double_cse = mysqli_num_rows($result_double_cse);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_triple_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 3 AND st_ugspecialization = 'cse' ";
+                                             $result_triple_cse = myssqli_query($connect,$query_triple_cse);
+
+                                             echo $count_triple_cse = mysqli_num_rows($result_triple_cse);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'cse' ";
+                                             $result_four_cse = myssqli_query($connect,$query_four_cse);
+
+                                             echo $count_four_cse = mysqli_num_rows($result_four_cse);
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+                                              
+
+
+
+
+                                               ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+                                             </td>
+                                             <td>
+                                               <?php
+
+
+
+                                              ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+
+
+                                             </td>
 
                                              </tr>
 

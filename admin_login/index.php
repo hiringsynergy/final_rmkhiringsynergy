@@ -119,6 +119,7 @@ $tablename=$_GET['tablename'];
   st_pass varchar(255)  ,
   st_pic varchar(255),
   st_jobtype varchar(255),
+  st_jobcounts varchar(255),
   st_dorh varchar(255),
   st_changemail varchar(255),
   st_changephone varchar(255),
