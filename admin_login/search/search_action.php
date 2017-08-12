@@ -1988,7 +1988,7 @@ if(isset($_GET['export'])) {
 
                             $query = "select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and (st_overall>=$get_amcat or st_percentage>=$get_amcat) and st_12thpercentage>=$get_12thpercentage and st_10thpercentage>=$get_10thpercentage and   st_gender in ('$get_gender') and st_currentlypursuing='UG' $str and st_dorh='h' UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and (st_overall>=$get_amcat or st_percentage>=$get_amcat) and st_cgpa>=$get_cgpa and st_dippercentage>=$get_dippercentage and st_10thpercentage>=$get_10thpercentage  and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='d' UNION select * from students_".$get_year." where st_ugspecialization in ('$temp_branch') and st_cgpa>=$get_cgpa and (st_overall>=$get_amcat or st_percentage>=$get_amcat) and st_dippercentage>=$get_dippercentage and st_12thpercentage>=$get_12thpercentage  and st_10thpercentage>=$get_10thpercentage   and st_gender in ('$get_gender')  and st_currentlypursuing='UG' $str and st_dorh='dh' ";
 
-                            echo "pg branch ".$get_pgbranch;
+                            echo "pg branch ".current($get_pgbranch);
 
 
                                 if($get_pgbranch!=null){
