@@ -913,7 +913,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              <tr>
 
-                                             <td >TOTAL</td>
+                                             <td colspan="2">TOTAL</td>
                                              <td></td>
                                              <td></td>
                                              <td></td>
