@@ -880,6 +880,8 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         {
                             $query="SELECT * FROM jobs ORDER BY sort DESC";
                         }
+
+                        $query="SELECT * FROM jobs ORDER BY sort DESC";
                         
                         $result= mysqli_query($connect, $query);
                         die(mysqli_error($connect));
