@@ -989,7 +989,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                             $row_salary=mysqli_fetch_assoc($result_salary);
 
-                                                            echo $row_salary['salary']." per annum";
+                                                            echo $row_salary['salary']." Lakhs per annum";
+                                                            
 
                                                         }
 
@@ -1262,6 +1263,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 }
 
+                                                if($placement_status!=''){  
+
 
 
 
@@ -1433,31 +1436,16 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-<!--                                                            --><?php
-//
-//
-//
-//
-//                                                            $company=explode(',',$placement_status);
-//
-//
-//                                                            foreach ($company as $comp) {
-//
-//                                                                if($comp!=$opted){
-//
-//                                                            ?>
-<!--                                                            <option value="--><?php //echo $comp ?><!--">--><?php //echo $comp ?><!--</option>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                                                            --><?php //} }?>
-
 
                                                         </select>
 
 
                                                     </td>
+
+
+                                                    <?php
+                                                    } 
+                                                    ?>
 
 
 
