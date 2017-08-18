@@ -799,7 +799,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td>
                                                          <?php 
 
-                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'eee'";
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'ece'";
 
                                                     $ugexecute = mysqli_query($connect, $ugquery);
 
@@ -811,7 +811,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     <td>
                                                          <?php 
 
-                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'ece'";
+                                                     $ugquery = " SELECT * FROM students_".$table." where _".$job_id." = 'placed' and st_ugyearofpassing = ".$table." and st_ugspecialization = 'eee'";
 
                                                     $ugexecute = mysqli_query($connect, $ugquery);
 
