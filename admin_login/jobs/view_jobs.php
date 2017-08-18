@@ -650,6 +650,40 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
+
+                        <div class="col-xs-12 col-md-7">
+                                                <select class="chosen-select form-control" id="tag1"  name="year" data-placeholder="Select Year of Graduation">
+
+
+                                                    <option value=""></option>
+
+                                                    <?php
+
+
+                                                    include "../connect.php";
+                                                    $query_option="SELECT * FROM table_map ORDER BY table_value ASC";
+                                                    $result_option=mysqli_query($connect, $query_option);
+                                                    while($row_option=mysqli_fetch_assoc($result_option)){
+
+
+
+
+                                                            ?>
+
+                                                            <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+
+
+                                                            <?php
+
+                                                    }
+
+                                                    ?>
+
+
+
+                                                </select>
+
+                                            </div>
                         <?php
 
 
