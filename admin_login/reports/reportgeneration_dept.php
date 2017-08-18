@@ -745,9 +745,10 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     die("error ".mysqli_error($connect));
                                                  }
 
-                                                   echo $count_cse = mysqli_num_rows($result_students_cse);
+                                                    $count_cse + = mysqli_num_rows($result_students_cse);
 
                                                  }
+                                                 echo $count_cse;
 
 
 
