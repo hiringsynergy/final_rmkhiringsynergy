@@ -873,15 +873,14 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
                         if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' )
                         {
-
-                        $year=$_GET['year'];
-                        $query="SELECT * FROM jobs ORDER BY sort DESC WHERE year_of_graduation = ".$year;
-                    }
-                    else
-                    {
+                           echo $year=$_GET['year'];
+                            $query="SELECT * FROM jobs ORDER BY sort DESC WHERE year_of_graduation = ".$year;
+                        }
+                        else
+                        {
+                            $query="SELECT * FROM jobs ORDER BY sort DESC";
+                        }
                         
-                        $query="SELECT * FROM jobs ORDER BY sort DESC";
-                    }
                         $result= mysqli_query($connect, $query);
                         $i=0;
 
