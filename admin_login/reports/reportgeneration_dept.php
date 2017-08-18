@@ -719,7 +719,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>CSE</td>
                                              <td>
                                                  <?php
-                                                  include "../../connect.php";
+                                                  include "../connect.php";
 
                                                  
 
@@ -727,9 +727,15 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  $query_cse = "SELECT * FROM jobs WHERE year_of_graduation ='$table' AND job_branch LIKE '%cse%' ";
                                                  $result_cse = mysqli_query($connect,$query_cse); 
 
-                                                 die("error ".mysqli_error($connect));
+                                                 if($result_cse==''){
+                                                    die("error ".mysqli_error($connect));
+                                                 }
+
+                                                 
 
                                                  while($row_cse = mysqli_fetch_assoc($result_cse)){
+
+                                                     echo "hello";
 
 
                                                     $job_id = $row['job_id'];
