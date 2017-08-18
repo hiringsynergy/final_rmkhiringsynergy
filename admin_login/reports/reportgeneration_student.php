@@ -1352,7 +1352,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                             $row_salary=mysqli_fetch_assoc($result_salary);
 
-                                                            echo $row_salary['salary']." per annum";
+                                                            echo $row_salary['salary']." Lakhs per annum";
 
                                                         }
 
@@ -1365,7 +1365,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                     </td>
                                                     <td>
-                                                        <select name="opted" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" data-placeholder=" " >
+                                                        <select name="opted"  class="col-xs-4" onchange="showreports(this.value,'<?php echo $roll ?>','<?php echo $table ?>')" class="form-control chosen-select " id="opt" data-placeholder=" " >
 
 
 
