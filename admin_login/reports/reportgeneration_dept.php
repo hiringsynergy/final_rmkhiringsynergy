@@ -1163,17 +1163,148 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              <td>4</td>
                                              <td>EEE</td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
+                                             <td>
+                                                 <?php
+                                   
+
+                                                    $query_students_eee = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee'";
+
+
+                                                    $result_students_eee = mysqli_query($connect,$query_students_eee);
+
+                                                  
+                                                    $count_eee = $count_eee + mysqli_num_rows($result_students_eee);
+
+                                                 echo $count_eee;
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                                 
+
+                                                 <?php
+
+                                                 echo "effective ";
+
+
+
+                                                 ?>
+                                             </td>
+                                             <td>
+                                             <?php 
+
+                                             include "../connect.php";
+
+                                             //echo $table;
+
+                                             $query_single_eee = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eee' ";
+                                             $result_single_eee = mysqli_query($connect,$query_single_eee);
+
+                                              if($result_single_eee==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                             echo $count_single_eee = mysqli_num_rows($result_single_eee);
+
+                                            
+
+
+
+
+                                             ?>
+                                                 
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_double_eee = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eee' ";
+                                             $result_double_eee = mysqli_query($connect,$query_double_eee);
+
+                                             echo $count_double_eee = mysqli_num_rows($result_double_eee);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_triple_eee = "SELECT * FROM students_".$table." WHERE st_jobcounts = 3 AND st_ugspecialization = 'eee' ";
+                                             $result_triple_eee = mysqli_query($connect,$query_triple_eee);
+
+                                             echo $count_triple_eee = mysqli_num_rows($result_triple_eee);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_four_eee = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'eee' ";
+                                             $result_four_eee = mysqli_query($connect,$query_four_eee);
+
+                                             echo $count_four_eee = mysqli_num_rows($result_four_eee);
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+                                              
+
+
+
+
+                                               ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+                                             </td>
+                                             <td>
+                                               <?php
+
+
+
+                                              ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+
+
+                                             </td>
+
 
                                              </tr>
 
