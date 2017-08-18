@@ -727,21 +727,23 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  $query_cse = "SELECT * FROM jobs WHERE year_of_graduation ='$table' AND job_branch LIKE '%cse%' ";
                                                  $result_cse = mysqli_query($connect,$query_cse); 
 
-                                                 if($result_cse==''){
-                                                    die("error ".mysqli_error($connect));
-                                                 }
+                                                 
 
                                                  
 
                                                  while($row_cse = mysqli_fetch_assoc($result_cse)){
 
-                                                     echo "hello";
+                                                     //echo "hello";
 
 
                                                     $job_id = $row['job_id'];
 
                                                     $query_students_cse = "SELECT * FROM students_".$table." WHERE _".$job_id." = 'eligible' OR  _".$job_id." = 'appliable' ";
                                                     $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                    if($result_students_cse==''){
+                                                    die("error ".mysqli_error($connect));
+                                                 }
 
                                                    echo $count_cse = mysqli_num_rows($result_students_cse);
 
