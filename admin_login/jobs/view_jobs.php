@@ -660,7 +660,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         <!-- PAGE CONTENT BEGINS -->
 
                         <div class="col-xs-12 col-md-7">
-                                                <select class="chosen-select form-control center" id="form-field-select-3"  onchnage="selectyear()" name="year" data-placeholder="Select Year of Graduation">
+                                                <select class="chosen-select form-control center" id="form-field-select-3"  onchange="selectyear()" name="year" data-placeholder="Select Year of Graduation">
 
 
                                                     <option value=""></option>
