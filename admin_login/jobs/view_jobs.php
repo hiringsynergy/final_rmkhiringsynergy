@@ -659,7 +659,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
 
-                        <div class="col-xs-12 col-md-7">
+                   <!--      <div class="col-xs-12 col-md-7">
                                                 <select class="chosen-select form-control center" id="form-field-select-3"  onchange="selectyear()" name="year" data-placeholder="Select Year of Graduation">
 
 
@@ -692,7 +692,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                                 </select>
 
                                             </div>
-
+ -->
                                             <div class="space-32"></div>
                                         <div class="space-32"></div>
                         <?php
