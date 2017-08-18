@@ -116,6 +116,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
         }
 
+        function confirm(year){
+
+            location.href="reportgeneration_student?exyear="+year;
+        }
+
 
 
 
@@ -712,7 +717,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                     ?>
 
-                                    <button class="btn btn-success btn-lg   " name="Edit">
+                                    <button class="btn btn-success btn-lg   " onclick="confirm(<?php echo $_GET['year']  ?>)" name="Edit">
                                         Confirm
                                     </button>
 
