@@ -753,7 +753,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              include "../connect.php";
 
-                                             echo $table;
+                                             //echo $table;
 
                                              $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
@@ -763,7 +763,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 die("error ".mysqli_error($connect));
                                              }
 
-                                             echo "count ".$count_single_cse = mysqli_num_rows($result_single_cse);
+                                             echo $count_single_cse = mysqli_num_rows($result_single_cse);
 
                                             
 
@@ -777,7 +777,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  <?php 
 
                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
-                                             $result_double_cse = myssqli_query($connect,$query_double_cse);
+                                             $result_double_cse = mysqli_query($connect,$query_double_cse);
 
                                              echo $count_double_cse = mysqli_num_rows($result_double_cse);
 
@@ -791,7 +791,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  <?php 
 
                                              $query_triple_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 3 AND st_ugspecialization = 'cse' ";
-                                             $result_triple_cse = myssqli_query($connect,$query_triple_cse);
+                                             $result_triple_cse = mysqli_query($connect,$query_triple_cse);
 
                                              echo $count_triple_cse = mysqli_num_rows($result_triple_cse);
 
@@ -805,7 +805,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  <?php 
 
                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'cse' ";
-                                             $result_four_cse = myssqli_query($connect,$query_four_cse);
+                                             $result_four_cse = mysqli_query($connect,$query_four_cse);
 
                                              echo $count_four_cse = mysqli_num_rows($result_four_cse);
 
