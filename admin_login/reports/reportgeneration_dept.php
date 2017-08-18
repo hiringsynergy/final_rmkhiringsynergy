@@ -760,6 +760,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              include "../connect.php";
 
+                                             echo $table;
+
                                              $query_single_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
                                              $result_single_cse = myssqli_query($connect,$query_single_cse);
 
