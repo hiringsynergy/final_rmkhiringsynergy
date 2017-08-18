@@ -652,7 +652,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         <!-- PAGE CONTENT BEGINS -->
 
                         <div class="col-xs-12 col-md-7">
-                                                <select class="chosen-select form-control" id="tag1"  name="year" data-placeholder="Select Year of Graduation">
+                                                <select class="chosen-select form-control center" id="tag1"  name="year" data-placeholder="Select Year of Graduation">
 
 
                                                     <option value=""></option>
