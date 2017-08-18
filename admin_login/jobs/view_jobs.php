@@ -882,6 +882,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         }
                         
                         $result= mysqli_query($connect, $query);
+                        die(mysqli_error($connect));
                         $i=0;
 
                         while($row=mysqli_fetch_assoc($result))
