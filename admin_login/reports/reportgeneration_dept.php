@@ -736,7 +736,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                      //echo "hello";
 
 
-                                                    $job_id = $row['job_id'];
+                                                    $job_id = $row_cse['job_id'];
 
                                                     $query_students_cse = "SELECT * FROM students_".$table." WHERE _".$job_id." = 'eligible' OR  _".$job_id." = 'appliable' ";
                                                     $result_students_cse = mysqli_query($connect,$query_students_cse);
