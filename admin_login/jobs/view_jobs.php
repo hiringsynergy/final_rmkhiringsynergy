@@ -111,6 +111,14 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
         }
+        function selectyear(){
+
+            var e = document.getElementById("form-field-select-3");
+            var strUser = e.options[e.selectedIndex].value;
+
+            location.href = "view_jobs?year="+strUser;
+
+        }
 
 
     </script>
@@ -652,7 +660,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         <!-- PAGE CONTENT BEGINS -->
 
                         <div class="col-xs-12 col-md-7">
-                                                <select class="chosen-select form-control center" id="tag1"  name="year" data-placeholder="Select Year of Graduation">
+                                                <select class="chosen-select form-control center" id="form-field-select-3"  onchnage="selectyear()" name="year" data-placeholder="Select Year of Graduation">
 
 
                                                     <option value=""></option>
@@ -670,7 +678,7 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
                                                             ?>
 
-                                                            <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>  </option>
+                                                            <option value="<?php echo $row_option['table_value'] ?>"><?php echo $row_option['table_value'] ?>        </option>
 
 
                                                             <?php
