@@ -870,6 +870,8 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         }
 
                         include "../connect.php";
+                        $query=null;
+                        $result=null;
 
                         if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' )
                         {
