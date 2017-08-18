@@ -762,15 +762,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              echo $table;
 
-                                             $query_single_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
+                                             $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
                                              $result_single_cse = myssqli_query($connect,$query_single_cse);
 
-                                             echo "count ".$count_single_cse = mysqli_num_rows($result_single_cse);
-
-                                             if($result_single_cse==''){
+                                              if($result_single_cse==''){
 
                                                 die("error ".mysqli_error($connect));
                                              }
+
+                                             echo "count ".$count_single_cse = mysqli_num_rows($result_single_cse);
+
+                                            
 
 
 
