@@ -761,7 +761,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              echo "count ".$count_single_cse = mysqli_num_rows($result_single_cse);
 
-                                             if($result_single_cse==null){
+                                             if($result_single_cse==''){
 
                                                 die("error ".mysqli_error($connect));
                                              }
