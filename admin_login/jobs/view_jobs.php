@@ -870,7 +870,12 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         }
 
                         include "../connect.php";
-                        $query="SELECT * FROM jobs ORDER BY sort DESC";
+
+                        if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
+
+                        $year=$_GET['year'];
+                        
+                        $query="SELECT * FROM jobs ORDER BY sort DESC WHERE year_of_graduation = ".$year;
                         $result= mysqli_query($connect, $query);
                         $i=0;
 
@@ -1230,6 +1235,389 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
 
 
                                                 </td>
+
+                                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                            </div>
+                        </div> 
+
+                        <?php else{ ?>
+
+                        $query="SELECT * FROM jobs ORDER BY sort DESC WHERE year_of_graduation = ".$year;
+                        $result= mysqli_query($connect, $query);
+                        $i=0;
+
+                        while($row=mysqli_fetch_assoc($result))
+
+                        {
+                            $company_id=$row['company_id'];
+
+                           $widget_color=array(' widget-color-blue','widget-color-green','widget-color-orange','widget-color-red','widget-color-pink','widget-color-green','widget-color-purple','widget-color-blue2','widget-color-red3','widget-color-blue3');
+
+                           $i=$i%sizeof($widget_color);
+
+
+
+
+                            ?>
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12 widget-container-col"  id="widget-container-col-2">
+                                <div  class="<?php echo $widget_color[$i] ?>"   id="widget-box-1">
+                                    <div class="widget-header"><h5 class="widget-title bigger" style="color: white">Job</h5>
+
+                                    </div>
+
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+
+
+                                            <div class="row">
+                                            <div class="table-responsive ">
+
+                        <table class="table table-striped table-hover "  id="simple-table" cellpadding="1">
+                            <thead class="thin-border-bottom">
+                            <tr>
+                                <th>
+                                    <font size="3">
+
+                                        <i class="ace-icon fa fa-user"></i>
+                                        Job Title
+                                    </font>
+                                </th>
+                                <th>
+                                    <font size="3">
+                                        Job Posted Time
+                                    </font>
+                                </th>
+                                <th  class=" left" >
+                                    <font size="3">
+                                        MoreDetails
+
+                                    </font>
+
+                                </th>
+
+                                <th>
+                                    <font size="3">
+                                        Campus Date
+
+                                    </font>
+
+                                </th><th>
+                                    <font size="3">
+
+                                        Salary
+                                    </font>
+                                </th>
+
+                                <th>
+                                    <font size="3">
+
+
+                                        Apply Date
+                                    </font>
+                                </th>
+                                <th class="  "><font size="3">Status</font></th>
+                                <th class="  "><font size="3"></font></th>
+                                <th class="  "><font size="3"></font></th>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+
+
+
+
+
+
+
+                                <td   height="80" width="370" class="">
+
+                                    <b>
+                                        <a href="#" class="job " style="text-decoration:none; font-size: 18px" data-action="reload">
+
+                                            <?php  echo $row['company']  ?>
+
+
+                                        </a>
+                                        <br><br>
+
+
+
+                                    </b>
+                                    <div class="row col-md-12" style="font-size: 17px; font-weight: bold;">
+
+                                        <label class="label label-warning center middle" style="size: 40px;"><b> Job:   </b></label>
+
+                                        <div>
+                                            <?php  echo $row['job_title']  ?>(<?php  echo $row['job_type']  ?>)
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </td><?php
+                                $sec=$row['job_id'];  ?>
+
+                                <td>
+
+                                    <font size="3">
+                                        <b>  <?php  echo date("d-m-Y g:i a", $sec);  ?></b>
+
+                                    </font>
+
+                                </td>
+
+
+
+                                <td >
+                                    <div class="action-buttons col-lg-offset-3">
+                                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
+                                            <i class="ace-icon fa fa-angle-double-down"></i>
+                                            <span class="sr-only">Details</span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <font size="3">
+                                        <b>  <?php  echo $row['campus_date']  ?></b>
+
+                                    </font>
+                                    <br>
+                                    <br>
+                                    <div class="row col-md-12" style="font-size: large; font-weight: bold;">
+
+                                        <label class="label label-info center middle" style="size: 40px;"><b>Venue:</b></label>
+
+                                        <div>
+                                            <?php  echo $row['venue']  ?>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <font size="3">
+                                        <b>  <?php  echo $row['salary']  ?></b>
+
+                                    </font>
+
+                                </td>
+                                <td>
+                                    <font size="3">
+                                        <b>  <?php  echo $row['apply_before']  ?></b>
+
+                                    </font>
+
+                                </td>
+                                <?php
+
+                                $dt = new DateTime("now", new DateTimeZone('Asia/Kolkata'));
+                                $date1=$dt->format('d-m-Y H:i A');
+                                $date2=$row['apply_before'];
+
+
+//                                echo strtotime($date2);
+
+                                $temp_current=explode(" ", $date1);
+                                $temp_before=explode(" ", $date2);
+
+                              $calc_date=strtotime($temp_before[0])-strtotime($temp_current[0])."<br>";
+
+
+                               if($temp_before[2]=="PM"){
+
+                                   $tmp=$temp_before[1];
+                                   $tmp_value=explode(":", $tmp);
+
+                                   $temp_before[1]=$tmp_value[0]+12 .":".$tmp_value[1];
+
+                               }
+
+
+//                               echo $temp_before[1]." ".$temp_current[1]."<br>";
+//
+//
+                               $calc_time=strtotime($temp_before[1])-strtotime($temp_current[1])."<br>";
+//
+//
+//
+//
+//                                print_r($temp_current);
+//                                print_r($temp_before);
+
+
+
+
+
+                                if($calc_date>0 ){
+
+
+
+
+
+                                ?>
+
+
+
+                                <td class="  ">
+                                    <span class="label label-success" style="height: 40px; width: 80px; font-size: 18px; padding-top: 10px;">Open</span>
+                                </td>
+
+                              <?php
+
+
+                                }
+                                else if( $calc_date==0 && $calc_time>=0){
+                                    ?>
+
+                                    <td class="  ">
+                                    <span class="label label-success" style="height: 40px; width: 80px; font-size: 18px; padding-top: 10px;">Open</span>
+                                </td>
+
+
+                                   <?php
+
+
+                                }
+
+                                else{
+
+                                    ?>
+
+                                    <td class="  ">
+                                        <span class="label label-danger" style="height: 40px; width: 80px; font-size: 18px; padding-top: 10px;">Closed</span>
+                                    </td>
+
+
+
+
+                                  <?php
+                                   }
+
+                                  ?>
+                                <td>
+                                    <a href="#modal-form" class="btn btn-primary" data-toggle="modal" onclick="getjobid(<?php echo $row['job_id'] ?>)">Update Details</a>
+
+
+                                </td>
+                                <td>
+                                    <a href="../reports/show_lists?jid=<?php echo $row['job_id']; ?>&flag=1" class="btn btn-warning">Reports</a>
+
+                                </td>
+
+
+                            </tr>
+
+                            <tr class="detail-row">
+                                <?php
+
+                                $query_company="SELECT * FROM company_list where company_id='$company_id'";
+                                $result_company= mysqli_query($connect, $query_company);
+                                $row_company=mysqli_fetch_assoc($result_company);
+
+
+                                ?>
+                                <td colspan="8">
+                                    <div class="table-detail">
+                                        <div class="row">
+                                            <div class="col-xs-7 col-sm-2">
+                                                <div class="text-center ">
+                                                    <img height="150" class="thumbnail inline no-margin-bottom " alt="Domain Owner's Avatar" src="../../logos/<?php echo $row_company['company_logo']; ?>" />
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-xs-12 col-sm-10">
+                                                <div class="space visible-xs"></div>
+
+                                                <div class="profile-user-info  profile-user-info-striped">
+                                                    <div class="profile-info-row  ">
+                                                        <div class="profile-info-name " style="min-width: 140px;"> Company Name </div>
+
+                                                        <div class="profile-info-value">
+                                                            <span><?php echo $row_company['company_name']; ?></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="profile-info-row">
+                                                        <div class="profile-info-name"> Website </div>
+
+                                                        <div class="profile-info-value">
+                                                            <span><?php echo $row_company['company_website']; ?></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="profile-info-row">
+                                                        <div class="profile-info-name"> Mail </div>
+
+                                                        <div class="profile-info-value">
+                                                            <span><?php echo $row_company['company_website']; ?></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="profile-info-row">
+                                                        <div class="profile-info-name" > Eligibility </div>
+
+                                                        <div class="profile-info-value">
+                                                            <span>above <?php echo $row['job_cgpa']; ?> cgpa</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="profile-info-row ">
+                                                        <div class="profile-info-name "  >Company's Presentation </div>
+
+                                                        <div class="profile-info-value col-xs-6">
+                                                            <a href="download?file=<?php echo $row['company_id'] ?>" name="presentation" class="btn btn-yellow bold" >Download Presentation</a>
+                                                        </div>
+                                                    </div>
+                                                    <div id="download">
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                    </div>
+
+
+                                                </td>
+
                                                 </tr>
 
 
@@ -1248,6 +1636,10 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                         </div>
                             </div>
                         </div>
+
+                        <?php } ?>
+
+
 
                             <div id="modal-form" class="modal" tabindex="-1">
                                 <form action="view_jobs" method="post" enctype="multipart/form-data">
