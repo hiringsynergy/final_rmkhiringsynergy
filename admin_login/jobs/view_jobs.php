@@ -684,6 +684,9 @@ if(isset($_POST['update']) && isset($_SESSION['user_role'])=='admin'  )
                                                 </select>
 
                                             </div>
+
+                                            <div class="space-32"></div>
+                                        <div class="space-32"></div>
                         <?php
 
 
