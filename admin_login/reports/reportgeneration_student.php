@@ -907,6 +907,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 }
 
+                                                if($placement_status!=''){  
+
 
 
 
@@ -1007,6 +1009,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                                     </td>
+                                                    <?php
+                                                }
+                                                    ?>
 
 
 
