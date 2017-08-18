@@ -661,7 +661,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                 if(isset($_GET['year']) && isset($_SESSION['user_role'])=='admin' ){
 
 
-                                    include "../connect.php";
+                                   
 
                                     $table=$_GET['year'];
 
@@ -719,6 +719,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>CSE</td>
                                              <td>
                                                  <?php
+                                                  include "../../connect.php";
 
                                                  
 
