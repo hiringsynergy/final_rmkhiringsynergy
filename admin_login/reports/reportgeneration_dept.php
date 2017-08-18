@@ -728,7 +728,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  
                                                  
 
-                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugyearofpassing";
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse";
 
 
                                                     $result_students_cse = mysqli_query($connect,$query_students_cse);
