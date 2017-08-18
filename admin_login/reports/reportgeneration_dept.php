@@ -749,6 +749,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
+                                                 echo "effective ";
+
 
 
                                                  ?>
