@@ -726,6 +726,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  $query_cse = "SELECT * FROM jobs WHERE year_of_graduation ='$table' AND job_branch LIKE '%cse%' ";
                                                  $result_cse = mysqli_query($connect,$query_cse); 
 
+                                                 die("error ".mysqli_error($connect));
+
                                                  while($row_cse = mysqli_fetch_assoc($result_cse)){
 
 
