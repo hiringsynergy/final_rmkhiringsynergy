@@ -182,6 +182,10 @@ if(isset($_POST['placed'])){
         if($row[$jobtype]!='placed') {
             $query_placed = "UPDATE students_" . $year_of_graduation . " SET _" . "$jid='placed' , st_jobtype='$row_new' , st_placementstatus='$company_new' , st_jobcounts='$row_old_count' WHERE st_roll='$list' ";
             $result_placed = mysqli_query($connect, $query_placed);
+
+            if($result_placed==null){
+                die("error ".mysqli_error($connect));
+            }
         }
 
         echo "end";
@@ -190,7 +194,7 @@ if(isset($_POST['placed'])){
 
     }
 
-    header("Location: show_lists?jid=$jid&flag=$flag");
+   // header("Location: show_lists?jid=$jid&flag=$flag");
 
 
 
