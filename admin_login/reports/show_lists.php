@@ -106,7 +106,7 @@ foreach($checkbox as $list) {
     echo $company_new;
     echo "<br>";
 
-    echo $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobcounts='$job_count' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+    echo $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobcounts='$job_count' , st_placementstatus='$company_new' , st_jobtype = '$const_job_type' WHERE st_roll='$list' ";
     $result_unplaced = mysqli_query($connect, $query_unplaced);
 
 //    $query_unplaced1="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
