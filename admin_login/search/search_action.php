@@ -1977,7 +1977,7 @@ if(isset($_GET['export'])) {
 
 
 
-                                                    $str.=' and job_count<='.$get_hasjob;
+                                                    $str.=' and job_count ='.$get_hasjob;
 
 
                                                 }
