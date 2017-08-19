@@ -39,31 +39,53 @@ foreach($checkbox as $list) {
     $company = $row_job_type['company'];
     echo $company;
 
-    // echo "job_type: ".$job_type;
 
 
     $ne_jobtype = "select * from students_".$year_of_graduation." WHERE st_roll='$list'";
     $new_jobtype = mysqli_query($connect, $ne_jobtype);
     $row = mysqli_fetch_assoc($new_jobtype);
-//    $row_old = $row['st_jobtype'];
 
-
-//    $row_old = $row_old . ',';
-//    $row_new = $row_old . $job_type;
-//
-//    if ($company_old != null) {
-//
-//        $company_old = $company_old . ',';
-//    }
-
-
-//    $company_new = $company_old . $company;
     echo "<br>";
-  echo  $company_old = $row['st_placementstatus'];
+
+
+    //modifying job type
+
+    $old_job_type = $row['st_jobtype'];
+    $new_job_type = explode(",", $old_job_type);
+    $flag = 0;
+    $const_job_type = '';
+    foreach($new_job_type as $type){
+        if($type == $job_type && $flag ==0 ){
+
+            $flag = 1;
+        }
+        else{
+            $const_job_type .=  ','.$type;
+        }
+    }
+
+
+
+
+
+
+
+    --$job_count;  //decreasing job count
+
+
+
+    //modifying placement status
+
+    echo  $company_old = $row['st_placementstatus'];
+        $job_count = $row['st_jobcounts'];
+
+
     $exp = explode(',', $company_old);
     $company_new ="";
     echo $count = count($exp);
     $i=0;
+
+
     foreach ($exp as $r) {
         if ($r!=$company)
         {
@@ -82,7 +104,7 @@ foreach($checkbox as $list) {
     echo $company_new;
     echo "<br>";
 
-    echo $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_placementstatus='$company_new' WHERE st_roll='$list' ";
+    echo $query_unplaced = "UPDATE students_".$year_of_graduation." SET _"."$jid='accepted' , st_jobcounts='$job_count' st_placementstatus='$company_new' WHERE st_roll='$list' ";
     $result_unplaced = mysqli_query($connect, $query_unplaced);
 
 //    $query_unplaced1="SELECT * students_".$year_of_graduation." WHERE st_roll='$list' ";
@@ -267,6 +289,7 @@ echo "value : ".current($value);
 
 
         if(preg_match('/rmd/', $database)){
+
 
 
 

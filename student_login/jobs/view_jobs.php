@@ -1054,7 +1054,7 @@ if (isset($_GET['decline']) && isset($_SESSION['user_role'])=='student') {
                                                                 <td>
                                                                     <div>
                                                                         <button class="btn btn-danger btn-sm disabled "
-                                                                                onclick="decline('<?php echo $row['job_id'] ?>')">
+                                                                                ">
                                                                             Decline
                                                                         </button>
                                                                     </div>
