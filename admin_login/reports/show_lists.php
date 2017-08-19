@@ -69,15 +69,17 @@ foreach($checkbox as $list) {
 
 
 
+    echo  $company_old = $row['st_placementstatus'];
+    $job_count = $row['st_jobcounts'];
 
     --$job_count;  //decreasing job count
 
 
 
+
+
     //modifying placement status
 
-    echo  $company_old = $row['st_placementstatus'];
-        $job_count = $row['st_jobcounts'];
 
 
     $exp = explode(',', $company_old);
