@@ -1459,19 +1459,152 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              <tr>
 
-                                             <td>6</td>
+                                             <td>7</td>
                                              <td>MECH</td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
-                                             <td></td>
+                                             <td>
+                                                 <?php
+                                   
+
+                                                    $query_students_mech = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech'";
+
+
+                                                    $result_students_mech = mysqli_query($connect,$query_students_mech);
+
+                                                  
+                                                    $count_mech= $count_mech+ mysqli_num_rows($result_students_mech);
+
+                                                 echo $count_mech;
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                                 
+
+                                                 <?php
+
+                                                 echo "effective ";
+
+
+
+                                                 ?>
+                                             </td>
+                                             <td>
+                                             <?php 
+
+                                             include "../connect.php";
+
+                                             //echo $table;
+
+                                             $query_single_mech = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'mech' ";
+                                             $result_single_mech= mysqli_query($connect,$query_single_mech);
+
+                                              if($result_single_mech==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                             echo $count_single_mech = mysqli_num_rows($result_single_mech);
+
+                                            
+
+
+
+
+                                             ?>
+                                                 
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_double_mech= "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'mech' ";
+                                             $result_double_mech = mysqli_query($connect,$query_double_mech);
+
+                                             echo $count_double_mech= mysqli_num_rows($result_double_mech);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_triple_mech= "SELECT * FROM students_".$table." WHERE st_jobcounts = 3 AND st_ugspecialization = 'mech' ";
+                                             $result_triple_mech= mysqli_query($connect,$query_triple_mech);
+
+                                             echo $count_triple_mech = mysqli_num_rows($result_triple_mech);
+
+
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                                 <?php 
+
+                                             $query_four_mech = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'mech' ";
+                                             $result_four_mech = mysqli_query($connect,$query_four_mech);
+
+                                             echo $count_four_mech= mysqli_num_rows($result_four_mech);
+
+
+                                             ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+                                              
+
+
+
+
+                                               ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+
+
+                                                 ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+                                             </td>
+                                             <td>
+                                               <?php
+
+
+
+                                              ?>
+
+                                             </td>
+                                             <td>
+                                              <?php
+
+
+
+                                              ?>
+
+
+                                             </td>
+
+
+                                             </tr>
 
                                              </tr>
 
