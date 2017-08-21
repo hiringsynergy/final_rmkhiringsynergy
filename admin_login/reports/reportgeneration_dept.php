@@ -719,6 +719,8 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>CSE</td>
                                              <td>
                                                  <?php
+
+                                                 //calculate total count
                                    
 
                                                     $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse'";
@@ -727,7 +729,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     $result_students_cse = mysqli_query($connect,$query_students_cse);
 
                                                   
-                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+                                                    $count_cse =  mysqli_num_rows($result_students_cse);
 
                                                  echo $count_cse;
 
@@ -753,7 +755,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                              include "../connect.php";
 
-                                             //echo $table;
+                                             //calculate single 
 
                                              $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
@@ -776,6 +778,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                                  <?php 
 
+
+                                                 //calculate double 
+
                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
@@ -789,6 +794,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              </td>
                                              <td>
                                                  <?php 
+
+
+                                                 //calculate triple
 
                                              $query_triple_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 3 AND st_ugspecialization = 'cse' ";
                                              $result_triple_cse = mysqli_query($connect,$query_triple_cse);
@@ -804,6 +812,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                                  <?php 
 
+
+                                                 //calcylate four 
+
                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'cse' ";
                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
 
@@ -816,6 +827,43 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
+
                                               
 
 
@@ -827,6 +875,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -837,6 +896,18 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
@@ -846,11 +917,42 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
                                              </td>
                                              <td>
                                               <?php
+
+
+
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='cse' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -961,8 +1063,45 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              ?>
 
                                              </td>
-                                             <td>
+                                            <td>
                                               <?php
+
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='it'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'it' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
 
                                               
 
@@ -975,6 +1114,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='it' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -985,6 +1135,18 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='it' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
@@ -994,11 +1156,42 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='it' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
                                              </td>
                                              <td>
                                               <?php
+
+
+
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='it' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1113,6 +1306,43 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'ece' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
+
                                               
 
 
@@ -1124,6 +1354,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -1134,12 +1375,39 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
                                              </td>
                                              <td>
                                                <?php
+
+
+
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1151,10 +1419,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
 
                                              </td>
+
 
 
                                              </tr>
@@ -1259,8 +1544,45 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              ?>
 
                                              </td>
-                                             <td>
+                                            <td>
                                               <?php
+
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eee' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
 
                                               
 
@@ -1273,6 +1595,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -1283,6 +1616,18 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
@@ -1292,11 +1637,42 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
                                              </td>
                                              <td>
                                               <?php
+
+
+
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eee' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1408,8 +1784,45 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              ?>
 
                                              </td>
-                                             <td>
+                                            <td>
                                               <?php
+
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eie' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
 
                                               
 
@@ -1422,6 +1835,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -1432,12 +1856,39 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
                                              </td>
                                              <td>
                                                <?php
+
+
+
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1449,10 +1900,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
 
                                              </td>
+
 
 
                                              </tr>
@@ -1560,6 +2028,43 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'mech' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
+
                                               
 
 
@@ -1571,6 +2076,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -1581,12 +2097,39 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
                                              </td>
                                              <td>
                                                <?php
+
+
+
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1598,11 +2141,26 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='mech' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
 
                                              </td>
-
 
                                              </tr>
 
@@ -1709,8 +2267,45 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              ?>
 
                                              </td>
-                                             <td>
+                                           <td>
                                               <?php
+
+                                                //calculate percentage
+
+
+                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil'";
+
+
+                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+                                                  
+                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+                                                  
+
+
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'civil' ";
+                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                              if($result_single_cse==''){
+
+                                                die("error ".mysqli_error($connect));
+                                             }
+
+                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                $percent = $count_cse / $result_single_cse;
+
+                                                $percent = $percent * 100;
+                                                
+
+
+                                                 echo number_format((float)$percent, 2, '.', '');
+
+
+                                            
+
 
                                               
 
@@ -1723,6 +2318,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                              //calculate boys 
+                                                $query_students_boys = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil' AND st_gender = 'MALE' ";
+
+
+                                                    $result_students_boys = mysqli_query($connect,$query_students_boys);
+
+                                                  
+                                                    $count_boys =  mysqli_num_rows($result_students_boys);
+
+                                                 echo $count_boys;
+
 
 
 
@@ -1733,12 +2339,39 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                              <td>
                                               <?php
 
+                                               //calculate girls
+                                                $query_students_girls = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil' AND st_gender = 'FEMALE' ";
+
+
+                                                    $result_students_girls = mysqli_query($connect,$query_students_girls);
+
+                                                  
+                                                    $count_girls =  mysqli_num_rows($result_students_girls);
+
+                                                 echo $count_girls;
+
+
 
 
                                               ?>
                                              </td>
                                              <td>
                                                <?php
+
+
+
+                                               //calculate dayscholar
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil' AND st_dayorhostel='DAY SCHOLAR' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
 
 
 
@@ -1750,10 +2383,27 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
+
+                                               //calculate hostel
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil' AND st_dayorhostel='HOSTELER' ";
+
+
+                                                    $result_students_day = mysqli_query($connect,$query_students_day);
+
+                                                  
+                                                    $count_day =  mysqli_num_rows($result_students_day);
+
+                                                 echo $count_day;
+
+
+
+
+
                                               ?>
 
 
                                              </td>
+
 
 
                                              </tr>
