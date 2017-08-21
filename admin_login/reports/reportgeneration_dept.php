@@ -1333,11 +1333,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 $percent = $count_cse / $result_single_cse;
 
-                                                $percent = $percent * 100;
+                                               echo $percent = $percent * 100;
                                                 
 
 
-                                                 echo number_format((float)$percent, 2, '.', '');
+                                                 //echo number_format((float)$percent, 2, '.', '');
 
 
                                             
