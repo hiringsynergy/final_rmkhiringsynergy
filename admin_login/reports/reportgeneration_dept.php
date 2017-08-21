@@ -1331,7 +1331,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                                $percent = $count_cse / $count_single_cse;
+                                                $percent = $count_single_cse/$count_cse; 
 
                                                echo $percent = $percent * 100;
                                                 
