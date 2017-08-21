@@ -1315,7 +1315,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                     $result_students_cse = mysqli_query($connect,$query_students_cse);
 
                                                   
-                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+                                                    $count_cse =  mysqli_num_rows($result_students_cse);
 
                                                   
 
