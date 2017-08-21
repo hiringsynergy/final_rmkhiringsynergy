@@ -885,7 +885,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 
 
 
-                                                 //echo number_format((float)$percent, 2, '.', '');
+                                                 echo number_format((float)$percent, 2, '.', '');
 
 
                                             
