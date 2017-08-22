@@ -89,17 +89,17 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
+                $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
                 $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
+                $mail->setFrom('placement@rmd.ac.in', 'RMD Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
+                $mail->addReplyTo('placement@rmd.ac.in', 'Reply');
                 $collegename = "RMD Engineering College";
 
             }
@@ -107,17 +107,17 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'tnp@rmkec.ac.in';                 // SMTP username
+                $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
                 $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
+                $mail->setFrom('placement@rmkec.ac.in', 'RMK Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
+                $mail->addReplyTo('placement@rmkec.ac.in', 'Reply');
                 $collegename = "RMK Engineering College";
 
             }
@@ -125,17 +125,17 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
             if (preg_match('/cet/', $database)) {
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'tnp@rmkec.ac.in';                  // SMTP username
+                $mail->Username = 'placementstnp@rmkec.ac.in';                  // SMTP username
                 $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
+                $mail->setFrom('placement@rmkcet.ac.in', 'RMKCET Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
+                $mail->addReplyTo('placement@rmkcet.ac.in', 'Reply');
                 $collegename = "RMK College of Engineering and Technology";
 
             }
