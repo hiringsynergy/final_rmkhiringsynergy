@@ -1399,7 +1399,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                                                
+
 
 
                                               $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece'";
@@ -2008,7 +2008,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                                                //calculate dayscholar
-                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_dayorhostel='DAY SCHOLAR' ";
+                                                $query_students_day = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='eie' AND st_dayorhostel='DAY SCHOLAR' OR st_dayorhostel='DAYSCHOLAR' ";
 
 
                                                     $result_students_day = mysqli_query($connect,$query_students_day);
