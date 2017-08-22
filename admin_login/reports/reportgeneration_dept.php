@@ -884,7 +884,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                 $percent = $effective_cse/$count_cse; 
 
-                                                $percent = $percent * 100."%";
+                                                $percent = $percent * 100 ."%";
                                                 
 
 
