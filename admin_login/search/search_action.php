@@ -1990,7 +1990,7 @@ if(isset($_GET['export'])) {
 
                                                 //echo  $query = "  SELECT * FROM students_".$get_year." where st_pgspecialization in ('$temp_pgbranch')  and st_pgcgpa>=$get_pgcgpa and st_currentlypursuing='PG' ";
 
-                            echo "pg branch ".current($get_pgbranch);
+
 
 
                                 if(current($get_pgbranch)!=''){
