@@ -1402,10 +1402,6 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 
 
 
-                                                echo number_format((float)$percent, 2, '.', '');
-
-
-
                                               $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece'";
 
 
