@@ -96,10 +96,10 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('placement@rmd.ac.in', 'RMD Placements');
+                $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('placement@rmd.ac.in', 'Reply');
+                $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
                 $collegename = "RMD Engineering College";
 
             }
@@ -114,10 +114,10 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('placement@rmkec.ac.in', 'RMK Placements');
+                $mail->setFrom('rmkplacements@rmkcampulse.com', 'RMK Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('placement@rmkec.ac.in', 'Reply');
+                $mail->addReplyTo('rmkplacements@rmkcampulse.com', 'Reply');
                 $collegename = "RMK Engineering College";
 
             }
@@ -132,10 +132,10 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
                 $mail->Port = 2525;
 
 
-                $mail->setFrom('placement@rmkcet.ac.in', 'RMKCET Placements');
+                $mail->setFrom('rmkcetplacements@rmkcampulse.com', 'RMKCET Placements');
                 $mail->addAddress($to, $to);     // Add a recipient
 
-                $mail->addReplyTo('placement@rmkcet.ac.in', 'Reply');
+                $mail->addReplyTo('rmkcetplacements@rmkcampulse.com', 'Reply');
                 $collegename = "RMK College of Engineering and Technology";
 
             }
