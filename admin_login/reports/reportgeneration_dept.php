@@ -1398,35 +1398,46 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 //calculate percentage
 
 
-                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece'";
 
-
-                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
-
-                                                  
-                                                    $count_cse =  mysqli_num_rows($result_students_cse);
-
-                                                  
-
-
-                                                $percent = $effective_cse/$count_cse; 
-
-                                               echo $percent = $percent * 100;
                                                 
 
 
                                                 echo number_format((float)$percent, 2, '.', '');
 
 
-                                            
+
+                                              $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='ece'";
 
 
-                                              
+                                              $result_students_cse = mysqli_query($connect,$query_students_cse);
+
+
+                                              $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
+
+
+
+                                              $percent = $effective_cse/ $result_single_cse;
+
+                                              $percent = $percent * 100;
+
+
+
+                                              echo number_format((float)$percent, 2, '.', '');
 
 
 
 
-                                               ?>
+
+
+
+
+
+
+
+
+
+
+                                              ?>
 
                                              </td>
                                              <td>
