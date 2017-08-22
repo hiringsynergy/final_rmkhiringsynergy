@@ -747,37 +747,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  
 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'cse' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'cse' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'cse' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'cse' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -1022,37 +1022,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'it' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'it' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'it' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'it' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'it' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'it' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'it' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'it' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -1287,37 +1287,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                  <?php
 
                                                 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'ece' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'ece' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'ece' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'ece' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'ece' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'ece' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'ece' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'ece' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -1415,7 +1415,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 
 
 
-                                                 //echo number_format((float)$percent, 2, '.', '');
+                                                echo number_format((float)$percent, 2, '.', '');
 
 
                                             
@@ -1551,37 +1551,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eee' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eee' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eee' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eee' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eee' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'eee' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eee' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'eee' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -1813,37 +1813,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eie' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eie' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eie' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eie' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eie' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'eie' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'eie' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'eie' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -2077,37 +2077,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
-                                            //      //single
+                                                  //single
 
-                                            //   $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'mech' ";
-                                            //  $result_single_cse = mysqli_query($connect,$query_single_cse);
+                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'mech' ";
+                                              $result_single_cse = mysqli_query($connect,$query_single_cse);
 
-                                            //   $count_single_cse = mysqli_num_rows($result_single_cse);
-
-
-                                            // //double
-                                            //  $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'mech' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //  $count_double_cse = mysqli_num_rows($result_double_cse);
+                                               $count_single_cse = mysqli_num_rows($result_single_cse);
 
 
-                                            //  //triple
+                                             //double
+                                              $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'mech' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //    $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'mech' ";
-                                            //  $result_double_cse = mysqli_query($connect,$query_double_cse);
-
-                                            //   $count_double_cse = mysqli_num_rows($result_double_cse);
-
-                                            //  //four
+                                              $count_double_cse = mysqli_num_rows($result_double_cse);
 
 
-                                            //  $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'mech' ";
-                                            //  $result_four_cse = mysqli_query($connect,$query_four_cse);
+                                              //triple
 
-                                            //   $count_four_cse = mysqli_num_rows($result_four_cse);
+                                                $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'mech' ";
+                                              $result_double_cse = mysqli_query($connect,$query_double_cse);
 
-                                            //   echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
+                                               $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                              //four
+
+
+                                              $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'mech' ";
+                                              $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                               $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                               echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -2342,7 +2342,37 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                                                  <?php
 
-                                                 echo "effective ";
+                                                 //single
+
+                                                 $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'eie' ";
+                                                 $result_single_cse = mysqli_query($connect,$query_single_cse);
+
+                                                 $count_single_cse = mysqli_num_rows($result_single_cse);
+
+
+                                                 //double
+                                                 $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'civil' ";
+                                                 $result_double_cse = mysqli_query($connect,$query_double_cse);
+
+                                                 $count_double_cse = mysqli_num_rows($result_double_cse);
+
+
+                                                 //triple
+
+                                                 $query_double_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 2 AND st_ugspecialization = 'civil' ";
+                                                 $result_double_cse = mysqli_query($connect,$query_double_cse);
+
+                                                 $count_double_cse = mysqli_num_rows($result_double_cse);
+
+                                                 //four
+
+
+                                                 $query_four_cse = "SELECT * FROM students_".$table." WHERE st_jobcounts = 4 AND st_ugspecialization = 'civil' ";
+                                                 $result_four_cse = mysqli_query($connect,$query_four_cse);
+
+                                                 $count_four_cse = mysqli_num_rows($result_four_cse);
+
+                                                 echo $effective_cse  = $count_single_cse +$count_double_cse + $count_triple_cse + $count_four_cse ;
 
 
 
@@ -2419,46 +2449,35 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                                                 //calculate percentage
 
 
-                                                    $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil'";
+
+                                              $query_students_cse = "SELECT * FROM students_".$table."  WHERE st_ugspecialization='civil'";
 
 
-                                                    $result_students_cse = mysqli_query($connect,$query_students_cse);
-
-                                                  
-                                                    $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
-
-                                                  
+                                              $result_students_cse = mysqli_query($connect,$query_students_cse);
 
 
-                                               $query_single_cse = " SELECT * FROM students_".$table." WHERE st_jobcounts = 1 AND st_ugspecialization = 'civil' ";
-                                             $result_single_cse = mysqli_query($connect,$query_single_cse);
-
-                                              if($result_single_cse==''){
-
-                                                die("error ".mysqli_error($connect));
-                                             }
-
-                                                $count_single_cse = mysqli_num_rows($result_single_cse);
+                                              $count_cse = $count_cse + mysqli_num_rows($result_students_cse);
 
 
-                                                $percent = $count_cse / $result_single_cse;
 
-                                                $percent = $percent * 100;
-                                                
+                                              $percent = $effective_cse / $result_single_cse;
 
-
-                                                 echo number_format((float)$percent, 2, '.', '');
+                                              $percent = $percent * 100;
 
 
-                                            
 
-
-                                              
+                                              echo number_format((float)$percent, 2, '.', '');
 
 
 
 
-                                               ?>
+
+
+
+
+
+
+                                              ?>
 
                                              </td>
                                              <td>
