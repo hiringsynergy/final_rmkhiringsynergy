@@ -723,10 +723,10 @@
                         $mail->Port = 2525;
 
                         
-                        $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
+                        $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMK Group of Institutions');
                         
                         
-                        $mail->addReplyTo('recovery@rmkcampulse.com', 'Reply');
+                        $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
                         
                         
                         $mail->addAddress($to, $to);     // Add a recipient
