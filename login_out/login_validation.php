@@ -410,7 +410,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                                header("Location: ../login ");
+                               // header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -560,7 +560,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                                header("Location: ../login ");
+                               // header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -757,7 +757,7 @@
                             
                             
                             $_SESSION['reset']=1;
-                            header("Location: ../login");
+                           // header("Location: ../login");
                             
                             echo "Successfully sent";
                             
