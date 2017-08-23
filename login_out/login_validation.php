@@ -357,18 +357,14 @@
                             
                             
                             $mail=new PHPMailer();
-                             $mail->isSMTP();
-                             $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
-                             $mail->SMTPAuth = true;        
-                                    
-                            
-                            
-                            $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
-                            $mail->Password = 'RMKEC123';// SMTP password
-
-                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 2525;
-                            
+                              $mail->isMail();
+                            $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
+                            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                            $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                            $mail->Password = 'rmk123';                           // SMTP password
+                            $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port =   587;
+                                                    
                             $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                             
                             
@@ -509,23 +505,22 @@
                             $mail=new PHPMailer();
                             
                           
-                            $mail->isSMTP();
-                            $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                            $mail->isMail();
+                            $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                           
+                      
+                            
+                            $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
+                            $mail->Password = 'rmkec123';// SMTP password
+                            $mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port =   587;
 
-                            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
-                            $mail->Password = 'RMKEC123';// SMTP password
-
-                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 2525;                        // Enable TLS encryption, `ssl` also accepted
-                                   
+                            
                             $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                             
                             
                             $mail->addReplyTo('recovery@rmkcampulse.com', 'Reply');
-                            
+                                
                             
                             $mail->addAddress($to, $to);     // Add a recipient
                             
