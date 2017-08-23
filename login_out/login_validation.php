@@ -174,7 +174,7 @@
             
             $_SESSION['user']=$username;
             
-            // header("Location: ../admin_login/index");
+            header ("Location: ../admin_login/index");
         }
         
         
@@ -195,7 +195,7 @@
             
             
             
-            // header("Location: ../coordinator_login/index");
+             header("Location: ../coordinator_login/index");
         }
         
         
@@ -228,7 +228,7 @@
             $_SESSION['year_of_graduation']= end($graduation);
             
             
-            // header("Location: ../student_login/index");
+             header("Location: ../student_login/index");
             
         }
         
@@ -237,7 +237,7 @@
         
         else{
             
-            // header("Location: ../login");
+             header("Location: ../login");
             
         }
         
@@ -394,7 +394,7 @@
                                 
                                 die("mail not sent");
                                 
-                                // header("Location: ../reset");
+                                 header("Location: ../reset");
                                 
                                 
                                 
@@ -405,7 +405,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                                // header("Location: ../login ");
+                                 header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -544,7 +544,7 @@
                                 
                                 die("mail not sent");
                                 
-                                // header("Location: ../reset");
+                                 header("Location: ../reset");
                                 
                                 
                                 
@@ -555,7 +555,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                                // header("Location: ../login ");
+                                 header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -744,7 +744,7 @@
 
                             echo $mail->ErrorInfo ." ";
                             
-                            // header("Location: ../reset");
+                             header("Location: ../reset");
                             
                             
                             
@@ -755,7 +755,7 @@
                             
                             
                             $_SESSION['reset']=1;
-                            // header("Location: ../login");
+                             header("Location: ../login");
                             
                             echo "Successfully sent";
                             
@@ -803,7 +803,7 @@
             $_SESSION['user_valid']=1;
             
             echo "is_valid";
-           // header("Location: ../reset");
+            header("Location: ../reset");
             
             
         }
@@ -830,7 +830,7 @@
     else{
         
         
-        // header("Location: ../login");
+         header("Location: ../login");
         
         
         
