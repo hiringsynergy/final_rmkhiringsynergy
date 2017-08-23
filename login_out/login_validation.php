@@ -237,7 +237,7 @@
         
         else{
             
-            //header("Location: ../login");
+            header("Location: ../login");
             
         }
         
@@ -357,18 +357,17 @@
                             
                             
                             $mail=new PHPMailer();
+                             $mail->isSMTP();
+                             $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                             $mail->SMTPAuth = true;        
+                                    
                             
-                            $mail->isSMTP();
-                            $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                            $mail->SMTPAuth = true;
                             
-                            
-                            
-                            $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                            $mail->Password = 'RMKEC123';                           // SMTP password
-                            $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 	587;
-                            
+                            $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
+                            $mail->Password = 'RMKEC123';// SMTP password
+
+                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port = 2525;
                             
                             $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                             
@@ -399,7 +398,7 @@
                                 
                                 die("mail not sent");
                                 
-                               // header("Location: ../reset");
+                                header("Location: ../reset");
                                 
                                 
                                 
@@ -410,7 +409,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                               // header("Location: ../login ");
+                                header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -509,18 +508,19 @@
                             
                             $mail=new PHPMailer();
                             
+                          
                             $mail->isSMTP();
-                            $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                            $mail->SMTPAuth = true;
-                            
-                            
-                            
-                            $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                            $mail->Password = 'RMKEC123';                           // SMTP password
-                            $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 	587;
-                            
-                            
+                            $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                           
+
+                            // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
+                            $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
+                            $mail->Password = 'RMKEC123';// SMTP password
+
+                            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->Port = 2525;                        // Enable TLS encryption, `ssl` also accepted
+                                   
                             $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                             
                             
@@ -549,7 +549,7 @@
                                 
                                 die("mail not sent");
                                 
-                               // header("Location: ../reset");
+                                header("Location: ../reset");
                                 
                                 
                                 
@@ -560,7 +560,7 @@
                                 
                                 
                                 $_SESSION['reset']=1;
-                               // header("Location: ../login ");
+                                header("Location: ../login ");
                                 
                                 echo "Successfully sent";
                                 
@@ -710,16 +710,16 @@
                         $mail=new PHPMailer();
                         
                         $mail->isSMTP();
-                        $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
-                        $mail->SMTPAuth = true;
+                        $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                  
                         
-                        
-                        
-                        $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
-                        $mail->Password = 'RMKEC123';                           // SMTP password
-                        $mail->SMTPSecure='tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 	587;
-                        
+                        $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
+                        $mail->Password = 'RMKEC123';// SMTP password
+
+                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port = 2525;
+
                         
                         $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                         
@@ -746,7 +746,7 @@
                             $_SESSION['user_valid']=1;
                             echo "not send";
                             
-                           // header("Location: ../reset");
+                            header("Location: ../reset");
                             
                             
                             
@@ -757,7 +757,7 @@
                             
                             
                             $_SESSION['reset']=1;
-                           // header("Location: ../login");
+                            header("Location: ../login");
                             
                             echo "Successfully sent";
                             
@@ -805,7 +805,7 @@
             $_SESSION['user_valid']=1;
             
             echo "is_valid";
-          //  header("Location: ../reset");
+           header("Location: ../reset");
             
             
         }
@@ -832,7 +832,7 @@
     else{
         
         
-       // header("Location: ../login");
+        header("Location: ../login");
         
         
         
