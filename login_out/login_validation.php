@@ -711,16 +711,15 @@
                         
                         $mail=new PHPMailer();
                         
-                        $mail->isSMTP();
+                        $mail->isMail();
                         $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
                         $mail->SMTPAuth = true;                               // Enable SMTP authentication
                   
                         
-                        $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
-                        $mail->Password = 'RMKEC123';// SMTP password
-
-                        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 2525;
+                        $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
+                        $mail->Password = 'rmkec123';// SMTP password
+                        $mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
+                        $mail->Port =   587;
 
                         
                         $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMK Group of Institutions');
