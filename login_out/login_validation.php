@@ -744,7 +744,9 @@
                             
                             
                             $_SESSION['user_valid']=1;
-                            echo "not send";
+                            echo "not send ";
+
+                            echo $mail->ErrorInfo ." ";
                             
                             // header("Location: ../reset");
                             
