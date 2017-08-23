@@ -697,6 +697,8 @@
                         
                         
                         $to = $row_student_select['st_clgemail'];
+
+                        echo "to ".$to;
                         $user_mail=$row_student_select['st_roll'];
                         
                         
