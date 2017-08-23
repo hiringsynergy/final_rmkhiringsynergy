@@ -805,7 +805,7 @@
             $_SESSION['user_valid']=1;
             
             // echo "is_valid";
-            header("Location: ../reset");
+          //  header("Location: ../reset");
             
             
         }
