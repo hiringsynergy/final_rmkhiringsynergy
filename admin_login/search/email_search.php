@@ -676,7 +676,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                        $mail->Username = 'placementstnp@rmkec.ac.in';                 // SMTP username
+                        $mail->Username = 'campulse@rmkec.ac.in';                 // SMTP username
                         $mail->Password = 'RMKEC123';// SMTP password
 
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
@@ -693,7 +693,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                        $mail->Username = 'placementstnp@rmkec.ac.in';                   // SMTP username
+                        $mail->Username = 'campulse@rmkec.ac.in';                   // SMTP username
                         $mail->Password = 'RMKEC123';// SMTP password
 
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
@@ -710,7 +710,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     if (preg_match('/cet/', $database)) {
 
                         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                        $mail->Username = 'placementstnp@rmkec.ac.in';                   // SMTP username
+                        $mail->Username = 'campulse@rmkec.ac.in';                   // SMTP username
                         $mail->Password = 'RMKEC123';// SMTP password
 
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted

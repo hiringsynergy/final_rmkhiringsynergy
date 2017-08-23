@@ -360,7 +360,7 @@
                               $mail->isMail();
                             $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-                            $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+                            $mail->Username = 'recovery@rmkcampulse.com';                 // SMTP username
                             $mail->Password = 'rmk123';                           // SMTP password
                             $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
                             $mail->Port =   587;

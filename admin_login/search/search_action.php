@@ -362,7 +362,7 @@ if(isset($_POST['send_mail']) && isset($_POST['filter']) && isset($_SESSION['use
     $mail->isMail();
     $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'rmkplacements@rmkhiringsynergy.xyz';                 // SMTP username
+    $mail->Username = 'rmkplacements@rmkcampulse.com';                 // SMTP username
     $mail->Password = 'rmk123';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 	587;
