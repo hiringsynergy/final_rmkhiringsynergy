@@ -399,7 +399,7 @@
                                 
                                 die("mail not sent");
                                 
-                                header("Location: ../reset");
+                               // header("Location: ../reset");
                                 
                                 
                                 
@@ -549,7 +549,7 @@
                                 
                                 die("mail not sent");
                                 
-                                header("Location: ../reset");
+                               // header("Location: ../reset");
                                 
                                 
                                 
@@ -746,7 +746,7 @@
                             $_SESSION['user_valid']=1;
                             // echo "send";
                             
-                            header("Location: ../reset");
+                           // header("Location: ../reset");
                             
                             
                             
