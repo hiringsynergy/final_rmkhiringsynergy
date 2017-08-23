@@ -237,7 +237,7 @@
         
         else{
             
-            header("Location: ../login");
+            //header("Location: ../login");
             
         }
         
@@ -832,7 +832,7 @@
     else{
         
         
-        header("Location: ../login");
+       // header("Location: ../login");
         
         
         
