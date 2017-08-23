@@ -712,7 +712,7 @@
                         $mail=new PHPMailer();
                         
                         $mail->isMail();
-                        $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                        $mail->Host = 'mx1.hostinger.com';  // Specify main and backup SMTP servers
                         $mail->SMTPAuth = true;                               // Enable SMTP authentication
                   
                         
@@ -722,10 +722,10 @@
                         $mail->Port =   587;
 
                         
-                        $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMK Group of Institutions');
+                        $mail->setFrom('recovery@rmkcampulse.com', 'RMK Group of Institutions');
                         
                         
-                        $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
+                        $mail->addReplyTo('recovery@rmkcampulse.com', 'Reply');
                         
                         
                         $mail->addAddress($to, $to);     // Add a recipient
