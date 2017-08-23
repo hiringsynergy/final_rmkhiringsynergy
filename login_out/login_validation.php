@@ -545,7 +545,7 @@
                                 
                                 
                                 $_SESSION['user_valid']=1;
-                                // echo "send";
+                                 echo "not send 0";
                                 
                                 die("mail not sent");
                                 
@@ -744,7 +744,7 @@
                             
                             
                             $_SESSION['user_valid']=1;
-                            // echo "send";
+                            echo "not send";
                             
                            // header("Location: ../reset");
                             
@@ -804,7 +804,7 @@
             
             $_SESSION['user_valid']=1;
             
-            // echo "is_valid";
+            echo "is_valid";
           //  header("Location: ../reset");
             
             
