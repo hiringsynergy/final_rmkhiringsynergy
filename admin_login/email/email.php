@@ -841,13 +841,13 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     while($row_mail=mysqli_fetch_assoc($result_mail)){
 
 
-                        $to=$row_mail['tnp'];
+                        // $to=$row_mail['tnp'];
 
-                        $mail->addAddress($to, $to);
+                        // $mail->addAddress($to, $to);
 
-                        $mail->send();
+                        // $mail->send();
 
-                        $mail->clearAddresses();
+                        // $mail->clearAddresses();
 
 
                     }
