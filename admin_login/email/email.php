@@ -680,7 +680,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     $mail=new PHPMailer();
 
                     $mail->isMail();
-                    $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp-relay.sendinblue.com';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;// Enable SMTP authentication
 
                     include "../connect.php";
@@ -697,11 +697,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                             // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'postmaster@sandboxf7b6bda25ed048ad84b802400f1b2c7d.mailgun.org';                 // SMTP username
-                            $mail->Password = 'ea76264c2409b48f9cf01c0424c660a9';// SMTP password
+                            $mail->Username = 'rmkcampulse@gmail.com';                 // SMTP username
+                            $mail->Password = 'g8hGTvDHAV7IO5rF';// SMTP password
 
                             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 25;
+                            $mail->Port = 587;
 
 
                             $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
@@ -709,6 +709,18 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                             $mail->addReplyTo('rmdplacements@rmkcampulse.com', 'Reply');
                             $collegename = "RMD Engineering College";
+
+
+
+
+
+
+
+
+
+
+
+ 
 
                         }
                         if (preg_match('/rmk/', $database)) {
