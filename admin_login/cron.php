@@ -89,8 +89,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'postmaster@sandboxf7b6bda25ed048ad84b802400f1b2c7d.mailgun.org';                 // SMTP username
-                $mail->Password = 'ea76264c2409b48f9cf01c0424c660a9';// SMTP password
+                $mail->Username = 'postmaster@tnp.rmkcampulse.com';                 // SMTP username
+                $mail->Password = '4ae0f56d3ab04272b9a609976c1bf7b1';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
                 $mail->Port = 25;
