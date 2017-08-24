@@ -680,7 +680,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                     $mail=new PHPMailer();
 
                     $mail->isMail();
-                    $mail->Host = 'smtp-relay.sendinblue.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;// Enable SMTP authentication
 
                     include "../connect.php";
@@ -697,11 +697,11 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                             // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                            $mail->Username = 'rmkcampulse@gmail.com';                 // SMTP username
-                            $mail->Password = 'g8hGTvDHAV7IO5rF';// SMTP password
+                            $mail->Username = 'postmaster@tnp.rmkcampulse.com';                 // SMTP username
+                            $mail->Password = '4ae0f56d3ab04272b9a609976c1bf7b1';// SMTP password
 
                             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                            $mail->Port = 587;
+                            $mail->Port = 25;
 
 
                             $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
