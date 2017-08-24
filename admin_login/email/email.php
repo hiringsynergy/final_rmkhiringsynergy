@@ -635,9 +635,9 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                           echo "extn ". $file_ext=strtolower(end($value));
+                            $file_ext=strtolower(end($value));
 
-                           echo "<br> value ". $file_name_new=$value[0];
+                             $file_name_new=$value[0];
 
                             $newfilename = $file_name_new.'_'.time() . '.' . $file_ext;
 
