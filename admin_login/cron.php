@@ -46,7 +46,7 @@ $mail=new PHPMailer();
 
 
 $mail->isSMTP();
-$mail->Host = 'smtp-relay.sendinblue.com';  // Specify main and backup SMTP servers
+$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
@@ -89,11 +89,11 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'rmkcampulse@gmail.com';                 // SMTP username
-                $mail->Password = 'g8hGTvDHAV7IO5rF';// SMTP password
+                $mail->Username = 'postmaster@sandboxf7b6bda25ed048ad84b802400f1b2c7d.mailgun.org';                 // SMTP username
+                $mail->Password = 'ea76264c2409b48f9cf01c0424c660a9';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 587;
+                $mail->Port = 25;
 
 
                 $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
