@@ -36,7 +36,7 @@ else{
 }
 
 
-    echo "enter loop";
+    echo "enter loop smtp2go";
 
 
 
