@@ -46,7 +46,7 @@ $mail=new PHPMailer();
 
 
 $mail->isSMTP();
-$mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
+$mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
@@ -89,11 +89,11 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
 
                 // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                $mail->Username = 'postmaster@tnp.rmkcampulse.com';                 // SMTP username
-                $mail->Password = '4ae0f56d3ab04272b9a609976c1bf7b1';// SMTP password
+                $mail->Username = 'campulse@rmkec.ac.in';                 // SMTP username
+                $mail->Password = 'RMKEC123';// SMTP password
 
                 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $mail->Port = 25;
+                $mail->Port = 2525;
 
 
                 $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
