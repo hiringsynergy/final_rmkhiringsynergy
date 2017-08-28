@@ -734,7 +734,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    $sub = htmlentities($subject);
+//                    $sub = htmlentities($subject);
 
 
 
@@ -782,7 +782,7 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                         $connect_mail=mysqli_connect("mysql.hostinger.com","u625007899_root3","rmkhiringsynergy","u625007899_login");
-                        $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$sub','$message', '$implodefile', '0')";
+                        $query_for_mail="INSERT INTO mail_sender VALUES ('$time','$roll_no','$database','','$to','$subject','$message', '$implodefile', '0')";
                         $result_mail=mysqli_query($connect_mail,$query_for_mail);
 
 

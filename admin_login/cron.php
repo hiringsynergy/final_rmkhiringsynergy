@@ -70,8 +70,8 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
         $to = $row['mail_to'];
 
         $subject = $row['mail_subject'];
-        
-        $sub = html_entity_decode($subject);
+
+//        $sub = html_entity_decode($subject);
         $message = $row['mail_message'];
         $student_id=$row['student_id'];
         $job_id=$row['job_id'];
@@ -173,7 +173,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
             $mail->isHTML(true);
 
-            $mail->Subject = $sub;
+            $mail->Subject = $subject;
             $mail->Body = $message;
             $mail->Body .= '<div class="gmail_default"><b><br><br><br><br></div><div class="gmail_default"><b>---------------------------------</b></div><div class="gmail_default"><b style="font-family:arial,sans-serif"><i><span style="font-family:arial,helvetica,sans-serif">With Regards,&nbsp;</span></i></b><b><br></b></div></div><div class="gmail_default" style="font-family:verdana,sans-serif;color:rgb(0,0,0)"><div class="gmail_default"><b><br>Training &amp; Placement Office,</b></div><div class="gmail_default"><b>' . $collegename . '</b></div>';
 
