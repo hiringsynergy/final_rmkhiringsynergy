@@ -901,57 +901,57 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
 
-                    foreach ($branches as $dept) {
-
-
-                        $query_send_mail = "SELECT * FROM mail_forwarder";
-                        $result_send_mail = mysqli_query($connect, $query_send_mail);
-
-                        while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
-
-
-                            $to = $row_send_mail[$dept];
-                            if ($to != '') {
-
-
-
-
-                                $mail->addAddress($to, $to);     // Add a recipient
-
-
-                                if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-
-                                    foreach ($send_file as $file_to_send) {
-
-
-                                        $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                                    }
-
-
-                                }
-
-
-                                if ($mail->send()) {
-
-                                    echo $to . "<br>" . "hurray"."<br>";
-
-
-                                } else {
-
-                                    echo $mail->ErrorInfo . " " . $to;
-                                }
-
-
-                                // Clear all addresses and attachments for next loop
-                                $mail->clearAddresses();
-                                $mail->clearAttachments();
-
-
-                            }
-                        }
-
-                    }
+//                    foreach ($branches as $dept) {
+//
+//
+//                        $query_send_mail = "SELECT * FROM mail_forwarder";
+//                        $result_send_mail = mysqli_query($connect, $query_send_mail);
+//
+//                        while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
+//
+//
+//                            $to = $row_send_mail[$dept];
+//                            if ($to != '') {
+//
+//
+//
+//
+//                                $mail->addAddress($to, $to);     // Add a recipient
+//
+//
+//                                if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+//
+//                                    foreach ($send_file as $file_to_send) {
+//
+//
+//                                        $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+//
+//                                    }
+//
+//
+//                                }
+//
+//
+//                                if ($mail->send()) {
+//
+//                                    echo $to . "<br>" . "hurray"."<br>";
+//
+//
+//                                } else {
+//
+//                                    echo $mail->ErrorInfo . " " . $to;
+//                                }
+//
+//
+//                                // Clear all addresses and attachments for next loop
+//                                $mail->clearAddresses();
+//                                $mail->clearAttachments();
+//
+//
+//                            }
+//                        }
+//
+//                    }
 
 
 
