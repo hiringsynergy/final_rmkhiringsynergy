@@ -54,18 +54,7 @@ $mail->SMTPAuth = true;// Enable SMTP authentication
 
     while ($row = mysqli_fetch_assoc($result_mail)) {
 
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         $to = $row['mail_to'];
 
