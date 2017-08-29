@@ -847,49 +847,49 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
                     while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
-                        // $to = $row_send_mail['tnp'];
+                        $to = $row_send_mail['tnp'];
 
-                        // if($to!='') {
+                        if($to!='') {
 
-                        //     $mail->addAddress($to, $to);     // Add a recipient
-
-
-                        //     echo $subject . "<br>";
-                        //     echo $message . "<br>";
-                        //     echo $collegename . "<br>";
+                            $mail->addAddress($to, $to);     // Add a recipient
 
 
-                        //     if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
-
-                        //         foreach ($send_file as $file_to_send) {
-
-
-                        //             $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                        //         }
+                            echo $subject . "<br>";
+                            echo $message . "<br>";
+                            echo $collegename . "<br>";
 
 
-                        //     }
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+
+                                foreach ($send_file as $file_to_send) {
 
 
-                        //     if ($mail->send()) {
+                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+
+                                }
 
 
-                        //         echo $to . "<br>" . "hurray" . "<br>";
+                            }
 
 
-                        //     } else {
-
-                        //         echo $mail->ErrorInfo . " " . $to;
-                        //     }
+                            if ($mail->send()) {
 
 
-                        //     // Clear all addresses and attachments for next loop
-                        //     $mail->clearAddresses();
-                        //     $mail->clearAttachments();
+                                echo $to . "<br>" . "hurray" . "<br>";
 
 
-                        // }
+                            } else {
+
+                                echo $mail->ErrorInfo . " " . $to;
+                            }
+
+
+                            // Clear all addresses and attachments for next loop
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
+
+
+                        }
 
                     }
 
@@ -913,45 +913,45 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
                         while ($row_send_mail = mysqli_fetch_assoc($result_send_mail)) {
 
 
-                            // $to = $row_send_mail[$dept];
-                            // if ($to != '') {
+                            $to = $row_send_mail[$dept];
+                            if ($to != '') {
 
 
 
 
-                            //     $mail->addAddress($to, $to);     // Add a recipient
+                                $mail->addAddress($to, $to);     // Add a recipient
 
 
-                            //     if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+                                if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
-                            //         foreach ($send_file as $file_to_send) {
-
-
-                            //             $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                            //         }
+                                    foreach ($send_file as $file_to_send) {
 
 
-                            //     }
+                                        $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+
+                                    }
 
 
-                            //     if ($mail->send()) {
-
-                            //         echo $to . "<br>" . "hurray"."<br>";
+                                }
 
 
-                            //     } else {
+                                if ($mail->send()) {
 
-                            //         echo $mail->ErrorInfo . " " . $to;
-                            //     }
-
-
-                            //     // Clear all addresses and attachments for next loop
-                            //     $mail->clearAddresses();
-                            //     $mail->clearAttachments();
+                                    echo $to . "<br>" . "hurray"."<br>";
 
 
-                            // }
+                                } else {
+
+                                    echo $mail->ErrorInfo . " " . $to;
+                                }
+
+
+                                // Clear all addresses and attachments for next loop
+                                $mail->clearAddresses();
+                                $mail->clearAttachments();
+
+
+                            }
                         }
 
                     }

@@ -815,40 +815,40 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)){
 
-                            // $to = $row_send_mail['tnp'];
+                            $to = $row_send_mail['tnp'];
 
 
-                            // $mail->addAddress($to);     // Add a recipient
+                            $mail->addAddress($to);     // Add a recipient
 
 
-                            // if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
-                            //     foreach ($send_file as $file_to_send) {
-
-
-                            //         $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                            //     }
+                                foreach ($send_file as $file_to_send) {
 
 
-                            // }
+                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+
+                                }
 
 
-                            // if ($mail->send()) {
-
-                            //     echo "sent";
+                            }
 
 
-                            // }
-                            // else{
+                            if ($mail->send()) {
 
-                            //     echo  $mail->ErrorInfo;
-                            // }
+                                echo "sent";
 
 
-                            // // Clear all addresses and attachments for next loop
-                            // $mail->clearAddresses();
-                            // $mail->clearAttachments();
+                            }
+                            else{
+
+                                echo  $mail->ErrorInfo;
+                            }
+
+
+                            // Clear all addresses and attachments for next loop
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
 
 
 
@@ -874,37 +874,37 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)) {
 
-                            // $to = $row_send_mail[$dept];
+                            $to = $row_send_mail[$dept];
 
 
-                            // $mail->addAddress($to);     // Add a recipient
+                            $mail->addAddress($to);     // Add a recipient
 
 
-                            // if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
-                            //     foreach ($send_file as $file_to_send) {
-
-
-                            //         $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                            //     }
+                                foreach ($send_file as $file_to_send) {
 
 
-                            // }
+                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+
+                                }
 
 
-                            // if ($mail->send()) {
+                            }
 
 
-                            // } else {
-
-                            //     echo $mail->ErrorInfo;
-                            // }
+                            if ($mail->send()) {
 
 
-                            // // Clear all addresses and attachments for next loop
-                            // $mail->clearAddresses();
-                            // $mail->clearAttachments();
+                            } else {
+
+                                echo $mail->ErrorInfo;
+                            }
+
+
+                            // Clear all addresses and attachments for next loop
+                            $mail->clearAddresses();
+                            $mail->clearAttachments();
 
 
                         }
@@ -945,7 +945,7 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
                     }
                     else{
 
-                       // header("Location: post_jobs?email");
+                       header("Location: post_jobs?email");
 
 
                     }
