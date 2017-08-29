@@ -670,11 +670,11 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
 
                         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                        $mail->Username = 'rmkcampulse@gmail.com';                 // SMTP username
-                        $mail->Password = 'g8hGTvDHAV7IO5rF';// SMTP password
+                        $mail->Username = 'campulse@rmkec.ac.in';                 // SMTP username
+                        $mail->Password = 'RMKEC123';// SMTP password
 
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 587;
+                        $mail->Port = 2525;
 
 
                         $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
@@ -870,37 +870,37 @@ if (!isset($_SESSION['user']) && $_SESSION['user'] == null && $_SESSION['user_ro
 
                         while($row_send_mail=mysqli_fetch_assoc($result_send_mail)) {
 
-                            $to = $row_send_mail[$dept];
+                            // $to = $row_send_mail[$dept];
 
 
-                            $mail->addAddress($to);     // Add a recipient
+                            // $mail->addAddress($to);     // Add a recipient
 
 
-                            if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
+                            // if (isset($_FILES['attachment']) && $file_ext != '' && isset($_SESSION['user_role']) == 'admin') {
 
-                                foreach ($send_file as $file_to_send) {
-
-
-                                    $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
-
-                                }
+                            //     foreach ($send_file as $file_to_send) {
 
 
-                            }
+                            //         $mail->addAttachment('../files/' . $file_to_send, $file_to_send);
+
+                            //     }
 
 
-                            if ($mail->send()) {
+                            // }
 
 
-                            } else {
-
-                                echo $mail->ErrorInfo;
-                            }
+                            // if ($mail->send()) {
 
 
-                            // Clear all addresses and attachments for next loop
-                            $mail->clearAddresses();
-                            $mail->clearAttachments();
+                            // } else {
+
+                            //     echo $mail->ErrorInfo;
+                            // }
+
+
+                            // // Clear all addresses and attachments for next loop
+                            // $mail->clearAddresses();
+                            // $mail->clearAttachments();
 
 
                         }
