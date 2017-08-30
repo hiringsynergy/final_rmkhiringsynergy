@@ -670,17 +670,17 @@ if(! isset($_SESSION['user']) && $_SESSION['user']==null && isset($_SESSION['use
 
 
                     $mail->isSMTP();
-                    $mail->Host = 'mail.smtp2go.com';  // Specify main and backup SMTP servers
+                    $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
                     $mail->SMTPAuth = true;                               // Enable SMTP authentication
                     if (preg_match('/rmd/', $database)) {
 
 
                         // $connect=mysqli_connect("mysql.hostinger.com","u625007899_root","rmkhiringsynergy","$database");
-                        $mail->Username = 'campulse@rmkec.ac.in';                 // SMTP username
-                        $mail->Password = 'RMKEC123';// SMTP password
+                        $mail->Username = 'postmaster@tnp.rmkcampulse.com';                 // SMTP username
+                        $mail->Password = '4ae0f56d3ab04272b9a609976c1bf7b1';// SMTP password
 
                         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port = 2525;
+                        $mail->Port = 25;
 
 
                         $mail->setFrom('rmdplacements@rmkcampulse.com', 'RMD Placements');
